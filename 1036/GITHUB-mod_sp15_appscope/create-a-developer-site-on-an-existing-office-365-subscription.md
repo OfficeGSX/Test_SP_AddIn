@@ -84,11 +84,8 @@ Avec un Site du développeur Office 365, il est plus facile de se préparer et d
 6. Dans la boîte de dialogue **Nouvelle collection de sites**, fournissez les informations relatives à votre Site du développeur.
     
     **Cliquez sur l'image suivante pour parcourir les options de la nouvelle collection de sites dans la boîte de dialogue, ou reportez-vous au tableau sous l'image pour obtenir des conseils.**
-     [![Cliquez ici pour plus de détails sur les nouvelles options de collection de sites](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
-  
-    
-    
-](http://go.microsoft.com/fwlink/?LinkId=400960)
+     [![Cliquez ici pour plus de détails sur les nouvelles options de collection de sites](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
+
 |||
 |:-----|:-----|
 |**Title** <br/> |Nom que vous souhaitez attribuer à votre Site du développeur.  <br/> |

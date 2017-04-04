@@ -85,11 +85,8 @@ Un Sitio para desarrolladores de Office 365 hace que sea más fácil y rápido p
 6. En el cuadro de diálogo **Nueva colección de sitios**, escriba información sobre su sitio para desarrolladores.
     
     **Haga clic en la siguiente imagen para pasearse por las opciones de la nueva colección de sitios del cuadro de diálogo, o bien consulte la tabla debajo de la imagen a modo de guía.**
-     [![Haga clic para acercar las opciones de la nueva colección de sitios](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
-  
-    
-    
-](http://go.microsoft.com/fwlink/?LinkId=400960)
+     [![Haga clic para acercar las opciones de la nueva colección de sitios](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
+
 |||
 |:-----|:-----|
 |**Título** <br/> |Nombre que quiere dar al sitio para desarrolladores.  <br/> |

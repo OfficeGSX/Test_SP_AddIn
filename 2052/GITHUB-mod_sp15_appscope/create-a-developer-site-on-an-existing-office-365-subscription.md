@@ -84,11 +84,8 @@ Office 365 开发人员网站 让创建、测试和部署 Office 和 SharePoint 
 6. 在"新建网站集"对话框中，提供有关开发人员网站的信息。
     
     **单击以下图像在对话框中浏览新的网站集选项，或者参阅图像下的表格获取指导。**
-     [![单击以缩放新的网站集选项](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
-  
-    
-    
-](http://go.microsoft.com/fwlink/?LinkId=400960)
+     [![单击以缩放新的网站集选项](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
+
 |||
 |:-----|:-----|
 |**标题** <br/> |要赋予您开发人员网站的名称。  <br/> |

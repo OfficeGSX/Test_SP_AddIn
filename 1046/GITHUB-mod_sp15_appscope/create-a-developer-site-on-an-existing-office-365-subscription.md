@@ -84,11 +84,8 @@ Com um Office 365 Developer Site você pode configurar e criar, testar e implant
 6. Na caixa de diálogo **Novo Conjunto de Sites**, forneça informações sobre o Site do Desenvolvedor.
     
     **Clique na imagem abaixo para ver as novas opções dos conjuntos de sites na caixa de diálogo, ou confira a tabela localizada abaixo da imagem para obter ajuda.**
-     [![Click to zoom into new site collection options](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
-  
-    
-    
-](http://go.microsoft.com/fwlink/?LinkId=400960)
+     [![Click to zoom into new site collection options](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
+
 |||
 |:-----|:-----|
 |**Título** <br/> |O nome que deseja dar ao Site do Desenvolvedor.  <br/> |

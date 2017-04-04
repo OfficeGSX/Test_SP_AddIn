@@ -84,11 +84,8 @@ Office 365 開発者向けサイト を使うと、セットアップが容易�
 6. [ **新しいサイト コレクション** ] ダイアログ ボックスで、開発者向けサイトの情報を入力します。
     
     **以下のイメージをクリックして、手順を追ってダイアログ ボックス内の新しいサイト コレクション オプションの指定方法を調べるか、イメージの下の表をガイドとして参照してください。**
-     [![クリックすると新しいサイト コレクションのオプションにズームする](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
-  
-    
-    
-](http://go.microsoft.com/fwlink/?LinkId=400960)
+     [![クリックすると新しいサイト コレクションのオプションにズームする](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
+
 |||
 |:-----|:-----|
 |[ **タイトル** ] <br/> |開発者向けサイトに付ける名前です。  <br/> |
