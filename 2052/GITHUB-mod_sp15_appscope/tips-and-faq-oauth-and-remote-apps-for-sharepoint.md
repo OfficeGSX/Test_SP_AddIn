@@ -10,7 +10,7 @@
 
 ||
 |:-----|
-|**本文内容**          [检索应用程序信息](#AppInfo)           [AppManifest.xml 文件](#Manifest)           [Web.config 文件](#Webconfig)           [URL 和安全套接字层 (SSL)](#URL)           [应用程序重定向页面 ](#Redirect)           [重定向 URI](#RedirectURI)           [OAuth 令牌](#Tokens)           [权限和权限请求作用域](#Perm)           [OAuth 授权策略类型](#Policy)           [调试](#Debugging)           [高度信任的本地应用程序（服务器对服务器应用程序）](#S2S)           [其他 OAuth 相关问题](#Misc)           [社会功能](#Social)           [其他资源](#AR)|
+|**本文内容** <BR/> [检索应用程序信息](#AppInfo) <BR/> [AppManifest.xml 文件](#Manifest) <BR/> [Web.config 文件](#Webconfig) <BR/> [URL 和安全套接字层 (SSL)](#URL) <BR/> [应用程序重定向页面 ](#Redirect) <BR/> [重定向 URI](#RedirectURI) <BR/> [OAuth 令牌](#Tokens) <BR/> [权限和权限请求作用域](#Perm) <BR/> [OAuth 授权策略类型](#Policy) <BR/> [调试](#Debugging) <BR/> [高度信任的本地应用程序（服务器对服务器应用程序）](#S2S) <BR/> [其他 OAuth 相关问题](#Misc) <BR/> [社会功能](#Social) <BR/> [其他资源](#AR)|
    
 
 ## 检索应用程序信息

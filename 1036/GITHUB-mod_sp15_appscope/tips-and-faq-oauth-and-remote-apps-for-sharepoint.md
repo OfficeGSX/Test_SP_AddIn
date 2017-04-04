@@ -10,7 +10,7 @@ Cette rubrique est maintenant obsolète. Consultez les liens ci-dessous pour dé
 
 ||
 |:-----|
-|**Dans cet article**          [Récupération des informations d'application](#AppInfo)           [Fichier AppManifest.xml](#Manifest)           [Fichier Web.config](#Webconfig)           [URL et protocole SSL (Secure Sockets Layer)](#URL)           [Page de redirection d'application ](#Redirect)           [URI de redirection](#RedirectURI)           [Jetons OAuth](#Tokens)           [Autorisations et étendues des demandes d'autorisation](#Perm)           [Types de stratégie d'autorisation OAuth](#Policy)           [Débogage](#Debugging)           [Applications à haut niveau de fiabilité (applications de serveur à serveur) sur site](#S2S)           [Autres problèmes associés à OAuth](#Misc)           [Fonctionnalités sociales](#Social)           [Autres ressources](#AR)|
+|**Dans cet article** <BR/> [Récupération des informations d'application](#AppInfo) <BR/> [Fichier AppManifest.xml](#Manifest) <BR/> [Fichier Web.config](#Webconfig) <BR/> [URL et protocole SSL (Secure Sockets Layer)](#URL) <BR/> [Page de redirection d'application ](#Redirect) <BR/> [URI de redirection](#RedirectURI) <BR/> [Jetons OAuth](#Tokens) <BR/> [Autorisations et étendues des demandes d'autorisation](#Perm) <BR/> [Types de stratégie d'autorisation OAuth](#Policy) <BR/> [Débogage](#Debugging) <BR/> [Applications à haut niveau de fiabilité (applications de serveur à serveur) sur site](#S2S) <BR/> [Autres problèmes associés à OAuth](#Misc) <BR/> [Fonctionnalités sociales](#Social) <BR/> [Autres ressources](#AR)|
    
 
 ## Récupération des informations d'application

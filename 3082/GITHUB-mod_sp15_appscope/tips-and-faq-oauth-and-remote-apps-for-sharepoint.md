@@ -10,7 +10,7 @@ Este tema ya está obsoleto. Consulte los siguientes vínculos para encontrar d�
 
 ||
 |:-----|
-|**En este artículo**          [Cómo recuperar información de una aplicación](#AppInfo)           [Archivo AppManifest.xml](#Manifest)           [Archivo Web.config](#Webconfig)           [Direcciones URL y Capa de sockets seguros (SSL)](#URL)           [Página de redireccionamiento de la aplicación ](#Redirect)           [URI de redireccionamiento](#RedirectURI)           [Tokens de OAuth](#Tokens)           [Permisos y ámbitos de solicitudes de permisos](#Perm)           [Tipos de políticas de autorización OAuth](#Policy)           [Depuración](#Debugging)           [Aplicaciones de confianza alta (aplicaciones de servidor a servidor) localmente](#S2S)           [Problemas adicionales relacionados con OAuth](#Misc)           [Características sociales](#Social)           [Recursos adicionales](#AR)|
+|**En este artículo** <BR/> [Cómo recuperar información de una aplicación](#AppInfo) <BR/> [Archivo AppManifest.xml](#Manifest) <BR/> [Archivo Web.config](#Webconfig) <BR/> [Direcciones URL y Capa de sockets seguros (SSL)](#URL) <BR/> [Página de redireccionamiento de la aplicación ](#Redirect) <BR/> [URI de redireccionamiento](#RedirectURI) <BR/> [Tokens de OAuth](#Tokens) <BR/> [Permisos y ámbitos de solicitudes de permisos](#Perm) <BR/> [Tipos de políticas de autorización OAuth](#Policy) <BR/> [Depuración](#Debugging) <BR/> [Aplicaciones de confianza alta (aplicaciones de servidor a servidor) localmente](#S2S) <BR/> [Problemas adicionales relacionados con OAuth](#Misc) <BR/> [Características sociales](#Social) <BR/> [Recursos adicionales](#AR)|
    
 
 ## Cómo recuperar información de una aplicación

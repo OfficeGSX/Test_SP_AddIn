@@ -10,7 +10,7 @@ Dieses Thema ist jetzt veraltet. Unter den Links unten finden Sie Informationen 
 
 ||
 |:-----|
-|**In diesem Artikel**          [Abrufen von App-Informationen](#AppInfo)           [Die Datei "AppManifest.xml"](#Manifest)           [Die Datei "Web.config"](#Webconfig)           [URLs und SSL (Secure Sockets Layer)](#URL)           [Die App-Umleitungsseite ](#Redirect)           [Umleitungs-URIs](#RedirectURI)           [OAuth-Token](#Tokens)           [Berechtigungen und Berechtigungsanforderungsbereiche](#Perm)           [OAuth-Autorisierungsrichtlinientypen](#Policy)           [Debuggen](#Debugging)           [Besonders vertrauenswürdige lokale Apps (Server-zu-Server-Apps)](#S2S)           [Weitere Fragen in Zusammenhang mit OAuth](#Misc)           [Social Features](#Social)           [Zusätzliche Ressourcen](#AR)|
+|**In diesem Artikel** <BR/> [Abrufen von App-Informationen](#AppInfo) <BR/> [Die Datei "AppManifest.xml"](#Manifest) <BR/> [Die Datei "Web.config"](#Webconfig) <BR/> [URLs und SSL (Secure Sockets Layer)](#URL) <BR/> [Die App-Umleitungsseite ](#Redirect) <BR/> [Umleitungs-URIs](#RedirectURI) <BR/> [OAuth-Token](#Tokens) <BR/> [Berechtigungen und Berechtigungsanforderungsbereiche](#Perm) <BR/> [OAuth-Autorisierungsrichtlinientypen](#Policy) <BR/> [Debuggen](#Debugging) <BR/> [Besonders vertrauenswürdige lokale Apps (Server-zu-Server-Apps)](#S2S) <BR/> [Weitere Fragen in Zusammenhang mit OAuth](#Misc) <BR/> [Social Features](#Social) <BR/> [Zusätzliche Ressourcen](#AR)|
    
 
 ## Abrufen von App-Informationen

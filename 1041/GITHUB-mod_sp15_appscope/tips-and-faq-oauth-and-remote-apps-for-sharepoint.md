@@ -10,7 +10,7 @@
 
 ||
 |:-----|
-|**この記事の内容**          [アプリ情報の取得](#AppInfo)           [AppManifest.xml ファイル](#Manifest)           [Web.config ファイル](#Webconfig)           [URL と Secure Sockets Layer (SSL)](#URL)           [アプリのリダイレクト ページ ](#Redirect)           [リダイレクト URI](#RedirectURI)           [OAuth トークン](#Tokens)           [アクセス許可およびアクセス許可の要求スコープ](#Perm)           [OAuth 承認ポリシーの種類](#Policy)           [デバッグ](#Debugging)           [社内の高信頼アプリ (サーバー間アプリ)](#S2S)           [OAuth に関連するその他の問題](#Misc)           [ソーシャル機能](#Social)           [その他の技術情報](#AR)|
+|**この記事の内容** <BR/> [アプリ情報の取得](#AppInfo) <BR/> [AppManifest.xml ファイル](#Manifest) <BR/> [Web.config ファイル](#Webconfig) <BR/> [URL と Secure Sockets Layer (SSL)](#URL) <BR/> [アプリのリダイレクト ページ ](#Redirect) <BR/> [リダイレクト URI](#RedirectURI) <BR/> [OAuth トークン](#Tokens) <BR/> [アクセス許可およびアクセス許可の要求スコープ](#Perm) <BR/> [OAuth 承認ポリシーの種類](#Policy) <BR/> [デバッグ](#Debugging) <BR/> [社内の高信頼アプリ (サーバー間アプリ)](#S2S) <BR/> [OAuth に関連するその他の問題](#Misc) <BR/> [ソーシャル機能](#Social) <BR/> [その他の技術情報](#AR)|
    
 
 ## アプリ情報の取得
