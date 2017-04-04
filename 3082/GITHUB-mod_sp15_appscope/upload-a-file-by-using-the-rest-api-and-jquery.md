@@ -58,18 +58,17 @@ Para usar los ejemplos de este artículo, precisará lo siguiente:
   
 - Una referencia a la biblioteca de jQuery en el marcado de su página. Por ejemplo:
     
-  ```HTML
-  
+```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - Los siguientes controles en el marcado de su página.
     
-  ```HTML
-  <input id="getFile" type="file"/><br />
+```HTML
+<input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## Ejemplo de código 1: subir un archivo entre dominios de SharePoint mediante la API de REST y jQuery

@@ -37,8 +37,6 @@ La tabla siguiente muestra la jerarquía del contenido en SharePoint y las clase
     
     
 
-|
-|
 |**Entidad**|**Clase**|**Observaciones**|
 |:-----|:-----|:-----|
 |Granja de servidores de SharePoint local o suscripción a SharePoint Online (también denominada inquilino)  <br/> ||Hay solamente un acceso mediante programación limitado a este nivel de CSOM. No hay ninguna clase de granja de servidores, suscripción o inquilino, por ejemplo. (El modelo de objetos de servidor de SharePoint, que no se puede usar en los complementos, permite el acceso mediante programación a estas entidades).  <br/> |

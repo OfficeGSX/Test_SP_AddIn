@@ -37,8 +37,6 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
     
     
 
-|
-|
 |**Entité**|**Classe**|**Remarques**|
 |:-----|:-----|:-----|
 | Batterie de serveurs SharePoint locale ou abonnement SharePoint Online (également appelé client) <br/> || Dans un CSOM, l'accès à ce niveau est uniquement limité par programmation. Par exemple, il n'existe aucune classe de batterie, d'abonnement ou de client. (Le modèle objet côté serveur SharePoint, qui ne peut pas être utilisé dans les compléments, permet d'accéder par programmation à ces entités.) <br/> |

@@ -58,18 +58,17 @@ Um die Beispiele in diesem Artikel zu verwenden, benötigen Sie Folgendes:
   
 - Ein Verweis zur jQuery-Bibliothek library in Ihrem Seitenmarkup. Beispiel:
     
-  ```HTML
-  
+```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - Die folgenden Steuerelemente in Ihrem Seitenmarkup.
     
-  ```HTML
-  <input id="getFile" type="file"/><br />
+```HTML
+<input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## Codebeispiel 1: Laden Sie eine SharePoint-domänenübergreifende Datei mit der REST-API und jQuery hoch

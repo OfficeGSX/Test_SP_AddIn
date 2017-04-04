@@ -58,18 +58,17 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
   
 - 页面标记中对 jQuery 库的引用。例如：
     
-  ```HTML
-  
+```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - 页面标记中的以下控件。
     
-  ```HTML
-  <input id="getFile" type="file"/><br />
+```HTML
+<input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## 代码示例 1：使用 REST API 和 jQuery 在各 SharePoint 域中上载文件

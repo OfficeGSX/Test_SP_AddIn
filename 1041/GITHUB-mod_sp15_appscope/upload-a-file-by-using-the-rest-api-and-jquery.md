@@ -58,18 +58,17 @@ REST API および jQuery AJAX 要求を使用して、ローカル ファイル
   
 - ページ マークアップでの jQuery ライブラリの参照。次に例を示します。
     
-  ```HTML
-  
+```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - ページ マークアップでは次のように制御します。
     
-  ```HTML
-  <input id="getFile" type="file"/><br />
+```HTML
+<input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## コード例 1: REST API と jQuery を使用して、ファイルを複数の SharePoint ドメインにまたがってアップロードする

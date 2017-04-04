@@ -58,18 +58,17 @@ Pour utiliser les exemples de cet article, vous avez besoin des éléments suiva
   
 - Une référence à la bibliothèque jQuery dans le balisage de votre page. Par exemple :
     
-  ```HTML
-  
+```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - Les commandes suivantes dans le balisage de votre page.
     
-  ```HTML
-  <input id="getFile" type="file"/><br />
+```HTML
+<input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## Exemple de code 1 : télécharger un fichier entre domaines SharePoint à l'aide de l'API REST et de jQuery
