@@ -114,7 +114,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Si vous cliquez sur la mosaïque, la page d'accueil ne s'ouvre pas, car Visual Studio ferme la session IIS express lorsque vous arrêtez le débogage.
 
 ## Configuration de Visual Studio pour régénérer la base de données d'entreprise à chaque session de débogage
@@ -258,7 +258,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Le dernier fichier .aspx du projet, EmployeeAdder.aspx, ne fait jamais l'objet d'un rendu, vous ne devez donc pas modifier son interface utilisateur. Vous en apprendrez plus à ce sujet dans un autre article de cette série.
 
      Toutefois, nous ne souhaitons pas que le contrôle Chrome apparaisse sur ces pages. Nous voulons simplement accéder à la bibliothèque CSS SharePoint. Pour chacune de ces quatre pages, ajoutez le balisage suivant à l'élément **head**.

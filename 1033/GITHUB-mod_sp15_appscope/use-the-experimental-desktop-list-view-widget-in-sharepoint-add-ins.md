@@ -7,14 +7,14 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # Use the experimental Desktop List View widget in SharePoint Add-ins
 Learn how to use the Desktop List View widget on any web page, even if the page is not hosted in SharePoint. Use the List View widget in your add-ins to display data in lists that are hosted in a SharePoint site.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!NOTE]
+> **NOTE**
 > The Office Web Widgets - Experimental are only provided for research and feedback purposes. Do not use in production scenarios. The Office Web Widgets behavior may change significantly in future releases. Read and review the  [Office Web Widgets - Experimental License Terms](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -60,7 +60,7 @@ The List View widget uses the cross-domain library to get the list data. For thi
     
     
 
-> [!CAUTION]
+> **CAUTION**
 > The Desktop List View widget doesn't enable all the scenarios of the native List View. 
   
     
@@ -132,7 +132,7 @@ To use the List View widget, you must do the following:
   
 - Create a list on the add-in web. This step also ensures that an add-in web is created when users deploy the add-in.
     
-    > [!NOTE]
+    > **NOTE**
       > The cross-domain library requires the existence of an add-in web. The List View widget communicates with SharePoint by using the cross-domain library. 
 - Create an add-in page that declares a List View widget instance using HTML markup.
     
@@ -152,7 +152,7 @@ To use the List View widget, you must do the following:
   
 4. Select **Provider-hosted** as the hosting option for your add-in.
     
-    > [!NOTE]
+    > **NOTE**
       > You can also use the Desktop List View widget with other hosting options or even with Office Add-ins or your own website. 
 5. Select **ASP.NET Web Forms Application** as the type of web application project.
     
@@ -328,7 +328,7 @@ To use the List View widget, you must do the following:
   ```
 
 
-> [!NOTE]
+> **NOTE**
 > The code example above explicitly specifies the host web and add-in web URLs to initialize the Office controls runtime. However, if the add-in web and host web URLs are specified in the **SPAppWebUrl** and **SPHostUrl** query string parameters, respectively; you can pass an empty object and the code will attempt to get the parameters automatically. The **SPAppWebUrl** and **SPHostUrl** parameters are included in the query string when you use the **{StandardTokens}** token.
   
     
@@ -355,7 +355,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in. 
 2. Choose the **Trust It** button.
     

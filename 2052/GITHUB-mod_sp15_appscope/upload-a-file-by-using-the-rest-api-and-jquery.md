@@ -36,7 +36,7 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
     
     
 
-> [!注释]
+> **注释**
 > JavaScript 中写入的提供程序承载的加载项必须使用 SP.RequestExecutor 跨域库向 SharePoint 域发送请求。有关示例，请参阅 [使用跨域库上载文件](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd)。 
   
     

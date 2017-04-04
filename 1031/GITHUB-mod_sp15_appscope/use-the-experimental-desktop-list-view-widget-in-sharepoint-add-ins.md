@@ -7,7 +7,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # Verwenden des experimentellen Desktoplistenansichts-Widgets in Add-Ins für SharePoint
 Erfahren Sie, wie Sie das Desktoplistenansichts-Widget auf jeder Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Listenansichts-Widget in Ihren Add-Ins, um Daten in Listen anzuzeigen, die in einer SharePoint-Website gehostet werden.
-> [!HINWEIS]
+> **HINWEIS**
 > Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -47,7 +47,7 @@ Das Listenansichts-Widget verwendet die domänenübergreifende Bibliothek, um di
     
     
 
-> [!VORSICHT]
+> **VORSICHT**
 > Das Desktoplistenansichts-Widget ermöglicht nicht alle Szenarios der nativen Listenansicht. 
   
     
@@ -119,7 +119,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
   
 - Erstellen Sie im Add-In-Web eine Liste. Mit diesem Schritt wird außerdem sichergestellt, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Für die domänenübergreifende Bibliothek muss ein Add-Ins-Web vorhanden sein. Das Listenansichts-Widget kommuniziert mit SharePoint mithilfe der domänenübergreifenden Bibliothek. 
 - Erstellen Sie eine Add-In-Seite, die mithilfe von HTML-Markup eine Listenansichts-Widget-Instanz deklariert.
     
@@ -139,7 +139,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
   
 4. Wählen Sie als Hostingoption für Ihr Add-In **Von Anbieter gehostet** aus.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Sie können das Desktoplistenansichts-Widget auch mit anderen Hostingoptionen oder sogar mit Add-Ins für Office oder Ihrer eigenen Website verwenden. 
 5. Wählen Sie als Typ des Webanwendungsprojekts **ASP.NET Webformular-Anwendung** aus.
     
@@ -315,7 +315,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
   ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Das obige Codebeispiel gibt die URLs des Hostwebs und des Add-In-Webs explizit an, um die Office-Steuerelementelaufzeit zu initialisieren. Wenn die URLs des Hostwebs und des Add-In-Webs allerdings im Abfragezeichenfolgenparameter **SPAppWebUrl** bzw. **SPHostUrl** angegeben werden, können Sie ein leeres Objekt übergeben. Der Code wird dann versuchen, die Parameter automatisch abzurufen. Die Parameter **SPAppWebUrl** und **SPHostUrl** sind in der Abfragezeichenfolge enthalten, wenn Sie den Token **{StandardTokens}** verwenden.
   
     
@@ -342,7 +342,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

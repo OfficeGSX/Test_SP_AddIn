@@ -29,7 +29,7 @@ ms.assetid: e63411ef-7137-4f1c-aac5-a3414ec88154
     
 
 
-> [!注意事項]
+> **注意事項**
 > 跨網域文件庫也用來以相反方向 ； 允許存取資料也就是允許JavaScriptSharePoint頁面以遠端網域中存取資料。如需詳細資訊，請參閱 [從 SharePoint] 頁面上的存取遠端資料](#ReverseDirection)。
   
     
@@ -43,7 +43,7 @@ SP. SharePoint跨網域文件庫包含檔案中RequestExecutor.js 位於/_layout
     
     
 
-> [!注意]
+> **注意**
 >  `postMessage()`函數只適用於支援 HTML 5 中，因此SharePoint Add-ins所使用的跨網域文件庫將無法運作較舊的瀏覽器上的瀏覽器。
   
     
@@ -71,7 +71,7 @@ SharePoint，它會建立隱藏的 iFrame 主控從SharePoint網域特殊的 pro
   ```
 
 
-> [!注意事項]
+> **注意事項**
 > 如果您使用的第二個選項 ( **Internal**增益集主要)，然後您可以使用只有JavaScript及跨網域文件庫來存取SharePoint。SharePoint用戶端物件模型會封鎖 **Internal**SharePoint Add-ins，所以您不能使用同時跨網域程式庫的雙授權系統和低信任層級或高信任層級的系統。
   
     

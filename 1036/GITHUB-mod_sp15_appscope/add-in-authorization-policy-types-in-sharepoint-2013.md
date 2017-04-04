@@ -39,7 +39,7 @@ SharePoint propose trois types de stratégies d'autorisation :
     
     
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Certaines API requièrent un contexte utilisateur et ne peuvent pas être exécutées avec une stratégie de complément uniquement. Elles comprennent notamment des API pour l'interaction avec Project Server 2013 et pour l'exécution de requêtes de recherche. 
 
 ### Voir un exemple de scénario de complément qui utilise la stratégie de complément uniquement
@@ -74,7 +74,7 @@ Pour pouvoir effectuer des appels de complément uniquement à SharePoint, le co
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'ancien nom des Compléments SharePoint est « applications pour SharePoint ». Le schéma de manifeste d'application n'a pas été modifié afin de conserver la compatibilité descendante. De ce fait, la chaîne « app » est susceptible d'apparaître dans des noms d'élément et d'attribut. 
   
     
@@ -123,7 +123,7 @@ if (contextTokenString != null)
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les compléments qui ne font pas d'appels OAuth authentifiés (par exemple, les compléments JavaScript uniquement qui s'exécutent dans le service web de complément) ne peuvent pas utiliser la stratégie de complément uniquement. Elles peuvent demander l'autorisation, mais elles ne pourront pas en bénéficier car cela nécessite le passage d'un jeton OAuth de complément uniquement. Seuls les compléments qui ont des applications web qui s'exécutent hors de SharePoint peuvent créer et passer des jetons de complément uniquement. 
   
     

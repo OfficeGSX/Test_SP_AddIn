@@ -24,7 +24,7 @@ Depois que você instalou o Fiddler no servidor de aplicativos web, adicione a s
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Certifique-se de que você remova essa marcação se você não estiver executando o Fiddler. Se você não remover a marcação, seu suplemento não conseguirá fazer solicitações HTTP.
   
     

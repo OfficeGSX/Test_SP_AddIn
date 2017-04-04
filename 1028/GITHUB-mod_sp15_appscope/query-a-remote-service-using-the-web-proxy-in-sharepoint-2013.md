@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio建置解決方案、 增益集、 部署和增益集的權限] 頁面會隨即開啟。
 2. 選擇 [ **信任它**] 按鈕。
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http 或 https <br/> |7000 10000 <br/> |
    
 
-> [!重要]
+> **重要**
 > 輸出的連接埠會受限於主機防火牆可用性。特別是只有 http 80 和 https 443 上可用SharePoint Online。
   
     
     
 
 |
-|**SP 未定義** 處理的例外狀況。 <br/> |請確定您就可以存取 SP.在瀏覽器視窗中的 RequestExecutor.js 檔案。 <br/> 如果您使用您的本機伺服器作為您的開發環境，您必須停用 IIS 回送檢查。從Windows PowerShell命令提示字元中執行下列命令。 <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!注意]> 停用 IIS 回送] 核取不建議在生產環境中。          |
+|**SP 未定義** 處理的例外狀況。 <br/> |請確定您就可以存取 SP.在瀏覽器視窗中的 RequestExecutor.js 檔案。 <br/> 如果您使用您的本機伺服器作為您的開發環境，您必須停用 IIS 回送檢查。從Windows PowerShell命令提示字元中執行下列命令。 <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **注意**> 停用 IIS 回送] 核取不建議在生產環境中。          |
 |從遠端端點回應大小超過設定的限制。 <br/> |不得大於 200 KB 的 web proxy 要求的回應大小。 <br/> |
    
 

@@ -56,7 +56,7 @@ Existem três categorias principais de opções que precisam ser realizadas quan
   
 - **UI:** Há três maneiras para representar um Suplemento do SharePoint no SharePoint: no mínimo, todos os suplementos estão exibidos em uma página da web completo. Opcionalmente, um suplemento pode também ser exibido por meio de uma parte de suplemento e através de um botão da faixa de opções ou de item de menu. Para obter mais informações, consulte [Design de eu para o SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Suplementos do SharePoint pode ser instalado pelos clientes para vários conjuntos de sites em um locatário ou em uma base de site por site. O primeiro é chamado de escopo de locatário suplementos. Se desejar que os clientes tenham a opção de escopo de locatário, você não pode incluir um botão da faixa de opções personalizada ou uma parte do suplemento. Para obter mais informações, consulte  [Aluguéis são e escopos de implantação para o SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 
 ## Camadas de arquiteturais

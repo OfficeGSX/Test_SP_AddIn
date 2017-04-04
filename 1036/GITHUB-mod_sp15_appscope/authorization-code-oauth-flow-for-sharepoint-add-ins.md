@@ -12,7 +12,7 @@ Découvrez le flux OAuth pour les compléments qui demandent des autorisations d
 <a name="Overview"> </a>
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cet article suppose que vous connaissez déjà la  [Création de compléments pour SharePoint qui utilisent l'autorisation de faible niveau de fiabilité](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) et les concepts et principes sur lesquels se fonde OAuth. Pour plus d'informations sur OAuth, voir [OAuth.net](http://oauth.net/) et [Protocole d'autorisation web (oauth)](http://datatracker.ietf.org/doc/active/#oauth). 
   
     
@@ -23,7 +23,7 @@ Dans certains scénarios, un complément peut demander l'autorisation d'accéder
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Ce type de complément ne peut être exécuté que par les utilisateurs disposant des autorisations de gestion sur les ressources auxquelles le complément veut accéder. Par exemple, si un complément demande seulement une autorisation en lecture pour un site web, un utilisateur doté de droits d'accès en lecture, mais pas en gestion, sur le site web ne peut pas exécuter le complément. 
   
     
@@ -50,7 +50,7 @@ Cette section résume le flux d'authentification et d'autorisation OAuth pour un
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le flux **implique une série d'interactions entre votre complément, SharePoint, le serveur d'autorisation (à savoir ACS) et l'utilisateur final** lors de l'exécution. Ainsi, le flux a besoin de SharePoint Online ou d'une batterie de serveurs SharePoint connectée à Internet afin de pouvoir communiquer avec le service ACS. Les batteries SharePoint qui ne sont pas connectées à Internet doivent utiliser [le système d'autorisation à haut niveau de fiabilité](creating-sharepoint-add-ins-that-use-high-trust-authorization.md). 
   
     
@@ -101,7 +101,7 @@ Voici les étapes du flux de code d'authentification.
     
 
     
-> [!CONSEIL]
+> **CONSEIL**
 > Ces étapes font référence à des méthodes figurant dans le fichier TokenHelper.cs (ou .vb). Ce code managé n'est pas compilé, il n'existe donc aucune rubrique de référence relative à celui-ci. Cependant, le fichier est entièrement commenté et comporte des descriptions de chaque classe, paramètre de membre et valeur renvoyée. Pensez à laisser une copie de ce fichier ouverte pour pouvoir vous y référer à mesure que vous parcourez ces étapes. 
   
     
@@ -158,7 +158,7 @@ Si vous n'utilisez pas de code géré, les alias d'étendue sont utilisés dans 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour obtenir une description des étendues, voir  [Autorisations des compléments dans SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

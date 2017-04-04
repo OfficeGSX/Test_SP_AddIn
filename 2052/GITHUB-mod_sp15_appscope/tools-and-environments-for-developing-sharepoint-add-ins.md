@@ -39,7 +39,7 @@ ms.assetid: 6906eb86-8270-4098-8106-1e8d0d3c212e
     
   
  **若要使用可用于开发的 SharePoint Online 订阅创建 SharePoint Online 环境** ，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 **若要创建本地环境** ，请参阅 [设置 SharePoint 加载项的本地开发环境](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)。
-> [!注释]
+> **注释**
 > 本主题只涉及开发 SharePoint 外接程序的环境。如果您计划开发 服务器场解决方案，请参阅 [设置 SharePoint 2013 的常规开发环境](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx)。如果您计划进行两种类型的开发，请查看后续文章，然后参阅 [设置 SharePoint 加载项的本地开发环境](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)，以了解开发 SharePoint 外接程序所需执行的其他步骤。 
   
     

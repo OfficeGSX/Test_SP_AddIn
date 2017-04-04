@@ -16,7 +16,7 @@ O processo de associar uma biblioteca de documentos uma entidade envolve três e
 
 1. Adicione uma biblioteca de documentos do SharePoint ao seu projeto como uma fonte de dados.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Primeiro, você deve criar uma biblioteca de documentos no site do SharePoint. Ele deve conter uma coluna personalizada que mapeie para um campo exclusivo em sua entidade.
 2. Crie um relacionamento entre a biblioteca de documentos e uma entidade.
     
@@ -57,7 +57,7 @@ O processo de associar uma biblioteca de documentos uma entidade envolve três e
   
 
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > A biblioteca de documentos já deve existir e deve conter uma coluna personalizada que mapeie para um campo exclusivo em sua entidade.
 5. Em **especificar o nome da fonte de dados**, insira um nome e escolha o botão **Concluir**.
     
@@ -97,7 +97,7 @@ O processo de associar uma biblioteca de documentos uma entidade envolve três e
   
 
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O campo deve ser do mesmo tipo de dados do campo de chave **externo**.
 
 ### Para adicionar uma biblioteca de documentos a um novo conjunto de tela

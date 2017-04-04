@@ -7,7 +7,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # Use o widget experimental do modo de exibição de lista de área de trabalho no SharePoint Add-ins
 Aprenda a usar o widget do modo de exibição de lista de área de trabalho em qualquer página da web, mesmo se a página não for hospedada na SharePoint. Use o widget do modo de exibição de lista seus suplementos para exibir dados em listas que são hospedadas em um site SharePoint.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Widgets da Web do Office - Experimental são fornecidos apenas para fins de pesquisa e comentários. Não use em cenários de produção. O comportamento do Office Web Widgets pode ser alterado significativamente em futuras versões. Leia e revise o  [Office Web Widgets - termos de licença Experimental](office-web-widgetsexperimental-license-terms.md).
   
     
@@ -47,7 +47,7 @@ O widget do modo de exibição de lista usa a biblioteca de domínio cruzado par
     
     
 
-> [!CUIDADO]
+> **CUIDADO**
 > O widget do modo de exibição de lista de área de trabalho não habilitar todos os cenários de modo de exibição de lista nativo.
   
     
@@ -119,7 +119,7 @@ Para usar o widget do modo de exibição de lista, faça o seguinte:
   
 - Crie uma lista na web add-in. Essa etapa também garante que um suplemento de web é criado quando os usuários implantar o suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Biblioteca do domínio cruzado requer a existência de um suplemento de web. O widget do modo de exibição de lista se comunica com SharePoint usando a biblioteca de domínio cruzado.
 - Crie uma página de suplemento que declara uma instância de widget do modo de exibição de lista usando marcação HTML.
     
@@ -139,7 +139,7 @@ Para usar o widget do modo de exibição de lista, faça o seguinte:
   
 4. Selecione **hospedado em provedor**, como a opção de hospedagem para seu suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Você também pode usar o widget do modo de exibição de lista de área de trabalho com outras opções de hospedagem ou mesmo com suplementos do Office ou seu próprio site.
 5. Selecione o **Aplicativo de formulários ASP.NET Web** como o tipo de projeto de aplicativo web.
     
@@ -315,7 +315,7 @@ Para usar o widget do modo de exibição de lista, faça o seguinte:
   ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O exemplo de código acima especifica explicitamente os host web e o suplemento web URLs para inicializar o tempo de execução de controles do Office. No entanto, se o suplemento de web e URLs de web de host são especificados nos **SPAppWebUrl** **SPHostUrl** consulta string parâmetros e, respectivamente; Você pode passar um objeto vazio e o código tentará obter os parâmetros automaticamente. Os parâmetros **SPAppWebUrl** e **SPHostUrl** estão incluídos na seqüência de consulta quando você usa o token **{StandardTokens}**.
   
     
@@ -342,7 +342,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio cria a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **De confiança**.
     

@@ -38,7 +38,7 @@ Dies ist der neunte in einer Reihe von Artikeln über die Grundlagen der Entwick
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu von SharePoint gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Lösung, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_SP-Hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) herunterladen und die Datei „BeforeRibbon.sln" öffnen.
   
     
@@ -81,7 +81,7 @@ Die Schaltfläche wird dem Menüband eines Kalenders im Hostweb hinzugefügt. F�
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > Im nächsten Verfahren muss der Kalender in der Benutzeroberfläche von Visual Studio sichtbar sein, was aber nicht der Fall sein wird, wenn Visual Studio geöffnet war, als Sie den Kalender erstellt haben. Bevor Sie fortfahren, schließen Sie Visual Studio, und melden Sie sich auch aus allen Browserfenstern und PowerShell-Konsolen ab, mit denen Sie bei Ihrer Entwicklerwebsite angemeldet sind. 
   
     

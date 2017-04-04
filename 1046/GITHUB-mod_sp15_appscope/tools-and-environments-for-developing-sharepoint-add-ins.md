@@ -39,7 +39,7 @@ Considere o seguinte:
     
   
  **Para criar o ambiente SharePoint Online** usando uma assinatura de SharePoint Online que você pode usar para o desenvolvimento, consulte [Criar um site do desenvolvedor em uma assinatura existente do Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). **Para criar o ambiente no local**, consulte [Configurar um ambiente de desenvolvimento local para suplementos do SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este tópico trata apenas ambientes para o desenvolvimento de Suplementos do SharePoint. Se você planeja desenvolver soluções de farm, consulte  [Configurar um ambiente de desenvolvimento geral para o SharePoint 2013](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx). Se você pretende fazer ambos os tipos de desenvolvimento, inicie com o último artigo e, em seguida, consulte  [Configurar um ambiente de desenvolvimento local para suplementos do SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) para obter etapas adicionais que necessárias para desenvolver Suplementos do SharePoint.
   
     

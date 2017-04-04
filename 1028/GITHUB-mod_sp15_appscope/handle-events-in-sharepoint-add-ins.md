@@ -32,7 +32,7 @@ SharePoint 主控SharePoint Add-ins不支援事件處理，但是您可以將清
     
 
 
-> [!注意事項]
+> **注意事項**
 > SharePoint Add-ins中不支援網站事件及網站集合的事件。
   
     
@@ -61,7 +61,7 @@ SharePoint 主控SharePoint Add-ins不支援事件處理，但是您可以將清
     
   
 
-> [!注意事項]
+> **注意事項**
 > RERs 伺服器陣列解決方案; 中具有相同的目的為事件接收器但是事件接收器造成SharePoint在伺服器執行，因此無法用於SharePoint Add-ins的自訂程式碼。
   
     
@@ -104,7 +104,7 @@ SharePoint 主控SharePoint Add-ins不支援事件處理，但是您可以將清
 ||ItemFileConverted <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > * 這兩個新事件可能會無法使用Visual Studio UI 中。若未、 挑選 ItemDeleting 或 ItemDeleted，然後手動變更名稱。
   
     
@@ -157,7 +157,7 @@ SharePoint 主控SharePoint Add-ins不支援事件處理，但是您可以將清
     
     
 
-> [!注意事項]
+> **注意事項**
 > 如需 RERs，包括一些疑難排解的資訊，請參閱 ＜ [常見問題集的遠端事件接收器](handle-events-in-sharepoint-add-ins.md#RERFAQ)。
   
     
@@ -179,7 +179,7 @@ SharePoint 主控SharePoint Add-ins不支援事件處理，但是您可以將清
     
     
 
-> [!注意事項]
+> **注意事項**
 > 當增益集安裝以 [租用戶範圍](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)時，即已安裝的增益集目錄網站集合及事件，然後執行 AppInstalled 和僅然後。增益集是出現在多個網站租用中但事件不會為每個這些分開執行。
   
     
@@ -198,13 +198,13 @@ Click 取消安裝增益集，此事件可以用於其他許多目的包括：
   
 - 設定應用程式執行個體相對起始設定。例如，您的增益集可以有會有所不同到另一個增益集的執行個體的保留設定的增益集 web 屬性包。AppInstalled 處理常式可寫入的屬性包中，值不根據，假設網站輸入 （例如小組網站或部落格網站） 的主機網站。
     
-    > [!注意事項]
+    > **注意事項**
       > 若要查看主機網路是否 AppCatalog 檢查站台是一個好方法來偵測是否增益集已安裝租用戶範圍。請參閱 [租用和部署範圍的 SharePoint 增益集](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。
 - 執行應用程式執行個體相對設定增益集的遠端 web 應用程式中，例如將表格新增至資料庫。
     
   
 
-> [!重要]
+> **重要**
 > 實作 AppInstalled 事件必須完成 30 秒內或 SharePoint 安裝基礎結構會認為具有失敗。基礎結構會重新執行事件， *然後重複您一開始的程式碼*  ，最多三個額外的時間。 之後四個逾時，SharePoint 會回復整個增益集安裝。 [增益集事件處理常式中包含回復邏輯和 「 已完成 」 的邏輯](#Rollback)中所述的下列數據完整的隱含意義。
   
     
@@ -262,7 +262,7 @@ Click 取消安裝增益集，此事件可以用於其他許多目的包括：
     
   
 
-> [!注意事項]
+> **注意事項**
 > **AppUninstalling 事件有關的特殊附註：**上述資料點套用至其他兩個增益集事件儘 AppUninstalling 事件。例如，如果您解除安裝的事件處理常式會刪除在遠端資料庫中，資料列，然後遇到錯誤列需要還原。由於您的服務會取消訊息傳送至 SharePoint、 增益集將不會移除從資源回收筒。從該處還原並再次使用，它可能會失敗而該資料庫項目運作。> 不過，AppUninstalling 處理常式會完成 *之前*  將會移除 SharePoint 增益集從資源回收筒。如此，如果本身的 SharePoint 遇到錯誤和取消移除的需求，不是讓您復原它已完成的處理常式。
   
     
@@ -363,7 +363,7 @@ SharePoint 增益集模型不會提供一種方式來儲存在 SharePoint 上的
     
     
 
-> [!秘訣]
+> **秘訣**
 > 如果 AppInstalled 事件失敗，SharePoint 會刪除增益集，如果有的話，與 SharePoint 如果 AppUpated 事件失敗，將會還原增益集 web 前更新狀態。此原因而您的處理常式都永遠不需要時採取增益集在 web 的復原動作。如果您的處理常式會主機網頁和增益集在 web 上執行動作，它就應該先處理增益集 web。 如此一來進行安全處理常式委派策略用於主機 web。即使增益集 web 動作成功和失敗的主機 web 動作，但沒有回復邏輯使其送未執行。
   
     

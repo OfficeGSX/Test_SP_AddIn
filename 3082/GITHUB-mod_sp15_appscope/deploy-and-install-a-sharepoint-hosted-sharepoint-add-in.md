@@ -17,7 +17,7 @@ Este es el segundo de una serie de artículos sobre los conceptos básicos de de
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados en SharePoint, tiene una solución Visual Studio que puede utilizar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) y abrir el archivo BeforeColumns.sln.
   
     

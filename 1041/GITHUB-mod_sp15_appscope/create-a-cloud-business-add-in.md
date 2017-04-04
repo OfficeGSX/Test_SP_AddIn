@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # クラウド ビジネス アドインを作成する
 クラウド ビジネス アドインのテンプレートを Visual Studio で使用して、データの追加と管理に最適化された SharePoint アドイン 2013 または Office 365 上の SharePoint を作成できます。
-> [!メモ]
+> **メモ**
 > SharePoint 2013 用アドインのテンプレートを使用して SharePoint アドインを作成することも可能です。 
   
     

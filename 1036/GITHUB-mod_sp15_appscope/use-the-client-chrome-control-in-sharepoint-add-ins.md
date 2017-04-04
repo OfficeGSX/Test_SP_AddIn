@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 3. Choisissez le bouton **Approuver**.
     

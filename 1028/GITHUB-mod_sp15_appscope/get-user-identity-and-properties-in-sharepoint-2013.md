@@ -27,7 +27,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如需如何以符合您需求的開發環境的指引，請參閱 [開始建立提供者主控 SharePoint 增益集](get-started-creating-provider-hosted-sharepoint-add-ins.md)。
   
     
@@ -98,7 +98,7 @@ ClientContext clientContext =
     
     
 
-> [!注意事項]
+> **注意事項**
 > Api 處於 [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx)組件中的 Microsoft.SharePoint.Client.Utilities 命名空間。
   
     

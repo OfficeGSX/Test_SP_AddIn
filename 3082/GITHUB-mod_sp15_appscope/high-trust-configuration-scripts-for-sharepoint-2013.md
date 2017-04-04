@@ -89,7 +89,7 @@ El siguientes es el código del script. Solo tiene que pegarlo en un editor de t
     
     
 
-> [!NOTA]
+> **NOTA**
 > El archivo se debe guardar en formato ANSI, no en UTF-8. PowerShell podría generar errores de sintaxis si ejecuta un archivo que no tiene un formato ANSI. El bloc de notas y el editor de PowerShell lo guardarán de forma predeterminada como ANSI. Si usa otro editor para guardar el archivo, asegúrese de guardarlo como ANSI. 
   
     
@@ -142,7 +142,7 @@ El siguiente es un ejemplo de la ejecución del script.
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > El registro del certificado como emisor de tokens no surte efecto inmediatamente. Pueden pasar 24 horas antes de que todos los servidores de SharePoint reconozcan al nuevo emisor de tokens. Ejecute un iisreset en todos los servidores de SharePoint para que reconozcan inmediatamente al emisor (si puede hacerlo sin interrumpir a los usuarios de SharePoint). 
   
     
@@ -204,7 +204,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 ```
 
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Si el script produce un error después de haberse ejecutado correctamente la línea  `New-SPTrustedRootAuthority`, no se puede volver a ejecutar el script hasta que se quite ese objeto. Use el siguiente cmdlet, donde el valor del parámetro  `-Identity` es el mismo que se usó para el parámetro `-CertName` en el script.>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> Si hay que eliminar el emisor de tokens por algún motivo, use el siguiente cmdlet: >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> Si se usó el parámetro  `-TokenIssuerFriendlyName`, use el mismo valor para  `-Identity`. Si no se usó el parámetro  `-TokenIssuerFriendlyName`, en el nombre del emisor aparecerá un GUID al azar. Para conseguir el valor necesario para  `-Identity`, ejecute el siguiente cmdlet. Luego abra el archivo TokenIssuers.txt que se genera y busque el emisor cuyo nombre sea "High-Trust Add-ins  _<versión base64 del GUID del emisor>_". Use el nombre completo para  `-Identity`. >  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
   
     
@@ -240,7 +240,7 @@ El siguiente es un ejemplo de una llamada al script:
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > El registro del certificado como emisor de tokens no surte efecto inmediatamente. Pueden pasar 24 horas antes de que todos los servidores de SharePoint reconozcan al nuevo emisor de tokens. Ejecute un iisreset en todos los servidores de SharePoint para que reconozcan inmediatamente al emisor (si puede hacerlo sin interrumpir a los usuarios de SharePoint). 
   
     
@@ -301,7 +301,7 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
 ```
 
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Las sugerencias que hay al final de la sección anterior también sirven aquí, pero para el parámetro  `-Identity` del cmdlet `Remove-SPTrustedSecurityTokenIssuer`, use el id. de cliente si el parámetro  `-TokenIssuerFriendlyName` no se usó con HighTrustConfig-ForSingleApp.ps1.
   
     

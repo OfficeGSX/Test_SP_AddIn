@@ -86,7 +86,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Das Attribut **AllowedRemoteHostUrl** wird zur Angabe der Remotedomäne verwendet. **~remoteAppUrl** wird in die URL des Remote-Add-Ins aufgelöst. Weitere Informationen über Token finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### So erstellen Sie eine benutzerdefinierte Proxyseite
@@ -188,7 +188,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
   ```
 
 
-    > [!WICHTIG]
+    > **WICHTIG**
       > In einer Produktions-SharePoint-Add-In müssen Sie die Autorisierungslogik bereitstellen und den entsprechenden Wert im Objekt **originAuthorityValidator** der Einstellungen zurückgeben.
 
 ### So erstellen Sie eine Inhaltsseite
@@ -335,7 +335,7 @@ Response.End();
   
 2. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 3. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

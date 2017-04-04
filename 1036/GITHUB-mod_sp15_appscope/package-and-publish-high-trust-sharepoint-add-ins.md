@@ -46,7 +46,7 @@ Le Tableau 1 répertorie des articles utiles vous aidant à comprendre les conce
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) et [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |Découvrez les concepts de base liés aux certificats numériques.  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les Compléments SharePoint à haut niveau de fiabilité peuvent uniquement être installés sur les installations SharePoint locales et non sur Microsoft SharePoint Online, et sont principalement destinés à être utilisés avec une application web locale plutôt que dans le cloud. Cet article explique comment publier le complément dans ce scénario. Par ailleurs, dans cet article, le terme « client » désigne l'entreprise qui installe le Complément SharePoint et héberge les composants distants de celui-ci. 
   
     
@@ -230,7 +230,7 @@ La procédure suivante est applicable au Gestionnaire de services Internet 7 et 
   
 4. Copiez le numéro de série  *sans espaces*  dans un fichier texte, puis communiquez-le au développeur du Complément SharePoint.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Des blogs et des questions posées sur des forums de développeurs laissent entendre que la copie directe du numéro de série dans le Presse-papiers crée une chaîne contenant des caractères masqués, impossible à reconnaître par le code du Complément SharePoint. Envisagez de saisir manuellement le numéro plutôt que de le copier. 
 Vous devez ensuite créer une version .cer du certificat. Celle-ci contient la clé publique du serveur Web distant et est utilisée par SharePoint pour déchiffrer les demandes provenant de l'application Web distante et valider les jetons d'accès de ces demandes. Elle est créée sur le serveur Web distant, puis déplacée vers la batterie de serveurs SharePoint.
   
@@ -314,7 +314,7 @@ La procédure suivante configure le certificat en tant qu'émetteur de jeton app
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'inscription du certificat en tant qu'émetteur de jeton n'est pas immédiatement effective et le complément ne fonctionnera pas tant qu'il n'est pas inscrit. Il peut s'écouler 24 heures avant que tous les serveurs SharePoint ne reconnaissent le nouvel émetteur de jeton. Si cela ne perturbe pas les utilisateurs de SharePoint, vous pouvez exécuter une commande iisreset sur tous les serveurs SharePoint pour permettre la reconnaissance immédiate de l'émetteur. 
   
     
@@ -325,7 +325,7 @@ La procédure suivante configure le certificat en tant qu'émetteur de jeton app
 <a name="WebConfig"> </a>
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > Pour obtenir un exemple de code qui inclut un fichier web.config modifié, voir  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore). 
   
     
@@ -351,7 +351,7 @@ Modifiez le fichier web.config de telle sorte qu'il contienne de nouvelles valeu
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les Outils de développement Office pour Visual Studio peuvent avoir ajouté des clés de paramétrage de complément pour **ClientSigningCertificatePath** et **ClientSigningCertificatePassword**. Celles-ci ne sont pas utilisées dans les compléments de production et doivent être supprimées. 
   
     
@@ -383,7 +383,7 @@ Le fichier TokenHelper.cs (ou .vb) généré par les Outils de développement Of
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Pour obtenir un exemple de code qui inclut un fichier tokenhelper.cs modifié, voir  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore). 
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > Microsoft met à jour Visual Studio et Outils de développement Office pour Visual Studio bien plus fréquemment qu'auparavant et il n'est pas toujours possible de mettre à jour la documentation au rythme des modifications. Cet article a été écrit à partir de la version de Visual Studio publiée en octobre 2013 et de la version de Outils de développement Office pour Visual Studio fournie avec. Si vous travaillez avec une version antérieure ou ultérieure de Visual Studio ou des outils, il peut s'avérer nécessaire de consulter l'aide de Visual Studio et les publications dans les blogs afin de trouver des méthodes équivalentes d'exécution pour les étapes de ces procédures. 
   
     

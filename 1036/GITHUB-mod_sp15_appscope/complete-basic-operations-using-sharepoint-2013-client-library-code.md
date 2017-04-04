@@ -67,7 +67,7 @@ Sauf mention contraire, vous pouvez partir de l'hypothèse que chacun de ces exe
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Lorsque vous créez une Complément SharePoint hébergée par un fournisseur avec une application web ASP.NET et que vous ajoutez une référence à un assembly dans le projet d'application web dans Visual Studio, définissez la propriété **Copie locale** de l'assembly sur **True**, sauf si vous savez que l'assembly est déjà installé sur le serveur web ou que vous pouvez vous assurer qu'il sera installé avant le déploiement de votre complément. .NET Framework est installé sur les rôles web Microsoft Azure et les Sites web Azure. Toutefois, les assemblys clients SharePoint 2013 et les différentes extensions de code managé et instances Microsoft Foundation ne sont pas installés. Les Outils de développement Office pour Visual Studio 2012 ajoutent automatiquement les références à certains assemblys fréquemment utilisés dans les compléments pour SharePoint et définissent la propriété **Copie locale**. 
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous essayez d'accéder à d'autres propriétés, le code génère une exception parce que les autres propriétés ne sont pas disponibles. 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le cas échéant, vous pouvez utiliser la méthode **LoadQuery** pour stocker la valeur de retour dans une autre collection, au lieu d'utiliser la propriété **web.Lists**. Vous devrez également ajouter des instructions **using** pour [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) et [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Ajoutez également un alias à l'instruction using pour l'espace de noms [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) pour pouvoir faire référence à ses classes de façon non ambiguë. Par exemple, `using SP = Microsoft.SharePoint.Client;`. 
   
     
@@ -339,7 +339,7 @@ L'exemple suivant ajoute un champ à une liste SharePoint. Ajoutez un alias à l
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'exemple utilise **context.CastTo** pour effectuer une conversion de type (transtypage). Avant d'exécuter la requête, la bibliothèque cliente ne connaît pas le type réel de l'objet renvoyé « field » et **SharePoint.Field** est le seul type possible. Si vous connaissez le type réel, vous pouvez utiliser la méthode **ClientContext.CastTo<RealType>** pour effectuer une conversion de type de l'objet.
   
     
@@ -382,7 +382,7 @@ L'exemple suivant récupère les éléments d'une liste SharePoint. Vous devrez 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Vous pouvez utiliser la propriété  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) pour limiter davantage les éléments qui sont renvoyés à ceux figurant dans un dossier spécifique.
   
     
@@ -541,7 +541,7 @@ Si vous voulez récupérer des informations relatives à un champ spécifique, u
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > La méthode  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) utilisée dans cet exemple est une méthode distante. Elle n'utilise pas les données de la collection cliente même si la collection cliente contient déjà des données.
   
     
@@ -1004,7 +1004,7 @@ Pour exécuter du code de façon conditionnelle, définissez une étendue condit
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'appel de méthodes et la définition de propriétés au sein d'une étendue conditionnelle ne sont pas autorisées, étant donné que la bibliothèque cliente n'effectue pas le suivi des effets secondaires liés aux appels de méthodes et aux définitions de propriétés. Veillez à utiliser uniquement **Load** au sein de l'étendue conditionnelle.
   
     

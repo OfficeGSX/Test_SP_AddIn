@@ -90,7 +90,7 @@ Les Outils de développement Microsoft Office pour Visual Studio sont orientés 
 
   
 
-> [!ATTENTION]
+> **ATTENTION**
 > N'ajoutez pas de commentaires « <!-- --> » au fichier  _{FeatureName}_.features. Les commentaires ne sont pas pris en charge par l'infrastructure de mise à niveau et la mise à niveau échouera si des commentaires sont présents dans le fichier. Ceux-ci sont utilisés dans les exemples de balisage de cet article uniquement pour vous indiquer où le balisage sera placé. 
   
     
@@ -124,7 +124,7 @@ Procédez comme suit pour mettre à jour la fonctionnalité web de complément.
 
     À ce stade, le fichier devrait ressembler à l'exemple suivant.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Il est possible que Outils de développement Office pour Visual Studio ait déjà ajouté le balisage ci-dessus et copié certains éléments de la section **ElementManifests** dans la section **ApplyElementManifests** en guise d'illustration. *Supprimez-les.*  Bien que vous puissiez finir par en replacer certains ultérieurement, il est plus facile et plus sûr de commencer avec une section **ApplyElementManifests** vide. Les entrées redondantes pour les composants qui n'ont pas changé peuvent avoir des conséquences néfastes, y compris causer le rallongement éventuel du processus de mise à jour, qu'elles interrompent et font échouer.
 
 
@@ -229,7 +229,7 @@ Procédez comme suit pour mettre à jour la fonctionnalité web de complément.
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Ne supprimez pas le manifeste d'origine. Le code XML de fonctionnalité utilise à la fois l'ancien et le nouveau.>  Ne copiez aucun élément **ElementFile** de la section **ElementManifests** vers la section **ApplyElementManifests**, même si le fichier référencé dans **ElementFile** a été modifié.
 2. Ouvrez chaque fichier manifeste d'élément référencé dans la section **ApplyElementManifests** et assurez-vous que tous les éléments [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) ont un attribut **ReplaceContents** et qu'il est défini sur **TRUE**. Voici un exemple. Outils de développement Office pour Visual Studio l'a peut-être déjà fait, mais vous devez vérifier. Faites-le même pour les manifestes d'élément des versions antérieures du complément. Il s'agit de l'une des rares méthodes conseillées pour modifier un fichier manifeste d'élément existant.
     
@@ -247,7 +247,7 @@ Procédez comme suit pour mettre à jour la fonctionnalité web de complément.
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Si la page a été configurée pour permettre aux utilisateurs de la personnaliser, ce balisage a pour effet secondaire de supprimer ces personnalisations. Les utilisateurs devront les répéter.>  Si le composant WebPart a été ajouté en suivant les instructions indiquées dans [Inclure un composant WebPart dans une page web sur le site web de complément](include-a-web-part-in-a-webpage-on-the-add-in-web.md), le balisage du composant WebPart est dans le manifeste des éléments ; par conséquent, la modification des propriétés du composant WebPart est une exception à la règle générale selon laquelle vous ne devez pas modifier un fichier manifeste d'élément dans le cadre d'une mise à jour de complément. 
 4. Comme alternative à la modification d'une page, vous avez également la possibilité d'utiliser la redirection vers une nouvelle page en procédant comme suit. 
     
@@ -385,7 +385,7 @@ Lorsque vous mettez à jour un Complément SharePoint pour la deuxième fois (ou
     
     Notez également que l'attribut **BeginVersion** n'est utilisé dans aucun des attributs **VersionRange**. Ceci est dû au fait que la valeur par défaut de l'attribut **BeginVersion** est 0.0.0.0. Il s'agit de la valeur souhaitée car vous voulez que toutes les actions de mise à niveau soient appliquées à chaque instance du complément antérieure à la version spécifiée dans l'attribut **EndVersion**. 
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       >  L'élément **VersionRange** détermine uniquement les versions de la fonctionnalité auxquelles les mises à niveau sont appliquées. Il ne permet pas de déterminer les versions du complément qui obtiennent une notification indiquant qu'une mise à jour est disponible ; la notification est déclenchée uniquement par le numéro de version du complément. Dans les 24 heures suivant la mise à disposition d'une nouvelle version du complément dans le catalogue de compléments de l'organisation ou dans l'Office Store, chaque instance installée du complément, quelle que soit la version, bénéficie d'une notification indiquant qu'une mise à jour est disponible sur sa vignette sur la page **Contenu du site**. >  L'élément **VersionRange** n'a pas d'incidence sur le nouveau numéro de version de la fonctionnalité récemment mise à niveau ou du complément récemment mis à jour. Ces deux numéros sont toujours remplacés par le dernier numéro de version, quelle que soit la plage de versions de la fonctionnalité avant la mise à niveau. Voilà une autre bonne raison d'éviter d'utiliser un attribut **BeginVersion**. L'attribut **BeginVersion** peut être utilisé pour bloquer l'exécution de certaines actions de mise à niveau sur certaines instances de complément. Cependant, il ne peut pas bloquer le passage à la dernière version d'un complément ou d'une fonctionnalité. Par conséquent, l'utilisation d'un attribut **BeginVersion** peut entraîner une situation dans laquelle deux instances de votre complément peuvent avoir le même numéro de version de complément et le même numéro de version de fonctionnalité de site web de complément, tout en ayant des composants différents dans leurs sites web de complément.
 
 ## Vérifier le déploiement des composants de site web de complément
@@ -422,7 +422,7 @@ Procédez comme suit pour vérifier le déploiement de la fonctionnalité web de
   
 8. Pour chacune de ces instances de liste personnalisées, sélectionnez le lien **Personnaliser « nom_de_la_liste »**, puis vérifiez sur la page des paramètres de liste que la liste comprend les colonnes et types de contenu attendus.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > S'il n'existe aucune section **Types de contenu** dans la page, vous devez activer la gestion des types de contenu. Cliquez sur le lien **Paramètres avancés**, puis, dans la page Paramètres avancés, activez la gestion des types de contenu et cliquez sur **OK**. Vous êtes renvoyé vers la page précédente où vous voyez désormais une liste de la section **Types de contenu**. 
 9. L' **adresse web** de la liste est située en haut de la page. Si vous avez inclus des exemples d'éléments dans la définition de votre instance de liste, copiez l'adresse et collez-la dans la barre d'adresses de votre navigateur, puis accédez à la liste. Vérifiez qu'elle contient les exemples d'éléments que vous avez créés.
     

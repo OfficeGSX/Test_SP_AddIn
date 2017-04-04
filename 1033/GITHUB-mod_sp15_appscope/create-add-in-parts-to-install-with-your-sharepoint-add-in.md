@@ -7,7 +7,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
 
 # Create add-in parts to install with your SharePoint Add-in
 Learn how to create an add-in part in SharePoint 2013 that is available in the Web Part gallery of the host web when you install your SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -359,7 +359,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
 
 1. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, installs the add-in, and opens the permissions page for the add-in. 
 2. Choose the **Trust It** button.
     

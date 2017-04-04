@@ -126,7 +126,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
   
   - 提供指引與增益集已佈建JavaScript檔案 **JSLink**元素的值。
     
-    > [!注意事項]
+    > **注意事項**
       > 屬性不支援調查或事件 JSLink 列出。將 SharePoint 行事曆是事件] 清單中。
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio建置解決方案、 增益集、 部署和增益集的權限] 頁面會隨即開啟。
 2. 選擇 [ **信任它**] 按鈕。
     

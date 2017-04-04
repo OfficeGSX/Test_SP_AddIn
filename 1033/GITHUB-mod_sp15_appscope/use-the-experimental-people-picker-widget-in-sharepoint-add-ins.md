@@ -7,14 +7,14 @@ ms.assetid: edc60550-67d2-4230-8e27-06a328c0d1f1
 
 # Use the experimental People Picker widget in SharePoint Add-ins
 Learn how to use the People Picker widget on any web page, even if the page is not hosted in SharePoint. Use the People Picker widget in your add-ins to help users find and select people and groups.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!CAUTION]
+> **CAUTION**
 > The Office Web Widgets - Experimental are only provided for research and feedback purposes. Do not use in production scenarios. The Office Web Widgets behavior may change significantly in future releases. Read and review the  [Office Web Widgets - Experimental License Terms](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -101,7 +101,7 @@ To use the People Picker widget, you must do the following:
   
 - Create a module on the add-in web. This step ensures that an add-in web is created when users deploy the add-in.
     
-    > [!NOTE]
+    > **NOTE**
       > The cross-domain library requires the existence of an add-in web. The People Picker widget communicates with SharePoint by using the cross-domain library. 
 - Create an add-in page that declares a People Picker widget instance using markup.
     
@@ -121,7 +121,7 @@ To use the People Picker widget, you must do the following:
   
 4. Select **Provider-hosted** as the hosting option for your add-in.
     
-    > [!NOTE]
+    > **NOTE**
       > You can also use the People Picker widget with other hosting options or even with Office Add-ins or your own website. 
 5. Select **ASP.NET Web Forms Application** as the type of web application project.
     
@@ -138,7 +138,7 @@ To use the People Picker widget, you must do the following:
   
 2. Choose **Visual C# Items**> **Office/SharePoint**> **Module**. Provide a name for your module.
     
-    > [!NOTE]
+    > **NOTE**
       > If you're building a SharePoint-hosted add-in, you don't need to create an extra module. 
 
 ### To add a new page that uses the People Picker widget
@@ -257,7 +257,7 @@ Basic People Picker sample (HTML markup declaration):
   ```
 
 
-> [!NOTE]
+> **NOTE**
 > The code example above explicitly specifies the host web and add-in web URLs to initialize the Office controls runtime. However, if the add-in web and host web URLs are specified in the **SPAppWebUrl** and **SPHostUrl** query string parameters, respectively; you can pass an empty object and the code will attempt to get the parameters automatically. The **SPAppWebUrl** and **SPHostUrl** parameters are included in the query string when you use the **{StandardTokens}** token.
   
     
@@ -284,7 +284,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in. 
 2. Choose the **Trust It** button.
     

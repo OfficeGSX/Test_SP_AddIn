@@ -26,7 +26,7 @@ Esta é a uma série de artigos sobre noções básicas do desenvolvimento hospe
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeSharePointWriteOps.sln.
   
     
@@ -40,7 +40,7 @@ Nosso suplemento tem um botão da faixa de opções personalizada que adiciona u
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:> Com o botão direito no nó da solução na parte superior do **Gerenciador de soluções** e selecione **definir projetos de inicialização**.> Verifique se que todos os três projetos estão definidos para **Iniciar** na coluna **ação**.
   
     
@@ -136,7 +136,7 @@ Como o suplemento é agora gravando à lista, bem como lê-lo, precisamos escalo
   
 9. A página parecerá recarregar porque o método **Page_Load** da página EmployeeAdder os redirecionamentos de volta para ela. O valor do campo **foram adicionados ao banco de dados corporativos** do funcionário mudou como **Sim**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O que impede que um usuário manualmente alterando o valor **foram adicionados ao banco de dados corporativo** na forma que possibilite a lista e o banco de dados corporativo inconsistente? Nothing não no momento. Você obterá a solução para esse problema em um artigo posterior desta série.
 10. Para encerrar a sessão de depuração, feche a janela do navegador ou interrompa a depuração no Visual Studio. Sempre que você pressiona F5, o Visual Studio retira a versão anterior do suplemento e instala a última mais recente.
     

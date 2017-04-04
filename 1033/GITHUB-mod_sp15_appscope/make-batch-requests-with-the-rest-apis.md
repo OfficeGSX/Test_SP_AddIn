@@ -7,7 +7,7 @@ ms.assetid: d6aab58f-77d2-4f0d-a007-6d55ba865d07
 
 # Make batch requests with the REST APIs
 Learn how to use the  `$batch` query option with the REST/OData APIs.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -35,7 +35,7 @@ SharePoint Online (and on-premise SharePoint 2016 and later) and the Office 365 
   
 - A part can be a read operation (or function invocation), or a ChangeSet of one or more write operations (or function invocations). A ChangeSet is itself a MIME type  *multipart/mixed*  with subparts that contain insert, update, or delete operations.
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > At this time, SharePoint and Office 365 APIs do not support "all or nothing" functionality for ChangeSets that have more than one operation within them. If any of the child operations fails, the others still complete and are not rolled back. 
 
 ## Code samples

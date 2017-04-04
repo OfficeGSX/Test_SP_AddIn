@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # Criar Add-ins do SharePoint que pode ser usado por usuários anônimos
 Saiba como criar Suplementos do SharePoint que pode ser usado por usuários anônimos nos sites de Microsoft SharePoint 2013 público.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Sempre que  *no local*  SharePoint 2013 mencionada neste artigo, assumimos que Service Pack 1 para SharePoint 2013 foi instalada.
   
     
@@ -77,7 +77,7 @@ Tornar um suplemento hospedado em provedor acessíveis a usuários anônimos é 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se o site do SharePoint está acessível aos usuários anônimos, ele geralmente permite acesso HTTP, em vez de HTTPS. Há possíveis problemas de segurança quando a diretiva add-somente na é usada para suplementos neste cenário. Para obter detalhes e um método para atenuá-los, consulte  [o que cada desenvolvedor precisa saber sobre SharePoint suplementos, CSOM e os Sites de publicação anônimo](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx).
   
     
@@ -129,7 +129,7 @@ Se seu suplemento usa o modelo de objeto JavaScript do SharePoint (JSOM), há um
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Desativar o requisito de que os usuários tenham a permissão **Usar Interfaces remotas** tem implicações de privacidade de informações. Para obter detalhes, consulte [o que cada desenvolvedor precisa saber sobre SharePoint suplementos, CSOM e os Sites de publicação anônimo](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx).
   
     
@@ -162,7 +162,7 @@ Se o teste de instalação do SharePoint local, você deve realizar os dois prim
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Se possível, você deve instalar o Suplemento do SharePoint para um site  *antes de*  que você realizar os dois primeiros procedimentos. Suplementos não podem ser instalados em qualquer site em um aplicativo da web do SharePoint no local quando o aplicativo web foi configurado para acesso anônimo. Se o aplicativo web já tiver sido configurado para acesso anônimo, será necessário reverter essa definição temporariamente para instalar o suplemento.
   
     
@@ -189,7 +189,7 @@ Se o teste de instalação do SharePoint local, você deve realizar os dois prim
   
 6. (Opcional) Desmarque a caixa de **permissão exigem usar Interfaces remotas**. Isso permite que o código e o script em execução no contexto de um usuário anônimo para fazer chamadas para o modelo de objeto do cliente do SharePoint em cada conjunto de sites. Você não é possível reabilitar o requisito para quaisquer conjuntos de sites. Deixando a caixa verificado significa que, por padrão os usuários anônimos não podem acessar o cliente de modelos de objetos, mas você pode desabilitar o requisito (e concedê-los acessar) para conjuntos de sites específico.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > No contexto de desenvolvimento Suplementos do SharePoint para usuários anônimos, essa configuração somente é significativa para hospedado no SharePoint suplementos hospedado em provedor Suplementos do SharePoint projetadas para usuários anônimos usam uma técnica que faz com que as permissões do usuário irrelevante. Para obter mais informações sobre isso, consulte a seção  [Criando hospedado em provedor suplementos que estão acessíveis anonimamente](#Cloud-hosted) acima.
 7. Escolha **Salvar** para fechar o formulário.
     
@@ -199,7 +199,7 @@ Se o teste de instalação do SharePoint local, você deve realizar os dois prim
   
 9. No formulário **Restrições de acesso anônimo**, escolha a zona e certifique-se de que o botão de opção **Nenhum** está habilitado. Se o Suplemento do SharePoint que você está testando necessidades apenas direitos de leitura para dados do SharePoint, habilite **Negar gravação**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Esta é outra configuração que, no contexto do desenvolvimento Suplementos do SharePoint para usuários anônimos, só é significativa para hospedado no SharePoint suplementos.
 10. Se você criou um novo aplicativo web na etapa 2, você precisa criar um conjunto de sites nela.
     
@@ -224,7 +224,7 @@ Se o teste de instalação do SharePoint local, você deve realizar os dois prim
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > O procedimento a seguir só pode ser realizado em um site público no SharePoint Online. (Para obter mais informações sobre o uso de sites públicos no Microsoft SharePoint Online, consulte o  [Website público ajuda para o Office 365](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).)
   
     
@@ -245,7 +245,7 @@ Se você estiver desenvolvendo um suplemento hospedado no SharePoint e ele acess
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esse procedimento não podem ser executadas em um conjunto de sites SharePoint Online, portanto, hospedado no SharePoint suplementos que são instalados SharePoint Online e foi projetados para usam por usuários anônimos não podem acessar listas ou bibliotecas.
   
     

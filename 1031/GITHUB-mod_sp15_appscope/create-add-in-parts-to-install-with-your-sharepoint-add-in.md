@@ -364,7 +364,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, installiert das Add-In und öffnet die Berechtigungsseite für das Add-In. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

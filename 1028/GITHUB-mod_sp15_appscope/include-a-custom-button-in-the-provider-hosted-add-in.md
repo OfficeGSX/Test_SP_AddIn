@@ -20,7 +20,7 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeRibbonButton.sln 檔案。
   
     
@@ -90,7 +90,7 @@ SharePoint Add-in可以包含自訂動作，這是 SharePoint 字詞的自訂功
 
 1.  *如果開啟Visual Studio ，則必須將其關閉*  並重新開啟鏈結儲存解決方案使Visual Studio可以探索新的清單。(系統管理員身分執行Visual Studio )。
     
-    > [!注意事項]
+    > **注意事項**
       > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：> 以滑鼠右鍵按一下頂端的 [ **方案總管中**的 [解決方案] 節點並選取 [ **設定啟動專案**。> 請確定所有三個專案設定以 **啟動**[ **動作**] 欄中。
 2. 以滑鼠右鍵按一下 [ **方案總管**中的 **ChainStore**專案並選擇 **新增 |新項目**。
     

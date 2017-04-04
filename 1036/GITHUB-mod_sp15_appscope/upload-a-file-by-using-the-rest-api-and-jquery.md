@@ -36,7 +36,7 @@ Les deux exemples de code figurant dans cet article utilisent l'API REST et des 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les compléments en JavaScript hébergés par un fournisseur doivent utiliser la bibliothèque inter-domaines SP.RequestExecutor pour envoyer des demandes vers un domaine SharePoint. Pour obtenir un exemple, voir comment  [télécharger un fichier à l'aide de la bibliothèque inter-domaines](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
   
     

@@ -56,7 +56,7 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
   
 - **UI：**有三種方法可以出現在 SharePoint 中SharePoint Add-in : 在最低限度下，所有增益集所呈現完整的網頁中。(選用) 增益集可以也會呈現透過增益集組件，以及透過功能表項目] 或 [功能區] 按鈕。如需詳細資訊，請參閱 [UX 設計的 SharePoint 增益集](ux-design-for-sharepoint-add-ins.md)。
     
-    > [!注意事項]
+    > **注意事項**
       > 多個網站集合至客戶可以安裝SharePoint Add-ins ，租用中或網站的網站為基礎。先前稱為租用戶範圍增益集。如果您想讓租用戶範圍選項客戶，您可能會包含自訂功能區按鈕或增益集組件。如需詳細資訊，請參閱 [租用和部署範圍的 SharePoint 增益集](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。
 
 ## 架構的層

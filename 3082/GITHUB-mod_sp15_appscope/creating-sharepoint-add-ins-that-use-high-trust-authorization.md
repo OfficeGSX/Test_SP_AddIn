@@ -51,7 +51,7 @@ Un complemento de elevada confianza es una Complemento de SharePoint hospedada p
     
     
 
-> [!NOTA]
+> **NOTA**
 >  En este tema le explicamos el sistema de autorización de elevada confianza para Complementos de SharePoint. Si quiere información práctica sobre la creación e implementación de complementos de elevada confianza, vea los temas siguientes:>  [Crear complementos de SharePoint de elevada confianza](create-high-trust-sharepoint-add-ins.md)>  [Empaquetar y publicar complementos de gran confianza para SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -62,7 +62,7 @@ En SharePoint 2013, el servicio de token de seguridad (STS) ofrece tokens de acc
     
     
 
-> [!NOTA]
+> **NOTA**
 > El STS no está diseñado para la autenticación de usuarios, por lo que no se verá en la página de inicio de sesión de usuario, en la sección **Proveedor de autenticación** de Administración central ni en el Selector de personas de SharePoint 2013.
   
     
@@ -202,7 +202,7 @@ A continuación, verá un ejemplo de una sección **appSettings** para una Compl
 ```
 
 
-> [!NOTA DE SEGURIDAD]
+> **NOTA DE SEGURIDAD**
 > El ejemplo precedente asume que el certificado se almacena en el sistema de archivos. Esto resulta aceptable para el desarrollo y la depuración. En una Complemento de SharePoint de producción de elevada confianza, el certificado suele guardarse en al almacén de certificados de Windows, y las claves **ClientSigningCertificatePath** y **ClientSigningCertificatePassword** suelen sustituirse por una clave **ClientSigningCertificateSerialNumber**. 
   
     

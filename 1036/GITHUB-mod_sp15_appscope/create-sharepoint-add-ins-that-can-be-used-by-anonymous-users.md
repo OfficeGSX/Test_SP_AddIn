@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # Créer des compléments pour SharePoint dont peuvent se servir des utilisateurs anonymes
 Découvrez comment créer des Compléments SharePoint pouvant être utilisés par des utilisateurs anonymes sur des sites web Microsoft SharePoint 2013 publics.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Dans cette article, lorsque nous faisons référence à SharePoint 2013 *sur site*  , nous partons du principe que le Service Pack 1 pour SharePoint 2013 a été installé.
   
     
@@ -77,7 +77,7 @@ Pour rendre un complément hébergé par un fournisseur accessible aux utilisate
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si le site SharePoint est accessible aux utilisateurs anonymes, il autorise généralement l'accès HTTP, plutôt que HTTPS. Dans ce scénario, il est possible de rencontrer des problèmes de sécurité lorsque la stratégie de complément uniquement est utilisée pour les compléments. Pour obtenir plus de détails et connaître la méthode permettant d'atténuer ces problèmes, voir l'article relatif à  [ce que tout développeur doit savoir à propos des compléments SharePoint, du modèle CSOM (Client-side Server Object Model) et des sites de publication anonymes](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -129,7 +129,7 @@ Si votre complément utilise le modèle d'objet JavaScript (JSOM) de SharePoint,
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > La désactivation de cette configuration requise, selon laquelle les utilisateurs doivent disposer de l'autorisation **Utiliser les interfaces distantes**, a une incidence sur la confidentialité des informations. Pour plus de détails, voir [What Every Developer Needs to Know About SharePoint Add-ins, CSOM, and Anonymous Publishing Sites](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -162,7 +162,7 @@ Si l'installation de test SharePoint est sur site, vous devez effectuer les deux
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Essayez d'installer le Complément SharePoint sur un site web  *avant*  d'effectuer les deux premières procédures. Lorsque l'application web a été configurée pour l'accès anonyme, il est alors impossible d'installer des compléments sur les sites web dans une application web SharePoint sur ​site. Si l'application web a déjà été configurée pour l'accès anonyme, vous devez annuler ce paramètre temporairement pour installer le complément.
   
     
@@ -189,7 +189,7 @@ Si l'installation de test SharePoint est sur site, vous devez effectuer les deux
   
 6. (Facultatif) Désactivez la case à cocher **Exiger l'autorisation Utiliser les interfaces distantes**. Cela permet au code et au script exécutés dans le contexte d'un utilisateur anonyme d'effectuer des appels au modèle d'objet client de SharePoint sur ​​chaque collection de sites. Vous ne pouvez réactiver la configuration requise pour aucune collection de sites. Si la case reste cochée, cela signifie que, par défaut, les utilisateurs anonymes ne peuvent pas accéder aux modèles d'objet client. Toutefois, vous pouvez désactiver la configuration requise (et leur autoriser l'accès) pour des collections de sites spécifiques.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Dans le cadre du développement des Compléments SharePoint pour les utilisateurs anonymes, ce paramètre n'est significatif que pour les compléments hébergés par SharePoint. Les Compléments SharePoint hébergés par le fournisseur qui sont conçus pour les utilisateurs anonymes ont recours à une technique qui rend les autorisations de l'utilisateur non pertinentes. Pour plus d'informations à ce sujet, consultez la section  [Création de compléments hébergés par un fournisseur accessibles anonymement](#Cloud-hosted) ci-dessus.
 7. Sélectionnez **Enregistrer** pour fermer le formulaire.
     
@@ -199,7 +199,7 @@ Si l'installation de test SharePoint est sur site, vous devez effectuer les deux
   
 9. Dans le formulaire de **Restrictions d'accès anonyme**, sélectionnez la zone et assurez-vous que la case d'option **Aucune** est activée. Si le Complément SharePoint que vous testez ne requiert que des droits de lecture pour les données SharePoint, activez l'option **Refuser l'écriture** à la place.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Il s'agit d'un autre paramètre qui, dans le cadre du développement de Compléments SharePoint pour les utilisateurs anonymes, n'a d'importance que pour les compléments hébergés par SharePoint. 
 10. Si vous avez créé une application web à l'étape 2, vous devez créer une collection de sites dans cette application.
     
@@ -224,7 +224,7 @@ Si l'installation de test SharePoint est sur site, vous devez effectuer les deux
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > La procédure suivante ne peut être effectuée sur un site web public dans SharePoint Online. (Pour plus d'informations sur l'utilisation de sites web publics dans Microsoft SharePoint Online, voir l' [Aide sur les sites web public pour Office 365](http://office.microsoft.com/fr-fr/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).) 
   
     
@@ -245,7 +245,7 @@ Si vous développez un complément hébergé par SharePoint et qui accède à un
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cette procédure ne peut pas être effectuée dans une collection de sites SharePoint Online. Par conséquent, les compléments hébergés par SharePoint installés sur SharePoint Online et destinés à des utilisateurs anonymes n'ont pas accès aux listes ni aux bibliothèques. 
   
     

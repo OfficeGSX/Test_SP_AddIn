@@ -23,7 +23,7 @@ Dies ist der vierte einer Reihe von Artikeln über die Grundlagen der Entwicklun
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeSharePointWriteOps.sln" öffnen.
   
     

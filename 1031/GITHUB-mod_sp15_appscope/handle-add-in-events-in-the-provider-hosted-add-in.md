@@ -32,7 +32,7 @@ Dies ist der siebte einer Reihe von Artikeln über die Grundlagen der Entwicklun
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeAdd-inEventHandlers.sln" öffnen.
   
     
@@ -87,7 +87,7 @@ Für das Debuggen von Ereignisempfängern muss der Azure-Dienstbus verwendet wer
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 >  Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch:>  Klicken Sie mit der rechten Maustaste oben im **Projektmappen-Explorer** auf den Projektmappenknoten, und wählen Sie **Startprojekte festlegen** aus.>  Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** festgelegt sind.
   
     
@@ -282,7 +282,7 @@ private void DeleteTenant(string tenantName)
   ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > In einem früheren Artikel dieser Reihe haben Sie das Projekt so konfiguriert, dass die Datenbank des Unternehmens jedes Mal neu erstellt wird, wenn Sie F5 drücken. Damit wird die Tabelle **Mandanten** geleert.
   
     

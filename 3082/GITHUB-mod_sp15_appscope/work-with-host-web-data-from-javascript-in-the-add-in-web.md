@@ -44,7 +44,7 @@ Este es el decimoprimero de una serie de artículos sobre los conceptos básicos
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados en SharePoint, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) y abrir el archivo BeforeHostWebData.sln.
   
     
@@ -174,7 +174,7 @@ function ensureOrientationScheduling() {
 
 6. Agregue la siguiente función en el archivo Add-in.js justo debajo de la función anterior. Observe que usa el objeto  `hostWebContext` para identificar la lista que se consulta.
     
-    > [!NOTA]
+    > **NOTA**
       > Observe que no se agrega ningún marcado de la consulta a la consulta CAML. El efecto de no tener ninguna consulta real en el objeto de consulta es asegurarse de que se recuperarán  *todas*  las horas de la listas. Si la lista fuese muy grande, la solicitud al servidor podría tardar demasiado. En ese caso, necesitaríamos buscar otra manera de realizar nuestro objetivo. Pero en esta situación de ejemplo con una lista muy pequeña (y las listas de calendario casi siempre son pequeñas) obtener la lista completa, para que podamos iterar a través de ella en el cliente, realmente nos ayudará a minimizar el número de llamadas al servidor, es decir, las llamadas de **executeQueryAsync**. 
 
   ```

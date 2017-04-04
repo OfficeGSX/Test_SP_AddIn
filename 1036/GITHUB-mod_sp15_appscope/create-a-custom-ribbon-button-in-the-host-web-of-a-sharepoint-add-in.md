@@ -38,7 +38,7 @@ ms.assetid: c3f7e8f0-1a85-41b5-aad2-e8eb36e60e75
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeRibbon.sln.
   
     
@@ -81,7 +81,7 @@ ms.assetid: c3f7e8f0-1a85-41b5-aad2-e8eb36e60e75
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 >  La procédure suivante nécessite que le calendrier soit visible dans l'interface utilisateur de Visual Studio, mais ce ne sera pas le cas si Visual Studio était ouvert lorsque vous avez créé le calendrier. Avant de continuer, fermez Visual Studio et déconnectez-vous de toutes les fenêtres de navigateur et consoles PowerShell avec lesquelles vous êtes connecté à votre site de développeur.
   
     

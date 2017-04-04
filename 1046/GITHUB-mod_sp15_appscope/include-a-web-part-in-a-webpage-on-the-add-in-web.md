@@ -45,7 +45,7 @@ Para os pré-requisitos, consulte  [Introdução à criação de Suplementos do 
   ```
 
 
-    > [!CUIDADO]
+    > **CUIDADO**
       > É possível adicionar um elemento de Web Part, como **<WebPartPages:XsltListViewWebPart>** como um filho do **WebPartZone**. Mas isso é geralmente uma prática ruim em um Suplemento do SharePoint. Se o suplemento nunca precisa ser atualizado, um elemento de Web Part inserido no arquivo aspx pode causar a atualização falhe em alguns cenários com a mensagem "uma web part com essa ID já foi adicionada a esta página." Recomendamos que você adicionar web parts no manifesto elementos da página, conforme será descrito ainda deste procedimento.
 4. Abra o arquivo de manifesto do elemento da página. Isso geralmente é chamado elements. XML e está localizado na mesma pasta project arquivo aspx.
     
@@ -81,7 +81,7 @@ Para os pré-requisitos, consulte  [Introdução à criação de Suplementos do 
 
 7. Adicione a marcação de **webPart** como um filho do elemento **webParts**. O exemplo a seguir é um exemplo que adiciona um **XsltListViewWebPart**. Ele pressupõe que uma lista personalizada chamada "Test List" faz parte do mesmo projeto de suplemento. Para obter informações sobre como adicionar uma lista personalizada para um suplemento de web, consulte  [Criar um provedor hospedado suplemento que inclui uma lista personalizada do SharePoint e o tipo de conteúdo](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Observe que a Web Part não tem uma propriedade de ID. É uma prática recomendada para incluir uma identificação explícita para a Web Part apenas nos dois casos onde ele é realmente necessário:> A Web Part está sendo adicionada a uma página de wiki SharePoint.> A Web Part é uma das duas ou mais Web Parts que se conectarão.
 
   ```

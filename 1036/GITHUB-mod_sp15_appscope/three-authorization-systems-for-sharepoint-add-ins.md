@@ -25,7 +25,7 @@ Dans SharePoint, un Complément SharePoint est une identité de principal, comme
     
     Pour plus d'informations sur la création d'un Complément SharePoint qui utilise le système à faible niveau de fiabilité, voir le nœud SDK  [Création de compléments pour SharePoint qui utilisent l'autorisation de faible niveau de fiabilité](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Le client qui installe le complément doit avoir un compte Office 365. Ceci est nécessaire pour autoriser le complément à accéder à Azure ACS. Toutefois, le client ne doit pas utiliser ce compte dans un autre but, et le complément peut être installé sur une batterie de serveurs SharePoint en local après certaines tâches de configuration basiques. 
 - **Haut niveau de fiabilité**: un complément hébergé par un fournisseur peut établir une connexion sécurisée à SharePoint avec des certificats numériques. Le système à haut niveau de fiabilité est principalement destiné à des compléments dont les composants distants sont hébergés en local. Le complément peut être installé sur une batterie de serveurs SharePoint qui n'est pas connectée à Internet. Le complément ne peut pas être installé sur SharePoint Online ni vendu dans l'Office Store.
     

@@ -19,7 +19,7 @@ Con un complemento hospedado por el proveedor, tiene un servicio o una aplicaci�
     
     
 
-> [!NOTA]
+> **NOTA**
 > El componente remoto puede hospedar también receptores de eventos que responden a los eventos que se produzcan en elementos de SharePoint, como listas o elementos de lista. Los ejemplos de eventos remotos que Contoso.com podría querer responder son eventos de lista, como agregar o quitar un elemento de lista, o eventos web, como agregar o eliminar un sitio. Para más información sobre cómo crear receptores de eventos remotos, vea  [Crear un receptor de eventos remotos en complementos para SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins.md). 
   
     

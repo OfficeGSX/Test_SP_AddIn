@@ -51,7 +51,7 @@ Siew Moi Khor、Microsoft Corporation
     
     
 
-> [!メモ]
+> **メモ**
 >  このトピックは SharePoint アドイン に使用する高信頼認証システムを理解するのに役立ちます。高信頼アドインの作成および配置に関する実用的な情報については、以下のトピックを参照してください。>  [SharePoint の高信頼性アドインを作成する](create-high-trust-sharepoint-add-ins.md)>  [高信頼 SharePoint アドインをパッケージ化して発行する](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -62,7 +62,7 @@ SharePoint 2013 では、セキュリティ トークン サービス (STS) に�
     
     
 
-> [!メモ]
+> **メモ**
 > STS はユーザー認証用のサービスではありません。したがって、サーバーの全体管理の [ **認証プロバイダー**] セクションや SharePoint 2013 の [ユーザー選択] ウィンドウのユーザー サインイン ページに、STS は表示されません。 
   
     
@@ -202,7 +202,7 @@ SharePoint アドイン のリモート Web アプリケーション構成要素
 ```
 
 
-> [!セキュリティ メモ]
+> **セキュリティ メモ**
 > 上の例では、証明書がファイル システムに保存されていることを想定しています。これは、開発とデバッグで許容されます。運用環境の高信頼 SharePoint アドイン では、証明書は通常 Windows 証明書ストアに保存され、 **ClientSigningCertificatePath** と **ClientSigningCertificatePassword** の鍵は、通常、 **ClientSigningCertificateSerialNumber** の鍵に置き換えられます。
   
     

@@ -23,7 +23,7 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
     
   
 
-> [!Примечание]
+> **Примечание**
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с данной статьей. Кроме того, вы можете скачать репозиторий  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeSharePointWriteOps.sln.
   
     

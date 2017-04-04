@@ -7,7 +7,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # Localizar complementos para SharePoint
 Localice una Complemento de SharePoint usando archivos de recursos, archivos de recursos JavaScript y otras técnicas.
-> [!NOTA]
+> **NOTA**
 > En este tema se supone que está familiarizado con la creación básica de Complementos de SharePoint y con las características de SharePoint, la distinción entre webs de complementos y webs host,  [las clases de componentes de SharePoint que puede haber en un complemento](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps) y los fundamentos de la localización con archivos .resx.
   
     
@@ -35,7 +35,7 @@ Además, tenga en cuenta lo siguiente:
 
 - Los procedimientos de este artículo asumen que utiliza la versión más reciente de  [Office Developer Tools para Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) u [Office Developer Tools para Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).
     
-    > [!NOTA]
+    > **NOTA**
       > Si su sitio web de SharePoint de prueba es una granja local de SharePoint y no un sitio de desarrollador de Microsoft SharePoint Online, es posible que tenga que instalar los paquetes de idioma relativos a los idiomas a los que vaya a traducir su Complemento de SharePoint. Para más información, vea  [Instalación o desinstalación de paquetes de idioma para SharePoint 2013](http://technet.microsoft.com/es-es/library/cc262108%28v=office.15%29.aspx) y [Paquetes de idiomas en SharePoint Server 2013](http://technet.microsoft.com/es-es/library/ff463597%28v=office.15%29.aspx), así como los vínculos de descarga de este último. 
 - Las capturas de pantalla y los ejemplos de código de este artículo reflejan el ejemplo  [Localización de complementos de SharePoint](https://github.com/OfficeDev/SharePoint-Add-in-Localization). El ejemplo se puede descargar para ver los resultados de los procedimientos descritos en este artículo.
     
@@ -49,7 +49,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los archivos de recursos no se pueden compartir entre varias características de web de complemento, sino que, por cada característica que haya en el archivo .wsp, se deben crear conjuntos separados de archivos de recursos. 
   
     
@@ -69,7 +69,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
     
     Cuando se modifica, este archivo de "todos los idiomas" contiene las cadenas que se van a usar en la galería de **características** en todos los sitios con idiomas para los que *no*  se va a proporcionar una versión localizada de las cadenas. Por lo tanto, el idioma que se va a usar para las cadenas en este archivo debería ser el idioma que tenga más probabilidades de ser el segundo idioma de las personas que usan SharePoint. Para este propósito se suele usar el inglés, pero en algunas situaciones puede que sea mejor usar otro idioma. Por ejemplo, en algunas regiones puede que el francés sea más común como segundo idioma que el inglés. En el siguiente ejemplo de este tema se usa el inglés como opción "todos los idiomas".
     
-    > [!NOTA]
+    > **NOTA**
       > Una Complemento de SharePoint no se puede instalar en un sitio web cuyo idioma no figure en la sección **Configuraciones regionales admitidas** del manifiesto del complemento. Recuerde que, cuando en este artículo se habla de los idiomas en los que *no*  va a proporcionar un complemento localizado, dichos idiomas deben seguir estando incluidos en el manifiesto del complemento. Vea el procedimiento **Para crear los archivos de recursos del sitio web de host** de este artículo para obtener más detalles sobre las configuraciones regionales admitidas en el manifiesto del complemento.
 4. En la columna **Nombre** de la fila superior del **Editor de recursos**, escriba un nombre descriptivo para la cadena (u otro recurso) (por ejemplo, OrdersListInstance_Title uOrdersListInstance_Description). Estos nombres de recursos localizables no están localizados. Cada recurso debe tener su propio nombre.
     
@@ -97,7 +97,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
   
 12. Repita los últimos cuatro pasos para cada idioma extranjero.
     
-    > [!NOTA]
+    > **NOTA**
       > Considere agregar un archivo específico del idioma para el idioma seleccionado como "todos los idiomas". En tal caso, puede copiar las filas sin cambiar los valores de las cadenas. En muchas situaciones, no es necesario disponer de un archivo específico del idioma para el mismo idioma que se usa en el archivo de recursos de todos los idiomas, especialmente cuando los únicos recursos de los archivos son cadenas. Pero los archivos de recursos también pueden contener imágenes, iconos, archivos y otros tipos de recursos. A veces, necesita el archivo de recursos de todos los idiomas para usar una imagen u otro recurso distinto del recurso correspondiente en  *cualquiera*  de los archivos específicos del idioma.
 13. Para cada archivo, compruebe que la propiedad **Acción de compilación** se establece en **Contenido**.
     
@@ -249,11 +249,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     Con este marcado se carga uno de los archivos JavaScript, que determina qué archivo de idioma se va a cargar al leer el recurso de SharePoint denominado "language_value". Este recurso se resuelve en un nombre de idioma-referencia cultural según el patrón  _LL_- _CC_ descrito en un procedimiento anterior. Específicamente, se resuelve en el idioma de la web de complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > El recurso de SharePoint "language_value" nunca tiene valor nulo, de modo que este script nunca llamaría a un archivo con el nombre "Resources.js". Esta es la razón por la que no hemos creado uno en el procedimiento anterior. Cuando el valor de "language_value" es un idioma para el que no existe archivo .js, el script no carga nada. En el siguiente paso se explica el modo en que las cadenas obtienen un valor de idioma invariable en una situación así. 
 3. Por cada valor de atributo y elemento localizable en la página, asigne un valor predeterminado en el idioma invariable, pero use JavaScript para asignarle la variable adecuada del archivo Resources. _LL_- _CC_.js. Por ejemplo, si la página tiene un título público en un elemento **h2**, asigne al elemento un atributo **id** y, luego, inserte un elemento **script** bajo los elementos localizados para asignar cadenas localizadas a la propiedad **innerText** de los elementos localizados. Este código de localización solo debe ejecutarse si las variables están cargadas y declaradas en un archivo Resources. _LL_- _CC_.js. Por lo tanto, colóquelo en un bloque condicional que compruebe primero si una de las variables está definida. Si no es así, quiere decir que no se ha cargado ningún script de recursos y los valores predeterminados (invariables) deberán permanecer inalterados. El siguiente ejemplo pone esto de manifiesto.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > La palabra "INVARIANT" se ha agregado a la primera de las cadenas invariables. Esto no debe realizarse en un complemento de producción, pero, en el transcurso de las pruebas, es una forma muy práctica de saber de un vistazo si se están usando cadenas de idioma invariable o si se ha cargado el archivo Resources. _LL_- _CC_.js del idioma que resulta ser su idioma invariable. 
 
   ```HTML
@@ -330,7 +330,7 @@ El método fundamental para localizar componentes de web de host es el mismo que
   
 4. Repita el paso anterior por cada configuración regional que quiera admitir con una versión localizada del complemento. Se creará un archivo Resources. _LL_- _CC_.resx extra por cada configuración regional.
     
-    > [!NOTA]
+    > **NOTA**
       > La propiedad **Acción de compilación** de cada uno de estos archivos se establece en **Contenido**, no en **Recurso**.  *No modifique esta configuración.* 
 5. Agregue también entradas de configuración local por cada configuración local donde quiera que el complemento pueda instalarse, pero donde deba usarse el idioma invariable; dicho de otro modo, las configuraciones regionales de las que  *no*  va a proporcionar una versión localizada del complemento. *Elimine los archivos .resx que hay creados para tales configuraciones regionales.* 
     
@@ -356,7 +356,7 @@ El método fundamental para localizar componentes de web de host es el mismo que
   ```
 
 
-    > [!PRECAUCIóN]
+    > **PRECAUCIóN**
       > El valor de **Title** *solo*  puede contener la llamada al recurso. No puede haber más texto, símbolos ni espacios en blanco.
 2. Para llamar a los recursos localizados en otros archivos XML (como Elements.xml para elementos de complemento y acciones personalizadas), se usa el mismo formato que el empleado en el archivo de manifiesto del complemento.
     
@@ -406,7 +406,7 @@ Si hay valores de cadena localizables en el código JavaScript de su aplicación
     
     
 
-> [!NOTA]
+> **NOTA**
 > En esta sección solo se aborda la localización de cadenas. Si sus necesidades de localización son mayores (por ejemplo, debe localizar formatos de fecha o de moneda), sopese la posibilidad de usar una biblioteca de localización o globalización, como el  [complemento Globalize para jQuery](https://github.com/jquery/globalize). 
   
     

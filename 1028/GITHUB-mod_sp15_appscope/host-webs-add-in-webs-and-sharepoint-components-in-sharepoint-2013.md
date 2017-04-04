@@ -98,7 +98,7 @@ SharePoint Add-in會部署至新建立的網站具有類似如下的 URL：
     
     
 
-> [!注意事項]
+> **注意事項**
 >  *在本文稍後的 [部署 SharePoint 元件的警告](#SpecialCases)] 區段中的更詳細地討論標示星號 (*) 的元件。
   
     
@@ -202,10 +202,10 @@ SharePoint Add-in會部署至新建立的網站具有類似如下的 URL：
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 增益集資訊清單的新 [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx)元素不 [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx)元素可以包含在功能中的相同標記。 **WebTemplate**元素可以包含的功能定義一種網站，但增益集資訊清單 **WebTemplate**元素只會識別何種類型的站台能夠使用。如SharePoint Add-in的增益集資訊清單的相關詳細資訊，請參閱 [增益集套件結構](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package)。
 
-    > [!注意]
+    > **注意**
       > 請勿 **WebTemplate**元素中的增益集資訊清單來指定任何的內建的 SharePoint 網站定義設定為增益集 web 網站類型。我們不支援使用的內建的網站定義設定 **APP#0**、 以外的任何增益集 web。
 
     如需網站定義設定及網站範本的詳細資訊，請參閱 [Working with Site Templates and Definitions](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx)。

@@ -38,7 +38,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeProgrammaticButton.sln 檔案。
   
     
@@ -48,7 +48,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 ## 重新將自訂按鈕新增至專案
 
 
-> [!注意事項]
+> **注意事項**
 > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：> 以滑鼠右鍵按一下頂端的 [ **方案總管中**的 [解決方案] 節點並選取 [ **設定啟動專案**。> 請確定所有三個專案設定以 **啟動**[ **動作**] 欄中。
   
     
@@ -132,7 +132,7 @@ RegistrationId="100"
   
   -  `action.Name`的值是來自 **ID**元素之屬性的 **CustomAction**中 **AddEmployeeToCorpDB**element.xml 檔案中。
     
-    > [!重要]
+    > **重要**
       > **必須變更 `action.Name`值以符合您的 elements.xml 檔案中的值以下的程式碼中。** 名稱的 GUID 部分將會不同。請注意，"。"字元之間的 GUID 與其餘的名稱。以下是行的範例中。>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
   ```cs
@@ -285,7 +285,7 @@ webScopedEmployeeAction.DeleteObject();
 
 1. 開啟 Hong 特別行政區存放區的網站的 [ **網站內容**] 頁面上 *並移除 **本機的員工**清單!* 
     
-    > [!注意事項]
+    > **注意事項**
       > 增益集在Visual Studio後退回，不會移除讓您需要手動刪除的每當您要測試其所建立的程式碼增益集] 中所建立的清單。
 2. 使用 F5 鍵以部署及執行您的增益集Visual Studio主控 IIS Express 的遠端 web 應用程式和主控 SQL 資料庫的 SQL Express。它也讓您測試 SharePoint 網站上的 [增益集的暫存安裝，並立即執行增益集。系統提示您授與權限的增益集才能開始] 頁面隨即開啟。
     
@@ -295,7 +295,7 @@ webScopedEmployeeAction.DeleteObject();
   
 4. 瀏覽至 [ **網站內容**] 頁面上。因為您初次執行的邏輯將其新增有無 **本機的員工**清單。
     
-    > [!注意事項]
+    > **注意事項**
       > 若清單並非有或具有初次執行的程式碼不執行其他表示，則可能的 **承租人**表格不被 csdeviceupdateconfiguration 空的狀態時按 F5。最常見的原因是 **ChainCorporateDB**專案已不再設定為Visual Studio啟動專案。請參閱本文針對如何修正此問題頂端附近附註。也請確定您已設定要重新 [設定Visual Studio重建每個偵錯工作階段的公司資料庫](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild)中所述的資料庫。
 5. 開啟清單並新增項目。
     

@@ -13,7 +13,7 @@ Los secretos de cliente de Complementos de SharePoint registrados con la página
     
 
 
-> [!NOTA]
+> **NOTA**
 > Este artículo hace referencia a las Complementos de SharePoint que se distribuyen a través del catálogo de una organización y se registran en la página AppRegNew.aspx. Si el complemento registra en el Panel de vendedores, vea  [Crear o actualizar identificadores y claves secretas de cliente en el Panel de vendedores](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update). 
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > De manera predeterminada, el secreto del complemento dura un año. Puede modificarlo para que dure más o menos tiempo (un máximo de tres años), mediante el parámetro **-EndDate** en las tres llamadas del cmdlet **New-MsolServicePrincipalCredential**. El valor del parámetro debe ser un objeto  [DateTime](http://msdn2.microsoft.com/ES-ES/library/03ybds8y) establecido en un máximo de tres años a partir de **DateTime.Now**. 
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## Actualización de la aplicación web remota de Visual Studio para usar el nuevo secreto
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si el complemento se creó originalmente con una versión preliminar de Microsoft Office Developer Tools para Visual Studio, puede contener una versión desactualizada del archivo TokenHelper.cs (o .vb). Si el archivo no contiene la cadena "secondaryClientSecret", está desactualizado y se debe reemplazar para poder actualizar la aplicación web con un nuevo secreto. Para obtener una copia de una versión de lanzamiento del archivo, necesita Visual Studio 2012 o una versión posterior. Cree un nuevo proyecto de Complemento de SharePoint en Visual Studio y copie el archivo TokenHelper en el proyecto de aplicación web de su Complemento de SharePoint. 
   
     

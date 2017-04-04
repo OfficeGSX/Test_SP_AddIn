@@ -98,7 +98,7 @@ SharePoint 外接程序将部署到新创建的网站，此网站具有如下所
     
     
 
-> [!注释]
+> **注释**
 > ***** 本文后面的 [关于部署 SharePoint 组件的警告](#SpecialCases)部分中会更加详细地讨论标有星号 (*) 的组件。 
   
     
@@ -202,10 +202,10 @@ SharePoint 外接程序将部署到新创建的网站，此网站具有如下所
   ```
 
 
-    > [!注释]
+    > **注释**
       > 外接程序清单的新  [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) 元素与可包括在功能中的 [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) 元素是不同的标记。可包括在功能中的 **WebTemplate** 元素定义网站类型，但外接程序清单的 **WebTemplate** 元素仅标识要使用的网站类型。有关 SharePoint 外接程序外接程序清单的详细信息，请参阅 [加载项包结构](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package)。 
 
-    > [!警告]
+    > **警告**
       > 请不要使用外接程序清单中的 **WebTemplate** 元素将任何内置 SharePoint 网站定义配置指定为外接程序 Web 的网站类型。我们不支持对外接程序 Web 使用除 **APP#0** 之外的任何内置网站定义配置。
 
     有关网站定义配置和 Web 模板的详细信息，请参阅 [使用模板和定义](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx)。

@@ -28,7 +28,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
   
 3. Sur la page **Configuration du serveur d'application**, cliquez sur le bouton d'option **Serveur IIS**, puis choisissez **Suivant**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si vous disposez d'un fichier de paramètres de publication (.publishsettings ou .pubxml) créé pour un autre complément, vous pouvez l'utiliser pour fournir le reste des informations dont vous avez besoin pour la publication. Si c'est le cas, choisissez les **Paramètres d'importation** dans l'Assistant.
 4. Sur la page **Sortie de publication**, choisissez l'option **Publier directement sur un serveur maintenant**, puis choisissez **Suivant**.
     
@@ -58,7 +58,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
     
   
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si, pour votre publication, vous vous servez d'un pare-feu, vous devrez peut-être ouvrir le port 8172. 
 6. Dans la zone de texte **Site/application**, saisissez les noms du site web IIS et de votre complément.
     
@@ -66,7 +66,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
     
     Si vous exécutez une publication vers IIS sur votre propre ordinateur ou vers un serveur de votre réseau interne à des fins de test, saisissez le site et le nom de complément tels qu'ils apparaissent dans Gestionnaire des services Internet. Par exemple, si vous publiez le complément MyApp vers le site Web IIS par défaut, entrez Site Web par défaut/MyApp.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si vous exécutez une publication sur un dossier web existant et souhaitez supprimer le contenu existant, cochez la case **Supprimer les fichiers supplémentaires à destination**. 
 7. Dans les zones de texte **Nom utilisateur** et **Mot de passe**, entrez les informations d'authentification d'un compte disposant des droits suffisants pour exécuter les tâches de déploiement sur le serveur web de destination, puis choisissez **Suivant**.
     
@@ -78,7 +78,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
   
 9. Sur la page **Connexions de données**, sur l'onglet **Connexions de base de données**, entrez les chaînes de connexion de l'administrateur et de l'utilisateur correspondant au serveur de base de données sur lequel vous souhaitez publier votre base de données de complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La base de données ne doit pas être placée sur le serveur sur lequel vous publiez le complément. 
 10. Sur l'onglet **Sources de données attachées**, mettez à jour les chaînes de connexion de toutes les connexions supplémentaires en fonction des besoins, puis choisissez **Suivant**.
     
@@ -120,7 +120,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
   
 3. Sur la page **Configuration du serveur d'applications**, cliquez sur le bouton d'option **Serveur IIS**, puis choisissez **Suivant**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si vous disposez d'un fichier de paramètres de publication (.publishsettings ou .pubxml) créé pour un autre complément, vous pouvez utiliser ce fichier pour fournir le reste des informations dont vous avez besoin pour la publication. Si tel est le cas, cliquez sur le bouton **Paramètres d'importation** de l'Assistant.
 4. Sur la page **Sortie de publication**, cliquez sur le bouton d'option **Créer un paquet sur le disque**, puis choisissez **Suivant**.
     

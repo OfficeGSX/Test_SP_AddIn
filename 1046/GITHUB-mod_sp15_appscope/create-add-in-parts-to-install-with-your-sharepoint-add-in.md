@@ -364,7 +364,7 @@ Depois de concluir as tarefas, sua parte suplemento deve ser semelhante a Figura
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, instala o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **De confiança**.
     

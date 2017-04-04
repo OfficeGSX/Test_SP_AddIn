@@ -41,7 +41,7 @@ ms.assetid: 5c8767c2-317f-4bdb-8f4f-885d06da7feb
     
   
 
-> [!Примечание]
+> **Примечание**
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с данной статьей. Кроме того, вы можете скачать репозиторий  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeJSOM.sln.
   
     

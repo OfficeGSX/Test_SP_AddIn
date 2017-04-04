@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Office Web Widgets - visão geral Experimental
 Saiba mais sobre o Office Web Widgets - Experimental que você pode usar em Suplementos do Office, Suplementos do SharePoint e sites.
-> [!CUIDADO]
+> **CUIDADO**
 > Widgets da Web do Office - Experimental são fornecidos apenas para fins de pesquisa e comentários. Não use em cenários de produção. O comportamento do Office Web Widgets pode ser alterado significativamente em futuras versões. Leia e revise o  [Office Web Widgets - termos de licença Experimental](office-web-widgetsexperimental-license-terms.md).
   
     
@@ -121,7 +121,7 @@ Você pode especificar uma exibição existente na lista, o widget renderiza os 
     
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Neste momento, o widget do modo de exibição de lista de área de trabalho exibe apenas os dados. Ele não oferece recursos de edição.
   
     

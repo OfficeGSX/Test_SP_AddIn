@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Übersicht über Office Web Widgets - Experimental
 Erfahren Sie mehr über die Office Web Widgets - Experimental, die Sie in Office-Add-Ins, SharePoint-Add-Ins und Websites verwenden können.
-> [!VORSICHT]
+> **VORSICHT**
 > Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -121,7 +121,7 @@ Sie können eine vorhandene Ansicht für die Liste festlegen; das Widget gibt di
     
 
     
-> [!HINWEIS]
+> **HINWEIS**
 > Aktuell zeigt das Desktoplistenansichts-Widget nur die Daten an. Es bietet keine Funktionen zur Bearbeitung. 
   
     

@@ -19,7 +19,7 @@ ms.assetid: 0fa088c5-54c6-482c-84ed-51c4f77c4127
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!注释]
+> **注释**
 > **版本编号系统：**为了保持一致，本主题假设外接程序的版本号为 1.0.0.0、2.0.0.0、3.0.0.0 等。但是，无论您的编号系统是什么，逻辑和指南都适用。 
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!重要信息]
+> **重要信息**
 > 如果您在 **UpgradedEventEndpoint** 处理程序中为外接程序添加了组件，确保向 **InstalledEventEndpoint** 处理程序添加相同的代码，这是因为您也需要该组件包含在新安装的外接程序中。此外，应该为外接程序添加（或修改）用于删除组件的 [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx)。大多数情况下，由 **InstalledEventEndpoint** 添加或更改的任何内容都应该由 **UninstallingEventEndpoint** 修改或删除。如果数据在将外接程序从第二阶段回收站中删除后仍然有用，则不应删除，这是一个例外。（除外接程序 Web 以外，由外接程序创建的网站都应视为数据。）
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!重要信息]
+> **重要信息**
 > 为  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) 属性分配 **SPRemoteEventServiceStatus.CancelWithError**（或 **SPRemoteEventServiceStatus.CancelNoError**）至关重要。此属性是让基础架构回滚更新的信号发送方。但在回滚更新之前，SharePoint 将重试三次您的处理程序。 
   
     

@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # SharePoint アドインの URL 文字列とトークン
 SharePoint アドインで使用できる URL トークンについて
-> [!重要]
+> **重要**
 > SharePoint 2013での URL の作成方法および作成した URL でのトークンの使用に関する一般的な情報については、「 [SharePoint 2013 の URL とトークン](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx)」を参照してください。このトピックでは、SharePoint アドインで使用できるトークンについて説明します。 
   
     

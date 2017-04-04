@@ -7,7 +7,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
 
 # Add SharePoint write operations to the provider-hosted add-in
 Learn how to write data to SharePoint in a provider-hosted SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -27,7 +27,7 @@ This is the fifthin a series of articles about the basics of developing provider
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeSharePointWriteOps.sln file.
   
     
@@ -41,7 +41,7 @@ Our add-in has a custom ribbon button that adds an employee from the Hong Kong s
     
     
 
-> [!NOTE]
+> **NOTE**
 >  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
   
     
@@ -137,7 +137,7 @@ Since the add-in is now writing to the list as well as reading it, we need to es
   
 9. The page will seem to reload because the **Page_Load** method of the EmployeeAdder page redirects back to it. The value of the **Added to Corporate DB** field for the employee has changed to **Yes**.
     
-    > [!NOTE]
+    > **NOTE**
       > What prevents a user from manually changing the value **Added to Corporate DB** in a way that makes the list and the corporate database inconsistent? Nothing does at the moment. You'll get the solution to this problem in a later article of this series.
 10. To end the debugging session, close the browser window or stop debugging in Visual Studio. Each time that you press F5, Visual Studio will retract the previous version of the add-in and install the latest one.
     

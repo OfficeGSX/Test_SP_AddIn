@@ -7,7 +7,7 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 
 # Upload a file by using the REST API and jQuery
 Learn how to upload a local file to a SharePoint folder by using the REST API and jQuery AJAX requests.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -43,7 +43,7 @@ Both code examples in this article use the REST API and jQuery AJAX requests to 
     
     
 
-> [!NOTE]
+> **NOTE**
 > Provider-hosted add-ins written in JavaScript must use the SP.RequestExecutor cross-domain library to send requests to a SharePoint domain. For an example, see  [upload a file by using the cross-domain library](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd). 
   
     

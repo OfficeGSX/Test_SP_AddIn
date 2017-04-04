@@ -7,7 +7,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # 使用實驗桌面清單檢視 widget 中 SharePoint 增益集
 即使頁面不架設在SharePoint了解如何使用桌面清單檢視 widget 在任何網頁。用於您的增益集的清單檢視 widget 架設SharePoint網站中的清單中顯示資料。
-> [!注意事項]
+> **注意事項**
 > Office Web Widget - Experimental 只提供進行研究 (英文) 和意見反應。不在實際執行案例中使用。Office Web Widget 行為可能會大幅在未來的版本中變更。閱讀並檢閱 [Office Web Widget 實驗的授權條款](office-web-widgetsexperimental-license-terms.md)。
   
     
@@ -47,7 +47,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
     
     
 
-> [!注意]
+> **注意**
 > 桌面清單檢視 widget 不會啟用原生清單檢視中的所有的案例。
   
     
@@ -119,7 +119,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
   
 - 建立增益集在 web 上的清單。此步驟也可確保使用者部署的增益集時建立的增益集網頁。
     
-    > [!注意事項]
+    > **注意事項**
       > 跨網域文件庫要求增益集 web 存在。清單檢視 widget 會與SharePoint通訊所使用的跨網域文件庫。
 - 建立增益集] 頁面上的宣告使用 HTML 標記的清單檢視 widget 執行個體。
     
@@ -139,7 +139,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
   
 4. 選取 [ **提供者主控**為增益集的主控選項。
     
-    > [!注意事項]
+    > **注意事項**
       > 您也可以使用桌面清單檢視 widget 搭配其他主控選項或甚至是 Office 增益集或您自己的網站。
 5. 選取 [ **ASP.NET Web 表單應用程式**的 web 應用程式專案類型。
     
@@ -315,7 +315,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
   ```
 
 
-> [!注意事項]
+> **注意事項**
 > 在上面的程式碼範例明確指定要初始化的 Office 控制項執行階段的主機網頁伺服器和增益集 web Url。不過，如果增益集網頁和主機網頁 Url 指定 **SPAppWebUrl** 及 **SPHostUrl** 查詢字串參數中，分別;您可以傳遞空物件並將程式碼會嘗試自動取得的參數。當您使用 **{StandardTokens}** 權杖 **SPAppWebUrl** 與 **SPHostUrl** 參數並包含查詢字串。
   
     
@@ -342,7 +342,7 @@ Office.Controls.Runtime.initialize({});
 
 1. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio 建置解決方案、 增益集、 部署與開啟的增益集的 [權限] 頁面。
 2. 選擇 [ **信任它**] 按鈕。
     

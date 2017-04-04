@@ -34,7 +34,7 @@ Les éléments suivants sont des conditions préalables aux procédures décrite
   
 - **Un compte d'organisation sur Microsoft Azure**. Voir  [Ajouter manuellement de commun accord dans votre application Office 365 Preview API](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Connectez-vous avec votre compte Office 365 (login.microsoftonline.com) pour changer le mot de passe temporaire après la création du compte. 
 - **Un point de terminaison OData SAP** contenant des exemples de données. Pour en savoir plus, voir la page relative à la [Passerelle SAP pour Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -61,7 +61,7 @@ OAuth 2.0 dans Azure AD permet aux applications d'accéder à de multiples resso
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Si votre Complément SharePoint accède à SharePoint en plus d'accéder à la Passerelle SAP pour Microsoft, il devra utiliser  *les deux*  systèmes : Azure AD pour obtenir un jeton d'accès à la Passerelle SAP pour Microsoft et le système d'autorisation ACS pour obtenir un jeton d'accès à SharePoint. Les jetons provenant des deux sources ne sont pas interchangeables. Pour en savoir plus, voir la section [Ajout de l'accès à SharePoint à l'application ASP.NET (facultatif)](#SharePoint). 
   
     
@@ -124,7 +124,7 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
 
 1. Connectez-vous au  [portail de gestion Azure](https://manage.windowsazure.com) avec votre compte Administrateur Azure.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Pour des raisons de sécurité, nous vous recommandons de ne pas utiliser un compte Administrateur lors du développement de compléments. 
 2. Choisissez **Active Directory** sur la gauche.
     
@@ -210,7 +210,7 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > Votre application est reconnue par Azure AD grâce à l'URL « localhost » que vous avez utilisée pour l'inscrire. L'ID client et la clé client sont associés à cette identité. Lorsque vous êtes prêt à préparer votre application sur un Site web Azure, inscrivez-la à nouveau avec une autre URL. 
 4. Toujours dans la section **appSettings**, ajoutez une clé **Authority** et définissez sa valeur sur le domaine Office 365 ( *domaine*  .onmicrosoft.com) de votre compte d'entreprise. Dans l'exemple de cet article, le compte d'entreprise est Bob@<domaine_O365>.onmicrosoft.com, l'autorité est donc `<O365_domain>.onmicrosoft.com`. 
     
@@ -250,7 +250,7 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
 
 7. Enregistrez et fermez le fichier web.config.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Ne laissez pas le fichier web.config ouvert lorsque vous exécutez le débogueur Visual Studio (F5). Les Outils de développement Office pour Visual Studio changent la valeur **ClientId** (mais pas la valeur **ida:ClientID**) chaque fois que vous appuyez sur la touche F5. Vous devez alors répondre à un message vous invitant à recharger le fichier web.config, s'il est ouvert, avant l'exécution du débogage. 
 
 ### Ajout d'une classe d'assistance pour s'authentifier sur Azure AD
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > La classe AADAuthHelper n'assure qu'une gestion minimale des erreurs. Pour obtenir un Complément SharePoint résistant, de qualité de production, appliquez un niveau supérieur de gestion des erreurs en suivant les indications décrites dans ce nœud MSDN :  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx). 
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Supprimez cette ligne lorsque vous êtes prêt à déployer l'application ASP.NET en phase de préparation. Voir la section  [Modification du complément et préparation de celui-ci sur Azure et Office 365](#Stage). 
 5. Ajoutez le code suivant à la méthode **Page_Load**. La chaîne que vous transmettez à la méthode  `GetSAPData` est une requête OData.
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pendant que vous déboguez le Complément SharePoint, les Outils de développement Office pour Visual Studio l'inscrivent à nouveau auprès d'Azure ACS chaque fois que vous appuyez sur F5 dans Visual Studio. Lorsque vous préparez le Complément SharePoint, vous devez lui attribuer une inscription sur le long terme. Voir la section  [Modification du complément et préparation de celui-ci sur Azure et Office 365](#Stage). 
   
     
@@ -710,7 +710,7 @@ Lorsque vous avez terminé le débogage du Complément SharePoint à l'aide de l
   
 8. Inscrivez le complément auprès d'Azure ACS. Vous devez procéder à cette inscription même si le complément n'accédera pas à SharePoint et même s'il ne sera pas amené à utiliser des jetons provenant du service ACS, car le même processus inscrit également le complément auprès du service de gestion des compléments de l'abonnement Office 365, et ceci est obligatoire. (Le nom « service de gestion des applications » vient du fait que les Compléments SharePoint étaient à l'origine appelés « applications pour SharePoint ».) Inscrivez-le sur la page AppRegNew.aspx d'un site web SharePoint dans l'abonnement Office 365. Pour en savoir plus, voir  [Enregistrer des compléments dans SharePoint 2013](register-sharepoint-add-ins-2013.md). Dans le cadre de ce processus, vous obtiendrez un nouvel ID client et une nouvelle clé secrète client. Insérez ces valeurs dans le fichier web.config pour obtenir les clés **ClientId** (et non **ida:ClientID**) et **ClientSecret**.
     
-    > [!ATTENTION]
+    > **ATTENTION**
       > Si vous appuyez sur la touche F5 après avoir fait ce changement, les Outils de développement Office pour Visual Studio écraseront une des valeurs ou les deux. Pour cette raison, vous devez conserver une trace des valeurs obtenues avec AppRegNew.aspx et toujours vérifier que les valeurs dans le fichier web.config sont correctes juste avant de publier l'application ASP.NET. 
 
 ### Publication du complément ASP.NET sur Azure et installation du complément sur SharePoint

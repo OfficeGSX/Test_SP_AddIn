@@ -93,7 +93,7 @@ API インデックスを使用すると, .NET サーバー オブジェクト �
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP へWebTemplateCollection オブジェクト (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
    
 
-> [!メモ]
+> **メモ**
 > 表に示した REST エンドポイント URI を使用する前に、 `…` の省略記号を SharePoint サイトへのパスで置き換えてください。たとえば、 `http://<site collection>/<site>/_api/web/lists` とします。
   
     

@@ -39,7 +39,7 @@ Beachten Sie Folgendes:
     
   
  **Informationen zum Erstellen der SharePoint Online-Umgebung** mithilfe eines SharePoint Online-Abonnements finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). **Informationen zum Erstellen der lokalen Umgebung** finden Sie unter [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
-> [!HINWEIS]
+> **HINWEIS**
 > Dieses Thema befasst sich nur mit Umgebungen für die Entwicklung von SharePoint-Add-Ins. Wenn Sie die Entwicklung von Farmlösungen planen, finden Sie weitere Informationen unter  [Einrichten einer allgemeinen Entwicklungsumgebung für SharePoint 2013](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx). Wenn Sie beide Arten von Entwicklung planen, beginnen Sie mit dem letzteren Artikel, und sehen Sie sich dann  [Einrichten einer lokalen Entwicklungsumgebung für SharePoint-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) für weitere Schritte an, die für die Entwicklung von SharePoint-Add-Ins erforderlich sind.
   
     

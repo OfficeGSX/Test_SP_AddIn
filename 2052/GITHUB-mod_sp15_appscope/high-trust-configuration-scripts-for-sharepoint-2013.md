@@ -89,7 +89,7 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
     
     
 
-> [!注释]
+> **注释**
 > 文件必须另存为 ANSI 格式，而非 UTF-8。PowerShell 在运行非 ANSI 格式的文件时，可能会报告语法错误。记事本和 PowerShell 编辑器会默认将其保存为 ANSI。如果使用其他任何编辑器保存文件，请确保将其保存为 ANSI。 
   
     
@@ -142,7 +142,7 @@ New-SPTrustedRootAuthority -Name $CertName -Certificate $cert
     
     
 
-> [!重要信息]
+> **重要信息**
 > 将证书注册为令牌颁发者不会立即生效。可能需要 24 小时，才能使所有 SharePoint 服务器识别新的令牌颁发者。在所有 SharePoint 服务器上运行 iisreset 会使它们立即识别颁发者，前提是您可以在不影响 SharePoint 用户的情况下执行此操作。 
   
     
@@ -204,7 +204,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 ```
 
 
-> [!提示]
+> **提示**
 > 如果脚本在  `New-SPTrustedRootAuthority` 行运行成功后抛出错误，则脚本无法重新运行，除非对象已删除。使用以下 cmdlet，其中 `-Identity` 参数的值与用于脚本中的 `-CertName` 参数的值相同。>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> 如果因为某种原因需要移除令牌颁发者，请使用以下 cmdlet： >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> 如果使用了  `-TokenIssuerFriendlyName` 参数，请为 `-Identity` 使用相同的值。如果未使用 `-TokenIssuerFriendlyName` 参数，则随机 GUID 是颁发者名称的一部分。要获取 `-Identity` 所需的值，请运行以下 cmdlet。然后打开生成的 TokenIssuers.txt 文件并查找名称为"High-Trust Add-ins _<颁发者 GUID 的 base64 版本>_"的颁发者。为  `-Identity` 使用该完整名称。>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
   
     
@@ -240,7 +240,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
     
     
 
-> [!重要信息]
+> **重要信息**
 > 将证书注册为令牌颁发者不会立即生效。可能需要 24 小时，才能使所有 SharePoint 服务器识别新的令牌颁发者。在所有 SharePoint 服务器上运行 iisreset 会使它们立即识别颁发者，前提是您可以在不影响 SharePoint 用户的情况下执行此操作。 
   
     
@@ -301,7 +301,7 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
 ```
 
 
-> [!提示]
+> **提示**
 > 上一节结尾的提示在此处同样适用，但对于  `Remove-SPTrustedSecurityTokenIssuer` cmdlet 的 `-Identity` 参数，请使用客户端 ID，前提是未在 HighTrustConfig-ForSingleApp.ps1 中使用 `-TokenIssuerFriendlyName` 参数。
   
     

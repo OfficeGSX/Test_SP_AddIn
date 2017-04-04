@@ -60,7 +60,7 @@ SharePoint 主控的增益集是下列其中一個SharePoint Add-ins兩種主要
 <a name="o365_signup"> </a>
 
 
-> [!注意事項]
+> **注意事項**
 > 您可能已經具備存取權Office 365 開發人員網站。> **是 MSDN 訂閱者吗？** Visual 項 Studio 最終與 MSDN 訂閱者與 Visual Studio Premium 收到 Office 365 開發人員訂閱作為福利。 [今天贖回您福利。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **您有下列其中一個 Office 365 訂閱計劃嗎？**> **如果， Office 365訂閱的管理員可以建立開發人員網站** 使用 [Office 365 系統管理中心](https://portal.microsoftonline.com/admin/default.aspx)。如需詳細資訊，請參閱 [建立現有的 Office 365 訂閱開發人員網站](create-a-developer-site-on-an-existing-office-365-subscription.md)。
   
     
@@ -81,7 +81,7 @@ SharePoint 主控的增益集是下列其中一個SharePoint Add-ins兩種主要
     
   
 
-> [!秘訣]
+> **秘訣**
 > 在另一個視窗或索引標籤中開啟這些連結，以便使用下列指示。
   
     
@@ -126,7 +126,7 @@ SharePoint 主控的增益集是下列其中一個SharePoint Add-ins兩種主要
   
 
     
-> [!注意事項]
+> **注意事項**
 > 如果您登入到其他 Microsoft 帳戶嘗試註冊的開發人員帳戶時，您可能會看到此訊息： 「 抱歉，您輸入的使用者識別碼沒有運作。它看起來不正確。請確定您輸入您的組織指派給您的使用者識別碼。使用者識別碼通常看起來像是 *someone@example.com*  或 *someone@example.onmicrosoft.com*  。 」> 如果您看到該郵件，登出您所使用的 Microsoft 帳戶並再試一次。如果您仍會收到郵件，清除 [在瀏覽器快取或切換至 **[InPrivate 瀏覽**並再填寫表單。
   
     

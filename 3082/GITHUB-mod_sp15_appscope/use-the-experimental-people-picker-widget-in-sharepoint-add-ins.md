@@ -7,7 +7,7 @@ ms.assetid: edc60550-67d2-4230-8e27-06a328c0d1f1
 
 # Procedimiento para usar el widget experimental Selector de personas en aplicaciones para SharePoint
 Aprenda a usar el widget Selector de personas en cualquier página web aunque no esté hospedada en SharePoint. Use el widget Selector de personas en sus complementos para ayudar a los usuarios a buscar y seleccionar personas y grupos.
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > Los Office Web Widgets: Experimental solo se proporcionan con fines de investigación y comentarios. No se deben usar en situaciones de producción. El comportamiento de Office Web Widgets puede cambiar significativamente en futuras versiones. Lea y revise los  [Términos de licencia de Office Web Widgets: Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -88,7 +88,7 @@ Para usar el widget Selector de personas, debe hacer lo siguiente:
   
 - Crear un módulo en la web de complemento. Este paso garantiza que se cree una web de complemento cuando los usuarios implementen el complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Selector de personas se comunica con SharePoint usando la biblioteca entre dominios. 
 - Crear una página de complemento que declare una instancia del widget Selector de personas usando marcado.
     
@@ -108,7 +108,7 @@ Para usar el widget Selector de personas, debe hacer lo siguiente:
   
 4. Seleccione **Hospedada por el proveedor** como la opción de hospedaje del complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > También puede usar el widget Selector de personas con otras opciones de hospedaje o incluso con complementos para Office o su propio sitio web. 
 5. Seleccione **Aplicación de formularios Web Forms ASP.NET** como tipo de proyecto de aplicación web.
     
@@ -125,7 +125,7 @@ Para usar el widget Selector de personas, debe hacer lo siguiente:
   
 2. Elija **Elementos de Visual C#**> **Office/SharePoint**> **Módulo**. Póngale un nombre al módulo.
     
-    > [!NOTA]
+    > **NOTA**
       > Si va a crear una Complementos hospedados en SharePoint, no es necesario crear un módulo adicional. 
 
 ### Para agregar una nueva página que use el widget Selector de personas
@@ -244,7 +244,7 @@ Basic People Picker sample (HTML markup declaration):
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > El ejemplo de código anterior especifica explícitamente las direcciones URL de la web de hospedaje y la web de complemento para inicializar el tiempo de ejecución de los controles de Office. Sin embargo, si las direcciones URL de la web de complemento y la web de hospedaje se especifican en los parámetros de cadena de consulta **SPAppWebUrl** y **SPHostUrl** respectivamente, se puede pasar un objeto vacío para que el código intente obtener los parámetros de forma automática. Los parámetros **SPAppWebUrl** y **SPHostUrl** se incluyen en la cadena de consulta cuando se usa el token **{StandardTokens}**.
   
     
@@ -271,7 +271,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Al presionar F5, Visual Studio crea la solución, implementa el complemento y abre la página de permisos del complemento. 
 2. Elija el botón **Confiar**.
     

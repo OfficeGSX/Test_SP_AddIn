@@ -331,7 +331,7 @@ Les compléments hébergés dans le cloud utilisent soit OAuth, soit la biblioth
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les composants de compléments hébergés dans le cloud écrits en JavaScript doivent utiliser l'objet **SP.RequestExecutor** dans la bibliothèque inter-domaines pour accéder aux données SharePoint. Pour les requêtes de bibliothèque inter-domaines, il n'est pas nécessaire d'inclure un jeton d'accès.
   
     
@@ -358,7 +358,7 @@ Les requêtes de bibliothèque inter-domaines utilisent ce format lorsqu'elles a
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Une instance de site web de complément est requise pour qu'un complément hébergé dans le cloud puisse accéder aux données SharePoint lors de l'utilisation de la bibliothèque inter-domaines. 
   
     
@@ -375,7 +375,7 @@ Les requêtes de bibliothèque inter-domaines utilisent ce format lorsqu'elles a
 |Hébergée par SharePoint  <br/> |Composant de site web de complément accédant aux données dans une autre collection de sites (compléments délimités de locataire uniquement)  <br/> | _<URL du site web d'application>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<URL du site cible>_'  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les scénarios d'accès aux données inter-domaines nécessitent également les autorisations de complément appropriées. Pour plus d'informations, voir  [Accéder aux données à partir du site web hôte](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) et [Accéder aux données sur plusieurs collections de sites](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope). 
   
     

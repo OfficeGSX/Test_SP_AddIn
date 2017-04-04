@@ -39,7 +39,7 @@ SharePoint oferece três tipos de políticas de autorização:
     
     
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Determinadas APIs exigem um contexto de usuário e não podem ser executadas com uma política de somente app. Isso inclui muitas APIs para interagir com Project Server 2013 e para a execução de consultas de pesquisa.
 
 ### Veja um exemplo de cenário de um suplemento que usa a diretiva somente app
@@ -116,7 +116,7 @@ if (contextTokenString != null)
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Suplementos que não faça chamadas OAuth autenticado (por exemplo, suplementos que estão apenas JavaScript em execução no suplemento web) não é possível usar a diretiva somente app. Eles podem solicitar a permissão, mas não será capazes de tirar proveito dela porque essas tarefas exigem passando uma OAuth somente app token. Somente suplementos com aplicativos web em execução fora SharePoint podem criar e passar somente app tokens.
   
     

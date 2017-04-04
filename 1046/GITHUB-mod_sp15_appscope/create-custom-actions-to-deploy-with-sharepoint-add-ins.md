@@ -84,7 +84,7 @@ Siga estas etapas para criar uma ação personalizada nas bibliotecas de documen
     
   
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Os tokens ItemURL e ItemID apenas obtém passados quando houver um item selecionado. Em uma qualidade de produção Suplemento do SharePoint, seu código precisa para lidar com situações em que nenhum item esteja selecionado. Neste exemplo, o código alerta o usuário que nenhum item foi selecionado.
 
   ```HTML
@@ -192,7 +192,7 @@ Siga estas etapas para criar uma ação personalizada nas bibliotecas de documen
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Neste exemplo, a página da web remoto abre em uma janela inteira quando o usuário seleciona a ação personalizada no menu. Ações de menus personalizada também podem abrir uma página da Web remota em uma caixa de diálogo usando o atributo **HostWebDialog**. Para obter mais informações, consulte [SharePoint-adicionar-em-localização](https://github.com/OfficeDev/SharePoint-Add-in-Localization).
   
     
@@ -269,7 +269,7 @@ Siga estas etapas para criar uma ação personalizada nas bibliotecas de documen
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Ações de faixa de opções personalizadas usam **SelectedListId** e **SelectedItemId**. **ListId** e **ItemId** funcionam somente com ações personalizadas do item de menu.
 
 ### Definir a página inicial do suplemento para a home page do host web
@@ -292,7 +292,7 @@ Siga estas etapas para criar uma ação personalizada nas bibliotecas de documen
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **De confiança**. Abre a página padrão do seu site do desenvolvedor.
     

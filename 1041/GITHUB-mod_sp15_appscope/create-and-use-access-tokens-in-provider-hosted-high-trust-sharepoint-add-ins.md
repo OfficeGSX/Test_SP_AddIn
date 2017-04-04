@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # SharePoint のプロバイダー向けのホスト型高信頼アドインでアクセス トークンを作成して使用する
 SharePoint の高信頼アドインのアクセス トークンのロール、およびそれらを用いたコードの動作方法について説明します。
-> [!重要]
+> **重要**
 > **この記事全体では高信頼の承認システムでのアクセス トークンの使用についてのみ説明し、ACS システムについては取り上げません。** ACS システムでのセキュリティ トークンの使用については、「 [SharePoint のプロバイダー向けのホスト型低信頼アドインでセキュリティ トークンを処理する](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md)」を参照してください。 
   
     
@@ -24,7 +24,7 @@ SharePoint の高信頼アドインのアクセス トークンのロール、�
 <a name="AccessTokens"> </a>
 
 
-> [!メモ]
+> **メモ**
 >  この記事を読む際、特にコードで実行する必要があるタスクについては、マネージ コードを使用している場合、Microsoft Office Developer Tools for Visual Studio がすべての SharePoint アドイン プロジェクトに、ユーザーのかわりにこれらの作業のほとんどを行う 2 つのコード ファイル SharePointContext.cs (or .vb) と TokenHelper.cs (または .vb) を生成して追加することに注意してください。アプリケーションのトークン処理コードは通常、これらのファイルのクラスに対するいくつかの呼び出しのみで構成されます。このトピックの詳細は、マネージ コードを使用していない開発者を支援すること (およびトークンに関する問題のトラブルシューティングの担当者を支援すること) を目的としています。>  さまざまな言語とプラットフォームの OAuth ライブラリへのリンクは、次のとおりです。>  [OAuth 2.0](http://oauth.net/2/) 「 **クライアント ライブラリ** 」までスクロールします。>  [github](https://github.com/) で "OAuth 2" と "JSON web token" を (引用符なしで) 検索すると、さらに見つかります。
   
     
@@ -123,7 +123,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
     
     
 
-> [!メモ]
+> **メモ**
 >  コードが作成する高信頼アクセス トークンは、低信頼承認システムが使用されている場合に、Azure ACS によって作成されるものとは異なることに注意してください。>  ヘッダーの **alg** のクレームは、高信頼アドインからのユーザー + アドイン呼び出しでアクセス トークンが署名されていないため、"none" になります。>  この例の **aud** 値のアドイン URL はオンプレミスのサーバーであり、高信頼システムでは通常こうなります。> **identityprovider** クレームはありませんが、低信頼承認システムで使用される **identityprovider** クレーム アクセス トークンと同じ種類の値を持つ **nii** (名前 ID の発行者) はあります。ID プロバイダーが SAML ベースの場合のこの値の詳細については、Steve Peschka のブログの投稿「 [SharePoint アドインのセキュリティ - パート 8](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx)」および「 [SharePoint 2013 で SAML および FBA サイトを利用して SharePoint アドインを使用する](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx)」を参照してください。 > **actor** クレームはありませんが、有効期限が 12 時間の Base 64 でエンコードされた内部トークンを含む **actortoken** クレームがあります。
   
     
@@ -207,7 +207,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
 ```
 
 
-> [!メモ]
+> **メモ**
 > 高信頼アドインが [アドイン用ポリシー](add-in-authorization-policy-types-in-sharepoint-2013.md)を使用して、SharePoint へのアドイン用呼び出しを行う場合、ここに示すトークンは実際にはアクセス トークンになります。外部トークンはありません。さらに、ユーザーのアクセス許可はアドイン用呼び出しと関係がないため、 **trustedfordelegation** クレームはありません。
   
     

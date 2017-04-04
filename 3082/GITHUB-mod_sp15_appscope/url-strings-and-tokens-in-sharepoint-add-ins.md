@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # Cadenas de dirección URL y tokens en complementos para SharePoint
 Obtenga información sobre qué tokens para direcciones URL están disponibles para su uso en Complementos de SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Para obtener información general sobre la construcción de direcciones URL en SharePoint 2013 y sobre el uso de los tokens en estas direcciones, consulte  [Formularios de cadenas de direcciones URL](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). En este tema se describen los tokens que se encuentran disponibles en Complementos de SharePoint. 
   
     

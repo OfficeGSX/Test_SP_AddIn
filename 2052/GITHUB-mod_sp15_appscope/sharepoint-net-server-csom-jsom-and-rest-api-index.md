@@ -93,7 +93,7 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP。WebTemplateCollection 对象 (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
    
 
-> [!注释]
+> **注释**
 > 使用表中所示的 REST 终结点 URI 之前，请将  `…` 缩写替换为 SharePoint 网站的路径，例如 `http://<site collection>/<site>/_api/web/lists`。 
   
     

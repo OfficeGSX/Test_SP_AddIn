@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Office Web Widgets - Experimental の概要
 Office アドイン、SharePoint アドイン、および Web サイトで使用できる Office Web Widgets - Experimental について説明します。
-> [!注意]
+> **注意**
 > Office Web Widgets - Experimental は、研究およびフィードバックを得る目的でのみ提供されています。運用シナリオでは使用しないでください。Office Web ウィジェットは、今後のリリースでその動作が大幅に変更される可能性があります。「 [Office Web Widgets - Experimental のライセンス条項](office-web-widgetsexperimental-license-terms.md)」を参照し、把握してください。 
   
     
@@ -121,7 +121,7 @@ Office Web Widgets - Experimental などのクライアント コントロール
     
 
     
-> [!メモ]
+> **メモ**
 > 現在、デスクトップ リスト ビュー ウィジェットはデータの表示のみを行います。編集機能はありません。 
   
     

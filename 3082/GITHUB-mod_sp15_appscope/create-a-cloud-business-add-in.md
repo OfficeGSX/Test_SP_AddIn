@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # Crear un complemento empresarial de nube
 Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear complementos de SharePoint 2013 o SharePoint en Office 365 optimizadas para la adición y administración de datos.
-> [!NOTA]
+> **NOTA**
 > También puede compilar un Complemento de SharePoint con la plantilla Complemento de SharePoint 2013. 
   
     

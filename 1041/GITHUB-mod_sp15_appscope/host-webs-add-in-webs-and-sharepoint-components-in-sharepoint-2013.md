@@ -98,7 +98,7 @@ SharePoint コンポーネントを、ホスト Web ではなくアドイン Web
     
     
 
-> [!メモ]
+> **メモ**
 > ***** アスタリスク (*) の付いているコンポーネントについては、この記事で後述する「 [SharePoint コンポーネントの展開に関する注意事項](#SpecialCases)」でさらに詳しく説明しています。 
   
     
@@ -202,10 +202,10 @@ SharePoint コンポーネントを、ホスト Web ではなくアドイン Web
   ```
 
 
-    > [!メモ]
+    > **メモ**
       > アドイン マニフェスト用の新しい  [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) 要素は、フィーチャーに含めることができる [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) 要素と同じマークアップではありません。フィーチャーに含めることができる **WebTemplate** 要素はサイトの種類を定義しますが、アドイン マニフェスト用の **WebTemplate** 要素は単に使用するサイトの種類を識別するだけです。SharePoint アドインのアドイン マニフェストの詳細については、「 [アドインのパッケージ構成](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package)」を参照してください。 
 
-    > [!注意]
+    > **注意**
       > アドイン マニフェスト内の **WebTemplate** 要素を使用して、任意の組み込みの SharePoint サイト定義構成をアドイン Web のサイトの種類として指定しないでください。アドイン Web に対しては、 **APP#0** 以外の組み込みの SharePoint サイト定義構成の使用はサポートされていません。
 
     サイト定義の構成および Web テンプレートの詳細については、「 [テンプレートおよび定義を使用する](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx)」を参照してください。

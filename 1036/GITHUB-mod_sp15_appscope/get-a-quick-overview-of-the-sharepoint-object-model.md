@@ -23,7 +23,7 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par un fournisseur, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) et ouvrir le fichier BeforeSharePointWriteOps.sln.
   
     

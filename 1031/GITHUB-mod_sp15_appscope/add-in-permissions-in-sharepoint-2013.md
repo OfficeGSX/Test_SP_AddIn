@@ -64,7 +64,7 @@ Ein SharePoint-Add-In gibt mithilfe von Berechtigungsanforderungen die Berechtig
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die in diesem Abschnitt beschriebenen Bereiche gelten nur für Listeninhalte und Bibliotheksinhalte. Weitere Informationen zu Bereichen und anderen Features finden Sie unter  [Arten von App-Berechtigungen und Berechtigungsbereichen](#Perm_types) in diesem Artikel.
   
     
@@ -75,7 +75,7 @@ Berechtigungsanforderungsbereiche geben die Position in der SharePoint-Hierarchi
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Ein SharePoint-Add-In besitzt eine eigene Identität und ist ein Sicherheitsprinzipal, der als Add-In-Prinzipal bezeichnet wird. Wie Benutzer und Gruppen hat auch ein Add-In-Prinzipal bestimmte Berechtigungen oder Rechte. Da der Add-In-Prinzipal Vollzugriff auf das Add-In-Web besitzt, muss er nur Berechtigungen zum Zugriff auf die SharePoint -Ressourcen im Hostweb oder auf andere Speicherorte außerhalb des Add-In-Webs anfordern. Weitere Informationen zum Add-In-Web finden Sie unter [Wichtige Aspekte der Architektur und Entwicklungslandschaft von Add-Ins für SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md) und [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md). 
   
     
@@ -126,14 +126,14 @@ Berechtigungen geben die Aktivitäten an, die eine App im Anforderungsbereich au
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen dazu, was die Rechte Read, Write, Manage und FullControl beinhalten finden Sie im Thema zur  [Planung der App-Berechtigungsverwaltung](http://technet.microsoft.com/de-de/library/jj219576%28office.15%29.aspx). 
   
     
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Diese Rechte entsprechen den Standard-Benutzerberechtigungsstufen von SharePoint: Leser, Teilnehmer, Designer und Vollzugriff. Weitere Informationen zu Berechtigungen und Berechtigungsstufen finden Sie unter  [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/de-de/library/cc288074.aspx). > Um Verwechslungen zu vermeiden, stimmen die Namen der App-Rechte nicht mit den Namen der Rechte von SharePoint-Benutzerrollenberechtigungen überein. Weil sich die Anpassung der Berechtigungen, die mit SharePoint-Benutzerrollen verknüpft sind, nicht auf die App-Berechtigungsanforderungsstufen auswirken, entsprechen die Namen der App-Rechte nicht den entsprechenden SharePoint-Benutzerrollen mit Ausnahme des Rechts FullControl, das nicht über die Benutzeroberfläche zur Berechtigungsverwaltung angepasst werden kann. 
   
     
@@ -154,7 +154,7 @@ Zudem gilt:
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Für Office Store-Apps gelten Beschränkungen hinsichtlich der Typen von Rechten, die ein Add-In anfordern kann. Weitere Informationen finden Sie im Abschnitt  [Arten von App-Berechtigungen und Berechtigungsbereichen](#Perm_types) in diesem Artikel.
   
     
@@ -196,7 +196,7 @@ Tabelle 2 enthält den Berechtigungsanforderungsbereich für Listen- und Bibliot
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die in Tabelle 2 angegebenen URIs sind Literalwerte. 
   
     
@@ -285,7 +285,7 @@ Die Berechtigungsanforderungsbereiche für andere SharePoint-Funktionen sind in 
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die in der Tabelle angegebenen URIs sind Literalwerte. 
   
     
@@ -304,7 +304,7 @@ Tabelle 3 enthält den Berechtigungsanforderungsbereich von Business Connectivit
 |http://sharepoint/bcs/connection  <br/> |Read  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen zum App-Berechtigungsanforderungsbereich für BCS finden Sie unter  [Business Connectivity Services in SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx). 
   
     
@@ -327,7 +327,7 @@ Tabelle 4 enthält den App-Berechtigungsanforderungsbereich Search. Sie enthält
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen zum App-Berechtigungsanforderungsbereich Search finden Sie unter  [Suche in SharePoint 2013](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx). 
   
     
@@ -342,7 +342,7 @@ Tabelle 5 enthält den Berechtigungsanforderungsbereich für Project Server 2013
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Anwendungen, die Features und Dienste von Project Server 2013 verwenden, sollten in einer Umgebung getestet werden, die über die erforderlichen Project Server-Features und -Dienste verfügen. Die Berechtigungsanbieterassembly von Project Server 2013, in der die Project Server 2013-Berechtigungsbereiche verzeichnet sind, wird nicht standardmäßig mit SharePoint Server installiert. Weitere Informationen finden Sie in der Project Server 2013-Entwicklerdokumentation. 
   
     
@@ -381,7 +381,7 @@ Tabelle 6 enthält den Berechtigungsanforderungsbereich für Features für sozia
 |http://sharepoint/social/microfeed  <br/> |Read, Write, Manage, FullControl  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen zum App-Berechtigungsanforderungsbereich für Features für soziale Netzwerke finden Sie unter  [App-Berechtigungsanforderungen für den Zugriff auf soziale Features](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms). 
   
     
@@ -404,7 +404,7 @@ Tabelle 7 enthält den App-Berechtigungsanforderungsbereich Taxonomy. Darin werd
 |http://sharepoint/taxonomy  <br/> |Read, Write  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen zum App-Berechtigungsanforderungsbereich Taxonomy finden Sie unter  [Hinzufügen von SharePoint 2013-Funktionen](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx). 
   
     
@@ -438,7 +438,7 @@ Die **BaseTemplateId** -Eigenschaft ist ein untergeordnetes Element, kein Attrib
 ||||
 |:-----|:-----|:-----|
 |**Bereichs-URI** <br/> |**Eigenschaft** <br/> |**Typ** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > [!HINWEIS]> Weitere Informationen zu **BaseTemplateId** und dem zugehörigen ganzzahligen Wert für die Listenbasisvorlage finden Sie unter dem **Type**-Attribut von  [List-Element (Liste)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **HINWEIS**> Weitere Informationen zu **BaseTemplateId** und dem zugehörigen ganzzahligen Wert für die Listenbasisvorlage finden Sie unter dem **Type**-Attribut von  [List-Element (Liste)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
    
 
 ## Verwalten von App-Berechtigungen und Problembehandlung

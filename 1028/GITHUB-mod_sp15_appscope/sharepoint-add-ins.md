@@ -17,7 +17,7 @@ SharePoint Add-ins 是 SharePoint 網站的獨立延伸，該延伸為您所建�
     
     
 
-> [!注意事項]
+> **注意事項**
 > 裝置應用程式，例如行動應用程式，即便在存取 SharePoint 時，仍不能算是 「SharePoint Add-in。對於從 SharePoint 之外啟動的 Web 應用程式也是同樣的道理。如果您要開發這其中任一類型的應用程式，請參閱  [從行動裝置與原生裝置應用程式存取 SharePoint](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx)。 
   
     
@@ -60,7 +60,7 @@ SharePoint Add-ins 是 SharePoint 網站的獨立延伸，該延伸為您所建�
     
   
 
-> [!秘訣]
+> **秘訣**
 > **請看幾個在** [Office 市集](https://store.office.com/appshome.aspx?productgroup=SharePoint) 以便更了解可以開發的方向。或是開啟 SharePoint 2013 網站並安裝一些免費的 SharePoint Add-ins。只要導覽至 ** 網站內容 | 新增增益集 | SharePoint 市集**。 
   
     
@@ -153,7 +153,7 @@ SharePoint 裝載增益集中的自訂頁面，通常是 ASP.NET 頁面 (ASPX)�
     
     
 
-> [!注意事項]
+> **注意事項**
 > **「提供者」指的是擁有伺服器或雲端帳戶的人。** 它可以是擁有 Sharepoint 伺服器陣列或增益集安裝所在 SharePoint Online 承租的相同公司或組織。但增益集的開發人員也可以是提供者。一般而言，當為組織建立增益集，組織會提供代管。不過，當為多個組織建立增益集時，比較可能是由開發人員管理遠端元件。如果 SharePoint Add-in 是透過 Office Store 行銷，則開發人員代管為強制性；因為開發人員不具有任何增益集購買者的連絡人資訊。在這個案例中，增益集的不同執行個體都知道遠端元件的 URI，因為已在增益集資訊清單中指定。
   
     
@@ -235,7 +235,7 @@ SharePoint 裝載增益集中的自訂頁面，通常是 ASP.NET 頁面 (ASPX)�
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您是 SharePoint 與 Web 開發的初學者，從 Microsoft Virtual Academy 的免費課程開始會受益最大，或是透過使用一本關於 SharePoint 2013 開發的書。 
   
     

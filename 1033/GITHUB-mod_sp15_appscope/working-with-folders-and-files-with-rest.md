@@ -7,14 +7,14 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # Working with folders and files with REST
 Learn how to perform basic create, read, update, and delete (CRUD) operations on folders and files with the SharePoint 2013 REST interface.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!TIP]
+> **TIP**
 > The SharePoint Online (and on-premise SharePoint 2016 and later) REST service supports combining multiple requests into a single call to the service by using the OData  `$batch` query option. For details and links to code samples, see [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -191,7 +191,7 @@ The following example shows how to **update** a file by using the **PUT** method
     
     
 
-> [!NOTE]
+> **NOTE**
 > **PUT** is the only method that you can use to update a file. The **MERGE** method is not allowed.
   
     
@@ -276,7 +276,7 @@ When you need to upload a binary file that is larger than 1.5 megabytes (MB), th
     
     
 
-> [!CAUTION]
+> **CAUTION**
 > This approach will work only with Internet Explorer 10 and the latest versions of other browsers. 
   
     
@@ -391,7 +391,7 @@ The following example shows how to **update** a file attachment to a list item b
     
     
 
-> [!NOTE]
+> **NOTE**
 > **PUT** is the only method that you can use to update a file. The **MERGE** method is not allowed.
   
     

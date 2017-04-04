@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **De confiança**.
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http ou https <br/> |7000-10000 <br/> |
    
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > As portas de saída estão sujeitos a disponibilidade do firewall de host. Em particular, apenas 80 do http e https 443 estão disponíveis no SharePoint Online.
   
     
     
 
 |
-|Exceção não tratada **SP é indefinido**. <br/> |Certificar-se de que você pode acessar o SP. RequestExecutor.js o arquivo em uma janela do navegador. <br/> Se você estiver usando seu servidor local como seu ambiente de desenvolvimento, você deve desativar a verificação de loopback do IIS. Execute o seguinte comando em um prompt de comando Windows PowerShell. <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!CUIDADO]> Desabilitando o loopback IIS seleção não é recomendada em um ambiente de produção.          |
+|Exceção não tratada **SP é indefinido**. <br/> |Certificar-se de que você pode acessar o SP. RequestExecutor.js o arquivo em uma janela do navegador. <br/> Se você estiver usando seu servidor local como seu ambiente de desenvolvimento, você deve desativar a verificação de loopback do IIS. Execute o seguinte comando em um prompt de comando Windows PowerShell. <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **CUIDADO**> Desabilitando o loopback IIS seleção não é recomendada em um ambiente de produção.          |
 |O tamanho da resposta do ponto de extremidade remoto excede o limite configurado. <br/> |Tamanho da resposta de solicitações de proxy da web não deve ser maior do que 200 KB. <br/> |
    
 

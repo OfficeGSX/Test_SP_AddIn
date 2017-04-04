@@ -84,7 +84,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
   
 
-    > [!Важно!]
+    > **Важно!**
       > Маркеры ItemURL и ItemID передаются, только если выбран элемент. В надстройке для SharePoint для рабочей среды код должен надлежащим образом обрабатывать ситуации, когда элемент не выбран. В этом примере код предупреждает пользователя о том, что элемент не выбран. 
 
   ```HTML
@@ -192,7 +192,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
   
 
-> [!Примечание]
+> **Примечание**
 > В этом примере удаленная веб-страница открывается в полном окне, когда пользователь выбирает настраиваемое действие в меню. Удаленную веб-страницу также можно открывать в диалоговом окне с помощью атрибута **HostWebDialog**. Дополнительные сведения см. в репозитории  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization). 
   
     
@@ -269,7 +269,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!Примечание]
+    > **Примечание**
       > Дополнительные действия ленты используют **SelectedListId** и **SelectedItemId**. **ListId** и **ItemId** работают только с дополнительными действиями элементов меню.
 
 ### Установка домашней страницы хост-сайта в качестве начальной страницы надстройки
@@ -292,7 +292,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
 
 1. Нажмите клавишу F5.
     
-    > [!Примечание]
+    > **Примечание**
       > Когда вы нажимаете клавишу F5, Visual Studio выполняет построение решения, разворачивает надстройку и открывает страницу разрешений для нее. 
 2. Нажмите кнопку **Доверять**, после чего откроется страница сайта разработки по умолчанию.
     

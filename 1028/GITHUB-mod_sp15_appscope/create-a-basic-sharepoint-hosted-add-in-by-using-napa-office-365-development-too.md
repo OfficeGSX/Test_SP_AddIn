@@ -21,7 +21,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
     
 
 
-> [!注意事項]
+> **注意事項**
 > 我們不支援在內部部署 sharepoint 安裝 Napa。
   
     
@@ -34,7 +34,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
     
 
 遵循本文章，您可以學習如何建立簡單 SharePoint 主控SharePoint Add-in使用Napa。增益集將會建立包含控制項和程式碼來管理清單、 清單項目。
-> [!注意事項]
+> **注意事項**
 > 您可以建立僅 SharePoint 主控SharePoint Add-ins與 Napa、 未裝載提供者。如需差異的資訊，請參閱 [SharePoint Add-ins](sharepoint-add-ins.md)。> 您無法使用 SharePoint 的增益集更新語意，其中 [更新 SharePoint 2013 中的增益集 web 元件](update-add-in-web-components-in-sharepoint-2013.md)、 Napa 中所述。因此如果您需要更新 Napa 中建立增益集，您先將其匯出至 Visual Studio。指示這麼做讓是在本文後面。> 您也可以使用Visual Studio建立SharePoint Add-in 。如需詳細資訊，請參閱 [開始建立 SharePoint 主控 SharePoint 增益集](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)。
   
     
@@ -49,7 +49,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
     
     
 
-> [!注意事項]
+> **注意事項**
 > 您可能已有 Office 365 開發人員網站 的存取權：> **您是 MSDN 訂閱者嗎？** Visual Studio Ultimate 和 Visual Studio Premium 的 MSDN 訂閱者可以獲得 Office 365 Developer 訂閱的權益。 [立即兌換權益。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **您有下列其中一個 Office 365 訂閱計劃嗎？**> **如果有，Office 365 訂閱的管理員可以使用  [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx) 建立 開發人員網站** 。如需詳細資訊，請參閱 [建立現有的 Office 365 訂閱開發人員網站](create-a-developer-site-on-an-existing-office-365-subscription.md)。
   
     
@@ -67,7 +67,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
     
   
 
-> [!秘訣]
+> **秘訣**
 > 會在另一個視窗或索引標籤中開啟所有這些連結，以方便使用下列指示。
   
     
@@ -112,7 +112,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
   
 
     
-> [!注意事項]
+> **注意事項**
 > 如果您嘗試註冊開發人員帳戶時已登入另一個 Microsoft 帳戶，可能會收到此訊息：「抱歉，您輸入的使用者識別碼無法運作。它看起來無效。請務必輸入組織指派給您的使用者識別碼。您的使用者識別碼通常看起來像是  *someone@example.com*  或 *someone@example.onmicrosoft.com*  。」> 如果您看到此訊息，請登出原本使用的 Microsoft 帳戶然後再試一次。如果仍然收到此訊息，請清除瀏覽器快取，或切換到 [InPrivate 瀏覽]，然後填寫表單。
   
     
@@ -279,7 +279,7 @@ Napa是可用來建立 SharePoint 主控SharePoint Add-ins的工具。Napa 是�
   
 2. 在 **App.js**檔案中，將 `web`、  `lists`及 `listItemcollection`變數新增兩個預設變數，並變更 `$(document).ready()`函數中的程式碼為下面範例。
     
-    > [!注意事項]
+    > **注意事項**
       > 錯誤不規則曲線會出現在這段程式碼。他們將在稍後步驟消失。
 
   ```
@@ -533,7 +533,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 如果當您執行增益集時不顯示清單項目，請務必 `displayLists();`陳述式而言之後前述的程式碼。
 
     在下一個步驟中，您將新增的新定義的 JavaScript 功能和支援函數 ( `getItems()`)。此表說明的主要功能所執行的動作。

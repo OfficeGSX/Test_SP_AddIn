@@ -36,7 +36,7 @@ Os dois exemplos de código deste artigo usam a API REST e as solicitações AJA
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os suplementos hospedados pelo provedor gravados no JavaScript devem usar a biblioteca SP.RequestExecutor entre domínios para enviar solicitações a um domínio do SharePoint. Para obter um exemplo, confira  [Carregar um arquivo usando a biblioteca de domínio cruzado](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd). 
   
     

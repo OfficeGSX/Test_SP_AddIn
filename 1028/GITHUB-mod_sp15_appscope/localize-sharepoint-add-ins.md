@@ -7,7 +7,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # 找出 SharePoint 增益集
 使用資源檔案、 JavaScript資源檔、 及其他技術 (英文) 當地語系化SharePoint Add-in 。
-> [!注意事項]
+> **注意事項**
 > 本主題假設您熟悉基本建立SharePoint Add-ins;與SharePoint功能、 增益集 web 與主機 web 之間的差別 [何種 SharePoint 元件可以為的增益集](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps)，並使用.resx 檔案的當地語系化的基本知識。
   
     
@@ -35,7 +35,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 - 本文中的程序假設您已使用最新版本的 [Office 開發人員工具的 Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013)或 [Office 開發人員工具的 Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015)。
     
-    > [!注意事項]
+    > **注意事項**
       > 如果您的測試 SharePoint 網站是在內部部署 SharePoint 伺服器陣列，而不是Microsoft SharePoint Online開發人員網站，您可能需要安裝在其中您已將轉譯您SharePoint Add-in語言的語言套件。如需詳細資訊，請參閱 [安裝或解除安裝 SharePoint 2013 的語言套件](http://technet.microsoft.com/en-us/library/cc262108%28v=office.15%29.aspx)和 [in SharePoint Server 2013 的語言套件](http://technet.microsoft.com/en-us/library/ff463597%28v=office.15%29.aspx)，並在後面的下載連結。
 - 螢幕擷取畫面及本文中的程式碼範例會反映範例 [SharePoint-增益集在-當地語系化](https://github.com/OfficeDev/SharePoint-Add-in-Localization)。您可以下載範例，以查看本文所述的程序的結果。
     
@@ -49,7 +49,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
     
     
 
-> [!注意事項]
+> **注意事項**
 > 多個增益集 web 功能無法共用資源檔案。每個.wsp 檔案的功能，您必須建立不同組的資源檔案。
   
     
@@ -69,7 +69,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
     
     此"語言而異"檔案編輯，包含在您要的語言中的所有網站上的 [ **功能**] 庫中所用的字串 *未*  移至要提供當地語系化的版本的字串。因此使用此檔案中的字串的語言應該是人員的很有可能是人員的使用 SharePoint 的第二個語言的語言。傳統上，提供英文版來達到這個目的中，但在某些情況下另一種語言可能較佳的選擇。例如中某些區域 (英文)、, 法文可能會第二個比英文語言更為常見的使用者。本主題持續範例使用英文作為語言而異。
     
-    > [!注意事項]
+    > **注意事項**
       > SharePoint Add-in無法安裝在 **支援的地區設定**] 區段中的增益集資訊清單中未列出之語言的網站。請記住本文將告訴您在您要的語言移至要提供本地化增益集] 中執行仍然需要將這類語言新增至增益集資訊清單。請參閱如需支援的增益集資訊清單中的地區設定的詳細本文中的程序 **可建立的主機網站的資源檔案** 。
 4. 上方列 **資源編輯器**中的 [ **名稱**] 欄中輸入字串 (或其他 resource) 的描述性名稱  例如OrdersListInstance_Title和OrdersListInstance_Description。這些名稱的可當地語系化的資源不自行進行當地語系化。每個資源必須擁有自己的名稱。
     
@@ -97,7 +97,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 12. 針對每個外部語言重複上一次四個步驟。
     
-    > [!注意事項]
+    > **注意事項**
       > 請考慮將相同語言的特定語言的檔案新增為您的語言而異。如果您可以複製資料列而不變更的字串值。在許多情況下，不需要有尤其是當檔案中的唯一資源為字串時所使用的語言而異，資源檔案中的相同語言的特定語言的檔案。但資源檔案可以包含影像、 圖示、 檔案及其他類型的資源太。有時，您需要使用映像或不同的對應資源在 *任何*  特定語言的檔案的其他資源的語言而異資源檔案。
 13. 每個檔案，確認 [ **建置動作**屬性設為 **內容**。
     
@@ -249,11 +249,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     此標記會載入一個JavaScript檔。它會決定哪些語言来載入檔案閱讀SharePoint資源名為"language_value"。此資源會將圖樣 _LL_- _CC_早程序中所述的語言文化名稱解析。尤其是它會解析為增益集網頁的語言。
     
-    > [!注意事項]
+    > **注意事項**
       > 因此名為"Resources.js"的檔案會永遠不呼叫此指令碼所， SharePoint資源"language_value"永遠不是 null。這是您並未不讓一個以上的程序中的原因。沒有.js 檔案是語言"language_value"的值時，此指令碼會載入 nothing。下一步說明字串在該情況下所取得的語言而異值。
 3. 針對每個可當地語系化元素和屬性值] 頁面上的，為其指定為預設值的語言而異，但然後使用JavaScript將其資源指派適當的變數。 _LL_- _CC_.js 檔案。例如，如果頁面 **h2**元素中具有標題，授與之元素的 **id**屬性和再插入下方指派給本地化元素的 **innerText**屬性的當地語系化的字串的本地化元素 **script**元素。這個本地化程式碼應該才執行的資源。 _LL_- _CC_.js 檔案載入及宣告的變數。如此將它置於先測試是否其中一個變數所定義的條件區塊。如果不存在，然後不載入任何資源指令碼與預設值 (而異) 值應保持不變。以下是範例。
     
-    > [!秘訣]
+    > **秘訣**
       > "而異"已新增至 word 而異字串中的第一個。就無法這麼做實際執行增益集，但是當您要測試，很實用的方式的看不到一覽是否正在使用語言而異字串或資源。載入 _LL_ _CC_.js 檔案之語言的被您語言而異。
 
   ```HTML
@@ -330,7 +330,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 4. 針對您想要使用增益集的當地語系化版本支援每個地區設定重覆上述步驟。其他資源。 _LL_- _CC_.resx 檔案被建立每個地區設定。
     
-    > [!注意事項]
+    > **注意事項**
       > 每個這些檔案 **建置動作**屬性是設定為 **內容**、 **資源**。 *並不會變更此設定。* 
 5. 也新增您想要用增益集設為可安裝，每個區域設定的地區設定項目，但它應該在其中使用語言而異;也就是您將會的地區設定 *不*  會提供增益集的當地語系化的版本 *刪除.resx 檔案所建立的這些地區設定。* 
     
@@ -356,7 +356,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   ```
 
 
-    > [!注意]
+    > **注意**
       > **Title**的值可以 *只*  資源的呼叫包含。可以是任何其他文字、 符號或空格。
 2. 若要呼叫當地語系化的資源之其他 XML 檔案，例如 Elements.xml 增益集組件及自訂動作、 您可以使用所用的相同格式增益集資訊清單檔案中。
     
@@ -406,7 +406,7 @@ protected override void InitializeCulture()
     
     
 
-> [!注意事項]
+> **注意事項**
 > 本節僅討論字串當地語系化。更強大的當地語系化需求，例如當地語系化的日期或貨幣格式設定，請考慮使用當地語系化或全球化文件庫，例如 [jQuery Globalize 附加元件](https://github.com/jquery/globalize)。
   
     

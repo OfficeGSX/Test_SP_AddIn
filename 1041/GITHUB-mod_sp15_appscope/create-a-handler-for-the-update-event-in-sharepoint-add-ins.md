@@ -19,7 +19,7 @@ SharePoint アドインの更新イベント用のハンドラーを作成して
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!メモ]
+> **メモ**
 > **バージョン番号付けシステム:** 一貫性を保つため、このトピックではアドインのバージョン番号は 1.0.0.0、2.0.0.0、3.0.0.0 などであるものとします。ただし、ロジックとガイダンスは、番号付けシステムに関係なく適用されます。
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!重要]
+> **重要**
 > **UpgradedEventEndpoint** ハンドラーでアドインにコンポーネントを追加する場合は、新規インストールでもそのコンポーネントをアドインに含める必要があるので、同じコードを **InstalledEventEndpoint** ハンドラーにも追加してください。また、コンポーネントを削除するための、アドインの [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) を追加する (または修正する) 必要があります。ほとんどの場合、 **InstalledEventEndpoint** によって追加または変更されたすべてのものを、 **UninstallingEventEndpoint** で元に戻すか削除する必要があります。例外として、アドインを削除済みデータ バックアップからアンインストールした後でも役に立つデータは削除しないようにする必要があります (アドインによって作成される Web サイト (アドイン Web 以外) は、データとみなす必要があります)。
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!重要]
+> **重要**
 > **SPRemoteEventServiceStatus.CancelWithError** (または **SPRemoteEventServiceStatus.CancelNoError**) を  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) プロパティに割り当てることが重要です。このプロパティが、更新をロールバックするようインフラストラクチャに通知します。ただし、SharePoint は更新のロールバックを行う前に 3 回ハンドラーを試行します。
   
     

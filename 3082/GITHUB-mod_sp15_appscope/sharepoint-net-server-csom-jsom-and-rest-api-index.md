@@ -93,7 +93,7 @@ La tabla 1 enumera las principales API de uso más frecuente, que en la mayoría
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP. WebTemplateCollection object (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Antes de usar un URI de extremo REST de la tabla, cambie la abreviación  `…` por la ruta de acceso a su sitio de SharePoint, por ejemplo, `http://<site collection>/<site>/_api/web/lists`. 
   
     

@@ -29,7 +29,7 @@ Cet article est le sixième d'une série sur les concepts de base du développem
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeWorkflow.sln.
   
     
@@ -100,7 +100,7 @@ Le flux de travail envoie un courrier électronique pour avertir un membre des r
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > À divers moments de la conception du flux de travail, un symbole losange bleu contenant un point d'exclamation 
   
     
@@ -255,7 +255,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
     
     
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si la console de l' **hôte de service de test** ne s'ouvre pas, il vous faudra peut-être activer le débogage du flux de travail. Cliquez avec le bouton droit de la souris sur le nom du projet dans l' **Explorateur de solutions** et choisissez **Propriétés**. Ouvrez l'onglet **SharePoint** dans le volet **Propriétés** et cochez la case **Activer le débogage de flux de travail**. 
 3. Accédez à la boîte de réception du courrier électronique (Outlook) de votre compte développeur Office 365. Il contient un message dont l'objet est «  *Employé*  est prêt pour les formalités HR », où *Employé*  est le nom de l'employé dont vous avez modifié les éléments. Le corps du message indique « *Employé*  attend dans le hall pour remplir les formulaires d'avantages et d'emploi ». Voici un exemple :
     
@@ -269,7 +269,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
     
     
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Si le flux de travail commence mais ne se termine jamais et que le message électronique n'est pas envoyé, essayez de mettre fin à la session de débogage et essayez plusieurs fois d'appuyer sur F5 avant de conclure qu'une partie de votre code est incorrecte. Il arrive que le problème provienne de SharePoint Online. > Si les problèmes persistent, essayez d'ajouter un type de contenu nommé **ListFieldsContentType**, s'il n'en existe pas déjà un, à la section **ContentTypes** du fichier schema.xml. Voici un exemple de sortie :>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

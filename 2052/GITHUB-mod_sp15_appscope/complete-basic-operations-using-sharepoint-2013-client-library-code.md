@@ -67,7 +67,7 @@ using Microsoft.SharePoint.Client;
     
     
 
-> [!注释]
+> **注释**
 > 在您使用 ASP.NET Web 应用程序实现提供程序托管的 SharePoint 外接程序以及将对程序集的引用添加到 Visual Studio 中的 Web 应用程序项目时，将程序集的"Copy Local"属性设置为 **True**，除非您知道 Web 服务器上已经安装了程序集，或者可以确保程序集是在您部署外接程序之前安装的。Microsoft Azure Web 角色和 Azure 网站 上安装了 .NET Framework。但是未安装 SharePoint 2013 客户端程序集和和各种 Microsoft 托管代码扩展和基础。Visual Studio 2012 Office 开发人员工具 自动添加对 SharePoint 外接程序中某些常用的程序集的引用，并设置"Copy Local" 属性。 
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!注释]
+> **注释**
 > 如果您尝试访问其他属性，则代码会因其他属性不可用而引发异常。 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!注释]
+> **注释**
 > 另外，您可使用 **LoadQuery** 方法将返回值存储到另一个集合，而不是使用 **web.Lists** 属性。您还需要为 [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) 和 [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 添加 **using** 语句。此外，向 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 命名空间的 using 语句添加一个别名，以便您可清楚地引用其类。例如， `using SP = Microsoft.SharePoint.Client;`。 
   
     
@@ -339,7 +339,7 @@ context.ExecuteQuery();
     
     
 
-> [!注释]
+> **注释**
 > 此示例使用 **context.CastTo** 执行转换。执行查询之前，客户端库不知道返回对象"field"的实际类型以及 **SharePoint.Field** 是唯一可能的类型。如果您知道实际类型，则可使用 **ClientContext.CastTo<RealType>** 方法转换对象。
   
     
@@ -382,7 +382,7 @@ context.ExecuteQuery();
     
     
 
-> [!注释]
+> **注释**
 > 您可使用  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) 属性进一步限制返回到指定文件夹中的项。
   
     
@@ -541,7 +541,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-> [!注释]
+> **注释**
 > 此示例中使用的  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) 方法是远程方法。它不使用客户端集合中的数据，即使已填充客户端操作也是如此。
   
     
@@ -1004,7 +1004,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-> [!注释]
+> **注释**
 > 不允许在条件范围内调用方法和设置属性，因为客户端库不会跟踪方法调用和属性设置的副作用。您只应使用条件范围内的 **Load**。 
   
     

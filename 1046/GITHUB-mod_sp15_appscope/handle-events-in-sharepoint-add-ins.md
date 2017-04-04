@@ -32,7 +32,7 @@ Hospedado no SharePoint Suplementos do SharePoint não têm suporte para a manip
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Eventos de site e eventos do conjunto de sites não são suportados no Suplementos do SharePoint.
   
     
@@ -61,7 +61,7 @@ Para manipular eventos de item da lista e de lista, você criar receptores de ev
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > RERs ter a mesma finalidade que receptores de evento em soluções de farm; mas os receptores de eventos com código personalizado que é executado nos servidores de SharePoint, portanto, eles não podem ser usados em Suplementos do SharePoint.
   
     
@@ -104,7 +104,7 @@ Suplemento pode lidar com os seguintes eventos de item de lista.
 ||ItemFileConverted <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > * Esses dois novos eventos podem não estar disponíveis no Visual Studio da interface do usuário. Caso contrário, escolha ItemDeleting ou ItemDeleted e, em seguida, alterar manualmente os nomes.
   
     
@@ -157,7 +157,7 @@ Para alterar os eventos que as alças de receptor de evento remoto, abra o **Sol
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter informações adicionais sobre RERs, incluindo algumas informações de solução de problemas, consulte  [Receptores de eventos remoto perguntas Frequentes](handle-events-in-sharepoint-add-ins.md#RERFAQ).
   
     
@@ -179,7 +179,7 @@ O evento **AppInstalled** executa imediatamente depois que o SharePoint concluiu
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Quando você instala um suplemento de com  [escopo de locatário](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md), é instalado para o conjunto de sites do catálogo add-in e o AppInstalled evento é executado, em seguida e, em seguida, somente. O suplemento é visível em vários sites da web no locatário, mas o evento não é executado separadamente para cada uma dessas.
   
     
@@ -198,13 +198,13 @@ Além de cancelamento de uma instalação do suplemento, esse evento pode ser us
   
 - Defina configurações de inicialização relativa de instância de aplicativo. Por exemplo, o suplemento pode ter um recipiente de propriedades de web do suplemento para configurações de retenção que variam de uma instância do add-in para outra. O manipulador AppInstalled pode gravar valores que variam o recipiente de propriedades, com base nas, digamos, o site digite da web host (por exemplo, sites de equipe ou o site de Blog).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Para verificar se a web de host é um AppCatalog site é uma boa maneira de detectar se o suplemento foi instalado com escopo de locatário. Consulte  [Aluguéis são e escopos de implantação para o SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 - Execute aplicativo da web remoto do add-in, como a adição de uma tabela para um banco de dados configuração relativa de instância de aplicativo.
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Conclua a sua implementação do evento AppInstalled dentro de 30 segundos ou a infraestrutura de instalação do SharePoint irá pensar que ele falhar. A infraestrutura será execute novamente o evento,  *e repita seu código desde o início*  , até três vezes adicionais. Depois de quatro tempos limite, SharePoint reverterá a instalação do suplemento inteira. As implicações desses fatos são abordadas em [Incluir lógica de reversão e "tiver feito" lógica em seus manipuladores de eventos de suplemento](#Rollback).
   
     
@@ -262,7 +262,7 @@ Se SharePoint encontra um erro durante o processamento de qualquer uma das três
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > **Observação especial sobre o evento AppUninstalling:** Os pontos anteriores se aplicam ao evento AppUninstalling tanto quanto aos outros dois suplemento eventos. Por exemplo, se seu manipulador para o evento uninstalling exclui uma linha em um banco de dados remoto e, em seguida, encontra um erro, a linha deve ser restaurado. Desde que o seu serviço enviará uma mensagem de cancelar ao SharePoint, o suplemento não será removido da Lixeira. Se ele é restaurado a partir daí e usado novamente, pode falhar ao funcionar sem essa entrada de banco de dados.> Entretanto, o seu manipulador AppUninstalling conclui  *antes*  SharePoint remove o suplemento da Lixeira. Assim, se SharePoint próprio encontra um erro e precisa para cancelar a remoção, não é possível para o manipulador desfazer o que aconteceu.
   
     
@@ -363,7 +363,7 @@ Sempre é possível usar a estratégia de delegação manipulador. Por exemplo, 
     
     
 
-> [!DICA]
+> **DICA**
 > Se o evento AppInstalled falhar, o SharePoint excluirá web add-in, se houver algum; e se o evento AppUpated falhar, o SharePoint restaurará web suplemento ao seu estado de pré-atualização. Por esse motivo, seus manipuladores nunca precisará ações reversão levem na web suplemento. Se manipulador você executa ações na web host e o suplemento web, ele deve lidar com a web suplemento pela primeira vez. Isso torna segura usar a estratégia de delegação do manipulador para a web host. Mesmo se as ações suplemento web bem-sucedidas e as ações do host web falharem, não há nenhuma lógica de reversão que vai não executada.
   
     

@@ -30,7 +30,7 @@ En fonction de vos exigences et de votre budget, vous pouvez choisir une des opt
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'installation de SharePoint est uniquement prise en charge sur Windows Server 2008 R2 Service Pack 1 x64 ou Windows Server 2012. Si vous souhaitez développer des Compléments SharePoint pour SharePoint sur Windows 7 ou Windows 8, vous pouvez vous inscrire à un Site du développeur Office 365 et développer les compléments à distance. 
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. Une fois l'installation terminée, vous êtes invité à démarrer l'Assistant Configuration des produits et des technologies SharePoint.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > L'Assistant Configuration des produits et des technologies SharePoint peut échouer si vous utilisez un ordinateur associé à un domaine, mais non connecté à un contrôleur de domaine. Si vous constatez cet échec, connectez-vous à un contrôleur de domaine directement ou par l'intermédiaire d'une connexion à un réseau privé virtuel (VPN) ou connectez-vous à un compte local doté de privilèges administrateur sur l'ordinateur. 
 7. Une fois l'Assistant de configuration terminé, vous voyez la page **Sélection du modèle** du nouveau site SharePoint. Sur cette page, sélectionnez le modèle **Site du développeur**. Vous ne pouvez déployer les Compléments SharePoint qu'à partir de Visual Studio vers un Site du développeur.
     
@@ -135,7 +135,7 @@ Au cours de cette procédure, vous configurez les services dans SharePoint en vu
   
 6. Sélectionnez **Enregistrer et fermer**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si vous recevez un message indiquant que le profil que vous essayez de créer existe déjà, sélectionnez **Annuler et retourner à la page précédente**. 
 7. De retour dans la page **Gérer les profils utilisateur**, vous devriez voir **Nombre total de profils : 1**.
     
@@ -189,7 +189,7 @@ Vous devez créer un domaine isolé dans votre batterie de test SharePoint. Par 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour les batteries de test, vous devrez créer une stratégie de routage DNS dans votre intranet et éventuellement configurer votre pare-feu. Voir  [Installer et gérer les compléments pour SharePoint](http://technet.microsoft.com/fr-fr/library/fp161232%28v=office.15%29) pour plus d'informations sur la création et la configuration d'un environnement de production pour des Compléments SharePoint.
   
     
@@ -200,7 +200,7 @@ Effectuez les étapes de la procédure suivante afin de créer un domaine de com
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Vous devez suivre toutes les étapes de la procédure suivante en étant connecté en tant qu'administrateur de la batterie de serveurs et vous devez exécuter l'invite de commande et SharePoint Management Shell en tant qu'administrateur. 
   
     
@@ -303,7 +303,7 @@ Voir  [Déploiement et installation de compléments pour SharePoint : méthodes 
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Après avoir déployé un complément hébergé par SharePoint sur votre installation, vous pouvez être invité à vous connecter à l'aide de vos informations d'identification lorsque vous essayez de la lancer. Vous devez désactiver le contrôle de boucle de rappel pour vous débarrasser de ces invites. Voir  [Vous recevez une erreur 401.1 lorsque vous visitez un site web qui utilise l'authentification intégrée et qui est hébergé sur IIS 5.1 ou une version ultérieure](http://support.microsoft.com/kb/896861/fr-fr) pour obtenir des instructions sur la façon de désactiver le contrôle de boucle de rappel.
   
     

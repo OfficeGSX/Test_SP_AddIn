@@ -13,7 +13,7 @@ Você pode fazer referência a folha de estilos de um site do SharePoint no seu 
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Se suas páginas da Web usam o controle de cromo ou a página mestra suplemento, os estilos já estão disponíveis para uso, e você não precisa fazer referência a folha de estilo manualmente usando o procedimento neste artigo.
   
     
@@ -250,7 +250,7 @@ A Figura 1 mostra uma página da Web do SharePoint que está usando a folha de e
   
 2. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 3. Escolha o botão **De confiança**.
     

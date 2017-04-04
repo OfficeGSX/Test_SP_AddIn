@@ -7,7 +7,7 @@ ms.assetid: e3000415-50a0-426e-b304-b7de18f2f7d9
 
 # Complete basic operations using SharePoint 2013 REST endpoints
 Learn how to perform basic create, read, update, and delete (CRUD) operations with the SharePoint 2013 REST interface.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -338,7 +338,7 @@ Cloud-hosted add-ins use either OAuth or the cross-domain library to authorize a
     
     
 
-> [!NOTE]
+> **NOTE**
 > Cloud-hosted add-in components that are written in JavaScript must use the **SP.RequestExecutor** object in the cross-domain library to access to SharePoint data. Cross-domain library requests don't need to include an access token.
   
     
@@ -365,7 +365,7 @@ Cross-domain library requests use this format when they access data on the add-i
     
     
 
-> [!NOTE]
+> **NOTE**
 > An add-in web instance is required for a cloud-hosted add-in to access SharePoint data when using the cross-domain library. 
   
     
@@ -382,7 +382,7 @@ Cross-domain library requests use this format when they access data on the add-i
 |SharePoint-hosted  <br/> |Add-in web component accessing data in another site collection (tenant-scoped add-ins only)  <br/> | _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > Cross-domain data access scenarios also require appropriate add-in permissions. For more information, see  [Access data from the host web](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) and [Access data across site collections](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope). 
   
     

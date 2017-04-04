@@ -53,7 +53,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     
   
 
-> [!注释]
+> **注释**
 > 有关如何设置符合您的需求的开发环境的指南，请参阅 [开始构建 Office 和 SharePoint 相关应用程序](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx)。 
   
     
@@ -299,7 +299,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 17. 文件中可能有两个 **ContentType** 元素，其中一个元素的 **Name** 属性值为ActingRole，另一个为"ListFieldsContentType"。只有名为 ActingRole 的属性属于本项目，所以删除任何其他 **ContentType** 元素。
     
-    > [!注释]
+    > **注释**
       > 各 **ContentType** 元素之间可能没有换行符，在这种情况下，最初可能只显示一个。向右滚动并仔细检查其他元素。
 18. **Fields** 元素应该有两个 **Field** 元素（如果它们之间无换行符，则在一行上）。其中一个应与"Actor"网站栏 elements.xml 中的 **Field** 元素完全相同，另一个应与"CastingStatus"网站栏 elements.xml 中的 **Field** 元素完全相同。如果没有精确匹配，包括所有子元素（如 **CHOICES** 和 **MAPPINGS** 元素），请从网站栏 elements.xml 文件复制 **Field** 元素并将其粘贴替换 schema.xml 文件中不匹配的 **Field** 元素。
     
@@ -383,7 +383,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
 
 - 像开发任何其他 Web 应用程序一样，为您首选的平台堆栈开发 Web 应用程序。对于 Microsoft 堆栈，您可以使用 REST/OData Web 服务或 SharePoint 2013 中的客户端对象模型之一。对于非 Microsoft 堆栈，您可以使用 SharePoint 2013 中的 REST/OData 终结点对外接程序 Web 中的数据执行创建/读取/更新/删除 (CRUD) 操作。
     
-    > [!注释]
+    > **注释**
       > 在将对程序集的引用添加到您在 Visual Studio 中的 Web 应用程序项目时，将程序集的"Copy Local"属性设置为 **True**，除非您知道 Web 服务器上已经安装了程序集，或者可以确保在您部署外接程序之前安装程序集。Microsoft Azure Web 角色和 Azure 网站 上安装了 .NET Framework。但是未安装 SharePoint 2013 客户端程序集和各种 Microsoft 托管代码扩展和基础。Visual Studio 2012 Office 开发人员工具自动添加对在 SharePoint 外接程序中常用的一些程序集的引用，并设置"Copy Local"属性。 
 
     对于后续示例，您开发一个 ASP.NET Web 应用程序。请执行下列步骤。
@@ -595,7 +595,7 @@ GridView1.DataBind();
   
 8. 选择"自定义'Characters in Hamlet'"链接，并在列表设置页上验证只有列表的内容类型是您的自定义"ActingRole"内容类型，并且在"栏"部分列出了您的两个新网站栏"Actor/Actress"和"Casting Status"。（标题栏可能显示其内部名称"标题"而不是对其分配的显示名称"角色"。）
     
-    > [!注释]
+    > **注释**
       > 如果该页上没有"内容类型"部分，则必须启用内容类型的管理。单击"高级设置"链接，在"高级设置"页上，启用内容类型的管理并单击"确定"。您将返回到上一页，那里现在有"内容类型"部分的列表。 
 9. 网页顶部附近是列表的"Web 地址"。将其复制并粘贴到您的浏览器的地址栏，然后导航到该列表。验证列表中有您创建的示例项目。（"标题"栏可能显示其内部名称"标题"而不是对其分配的显示名称"角色"。）
     

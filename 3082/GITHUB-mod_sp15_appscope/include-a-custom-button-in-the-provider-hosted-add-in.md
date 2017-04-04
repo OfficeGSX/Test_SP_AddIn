@@ -20,7 +20,7 @@ Este es el tercero de una serie de artículos sobre los conceptos básicos de de
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeRibbonButton.sln.
   
     
@@ -90,7 +90,7 @@ En esta sección, se incluye marcado en el complemento que implementará un bot�
 
 1.  *Si Visual Studio está abierto, debe cerrarlo*  y volver a abrir la solución Chain Store para que Visual Studio pueda detectar la nueva lista. (Ejecute Visual Studio como administrador).
     
-    > [!NOTA]
+    > **NOTA**
       >  La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos:>  Haga clic con el botón derecho en el nodo de solución en la parte superior del **Explorador de soluciones** y seleccione **Establecer proyectos de inicio**. >  Asegúrese de que los tres proyectos estén establecidos en **Iniciar** en la columna **Acción**. 
 2. Haga clic con el botón derecho en el proyecto **ChainStore** en el **Explorador de soluciones** y elija **Agregar | Nuevo elemento**. 
     

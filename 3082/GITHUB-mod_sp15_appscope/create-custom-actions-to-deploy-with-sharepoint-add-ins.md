@@ -84,7 +84,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     
   
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Los tokens ItemURL y ItemID solo se pasan cuando hay un elemento seleccionado. En una Complemento de SharePoint con calidad de producción, el código debe manejar situaciones en que no haya elementos seleccionados. En este ejemplo, el código alerta al usuario de que no se ha seleccionado ningún elemento. 
 
   ```HTML
@@ -192,7 +192,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     
   
 
-> [!NOTA]
+> **NOTA**
 > En este ejemplo, la página web remota abre una ventana completa cuando el usuario selecciona la acción personalizada en el menú. Las acciones de menú personalizadas también pueden abrir una página web remota en un cuadro de diálogo usando el atributo **HostWebDialog**. Para obtener más información, vea  [Localización de complementos de SharePoint](https://github.com/OfficeDev/SharePoint-Add-in-Localization). 
   
     
@@ -269,7 +269,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!NOTA]
+    > **NOTA**
       > Las acciones personalizadas de la cinta usan **SelectedListId** y **SelectedItemId**. **ListId** y **ItemId** funcionan solo con acciones personalizadas de elemento de menú.
 
 ### Establecer la página de inicio de la web de host como página de inicio del complemento
@@ -292,7 +292,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Al presionar F5, Visual Studio crea la solución, implementa el complemento y abre la página de permisos para el complemento. 
 2. Elija el botón **Confiar**. Se abre la página predeterminada del sitio del desarrollador.
     

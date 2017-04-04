@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # 使用 SharePoint 2013 中的 JavaScript 库代码完成基本操作
 了解如何编写代码以在 SharePoint 2013 中使用 JavaScript 客户端对象模型执行基本操作。
-> [!注释]
+> **注释**
 > 有关使用 JavaScript 库的"Hello World"级别示例 SharePoint 外接程序，请参阅 [使用 SharePoint JavaScript API 处理 SharePoint 数据](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md)。 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!注释]
+> **注释**
 > 如果您尝试访问其他属性，则代码会因其他属性不可用而引发异常。 
   
     
@@ -788,7 +788,7 @@ function deleteFolder(resultpanel) {
     
     
 
-> [!注释]
+> **注释**
 > 只能使用 JavaScript 对象模型处理最大 1.5 MB 的文件。若要上载更大文件，请使用 REST（代表性状态传输）。有关详细信息，请参阅 [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles)。 
   
     
@@ -1051,7 +1051,7 @@ function onQueryFailed(sender, args) {
     
     
 
-> [!注释]
+> **注释**
 > 当您使用 LINQ 针对客户端对象模型创建查询时，需使用  [LINQ to Objects](http://msdn.microsoft.com/library/bb397919) 而不是 [LINQ to SharePoint](http://msdn.microsoft.com/library/ee535491) 提供程序，只有在对服务器对象模型编写代码时，才能使用 LINQ to SharePoint 提供程序。
   
     

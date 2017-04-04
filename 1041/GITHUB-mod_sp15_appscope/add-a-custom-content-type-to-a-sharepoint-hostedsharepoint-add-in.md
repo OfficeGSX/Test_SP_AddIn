@@ -23,7 +23,7 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを続けて学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeContentType.sln ファイルを開くこともできます。
   
     

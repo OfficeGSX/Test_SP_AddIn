@@ -7,7 +7,7 @@ ms.assetid: 1534a5f4-1d83-45b4-9714-3a1995677d85
 
 # Work with external data in SharePoint 2013
 Find resources and guidance for accessing and manipulating external data with JavaScript on pages in SharePoint Add-ins.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -33,7 +33,7 @@ For details about how to use the library in this way, see  [Create a custom prox
     
     
 
-> [!NOTE]
+> **NOTE**
 > The SharePoint cross-domain library can also be used in the other direction; that is, JavaScript on remote web pages can use it to access data from SharePoint. For more information about this use of the library, see  [Creating SharePoint Add-ins that use the cross-domain library](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md). 
   
     

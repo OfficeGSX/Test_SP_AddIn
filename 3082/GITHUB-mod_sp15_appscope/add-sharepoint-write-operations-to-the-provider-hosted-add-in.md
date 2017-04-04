@@ -26,7 +26,7 @@ Este es el quinto de una serie de artículos sobre los conceptos básicos de des
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeSharePointWriteOps.sln.
   
     
@@ -40,7 +40,7 @@ Nuestro complemento tiene un botón de cinta de opciones personalizado que agreg
     
     
 
-> [!NOTA]
+> **NOTA**
 >  La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos:>  Haga clic con el botón derecho en el nodo de solución en la parte superior del **Explorador de soluciones** y seleccione **Establecer proyectos de inicio**. >  Asegúrese de que los tres proyectos estén establecidos en **Iniciar** en la columna **Acción**. 
   
     
@@ -136,7 +136,7 @@ Dado que el complemento ahora está escribiendo en la lista a la vez que la lee,
   
 9. La página parecerá recargarse porque el método **Page_Load** de la página EmployeeAdder redirige otra vez a ella. El valor del campo **Agregado a BD corporativa** correspondiente al empleado cambió a **Sí**.
     
-    > [!NOTA]
+    > **NOTA**
       > ¿Qué impide al usuario cambiar manualmente el valor **Agregado a BD corporativa** de una manera que hace que la lista y la base de datos corporativa sean incoherentes? Nada por el momento. Obtendrá la solución a este problema en un artículo posterior de esta serie.
 10. Para terminar la sesión de depuración, cierre la ventana del explorador o detenga la depuración en Visual Studio. Cada vez que presione F5, Visual Studio retirará la versión anterior del complemento e instalará la más reciente.
     

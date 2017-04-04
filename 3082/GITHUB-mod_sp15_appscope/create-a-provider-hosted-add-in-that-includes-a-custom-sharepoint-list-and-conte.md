@@ -53,7 +53,7 @@ La mayoría de las aplicaciones clásicas de SharePoint como los tipos de conten
     
   
 
-> [!NOTA]
+> **NOTA**
 > En este enlace encontrará información sobre cómo configurar un entorno de desarrollo que se ajuste a sus necesidades:  [Empezar a crear aplicaciones para Office y SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -299,7 +299,7 @@ En los procedimientos presentados en esta sección, se crea un Complemento de Sh
   
 17. Es probable que haya dos elementos **ContentType** en el archivo, uno que tenga el valor de atributo **Name**PapelActuación y otro denominado **TipoContenidoCamposLista**. Solo pertenece el valor de atributo llamado PapelActuación, por lo que deberá eliminar todos los demás elementos **ContentType**.
     
-    > [!NOTA]
+    > **NOTA**
       > No puede haber saltos de línea entre los elementos **ContentType**, en cuyo caso al principio puede parecer que solo hay uno. Desplácese a la derecha y compruebe atentamente la existencia de otros. 
 18. El elemento **Fields** debería tener dos elementos **Field** (que se encuentran en una única línea si no hay un salto de línea entre ellos). Uno debe duplicar exactamente el elemento **Field** del archivo elements.xml de la columna de sitio **Actor** y el otro debe duplicar exactamente el elemento **Field** del archivo elements.xml de la columna de sitio **EstadoCasting**. Si no coinciden exactamente, incluidos los elementos secundarios (como los elementos **CHOICES** y **MAPPINGS**), copie el elemento **Field** del archivo elements.xml de la columna de sitio y péguelo en lugar del elemento **Field** que no corresponde exactamente en el archivo schema.xml.
     
@@ -383,7 +383,7 @@ En los procedimientos presentados en esta sección, se crea un Complemento de Sh
 
 - Desarrolle la aplicación web tal como lo haría con cualquier otra aplicación web para su pila de plataforma preferida. En el caso de una pila de Microsoft, puede usar el servicio web REST/OData o uno de los modelos de objeto cliente de SharePoint 2013. En el caso de pilas que no sean de Microsoft, puede usar los extremos REST/OData de SharePoint 2013 para ejecutar operaciones de creación, lectura, actualización y eliminación (CRUD) de datos de la web de complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando agregue una referencia de un ensamblado a su proyecto de aplicación web en Visual Studio, configure la propiedad **Copia local** del ensamblado como **True**, a menos que sepa que el ensamblado está ya instalado en el servidor web o que pueda asegurar que está instalado antes de implementar su complemento. .NET Framework está instalado en los roles web de Microsoft Azure y Sitios web de Azure. Sin embargo, los ensamblados cliente de SharePoint 2013 y las diversas fundaciones y extensiones de código administradas por Microsoft no están instaladas. Office Developer Tools para Visual Studio 2012 agrega automáticamente referencias a algunos ensamblados que se usan comúnmente en Complementos de SharePoint y configura la propiedad **Copia local**. 
 
     Para el ejemplo que hemos propuesto, desarrolle una aplicación web ASP.NET. Ejecute los pasos siguientes.
@@ -595,7 +595,7 @@ Si el complemento no funciona, es posible que se haya producido un error en el m
   
 8. Elija el vínculo **Personalizar los "Personajes de Hamlet"** y compruebe en la página de configuración de la lista que el único tipo de contenido de la lista es el tipo de contenido **PapelActuación** personalizado y que las dos columnas de sitio nuevas, **Actor/Actriz** y **Estado Casting** figuran en la sección **Columnas**. (La columna Título puede aparecer con su nombre interno **Título**, en vez del nombre de visualización **Personaje** que le dio).
     
-    > [!NOTA]
+    > **NOTA**
       > Si en la página no hay ninguna sección **Tipos de contenido**, habilite la administración de tipos de contenido. Haga clic en el vínculo **Configuración avanzada** y, en la página **Configuración avanzada**, habilite la administración de tipos de contenido y haga clic en **Aceptar**. Se le redirige a la página anterior, donde ahora aparece una lista de la sección **Tipos de contenido**. 
 9. Cerca de la parte superior de la página se encuentra la **Dirección web** de la lista. Cópiela y péguela en la barra de direcciones del explorador y, después, desplácese a la lista. Compruebe que la lista tenga los elementos de ejemplo que creó. (Es posible que la columna Título aparezca con su nombre interno **Título**, en vez del nombre de visualización **Personaje** que le dio).
     

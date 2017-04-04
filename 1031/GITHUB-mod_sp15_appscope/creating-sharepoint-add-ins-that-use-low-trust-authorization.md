@@ -21,7 +21,7 @@ Zum Verwenden des Systems mit niedriger Vertrauensstellung muss das SharePoint-A
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Für die Registrierung muss die Anwendung über eine Internetdomäne verfügen. Zu diesem Zweck kann jede vorhandene Domäne verwendet werden, Sie können jedoch nicht zu 100 % sicher sein, dass eine Domäne, die Sie nicht besitzen, auch existiert, deshalb muss eine Webanwendung Teil einer systemeigenen Geräteanwendung sein, selbst wenn die Webanwendungskomponente nur zum Aktivieren der Registrierung dient. Weitere Informationen finden Sie in einem so konzipierten Codebeispiel unter  [Bereitstellen von Websites in Batches mithilfe des Add-In-Modells](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6). 
   
     

@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する
 SharePoint 2013 で JavaScript クライアント オブジェクト モデルを使用して基本的な操作を実行するコードの記述方法について説明します。
-> [!メモ]
+> **メモ**
 > JavaScript ライブラリを使用する "Hello World" レベルのサンプル SharePoint アドインについては、「 [SharePoint データで動作するように SharePoint JavaScript API を使用する](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md)」をご覧ください。 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!メモ]
+> **メモ**
 > 他のプロパティにアクセスしようとした場合、他のプロパティは使用できないため、コードで例外がスローされます。 
   
     
@@ -788,7 +788,7 @@ JavaScript オブジェクト モデルを使用してファイルを操作で�
     
     
 
-> [!メモ]
+> **メモ**
 > JavaScript オブジェクト モデルを使用して操作できるファイルのサイズは 1.5 MB までです。それより大きいファイルをアップロードするには、REST (Representational State Transfer) を使用します。詳細については、「 [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles)」を参照してください。 
   
     
@@ -1051,7 +1051,7 @@ function onQueryFailed(sender, args) {
     
     
 
-> [!メモ]
+> **メモ**
 > LINQ を使用してクライアント オブジェクト モデルに対するクエリを作成する場合は、サーバー オブジェクト モデルに対するコードを記述する場合にしか使用できない  [LINQ to SharePoint の使用](http://msdn.microsoft.com/ja-jp/library/ee535491.aspx)ではなく、 [LINQ to Objects](http://msdn.microsoft.com/ja-jp/library/bb397919.aspx) を使用します。
   
     

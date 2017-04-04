@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # 建立 SharePoint 增益集，可供匿名使用者
 了解如何建立可供匿名使用者公開Microsoft SharePoint 2013網站上使用的SharePoint Add-ins 。
-> [!重要]
+> **重要**
 > 儘 *內部*  SharePoint 2013本文中提及，我們假設已安裝 Service Pack 1 for SharePoint 2013 。
   
     
@@ -77,7 +77,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
     
     
 
-> [!注意事項]
+> **注意事項**
 > 匿名使用者存取 SharePoint 網站時，通常允許 HTTP 存取，而不是 HTTPS。新增-僅在原則用於在此案例中的增益集時，有潛在的安全性問題。如需詳細資訊及減輕這些方法，請參閱 [每開發人員必須了解有關 SharePoint 增益集、 CSOM、 和匿名的發佈網站](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx)。
   
     
@@ -129,7 +129,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
     
     
 
-> [!注意事項]
+> **注意事項**
 > 關閉使用者有 **使用遠端介面** 權限需求有資訊隱私權的隱含意義。如需詳細資訊，請參閱 [每開發人員必須了解有關 SharePoint 增益集、 CSOM、 和匿名的發佈網站](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx)。
   
     
@@ -162,7 +162,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
     
     
 
-> [!重要]
+> **重要**
 > 請儘可能您應該安裝SharePoint Add-in至網站 *之前先*  執行前兩個程序。當會在已設定匿名存取 web 應用程式增益集無法安裝至內部部署 SharePoint web 應用程式中的任何網站。如果已設定匿名存取 web 應用程式，您必須暫時反向若要安裝的增益集的設定。
   
     
@@ -189,7 +189,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
   
 6. (選用)取消核取 [ **需要使用遠端介面權限**] 方塊中。這樣可以讓程式碼和匿名使用者來呼叫 SharePoint 的用戶端物件模型在每個網站集合的內容中執行的指令碼。您不能重新啟用任何網站集合的需求。離開] 方塊中檢查表示預設匿名使用者將無法存取用戶端物件模型，但是您可以停用需求 (讓這些存取) 的與特定網站集合。
     
-    > [!注意事項]
+    > **注意事項**
       > 開發SharePoint Add-ins匿名使用者的內容，此設定僅為有意義的 SharePoint 主控新增寫提供者主控SharePoint Add-ins的設計用匿名使用者，請使用讓使用者的權限不相關的技術。如需此的詳細資訊，請參閱 [建立提供者主控增益集可匿名存取](#Cloud-hosted)上述一節。
 7. 選擇 [ **儲存**] 以關閉表單。
     
@@ -199,7 +199,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
   
 9. **匿名存取限制**的表單中選擇 [區域] 並確定已啟用 [ **無**] 選項按鈕。如果您要測試只需要SharePoint Add-in讀取權限的 SharePoint 資料、 啟用 **拒絕寫入**改用。
     
-    > [!注意事項]
+    > **注意事項**
       > 這是另一個設定的開發SharePoint Add-ins匿名使用者的內容中才有意義的 SharePoint 主控的增益集。
 10. 如果您在步驟 2 中建立新的 web 應用程式，您必須在其中建立網站集合。
     
@@ -224,7 +224,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
     
   
 
-> [!重要]
+> **重要**
 > 僅限SharePoint Online中的公用網站上執行下列程序。(如Microsoft SharePoint Online中的公用網站的使用的相關詳細資訊，請參閱 [說明 Office 365 的公用網站](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1))。
   
     
@@ -245,7 +245,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
     
     
 
-> [!注意事項]
+> **注意事項**
 > 此程序無法執行SharePoint Online網站集合中，因此 SharePoint 主控增益集的安裝至SharePoint Online與對象為使用匿名使用者無法存取清單或文件庫。
   
     

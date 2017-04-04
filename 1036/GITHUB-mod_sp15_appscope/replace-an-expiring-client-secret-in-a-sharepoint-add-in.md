@@ -13,7 +13,7 @@ Les clés secrètes client pour les Compléments SharePoint, enregistrées avec 
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cet article concerne les Compléments SharePoint distribués via un catalogue de l'organisation et enregistrés avec la page AppRegNew.aspx. Si le complément est enregistré sur Mon tableau de bord vendeur, consultez la section  [Création ou mise à jour d'ID et de clés secrètes client dans le service Mon tableau de bord vendeur](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update). 
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!CONSEIL]
+> **CONSEIL**
 > Par défaut, la clé secrète du complément est valable pour une durée d'un an. Vous pouvez modifier sa durée de validité (maximum 3 ans) à l'aide du paramètre **-EndDate** dans les trois appels de la cmdlet **New-MsolServicePrincipalCredential**. La valeur du paramètre doit correspondre à un objet  [DateTime](http://msdn2.microsoft.com/FR-FR/library/03ybds8y) dont la valeur ne peut être supérieure à 3 ans à compter de la valeur indiquée dans l'élément **DateTime.Now**. 
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## Mise à jour de l'application web distante dans Visual Studio pour utiliser la nouvelle clé secrète
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si votre complément a été créé à partir d'une version préliminaire des Outils de développement Microsoft Office pour Visual Studio, il peut contenir une version obsolète du fichier TokenHelper.cs (ou .vb). Si le fichier ne contient pas la chaîne « secondaryClientSecret », il est obsolète et doit être remplacé pour que le mot de passe de l'application web puisse être modifié. Pour obtenir une copie de la version finale du fichier, Visual Studio 2012 ou version ultérieure doit être installé. Créez un projet Complément SharePoint dans Visual Studio. Copiez le fichier TokenHelper dans le projet d'application web de votre Complément SharePoint. 
   
     

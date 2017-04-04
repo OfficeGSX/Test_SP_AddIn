@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die App bereit und öffnet die Berechtigungsseite für die App. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http oder https  <br/> |7000-10000  <br/> |
    
 
-> [!WICHTIG]
+> **WICHTIG**
 > Die ausgehenden Ports unterliegen der Hostfirewallverfügbarkeit. Insbesondere sind in SharePoint Online nur HTTP-Port 80 und HTTPS-Port 443 verfügbar. 
   
     
     
 
 |
-|Unbehandelte Ausnahme: **SP ist nicht definiert**. <br/> |Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!VORSICHT]> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
+|Unbehandelte Ausnahme: **SP ist nicht definiert**. <br/> |Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **VORSICHT**> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
 |Die Größe der Antwort vom Remoteendpunkt übersteigt den konfigurierten Höchstwert.  <br/> |Die Webproxyanforderungen der Antwort dürfen nicht größer als 200 KB sein.  <br/> |
    
 

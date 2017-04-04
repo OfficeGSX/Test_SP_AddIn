@@ -64,7 +64,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
     
     
 
-> [!注意事項]
+> **注意事項**
 > 伺服器對伺服器 STS 無法供使用者驗證。因此，您將不會看到列在 [使用者登入] 頁面的 [ **驗證提供者**] 區段中 [人員選擇] 在SharePoint 2013或管理中心] 中的伺服器對伺服器 STS。
   
     
@@ -203,7 +203,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
     
     
 
-> [!注意事項]
+> **注意事項**
 > 請仔細檢查您已完成 [設定伺服器對伺服器增益集使用SharePoint中的服務](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver)(這列為本文的先決條件) 中的步驟。如果不是，您必須將其設定現在，您才可以繼續。
   
     
@@ -248,7 +248,7 @@ $fullIssuerIdentifier = $specificIssuerId + '@' + $realm
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 因為在生產環境中每個憑證必須具備唯一簽發者 `$specificIssuerId`值必須是 GUID。不過，在此上下文中，其中您可以使用相同的憑證偵錯所有您高信任層級增益集，您可以硬式編碼值。如果有任何原因您使用不同的 GUID 透過在這裡使用， * **請務必以 GUID 的任何字母是小寫*** 。SharePoint 基礎結構目前需要憑證簽發者 Guid 小寫。
 5. 新增下列行以登錄為受信任權杖發行者的憑證。 `-Name`參數必須是唯一的讓在實際執行設定中，為一般使用一部分的 GUID (或所有) 名稱，但在此上下文中，您可以使用的易記名稱。若要確保您可以使用相同的憑證所有高信任層級增益集的開發需要 `-IsTrustBroker`參數。 `iisreset`命令才可進行立即註冊您 token 簽署者。沒有，您可能必須等候時間為 24 小時的值要註冊新的簽署者。
     
@@ -288,7 +288,7 @@ $serviceConfig.Update()
     
     
 
-> [!注意事項]
+> **注意事項**
 >  [建立高信任層級增益集的必要條件](#Prereq)」 一節所述，本文會假設您知道如何建立提供者主控SharePoint Add-in。如需詳細資訊，請參閱 [開始建立提供者主控 SharePoint 增益集](get-started-creating-provider-hosted-sharepoint-add-ins.md)。
   
     

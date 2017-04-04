@@ -31,7 +31,7 @@ Para acompanhe este artigo e insira o código sozinho, baixe o exemplo do  [Shar
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esta amostra usar um arquivo de TokenHelper.cs que seja gerado pelo Office Developer Tools for Visual Studio. A versão atual era quando a amostra foi criada, mas não pode ser a versão mais recente ao ler isso. O exemplo é ainda ótimo para criar seu primeiro RER. Mas, quando você estiver pronto para ir além disso, você deve examinar as amostras listadas na seção próximas etapas abaixo. Eles são mais prováveis de ser mantidos atualizados.
   
     
@@ -115,7 +115,7 @@ Para acompanhe este artigo e insira o código sozinho, baixe o exemplo do  [Shar
     
   
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > No momento em que este artigo foi escrito o Office Developer Tools for Visual Studio adicione referências a todos os assemblies necessários quando o destinatário é criado, mas versões mais recentes das ferramentas não podem. Se você receber erros de compilador, basta adicionar as referências ausentes; Por exemplo, você pode precisar adicionar referências a ServiceModel ou System.ComponentModel.DataAnnotations.
 
 

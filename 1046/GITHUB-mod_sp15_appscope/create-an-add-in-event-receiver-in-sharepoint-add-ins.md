@@ -116,7 +116,7 @@ switch (properties.EventType)
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O **AppInstalled**, **AppUpdated**e **AppInstalling** eventos, se você tiver manipuladores para eles, cada um receberá sua própria URL registrado no manifesto do suplemento. Assim você *pode*  ter diferentes pontos de extremidade-los; mas este artigo (e o Office Developer Tools for Visual Studio ) pressupõem que eles têm exatamente o mesmo ponto de extremidade; é por isso que o código precisa determinar qual evento chamado-lo.
 8. Conforme explicado na  [Incluir lógica de reversão e "tiver feito" lógica em seus manipuladores de eventos de suplemento](handle-events-in-sharepoint-add-ins.md#Rollback), caso algo saia errado na sua lógica de instalação, quase sempre desejado a instalação do suplemento cancelado e você quiser que o SharePoint para reverter o que aconteceu para a instalação e você deseja reverter que o seu manipulador tenha feito. Adicione o seguinte código dentro do **case** para o evento AppInstalled é uma maneira de atingir essas metas.
     
@@ -138,7 +138,7 @@ case SPRemoteEventType.AppInstalled:
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Mova os códigos de instalação que leve mais de 30 segundos para o add-in em si. Você pode adicioná-lo à lógica "da primeira execução" que é executado na primeira vez que o suplemento é executado. O suplemento pode exibir uma mensagem informando que algo como "Estamos obtendo coisas pronto para você." Como alternativa, o suplemento pode solicitar o usuário a executar o código de inicialização.> Se "da primeira execução" lógica não é viável para seu suplemento, outra opção é fazer com que o manipulador de evento iniciar um processo assíncrono remoto e imediatamente retorna um objeto de  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) com o **Status** definida como **Continue**. Um ponto fraco dessa estratégia é que se o processo remoto falhar, ele não tem como dizer ao SharePoint para reverter a instalação do suplemento.
 9. Conforme explicado em  [Estratégias de arquitetura do manipulador de eventos de suplemento](handle-events-in-sharepoint-add-ins.md#Strategies), a estratégia de delegação do manipulador é preferida, embora não é possível em todos os cenários. No exemplo contínuo, mostraremos como implementar a estratégia de delegação do manipulador ao adicionar uma lista na Web do host. (Para obter informações sobre como criar um manipulador de eventos AppInstalled semelhante que não usa a estratégia de delegação do manipulador, consulte o exemplo  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
     
@@ -268,7 +268,7 @@ using (condScope.StartScope())
   ```
 
 
-    > [!DICA]
+    > **DICA**
       > **Solução de problemas:** Para testar se seu bloco **StartCatch** é inserido quando deveria, você precisa de uma forma para acionar uma exceção de tempo de execução no servidor do SharePoint. Usando um **throw** ou divisão por zero não funcionarão porque eles causar exceções do *lado do cliente*  antes do tempo de execução de cliente pode até mesmo agrupam o código e enviá-la ao servidor (com o método **ExecuteQuery** ). Em vez disso, adicione as seguintes linhas ao bloco **StartTry**. O tempo de execução do cliente aceita isso, mas ela faz com que uma exceção do servidor, que é o que você deseja.>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
   
     
@@ -344,10 +344,10 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
   ```
 
 
-    > [!DICA]
+    > **DICA**
       > **Depuração:** Independentemente se você estiver usando a estratégia de delegação do manipulador, quando você estiver nivelando o código com o depurador, tenha em mente que, em qualquer situação na qual seu manipulador retorna um status de cancelar, SharePoint irá chamar seu manipulador novamente, até três vezes mais. Portanto o depurador percorrerá o código até quatro vezes.
 
-    > [!DICA]
+    > **DICA**
       > **Arquitetura de código:** Desde que você pode instalar componentes na web suplemento com marcação declarativa fora do seu manipulador, geralmente não deseja usar qualquer um dos 30 segundos que seu manipulador tem disponíveis para interagir com o suplemento de web. Mas, se fizer isso, lembre-se de que seu código requer um objeto separado [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) para a web do suplemento. Isso significa que o suplemento de web e web host são diferentes componentes, tanto quanto um banco de dados do SQL Server é diferente de cada um deles. Portanto, um método que chamadas para a web suplemento está no bloco de **try** do bloco **case** AppInstalled, exatamente como o método TryCreateList no exemplo contínuo. No entanto, o seu manipulador faz *não*  necessidade para reverter ações tomadas na web add-in. Se ele encontra um erro, ele só precisa cancelar o evento, porque o SharePoint excluirá a suplemento web inteira, se o evento será cancelado.
 
 ## Criar um suplemento uninstalling receptor de evento

@@ -34,7 +34,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
   
 - **在Microsoft Azure組織帳戶**。請參閱 [手動新增至您的 Office 365 Api 預覽應用程式的 [一般同意](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount)。
     
-    > [!注意事項]
+    > **注意事項**
       > Office 365 帳戶 (login.microsoftonline.com) 來建立帳戶之後變更暫時密碼登入。
 - 將含有範例資料中的 **SAP OData 端點**。請參閱 [Microsoft SAP 閘道](http://go.microsoft.com/fwlink/?LinkId=507635)文件。
     
@@ -61,7 +61,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
     
     
 
-> [!秘訣]
+> **秘訣**
 > 如果您SharePoint Add-in存取SharePoint除了存取SAP Gateway for Microsoft，則它將需要使用 *兩個*  系統： Azure AD取得存取 token SAP Gateway for Microsoft及取得存取 token 至SharePointACS 授權系統。從兩個來源的 token 不可以互換。如需詳細資訊，請參閱 [選擇性地新增 SharePoint 存取權的 ASP.NET 應用程式](#SharePoint)。
   
     
@@ -124,7 +124,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
 
 1. 登入與 Azure 系統管理員帳戶 [Azure 管理入口網站](https://manage.windowsazure.com) 。
     
-    > [!注意事項]
+    > **注意事項**
       > 基於安全性考量，建議針對開發增益集時使用系統管理員帳戶。
 2. 選擇 [ **Active Directory** ] 左側。
     
@@ -210,7 +210,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 您的應用程式是由您用來將其登錄的"localhost"URL 已知Azure AD 。用戶端識別碼和用戶端金鑰相關聯的身分識別。當您準備好階段Azure 網站繼續應用程式時，將會重新將其註冊新的 url。
 4. 仍處於 **appSettings** ] 區段中，新增 **Authority**機碼並設定其值為Office 365網域 ( *some_domain*  。 onmicrosoft.com) 您的組織帳戶。在繼續範例中，組織的帳戶是 Bob @< O365_domain >。 onmicrosoft.com，所以授權單位是 `<O365_domain>.onmicrosoft.com`。
     
@@ -250,7 +250,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
 
 7. 儲存並關閉 Web.config 檔案。
     
-    > [!秘訣]
+    > **秘訣**
       > 請勿將 web.config 檔案開啟時執行Visual Studio偵錯工具 (F5)。Office Developer Tools for Visual Studio值變更為 **ClientId** (不 **ida:ClientID**) 每次按 F5。這需要您回應提示重新載入 web.config 檔案中，如果它開啟，才可執行偵錯。
 
 ### 新增至 Azure AD 驗證輔助類別
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!秘訣]
+> **秘訣**
 > AADAuthHelper 類別具有僅限最少的錯誤處理。穩固、 實際執行品質SharePoint Add-in，如新增更多的錯誤處理此 MSDN 節點中所述：  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx)。
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!重要]
+    > **重要**
       > 當您準備好要部署至臨時 ASP.NET 應用程式刪除此列。請參閱 [修改的增益集和階段 Azure 及 Office 365](#Stage)。
 5. 將下列程式碼新增至 **Page_Load**方法。傳遞至 `GetSAPData`方法的字串是 OData 查詢。
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!注意事項]
+> **注意事項**
 > 當您正在偵錯SharePoint Add-in時、 Office Developer Tools for Visual Studio重新將其登錄Azure ACS按 F5 鍵Visual Studio在每次。當分段SharePoint Add-in時，必須將其命名長期註冊。請參閱] 區段中 [修改的增益集和階段 Azure 及 Office 365](#Stage)。
   
     
@@ -710,7 +710,7 @@ private void GetSharePointTitle()
   
 8. 向Azure ACS登錄的增益集。這必須是完成即使增益集不會存取SharePoint並不會使用權杖從 ACS，因為相同的程序也會註冊增益集與增益集管理服務的Office 365訂閱，這是需求。(它是可以呼叫 「 增益集管理服務 」 因為SharePoint Add-ins原本 」 稱為 「 SharePoint 應用程式 」)。您可以執行註冊Office 365訂閱中任何SharePoint網站 AppRegNew.aspx 頁上。如需詳細資訊，請參閱 [註冊 sharepoint2013 增益集](register-sharepoint-add-ins-2013.md)。此程序的一部分您將取得新的用戶端識別碼和用戶端密碼。在 web.config 中 **ClientId** (不 **ida:ClientID**) 和 **ClientSecret**機碼插入這些值。
     
-    > [!注意]
+    > **注意**
       > 如果有任何原因您按 F5 進行這項變更之後， Office Developer Tools for Visual Studio會覆寫一或兩個值。該原因，您應該保留使用 AppRegNew.aspx 取得值的記錄，並一律確認 [web.config 中的值是正確之前發行的 ASP.NET 應用程式。
 
 ### 發佈至 Azure ASP.NET 應用程式及 sharepoint 安裝的增益集

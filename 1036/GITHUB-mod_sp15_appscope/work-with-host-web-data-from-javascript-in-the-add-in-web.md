@@ -44,7 +44,7 @@ ms.assetid: 08eb049f-eaf8-478d-9af6-9565e8bb24f2
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeHostWebData.sln.
   
     
@@ -174,7 +174,7 @@ function ensureOrientationScheduling() {
 
 6.  Ajoutez la fonction suivante au fichier Add-in.js, juste en dessous de la fonction précédente. Notez qu'elle utilise l'objet `hostWebContext` pour identifier la liste interrogée.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Notez qu'aucune balise de requête n'est ajoutée à la requête CAML. Le fait de ne disposer d'aucune requête réelle dans l'objet de requête permet de s'assurer que *l'ensemble*  des heures de la liste seront récupérées. Si la liste est très volumineuse, cela peut entraîner une durée d'exécution de la requête au serveur inacceptable. Dans ce cas, nous souhaitons trouver une autre façon d'atteindre notre objectif. Mais dans ce cas de figure où nous disposons d'une liste très courte (sans oublier que les listes de calendrier sont presque toujours courtes), l'obtention de la liste entière afin de pouvoir l'itérer sur le client nous permettra de réduire le nombre d'appels vers le serveur, autrement dit les appels de l'élément **executeQueryAsync**. 
 
   ```

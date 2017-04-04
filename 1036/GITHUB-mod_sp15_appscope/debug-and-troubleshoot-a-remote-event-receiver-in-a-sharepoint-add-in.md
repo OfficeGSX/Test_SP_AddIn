@@ -10,7 +10,7 @@ Configurez votre environnement de développement afin de déboguer les événeme
 ## Configurer le débogage d'un site de test SharePoint distant
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les procédures de cette section ne s'appliquent que lorsque votre site de test SharePoint est situé sur un ordinateur différent de Visual Studio ou si vous utilisez un site du développeur SharePoint Online en guise de site de test. Si SharePoint et Visual Studio sont exécutés sur le même ordinateur, ignorez cette section. 
   
     

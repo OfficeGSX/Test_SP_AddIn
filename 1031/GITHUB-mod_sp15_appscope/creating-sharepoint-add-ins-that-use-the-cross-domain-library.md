@@ -29,7 +29,7 @@ Es gibt einige Szenarien, in denen weder das Autorisierungssystem mit niedriger 
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die domänenübergreifende Bibliothek wird außerdem verwendet, damit auf die Daten in umgekehrter Richtung zugegriffen werden kann; d. h. JavaScript kann auf einer SharePoint-Seite verwendet werden, um auf Daten in einer Remotedomäne zuzugreifen. Weitere Informationen dazu finden Sie unter  [Zugreifen auf Remotedaten von einer SharePoint-Seite](#ReverseDirection). 
   
     
@@ -43,7 +43,7 @@ Die SharePoint domänenübergreifende Bibliothek ist in der Datei SP.RequestExec
     
     
 
-> [!VORSICHT]
+> **VORSICHT**
 > Die Funktion  `postMessage()` funktioniert nur mit Browsern, die HTML 5 unterstützen, SharePoint-Add-Ins mit der domänenübergreifenden Bibliothek funktionieren also nicht mit älteren Browsern.
   
     
@@ -71,7 +71,7 @@ Die Remotekomponenten des SharePoint-Add-Ins benötigen natürlich dennoch autor
   ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie die zweite Option verwenden (ein **Internal**-Add-In-Prinzipal), können Sie nur JavaScript und die domänenübergreifende Bibliothek zum Zugreifen auf SharePoint verwenden. Das SharePoint-Clientobjektmodell ist für **Internal**SharePoint-Add-Ins gesperrt, Sie können also kein duales Autorisierungssystem nutzen, das die domänenübergreifende Bibliothek und Systeme mit niedriger Vertrauensebene oder besonders vertrauenswürdige Systeme verwendet. 
   
     

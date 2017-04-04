@@ -38,7 +38,7 @@ Este es el noveno de una serie de artículos sobre los conceptos básicos de des
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeProgrammaticButton.sln.
   
     
@@ -48,7 +48,7 @@ En este artículo aprenderá a incluir un botón personalizado de cinta de opcio
 ## Volver a agregar el botón personalizado al proyecto
 
 
-> [!NOTA]
+> **NOTA**
 >  La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos:>  Haga clic con el botón derecho en el nodo de solución en la parte superior del **Explorador de soluciones** y seleccione **Establecer proyectos de inicio**. >  Asegúrese de que los tres proyectos estén establecidos en **Iniciar** en la columna **Acción**. 
   
     
@@ -132,7 +132,7 @@ RegistrationId="100"
   
   - El valor del  `action.Name` proviene del atributo **ID** del elemento **CustomAction** en el archivo element.xml en **AddEmployeeToCorpDB**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > **Debe cambiar el valor  `action.Name` en el código siguiente para que coincida con el valor en el archivo elements.xml.** La parte del GUID del nombre será diferente. Tenga en cuenta que hay un carácter "." entre el GUID y el resto del nombre. El siguiente es un ejemplo de la línea.>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
   ```cs
@@ -285,7 +285,7 @@ Dado que el complemento ahora está agregando y eliminando acciones personalizad
 
 1. Abra la página **Contenido del sitio** del sitio web de la tienda de Hong Kong *y quite la lista **Empleados locales**.* 
     
-    > [!NOTA]
+    > **NOTA**
       > Retirar un complemento en Visual Studio no quita las listas que creó el complemento, por lo que debe eliminarlo manualmente cada vez se está probando código que lo crea. 
 2. Use la tecla F5 para implementar y ejecutar el complemento. Visual Studio hospeda la aplicación web remota en IIS Express y hospeda la base de datos SQL en un SQL Express. También hace una instalación temporal del complemento en su sitio de SharePoint de prueba y ejecuta inmediatamente el complemento. Deberá conceder permisos para el complemento antes de que se abra la página de inicio.
     
@@ -295,7 +295,7 @@ Dado que el complemento ahora está agregando y eliminando acciones personalizad
   
 4. Vaya a la página **Contenido del sitio**. La lista **Empleados locales** está presente porque la lógica de la primera vista la agregó.
     
-    > [!NOTA]
+    > **NOTA**
       > Si la lista no existe o usted tiene otras indicaciones de que no se ejecuta el código de la primera vista, es posible que la tabla **Inquilinos** no se esté revirtiendo a un estado vacío al presionar F5. La causa más común de esto es que el proyecto **ChainCorporateDB** ya no está establecido como proyecto de inicio en Visual Studio. Consulte la nota cerca de la parte superior de este artículo sobre cómo solucionar este problema. Además, asegúrese de que se haya configurado la base de datos para que se recompile como se describe en [Configurar Visual Studio para recompilar la base de datos corporativa con cada sesión de depuración](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5. Abra la lista y agregue un elemento.
     

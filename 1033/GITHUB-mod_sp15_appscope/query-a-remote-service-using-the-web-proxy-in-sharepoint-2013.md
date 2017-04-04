@@ -8,7 +8,7 @@ ms.assetid: 16913e6d-4fc6-4c5e-84a4-6c2688703798
 
 # Query a remote service using the web proxy in SharePoint 2013
 Learn how to access data in a remote domain from a page that is hosted in SharePoint 2013 by using the web proxy.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -428,7 +428,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in. 
 2. Choose the **Trust It** button.
     
@@ -462,14 +462,14 @@ Categories from the Northwind database exposed as an OData service:
 |http or https  <br/> |7000-10000  <br/> |
    
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > The outbound ports are subject to host firewall availability. In particular, only http-80 and https-443 are available on SharePoint Online. 
   
     
     
 
 |
-|Unhandled exception **SP is undefined**. <br/> |Make sure you can access the SP.RequestExecutor.js file in a browser window.  <br/> If you are using your local server as your development environment, you must disable IIS loopback check. Run the following command from a Windows PowerShell command prompt.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!CAUTION]> Disabling the IIS loopback check is not recommended in a production environment.           |
+|Unhandled exception **SP is undefined**. <br/> |Make sure you can access the SP.RequestExecutor.js file in a browser window.  <br/> If you are using your local server as your development environment, you must disable IIS loopback check. Run the following command from a Windows PowerShell command prompt.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **CAUTION**> Disabling the IIS loopback check is not recommended in a production environment.           |
 |The size of the response from the remote endpoint exceeds the configured limit.  <br/> |The response's size of web proxy requests must not be larger than 200 KB.  <br/> |
    
 

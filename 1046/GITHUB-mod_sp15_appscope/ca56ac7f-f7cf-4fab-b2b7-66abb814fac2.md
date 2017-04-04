@@ -82,7 +82,7 @@ In this section, you create a mobile companion Windows Phone app by using the Wi
   
 3. Na caixa de diálogo **Novo projeto**, expanda o nó do **Visual c#** e escolha o nó do **Silverlight para o telefone de janela**. (Certifique-se de que a versão do .NET Framework de destino está definida como **4**.)
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Os modelos instalados pelo SDK do Windows Phone SharePoint funcionam somente em projetos c#. Os modelos não estão disponíveis para projetos de Visual Basic.
 4. No painel de **modelos**, escolha o modelo de **Aplicativo para Windows Phone SharePoint lista** e dê ao projeto um nome, comoSupportCenterCompanionPhoneApp.
     
@@ -128,7 +128,7 @@ In this section, you create a mobile companion Windows Phone app by using the Wi
   
 15. Escolha **Concluir**. Visual Studio cria os arquivos necessários para o projeto e abre o arquivo List.xaml para edição.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O aplicativo do Windows Phone baseados em lista pode autenticar SharePoint Online pela primeira vez, mas pode falhar autenticar para a segunda vez e exibir um erro no servidor em tempo de execução. Para superar esse erro, habilite cookie cache ( `at.CookieCachingEnabled = true;`) antes de passar o objeto **Authenticator** para **clientContext.Credentials**, conforme mostrado no código a seguir, que aparece no arquivo ListDataProvider.cs gerado pelo Visual Studio.
 
   ```cs

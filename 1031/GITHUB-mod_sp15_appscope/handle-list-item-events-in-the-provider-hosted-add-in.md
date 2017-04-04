@@ -41,7 +41,7 @@ Dies ist der zehnte einer Reihe von Artikeln über die Grundlagen der Entwicklun
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeRER.sln" öffnen.
   
     
@@ -51,7 +51,7 @@ Sie haben in einem früheren Artikel dieser Reihe gesehen, dass ein platzierter 
 ## Programmgesteuerte Bereitstellung der Liste „Erwartete Lieferungen"
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch: 
   
     
@@ -134,7 +134,7 @@ CreateExpectedShipmentsList();
 ## Erstellen des Listenelement-Ereignisempfängers
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie in diese Reihe von Artikeln durchgearbeitet haben, haben Sie Ihre Entwicklungsumgebung für das Debuggen von Remoteereignisempfängern bereits konfiguriert. Wenn Sie dies nicht getan haben, lesen Sie zuerst  [Konfigurieren der Projektmappe für das Debuggen des Ereignisempfängers](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug), bevor Sie in diesem Thema fortfahren. 
   
     
@@ -145,7 +145,7 @@ Die Office-Entwicklertools für Visual Studio enthalten ein **Remoteereignisempf
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Listen- und Listenelement-Ereignisempfänger heißen Remoteereignisempfänger (RER), da sich ihr Code remote von SharePoint in der Cloud oder auf einem lokalen Server außerhalb der SharePoint-Farm befindet. Allerdings befinden sich die Ereignisse, die diese auslösen, in SharePoint.
   
     
@@ -160,7 +160,7 @@ Die Office-Entwicklertools für Visual Studio enthalten ein **Remoteereignisempf
   
 3. Die Tools erstellen eine Schnittstellendatei, eine *.svc-Datei und eine CodeBehind-Datei. Da die Schnittstellendatei „IRemoteEventReceiver1.cs" nicht benötigt wird, können Sie diese löschen. (Die Tools haben sie möglicherweise automatisch geöffnet. Wenn dies der Fall ist, schließen und löschen Sie die Datei.)
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Bei der Erstellung der Add-In-Ereignisempfänger für die Ereignisse „Installiert" und „Deinstallieren" in einem früheren Artikel dieser Reihe, haben die Office-Entwicklertools für Visual Studio ihre URLs zur Add-In-Manifest-Datei hinzugefügt. Listen- und Listenelement-Ereignisempfänger sind nicht im Add-In-Manifest registriert. Stattdessen werden sie (in einem vom Anbieter gehosteten Add-In) programmgesteuert registriert. Dies führen Sie in einem späteren Schritt durch. 
 4. Öffnen Sie die CodeBehind-Datei: RemoteEventReceiver1.svc.cs. Ersetzen sie den gesamten Inhalt durch den folgenden Code. Beachten Sie Folgendes bei diesem Code:
     
@@ -414,7 +414,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Die **KeyNotFoundException** ist auch der Grund, warum das Feld **Zu Bestand hinzugefügt** im Formular zum Bearbeiten des Elements sichtbar sein muss. SharePoint enthält keine Felder, die auf dem Formular zum Bearbeiten in **AfterProperties** ausgeblendet sind.
 
     Die gesamte Methode sollte jetzt wie folgt aussehen.
@@ -669,7 +669,7 @@ Die Add-In-Ereignis- und -Listenelement Ereignisempfänger sind Windows Communic
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 >  Das manuelle Kopieren und Einfügen der Servicebus-URL (einer modifizierten Version davon) in die web.config-Datei ist nicht die einzige Möglichkeit für den Umgang mit der Notwendigkeit einer anderen URL beim Debuggen eines Remoteereignisempfängers, wenn dieser in der Produktion ausgeführt wird.>  Wir könnten den Wert von **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** programmgesteuert an einer beliebigen Stelle in SharePoint oder der Remotedatenbank speichern und ihn dann vom zuerst ausgeführten Code lesen und der Eigenschaft `receiver.ReceiverUrl` zuweisen lassen.>  Der Listenelement-Ereignisempfänger könnte als Teil des installierten Add-In-Ereignishandlers registriert werden. Dann könnte **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** programmgesteuert gelesen, geändert und zu `receiver.ReceiverUrl` hinzugefügt werden, ohne irgendwo gespeichert werden zu müssen. Diese Strategie würde erfordern, dass die Liste **Erwartete Lieferungen** ebenfalls im installierten Add-In-Ereignishandler erstellt wird, da sie vorhanden sein müsste, bevor der Handler bei ihr registriert werden kann. (Beachten Sie außerdem, dass der Add-In-Ereignisempfänger und der Listenelement-Ereignisempfänger in einem einzigen Empfänger kombinieren werden kann (d. h. in denselben .svc- und svc.cs-Dateien). In diesem Fall ist keine Änderung der URL erforderlich, bevor sie als Wert für `receiver.ReceiverUrl` verwendet wird.)
   
     

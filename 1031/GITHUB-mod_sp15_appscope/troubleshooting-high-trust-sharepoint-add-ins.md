@@ -24,7 +24,7 @@ Nachdem Sie Fiddler auf dem Webanwendungsserver installiert haben, fügen Sie da
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Stellen Sie sicher, dass Sie dieses Markup entfernen, wenn Fiddler nicht ausgeführt wird. Wenn Sie das Markup nicht entfernen, kann Ihr Add-In keine HTTP-Anforderungen durchführen. 
   
     

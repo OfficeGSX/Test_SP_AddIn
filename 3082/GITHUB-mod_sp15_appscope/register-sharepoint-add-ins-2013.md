@@ -14,7 +14,7 @@ Para que los componentes remotos de un Complemento de SharePoint hospedado por e
     
 
 
-> [!NOTA]
+> **NOTA**
 > Esto no es necesario para los complementos hospedados en SharePoint. 
   
     
@@ -43,7 +43,7 @@ Para registrar el complemento con Azure ACS, especifique la siguiente informaci�
     
   
 Después de registrar el complemento, este tiene una identidad de complemento y es una  *entidad de seguridad*  , denominadaentidad de seguridad del complemento. Cuando instale el complemento, los administradores de SharePoint podrán recuperar información sobre esta entidad de seguridad de complemento concreta.La primera vez que un usuario concede permisos a un complemento para que acceda a los recursos de SharePoint (lo que puede suceder al instalarlo o en tiempo de ejecución, según el diseño del mismo), SharePoint consigue información sobre el complemento de Azure ACS. Después, SharePoint almacena esta información en el Servicio de administración de aplicaciones del inquilino o de la granja de servidores de SharePoint. El secreto de cliente solo se almacena en Azure ACS. SharePoint no conoce nunca el secreto de un complemento. El servicio de bases de datos de contenido y otros componentes, como el servicio de perfiles de usuario, pueden obtener el nombre para mostrar del complemento y otra información básica sobre el complemento directamente del servicio compartido de administración de aplicaciones. Para obtener más información, vea  [Recuperación de información sobre el registro del complemento y la entidad de seguridad del complemento ](register-sharepoint-add-ins-2013.md#Retrieve) en este artículo.
-> [!NOTA]
+> **NOTA**
 > En este artículo se presupone que el lector conoce los conceptos y principios básicos relativos a OAuth 2.0 Framework. Para más información, vea  [OAuth.net](http://oauth.net/) y el [Protocolo de autorización web (oauth)](http://datatracker.ietf.org/doc/active/). 
   
     
@@ -60,7 +60,7 @@ Puede registrar el complemento eligiendo una de tres opciones, según en qué et
 
 |**Método de registro**|**Más información**|
 |:-----|:-----|
-|Usar Visual Studio y las Microsoft Office Developer Tools para Visual Studio para crear una identidad de complemento temporal.  <br/> |El asistente de Office Developer Tools para Visual Studio crea automáticamente un registro temporal para su complemento con ACS y el Servicio de administración de aplicaciones de su sitio web de prueba de SharePoint. Cuando ejecute el complemento desde Visual Studio (F5), se usará esta identidad. Las herramientas también insertan el identificador y el secreto de cliente en los archivos web.config y AppManifest.xml.  <br/> Cuando esté listo para publicar su complemento, puede usar el asistente para publicación de Visual Studio que le llevará al Panel de vendedores, donde puede registrarlo. Si no va a comercializar el Complemento de SharePoint en la Tienda Office, use AppRegNew.aspx para registrarlo. (A continuación se muestran los pasos exactos).  <br/> > [!NOTA]> Si su complemento pide permiso para acceder a los recursos de SharePoint de forma dinámica durante el tiempo de ejecución en lugar de durante la instalación del complemento, no puede usar Visual Studio para crear identidades de complementos.           |
+|Usar Visual Studio y las Microsoft Office Developer Tools para Visual Studio para crear una identidad de complemento temporal.  <br/> |El asistente de Office Developer Tools para Visual Studio crea automáticamente un registro temporal para su complemento con ACS y el Servicio de administración de aplicaciones de su sitio web de prueba de SharePoint. Cuando ejecute el complemento desde Visual Studio (F5), se usará esta identidad. Las herramientas también insertan el identificador y el secreto de cliente en los archivos web.config y AppManifest.xml.  <br/> Cuando esté listo para publicar su complemento, puede usar el asistente para publicación de Visual Studio que le llevará al Panel de vendedores, donde puede registrarlo. Si no va a comercializar el Complemento de SharePoint en la Tienda Office, use AppRegNew.aspx para registrarlo. (A continuación se muestran los pasos exactos).  <br/> > **NOTA**> Si su complemento pide permiso para acceder a los recursos de SharePoint de forma dinámica durante el tiempo de ejecución en lugar de durante la instalación del complemento, no puede usar Visual Studio para crear identidades de complementos.           |
 |Registrar el complemento a través del Panel de vendedores.  <br/> |Si va a usar el complemento en más de una granja de servidores o inquilino de SharePoint, use el Panel de vendedores para registrar el complemento, independientemente de si pretende comercializarlo en la Tienda Office o hacerlo disponible mediante el catálogo de complementos. Cuando lo registre en el Panel de vendedores, puede diseñar el complemento con una arquitectura multiinquilino sin necesidad de que los administradores de inquilino o granja lo registren por separado. Además, si tiene pensado publicar el complemento en la Tienda Office, tiene que usar el Panel de vendedores para registrar el complemento, pero no tiene que usar la tienda para publicar un complemento que se ha registrado en el Panel de vendedores.  <br/> Para más información, vea  [Crear o actualizar identificadores y claves secretas de cliente en el Panel de vendedores](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx).  <br/> |
 |Usar la página AppRegNew.aspx.  <br/> |Use el formulario AppRegNew para registrar el Complemento de SharePoint si va a usar el complemento en un solo inquilino o granja de servidores. Por ejemplo, si va a crear complementos para una sola organización y va a usarlos y distribuirlos a través del catálogo de complementos corporativo, puede usar la página AppRegNew.aspx en cualquier sitio web de un inquilino o granja de servidores para registrar el complemento.  <br/> Un complemento registrado con AppRegNew.aspx no se puede publicar en la Tienda Office. Para complementos que se publican en la Tienda Office, debe obtener una identidad del Panel de vendedores.  <br/> |
    
@@ -87,7 +87,7 @@ Puede registrar el complemento eligiendo una de tres opciones, según en qué et
   
   - **Secreto de complemento**: también conocido como secreto de cliente, una cadena opaca. Se genera en la página AppRegNew.aspx con el botón **Generar**. El siguiente es un ejemplo de un secreto de complemento: **xvVpG0AgVIJfch6ldu4dLUlcZyysmGqBRbpFDu6AfJw=**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Los secretos de complemento expiran. Si registra el complemento en el Panel de vendedores, puede establecer una expiración de hasta 3 años. En el panel también puede agregar nuevos secretos cuando los antiguos alcanzan su fecha de expiración. El nuevo secreto se habilitará en todas las instancias del complemento. Si registra el complemento con AppRegNew.aspx, el secreto expira en 1 año. Para más información, vea  [Reemplazar un secreto de cliente a punto de expirar en un complemento para SharePoint](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md). 
   - **Título**: un título descriptivo, por ejemplo,Complemento para imprimir fotos de Contoso. Se pedirá a los usuarios que confirmen o denieguen al complemento los permisos que este está solicitando. Este título aparece como el nombre del complemento en el mensaje de consentimiento. 
     
@@ -132,7 +132,7 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Si publica el Complemento de SharePoint mediante el asistente publicador de Visual Studio, Visual Studio le pedirá el identificador de cliente y el secreto de cliente durante el proceso de publicación, y pondrá la información en el sitio adecuado. 
   
     
@@ -141,7 +141,7 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
 
 1. En el archivo Web.config del proyecto de Visual Studio, escriba el valor del identificador de complemento como el valor de **ClientId** (reemplazando el valor temporal que las herramientas especificaron).
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Todas las letras del GUID del identificador de cliente deben estar en minúsculas. 
 
     A continuación se muestra un ejemplo.
@@ -172,7 +172,7 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
 
 3. En el archivo AppManifest.xml del proyecto de Visual Studio, escriba el valor del identificador de complemento como valor de **ClientId**,  *con minúsculas*  .
     
-    > [!NOTA]
+    > **NOTA**
       > El manifiesto del complemento no se aplica a aplicaciones web que piden permiso para acceder a los recursos de SharePoint sobre la marcha. Estos no son realmente "Complementos de SharePoint". No se instalan en SharePoint y no tienen un manifiesto de complemento. Para más información, vea  [Flujo de código de autenticación de OAuth para aplicaciones en SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins.md). 
 
     El siguiente ejemplo muestra cómo se usa el valor **ClientId** en el archivo AppManifest.xml.

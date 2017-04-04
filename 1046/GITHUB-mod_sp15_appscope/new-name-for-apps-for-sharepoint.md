@@ -25,7 +25,7 @@ No momento, estamos atualizando nossos produtos, documentação, exemplos e outr
 |aplicativo Web  <br/> |suplemento Web  <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O nome do inicializador de aplicativos e a página **Meus aplicativos** no Office 365 não serão alterados. A página **Meus aplicativos** inicia os aplicativos internos, bem como os aplicativos da Web autônomos que se autenticam usando o Azure AD.
   
     

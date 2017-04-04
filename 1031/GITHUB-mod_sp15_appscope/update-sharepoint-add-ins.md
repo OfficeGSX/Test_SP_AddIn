@@ -28,7 +28,7 @@ Sie können Ihre SharePoint-Add-In mithilfe der in SharePoint 2013 integrierten 
     
 Ein Benutzer kann das Update installieren, ohne vorher die frühere Version zu deinstallieren. Die Updateinfrastruktur testet die Updateinstallation und setzt sie zurück, falls Fehler auftreten.
     
-> [!WICHTIG]
+> **WICHTIG**
 > Sie können den  *Add-In-Typ*  nicht über ein Update des Systems ändern. Sie können beispielsweise nicht ein in SharePoint gehostetes Add-In durch ein Update in ein vom Anbieter gehostetes Add-In ändern. Um den Add-In-Typ zu ändern, müssen Sie [von einem alten Add-In in ein neues Add-In migrieren](sharepoint-add-ins-update-process.md#Major). Insbesondere da  [das Vorabprogramm für automatisch gehostete Add-Ins beendet wurde](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), sollten Sie beachten, dass ein automatisch gehostetes Add-In nicht durch ein Update in ein vom Anbieter gehostetes Add-In geändert werden kann. Sie müssen das Add-In wie in  [Konvertieren eines automatisch gehosteten Add-Ins für SharePoint in ein vom Anbieter gehostetes Add-In](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md) erklärt konvertieren.
   
     
@@ -200,7 +200,7 @@ Abbildung 2 illustriert diese Schritte.
     
 
     
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie den Hinweis auf der Kachel des Add-Ins, dass ein Update verfügbar ist, häufiger als alle 24 Stunden anzeigen müssen, können Sie die unter  [Aktualisierungsverfahren für ein Add-In für SharePoint](sharepoint-add-ins-update-process.md#Minor) beschriebene Methode verwenden, um den Hinweis sofort anzuzeigen.
   
     

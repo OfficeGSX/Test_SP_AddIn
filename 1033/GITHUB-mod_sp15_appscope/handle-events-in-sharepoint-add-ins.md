@@ -10,7 +10,7 @@ ms.assetid: c050d056-8548-4496-a053-016779d723d9
 
 # Handle events in SharePoint Add-ins
 
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -27,7 +27,7 @@ Your custom code can handle three categories of events in provider-hosted add-in
     
   
 SharePoint-hosted SharePoint Add-ins do not support event handling, but you can turn a workflow into a kind of list or list item event handler by setting an event to trigger the workflow. See  [Workflows in SharePoint 2013](http://msdn.microsoft.com/library/e0602371-ae22-44be-8a7e-9e47e9f046d6%28Office.15%29.aspx). Workflows cannot be triggered by add-in events, so add-in events cannot be handled with a SharePoint-hosted add-in.
-> [!NOTE]
+> **NOTE**
 > Website events and site collection events are not supported in SharePoint Add-ins. 
   
     
@@ -56,7 +56,7 @@ To handle list and list item events, you create remote event receivers (RERs), w
     
   
 
-> [!NOTE]
+> **NOTE**
 > RERs have the same purpose as event receivers in farm solutions; but event receivers have custom code that runs on the SharePoint servers, so they cannot be used in SharePoint Add-ins. 
   
     
@@ -99,7 +99,7 @@ Your add-in can handle the following list item events.
 ||ItemFileConverted  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > *These two new events may not be available in the Visual Studio UI. If not, pick ItemDeleting or ItemDeleted and then manually change the names. 
   
     
@@ -152,7 +152,7 @@ To change the events that the remote event receiver handles, open **Solution Exp
     
     
 
-> [!NOTE]
+> **NOTE**
 > For additional information about RERs, including some troubleshooting information, see  [Remote Event Receivers FAQ](handle-events-in-sharepoint-add-ins.md#RERFAQ). 
   
     
@@ -174,7 +174,7 @@ The **AppInstalled** event runs immediately after SharePoint has finished everyt
     
     
 
-> [!NOTE]
+> **NOTE**
 > When you install an add-in with  [Tenant scope](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md), it is installed to the add-in catalog site collection and the AppInstalled event runs then and only then. The add-in is visible in multiple web sites in the tenancy, but the event does not run separately for each of these. 
   
     
@@ -193,13 +193,13 @@ Besides canceling an add-in installation, this event can be used for many other 
   
 - Set app-instance-relative initialization settings. For example, your add-in can have an add-in web property bag for holding settings that vary from one instance of the add-in to another. Your AppInstalled handler can write varying values to the property bag, based on, say, the site type of the host web (such as Team Site or Blog site).
     
-    > [!NOTE]
+    > **NOTE**
       > Checking to see if the host web is an AppCatalog site is a good way to detect whether the add-in has been installed with tenant scope. See  [Tenancies and deployment scopes for SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - Perform app-instance-relative configuration in the add-in's remote web application, such as adding a table to a database.
     
   
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > Your implementation of the AppInstalled event must complete within 30 seconds or the SharePoint installation infrastructure will think it has failed. The infrastructure will rerun the event,  *and repeat your code from the beginning*  , up to three additional times. After four timeouts, SharePoint will roll back the entire add-in installation. The full implications of these facts are discussed in [Include rollback logic and "already done" logic in your add-in event handlers](#Rollback). 
   
     
@@ -257,7 +257,7 @@ If SharePoint encounters an error when processing any of the three add-in events
     
   
 
-> [!NOTE]
+> **NOTE**
 > **Special note about the AppUninstalling event:** The preceding points apply to the AppUninstalling event as much as to the other two add-in events. For example, if your handler for the uninstalling event deletes a row in a remote database, and then encounters an error, the row needs to be restored. Since your service will be sending a cancel message to SharePoint, the add-in will not be removed from the recycle bin. If it is restored from there and used again, it may fail to work without that database entry.> However, your AppUninstalling handler completes  *before*  SharePoint removes the add-in from the recycle bin. So, if SharePoint itself encounters an error and needs to cancel the removal, there is no way for your handler to undo what it has done.
   
     
@@ -358,7 +358,7 @@ You cannot always use the handler delegation strategy. For example, when your ha
     
     
 
-> [!TIP]
+> **TIP**
 > If the AppInstalled event fails, SharePoint will delete the add-in web, if there is one; and if the AppUpated event fails, SharePoint will restore the add-in web to its pre-update state. For this reason, your handlers never need to rollback actions they take on the add-in web. If you handler performs actions on both the host web and the add-in web, it should deal with the add-in web first. Doing so makes it safe to use the handler delegation strategy for the host web. Even if the add-in web actions succeed and the host web actions fail, there is no rollback logic that goes unexecuted. 
   
     

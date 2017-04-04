@@ -36,7 +36,7 @@ REST API および jQuery AJAX 要求を使用して、ローカル ファイル
     
     
 
-> [!メモ]
+> **メモ**
 > JavaScript で作成されたプロバイダー向けのホスト型アドインは、SP.RequestExecutor クロスドメイン ライブラリを使用して要求を SharePoint ドメインに送信する必要があります。例については、「 [クロスドメイン ライブラリを使用してファイルをアップロードする](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd)」を参照してください。 
   
     

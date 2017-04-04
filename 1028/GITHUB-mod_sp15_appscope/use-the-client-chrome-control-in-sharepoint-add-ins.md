@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio建置解決方案、 增益集、 部署和增益集的權限] 頁面會隨即開啟。
 3. 選擇 [ **信任它**] 按鈕。
     

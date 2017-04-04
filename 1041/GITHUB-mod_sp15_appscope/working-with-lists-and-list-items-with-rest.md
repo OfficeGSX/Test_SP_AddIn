@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # REST を使用したリスト アイテムの操作
 SharePoint 2013 REST インターフェイスでリストおよびリスト アイテムに対する基本的な作成、読み取り、更新、および削除 (CRUD) の操作を実行する方法について説明します。
-> [!ヒント]
+> **ヒント**
 > SharePoint Online (およびオンプレミスの SharePoint 2016 以降の) REST サービスは、OData  `$batch` クエリ オプションを使用して、複数の要求を組み合わせて 1 つのサービスへの呼び出しにすることをサポートしています。詳細およびコード サンプルへのリンクについては、「 [REST API によりバッチ要求を発行する](make-batch-requests-with-the-rest-apis.md)」を参照してください。 
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!メモ]
+> **メモ**
 > JSON の応答が必要な場合は  `accept` ヘッダーの `application/json;odata=verbose` を使用します。Atom 形式の応答が必要な場合は `accept` ヘッダーの `application/atom+xml` を使用します。
   
     
@@ -116,7 +116,7 @@ Headers:
 ```
 
 
-> [!メモ]
+> **メモ**
 > **ListItemEntityTypeFullName** プロパティ (前の例の **SP.Data.ProjectPolicyItemListItem**) は、リスト アイテムを作成して更新する場合に特に重要です。この値は、リスト アイテムを作成して更新するたびに HTTP 要求の本文に渡すメタデータの **type** プロパティとして渡す必要があります。
   
     
@@ -214,7 +214,7 @@ Headers:
     
     
 
-> [!メモ]
+> **メモ**
 > リスト アイテムのクエリの場合、OData $skip クエリ オプションは機能しません。多くの場合、その代わりに  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) オプションを使用することができます。
   
     
@@ -280,7 +280,7 @@ headers:
     
     
 
-> [!メモ]
+> **メモ**
 > この操作を実行するには、リストの **ListItemEntityTypeFullName** プロパティを知っていて、それを HTTP 要求本文の **type** の値として渡す必要があります。
   
     
@@ -307,7 +307,7 @@ headers:
     
     
 
-> [!メモ]
+> **メモ**
 > この操作を実行するには、リストの **ListItemEntityTypeFullName** プロパティを知っていて、それを HTTP 要求本文の **type** の値として渡す必要があります。
   
     

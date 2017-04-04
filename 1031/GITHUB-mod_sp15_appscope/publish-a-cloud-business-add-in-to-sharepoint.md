@@ -28,7 +28,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
   
 3. Klicken Sie auf der Seite **Anwendungsserverkonfiguration** auf die Optionsschaltfläche **IIS-Server** und klicken Sie dann auf **Weiter**.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie eine Veröffentlichungseinstellungsdatei (.publishsettings oder .pubxml) besitzen, die für eine anderes Add-In erstellt wurde, können Sie diese Datei verwenden, um die restlichen zum Veröffentlichen erforderlichen Informationen bereitzustellen. Wenn dies der Fall ist, klicken Sie im Assistenten auf die Schaltfläche **Einstellungen importieren**. 
 4. Klicken Sie auf der Seite **Ausgabe veröffentlichen** auf die Optionsschaltfläche **Jetzt direkt auf einem Server veröffentlichen** und klicken Sie dann auf **Weiter**.
     
@@ -58,7 +58,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
     
   
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie Ihre App durch eine Firewall hindurch veröffentlichen, müssen Sie möglicherweise Port 8172 öffnen. 
 6. Geben Sie in dem Textfeld **Website/Anwendung** den Namen der IIS-Website und den Ihres Add-In ein.
     
@@ -66,7 +66,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
     
     Wenn Sie Ihr Add-In zu Testzwecken in IIS auf Ihrem Computer oder auf einem Server in Ihrem internen Netzwerk veröffentlichen, geben Sie den Namen der Website und des Add-Ins so ein, wie sie im IIS-Manager angezeigt werden. Wenn Sie das Add-In "MyApp" auf der Standardwebsite in IIS veröffentlichen, geben Sie Standwardwebsite/MyApp ein.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie Ihre App in einem vorhandenen Webordner veröffentlichen und vorhandene Inhalte entfernen möchten, müssen Sie das Kontrollkästchen **Zusätzliche Dateien auf dem Ziel entfernen** aktivieren.
 7. Geben Sie in den Textfeldern **Benutzername** und **Kennwort** die Anmeldeinformationen eines Kontos ein, das über ausreichend Autorität verfügt, um Bereitstellungsaufgaben auf dem Zielwebserver auszuführen und klicken Sie dann auf **Weiter**.
     
@@ -78,7 +78,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
   
 9. Geben Sie auf der Seite **Datenverbindungen** auf der Registerkarte **Datenbankverbindungen** die Administrator- und Benutzerverbindungszeichenfolgen des Datenbankservers ein, auf dem Sie die Datenbank Ihres Add-Ins veröffentlichen möchten.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Die Datenbank muss nicht auf dem Server gespeichert werden, auf dem Sie das Add-In veröffentlichen. 
 10. Aktualisieren Sie bei Bedarf auf der Registerkarte **Angefügte Datenquellen** die Verbindungszeichenfolgen von zusätzlichen Verbindungen und klicken Sie dann auf **Weiter**.
     
@@ -120,7 +120,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
   
 3. Klicken Sie auf der Seite **Anwendungsserverkonfiguration** auf die Optionsschaltfläche **IIS-Server** und dann auf **Weiter**.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie eine Veröffentlichungseinstellungsdatei (.publishsettings oder .pubxml) veröffentlichen, die für ein anderes Add-In erstellt wurde, können Sie diese Datei verwenden, um die restlichen zum Veröffentlichen erforderlichen Informationen bereitzustellen. Wenn dies der Fall ist, klicken Sie im Assistenten auf die Schaltfläche **Einstellungen importieren**. 
 4. Klicken Sie auf der Seite **Ausgabe veröffentlichen** auf die Optionsschaltfläche **Paket auf Datenträger erstellen** und dann auf **Weiter**.
     

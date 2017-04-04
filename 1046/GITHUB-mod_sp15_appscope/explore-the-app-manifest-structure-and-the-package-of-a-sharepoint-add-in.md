@@ -23,7 +23,7 @@ Um pacote de Suplemento do SharePoint é um arquivo que tem a extensão ". app" 
   
 - **Recursos da web com ações personalizadas ou partes do suplemento do host:** Além dos componentes de SharePoint 2013 que são implantados na Web suplemento, um Suplemento do SharePoint também poderá implantar um ou mais ações personalizadas (itens de menu de atalho ou extensões da faixa de opções) na Web de host. Isso é feito com a inclusão de um recurso que não está dentro do arquivo. wsp do pacote e que implanta os componentes que serão encaminhadas web host no pacote do suplemento. Esse recurso "afastado" é chamado de um recurso da web de host. Suplemento partes são implantados na Web de host da mesma maneira. O recurso de web do host consiste em um arquivo Feature XML padrão SharePoint 2013 e um ou mais arquivos Elements associado. Um arquivo Elements XML para uma ação personalizada, por exemplo, contém a marcação de **CustomAction** para a ação personalizada. Ele também pode incluir marcação para partes do suplemento. Esses dois tipos de componentes podem estar em web host recurso. Esses recursos não estão discriminados no manifesto do suplemento de web de host. No entanto, eles são "partes" no sentido OPC e há um relacionamento OPC explícito entre o manifesto do suplemento e cada um desses arquivos. Para obter um exemplo de um pacote de suplemento que inclui um recurso da web de host, consulte [Criar ações personalizadas para implantar o SharePoint Add-ins](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Os administradores dos locatários tem a opção de lote-instalar um Suplemento do SharePoint para vários sites. Um suplemento que foi instalado dessa maneira é considerado como tendo **Tenant** escopo. Se o suplemento não tiver sido instalado no lote e, em vez disso instalados separadamente para cada site, ele tem escopo **Web**. Se web host recurso inclui as extensões de faixa de opções ou suplemento partes, não são implantadas às webs host se o add-in estiver instalado no lote, para que apenas itens de menu de atalho estão implantados com escopo de locatário escopo de suplemento do add-ins. não deve ser confundido com o escopo do recurso. Escopo do recurso determina onde os elementos em um recurso estão implantados. As possibilidades são **Farm**, **WebApplication**, **Web**e **Site** (ou seja, o conjunto de sites). Somente a opção **Web** é permitida para recursos no Suplementos do SharePoint (ambos hospedam os recursos da web e recursos dentro de um. wsp em um pacote de suplemento). Suplemento escopo refere-se ao escopo no qual um suplemento está instalado. As possibilidades são **Web**, nesse caso o suplemento foi instalado em um ou mais sites site por site e **Tenant**, nesse caso o suplemento ficou lote instalado subconjunto todos ou alguns dos sites da Web em locação do cliente. Para obter mais informações sobre o escopo de **Tenant** e **Web**, consulte [Aluguéis são e escopos de implantação para o SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 - **Arquivos de recurso de localização (. resx):** Essas são para a localização de aspectos de manifesto do suplemento que incluem o suplemento título e aspectos do host web recursos no pacote do suplemento. (Partes individuais do pacote do suplemento que estão dentro de seu próprio pacote, como arquivos. wsp, pacotes Azure Web Sites e manifestos de suplemento, cada uma tem seus próprios processos de localização que são aplicados exatamente como seriam se os itens em questão não eram parte de um Suplemento do SharePoint.) Para obter um exemplo de um pacote de suplemento que inclui os arquivos. resx para um recurso da web de host, consulte [Localizar os suplementos do SharePoint](localize-sharepoint-add-ins.md).
     
@@ -45,7 +45,7 @@ Cada Suplemento do SharePoint inclui um arquivo appmanifest.xml. O appmanifest.x
   
 - A URL da página inicial, que é a página aberta quando o suplemento for iniciado. Isso pode ser uma página da web add-in, uma página baseada em nuvem ou uma página em um servidor web do ISV.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Em certas circunstâncias, pode haver restrições sobre qual tipo de arquivo pode ser especificado no elemento **StartPage**. Para obter detalhes, consulte [Página inicial elemento (PropertiesDefinition complexType) (Add-in SharePoint manifesto)](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx).> Quando você combina mais de um parâmetro de consulta no valor de **StartPage**, você deve usar o codificado e comercial " `&amp;amp;`" em vez de " `&amp;`" ou ponto e vírgula para acrescentá-los juntos.
 - Outras propriedades do add-in. Eles incluem o título e as localidades compatíveis com o suplemento (ambos são obrigatórios), as URLs dos serviços que lidam com a pós-instalação pós-atualização e pré-desinstalar o modelo da web a ser usado ao suplemento web é criado e eventos.
     
@@ -60,7 +60,7 @@ Cada Suplemento do SharePoint inclui um arquivo appmanifest.xml. O appmanifest.x
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O arquivo de manifesto suplemento é o único item necessário no pacote de suplemento, mas nem todos os itens na lista anterior sejam necessários partes do arquivo.
   
     
@@ -79,7 +79,7 @@ Você deve usar o **SupportedLocales** ou o elemento **SupportedLanguages** em s
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os valores do atributo **Scope** do elemento **AppPermissionRequest** são estruturados como URIs, mas são cadeias de caracteres literais realmente. Nenhuma parte do valor **Scope** exemplo no exemplo a seguir é um espaço reservado. Para obter mais informações sobre permissões, consulte [Suplemento permissões no SharePoint 2013](add-in-permissions-in-sharepoint-2013.md).
   
     
@@ -124,7 +124,7 @@ SharePoint 2013 fornece várias tokens que podem ser usados no elemento **StartP
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esses tokens não são usados no atributo **Scope** de um elemento **AppPermissionRequest**.
   
     

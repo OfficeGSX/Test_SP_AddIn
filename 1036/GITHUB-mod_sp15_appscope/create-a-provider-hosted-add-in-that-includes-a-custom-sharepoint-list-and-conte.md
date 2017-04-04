@@ -53,7 +53,7 @@ La plupart des composants SharePoint standard, tels que les types de contenu per
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour obtenir des instructions sur la manière de configurer un environnement de développement adapté à vos besoins, voir  [Commencer à créer des applications pour Office et SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -299,7 +299,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
   
 17. Le fichier peut contenir deux éléments **ContentType**: un avec une valeur d'attribut **Name** deActingRole et un autre appelé **ListFieldsContentType**. Seul l'élément appelé ActingRole doit être conservé (supprimez les autres éléments **ContentType**).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Des sauts de ligne ne séparent peut-être pas les éléments **ContentType**. Il semble dans ce cas qu'il n'y en ait qu'un. Faites défiler le fichier vers la droite pour en rechercher d'autres. 
 18. L'élément **Fields** doit posséder deux éléments **Field** (qui se trouvent sur une seule ligne s'il n'existe pas de saut de ligne). Un élément doit dupliquer exactement l'élément **Field** dans le fichier elements.xml de la colonne de site **Actor**. L'autre élément doit dupliquer exactement l'élément **Field** du fichier elements.xml de la colonne de site **CastingStatus**. S'il n'y a pas de correspondance exacte, y compris tous les éléments enfants (comme les éléments **CHOICES** et **MAPPINGS**), copiez l'élément **Field** dans le fichier elements.xml de la colonne de site et collez-le à la place de l'élément **Field** qui ne correspond pas dans le fichier schema.xml.
     
@@ -383,7 +383,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
 
 - Développez l'application web comme vous le feriez pour n'importe quelle autre application web destinée à votre pile de plateformes préférée. Pour une pile Microsoft, vous pouvez utiliser le service web REST/OData ou un des modèles objet client de SharePoint 2013. Pour une pile autre que Microsoft, vous pouvez avoir recours aux points de terminaison REST/OData de SharePoint 2013 pour effectuer des opérations CRUD (create/read/update/delete ; créer/lire/mettre à jour/supprimer) sur les données du site web de complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous ajoutez une référence à un assembly dans votre projet d'application web dans Visual Studio, définissez la propriété **Copie locale** de l'assembly sur **True**, sauf si vous savez que l'assembly est déjà installé sur le serveur web ou que vous pouvez vous assurer qu'il sera installé avant le déploiement de votre complément. .NET Framework est installé sur les rôles web Microsoft Azure et les Sites web Azure. Toutefois, les assemblies clients SharePoint 2013 et les différentes extensions de code managé et instances Microsoft Foundation ne sont pas installés. Les Outils de développement Office pour Visual Studio 2012 ajoutent automatiquement les références à certains assemblies fréquemment utilisés dans les Compléments SharePoint et définissent la propriété **Copie locale**. 
 
     Pour l'exemple de cet article, vous devez développer une application web ASP.NET. Suivez la procédure ci-après.
@@ -595,7 +595,7 @@ Si le complément ne fonctionne pas, vous devez vérifier si une erreur dans la 
   
 8. Cliquez sur le lien **Personnaliser « Characters in Hamlet »**, puis, dans la page des paramètres de la liste, vérifiez que le seul type de contenu de la liste est votre type de contenu **ActingRole** personnalisé. Vérifiez également que les deux nouvelles colonnes de sites **Actor/Actress** et **Casting Status** sont répertoriées dans la section **Colonnes**. (La colonne Titre peut apparaître sous le nom interne **Titre** au lieu du nom d'affichage **Character** que vous lui avez attribué.)
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > S'il n'existe aucune section **Types de contenu** dans la page, vous devez activer la gestion des types de contenu. Cliquez sur le lien **Paramètres avancés**, puis dans la page **Paramètres avancés**, activez la gestion des types de contenu et cliquez sur **OK**. Vous êtes renvoyé vers la page précédente où vous voyez désormais une section **Types de contenu** comportant une liste.
 9. Dans la partie supérieure de la page se trouve l' **Adresse web** de la liste. Copiez-la et collez-la dans la barre d'adresses de votre navigateur, puis accédez à la liste. Vérifiez que la liste comporte les exemples d'éléments que vous avez créés. (La colonne Titre peut apparaître sous le nom interne **Titre** au lieu du nom d'affichage **Character** que vous lui avez attribué.)
     

@@ -26,7 +26,7 @@ Cet article est le cinquième d'une série d'articles sur les concepts de base d
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeWebPart.sln.
   
     

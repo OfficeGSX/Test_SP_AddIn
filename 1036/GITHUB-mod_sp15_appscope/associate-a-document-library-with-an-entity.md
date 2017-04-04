@@ -16,7 +16,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 1. L'ajout d'une bibliothèque de documents SharePoint à votre projet sous la forme d'une source de données.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Vous devez d'abord créer une bibliothèque de documents sur votre site SharePoint. Elle doit contenir une colonne personnalisée qui mappe un champ unique de l'entité. 
 2. La création d'une relation entre une entité et la bibliothèque de documents.
     
@@ -57,7 +57,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
   
 
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > La bibliothèque de documents doit déjà exister et contenir une colonne personnalisée mappée sur un champ unique de votre entité. 
 5. Dans **Spécifiez le nom de la source de données**, entrez un nom, puis cliquez sur le bouton **Terminer**.
     
@@ -97,7 +97,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
   
 
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Le champ doit être du même type de données que le champ de clé **étrangère**. 
 
 ### Pour ajouter une bibliothèque de documents à un nouvel ensemble d'écrans

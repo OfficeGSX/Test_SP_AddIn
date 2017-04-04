@@ -12,7 +12,7 @@ Erfahren Sie mehr über den OAuth-Ablauf für Add-Ins, die dynamisch Zugriff auf
 <a name="Overview"> </a>
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Artikel wird davon ausgegangen, dass Sie mit  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) und den Konzepten und Prinzipien von OAuth vertraut sind. Weitere Informationen zu OAuth finden Sie unter [OAuth.net](http://oauth.net/) und [Webautorisierungsprotokoll (oauth)](http://datatracker.ietf.org/doc/active/#oauth). 
   
     
@@ -23,7 +23,7 @@ In bestimmten Szenarien kann ein Add-In die Berechtigung für den Zugriff auf Sh
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Dieser Add-In-Typ kann nur von Benutzern mit Verwaltungsberechtigungen für die Ressourcen ausgeführt werden, auf die das Add-In zugreifen möchte. Wenn ein Add-In beispielsweise nur die Leseberechtigung für eine Website anfordert, kann ein Benutzer das Add-In mit der Berechtigung "Lesen" ohne die Berechtigung "Verwalten" nicht ausführen. 
   
     
@@ -50,7 +50,7 @@ In diesem Abschnitt wird der OAuth-Authentifizierungs- und -Autorisierungsablauf
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Der Ablauf **umfasst eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver (hier ACS) und dem Endbenutzer** während der Laufzeit. Der Ablauf erfordert also, dass entweder SharePoint Online oder eine SharePoint-Farm mit dem Internet verbunden ist, damit eine Kommunikation mit ACS möglich ist. SharePoint-Farmen, die nicht mit dem Internet verbunden sind, müssen [das besonders vertrauenswürdige Autorisierungssystem](creating-sharepoint-add-ins-that-use-high-trust-authorization.md) verwenden.
   
     
@@ -101,7 +101,7 @@ Im Folgenden sind die einzelnen Schritte im Authentifizierungscodeablauf aufgef�
     
 
     
-> [!TIPP]
+> **TIPP**
 > Diese Schritte beziehen sich auf Methoden in der Datei TokenHelper.cs (oder TokenHelper.vb) file. Dieser verwaltete Code ist nicht kompiliert, es gibt dazu also keine Referenzthemen. However, the file itself is fully commented with descriptions of every class, member parameter, and return value. Consider having a copy of it open to refer to as you read these steps. 
   
     
@@ -158,7 +158,7 @@ Wenn Sie keinen verwalteten Code verwenden, werden die Bereichsaliase im Bereich
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Eine Beschreibung der Bereiche finden Sie unter  [Add-In-Berechtigungen in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

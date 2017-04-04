@@ -28,7 +28,7 @@ Você pode publicar seu suplemento de negócios nuvem como um provedor hospedado
   
 3. Na página **Configuração do servidor de aplicativo**, escolha o botão de opção do **Servidor IIS** e escolha **Avançar**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você tiver um publicar configurações publishsettings arquivo (ou .pubxml que foi criado para outro suplemento), você pode usar esse arquivo para fornecer o restante das informações que você precisa para publicação. Em caso afirmativo, escolha o botão de **Definições de importação** no assistente.
 4. Na página **Publicar saída**, escolha o botão de opção **publicar diretamente a um servidor agora** e escolha **Avançar**.
     
@@ -58,7 +58,7 @@ Você pode publicar seu suplemento de negócios nuvem como um provedor hospedado
     
   
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você estiver publicando através de um firewall, você pode precisar abrir a porta 8172.
 6. Na caixa de texto de **aplicativo do Site**, insira os nomes de site do IIS e o add-in.
     
@@ -66,7 +66,7 @@ Você pode publicar seu suplemento de negócios nuvem como um provedor hospedado
     
     Se você estiver publicando ao IIS no seu computador de teste ou estiver publicando em um servidor na sua rede interna, insira o site e o nome do suplemento que eles aparecem no Gerenciador do IIS. Por exemplo, se você estiver publicando o suplemento MyApp ao site padrão no IIS, insira o Padrão de Site da Web/MyApp.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você estiver publicando em uma pasta da web existente e deseja remover qualquer conteúdo existente, marque a caixa de seleção **Remover arquivos adicionais no destino**.
 7. Nas caixas de texto **Nome de usuário** e **senha**, insira credenciais para uma conta que tenha autoridade suficiente para executar tarefas de implantação no servidor de web de destino e escolha **Avançar**.
     
@@ -78,7 +78,7 @@ Você pode publicar seu suplemento de negócios nuvem como um provedor hospedado
   
 9. Na página **conexões de dados**, na guia **Conexões do banco de dados**, insira as cadeias de caracteres de conexão do administrador e usuário para o servidor de banco de dados onde você deseja publicar banco de dados do seu suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O banco de dados não deve estar localizado no servidor onde você estiver publicando o add-in.
 10. Na guia **Fontes de dados anexado**, atualize as cadeias de caracteres de conexão para todas as conexões adicionais conforme o necessário e escolha **Avançar**.
     
@@ -120,7 +120,7 @@ Você pode publicar seu suplemento de negócios nuvem como um provedor hospedado
   
 3. Na página **Configuração do servidor de aplicativo**, escolha o botão de opção do **Servidor IIS** e escolha **Avançar**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você tiver um publicar configurações publishsettings arquivo (ou .pubxml que foi criado para outro suplemento), você pode usar esse arquivo para fornecer o restante das informações que você precisa para publicação. Em caso afirmativo, escolha o botão de **Definições de importação** no assistente.
 4. Na página **Publicar saída**, escolha o botão de opção de **criar um pacote do disco** e escolha **Avançar**.
     

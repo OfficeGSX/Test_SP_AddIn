@@ -98,7 +98,7 @@ Un Complément SharePoint peut généralement contenir un ou plusieurs des compo
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > ***** Les composants marqués d'un astérisque (*) sont présentés de manière plus détaillée dans la section [Points à observer lors du déploiement des composants SharePoint](#SpecialCases) plus loin dans cet article.
   
     
@@ -202,10 +202,10 @@ Certains points à observer lors du déploiement de composants SharePoint dans u
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > Le nouvel élément  [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) pour les manifestes de compléments n'a pas le même balisage que l'élément [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) qui peut être inclus dans les fonctionnalités. L'élément **WebTemplate** qui peut être inclus dans les fonctionnalités définit un type de site, mais l'élément **WebTemplate** pour les manifestes de compléments détermine simplement le type de site à utiliser. Pour plus d'informations sur le manifeste de complément d'un Complément SharePoint, voir [Structure du package de complément](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package). 
 
-    > [!ATTENTION]
+    > **ATTENTION**
       > N'utilisez pas l'élément **WebTemplate** dans le manifeste de complément pour désigner l'une des configurations de définition de site SharePoint intégrées en tant que type de site web de complément. Nous ne prenons pas en charge les configurations de définition de site intégrées autres que **APP#0** pour les sites web de complément.
 
     Pour plus d'informations sur les configurations de définition de site et les éléments WebTemplate, reportez-vous à  [Utilisation des modèles et des définitions](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).

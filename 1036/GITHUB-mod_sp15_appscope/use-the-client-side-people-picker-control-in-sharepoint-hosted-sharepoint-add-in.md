@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # Utiliser le contrôle Sélecteur de personnes côté client dans des compléments hébergés par SharePoint
 Découvrez comment utiliser le contrôle Sélecteur de personnes côté client dans les Compléments SharePoint hébergés par SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Cette rubrique présuppose que vous savez créer un Complément SharePoint hébergé par SharePoint. Pour apprendre à en créer un, commencez à la rubrique  [Commencer à créer des compléments hébergés par un fournisseur pour SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -43,7 +43,7 @@ Le sélecteur comporte les composants suivants :
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le sélecteur et ses fonctionnalités sont définis dans les fichiers de script **clientforms.js**, **clientpeoplepicker.js** et **autofill.js**, lesquels se trouvent dans le dossier %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS sur le serveur. 
   
     
@@ -58,7 +58,7 @@ Cet article suppose que vous créez le Complément SharePoint à l'aide des Outi
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Voir  [Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) pour découvrir comment s'inscrire afin d'obtenir un site du développeur et commencer à utiliser les Outils de développement Office 365 « Napa ».
   
     
@@ -79,7 +79,7 @@ Si vous n'utilisez pas les Outils de développement Office 365 « Napa » sur un
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour obtenir des instructions sur la manière de configurer un environnement de développement adapté à vos besoins, voir  [Commencer à créer des applications pour Office et SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -171,7 +171,7 @@ Le premier exemple illustre le balisage de page lié aux balises **PlaceHolderMa
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Selon votre environnement, vous pouvez ne pas avoir à référencer explicitement toutes ces dépendances. 
   
     

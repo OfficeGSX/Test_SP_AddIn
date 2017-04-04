@@ -37,7 +37,7 @@ Si la Complemento de SharePoint hospedada por el proveedor tiene una aplicación
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Para asegurarse de que el identificador de cliente y los valores de secreto de cliente de SharePoint se publican con el proyecto web para permitir al contenido web tener acceso a los datos de SharePoint, publique su proyecto de la Complemento de SharePoint desde la página **Publicación de los complementos**. Para tener acceso a esta página, abra el menú contextual de la Complemento de SharePoint (no el menú contextual de la aplicación web) y elija el comando **Publicar**. 
   
     
@@ -71,7 +71,7 @@ La Complemento de SharePoint suele tener asociada una aplicación web host, que 
     
     Si tiene previsto enviar su Complemento de SharePoint a la Tienda Office, asegúrese de usar el identificador de cliente y los valores de secreto de cliente que se hayan creado en el panel de vendedores. Puede usar los identificadores de cliente y los valores de secreto de cliente que se hayan generado con la página appregnew.aspx durante la fase de desarrollo, pero los complementos que envíe a la Tienda Office deben usar identificadores de cliente y secretos de cliente que se hayan obtenido del panel de vendedores. Asimismo, debe crear el perfil de publicación en el sitio de Azure para, después, importarlo a Visual Studio en lugar de crear un perfil en el asistente **Crear perfil de publicación**. Cuando crea un perfil en Azure, todos los valores de la pestaña **Conexión** se proporcionan de forma automática en Visual Studio. Para más información sobre cómo importar o crear un perfil de publicación, vea [Crear un perfil de publicación](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > Si no puede publicar contenido web directamente, puede crear un paquete de implementación web para que un administrador lo implemente en la web en su lugar. Para crear un paquete de implementación web, cree un perfil nuevo, elija la pestaña **Conexión** y, después, seleccione **Paquete de Web Deploy** en la lista **Método de publicación**. 
 
 ### Para implementar su proyecto de aplicación web
@@ -106,7 +106,7 @@ La Complemento de SharePoint suele tener asociada una aplicación web host, que 
     
     Debe especificar una dirección que comience con el prefijo "https". Consulte  [¿Por qué los complementos deben estar protegidos mediante SSL?](http://msdn.microsoft.com/library/jj591603#bk_q7).
     
-    > [!NOTA]
+    > **NOTA**
       > Los sitios web de Azure proporcionan automáticamente un extremo https. Si publica el complemento en un sitio de la Tienda Office o la Tienda Office, la dirección debe empezar con un prefijo https. Sin embargo, si publica el complemento en un sitio local, podrá usar un prefijo http. 
 
     En el cuadro de texto **¿Cuál es el identificador de cliente del complemento?**, debería aparecer el identificador de cliente que haya introducido en el perfil de publicación.

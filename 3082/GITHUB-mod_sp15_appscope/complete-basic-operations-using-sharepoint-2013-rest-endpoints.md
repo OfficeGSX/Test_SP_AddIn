@@ -331,7 +331,7 @@ Los complementos hospedados en la nube usan OAuth o la biblioteca entre dominios
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los componentes de complementos hospedados en la nube que se escriben en JavaScript deben usar el objeto **SP.RequestExecutor** en la biblioteca entre dominios para acceder a datos de SharePoint. Las solicitudes de biblioteca entre dominios no necesitan incluir un token de acceso.
   
     
@@ -358,7 +358,7 @@ Las solicitudes de biblioteca entre dominios usan este formato cuando acceden a 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Se requiere una instancia web de complemento para que un complemento hospedado en la nube acceda a datos de SharePoint cuando se usa la biblioteca entre dominios. 
   
     
@@ -375,7 +375,7 @@ Las solicitudes de biblioteca entre dominios usan este formato cuando acceden a 
 |Hospedada en SharePoint  <br/> |Acceso de componentes de web de complemento a datos en otra colección de sitios (solo complementos con ámbito de inquilino)  <br/> | _<dirección url web de la aplicación>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<dirección url del sitio de destino>_'  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Los escenarios de acceso a datos entre dominios también requieren permisos de complemento adecuados. Para obtener más información, vea  [Acceder a datos de web de hospedaje](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) y [Acceder a datos en colecciones de sitios](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope). 
   
     

@@ -31,7 +31,7 @@ RER 必须是 SOAP Web 服务。接下来的示例将此实现为 Windows Commun
     
     
 
-> [!注释]
+> **注释**
 > 此示例使用了由 Visual Studio Office 开发人员工具 生成的 TokenHelper.cs 文件。示例创建后，则是当前版本，但当您阅读本文时可能不是最新版本。该示例仍可出色地用于创建您的第一个 RER。但是，当您准备好超出此范围，您应了解在下面的"后续步骤"一节中列出的示例。它们更有可能保持最新。 
   
     
@@ -115,7 +115,7 @@ RER 必须是 SOAP Web 服务。接下来的示例将此实现为 Windows Commun
     
   
 
-    > [!注释]
+    > **注释**
       > 在撰写本文时，Visual Studio Office 开发人员工具 会在接收器创建好之后，将引用添加到所有所需的程序集中，但这些工具的更高版本可能不会如此。如果您收到编译器错误，只需添加缺少的引用；例如，您可能需要将引用添加到 System.ServiceModel 或 System.ComponentModel.DataAnnotations。 
 
 

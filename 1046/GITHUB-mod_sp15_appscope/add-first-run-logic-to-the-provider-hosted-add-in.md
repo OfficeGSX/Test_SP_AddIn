@@ -35,7 +35,7 @@ Esse é o oitavo em uma série de artigos sobre noções básicas do desenvolvim
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeFirstRunLogic.sln.
   
     
@@ -49,7 +49,7 @@ Neste artigo, você adicionar código para a página inicial do repositório de 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:> Com o botão direito no nó da solução na parte superior do **Gerenciador de soluções** e selecione **definir projetos de inicialização**.> Verifique se que todos os três projetos estão definidos para **Iniciar** na coluna **ação**.
   
     
@@ -139,7 +139,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
   ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você pode imaginar agora por que o suplemento usa números de versão e um teste "menor que" para determinar a resposta para uma simples Sim/não pergunta: é o suplemento executando pela primeira vez? Tão bem poderíamos ter um campo de cadeia de caracteres simples na tabela de **inquilinos** que é definido como "ainda não executado" no manipulador de instalação e, em seguida, alterado para "já executada uma vez" pela lógica de primeira execução após os componentes do SharePoint são implantados.> Para o suplemento do repositório de cadeia, funcionaria um teste simples. No entanto, geralmente é uma boa prática usar números de versão. Isso ocorre porque um suplemento de produção é provável de ser atualizados in-loco no futuro; ou seja, atualizado depois que ele já está instalado. Quando essa hora chegar, sua lógica de suplemento precisará estar atento aos mais tempo do que as duas possibilidades de não-ainda-run ejá-execução única. Por exemplo, suponha que você deseja adicionar uma lista adicional na Web de host na atualização da versão 1.0.0.0 para 2.0.0.0. Você pode fazer isso em um manipulador de eventos de atualização ou em "da primeira execução após atualização" lógica. De qualquer forma, sua lógica de implantação será necessário implantar novos componentes, mas ele também precisará evitar tentando reimplantar componentes que foram implantados em uma versão anterior do add-in. Número de versão de 1.0.0.0 seria sinal que os componentes da versão 1.0.0.0 foram implantados, mas que a lógica de primeira execução após atualizar ainda não foi executada.
   
     
@@ -383,7 +383,7 @@ Uma vez que o suplemento é agora a adição de uma lista na Web de host, e não
   
 4. Navegue até a página de **Conteúdo do Site**. A lista de **Funcionários Local** está presente, porque a lógica de primeira execução adicionou.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se a lista não estiver lá ou se tiver outras indicações que o código de primeira execução não está em execução, pode ser que a tabela de **inquilinos** não está sendo revertida para um estado vazio quando você pressiona F5. A causa mais comum disso é que o projeto **ChainCorporateDB** não mais é definido como um projeto de inicialização no Visual Studio. Consulte a observação na parte superior deste artigo sobre como corrigir esse problema. Além disso, certifique-se de que você configurou o banco de dados seja recompilado conforme descrito em [Configurar Visual Studio para reconstruir o banco de dados corporativo com cada sessão de depuração](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild).
 5. Abra a lista e adicionar um item. Observe que no formulário novo item, o campo **foi adicionado ao banco de dados corporativos** não está mais presente, portanto não pode ser definido manualmente. Isso acontece do formulário de item de edição.
     

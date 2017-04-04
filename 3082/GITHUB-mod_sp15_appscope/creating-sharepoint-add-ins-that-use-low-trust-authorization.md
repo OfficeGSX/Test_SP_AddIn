@@ -21,7 +21,7 @@ Para usar el sistema de baja confianza, el Complemento de SharePoint se debe reg
     
     
 
-> [!NOTA]
+> **NOTA**
 > El registro requiere que la aplicación tenga un dominio de Internet. Para esto se puede usar cualquier dominio existente, pero no se puede estar seguro al 100 % de que los dominios que no son suyos existan. Por ello, una aplicación web tendría que formar parte de una aplicación de dispositivo nativa aunque el componente de la aplicación web no hiciese otra cosa aparte de permitir el registro. Puede ver un ejemplo de código avanzado diseñado de esta forma en  [Sitios de provisión por lotes con el modelo del complemento](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6). 
   
     

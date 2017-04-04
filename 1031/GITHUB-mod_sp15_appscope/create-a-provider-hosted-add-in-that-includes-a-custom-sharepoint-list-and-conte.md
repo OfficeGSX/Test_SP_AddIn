@@ -53,7 +53,7 @@ Die meisten klassischen SharePoint-Komponenten, wie benutzerdefinierte Inhaltsty
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Anleitungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter  [Erste Schritte beim Erstellen von Apps für Office und SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -299,7 +299,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
   
 17. In der Datei können zwei **ContentType**-Elemente vorhanden sein, eines mit dem **Name**-Attributwert von ActingRole und eines mit dem Namen **ListFieldsContentType**. Nur das mit dem Namen ActingRole ist relevant, löschen Sie daher alle anderen **ContentType**-Elemente.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Möglicherweise befindet sich kein Zeilenumbruch zwischen den **ContentType**-Elementen, sodass es zunächst aussieht, als sei nur ein Element vorhanden. Scrollen Sie nach rechts und suchen Sie sorgfältig nach weiteren Elementen. 
 18. Für das Element **Fields** müssten zwei **Field**-Elemente vorhanden sein (die in einer Zeile stehen, wenn sich zwischen ihnen kein Zeilenumbruch befindet). Eines sollte das Element **Field** in der Datei elements.xml der Websitespalte **Actor** genau duplizieren, das andere sollte das Element **Field** in der Datei elements.xml der Websitespalte **CastingStatus** genau duplizieren. Wenn einschließlich aller untergeordneten Elemente (wie z. B. die Elemente **CHOICES** und **MAPPINGS**) keine genaue Übereinstimmung vorhanden ist, kopieren Sie das Element **Field** in der Datei elements.xml der Websitespalte und fügen es anstelle des nicht übereinstimmenden Elements **Field** in die Datei schema.xml ein.
     
@@ -383,7 +383,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
 
 - Entwickeln Sie die Webanwendung wie jede andere Webanwendung für Ihren bevorzugten Plattformstapel. Bei einem Microsoft-Stapel können Sie entweder den REST/OData-Webdienst oder eines der Clientobjektmodelle in SharePoint 2013 verwenden. Bei einem Nicht-Microsoft-Stapel können Sie die REST/OData-Endpunkte in SharePoint 2013 verwenden, um Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen (CRUD: Create, Read, Update and Delete) in der Add-In-Website durchzuführen.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie dem Webanwendungsprojekt in Visual Studio einen Verweis auf eine Assembly hinzufügen, legen Sie die Eigenschaft **Lokale Kopie** der Assembly auf **True** fest, es sei denn, Sie wissen, dass die Assembly bereits auf dem Webserver installiert ist, oder Sie können sicherstellen, dass sie installiert wird, bevor Sie Ihr Add-In bereitstellen. .NET Framework wird auf Microsoft Azure-Webrollen und Azure-Websites installiert. Die SharePoint 2013-Clientassemblys und die verschiedenen verwalteten Codeerweiterungen und Foundations von Microsoft werden jedoch nicht installiert. Office Developer Tools für Visual Studio 2012 fügt automatisch Verweise auf einige häufig in SharePoint-Add-Ins verwendete Assemblys hinzu und legt die Eigenschaft **Lokale Kopie** fest.
 
     In dem fortlaufenden Beispiel entwickeln Sie eine ASP.NET-Webanwendung. Führen Sie die folgenden Schritte aus.
@@ -595,7 +595,7 @@ Wenn das Add-In nicht funktioniert, sollten Sie überlegen, ob nicht ein Fehler 
   
 8. Klicken Sie auf den Link **"Characters in Hamlet" anpassen** und überprüfen Sie auf der Seite der Listeneinstellungen, ob der einzige Inhaltstyp für diese Liste Ihr benutzerdefinierter Inhaltstyp **ActingRole** ist und ob Ihre zwei neuen Websitespalten, **Actor/Actress** und **Casting Status**, im Abschnitt **Spalten** aufgeführt werden. (Die Titelspalte wird möglicherweise mit ihrem internen Namen **Titel** anstatt mit dem von Ihnen angegebenen Anzeigenamen **Character** angezeigt.)
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Falls auf der Seite kein Abschnitt **Inhaltstypen** dieser Art vorhanden ist, müssen Sie die Verwaltung der Inhaltstypen aktivieren. Klicken Sie auf den Link **Erweiterte Einstellungen**, und aktivieren Sie auf der Seite **Erweiterte Einstellungen** die Verwaltung der Inhaltstypen. Klicken Sie anschließend auf **OK**. Die vorherige Seite wird wieder angezeigt, und es ist ein Abschnitt **Inhaltstypen** vorhanden.
 9. Am oberen Seitenrand befindet sich die **Webadresse** der Liste. Kopieren Sie die Adresse, fügen Sie sie in die Adressleiste Ihres Browsers ein und navigieren Sie dann zu der Liste. Überprüfen Sie, ob in der Liste die von Ihnen erstellten Beispielelemente vorhanden sind. (Die Titelspalte kann mit ihrem internen Namen **Title** anstatt mit dem von Ihnen angegebenen Anzeigenamen **Character** angezeigt werden.)
     

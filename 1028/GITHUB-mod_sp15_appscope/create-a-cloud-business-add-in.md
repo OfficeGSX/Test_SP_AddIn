@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # 建立的雲端商務增益集
 使用 Visual Studio 中的雲端商務增益集範本，您可以新增和管理資料最佳化的 Office 365 上建立 SharePoint 增益集 2013年或 SharePoint。
-> [!注意事項]
+> **注意事項**
 > 您也可以使用增益集的 SharePoint 2013 範本建置SharePoint Add-in 。
   
     

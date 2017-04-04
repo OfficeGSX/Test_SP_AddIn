@@ -34,7 +34,7 @@ SharePoint Online(及內部SharePoint 2016年及更新版本) 及Office 365 APIs
   
 - 組件可讀取的作業 (或 [函數引動過程) 或一個或多個變更集寫入作業 (或函數叫用)。變更集是本身 MIME 類型 *multipart/mixed*  與零件包含插入、 更新或刪除作業。
     
-    > [!重要]
+    > **重要**
       > 在這個階段， SharePoint和Office 365 APIs Preview不支援 「 所有或 nothing 」 功能具有多個作業內加以變更集。如果任何子作業失敗，其他人仍然完成與未回復。
 
 ## Code samples

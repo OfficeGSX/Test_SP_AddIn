@@ -8,14 +8,14 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Office Web Widgets - Experimental overview
 Learn about the Office Web Widgets - Experimental that you can use in Office Add-ins, SharePoint Add-ins, and websites.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!CAUTION]
+> **CAUTION**
 > The Office Web Widgets - Experimental are only provided for research and feedback purposes. Do not use in production scenarios. The Office Web Widgets behavior may change significantly in future releases. Read and review the  [Office Web Widgets - Experimental License Terms](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -134,7 +134,7 @@ You can specify an existing view on the list, the widget renders the fields in t
     
 
     
-> [!NOTE]
+> **NOTE**
 > At this moment, the Desktop List View widget only displays the data. It doesn't offer editing capabilities. 
   
     

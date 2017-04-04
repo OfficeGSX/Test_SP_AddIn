@@ -7,7 +7,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # 本地化 SharePoint 外接程序
 使用资源文件、JavaScript 资源文件和其他技术本地化 SharePoint 外接程序。
-> [!注释]
+> **注释**
 > 本主题假定您熟悉 SharePoint 外接程序的基本创建、SharePoint 功能、外接程序 Web 和主机 Web 之间的区别、 [外接程序中可以有哪些类型的 SharePoint 组件](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps)以及使用 .resx 文件进行本地化的基础知识。 
   
     
@@ -35,7 +35,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 - 本文中的步骤假定您使用的是  [Visual Studio 2013 的 Office 开发工具](http://aka.ms/OfficeDevToolsForVS2013)的最新版本，或  [Visual Studio 2015 的 Office 开发工具](http://aka.ms/OfficeDevToolsForVS2015)。
     
-    > [!注释]
+    > **注释**
       > 如果不是在 Microsoft SharePoint Online 开发人员网站而是在本地 SharePoint 场上测试 SharePoint 网站，可能需要针对翻译 SharePoint 外接程序所使用的语言安装语言包。有关详细信息，请参阅 [安装或卸载用于 SharePoint 2013 的语言包](http://technet.microsoft.com/zh-cn/library/cc262108%28v=office.15%29.aspx)和  [SharePoint Server 2013 中的语言包](http://technet.microsoft.com/zh-cn/library/ff463597%28v=office.15%29.aspx)以及下文的下载链接。 
 - 本文中的屏幕截图和代码示例取自示例  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)。您可以下载该示例以查看本文中所描述过程的结果。
     
@@ -49,7 +49,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
     
     
 
-> [!注释]
+> **注释**
 > 资源文件无法由多个外接程序 Web 功能共享。对于 .wsp 文件中的每个功能，您必须创建单独的资源文件集。 
   
     
@@ -69,7 +69,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
     
     编辑时，此"固定语言"文件包含在所有网站上的 **功能**库中使用的字符串，而您 *不*  打算为这些网站使用的语言提供字符串的本地化版本。所以，用于此文件中字符串的语言应该最有可能成为 SharePoint 用户的第二语言。通常，英语会用于此用途，但在某些情况下，其他语言可能更合适。例如，在某些区域，法语将成为比英语更常用的第二语言。本主题中接下来的示例将使用英语作为默认语言。
     
-    > [!注释]
+    > **注释**
       > 如果外接程序清单的"支持的区域设置"部分中没有列出网站所使用的语言，就不能将 SharePoint 外接程序安装在该网站上。请记住，当本文谈到您 *不*  打算提供本地化外接程序的语言时，您仍然需要将这些语言添加到外接程序清单中。请参阅本文中 **为主机 Web 创建资源文件** 的步骤，了解有关外接程序清单中支持的区域设置的详细信息。
 4. 在"资源编辑器"中的第一行的"名称"列中，输入字符串（或其他资源）的描述性名称  例如，OrdersListInstance_Title 和OrdersListInstance_Description。这些可本地化资源的名称不是它们自行本地化的。每个资源都必须拥有自己的名称。
     
@@ -97,7 +97,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 12. 对每种外语重复前面四个步骤。
     
-    > [!注释]
+    > **注释**
       > 考虑添加语言特定的文件用于您用作固定语言的同一语言。您可复制这些行，而无需更改字符串的值。在许多情形下，不必对资源文件中与固定语言相同的语言使用特定语言的文件，尤其是当文件中的唯一资源是字符串时。但资源文件还可以包含图像、图标、文件和其他类型的资源。有时候，需要固定语言资源文件才能使用与 *任意*  特定语言的文件中的相应资源不同的图像或其他资源。
 13. 对于每个文件，验证"生成操作"属性是否已设置为"内容"。
     
@@ -249,11 +249,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     此标记将加载您的其中一个 JavaScript 文件。它通过读取名为"language_value"的 SharePoint 资源确定要加载的语言。此资源将解析为前面的步骤中所述的  _LL_- _CC_ 形式的语言-区域性名称。具体而言，此资源将解析为外接程序 Web 的语言。
     
-    > [!注释]
+    > **注释**
       > SharePoint 资源"language_value"绝不为 Null，因此此脚本绝不会调用名为"Resources.js"的文件。这就是您前面的步骤中不创建该文件的原因。当"language_value"的值是没有对应的 .js 文件的语言时，此脚本不加载任何内容。下一个步骤将介绍字符串如何在这种情况下获取固定语言值。 
 3. 对于页面上的每个可本地化元素和属性值，使用固定语言为其提供一个默认值，但随后使用 JavaScript 为其分配 Resources. _LL_- _CC_.js 文件中的相应变量。例如，如果页面具有 **h2** 元素中的标题，则为该元素提供 **id** 属性，然后在本地化的元素下面插入 **script** 元素以将本地化字符串分配给该本地化元素的 **innerText** 属性。此本地化代码只有在加载了 Resources. _LL_- _CC_.js 文件并声明了变量的情况下才能运行。因此，要将其放在一个条件块中，首先测试是否定义了变量。如果没有，则不会加载资源脚本，默认（不变）值也不会发生改变。以下是一个示例。
     
-    > [!提示]
+    > **提示**
       > "INVARIANT"这个词已添加到首个固定字符串。您不能在生产外接程序中如此操作，但在测试时，这是查看是否使用了固定语言字符串或是否加载了语言恰好是您固定语言的 Resources. _LL_- _CC_.js 文件的有效方法。 
 
   ```HTML
@@ -330,7 +330,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 4. 对于您要使用外接程序的本地化版本支持的每个区域设置，请重复以上步骤。将会为每个区域设置创建另一个 Resources. _LL_- _CC_.resx 文件。
     
-    > [!注释]
+    > **注释**
       > 其中每个文件的"生成操作"属性都会设置为"内容"，而不是"资源"。 *不要更改此设置。* 
 5. 对您要实现外接程序可安装的每个区域设置（应使用固定语言的区域设置除外）也要添加区域设置条目；也就是说，您 *不*  提供外接程序本地化版本的区域设置。 *删除为这些区域设置创建的 .resx 文件。* 
     
@@ -356,7 +356,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   ```
 
 
-    > [!警告]
+    > **警告**
       > **Title** 的值 *只能*  包含对资源的调用。不能存在其他文本、符号或空格。
 2. 要调用其他 XML 文件中的本地化资源，例如外接程序部件和自定义操作的 Elements.xml，您使用的格式应该与外接程序清单文件中使用的格式相同。
     
@@ -406,7 +406,7 @@ protected override void InitializeCulture()
     
     
 
-> [!注释]
+> **注释**
 > 本节只介绍字符串的本地化。如有本地化日期或货币格式等更为强大的本地化需求，可以考虑使用本地化或全球化库，如 [全球化 jQuery 的相关加载项](https://github.com/jquery/globalize)。 
   
     

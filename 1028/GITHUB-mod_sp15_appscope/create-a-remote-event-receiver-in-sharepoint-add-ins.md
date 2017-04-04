@@ -31,7 +31,7 @@ RER 必須 SOAP web 服務。延續範例實作此以 Windows Communication Foun
     
     
 
-> [!注意事項]
+> **注意事項**
 > 這則範例會使用Office Developer Tools for Visual Studio所產生的 TokenHelper.cs 檔案。 本範例建立，但可能會在當您閱讀這不是最新版本，與其目前的版本。此範例是建立您第一個 RER 仍更好。但是當您準備好要移動以外的您應該查看以下 [下一步] 區段中所列的範例。他們是很可能會保持在最新。
   
     
@@ -115,7 +115,7 @@ RER 必須 SOAP web 服務。延續範例實作此以 Windows Communication Foun
     
   
 
-    > [!注意事項]
+    > **注意事項**
       > 本文撰寫次Office Developer Tools for Visual Studio接收者會建立，但可能不會更新版本的工具時新增所需的組件的參照。如果您收到編譯器錯誤，只要加入遺失的參考;例如，您可能需要新增 System.ServiceModel 或 System.ComponentModel.DataAnnotations 參照。
 
 

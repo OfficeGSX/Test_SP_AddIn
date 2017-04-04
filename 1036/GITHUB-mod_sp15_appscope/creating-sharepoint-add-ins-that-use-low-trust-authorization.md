@@ -21,7 +21,7 @@ Pour utiliser le système à faible niveau de fiabilité, le Complément SharePo
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'inscription requiert que l'application ait un domaine Internet. Tout domaine existant peut être utilisé à cette fin, mais vous ne pouvez pas être certain à 100 % qu'un domaine que vous ne possédez pas existera toujours. C'est pourquoi une application web devrait faire partie d'une application de périphérique native, même si le composant d'application web sert uniquement à permettre l'inscription. Pour un exemple de code avancé conçu de cette façon, voir  [Fournir des sites en lots avec le modèle du complément](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6). 
   
     

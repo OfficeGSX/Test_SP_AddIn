@@ -10,7 +10,7 @@ ms.assetid: 21de092e-27f2-4000-bbb7-cb5cbfeaf195
 ## 設定偵錯的遠端 SharePoint 測試網站
 
 
-> [!注意事項]
+> **注意事項**
 > 本節中的程序適用於測試 SharePoint 網站是從Visual Studio不同的電腦上或您測試網站使用SharePoint Online開發人員網站時，才。如果 SharePoint 和Visual Studio在同一部電腦上，略過這一節。
   
     

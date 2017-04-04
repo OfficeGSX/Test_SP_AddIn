@@ -27,7 +27,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
     
   
 
-> [!注释]
+> **注释**
 > 有关如何设置符合您的需求的开发环境的指南，请参阅 [开始创建提供程序承载的 SharePoint 加载项](get-started-creating-provider-hosted-sharepoint-add-ins.md)。 
   
     
@@ -98,7 +98,7 @@ ClientContext clientContext =
     
     
 
-> [!注释]
+> **注释**
 > API 位于  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/zh-cn/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) 程序集中的 Microsoft.SharePoint.Client.Utilities 命名空间中。
   
     

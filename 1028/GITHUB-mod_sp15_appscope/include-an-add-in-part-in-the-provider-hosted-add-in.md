@@ -29,7 +29,7 @@ This is the sixth in a series of articles about the basics of developing provide
     
   
 
-> [!注意事項]
+> **注意事項**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeAdd-inPart.sln file.
   
     
@@ -43,7 +43,7 @@ In this article, you add a special kind of Web Part, called an add-in part to th
     
     
 
-> [!注意事項]
+> **注意事項**
 >  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
   
     

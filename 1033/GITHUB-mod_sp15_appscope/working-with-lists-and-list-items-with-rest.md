@@ -7,14 +7,14 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # Working with lists and list items with REST
 Learn how to perform basic create, read, update, and delete (CRUD) operations on lists and list items with the SharePoint 2013 REST interface.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!TIP]
+> **TIP**
 > The SharePoint Online (and on-premise SharePoint 2016 and later) REST service supports combining multiple requests into a single call to the service by using the OData  `$batch` query option. For details and links to code samples, see [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -47,7 +47,7 @@ Headers:
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > Use  `application/json;odata=verbose` in the `accept` header if you want the response in JSON. Use `application/atom+xml` in the `accept` header if you want the response in Atom format.
   
     
@@ -123,7 +123,7 @@ The following XML shows an example of the list properties that are returned when
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > The **ListItemEntityTypeFullName** property ( **SP.Data.ProjectPolicyItemListItem** in the previous example) is especially important if you want to create and update list items. This value must be passed as the **type** property in the metadata that you pass in the body of the HTTP request whenever you create and update list items.
   
     
@@ -221,7 +221,7 @@ The following example shows how to **retrieve** all of a list's items.
     
     
 
-> [!NOTE]
+> **NOTE**
 > The OData $skip query option does not work when querying list items. In may situations, you can use the  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) option instead.
   
     
@@ -287,7 +287,7 @@ The following example shows how to **create** a list item.
     
     
 
-> [!NOTE]
+> **NOTE**
 > To do this operation, you must know the **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.
   
     
@@ -314,7 +314,7 @@ The following example shows how to **update** a list item.
     
     
 
-> [!NOTE]
+> **NOTE**
 > To do this operation, you must know the **ListItemEntityTypeFullName** property of the list and pass that as the value of **type** in the HTTP request body.
   
     

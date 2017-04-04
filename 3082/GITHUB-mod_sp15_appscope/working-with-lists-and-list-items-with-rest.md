@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # Trabajar con listas y elementos de lista con REST
 Aprenda a realizar operaciones básicas de creación, lectura, actualización y eliminación (CRUD) en listas y elementos de listas con la interfaz REST de SharePoint 2013.
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > El servicio REST de SharePoint Online (y SharePoint 2016 local o versiones posteriores) admite la combinación de varias solicitudes en una sola llamada al servicio mediante el uso de la opción de consulta  `$batch` de OData. Para obtener información detallada y vínculos a los ejemplos de código, vea [Realizar solicitudes de lote con las API de REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Use  `application/json;odata=verbose` en el encabezado `accept` si desea que la respuesta se dé en JSON. Use `application/atom+xml` en el encabezado `accept` si desea que la respuesta se dé en formato Atom.
   
     
@@ -116,7 +116,7 @@ El XML siguiente muestra un ejemplo de las propiedades de lista que se devuelven
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > La propiedad **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** en el ejemplo anterior) es especialmente importante si desea crear y actualizar elementos de lista. Siempre que se creen y actualicen elementos de lista, este valor se debe transmitir como propiedad **type** en los metadatos que aparezcan en el cuerpo de la solicitud HTTP.
   
     
@@ -214,7 +214,7 @@ En el ejemplo siguiente se muestra cómo **recuperar** todos los elementos de un
     
     
 
-> [!NOTA]
+> **NOTA**
 > La opción de consulta $skip de OData no funciona al consultar elementos de lista. En muchas situaciones, puede usar la opción  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx). 
   
     
@@ -280,7 +280,7 @@ En el siguiente ejemplo se muestra cómo **crear** un elemento de lista.
     
     
 
-> [!NOTA]
+> **NOTA**
 > Para ejecutar esta operación, debe saber la propiedad **ListItemEntityTypeFullName** de la lista y pasarla como valor de **type** en el cuerpo de la solicitud HTTP.
   
     
@@ -307,7 +307,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** un elemento de lista.
     
     
 
-> [!NOTA]
+> **NOTA**
 > Para ejecutar esta operación, debe saber la propiedad **ListItemEntityTypeFullName** de la lista y pasarla como valor de **type** en el cuerpo de la solicitud HTTP.
   
     

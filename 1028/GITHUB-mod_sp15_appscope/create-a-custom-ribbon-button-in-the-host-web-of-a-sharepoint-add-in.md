@@ -38,7 +38,7 @@ This is the ninth in a series of articles about the basics of developing SharePo
     
   
 
-> [!注意事項]
+> **注意事項**
 > If you have been working through this series about SharePoint-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) and open the BeforeRibbon.sln file.
   
     
@@ -81,7 +81,7 @@ You will add the button to the ribbon of a calendar on the host web. Take the fo
     
     
 
-> [!重要]
+> **重要**
 > The next procedure requires that the calendar be visible in the UI of Visual Studio, but it won't be if If Visual Studio was open when you created the calendar. Before you continue, close Visual Studio and also log out of any browser windows and PowerShell consoles where you are logged into your developer site. 
   
     

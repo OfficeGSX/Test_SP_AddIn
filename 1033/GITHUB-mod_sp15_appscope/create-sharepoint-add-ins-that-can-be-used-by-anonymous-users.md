@@ -7,14 +7,14 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # Create SharePoint Add-ins that can be used by anonymous users
 Learn how to create SharePoint Add-ins that can be used by anonymous users on public-facing Microsoft SharePoint 2013 sites.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > Wherever  *on-premise*  SharePoint 2013 is mentioned in this article, we assume that Service Pack 1 for SharePoint 2013 has been installed.
   
     
@@ -84,7 +84,7 @@ Making a provider-hosted add-in accessible to anonymous users is simply a matter
     
     
 
-> [!NOTE]
+> **NOTE**
 > If the SharePoint site is accessible to anonymous users, it typically allows HTTP access, rather than HTTPS. There are potential security issues when the add-in-only policy is used for add-ins in this scenario. For details and a method of mitigating them, see  [What Every Developer Needs to Know About SharePoint Add-ins, CSOM, and Anonymous Publishing Sites](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -136,7 +136,7 @@ If your add-in uses SharePoint's JavaScript object model (JSOM), there is one co
     
     
 
-> [!NOTE]
+> **NOTE**
 > Turning off the requirement that users have the **Use Remote Interfaces** permission has implications for information privacy. For details, see [What Every Developer Needs to Know About SharePoint Add-ins, CSOM, and Anonymous Publishing Sites](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -169,7 +169,7 @@ If your test SharePoint installation is on-premises, you must carry out the firs
     
     
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > If possible, you should install the SharePoint Add-in to a website  *before*  you carry out the first two procedures. Add-ins cannot be installed to any website in an on-premise SharePoint web application when the web application has been configured for anonymous access. If the web application has already been configured for anonymous access, you have to reverse that setting temporarily in order to install the add-in.
   
     
@@ -196,7 +196,7 @@ If your test SharePoint installation is on-premises, you must carry out the firs
   
 6. (Optional) Uncheck the **Require Use Remote Interfaces permission** box. Doing so allows code and script running in the context of an anonymous user to make calls to SharePoint's client object model on every site collection. You cannot re-enable the requirement for any site collections. Leaving the box checked means that by default anonymous users cannot access the client object models, but you can disable the requirement (and give them access) for specific site collections.
     
-    > [!NOTE]
+    > **NOTE**
       > In the context of developing SharePoint Add-ins for anonymous users, this setting is only meaningful for SharePoint-hosted add-ins. Provider-hosted SharePoint Add-ins that are designed for anonymous users use a technique that makes the user's permissions irrelevant. For more information about this, see the section  [Creating provider-hosted add-ins that are anonymously accessible](#Cloud-hosted) above.
 7. Choose **Save** to close the form.
     
@@ -206,7 +206,7 @@ If your test SharePoint installation is on-premises, you must carry out the firs
   
 9. In the **Anonymous Access Restrictions** form, choose the zone and be sure that the **None** radio button is enabled. If the SharePoint Add-in that you are testing needs only read rights to SharePoint data, enable **Deny Write** instead.
     
-    > [!NOTE]
+    > **NOTE**
       > This is another setting that, in the context of developing SharePoint Add-ins for anonymous users, is only meaningful for SharePoint-hosted add-ins. 
 10. If you created a new web application in step 2, you have to create a site collection in it.
     
@@ -231,7 +231,7 @@ If your test SharePoint installation is on-premises, you must carry out the firs
     
   
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > The following procedure can only be carried out on a public website in SharePoint Online. (For more information about the use of Public Websites in Microsoft SharePoint Online, see  [Public Website help for Office 365](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).) 
   
     
@@ -252,7 +252,7 @@ If you are developing a SharePoint-hosted add-in and it accesses a SharePoint li
     
     
 
-> [!NOTE]
+> **NOTE**
 > This procedure cannot be carried out in a SharePoint Online site collection, so SharePoint-hosted add-ins that are installed to SharePoint Online and intended for use by anonymous users cannot access lists or libraries. 
   
     

@@ -15,21 +15,21 @@ Learn how to create a basic SharePoint-hosted SharePoint Add-in by using Napa Of
     
     
  [Run this sample now!](http://go.microsoft.com/fwlink/?LinkId=313212)
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 Napa is a tool that you can use to create SharePoint-hosted SharePoint Add-ins. Napa is itself implemented as a (provider-hosted) SharePoint Add-in that can be installed on SharePoint Online websites that are created with the **Developer Site** template. SharePoint developer sites have a library called **Add-ins in Testing** on the home page. Instructions for creating a developer site and installing Napa are later in this article.
-> [!NOTE]
+> **NOTE**
 > We do not support installing Napa to on-premises SharePoint. 
   
     
     
 
 By using Napa, you can create your SharePoint Add-ins inside your browser instead of in Visual Studio. At any time, you can download your project and open it in Visual Studio for more advanced scenarios.By following this article, you can learn how to create a simple SharePoint-hosted SharePoint Add-in by using Napa. The add-in that you'll create includes controls and code for managing lists and list items. 
-> [!NOTE]
+> **NOTE**
 > You can create only SharePoint-hosted SharePoint Add-ins with Napa, not provider-hosted. For information on the differences, see  [SharePoint Add-ins](sharepoint-add-ins.md). > You cannot use SharePoint's add-in updating semantics, which is described in  [Update add-in web components in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), in Napa. So if you need to update an add-in created in Napa, you first have to export it to Visual Studio. Instructions for doing so are later in this article. > You can also create a SharePoint Add-in by using Visual Studio. For more information, see  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
   
     
@@ -44,7 +44,7 @@ If you don't already have a SharePoint Online subscription that you can use for 
     
     
 
-> [!NOTE]
+> **NOTE**
 >  You might already have access to an Office 365 Developer Site:> **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Do you have one of the following Office 365 subscription plans?**> **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more information, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -62,7 +62,7 @@ Two ways to get an Office 365 plan.
     
   
 
-> [!TIP]
+> **TIP**
 > Each of these links will open in another window or tab in order to keep the following instructions handy. 
   
     
@@ -107,7 +107,7 @@ Two ways to get an Office 365 plan.
   
 
     
-> [!NOTE]
+> **NOTE**
 > If you're logged on to another Microsoft account when you try to sign up for a developer account, you might get this message: "Sorry, that user ID you entered didn't work. It looks like it's not valid. Be sure you enter the user ID that your organization assigned to you. Your user ID usually looks like  *someone@example.com*  or *someone@example.onmicrosoft.com*  ."> If you see this message, log out of the Microsoft account you were using and try again. If you still get the message, clear your browser cache or switch to **InPrivate Browsing** and then fill out the form.
   
     
@@ -274,7 +274,7 @@ In this procedure, you'll add some JavaScript code so that users can create and 
   
 2. In the **App.js** file, add the `web`,  `lists`, and  `listItemcollection` variables to the two default variables, and change the code in the `$(document).ready()` function to the following example.
     
-    > [!NOTE]
+    > **NOTE**
       > Error squiggles will appear in this code. They'll disappear in later steps. 
 
   ```
@@ -528,7 +528,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       > If the list items aren't displaying when you run the add-in, be sure that the  `displayLists();` statement comes after the previous code.
 
     In the next step, you'll add JavaScript functions for the new definitions and a support function ( `getItems()`). This table describes what the main functions do.

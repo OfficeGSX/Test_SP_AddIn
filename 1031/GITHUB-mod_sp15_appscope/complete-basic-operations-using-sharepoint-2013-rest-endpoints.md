@@ -331,7 +331,7 @@ In der Cloud gehostete Add-Ins autorisieren den Zugriff auf SharePoint-Daten ent
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > In der Cloud gehostete Add-In-Komponenten, die in JavaScript geschrieben wurden, müssen zum Zugreifen auf SharePoint-Daten das **SP.RequestExecutor**-Objekt in der domänenübergreifenden Bibliothek verwenden. Domänenübergreifende Bibliotheksanforderungen müssen kein Zugriffstoken enthalten. 
   
     
@@ -358,7 +358,7 @@ Domänenübergreifende Bibliotheksanforderungen verwenden dieses Format für den
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Damit ein in der Cloud gehostetes Add-In beim Verwenden der domänenübergreifenden Bibliothek auf SharePoint-Daten zugreifen kann, ist eine Add-In-Webinstanz erforderlich. 
   
     
@@ -375,7 +375,7 @@ Domänenübergreifende Bibliotheksanforderungen verwenden dieses Format für den
 |Von SharePoint gehostet  <br/> |Add-In-Webkomponente, die auf Daten einer anderen Websitesammlung zugreift (gilt nur für Add-Ins mit Mandantenbereich)  <br/> | _<App-Web-URL>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<URL der Zielwebsite>_'  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > In Szenarien für den domänenübergreifenden Datenzugriff sind auch die entsprechenden Add-In-Berechtigungen erforderlich. Weitere Informationen finden Sie unter  [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) und [Zugreifen auf Daten in allen Websitesammlungen](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope). 
   
     

@@ -86,7 +86,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   ```
 
 
-    > [!注释]
+    > **注释**
       > **AllowedRemoteHostUrl** 属性用于指定远程域。 **~remoteAppUrl** 解析到远程外接程序 URL。有关标记的详细信息，请参阅 [了解 SharePoint 外接程序的应用程序清单结构和包](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### 创建自定义代理页
@@ -188,7 +188,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   ```
 
 
-    > [!重要信息]
+    > **重要信息**
       > 在生产 SharePoint 外接程序中，您必须在设置中提供授权逻辑并返回 **originAuthorityValidator** 对象中的适当值。
 
 ### 创建内容页
@@ -335,7 +335,7 @@ Response.End();
   
 2. 按 F5 键。
     
-    > [!注释]
+    > **注释**
       > 按 F5 键时，Visual Studio 会生成解决方案、部署外接程序并打开外接程序的权限页面。 
 3. 选择"信任它"按钮。
     

@@ -18,7 +18,7 @@ Zum Hosten des Add-Ins benötigen Sie außerdem eine SharePoint-Entwicklerwebsit
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Außerdem können Sie ein Cloud-Geschäfts-Add-In auf einer SharePoint 2013-Website hosten. 
   
     
@@ -677,7 +677,7 @@ Im ersten Schritt fügen Sie Ihrer Entwicklerwebsite einige vorausgefüllte List
   
 12. Klicken Sie auf der Seite **Websiteinhalte > Ihre Add-Ins** auf die Kachel **Contoso-Geräte**.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Möglicherweise müssen Sie auf die zweite Seite der Add-Ins wechseln, um die Kachel **Contoso-Geräte** zu finden.
 13. Klicken Sie im Dialogfeld **Benutzerdefinierte Liste hinzufügen** auf das Textfeld **Name**, geben Sie Contoso-Geräte ein und klicken Sie anschließend auf die Schaltfläche **Erstellen**.
     
@@ -732,7 +732,7 @@ Im ersten Schritt fügen Sie Ihrer Entwicklerwebsite einige vorausgefüllte List
     Die Entitäten werden unter dem Knoten **Datenquellen** im **Projektmappen-Explorer** zu einem neuen **Entwicklerdaten**-Knoten hinzugefügt und die Entität **ContosoApparatus** wird im Entity Designer geöffnet.
     
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Sie haben vielleicht bemerkt, dass außerdem eine **UserInformationLists**-Entität hinzugefügt wurde. Diese Liste wird von SharePoint zum Verwalten der Felder **CreatedBy** und **ModifiedBy** für Listen verwendet.
 5. Klicken Sie im Fenster **Eigenschaften** auf die Eigenschaft **Anzeigename** und ändern Sie ihn zuGeräte.
     
@@ -1097,7 +1097,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
     
     Die Datei wird zur Registerkarte **Dokumente** hinzugefügt.
     
-    > [!TIPP]
+    > **TIPP**
       > Wenn Sie auf ein Office-Dokument klicken, können Sie es in dem Add-In anzeigen. 
 13. Klicken Sie auf die Schaltfläche "Dokument hinzufügen" und im Dialogfeld **Neue Datei erstellen** auf **Word-Dokument**.
     
@@ -1116,7 +1116,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
     Er wird als Dateiname des Dokuments verwendet.
     
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie keinen Dateinamen eingeben, wird es mit dem Standardnamen **Dokument.docx** gespeichert. Nachdem das Dokument gespeichert wurde, kann der Dateiname nur geändert werden, indem Sie darauf in der Dokumentbibliothek in SharePoint zugreifen.
 15. Klicken Sie in Ihrem Browser auf die Schaltfläche "Zurück", um zum Add-In zurückzukehren. Das Dokument **Vorfallbericht** sollte auf der Registerkarte **Dokumente** angezeigt werden.
     

@@ -7,7 +7,7 @@ ms.assetid: 8dec09e6-e197-4f68-bcc2-ca41105c5d61
 
 # Incident manager: A cloud business add-in tutorial
 By using the **Cloud Business Add-in** template in Visual Studio, you can create a SharePoint hosted in which mobile users can view, add, and update data from remote locations by using modern, touch-oriented devices such as phones and tablets. In this tutorial, you'll create an add-in for a fictional Contoso Fire Department to handle on-scene incident management. The walkthrough covers the core concepts of building a Cloud Business Add-in as well as more advanced concepts such as integrating SharePoint lists and document libraries.You can download the Incident Management sample application and associated files from the MSDN Samples Gallery:  [Incident Manager: A Cloud Business Add-in Tutorial](http://code.msdn.microsoft.com/Incident-Manager-A-Cloud-c32d9b04).
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -25,7 +25,7 @@ To host the add-in, you'll also need a SharePoint Developer site on Office 365, 
     
     
 
-> [!NOTE]
+> **NOTE**
 > You can also host a Cloud Business Add-in on a SharePoint 2013 site. 
   
     
@@ -684,7 +684,7 @@ The first step is to add a couple of pre-populated list templates to your develo
   
 12. On the **Site Contents > Your Add-ins** page, choose the **Contoso Apparatus** tile.
     
-    > [!NOTE]
+    > **NOTE**
       > You may need to go to the second page of add-ins to find the **Contoso Apparatus** tile.
 13. In the **Adding Custom List** dialog box, choose the **Name** text box and enterContoso Apparatus, and then choose the **Create** button.
     
@@ -739,7 +739,7 @@ The first step is to add a couple of pre-populated list templates to your develo
     The entities are added to a new **Developer Data** node under the **Data Sources** node in **Solution Explorer**, and the **ContosoApparatus** entity opens in the entity designer.
     
     
-    > [!NOTE]
+    > **NOTE**
       > You may have noticed that a **UserInformationLists** entity was also added. This list is used by SharePoint to manage the **CreatedBy** and **ModifiedBy** fields for lists.
 5. In the **Properties** window, choose the **Display Name** property and change it toApparatus.
     
@@ -1104,7 +1104,7 @@ On the scene of an incident the Incident Commander has to document many things, 
     
     The file is added to the **Documents** tab.
     
-    > [!TIP]
+    > **TIP**
       > If you choose an Office document, you can view it in the add-in. 
 13. Choose the Add Document button, and in the **Create a new file** dialog box, choose **Word document**.
     
@@ -1123,7 +1123,7 @@ On the scene of an incident the Incident Commander has to document many things, 
     This will be used as the file name for the document.
     
     
-    > [!NOTE]
+    > **NOTE**
       > If you don't enter a file name, it will be saved with the default name **Document.docx**. Once saved, the file name can only be changed by accessing it in the document library in SharePoint. 
 15. Choose the back button in your browser to return to the add-in. The **Incident Report** document should appear on the **Documents** tab.
     

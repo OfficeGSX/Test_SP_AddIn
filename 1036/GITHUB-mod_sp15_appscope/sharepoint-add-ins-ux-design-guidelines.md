@@ -126,7 +126,7 @@ Si vous ne créez pas de pages ASPX hébergées par SharePoint, tout en souhaita
 
   - Copiez cette bibliothèque dans votre propre site Web, et référencez-la à partir de celui-ci.
     
-    > [!ATTENTION]
+    > **ATTENTION**
       > Si vous optez pour cette méthode, votre complément ne bénéficiera pas des mises à jour du contrôle. 
 2. Ajoutez l'élément DOM de l'espace réservé dans lequel le contrôle sera affiché, tel qu'illustré dans cet exemple.
     

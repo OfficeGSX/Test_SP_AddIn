@@ -38,7 +38,7 @@ Esse é o nono em uma série de artigos sobre noções básicas do desenvolvimen
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeProgrammaticButton.sln.
   
     
@@ -48,7 +48,7 @@ Neste artigo, você aprenderá como incluir um botão da faixa de opções perso
 ## Adicione novamente no botão personalizado ao projeto
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:> Com o botão direito no nó da solução na parte superior do **Gerenciador de soluções** e selecione **definir projetos de inicialização**.> Verifique se que todos os três projetos estão definidos para **Iniciar** na coluna **ação**.
   
     
@@ -132,7 +132,7 @@ RegistrationId="100"
   
   - O valor do  `action.Name` proveniente o atributo **ID** do elemento no arquivo element.xml em **AddEmployeeToCorpDB** **CustomAction**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > **Você deve alterar o valor de  `action.Name` no código a seguir para corresponder ao valor em seu arquivo Elements.** A parte do GUID do nome será diferente. Observe que há um "." caracteres entre o GUID e o restante do nome. O exemplo a seguir é um exemplo da linha.>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
   ```cs
@@ -285,7 +285,7 @@ Como o suplemento está adicionando adicionando e excluindo escopo web ações p
 
 1. Abra a página de **Conteúdo do Site** do site do repositório de Hong Kong *e remover a lista de **Funcionários Local** !* 
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Cancelando um suplemento em Visual Studio, não remova listas que são criadas pelo add-in, portanto você precisa excluir manualmente sempre que você estiver testando o código que cria a ele.
 2. Use a tecla F5 para implantar e executar seu suplemento Visual Studio hospeda o aplicativo da web remoto no IIS Express e hospeda o banco de dados SQL em um SQL Express. Ele também faz uma instalação temporária do add-in no seu site do SharePoint de teste e executa imediatamente o add-in. Você será solicitado para conceder permissões para o suplemento antes que ela seja iniciar página é aberta.
     
@@ -295,7 +295,7 @@ Como o suplemento está adicionando adicionando e excluindo escopo web ações p
   
 4. Navegue até a página de **Conteúdo do Site**. A lista de **Funcionários Local** está presente, porque a lógica de primeira execução adicionou.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se a lista não estiver lá ou se tiver outras indicações que o código de primeira execução não está em execução, pode ser que a tabela de **inquilinos** não está sendo revertida para um estado vazio quando você pressiona F5. A causa mais comum disso é que o projeto **ChainCorporateDB** não mais é definido como um projeto de inicialização no Visual Studio. Consulte a observação na parte superior deste artigo sobre como corrigir esse problema. Além disso, certifique-se de que você configurou o banco de dados seja recompilado conforme descrito em [Configurar Visual Studio para reconstruir o banco de dados corporativo com cada sessão de depuração](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild).
 5. Abra a lista e adicionar um item.
     

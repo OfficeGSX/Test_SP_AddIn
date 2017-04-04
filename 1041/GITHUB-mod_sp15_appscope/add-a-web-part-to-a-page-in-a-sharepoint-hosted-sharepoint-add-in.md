@@ -26,7 +26,7 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeWebPart.sln ファイルを開くこともできます。
   
     

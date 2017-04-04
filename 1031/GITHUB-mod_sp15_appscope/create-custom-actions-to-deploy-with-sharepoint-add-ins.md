@@ -84,7 +84,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     
   
 
-    > [!WICHTIG]
+    > **WICHTIG**
       > Die Token „ItemURL" und „ItemID" werden nur übergeben, wenn ein Element ausgewählt ist. In einer SharePoint-Add-In mit Produktionsqualität muss Ihr Code Situationen, in denen kein Element ausgewählt ist, verarbeiten können. In diesem Beispiel warnt der Code den Benutzer, dass kein Element ausgewählt wurde. 
 
   ```HTML
@@ -192,7 +192,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Beispiel wird die Remotewebseite in einem vollständigen Fenster geöffnet, wenn der Benutzer die benutzerdefinierte Aktion aus dem Menü auswählt. Benutzerdefinierte Menüaktionen können eine Remotewebseite auch in einem Dialogfeld öffnen, indem Sie das Attribut **HostWebDialog** verwenden. Weitere Informationen finden Sie unter [SharePoint-Add-In-Lokalisierung](https://github.com/OfficeDev/SharePoint-Add-in-Localization). 
   
     
@@ -269,7 +269,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Benutzerdefinierte Menübandaktionen verwenden **SelectedListId** und **SelectedItemId**. **ListId** und **ItemId** werden nur mit benutzerdefinierten Menüelementaktionen verwendet.
 
 ### Festlegen der Add-In-Startseite auf die Hostweb-Startseite
@@ -292,7 +292,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
 1. Drücken Sie die Taste F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**. Die Standardseite Ihrer Entwicklerwebsite wird geöffnet.
     

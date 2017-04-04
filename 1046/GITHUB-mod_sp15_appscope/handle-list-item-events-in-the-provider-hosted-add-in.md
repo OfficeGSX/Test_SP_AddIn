@@ -41,7 +41,7 @@ Esse é o décimo em uma série de artigos sobre noções básicas do desenvolvi
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeRER.sln.
   
     
@@ -51,7 +51,7 @@ Vimos em um artigo anterior desta série quando um pedido, ela será adicionada 
 ## Implantar programaticamente a lista de remessas esperado
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:
   
     
@@ -134,7 +134,7 @@ CreateExpectedShipmentsList();
 ## Criar o receptor de evento de item de lista
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado por meio desta série de artigos, você já tiver configurado o seu ambiente de desenvolvimento para depuração receptores de evento remoto. Se você não tiver feito isso, consulte  [Configurar a solução para o receptor de evento de depuração](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug) antes de ir qualquer neste tópico.
   
     
@@ -145,7 +145,7 @@ O Office Developer Tools for Visual Studio incluem um item de **Receptor de even
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Lista e receptores de evento de item de lista são chamados de receptores de evento remoto (RER) porque seu código é remoto do SharePoint, na nuvem ou em um servidor local fora do farm do SharePoint. No entanto, os eventos que acionam a eles estão no SharePoint.
   
     
@@ -160,7 +160,7 @@ O Office Developer Tools for Visual Studio incluem um item de **Receptor de even
   
 3. As ferramentas de criam um arquivo de interface, um arquivo SVC e um arquivo code-behind. Não precisamos o arquivo de interface IRemoteEventReceiver1.cs, portanto excluí-la. (As ferramentas podem ter aberto-lo automaticamente. Em caso afirmativo, feche e excluí-la.)
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você criou os receptores de evento suplemento para o instalados e desinstalando eventos em um artigo anterior desta série, o Office Developer Tools for Visual Studio adicionado suas URLs para o arquivo de manifesto do aplicativo. Lista e receptores de evento de item de lista não estão registrados no manifesto do aplicativo. Em vez disso, eles são registrados (em um provedor hospedado suplemento) programaticamente. Você vai fazer isso em uma etapa posterior.
 4. Abra o arquivo code-behind: RemoteEventReceiver1.svc.cs. Substitua todo o seu conteúdo com o código a seguir. Observe o seguinte sobre este código:
     
@@ -414,7 +414,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O **KeyNotFoundException** também é a razão por que temos deixar o campo **foi adicionado ao estoque** visíveis no formulário Editar Item. SharePoint não inclui campos que estão ocultos no form Editar Item **AfterProperties**.
 
     Todo o método agora deve se parecer com o seguinte.
@@ -669,7 +669,7 @@ O evento add-in e receptores de evento de item de lista são os serviços de ser
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Copiando manualmente a URL de barramento de serviço e colando (uma versão modificada do)-lo em Web. config não é a única maneira de lidar com a necessidade de uma URL diferente quando estiver depurando um receptor de evento remoto de quando ele está em execução em produção.> Poderíamos programaticamente armazene o valor de **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** em algum lugar no SharePoint ou o banco de dados remoto e, em seguida, ter o nosso código de primeira execução lê-lo e atribuí-lo à propriedade `receiver.ReceiverUrl` .> Podemos pôde registrar o receptor de evento de item de lista como parte do manipulador de eventos de instalados add-in. Em seguida, podemos poderia programaticamente ler **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**, modificá-la e atribuí-lo a  `receiver.ReceiverUrl` sem precisar armazená-lo em qualquer lugar. Essa estratégia exigiria que a lista de **Remessas esperado** também ser criados no manipulador de eventos de instalados add-in, pois ele teria existir antes do manipulador poderia ser registrado com ele. (Além disso, observe que podemos poderia combinar nossos receptor de evento de suplemento e um receptor de evento de item de lista em um único receptor (ou seja, o mesmo. svc e. svc.cs arquivos). Nesse caso, nenhuma modificação da URL é necessária para utilizá-lo como o valor do `receiver.ReceiverUrl`.)
   
     

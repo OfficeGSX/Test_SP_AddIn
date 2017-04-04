@@ -32,7 +32,7 @@ Esse é o sétimo em uma série de artigos sobre noções básicas do desenvolvi
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeAdd-inEventHandlers.sln.
   
     
@@ -87,7 +87,7 @@ Depuração de receptores de evento requer o uso de barramento de serviço do Wi
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:> Com o botão direito no nó da solução na parte superior do **Gerenciador de soluções** e selecione **definir projetos de inicialização**.> Verifique se que todos os três projetos estão definidos para **Iniciar** na coluna **ação**.
   
     
@@ -282,7 +282,7 @@ private void DeleteTenant(string tenantName)
   ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Em um artigo anterior desta série, você configurou o projeto para reconstruir o banco de dados corporativo sempre que você pressionar F5. Isso esvazia a tabela de **inquilinos**.
   
     

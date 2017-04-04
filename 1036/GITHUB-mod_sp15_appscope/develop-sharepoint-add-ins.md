@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # Développer des compléments pour SharePoint
 Accédez à des articles et des ressources détaillés vous aidant à intégrer des fonctionnalités avancées dans vos Compléments SharePoint.
-> [!REMARQUE]
+> **REMARQUE**
 > Cet article suppose que vous connaissez déjà le contenu de l'article  [Compléments](sharepoint-add-ins.md) et le matériel de mise en route associé.
   
     

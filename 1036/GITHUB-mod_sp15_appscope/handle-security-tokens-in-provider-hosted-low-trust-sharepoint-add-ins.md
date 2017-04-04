@@ -7,7 +7,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # Gestion des jetons de sécurité dans les compléments SharePoint à faible niveau de fiabilité hébergés par le fournisseur
 Apprenez-en plus sur les jetons de contexte, d'accès et d'actualisation qui sont utilisés pour l'autorisation par les Compléments SharePoint à faible niveau de fiabilité hébergés par un fournisseur et découvrez comment les intégrer dans votre code.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > **Cet article est entièrement consacré à l'utilisation de jetons de sécurité dans le système d'autorisation à faible niveau de fiabilité et non dans le système à haut niveau de fiabilité.** Pour plus d'informations sur l'utilisation de jetons dans le système à haut niveau de fiabilité, voir [Création et utilisation de jetons d'accès dans les compléments à haut niveau de fiabilité hébergés par un fournisseur pour SharePoint](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md). 
   
     
@@ -80,7 +80,7 @@ Selon l'architecture et la plateforme d'hébergement de votre Complément ShareP
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Dans la plupart des cas, vous ne pourrez pas utiliser de termes aussi simples que « AccessToken » comme clé de mise en cache, car votre complément doit garder les jetons pour les différents utilisateurs et conserver la distinction batteries/locations SharePoint. Si votre complément utilise le  [flux de jeton de contexte](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows), il existe une clé **CacheKey** spéciale fournie par SharePoint, qui peut être utilisée pour distinguer les jetons mis en cache. Cette section décrit les problèmes connus et les solutions à adopter lorsque votre application n'utilise pas le flux de jeton de contexte.
   
     
@@ -111,7 +111,7 @@ Enfin, si votre application réalise à la fois des appels complément uniquemen
     
     
 
-> [!ATTENTION]
+> **ATTENTION**
 > **Stocker le jeton d'accès dans un cookie n'est pas considéré comme une pratique sûre.** Il est généralement conseillé d'éviter que le jeton d'accès ne passe par le navigateur.
   
     
@@ -246,7 +246,7 @@ Un jeton de contexte est utilisé uniquement dans le  [flux de jeton de contexte
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Les deux premières tâches doivent être effectuées avant que l'utilisateur navigue vers une autre page ou actualise la page, sinon, le jeton est perdu. Par exemple, dans une application Web Forms ASP.NET, incluez ces tâches dans la méthode **Page_Load** (dans un bloc de code conditionnel qui n'est exécuté que lorsque la demande n'est pas une publication). Dans une application ASP.NET MVC, incluez ces tâches dans la méthode du contrôleur par défaut.
   
     
@@ -279,7 +279,7 @@ Vous pouvez **mettre en cache** la totalité du jeton de contexte, ou seulement 
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Nous vous rappelons que vous ne devez pas utiliser pas la mise en cache côté client pour le jeton d' *accès*  . Son utilisation est sûre uniquement pour le jeton de contexte.
   
     

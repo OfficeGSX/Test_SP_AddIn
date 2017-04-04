@@ -29,7 +29,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關 SharePoint 主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials)在存放庫並開啟 BeforeWorkflow.sln 檔案。
   
     
@@ -100,7 +100,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
     
     
 
-> [!注意事項]
+> **注意事項**
 > 在不同時間設計您的工作流程以驚嘆號中其
   
     
@@ -255,7 +255,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
     
     
     
-    > [!注意事項]
+    > **注意事項**
       > 如果無法開啟 **測試服務主機**主控台，您可能需要啟用偵錯工作流程。以滑鼠右鍵按一下 [ **方案總管**中的專案名稱並選擇 [ **屬性**]。開啟 [ **SharePoint** ] 索引標籤上 [ **內容**] 窗格和適用於 **偵錯啟用工作流程**] 核取方塊。
 3. 瀏覽至電子郵件收件匣 (Outlook) 您的 Office 365 開發人員帳戶。沒有電子郵件主旨 *"Employee*  已準備就緒 HR 文。" *Employee*  所在的員工您編輯之項目的名稱。電子郵件的本文指出 *"員工*  填寫好處和工作表單大廳中等候"。以下為範例：
     
@@ -269,7 +269,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
     
     
     
-    > [!秘訣]
+    > **秘訣**
       > 如果工作流程開始但從未完成後，而不傳送的電子郵件、 試用結束偵錯工作階段並嘗試 F5 再次一些時間才能結束處有是在您的程式碼錯誤的某個項目。有時問題是SharePoint Online中。> 如果您仍然有問題，請嘗試新增內容類型呼叫 **ListFieldsContentType**，如果沒有一個已經、 schema.xml 檔案 **ContentTypes**章節。以下是標記的範例。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

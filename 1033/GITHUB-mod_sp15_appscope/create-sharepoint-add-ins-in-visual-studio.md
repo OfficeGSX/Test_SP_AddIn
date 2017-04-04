@@ -8,7 +8,7 @@ ms.assetid: f1b9c858-907c-4558-b671-3b488ece40a0
 
 # Create SharePoint Add-ins in Visual Studio
 Learn to develop SharePoint Add-ins by using templates for projects and project items in Visual Studio.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -179,7 +179,7 @@ Adds a project item for a Microsoft Azure workflow to your SharePoint Add-in. Fo
 
 |**File Name**|**Description**|
 |:-----|:-----|
-|Elements.xml  <br/> |Specifies the configuration of the workflow and the files that it contains, such as the workflow.xaml file and association files, and the properties of each file, such as its URL, its type, and its path. For each file that's added to the workflow project, a corresponding section is added to the Elements.xml file for the workflow. Association files in list workflows require a list, so they have a reference to the list token. In a site workflow, a GUID is added for the site.  <br/> > [!CAUTION]> Because Visual Studio maintains the items in the Elements.xml file, we recommend against changing it unless you're familiar with the impact of the changes.           |
+|Elements.xml  <br/> |Specifies the configuration of the workflow and the files that it contains, such as the workflow.xaml file and association files, and the properties of each file, such as its URL, its type, and its path. For each file that's added to the workflow project, a corresponding section is added to the Elements.xml file for the workflow. Association files in list workflows require a list, so they have a reference to the list token. In a site workflow, a GUID is added for the site.  <br/> > **CAUTION**> Because Visual Studio maintains the items in the Elements.xml file, we recommend against changing it unless you're familiar with the impact of the changes.           |
 |Workflow.xaml  <br/> |Represents the designer for the workflow. In this file, you add actions to the workflow and set their code and properties.  <br/> |
 |WorkflowStartAssociation  <br/> |Manually starts the workflow on SharePoint. This file is added to the workflow project if you select the **A user manually starts the workflow** check box in the workflow wizard. <br/> |
 |ItemAddedAssociation  <br/> |Starts the workflow automatically if one is present when a user creates an item in the site or list (depending on the workflow type). This file is added to the workflow project if you select the **The workflow starts automatically when an item is added** check box in the workflow wizard. <br/> |

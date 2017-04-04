@@ -98,7 +98,7 @@ En general, una Complemento de SharePoint puede incorporar uno o varios de los c
     
     
 
-> [!NOTA]
+> **NOTA**
 > ***** Los componentes con asterisco (*) se describen de forma más detallada en la sección [Advertencias en la implementación de componentes de SharePoint](#SpecialCases) más adelante en este artículo.
   
     
@@ -202,10 +202,10 @@ A continuación se detallan algunas advertencias e información sobre la impleme
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > El nuevo elemento  [Plantilla web](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) para los manifiestos de complemento no tiene el mismo marcado que el elemento [Plantilla web](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) que se puede incluir en Características. El elemento **WebTemplate** que se puede incluir en Características define el tipo de sitio, pero el elemento **WebTemplate** de los manifiestos de complemento simplemente identifica el tipo de sitio que se va a usar. Para más información sobre el manifiesto de complemento de una Complemento de SharePoint, vea [Estructura del paquete del complemento](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package). 
 
-    > [!PRECAUCIóN]
+    > **PRECAUCIóN**
       > No use el elemento **WebTemplate** en el manifiesto de complemento para designar a alguna de las configuraciones de definición de sitio de SharePoint integradas como el tipo de sitio del sitio web de complemento. No se admite el uso de ninguna de las configuraciones de definición de sitio integradas, salvo **APP#0**, para los sitios web de complemento. 
 
     Para más información sobre las configuraciones de definición de sitio y sobre las plantillas web, consulte  [Trabajar con plantillas y definiciones](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).

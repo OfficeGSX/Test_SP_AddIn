@@ -21,7 +21,7 @@ Napa es una herramienta que puede usar para crear Complementos de SharePoint hos
     
 
 
-> [!NOTA]
+> **NOTA**
 > No se admite la instalación de Napa en una implementación local de SharePoint. 
   
     
@@ -34,7 +34,7 @@ Con Napa, puede crear sus Complementos de SharePoint dentro del explorador en lu
     
 
 Con este artículo, aprenderá a crear un Complemento de SharePoint simple hospedado en SharePoint usando Napa. El complemento que cree incluirá controles y código para administrar listas y elementos de lista.
-> [!NOTA]
+> **NOTA**
 > Con Napa solo puede crear Complementos de SharePoint hospedados en SharePoint, no hospedadas en proveedor. Para obtener más información sobre las diferencias, consulte  [Complementos de SharePoint](sharepoint-add-ins.md). > No puede usar la semántica para actualización de complementos de SharePoint, que se describe en  [Actualizar componentes de web de complemento en SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), en Napa. Por lo tanto, si necesita actualizar un complemento creado en Napa, primero tiene que exportarlo a Visual Studio. Las instrucciones para hacerlo se detallan más adelante en este artículo. > También puede crear un Complemento de SharePoint usando Visual Studio. Para obtener más información, consulte  [Empezar a crear complementos hospedados en SharePoint para SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
   
     
@@ -49,7 +49,7 @@ Si no tiene ya una suscripción a SharePoint Online que puede usar para el desar
     
     
 
-> [!NOTA]
+> **NOTA**
 >  Podría ya tener acceso a un Sitio para desarrolladores de Office 365:> **¿Es suscriptor de MSDN?** Los suscriptores de Visual Studio Ultimate y Visual Studio Premium con MSDN reciben una suscripción de desarrollador a Office 365 como ventaja adicional. [Solicítela hoy.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **¿Tiene uno de los siguientes planes de suscripción a Office 365?**> **En caso afirmativo, un administrador de la suscripción a Office 365 puede crear un Sitio para desarrolladores** usando el [centro de administración de Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para obtener más información, consulte  [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -67,7 +67,7 @@ Dos maneras de obtener un plan de Office 365.
     
   
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Cada uno de estos vínculos se abrirá en otra ventana o pestaña para tener las siguientes instrucciones a mano. 
   
     
@@ -112,7 +112,7 @@ Dos maneras de obtener un plan de Office 365.
   
 
     
-> [!NOTA]
+> **NOTA**
 > Si tiene iniciada una sesión con otra cuenta Microsoft cuando intente registrar una cuenta de desarrollador, es posible que vea este mensaje: "El id. de usuario que especificó no funcionó. Parece que no es válido. Asegúrese de especificar el id. de usuario que su organización le asignó. El id. de usuario suele ser como  *alguien@example.com*  o *alguien@example.onmicrosoft.com*  ."> Si ve este mensaje, cierre la sesión de la cuenta Microsoft que estaba usando y vuelva a intentarlo. Si sigue viendo el mensaje, borre la memoria caché del explorador o cambie a **Exploración de InPrivate** y rellene el formulario.
   
     
@@ -279,7 +279,7 @@ Con este proceso, agregará código JavaScript para que los usuarios puedan crea
   
 2. En el archivo **App.js**, agregue las variables  `web`,  `lists` y `listItemcollection` a las dos variables predeterminadas y cambie el código de la función `$(document).ready()` por el siguiente ejemplo.
     
-    > [!NOTA]
+    > **NOTA**
       > En el código aparecerán subrayados ondulados de error que desaparecerán en pasos posteriores. 
 
   ```
@@ -533,7 +533,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > Si los elementos de la lista no se muestran cuando ejecuta el complemento, asegúrese de que la instrucción  `displayLists();` está situada después del código anterior.
 
     En el paso siguiente, agregará funciones JavaScript para las nuevas definiciones y una función de soporte ( `getItems()`). En esta tabla se describe lo que hacen las funciones principales.

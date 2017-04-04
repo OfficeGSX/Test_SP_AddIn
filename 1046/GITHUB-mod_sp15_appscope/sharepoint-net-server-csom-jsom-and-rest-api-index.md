@@ -93,7 +93,7 @@ A tabela 1 lista o núcleo mais frequentemente usado, APIs, que são na maioria 
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP. Objeto WebTemplateCollection (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Antes de usar um ponto de extremidade do REST URI mostrado na tabela, substitua a abreviação  `…` o caminho para seu site SharePoint, por exemplo `http://<site collection>/<site>/_api/web/lists`.
   
     

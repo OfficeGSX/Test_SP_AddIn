@@ -46,7 +46,7 @@ Tabelle 1 enthält eine Liste einiger Artikel, die zum Verständnis der für die
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) und [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |Lernen Sie die grundlegenden Ideen hinter digitalen Zertifikaten kennen.  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Besonders vertrauenswürdige SharePoint-Add-Ins können nur in lokalen SharePoint-Installationen installiert werden, nicht in Microsoft SharePoint Online. Sie sind vorrangig zur Verwendung in einer lokalen Installation statt in einer cloudbasierten Webanwendung gedacht. In diesem Artikel wird die Veröffentlichung des Add-Ins in einem solchen Szenario beschrieben. Zudem bezieht sich 'Kunde' in diesem Artikel auf das Unternehmen, das die SharePoint-Add-In installiert und die Remotekomponenten des Add-Ins hostet. 
   
     
@@ -230,7 +230,7 @@ Das nächste Verfahren gilt für IIS-Manager 7 und 8.
   
 4. Kopieren Sie die Seriennummer  *ohne Leerzeichen*  in eine Textdatei, und übergeben Sie diese an den Entwickler der SharePoint-Add-In.
     
-    > [!TIPP]
+    > **TIPP**
       > In einigen Blogbeiträgen von Entwicklern und Forumfragen wird berichtet, dass beim direkten Kopieren der Seriennummer in die Zwischenablage eine Zeichenfolge mit ausgeblendeten Zeichen erstellt wird, in der die Seriennummer vom Code in der SharePoint-Add-In nicht erkannt wird. Geben Sie daher die Nummer lieber manuell ein, statt sie zu kopieren. 
 Als Nächstes erstellen Sie eine CER-Version des Zertifikats. Diese enthält den öffentlichen Schlüssel des Remotewebservers und wird von SharePoint zum Entschlüsseln der Anforderungen von der Remotewebanwendung und zum Überprüfen der Zugriffstoken in diesen Anforderungen verwendet. Sie wird auf dem Remotewebserver erstellt und anschließend in die SharePoint-Farm verschoben.
   
@@ -314,7 +314,7 @@ Mit dem folgenden Verfahren wird das Zertifikat als vertrauenswürdiger Tokenaus
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Registrierung des Zertifikats als Tokenaussteller ist nicht sofort wirksam, das Add-In ist jedoch erst dann funktionsfähig. Es dauert bis zu 24 Stunden, bis alle SharePoint-Server den neuen Aussteller erkennen. Wenn Sie iisreset auf allen SharePoint-Servern ausführen können, ohne SharePoint-Benutzer zu stören, wird der Aussteller sofort erkannt. 
   
     
@@ -325,7 +325,7 @@ Mit dem folgenden Verfahren wird das Zertifikat als vertrauenswürdiger Tokenaus
 <a name="WebConfig"> </a>
 
 
-> [!TIPP]
+> **TIPP**
 > Ein Codebeispiel mit einer geänderten Datei "web.config" finden Sie unter  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore). 
   
     
@@ -351,7 +351,7 @@ Bearbeiten Sie die Datei "web.config" so, dass sie die neuen Werte für die folg
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Möglicherweise wurden von den Office-Entwicklertools für Visual Studio Add-In-Einstellungsschlüssel für **ClientSigningCertificatePath** und **ClientSigningCertificatePassword** hinzugefügt. Diese werden in einem Produktions-Add-In nicht verwendet und sollten gelöscht werden.
   
     
@@ -383,7 +383,7 @@ Die von den Office-Entwicklertools für Visual Studio generierte Datei "TokenHel
     
     
 
-> [!TIPP]
+> **TIPP**
 > Ein Codebeispiel mit einer geänderten Datei "tokenhelper.cs" finden Sie unter  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore). 
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!TIPP]
+> **TIPP**
 > Microsoft aktualisiert Visual Studio und Office-Entwicklertools für Visual Studio wesentlich häufiger als in der Vergangenheit, und die Dokumentation kann nicht immer sofort entsprechend aktualisiert werden. Dieser Abschnitt wurde mit der Visual Studio-Version vom Oktober 2013 und der darin enthaltenen Version der Office-Entwicklertools für Visual Studio verfasst. Wenn Sie eine frühere oder spätere Version von Visual Studio oder den Tools verwenden, müssen Sie möglicherweise die Visual Studio-Hilfe und Blogbeiträge hinzuziehen, um die entsprechenden Methoden zum Ausführen der Schritte in diesen Verfahren zu finden. 
   
     

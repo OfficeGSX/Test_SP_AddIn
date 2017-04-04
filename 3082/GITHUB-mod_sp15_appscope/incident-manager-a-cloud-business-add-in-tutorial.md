@@ -18,7 +18,7 @@ Para hospedar el complemento, necesitará un sitio para desarrolladores de Share
     
     
 
-> [!NOTA]
+> **NOTA**
 > También puede hospedar un complemento empresarial de nube en un sitio de SharePoint de 2013. 
   
     
@@ -677,7 +677,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
   
 12. En la página **Contenidos del sitio > Sus complementos**, elija el mosaico **Aparatos de Contoso**.
     
-    > [!NOTA]
+    > **NOTA**
       > Es posible que necesite ir a la segunda página de complementos para encontrar el mosaico **Aparatos de Contoso**. 
 13. En el cuadro de diálogo **Agregar lista personalizada**, elija el cuadro de texto **Nombre** y escribaAparatos de Contoso y, a continuación, elija el botón **Crear**.
     
@@ -732,7 +732,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
     Las entidades se agregan a un nuevo nodo **Datos de desarrollador** dentro del nodo **Orígenes de datos** en **Explorador de soluciones**, y la entidad **ContosoApparatus** se abre en el diseñador de entidades.
     
     
-    > [!NOTA]
+    > **NOTA**
       > Posiblemente haya observado que también se agregó una entidad **UserInformationLists**. SharePoint usa esta lista para administrar los campos **CreatedBy** y **ModifiedBy** para listas.
 5. En la ventana **Propiedades**, elija la propiedad **Nombre para mostrar** y cámbiela aAparatos.
     
@@ -1097,7 +1097,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
     
     El archivo se agrega a la pestaña **Documentos**.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > Si elige un documento de Office, puede verlo en el complemento. 
 13. Elija el botón Agregar documento y, en el cuadro de diálogo **Crear un nuevo archivo**, elija **Documento de Word**.
     
@@ -1116,7 +1116,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
     Se utilizará como nombre de archivo para el documento.
     
     
-    > [!NOTA]
+    > **NOTA**
       > Si no escribe un nombre de archivo, se guardará con el nombre predeterminado **Document.docx**. Una vez guardado, solo puede cambiarse el nombre del archivo accediendo a él en la biblioteca de documentos de SharePoint. 
 15. Elija el botón Atrás de su explorador para volver al complemento. El documento **Informe de incidente** debe aparecer en la pestaña **documentos**.
     

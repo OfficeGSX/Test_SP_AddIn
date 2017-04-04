@@ -8,7 +8,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 
 # Create a cloud business add-in that uses the SAP Gateway
  Learn how to build the LightSwitch SharePoint provider-hosted add-in to access SAP data by means of SAP Gateway for Microsoft.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -42,7 +42,7 @@ The following are prerequisites to the procedures in this article:
   
 - **An organizational account in Microsoft Azure.** See [Create an organizational user account in Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
     
-    > [!NOTE]
+    > **NOTE**
       > Log in to your Office 365 account (login.microsoftonline.com) to change the temporary password after the account is created. 
 - **An SAP OData endpoint** with sample data in it. See the documentation for [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -68,7 +68,7 @@ In the example in this article, the SellerDashboard add-in manipulates automobil
     
     
 
-> [!TIP]
+> **TIP**
 > For a video demonstration of this add-in, watch the  [Technical Webinar - SAP Gateway for Microsoft &amp; Microsoft Azure Development Model](http://go.microsoft.com/fwlink/?LinkId=517378) video on BrightTalk. The demo of the app's functionality starts at 48:00 minutes on the timeline.
   
     
@@ -435,7 +435,7 @@ public interface IInventoryItem
     
     Most of the properties have the same type as the properties in the SAP database schema, except for StockNo, whose type has been changed from **int** to **string**. This is because StockNo is used as a way to define the relationship between the SAP data and SharePoint picture library.
     
-    > [!TIP]
+    > **TIP**
       > StockNo must have the type **string** because the value stored in the SharePoint picture library is **Text**. These two types must match in order to accomplish the data mashup.
 
     The implementation of the two interfaces is in CarInventoryModel/InventoryItem.cs and CarInventoryModel/InventoryCollection.cs.
@@ -458,7 +458,7 @@ The picture library in the SharePoint host site is named ContosoMotorsPictureLib
     
     
 
-> [!TIP]
+> **TIP**
 > The column names are case sensitive. 
   
     
@@ -824,7 +824,7 @@ Complete the steps in this section to deploy the add-in. Before you deploy this 
   
 2. In the left menu, click **Websites**.
     
-    > [!NOTE]
+    > **NOTE**
       > You'll use this web site to host the SharePoint provider-hosted add-in for the SellerDashboard. 
 3. In the command bar at the bottom of the page, click **New**.
     
@@ -893,7 +893,7 @@ The steps in this section describe how to register the sample add-in from the Az
   
 3. On the active directory page, click the directory that was configured for SAP Gateway for Microsoft.
     
-    > [!TIP]
+    > **TIP**
       >  If you're not sure which one was used, ask your SAP Gateway for Microsoft administrator. Hint: it's the directory that contains the users and groups for SAP Gateway for Microsoft.
 4. On the top navigation bar, choose **APPLICATIONS**.
     
@@ -922,7 +922,7 @@ The steps in this section describe how to register the sample add-in from the Az
     
   
 
-> [!NOTE]
+> **NOTE**
 > You must register the add-in with Azure AD twice: Once for debugging purposes, and then again to deploy it for production, as described in step 10. > To register the add-in for debugging purposes, use the **SIGN-ON URL** and **APP ID URI** with the debugging URL of the SellerDashboard.Server project so that you can run the Visual Studio debugger (F5). This URL will be of the form https://localhost. *nnnn*  , where *nnnn*  is a port number. You can find this URL in the Properties pane in Visual Studio.> Then, when you are ready to deploy for production, edit the registration to use the correct production URL. 
   
     

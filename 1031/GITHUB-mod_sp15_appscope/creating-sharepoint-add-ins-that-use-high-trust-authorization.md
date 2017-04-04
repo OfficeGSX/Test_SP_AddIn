@@ -51,7 +51,7 @@ Ein besonders vertrauenswürdiges Add-In ist eine vom Anbieter gehostete SharePo
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 >  In diesem Thema erfahren Sie mehr über das besonders vertrauenswürdige Autorisierungssystem für SharePoint-Add-Ins. Praktische Informationen zur Erstellung und Bereitstellung besonders vertrauenswürdiger Add-Ins finden Sie in den folgenden Themen:>  [Erstellen besonders vertrauenswürdiger Add-Ins für SharePoint 2013](create-high-trust-sharepoint-add-ins.md)>  [Packen und Veröffentlichen besonders vertrauenswürdiger Add-Ins für SharePoint](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -62,7 +62,7 @@ In SharePoint 2013 liefert der Sicherheitstokendienst Zugriffstoken für Server-
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Der Sicherheitstokendienst ist nicht für die Benutzerauthentifizierung vorgesehen. Daher wird der Sicherheitstokendienst weder im Abschnitt **Authentifizierungsanbieter** der Zentraladministration noch in der Personenauswahl in SharePoint 2013 auf der Benutzeranmeldeseite angezeigt.
   
     
@@ -202,7 +202,7 @@ Es folgt ein Beispiel für einen **appSettings**-Abschnitt für eine besonders v
 ```
 
 
-> [!SICHERHEITSHINWEIS]
+> **SICHERHEITSHINWEIS**
 > Im vorherigen Beispiel wird davon ausgegangen, dass das Zertifikat im Dateisystem gespeichert ist. Dies ist akzeptabel für Entwicklung und Debuggen. In einer besonders vertrauenswürdigen SharePoint-Add-In für die Produktion wird das Zertifikat in der Regel im Windows-Zertifikatspeicher gespeichert, und die Schlüssel **ClientSigningCertificatePath** und **ClientSigningCertificatePassword** werden in der Regel durch einen **ClientSigningCertificateSerialNumber**-Schlüssel ersetzt. 
   
     

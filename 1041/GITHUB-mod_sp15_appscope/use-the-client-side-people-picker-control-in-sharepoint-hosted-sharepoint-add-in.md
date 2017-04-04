@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # SharePoint 用の SharePoint ホスト型アドインでクライアント側ユーザー選択ウィンドウ コントロールを使用する
 SharePoint ホスト型 SharePoint アドインでクライアント側の [ユーザー選択] コントロールを使用する方法について説明します。
-> [!重要]
+> **重要**
 > このトピックは、SharePoint ホスト型 SharePoint アドイン の作成方法の知識があることを前提としています。作成方法の学習は、 [プロバイダー ホスト型 SharePoint アドインの作成を始める](get-started-creating-provider-hosted-sharepoint-add-ins.md) から開始してください。
   
     
@@ -43,7 +43,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
     
   
 
-> [!メモ]
+> **メモ**
 > 選択ウィンドウおよびその機能は、 **clientforms.js**、 **clientpeoplepicker.js**、および **autofill.js** スクリプト ファイルで定義されます。これらのファイルは、サーバー上の %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS フォルダーにあります。
   
     
@@ -58,7 +58,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
     
     
 
-> [!メモ]
+> **メモ**
 > 「 [Office 365 で SharePoint アドインの開発環境をセットアップする](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md)」にアクセスして、開発者向けサイトにサインアップする方法、および Napaの使用を開始する方法を確認します。 
   
     
@@ -79,7 +79,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
     
   
 
-> [!メモ]
+> **メモ**
 > ニーズに合った開発環境をセットアップする方法については、「 [Office 用アプリおよび SharePoint 用アプリの作成を開始する](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx)」を参照してください。 
   
     
@@ -171,7 +171,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
 ```
 
 
-> [!メモ]
+> **メモ**
 > ご使用の環境によっては、これらの依存関係すべてを明示的に参照する必要がない場合もあります。 
   
     

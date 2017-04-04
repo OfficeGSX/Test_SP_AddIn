@@ -116,7 +116,7 @@ switch (properties.EventType)
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > **AppInstalled**、 **AppUpdated**及 **AppInstalling**事件，如果您讓這些處理常式，每個取得自己註冊增益集資訊清單中的 URL。因此您 *可以*  讓不同端點這些;但本文 (和Office Developer Tools for Visual Studio) 會假設其確實相同端點;這就是為什麼需要決定呼叫它的事件程式碼。
 8. 所述 [增益集事件處理常式中包含回復邏輯和 「 已完成 」 的邏輯](handle-events-in-sharepoint-add-ins.md#Rollback)，如果發生任何錯誤安裝邏輯中，您幾乎都會想增益集取消安裝，並想要回復它已完成安裝 SharePoint 與您想要回復您處理常式已完成。新增下列程式碼內 **case** AppInstalled 事件是一種方式，來達成這些目標。
     
@@ -138,7 +138,7 @@ case SPRemoteEventType.AppInstalled:
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 移動需要超過 30 秒至本身的增益集的安裝程式碼。 您可以將其新增至執行第一次的"第一次執行"邏輯增益集的執行。增益集可顯示訊息的某個項目 like"我們 (英文) 事項備妥可供您。 」或者，增益集可以提示使用者執行初始化程式碼。> 如果"首先執行"邏輯不是合適的增益集、 另一個作法是讓您啟動遠端非同步程序的事件處理常式，然後立即傳回 **Status** [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 物件設定為 **Continue**。這項策略的缺點是如果遠端程序失敗，具有因而告訴您將回復增益集安裝的 SharePoint。
 9.  [新增在事件處理常式架構策略](handle-events-in-sharepoint-add-ins.md#Strategies)所述，處理常式委派策略是慣用，雖然可能無法在每個案例中。在繼續範例中，我們為您示範如何實作的處理常式委派策略時將清單新增至主機網頁。(如需如何建立在未使用的處理常式委派策略類似 AppInstalled 事件處理常式的資訊，請參閱範例 [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents))。
     
@@ -268,7 +268,7 @@ using (condScope.StartScope())
   ```
 
 
-    > [!秘訣]
+    > **秘訣**
       > **疑難排解:**若要測試是否 **StartCatch**區塊輸入時應該是您需要例外狀況 runtime SharePoint 伺服器上的方式。使用 **throw**或除以零將無法運作因為它們造成 *用戶端*  例外日期之前的用戶端執行階段可以即使安裝程式碼將彙整及 (使用 **ExecuteQuery**方法) 傳送至伺服器。而是將下列幾行新增至 **StartTry**區塊。用戶端執行階段接受，但它會使伺服器端的例外狀況，這是您想要。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
   
     
@@ -344,10 +344,10 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
   ```
 
 
-    > [!秘訣]
+    > **秘訣**
       > **偵錯:**無論您使用處理常式委派策略，當您逐步執行程式碼與偵錯工具，請記住在您的處理常式會傳回取消狀態任何情況下，SharePoint 將要呼叫您的處理常式一次，最多三個更多時間。所以偵錯工具會循環程式碼最多四倍。
 
-    > [!秘訣]
+    > **秘訣**
       > **程式碼架構：**由於您可以使用宣告式標記增益集在 web 上安裝元件外您處理常式，通常不會想要使用任何您處理常式具有可互動的增益集 web 30 秒。但如果您執行動作，請記住您的程式碼的增益集由 web 需要個別 [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) 物件。這表示增益集網頁伺服器和主機網頁的不同元件剛儘 SQL Server 資料庫已與這些項目的不同。讓增益集 web 通話處於 AppInstalled **case**封鎖 **try**封鎖的方法就像延續範例將 TryCreateList 方法。不過，您的處理常式會執行 *不*  需要回復增益集在 web 上採取的動作。如果遇到錯誤，它只需要來取消事件，因為 SharePoint 會刪除整個增益集網頁如果取消事件。
 
 ## 建立增益集 uninstalling 事件接收器

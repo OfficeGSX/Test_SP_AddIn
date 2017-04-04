@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013
 In diesem Artikel erfahren Sie, wie Sie Code zum Ausführen grundlegender Vorgänge unter Verwendung des JavaScript-Clientobjektmodells in SharePoint 2013 schreiben.
-> [!HINWEIS]
+> **HINWEIS**
 > Eine Beispiel-SharePoint-Add-In mit der Komplexität von „Hello World", das die JavaScript-Bibliothek verwendet, finden Sie unter  [Verwenden von SharePoint-JavaScript-APIs zum Arbeiten mit SharePoint-Daten](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md). 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Beim Versuch, auf andere Eigenschaften zuzugreifen, wird eine Ausnahme ausgelöst, weil keine anderen Eigenschaften verfügbar sind. 
   
     
@@ -788,7 +788,7 @@ Sie können Dateien mithilfe des JavaScript-Objektmodells anpassen. In den folge
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Sie können nur Dateien mit einer Größe von bis zu 1,5 MB verwenden, wenn Sie das JavaScript-Objektmodell nutzen. Um größere Dateien hochzuladen, müssen Sie REST (Representational State Transfer) nutzen. Weitere Informationen finden Sie unter  [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles). 
   
     
@@ -1051,7 +1051,7 @@ Vier Eigenschaften von **ListItem**-Objekten sind standardmäßig nicht verfügb
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie mit LINQ das Clientobjektmodell abfragen, verwenden Sie  [LINQ to Objects](http://msdn.microsoft.com/de-de/library/bb397919.aspx), nicht den  [LINQ to SharePoint-Anbieter](http://msdn.microsoft.com/de-de/library/ee535491.aspx), der nur in Code zum Abfragen des Serverobjektmodells verwendet werden kann. 
   
     

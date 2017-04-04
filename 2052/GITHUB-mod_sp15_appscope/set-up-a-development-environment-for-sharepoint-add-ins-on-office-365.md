@@ -49,7 +49,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
 <a name="o365_signup"> </a>
 
 
-> [!注释]
+> **注释**
 >  您可能已经拥有 Office 365 开发人员网站的访问权限：> **已经是 MSDN 订阅者？** Visual Studio Enterprise with MSDN 订阅者可以享受 Office 365 开发人员订阅权益。 [立即索取您的权益](https://msdn.microsoft.com/subscriptions/manage/default.aspx)。 > **您是否具有下列 Office 365 订阅计划之一？**> **如果有的话，Office 365 订阅的管理员可以创建一个 开发人员网站** ，方法是使用 [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx)。有关详细信息，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 
   
     
@@ -70,7 +70,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
     
   
 
-> [!提示]
+> **提示**
 > 为了方便您使用以下说明，请在另一个窗口或选项卡中打开这些链接。 
   
     
@@ -115,7 +115,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
   
 
     
-> [!注释]
+> **注释**
 > 当您尝试登录开发人员帐户时，如果您已经登录其他 Microsoft 帐户，则有可能收到这样的消息："对不起，您输入的用户 ID 无法使用。它似乎是无效的。请务必输入您的组织分配的用户 ID。通常，您的用户 ID 类似于  *someone@example.com*  或 *someone@example.onmicrosoft.com*  。"> 如果您看到这种消息，请注销正在使用的 Microsoft 帐户并重试。如果仍然收到这种消息，请清除浏览器缓存或切换到"InPrivate 浏览"，然后填写表单。 
   
     

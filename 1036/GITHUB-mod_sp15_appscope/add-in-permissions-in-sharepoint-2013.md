@@ -64,7 +64,7 @@ Un Complément SharePoint utilise les demandes d'autorisation pour spécifier le
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les étendues décrites dans cette section s'appliquent au contenu de liste et au contenu de bibliothèque uniquement. Pour des informations sur les étendues d'autres fonctionnalités, voir la section  [Comprendre les types d'autorisations de complément et d'étendues d'autorisation](#Perm_types) dans cet article.
   
     
@@ -75,7 +75,7 @@ Les étendues de demande d'autorisation indiquent l'emplacement dans la hiérarc
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Un Complément SharePoint dispose de sa propre identité et a un principal de sécurité, appelé principal de complément. À l'instar des utilisateurs et des groupes, un principal de complément dispose de certains droits et autorisations. Le principal de complément dispose de droits de contrôle complets pour le site web de complément de sorte qu'il a uniquement besoin de demander des autorisations à des ressources SharePoint dans le site web hôte ou d'autres emplacements en dehors du site web de complément. Pour plus d'informations sur le site web de complément, voir  [Aspects importants du contexte de développement et de l'architecture des compléments pour SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md) et [Héberger des sites web, des sites web de complément et des composants SharePoint dans SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md). 
   
     
@@ -126,14 +126,14 @@ Les autorisations indiquent les activités qu'un complément est autorisé à ef
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur ce qui est inclus dans les droits Lecture, Écriture, Gestion et Contrôle total, voir  [Planifier la gestion des autorisations de complément](http://technet.microsoft.com/fr-fr/library/jj219576%28office.15%29.aspx). 
   
     
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Ces droits correspondent aux niveaux d'autorisation des utilisateurs par défaut de SharePoint : Lecteur, Collaborateur, Concepteur et Contrôle total. Pour plus d'informations sur les niveaux d'autorisation des utilisateurs, voir  [Autorisations utilisateur et niveaux d'autorisation](http://technet.microsoft.com/fr-fr/library/cc288074.aspx). > Les noms des droits de compléments ne correspondent pas aux noms des droits des rôles d'utilisateurs SharePoint, ceci afin d'éviter toute confusion entre les droits des rôles d'utilisateurs et les droits de compléments. Étant donné que la personnalisation des autorisations associées à des rôles d'utilisateurs SharePoint n'affecte pas les niveaux de demande d'autorisation de complément, les noms des droits de compléments ne correspondent pas aux rôles d'utilisateurs SharePoint correspondants, à l'exception de Contrôle total, qui ne peut pas être personnalisé par le biais de l'interface utilisateur de gestion des autorisations. 
   
     
@@ -154,7 +154,7 @@ En outre :
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les applications de l'Office Store présentent des restrictions par rapport aux types de droits pouvant être demandés par un complément. Pour plus d'informations, voir la section  [Comprendre les types d'autorisations de complément et d'étendues d'autorisation](#Perm_types) de cet article.
   
     
@@ -196,7 +196,7 @@ Le Tableau 2 illustre l'étendue de demande d'autorisation pour le contenu de li
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les URI utilisées dans le Tableau 2 sont des valeurs littérales. 
   
     
@@ -285,7 +285,7 @@ L'étendue de demande d'autorisation pour les autres fonctionnalités SharePoint
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les URI utilisées dans les tableaux sont des valeurs littérales. 
   
     
@@ -304,7 +304,7 @@ Le Tableau 3 illustre l'étendue de demande d'autorisation pour Business Connect
 |http://sharepoint/bcs/connection  <br/> |Lecture  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur l'étendue de demande d'autorisation de complément BCS, voir  [Business Connectivity Services dans SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx). 
   
     
@@ -327,7 +327,7 @@ Le Tableau 4 illustre l'étendue de demande d'autorisation pour l'application de
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur l'étendue de demande d'autorisation de complément de recherche, voir  [Recherche dans SharePoint 2013](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx). 
   
     
@@ -342,7 +342,7 @@ Le Tableau 5 illustre l'étendue de demande d'autorisation pour Project Server 2
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Un complément qui utilise les fonctionnalités et les services de Project Server 2013 doit être testé dans un environnement disposant des fonctionnalités et services Project Server requis. L'assembly du fournisseur d'autorisations Project Server 2013 connaissant l'étendue d'autorisations Project Server 2013 n'est pas installé par défaut avec SharePoint Server. Pour plus d'informations, voir la documentation développeur de Project Server 2013. 
   
     
@@ -381,7 +381,7 @@ Le Tableau 6 illustre l'étendue de demande d'autorisation pour les fonctionnali
 |http://sharepoint/social/microfeed  <br/> |Lecture, Écriture, Gestion, Contrôle total  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur l'étendue de la demande d'autorisation de complément pour l'accès aux fonctionnalités sociales, consultez la rubrique relative aux  [demandes d'autorisation de complément concernant les fonctionnalités sociales](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms). 
   
     
@@ -404,7 +404,7 @@ Le Tableau 7 illustre l'étendue de demande d'autorisation pour l'application de
 |http://sharepoint/taxonomy  <br/> |Lecture, Écriture  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur l'étendue de demande d'autorisation de complément de taxonomie, voir  [Ajout de fonctionnalités SharePoint 2013](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx). 
   
     
@@ -438,7 +438,7 @@ La propriété **BaseTemplateId** est un élément enfant, et non un attribut de
 ||||
 |:-----|:-----|:-----|
 |**URI d'étendue** <br/> |**Propriété** <br/> |**Type** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entier  <br/> > [!REMARQUE]> Pour plus d'informations sur **BaseTemplateId** et la valeur d'entier correspondante pour le modèle de base de liste, voir l'attribut **Type** de l' [List, élément (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entier  <br/> > **REMARQUE**> Pour plus d'informations sur **BaseTemplateId** et la valeur d'entier correspondante pour le modèle de base de liste, voir l'attribut **Type** de l' [List, élément (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
    
 
 ## Gestion et résolution des problèmes relatifs aux autorisations de complément

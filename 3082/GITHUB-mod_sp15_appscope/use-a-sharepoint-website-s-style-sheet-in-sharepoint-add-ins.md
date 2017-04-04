@@ -13,7 +13,7 @@ Puede hacer referencia a la hoja de estilos de un sitio web de SharePoint en Com
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si las páginas web usan el control de cromo o la página maestra del complemento, los estilos ya están disponibles para su uso y no tendrá que hacer referencia a la hoja de estilos manualmente con el procedimiento de este artículo. 
   
     
@@ -250,7 +250,7 @@ En la figura 1 se muestra una página web de SharePoint que usa la hoja de estil
   
 2. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando presiona F5, Visual Studio compila la solución, implementa el complemento y abre la página de permisos para el complemento. 
 3. Elija el botón **Confiar**.
     

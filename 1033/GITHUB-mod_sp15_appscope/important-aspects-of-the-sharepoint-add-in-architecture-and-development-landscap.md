@@ -7,7 +7,7 @@ ms.assetid: ae96572b-8f06-4fd3-854f-fc312f7f2d88
 
 # Important aspects of the SharePoint Add-in architecture and development landscape
 Learn about aspects of the architecture of SharePoint Add-ins and the model for SharePoint Add-ins, including the add-in hosting options, user interface options, deployment system, security system, and lifecycle. This article supplements the information in the article  [SharePoint Add-ins](sharepoint-add-ins.md).
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -57,7 +57,7 @@ Another way that a SharePoint Add-in can be surfaced is through an add-in part, 
     
     
 
-> [!NOTE]
+> **NOTE**
 > You can also deploy add-in parts to the add-in web. To implement this, the markup for the Web Part would be part of a Feature inside a .wsp file in the add-in package, not in the host web Feature. 
   
     
@@ -164,7 +164,7 @@ A SharePoint Add-in can use almost any kind of structured data storage, both ins
     
   
 
-> [!TIP]
+> **TIP**
 > You will probably upgrade your SharePoint Add-in at some point. When a SharePoint Add-in includes SharePoint components on an add-in web, the upgrade process makes a complete copy of the add-in web. For this reason, very large SharePoint lists on the add-in web make the upgrade process time-consuming and processor intensive on the content database server. You should avoid putting "big data" in SharePoint lists on the add-in web. 
   
     
@@ -272,7 +272,7 @@ or
     
     
 
-> [!NOTE]
+> **NOTE**
 > The add-in installation infrastructure will automatically activate such Features on the add-in web when it is created. 
   
     

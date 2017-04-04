@@ -17,7 +17,7 @@ SharePoint 外接程序有两种基本类型  SharePoint 托管和提供程序
     
     
 
-> [!注释]
+> **注释**
 > 像移动应用程序这种设备应用程序并不是真正的"SharePoint 外接程序"，即使它可以访问 SharePoint，这还包括从 SharePoint 外部启动的 Web 应用程序。如果您想开发这些类型的应用程序，请参阅 [从移动和本机设备应用程序访问 SharePoint](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx)。 
   
     
@@ -60,7 +60,7 @@ SharePoint 外接程序有两种基本类型  SharePoint 托管和提供程序
     
   
 
-> [!提示]
+> **提示**
 > **查看** [Office 商店](https://store.office.com/appshome.aspx?productgroup=SharePoint)中的一些 SharePoint 外接程序，了解可以开发哪些应用程序。或者，打开一个 SharePoint 2013 网站并安装一些免费 SharePoint 外接程序。只要导航到"网站内容 | 添加外接程序 | SharePoint 商店"即可。 
   
     
@@ -153,7 +153,7 @@ SharePoint 承载的加载项中的 JavaScript 可以访问加载项 Web 之外�
     
     
 
-> [!注释]
+> **注释**
 > **"提供程序"是服务器或云帐户的持有者。** 它可以是拥有将安装外接程序的 SharePoint 场或 SharePoint Online 租赁的同一公司或组织。但外接程序的开发人员也可以是提供程序。通常，当为特定组织创建某个外接程序时，该组织可提供托管。但是，当为多个组织创建某个外接程序时，很可能开发人员会托管远程组件。如果 SharePoint 外接程序通过 Office 商店进行市场投放，则要求开发人员进行托管，因为开发人员没有外接程序购买者的任何联系信息。在此方案中，外接程序的各种实例都知道远程组件的 URI，因为在外接程序清单中进行了指定。
   
     
@@ -235,7 +235,7 @@ SharePoint 外接程序 **使用 SharePoint API 连接 SharePoint** 功能（搜
     
   
 
-> [!注释]
+> **注释**
 > 如果您是 SharePoint 和 Web 开发的初学者，请从 Microsoft 虚拟学院中的免费课程开始，或者阅读关于 SharePoint 2013 开发的书籍，这会对您大有帮助。 
   
     

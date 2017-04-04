@@ -7,7 +7,7 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # Nouveautés dans Outils de développement Office pour Visual Studio 2013
 Vous pouvez développer des Compléments SharePoint à l'aide des nouvelles fonctionnalités suivantes, que proposent les Outils de développement Office pour Visual Studio. 
-> [!CONSEIL]
+> **CONSEIL**
 > Installez la version la plus récente des  [outils de développement Office pour Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013). 
   
     

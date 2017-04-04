@@ -14,7 +14,7 @@ Damit die Remotekomponenten eines vom Provider gehosteten SharePoint-Add-In mit 
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Dies ist für Add-Ins, die von SharePoint gehostet werden, nicht erforderlich. 
   
     
@@ -43,7 +43,7 @@ Um das Add-In bei Azure ACS zu registrieren, geben Sie die folgenden Information
     
   
 Nachdem Sie das Add-In registriert haben, verfügt es über eine Add-In-Identität und ist ein  *Sicherheitsprinzipal*  , der alsAdd-In-Prinzipal bezeichnet wird. Wenn Sie das Add-In installieren, können SharePoint-Administratoren Informationen zum jeweiligen Add-In-Prinzipal abrufen.Wenn ein Benutzer zum ersten Mal Add-In-Berechtigungen zum Zugreifen auf SharePoint-Ressourcen gewährt (dies kann entweder während der Installation oder zur Laufzeit erfolgen, abhängig vom Design des Add-Ins), erhält SharePoint Informationen über das Add-In von Azure ACS. SharePoint speichert diese Informationen dann in der Datenbank des App-Verwaltungsdiensts in der SharePoint-Mandantschaft oder -Farm. Der geheime Clientschlüssel wird nur mit Azure ACS gespeichert. SharePoint ist das Geheimnis des Add-Ins niemals bekannt. Der Inhaltsdatenbankdienst und andere Komponenten, wie z. B. der Benutzerprofildienst, können den Anzeigenamen und andere grundlegende Informationen über das Add-In direkt vom freigegebenen App-Verwaltungsdienst abrufen. Weitere Informationen finden Sie unter  [Abrufen von Informationen zur Add-In-Registrierung und zum Add-In-Prinzipal ](register-sharepoint-add-ins-2013.md#Retrieve) in diesem Artikel.
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Artikel wird davon ausgegangen, dass Sie mit den grundlegenden Konzepten und Prinzipien des OAuth 2.0-Frameworks vertraut sind. Weitere Informationen finden Sie unter  [OAuth.net](http://oauth.net/) und [Web-Autorisierungsprotokoll (oauth)](http://datatracker.ietf.org/doc/active/). 
   
     
@@ -60,7 +60,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
 
 |**Registrierungsmethode**|**Details**|
 |:-----|:-----|
-|Erstellen Sie mit Visual Studio und Microsoft Office-Entwicklertools für Visual Studio eine temporäre Add-In-Identität.  <br/> |Der Office-Entwicklertools für Visual Studio-Assistent erstellt eine temporäre Registrierung für Ihr Add-In mit ACS und dem App-Verwaltungsdienst Ihrer SharePoint-Testwebsite. Wenn Sie das Add-In über Visual Studio (F5) ausführen, wird diese Identität verwendet. Die Tools fügen Auch die Client-ID und den geheimen Clientschlüssel in die Dateien „web.config" und „AppManifest.xml" ein.  <br/> Wenn Sie bereit zur Veröffentlichung Ihres Add-Ins sind, können Sie den Veröffentlichungsassistenten von Visual Studio verwenden, um das Add-In im Verkäuferdashboard zu registrieren. Wenn Sie Ihr SharePoint-Add-In nicht im Office Store vermarkten möchten, registrieren Sie es mit „AppRegNew.aspx". (Die Schritte hierzu sind weiter unten aufgeführt.)  <br/> > [!HINWEIS]> Wenn Ihr Add-In dynamisch zur Laufzeit den Zugriff auf SharePoint-Ressourcen anfordert, statt bei der Installtion des Add-Ins, können Sie Visual Studio nicht zum Erstellen von Add-In-Identitäten verwenden.           |
+|Erstellen Sie mit Visual Studio und Microsoft Office-Entwicklertools für Visual Studio eine temporäre Add-In-Identität.  <br/> |Der Office-Entwicklertools für Visual Studio-Assistent erstellt eine temporäre Registrierung für Ihr Add-In mit ACS und dem App-Verwaltungsdienst Ihrer SharePoint-Testwebsite. Wenn Sie das Add-In über Visual Studio (F5) ausführen, wird diese Identität verwendet. Die Tools fügen Auch die Client-ID und den geheimen Clientschlüssel in die Dateien „web.config" und „AppManifest.xml" ein.  <br/> Wenn Sie bereit zur Veröffentlichung Ihres Add-Ins sind, können Sie den Veröffentlichungsassistenten von Visual Studio verwenden, um das Add-In im Verkäuferdashboard zu registrieren. Wenn Sie Ihr SharePoint-Add-In nicht im Office Store vermarkten möchten, registrieren Sie es mit „AppRegNew.aspx". (Die Schritte hierzu sind weiter unten aufgeführt.)  <br/> > **HINWEIS**> Wenn Ihr Add-In dynamisch zur Laufzeit den Zugriff auf SharePoint-Ressourcen anfordert, statt bei der Installtion des Add-Ins, können Sie Visual Studio nicht zum Erstellen von Add-In-Identitäten verwenden.           |
 |Registrieren des Add-Ins über das Verkäuferdashboard  <br/> |Wenn Sie Ihr Add-In in mehr als einem SharePoint-Mandanten oder einer Farm verwenden möchten, verwenden Sie das Verkäuferdashboard zum Registrieren des Add-Ins, unabhängig davon, ob Sie es im Office Store vermarkten oder über den Add-In-Katalog zur Verfügung stellen möchten. Bei der Registrierung im Verkäuferdashboard können Sie Ihr Add-In mit einer mehrinstanzfähigen Architektur entwerfen, ohne dass Mandanten- oder Farmadministratoren es separat registrieren müssen. Wenn Sie beabsichtigen, Ihr Add-In im Office Store zu veröffentlichen, müssen Sie außerdem das Verkäuferdashboard zum Registrieren des Add-Ins verwenden. Sie müssen nicht den Store verwenden, um ein Add-In zu veröffentlichen, das beim Verkäuferdashboard registriert ist.  <br/> Weitere Informationen finden Sie unter  [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx).  <br/> |
 |Verwenden Sie die Seite „AppRegNew.aspx".  <br/> |Verwenden Sie das Formular „AppRegNew" zum Registrieren Ihres SharePoint-Add-In, wenn Sie das Add-In nur in einem Mandanten oder in einer Farm verwenden möchten. Wenn Sie zum Beispiel Add-Ins für ein einzelnes Unternehmen erstellen und sie über den Add-In-Katalog des Unternehmens veröffentlichen, können Sie das Add-In über jede AppRegNew.aspx-Seite einer beliebigen Website in einer Mandantschaft oder Farm registrieren.  <br/> Sie können ein Add-In, das über AppRegNew.aspx registriert wurde, nicht im Office Store veröffentliche. Für Add-Ins, die im Office Store veröffentlicht werden, müssen Sie über das Verkäuferdashboard eine Identität abrufen.  <br/> |
    
@@ -87,7 +87,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
   
   - **Geheimer Add-In-Schlüssel**: Der geheime Add-In-Schlüssel, der auch als geheimer Clientschlüssel bezeichnet wird, ist eine opake Zeichenkette. Er wird auf der Seite AppRegNew.aspx über die Schaltfläche **Generieren** generiert. Im Folgenden sehen Sie ein Beispiel für einen geheimen Add-In-Schlüssel: **xvVpG0AgVIJfch6ldu4dLUlcZyysmGqBRbpFDu6AfJw=**.
     
-    > [!WICHTIG]
+    > **WICHTIG**
       > Geheime Add-In-Schlüssel laufen ab. Wenn Sie das Add-In im Verkäuferdashboard registrieren, können Sie die Ablaufdauer auf bis zu 3 Jahre festlegen. Im Dashboard können Sie außerdem neue geheime Schlüssel hinzufügen, wenn sich die alten ihrem Ablaufdatum nähern. Der neue geheime Schlüssel wird in allen Instanzen des Add-Ins aktiviert. Wenn Sie das Add-In bei AppRegNew.aspx registrieren, läuft der geheime Schlüssel nach einem Jahr ab. Ausführliche Informationen finden Sie unter  [Austauschen eines ablaufenden geheimen Clientschlüssels in einem Add-In für SharePoint](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md). 
   - **Titel**: Ein benutzerfreundlicher Titel, zum BeispielContoso-Fotodruck-Add-In. Benutzer werden aufgefordert, dem Add-In die Berechtigungen zu gewähren oder zu verweigern, die das Add-In anfordert. Dieser Titel wird als Name des Add-Ins bei der Zustimmungseingabeaufforderung angezeigt. 
     
@@ -132,7 +132,7 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
     
     
 
-> [!TIPP]
+> **TIPP**
 > Wenn Sie Ihr SharePoint-Add-In mithilfe des Visual Studio-Veröffentlichungs-Assistenten veröffentlichen, werden Sie von Visual Studio während des Veröffentlichungsprozesses zur Eingabe einer Client-ID und eines geheimen Clientschlüssels aufgefordert. Diese Informationen werden für Sie jeweils an der richtigen Stelle eingefügt. 
   
     
@@ -141,7 +141,7 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
 
 1. Geben Sie im Visual Studio-Projekt in der Web.config-Datei den Add-In-ID-Wert als **ClientId**-Wert ein (der den temporären Wert ersetzt, den die Tools eingegeben haben).
     
-    > [!WICHTIG]
+    > **WICHTIG**
       > Alle Buchstaben in der Client-ID-GUID müssen kleingeschrieben sein. 
 
     Dies ist ein Beispiel.
@@ -172,7 +172,7 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
 
 3. Geben Sie im Visual Studio-Projekt in der Datei AppManifest.xml den Add-In-ID-Wert als **ClientId** *in Kleinbuchstaben*  ein.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Das Add-In-Manifest gilt nicht für Webanwendungen, bei denen die Berechtigung für den Zugriff auf SharePoint-Ressourcen spontan abgerufen wird. Diese sind eigentlich keine „SharePoint-Add-Ins". Sie werden nicht in SharePoint installiert und haben kein Add-In-Manifest. Weitere Informationen finden Sie unter  [OAuth-Ablauf mit Authentifizierungscode für SharePoint-Add-Ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md). 
 
     Das folgende Beispiel veranschaulicht die Verwendung des **ClientId**-Werts in der Datei „AppManifest.xml".

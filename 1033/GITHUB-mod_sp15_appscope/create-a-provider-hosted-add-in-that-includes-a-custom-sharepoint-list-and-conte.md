@@ -7,7 +7,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
 
 # Create a provider-hosted add-in that includes a custom SharePoint list and content type
 Create a SharePoint Add-in that combines a cloud-hosted web application with custom SharePoint-hosted list templates, list instances, and custom content types by using the Office Developer Tools for Visual Studio 2012. Learn how to interact with SharePoint 2013 add-in webs by using the REST/OData web service, and how to implement OAuth in a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -54,7 +54,7 @@ Most classic SharePoint components, such as custom content types, custom list de
     
   
 
-> [!NOTE]
+> **NOTE**
 > For guidance on how to setup a development environment that fits your needs, see  [Start building Office and SharePoint Add-ins](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx). 
   
     
@@ -300,7 +300,7 @@ Before you create your first add-in, you should have a basic understanding of wh
   
 17. There may be two **ContentType** elements in the file, one with the **Name** attribute value ofActingRole and another called **ListFieldsContentType**. Only the one called ActingRole belongs, so delete any other **ContentType** elements.
     
-    > [!NOTE]
+    > **NOTE**
       > There may not be line breaks between the **ContentType** elements, in which case it may appear at first that there is only one. Scroll to the right and check carefully for others.
 18. The **Fields** element should have two **Field** elements (which are on a single line if there is no line break between them). One should exactly duplicate the **Field** element in the **Actor** site column elements.xml and the other should exactly duplicate the **Field** element from the **CastingStatus** site column elements.xml. If there is not an exact match, including all child elements (such as the **CHOICES** and **MAPPINGS** elements), copy the **Field** element from the site column elements.xml file and paste it in place of the mismatched **Field** element in the schema.xml file.
     
@@ -384,7 +384,7 @@ Before you create your first add-in, you should have a basic understanding of wh
 
 - Develop the web application as you would any other web application for your preferred platform stack. For a Microsoft stack, you can use either the REST/OData web service or one of the client object models in SharePoint 2013. For a non-Microsoft stack, you can use the REST/OData endpoints in SharePoint 2013 to perform create/read/update/delete (CRUD) operations on data in the add-in web.
     
-    > [!NOTE]
+    > **NOTE**
       > When you add a reference to an assembly to your web application project in Visual Studio, set the **Copy Local** property of the assembly to **True**, unless you know that the assembly is already installed on the web server, or you can ensure that it is installed before you deploy your add-in. The .NET Framework is installed on Microsoft Azure Web Roles and Azure Web Sites. But the SharePoint 2013 client assemblies and the various Microsoft managed code extensions and foundations are not installed. Office Developer Tools for Visual Studio 2012 automatically adds references to some assemblies commonly used in SharePoint Add-ins and sets the **Copy Local** property.
 
     For the continuing example, you develop an ASP.NET web application. Take the following steps.
@@ -596,7 +596,7 @@ If the add-in is not working, you should consider whether a mistake in the CAML 
   
 8. Choose the **Customize "Characters in Hamlet"** link and verify on the list settings page that the only content type for the list is your custom **ActingRole** content type and that your two new site columns, **Actor/Actress** and **Casting Status** are listed in the **Columns** section. (The Title column may appear with its internal name **Title**, instead of the display name **Character** that you gave it.)
     
-    > [!NOTE]
+    > **NOTE**
       > If there is no **Content Types** section on the page, you must enable management of content types. Click the **Advanced Settings** link and on the **Advanced Settings** page, enable management of content types and click **OK**. You are returned to the previous page and there is now a list of **Content Types** section.
 9. Near the top of the page is the **Web Address** of the list. Copy this and paste it into the address bar of your browser, and then navigate to the list. Verify that the list has the sample items that you created. (The Title column may appear with its internal name **Title**, instead of the display name **Character** that you gave it.)
     

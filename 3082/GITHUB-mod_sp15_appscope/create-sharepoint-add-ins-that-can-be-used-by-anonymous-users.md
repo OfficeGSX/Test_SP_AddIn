@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # Crear complementos de SharePoint que los usuarios anónimos puedan usar
 Aprenda a crear Complementos de SharePoint que puedan usar los usuarios anónimos en sitios públicos de Microsoft SharePoint 2013.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Cuando mencionamos SharePoint 2013 *local*  en este artículo, suponemos que se ha instalado Service Pack 1 para SharePoint 2013.
   
     
@@ -77,7 +77,7 @@ Para hacer que un complemento hospedado por el proveedor esté accesible para lo
     
     
 
-> [!NOTA]
+> **NOTA**
 > Si el sitio de SharePoint es accesible a los usuarios anónimos, normalmente permite el acceso HTTP en lugar de HTTPS. Puede haber problemas de seguridad cuando se usa la directiva de solo complemento para los complementos en este escenario. Si quiere consultar información detallada y un método para corregirlos, vea  [Lo que todo desarrollador debe saber sobre los complementos de SharePoint, CSOM y los sitios de publicación anónimos](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -129,7 +129,7 @@ Si el complemento usa el modelo de objetos JavaScript (JSOM) de SharePoint, hay 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Desactivar el requisito de que los usuarios tengan el permiso **Utilizar interfaces remotas** tiene implicaciones para la privacidad de la información. Para obtener más información, vea [Lo que todo desarrollador debe saber sobre los complementos de SharePoint, CSOM y los sitios de publicación anónimos](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -162,7 +162,7 @@ Si su instalación de prueba de SharePoint es local, tiene que llevar a cabo las
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si es posible, debe instalar el Complemento de SharePoint en un sitio web  *antes*  de llevar a cabo las dos primeras tareas. Los complementos no se pueden instalar en ningún sitio web de una aplicación web de SharePoint local cuando la aplicación web se ha configurado para el acceso anónimo. Si la aplicación web ya se ha configurado para el acceso anónimo, tiene que revertir este valor temporalmente para instalar el complemento.
   
     
@@ -189,7 +189,7 @@ Si su instalación de prueba de SharePoint es local, tiene que llevar a cabo las
   
 6. (Opcional) Desactive la casilla **Requerir permiso para Utilizar interfaces remotas**. Esto permite que el código y el script que se ejecutan en el contexto de un usuario anónimo puedan hacer llamadas al modelo de objetos de cliente de SharePoint en todas las colecciones de sitios. No puede volver a habilitar el requisito en ninguna colección de sitios. Si deja la casilla activada, significa que, de forma predeterminada, los usuarios anónimos no pueden obtener acceso a los modelos de objetos de cliente, pero puede deshabilitar el requisito (y darles acceso) en determinadas colecciones de sitios.
     
-    > [!NOTA]
+    > **NOTA**
       > Al desarrollar Complementos de SharePoint para usuarios anónimos, este valor solo es importante para los complementos hospedados en SharePoint. Los Complementos de SharePoint hospedados por el proveedor que están diseñados para usuarios anónimos usan una técnica que hace que los permisos del usuario sean irrelevantes. Para más información, vea la sección  [Creación de complementos hospedados por el proveedor a los que se pueda acceder de forma anónima](#Cloud-hosted) anterior.
 7. Elija **Guardar** para cerrar el formulario.
     
@@ -199,7 +199,7 @@ Si su instalación de prueba de SharePoint es local, tiene que llevar a cabo las
   
 9. En el formulario **Restricciones de acceso anónimo**, elija la zona y asegúrese de que el botón de radio **Ninguno** está habilitado. Si la Complemento de SharePoint que está probando solo necesita derechos para los datos de SharePoint, habilite **Denegar escritura**.
     
-    > [!NOTA]
+    > **NOTA**
       > Este es otro valor que, en el contexto del desarrollo de Complementos de SharePoint para usuarios anónimos, solo sirve para los complementos hospedados en SharePoint. 
 10. Si ha creado una nueva aplicación web en el paso 2, debe crear una colección de sitios en ella.
     
@@ -224,7 +224,7 @@ Si su instalación de prueba de SharePoint es local, tiene que llevar a cabo las
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > La tarea siguiente solo se puede llevar a cabo en un sitio web público en SharePoint Online. (Para más información sobre el uso de los sitios web públicos en Microsoft SharePoint Online, vea  [Ayuda de sitio web público para Office 365](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1)). 
   
     
@@ -245,7 +245,7 @@ Si está desarrollando un complemento hospedado en SharePoint que obtiene acceso
     
     
 
-> [!NOTA]
+> **NOTA**
 > Este procedimiento no se puede llevar a cabo en una colección de sitios de SharePoint Online, de modo que los complementos hospedados por SharePoint, que están instalados en SharePoint Online y que se han diseñado para el uso de usuarios anónimos no pueden obtener acceso a las listas ni a las bibliotecas. 
   
     

@@ -7,7 +7,7 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # Office Developer Tools for Visual Studio 2013 の新機能
 Office Developer Tools for Visual Studio で使用可能な以下の新機能を使用して、SharePoint アドインを開発できます。 
-> [!ヒント]
+> **ヒント**
 > 最新バージョンの  [Office Developer Tools for Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) のダウンロード。
   
     

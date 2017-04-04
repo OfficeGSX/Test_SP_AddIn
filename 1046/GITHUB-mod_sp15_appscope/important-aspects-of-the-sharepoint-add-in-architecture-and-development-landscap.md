@@ -50,7 +50,7 @@ Outra maneira que um Suplemento do SharePoint pode ser exibida é por meio de um
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você também pode implantar o suplemento partes na Web do suplemento. Para implementar isso, a marcação para a Web Part seria parte de um recurso dentro de um arquivo. wsp no pacote do suplemento, e não nas web host recurso.
   
     
@@ -157,7 +157,7 @@ Um Suplemento do SharePoint pode usar praticamente qualquer tipo de armazenament
     
   
 
-> [!DICA]
+> **DICA**
 > Além disso, você provavelmente atualizará sua Suplemento do SharePoint em algum momento. Quando um Suplemento do SharePoint inclui os componentes do SharePoint em um suplemento de web, o processo de atualização faz uma cópia completa da web add-in. Por esse motivo, muito grandes listas do SharePoint na web suplemento tornar o processador e o processo de atualização demorada intensiva no servidor de banco de dados de conteúdo. Evite colocar "grandes dados" em listas do SharePoint na web add-in.
   
     
@@ -265,7 +265,7 @@ ou
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > A infraestrutura de instalação do suplemento ativará automaticamente esses recursos na web suplemento quando ele é criado.
   
     

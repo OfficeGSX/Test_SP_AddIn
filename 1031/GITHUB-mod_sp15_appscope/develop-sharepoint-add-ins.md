@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # Entwickeln von Add-Ins für SharePoint
 Hier finden Sie eingehende Artikel und Ressourcen, die es Ihnen erleichtern sollen, Ihre SharePoint-Add-Ins mit erweiterten Funktionen auszustatten.
-> [!HINWEIS]
+> **HINWEIS**
 > TIn diesem Artikel wird davon ausgegangen, dass Sie mit dem Artikel  [SharePoint-Add-Ins](sharepoint-add-ins.md) und den Einstiegsmaterialien, auf die dieser verweist, vertraut sind.
   
     

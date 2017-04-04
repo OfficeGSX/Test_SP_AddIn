@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # Usar el control Selector de personas del lado cliente en complementos hospedados por SharePoint
 Aprenda a usar el control Selector de personas del lado cliente en las Complementos de SharePoint hospedadas por SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > En este tema se asume que sabe cómo crear una Complemento de SharePoint hospedada en SharePoint. Para aprender a crear una, comience en  [Empezar a crear complementos hospedados en proveedor para SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -43,7 +43,7 @@ El selector tiene los componentes siguientes:
     
   
 
-> [!NOTA]
+> **NOTA**
 > El selector y sus funciones vienen definidos por los archivos de script **clientforms.js**, **clientpeoplepicker.js** y **autofill.js**, que se encuentran en la carpeta %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS en el servidor. 
   
     
@@ -58,7 +58,7 @@ En este artículo se presupone que crea las Complemento de SharePoint con Napa e
     
     
 
-> [!NOTA]
+> **NOTA**
 > Vaya a  [Configurar un entorno de desarrollo para complementos para SharePoint en Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) para descubrir cómo registrarse para obtener un sitio para desarrolladores y empezar a usar Napa.
   
     
@@ -79,7 +79,7 @@ Si no usa Napa en un sitio para desarrolladores, necesitará:
     
   
 
-> [!NOTA]
+> **NOTA**
 > En este enlace encontrará información para configurar un entorno de desarrollo que se ajuste a sus necesidades:  [Empezar a crear aplicaciones para Office y SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -171,7 +171,7 @@ En el primer ejemplo se muestra el marcado de página de las etiquetas **PlaceHo
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Dependiendo del entorno en cuestión, quizá no sea necesario especificar las referencias de todas estas dependencias. 
   
     

@@ -89,7 +89,7 @@ Im Folgenden ist der Code für dieses Skript aufgeführt. Fügen Sie ihn einfach
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Datei muss im ANSI-Format, nicht im UTF-8-Format, gespeichert werden. PowerShell gibt möglicherweise Syntaxfehler aus, wenn eine Datei in einem anderen Format als ANSI ausgeführt wird. Der Editor und der PowerShell-Editor speichern die Datei standardmäßig im ANSI-Format. Wenn Sie zum Speichern der Datei einen anderen Editor verwenden, achten Sie darauf, die Datei im ANSI-Format zu speichern. 
   
     
@@ -142,7 +142,7 @@ Im Folgenden finden Sie ein Beispiel zum Ausführen dieses Skripts.
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > Die Registrierung des Zertifikats als Tokenaussteller wird nicht sofort wirksam. Es kann bis zu 24 Stunden dauern, bis alle SharePoint-Server den neuen Tokenaussteller erkannt haben. Durch Ausführen von "iisreset" auf allen SharePoint-Servern wird der Aussteller sofort erkannt, wenn dies möglich ist, ohne die SharePoint-Benutzer zu stören. 
   
     
@@ -204,7 +204,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 ```
 
 
-> [!TIPP]
+> **TIPP**
 > Wenn das Skript einen Fehler ausgibt, nachdem die  `New-SPTrustedRootAuthority`-Zeile erfolgreich ausgeführt wurde, kann das Skript nicht erneut ausgeführt werden, bis das Objekt entfernt wurde. Verwenden Sie folgendes Cmdlet an der Stelle, an der der Wert des  `-Identity`-Parameters dem des verwendeten  `-CertName`-Parameters im Skript entspricht. >  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> Wenn der Tokenaussteller entfernt werden muss, verwenden Sie folgendes Cmdlet: >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> Wenn der  `-TokenIssuerFriendlyName`-Parameter verwendet wurde, verwenden Sie für  `-Identity` denselben Wert. Wenn der `-TokenIssuerFriendlyName`-Parameter nicht verwendet wurde, ist eine zufällige GUID Teil des Ausstellernamens. Zum Abrufen des für  `-Identity` erforderlichen Werts führen Sie folgendes Cmdlet aus. Öffnen Sie anschließend die erzeugte TokenIssuers.txt-Datei, und suchen Sie den Aussteller mit der Bezeichnung „Besonders vertrauenswürdige Add-Ins _<Base-64-Version der Aussteller-GUID>_". Verwenden Sie diesen vollständigen Namen für  `-Identity`. >  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
   
     
@@ -240,7 +240,7 @@ Im Folgenden ist ein Beispiel eines Aufrufs des Skripts dargestellt:
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > Die Registrierung des Zertifikats als Tokenaussteller wird nicht sofort wirksam. Es kann bis zu 24 Stunden dauern, bis alle SharePoint-Server den neuen Tokenaussteller erkannt haben. Durch Ausführen von "iisreset" auf allen SharePoint-Servern wird der Aussteller sofort erkannt, wenn dies möglich ist, ohne die SharePoint-Benutzer zu stören. 
   
     
@@ -301,7 +301,7 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
 ```
 
 
-> [!TIPP]
+> **TIPP**
 > Die Tipps am Ende des vorherigen Abschnitts gelten auch hier, verwenden Sie jedoch für den Parameter  `-Identity` des Cmdlets `Remove-SPTrustedSecurityTokenIssuer` die Client-ID, wenn der Parameter `-TokenIssuerFriendlyName` nicht mit HighTrustConfig-ForSingleApp.ps1. verwendet wurde.
   
     

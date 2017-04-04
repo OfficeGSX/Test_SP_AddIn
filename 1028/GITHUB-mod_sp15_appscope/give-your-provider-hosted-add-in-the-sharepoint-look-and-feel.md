@@ -114,7 +114,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 
     
-    > [!注意事項]
+    > **注意事項**
       > 如果您按一下 [並排顯示，因為Visual Studio關閉 IIS Express 工作階段停止偵錯時無法開啟起始頁面。
 
 ## 設定Visual Studio重建每個偵錯工作階段的公司資料庫
@@ -258,7 +258,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!注意事項]
+    > **注意事項**
       > 永遠不會真的呈現 EmployeeAdder.aspx、 project 中的最後一個 aspx 檔案，因此您並不會變更其使用者介面。您將了解更多有關它在這一系列更新文章。
 
     但是我們不想讓這些頁面上的 chrome 控制項。我們只需要 SharePoint CSS 庫的存取權。針對每個這四個，新增下列標記 **head**元素。

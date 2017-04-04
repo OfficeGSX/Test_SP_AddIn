@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # SharePoint アドインの開発
 SharePoint アドインで高度な機能を構築するために役立つ詳細な記事やリソースを紹介します。
-> [!メモ]
+> **メモ**
 > この記事では、「 [SharePoint アドイン](sharepoint-add-ins.md)」という記事と、その記事にリンクが記載されている入門資料にユーザーが通じていることを前提としています。 
   
     

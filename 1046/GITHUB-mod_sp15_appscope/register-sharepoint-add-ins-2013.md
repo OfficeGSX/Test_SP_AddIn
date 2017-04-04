@@ -14,7 +14,7 @@ Para os componentes remotos de um provedor hospedado Suplemento do SharePoint in
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Isso não é necessário para hospedado no SharePoint suplementos.
   
     
@@ -43,7 +43,7 @@ Para registrar seu suplemento com Azure ACS, você deve especificar as seguintes
     
   
 Após registrar o suplemento, ela tem uma identidade de suplemento e é uma  *entidade de segurança*  , conhecido como umsuplemento principal. Quando você instala o add-in, administradores SharePoint podem recuperar informações sobre esse suplemento entidade específica.Quando um usuário primeiro concede um permissões add-in para acessar os recursos de SharePoint (que podem ocorrer no tempo de execução, dependendo do design do aplicativo ou de instalação), o SharePoint obtém informações sobre o suplemento de Azure ACS. SharePoint, em seguida, armazena essas informações no banco de dados serviço de gerenciamento de aplicativo do farm ou Locatário SharePoint. O segredo do cliente é armazenado somente com Azure ACS. SharePoint nunca sabe segredo do suplemento. O serviço de banco de dados de conteúdo e outros componentes, como o serviço de perfil de usuário, podem obter o nome para exibição e o serviço compartilhado de outras informações básicas sobre o suplemento diretamente a partir do gerenciamento de aplicativo. Para obter mais informações, consulte  [Recuperar informações de entidades suplemento e de registro do suplemento](register-sharepoint-add-ins-2013.md#Retrieve) neste artigo.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este artigo pressupõe que você está familiarizado com os conceitos básicos e os princípios em que o OAuth 2.0 Framework. Para obter mais informações, consulte  [OAuth.net](http://oauth.net/) e [Protocolo de autorização de Web (oauth)](http://datatracker.ietf.org/doc/active/).
   
     
@@ -60,7 +60,7 @@ Você pode registrar o suplemento em uma destas três formas, dependendo de onde
 
 |**Método de registro**|**Detalhes**|
 |:-----|:-----|
-|Use Visual Studio e Microsoft Office Developer Tools for Visual Studio para criar uma identidade de suplemento temporária. <br/> |O Assistente de Office Developer Tools for Visual Studio cria um registro temporário para seu suplemento com ACS e o serviço de gerenciamento de aplicativo do seu site de teste de SharePoint. Quando você executa o suplemento de Visual Studio (F5), essa identidade é usada. As ferramentas também inserir a ID de cliente e o segredo na Web. config e AppManifest.xml arquivos. <br/> Quando você estiver pronto para publicar seu suplemento, você pode usar o Visual Studio publicar Assistente para ir até o Painel do Vendedor registrá-lo. Se você não é marketing sua Suplemento do SharePoint no Office Store, use AppRegNew.aspx registrá-lo. (Etapas exatas estão abaixo). <br/> > [!OBSERVAçãO]> Se seu suplemento solicitar permissão para acessar os recursos de SharePoint dinamicamente em tempo de execução, em vez de na instalação do suplemento, você não pode usar Visual Studio para criar o suplemento de identidades.          |
+|Use Visual Studio e Microsoft Office Developer Tools for Visual Studio para criar uma identidade de suplemento temporária. <br/> |O Assistente de Office Developer Tools for Visual Studio cria um registro temporário para seu suplemento com ACS e o serviço de gerenciamento de aplicativo do seu site de teste de SharePoint. Quando você executa o suplemento de Visual Studio (F5), essa identidade é usada. As ferramentas também inserir a ID de cliente e o segredo na Web. config e AppManifest.xml arquivos. <br/> Quando você estiver pronto para publicar seu suplemento, você pode usar o Visual Studio publicar Assistente para ir até o Painel do Vendedor registrá-lo. Se você não é marketing sua Suplemento do SharePoint no Office Store, use AppRegNew.aspx registrá-lo. (Etapas exatas estão abaixo). <br/> > **OBSERVAçãO**> Se seu suplemento solicitar permissão para acessar os recursos de SharePoint dinamicamente em tempo de execução, em vez de na instalação do suplemento, você não pode usar Visual Studio para criar o suplemento de identidades.          |
 |Registre o suplemento por meio do Painel do Vendedor. <br/> |Se você vai usar seu suplemento em mais de um inquilino de SharePoint ou farm, use o Painel do Vendedor para registrar o suplemento, independentemente de você irá mercado-lo em tempo de Office Store ou torná-lo disponível por meio do catálogo do suplemento. Quando você registra na Painel do Vendedor, você pode criar seu suplemento com uma arquitetura de multilocatário sem exigir que os administradores de Inquilino ou farm registrá-lo separadamente. Além disso, se você pretende publicar seu suplemento no Office Store, você precisará usar o Painel do Vendedor para registrar seu suplemento. Você não precisa usar o repositório para publicar um suplemento que é registrado com o Painel do Vendedor. <br/> Para obter mais informações, consulte  [Criar ou atualizar IDs de cliente e segredos no painel do vendedor](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx). <br/> |
 |Use a página AppRegNew.aspx. <br/> |Use o formulário AppRegNew para registrar seu Suplemento do SharePoint, se você pretende usar o suplemento somente em um locatário ou farm. Por exemplo, se você estiver criando suplementos para uma única organização, e você vai distribuí-las por meio do catálogo de suplemento de organização, você pode usar a página de AppRegNew.aspx de qualquer site em um locatário ou farm para registrar o suplemento. <br/> Não será possível publicar um suplemento que é registrado com AppRegNew.aspx para o Office Store. Para suplementos que são publicados para o Office Store, você deve obter uma identidade do Painel do Vendedor. <br/> |
    
@@ -87,7 +87,7 @@ Você pode registrar o suplemento em uma destas três formas, dependendo de onde
   
   - **Suplemento segredo** - também conhecido como o segredo do cliente, uma cadeia de caracteres opaca. Ele é gerado na página AppRegNew.aspx usando o botão **Gerar**. A seguir está um exemplo de um suplemento segredo: **xvVpG0AgVIJfch6ldu4dLUlcZyysmGqBRbpFDu6AfJw =**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Suplemento segredos expiram. Se você registrar o suplemento no Painel do Vendedor, você pode definir a expiração para até três anos. No painel, você também pode adicionar novos segredos quando os antigos atingem suas datas de vencimento. O novo segredo será habilitado em todas as instâncias do add-in. Se você registrar o suplemento com AppRegNew.aspx, o segredo expira em um ano. Para obter detalhes, consulte  [Substituir um segredo cliente expirando em um SharePoint Add-in](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md).
   - **Título** - um título amigável; Por exemplo,Contoso foto impressão suplemento. Os usuários são solicitados a conceder ou negar o suplemento as permissões que está solicitando o add-in. Esse título aparece como o nome do add-in no prompt de consentimento.
     
@@ -132,7 +132,7 @@ Antes de empacotar as Suplemento do SharePoint e antes de implantar seus compone
     
     
 
-> [!DICA]
+> **DICA**
 > Se você publicar seu Suplemento do SharePoint usando o Visual Studio Assistente de publicação, Visual Studio solicitará uma ID de cliente e o segredo do cliente durante o processo de publicação e ele colocará as informações nos locais corretos para você.
   
     
@@ -141,7 +141,7 @@ Antes de empacotar as Suplemento do SharePoint e antes de implantar seus compone
 
 1. No arquivo Web. config em seu projeto Visual Studio, insira o valor de ID suplemento como o valor de **ClientId** (substituindo o valor temporário que as ferramentas inseridas).
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Todas as letras no cliente da ID do GUID devem ser minúsculas.
 
     Este é um exemplo:
@@ -172,7 +172,7 @@ Antes de empacotar as Suplemento do SharePoint e antes de implantar seus compone
 
 3. No arquivo AppManifest.xml em seu projeto Visual Studio, insira o valor de ID suplemento como o valor de **ClientId**, *com letras minúsculas*  .
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O manifesto do suplemento não se aplica a aplicativos web que a solicitação de permissão para acessar os recursos SharePoint dinamicamente. Eles não são realmente "Suplementos do SharePoint ". Eles não são instalados no SharePoint e não têm um manifesto do suplemento. Para obter mais informações, consulte  [Fluxo de OAuth do código de autenticação para o SharePoint Add-ins](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
 
     O exemplo a seguir mostra como o valor de **ClientId** é usado no arquivo AppManifest.xml.

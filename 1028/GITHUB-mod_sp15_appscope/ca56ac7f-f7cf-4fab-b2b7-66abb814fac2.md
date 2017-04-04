@@ -82,7 +82,7 @@ In this section, you create a mobile companion Windows Phone app by using the Wi
   
 3. 在 [ **新增專案**] 對話方塊中，依序展開 [ **Visual C#** ] 節點，然後按 **視窗電話 Silverlight**節點。(請確定目標.NET Framework 版本設為 **4**)。
     
-    > [!注意事項]
+    > **注意事項**
       > 安裝 SharePoint SDK 的 Windows Phone 範本只能在 C# 專案中運作。不提供Visual Basic專案的範本。
 4. 在 [ **範本**] 窗格中，選擇 [ **Windows Phone SharePoint 清單應用程式**範本，並授與專案名稱，例如SupportCenterCompanionPhoneApp。
     
@@ -128,7 +128,7 @@ In this section, you create a mobile companion Windows Phone app by using the Wi
   
 15. 選擇 [ **完成**]。Visual Studio建立專案的必要檔案，並開啟 List.xaml 檔案進行編輯。
     
-    > [!注意事項]
+    > **注意事項**
       > Windows Phone 清單型應用程式可以驗證SharePoint Online對第一次，但是可能會失敗第二次進行驗證，並在執行階段顯示伺服器錯誤。若要克服這項錯誤，啟用 cookie 快取 ( `at.CookieCachingEnabled = true;`) 之前 **Authenticator**物件傳遞至 **clientContext.Credentials**，，如下列程式碼，會出現在產生的Visual StudioListDataProvider.cs 檔案中所示。
 
   ```cs

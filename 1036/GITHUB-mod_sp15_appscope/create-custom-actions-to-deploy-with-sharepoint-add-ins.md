@@ -84,7 +84,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     
   
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Les jetons ItemURL et ItemID sont uniquement transmis lorsqu'un élément est sélectionné. Dans un Complément SharePoint de qualité production, votre code doit gérer les situations dans lesquelles aucun élément n'est sélectionné. Dans cet exemple, le code avertit l'utilisateur qu'aucun élément n'a été sélectionné. 
 
   ```HTML
@@ -192,7 +192,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Dans cet exemple, la page web distante s'ouvre dans une fenêtre lorsqu'un utilisateur sélectionne l'action personnalisée dans le menu. Les actions de menus personnalisés peuvent également ouvrir la page web distante dans une boîte de dialogue à l'aide de l'attribut **HostWebDialog**. Pour plus d'informations, voir  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization). 
   
     
@@ -269,7 +269,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Les actions personnalisées de ruban utilisent **SelectedListId** et **SelectedItemId**. **ListId** et **ItemId** fonctionnent uniquement avec les actions personnalisées d'élément de menu.
 
 ### Définir la page de démarrage du complément sur la page d'accueil du site web hôte
@@ -292,7 +292,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 2. Cliquez sur le bouton **Trust It** (Faire confiance). La page par défaut de votre site de développeur s'ouvre.
     

@@ -7,7 +7,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # Localiser les compléments pour SharePoint
 Localisez un Complément SharePoint à l'aide de fichiers de ressources, de fichiers de ressources JavaScript et d'autres techniques.
-> [!REMARQUE]
+> **REMARQUE**
 > Cette rubrique présuppose que vous connaissez la procédure de création de base de Compléments SharePoint et les fonctionnalités SharePoint, la distinction entre les sites web de complément et les sites web hôtes,  [les types de composant SharePoint qui peuvent être présents dans un complément](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps) et les concepts de base de la localisation des fichiers .resx.
   
     
@@ -35,7 +35,7 @@ En outre, tenez compte des éléments suivants :
 
 -  Les procédures décrites dans cet article présupposent que vous utilisez la version la plus récente des [outils de développement Office pour Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) ou des [outils de développement Office pour Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si votre site web SharePoint de test est une batterie de serveurs SharePoint sur site au lieu d'un site du développeur Microsoft SharePoint Online, vous devez installer les modules linguistiques pour les langues dans lesquelles vous traduisez votre Complément SharePoint. Pour plus d'informations, consultez les rubriques  [Installer ou désinstaller des modules linguistiques pour SharePoint 2013](http://technet.microsoft.com/fr-fr/library/cc262108%28v=office.15%29.aspx) et [Modules linguistiques dans SharePoint Server 2013](http://technet.microsoft.com/fr-fr/library/ff463597%28v=office.15%29.aspx) (et les liens de téléchargement dans cette rubrique).
 - Les captures d'écran et les exemples de code de cet article proviennent de l'exemple  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization). Vous pouvez télécharger cet exemple pour visualiser les résultats des procédures décrites dans cet article.
     
@@ -49,7 +49,7 @@ Un site web de complément peut contenir des types spécifiques de composants Sh
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les fichiers de ressources ne peuvent pas être partagés par plusieurs fonctionnalités de sites web de complément. Pour chaque fonctionnalité du fichier .wsp, vous devez créer des ensembles de fichiers de ressources distincts. 
   
     
@@ -69,7 +69,7 @@ Un site web de complément peut contenir des types spécifiques de composants Sh
     
     Quand il est modifié, le fichier « Langue indifférente » contient les chaînes utilisées dans la galerie **Fonctionnalité** sur tous les sites dans les langues pour lesquelles vous n'allez *pas*  fournir de version localisée des chaînes. Ainsi, la langue utilisée pour les chaînes de ce fichier doit être la langue qui sera probablement la deuxième langue employée par les utilisateurs de SharePoint. En général, l'anglais est utilisé, mais dans certains cas, l'utilisation d'une autre langue est préférable. Par exemple, le français sera peut-être, dans certaines régions, la deuxième langue la plus employée, avant l'anglais. L'exemple de cette rubrique utilise l'anglais comme langue indifférente.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Un Complément SharePoint ne peut pas être installé sur un site web dont la langue n'est pas répertoriée dans la section **Paramètres régionaux pris en charge** du manifeste de complément. N'oubliez pas que même si cet article traite de langues dans lesquelles vous n'allez *pas*  fournir de complément localisé, vous devez quand même ajouter ces langues au manifeste de complément. Consultez la procédure **Pour créer les fichiers de ressources du site web hôte** dans cet article pour en savoir plus sur les paramètres régionaux pris en charge dans le manifeste de complément.
 4. Dans la colonne **Nom** de la première ligne de l' **Éditeur de ressources**, entrez un nom descriptif pour la chaîne (ou une autre ressource). Par exemple, OrdersListInstance_Title etOrdersListInstance_Description. Ces noms de ressources localisables ne sont pas eux-mêmes localisés. Chaque ressource doit avoir son propre nom. 
     
@@ -97,7 +97,7 @@ Un site web de complément peut contenir des types spécifiques de composants Sh
   
 12. Répétez les quatre dernières étapes pour chaque langue étrangère.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Pensez à ajouter un fichier spécifique d'une langue pour la langue correspondant à votre langue indifférente. Ainsi, vous pouvez copier les lignes sans modifier les valeurs des chaînes. Dans de nombreux cas, il n'est pas nécessaire d'avoir un fichier spécifique d'une langue pour la langue utilisée dans le fichier de ressources pour la langue indifférente, notamment quand les seules ressources des fichiers sont des chaînes. Cependant, les fichiers de ressources peuvent contenir des images, des icônes, des fichiers et d'autres types de ressources. Parfois, le fichier de ressources de la langue indifférente doit utiliser une image ou une autre ressource dans  *n'importe quel*  fichier spécifique d'une langue.
 13. Pour chaque fichier, vérifiez que la propriété **Action de génération** est définie sur **Contenu**.
     
@@ -249,11 +249,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     Cette balise charge un de vos fichiers JavaScript. Elle détermine le fichier de langue à charger en lisant la ressource SharePoint nommée « language_value ». Cette ressource génère le nom d'une culture/langue selon le schéma  _LL_- _CC_ décrit précédemment. Plus précisément, elle correspond à la langue du site web de complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La ressource SharePoint « language_value » n'est jamais NULL. Ce script n'appelle jamais un fichier nommé « Resources.js ». C'est pourquoi vous n'en avez créé aucun au cours de la procédure précédente. Quand la valeur de « language_value » est une langue pour laquelle il n'existe pas de fichier .js, ce script ne charge rien. L'étape suivante explique comment les chaînes reçoivent une valeur de langue indifférente dans cette situation. 
 3. Attribuez une valeur par défaut dans la langue indifférente à chaque valeur d'attribut et d'élément localisable sur la page, puis utilisez JavaScript pour lui affecter la variable appropriée du fichier Resources. _LL_- _CC_.js. Par exemple, si la page a un titre dans un élément **h2**, donnez à cet élément un attribut **id** et insérez un élément **script** sous les éléments localisés pour affecter des chaînes localisées à la propriété **innerText** de ces derniers. Ce code de localisation ne doit être exécuté que si le fichier Resources. _LL_- _CC_.js a chargé et déclaré les variables. Par conséquent, placez-le dans un bloc conditionnel pour d'abord vérifier si l'une des variables est définie. Si ce n'est pas le cas, aucun script de ressources n'est chargé et les valeurs par défaut (indifférentes) doivent demeurer inchangées. Voici un exemple. 
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Le mot « INDIFFÉRENT » a été ajouté à la première des chaînes indifférentes. Évitez de le faire dans un complément de production. Par contre, il s'agit d'un moyen utile pendant votre test de vérifier en un clin d'œil si les chaînes de langue indifférentes sont utilisées ou si le fichier Resources. _LL_- _CC_.js pour la langue indifférente a été chargé. 
 
   ```HTML
@@ -330,7 +330,7 @@ La méthode de base pour localiser les composants du site web hôte est la même
   
 4. Répétez l'étape précédente pour chaque paramètre régional à prendre en charge avec une version localisée du complément. Un fichier Resources. _LL_- _CC_.resx supplémentaire est créé pour chaque paramètre régional.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La propriété **Action de génération** de chacun de ces fichiers a la valeur **Contenu**, et non **Ressource**.  *Ne changez pas ce paramètre.* 
 5. Ajoutez également des entrées de paramètres régionaux pour chaque paramètre régional dans lequel votre complément peut être installable, mais où la langue indifférente doit être utilisée, autrement dit pour les paramètres régionaux pour lesquels vous ne fournirez  *pas*  de version localisée du complément. *Supprimez les fichiers .resx créés pour ces paramètres régionaux.* 
     
@@ -356,7 +356,7 @@ La méthode de base pour localiser les composants du site web hôte est la même
   ```
 
 
-    > [!ATTENTION]
+    > **ATTENTION**
       > La valeur de **Title** peut *uniquement*  contenir l'appel à la ressource. Il ne peut y avoir d'autres textes, symboles ou espaces.
 2. Pour appeler des ressources localisées dans d'autres fichiers XML (par exemple, Elements.xml pour des composants de complément et des actions personnalisées), utilisez le même format que celui utilisé dans le fichier manifeste du complément.
     
@@ -406,7 +406,7 @@ Si le JavaScript de votre application web contient des valeurs de chaîne locali
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cette section aborde uniquement la localisation des chaînes. Si vous avez besoin d'une localisation plus puissante, telle que la localisation du format de date ou de devise, utilisez une bibliothèque de globalisation ou de localisation, comme le  [module complémentaire Globalize pour jQuery](https://github.com/jquery/globalize). 
   
     

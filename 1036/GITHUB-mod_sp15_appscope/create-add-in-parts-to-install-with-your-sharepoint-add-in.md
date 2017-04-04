@@ -364,7 +364,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, installe le complément et ouvre la page des autorisations pour le complément. 
 2. Sélectionnez le bouton **Approuver**.
     

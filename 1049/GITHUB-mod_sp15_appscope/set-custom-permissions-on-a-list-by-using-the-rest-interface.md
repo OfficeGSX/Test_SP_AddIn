@@ -13,7 +13,7 @@ ms.assetid: d5fcc26c-4e44-404b-aacf-e9351af8cc7d
     
 
 
-> [!Примечание]
+> **Примечание**
 > Ссылки на статьи о настройке детальных разрешений см. в разделе  [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources). 
   
     

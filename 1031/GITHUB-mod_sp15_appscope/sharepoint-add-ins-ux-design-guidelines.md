@@ -126,7 +126,7 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
 
   - Kopieren Sie die Bibliothek auf Ihre eigene Website und verweisen Sie dort auf sie.
     
-    > [!VORSICHT]
+    > **VORSICHT**
       > Wenn Sie sich für diese Alternative entscheiden, kann Ihr Add-In keine Aktualisierungen des Steuerelements nutzen 
 2. Fügen Sie das DOM-Platzhalterelement an der Position ein, an der das Steuerelement gerendert werden soll, wie in diesem Beispiel dargestellt.
     

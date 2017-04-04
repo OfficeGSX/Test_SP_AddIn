@@ -7,7 +7,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
 
 # Give your provider-hosted add-in the SharePoint look-and-feel
 Learn how to give your provider-hosted SharePoint Add-ins the look and feel of SharePoint.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -109,7 +109,7 @@ We are not going to teach you ASP.NET or T-SQL programming in this series, but y
   
 
     
-    > [!NOTE]
+    > **NOTE**
       > If you click on the tile, the start page will not open because Visual Studio closes the IIS Express session when you stop debugging. 
 
 ## Configure Visual Studio to rebuild the corporate database with each debugging session
@@ -253,7 +253,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!NOTE]
+    > **NOTE**
       > The last aspx file in the project, EmployeeAdder.aspx, is never actually rendered, so you don't change its UI. You'll learn more about it in a later article of this series. 
 
     But we don't want the chrome control on these pages. We just want access to the SharePoint CSS library. For each of these four, add the following markup to the **head** element.

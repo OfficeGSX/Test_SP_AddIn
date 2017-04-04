@@ -27,7 +27,7 @@ Quando novos conjuntos de sites são criados no aluguel, suplementos lote-instal
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Escopo de suplemento não deve ser confundido com o escopo do recurso. Escopo do recurso determina onde os elementos em um recurso estão implantados. As possibilidades incluem **Farm**, **WebApplication**, **Web**e **Site** (ou seja, o conjunto de sites). **Web** é permitida para recursos no Suplementos do SharePoint (ambos hospedam os recursos da web e recursos dentro de um. wsp em um pacote de suplemento).> Suplemento de escopo, também, não deve ser confundido com níveis de permissão do suplemento. Suplementos do SharePoint pode solicitar permissões a todos ou partes do conteúdo do SharePoint nos níveis de lista, web, conjunto de sites e locação selecionadas. Instalar um suplemento com escopo de locatário não dê a ela permissões que ele não teriam, nem cancelar a chaves cláusulas do modelo de segurança do SharePoint. Para obter mais informações sobre as permissões de suplemento, consulte  [Suplemento permissões no SharePoint 2013](add-in-permissions-in-sharepoint-2013.md).
   
     

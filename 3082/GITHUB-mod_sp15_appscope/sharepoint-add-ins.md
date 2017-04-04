@@ -17,7 +17,7 @@ Hay dos tipos básicos de Complementos de SharePoint: hospedados por SharePoint 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Una aplicación de dispositivo, como una aplicación móvil, no es realmente un "Complemento de SharePoint" incluso cuando tiene acceso a SharePoint. Lo mismo ocurre con una aplicación web que se ejecuta desde fuera de SharePoint. Si desea desarrollar alguno de estos tipos de aplicaciones, consulte  [Acceso SharePoint desde aplicaciones de dispositivo móvil y nativo](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx). 
   
     
@@ -60,7 +60,7 @@ Hay dos tipos básicos de Complementos de SharePoint: hospedados por SharePoint 
     
   
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > **Vea algunos Complementos de SharePoint en la** [Tienda Office](https://store.office.com/appshome.aspx?ui=es-ES&amp;rs=es-ES&amp;ad=ES&amp;productgroup=SharePoint) para hacerse una idea de lo que puede desarrollar. O abra un sitio web de SharePoint 2013 e instale algunos de los Complementos de SharePoint gratuitos. Simplemente navegue hasta ** Contenido del sitio | Agregar un complemento | Tienda SharePoint**.
   
     
@@ -153,7 +153,7 @@ Cualquier componente de SharePoint que puede estar en un complemento hospedado p
     
     
 
-> [!NOTA]
+> **NOTA**
 > **"Proveedor" es quien posee la cuenta en la nube o el servidor.** Puede ser la misma empresa u organización que posee la granja de SharePoint o el arrendamiento de SharePoint Online donde se tiene que instalar el complemento. Pero el desarrollador del complemento también puede ser el proveedor. Normalmente, cuando se crea un complemento para una organización, la organización proporciona el hospedaje. Sin embargo, cuando se crea un complemento para varias organizaciones, es más probable que el desarrollador hospede los componentes remotos. El hospedaje de desarrollador es obligatorio si el Complemento de SharePoint se comercializa a través de la Tienda Office, ya que el desarrollador no tiene ninguna información de contacto para los compradores del complemento. En este escenario, varias instancias del complemento conocen el URI del componente remoto ya que se especifica en el manifiesto del complemento.
   
     
@@ -235,7 +235,7 @@ Los **Complementos de SharePoint usan las API de SharePoint para conectarse e in
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si es principiante en SharePoint y desarrollo web, obtendrá un mayor beneficio si comienza con el curso gratuito de la Academia Virtual de Microsoft o si trabaja con un manual sobre el desarrollo de SharePoint 2013. 
   
     

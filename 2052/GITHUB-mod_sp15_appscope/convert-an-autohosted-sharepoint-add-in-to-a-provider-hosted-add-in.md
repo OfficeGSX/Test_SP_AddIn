@@ -283,7 +283,7 @@ ms.assetid: 6790bfdf-ae94-4115-8abd-df0087c0236f
     
 
     
-> [!注释]
+> **注释**
 >  根据针对自动托管的外接程序创建数据库的方式，可能需要做一些额外工作将其部署到 Azure。请参阅以下 MSDN 文章获取其他指南：>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ ms.assetid: 6790bfdf-ae94-4115-8abd-df0087c0236f
     
 
     
-> [!注释]
+> **注释**
 > 请参阅 Azure 文档了解将 ASP.NET Web 应用程序部署到 Azure 网站的其他选项： [如何部署 Microsoft Azure 网站](http://azure.microsoft.com/documentation/articles/web-sites-deploy)。 
   
     
@@ -583,7 +583,7 @@ ms.assetid: 6790bfdf-ae94-4115-8abd-df0087c0236f
     
 
     
-> [!重要信息]
+> **重要信息**
 > 如果现有的 ProductId 已被使用，则在安装已转换的外接程序时，SharePoint 将返回"提供的外接程序与相同版本的其他外接程序及产品 ID 不同"的错误。 
   
     

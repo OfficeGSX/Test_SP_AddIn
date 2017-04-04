@@ -98,7 +98,7 @@ In der Regel kann ein SharePoint-Add-In eine oder mehrere der Komponenten in der
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > ***** Die mit einem Sternchen (*) gekennzeichneten Komponenten werden im Abschnitt [Warnhinweise für die Bereitstellung von SharePoint-Komponenten](#SpecialCases) weiter unten in diesem Artikel ausführlicher behandelt.
   
     
@@ -202,10 +202,10 @@ Hier einige Warnhinweise und Details für die Bereitstellung bestimmter Arten vo
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Das neue  [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx)-Element für Add-In-Manifeste ist nicht dasselbe Markup wie das  [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx)-Element, das in Features eingeschlossen werden kann. Das **WebTemplate**-Element, das in Features eingeschlossen werden kann, definiert einen Websitetyp, aber das **WebTemplate**-Element für Add-In-Manifeste gibt nur an, welcher Websitetyp verwendet werden soll. Weitere Informationen zum Add-In-Manifest einer SharePoint-Add-In finden Sie unter  [Add-In-Paketstruktur](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package). 
 
-    > [!VORSICHT]
+    > **VORSICHT**
       > Verwenden Sie nicht das **WebTemplate**-Element im Add-In-Manifest, um eine der integrierten SharePoint-Websitedefinitionskonfigurationen als Websitetyp der Add-In-Website anzugeben. Mit Ausnahme von **APP#0** wird die Verwendung einer der integrierten Websitedefinitionskonfigurationen für Add-In-Webs nicht unterstützt.
 
     Weitere Informationen über Websitedefinitionskonfigurationen und Webvorlagen finden Sie unter  [Websitetypen: WebTemplates und Websitedefinitionen](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).

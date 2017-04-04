@@ -7,7 +7,7 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
 
 # High-trust configuration scripts for SharePoint 2013
 Get customizable Windows PowerShell scripts that configure a Microsoft SharePoint 2013 farm to use a high-trust SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -96,7 +96,7 @@ The following is the code for the script. Simply paste it into any text editor o
     
     
 
-> [!NOTE]
+> **NOTE**
 > The file has to be saved as ANSI format, not UTF-8. PowerShell may give syntax errors when it runs a file with a non-ANSI format. NotePad and the PowerShell editor will default to saving it as ANSI. If you use any other editor to save the file, be sure you are saving it as ANSI. 
   
     
@@ -149,7 +149,7 @@ The following is an example of running this script.
     
     
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > The registration of the certificate as a token issuer is not effective immediately. It may take as long as 24 hours before all the SharePoint servers recognize the new token issuer. Running an iisreset on all the SharePoint servers would cause them to immediately recognize the issuer, if you can do that without disturbing SharePoint users. 
   
     
@@ -211,7 +211,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 ```
 
 
-> [!TIP]
+> **TIP**
 > If the script throws an error after the  `New-SPTrustedRootAuthority` line has run successfully, the script cannot be rerun until that object has been removed. Use the following cmdlet, where the value of the `-Identity` parameter is the same as was used for the `-CertName` parameter in the script.>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> If the token issuer needs to be removed for any reason, use the following cmdlet: >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> If the  `-TokenIssuerFriendlyName` parameter was used, then use the same value for `-Identity`. If the  `-TokenIssuerFriendlyName` parameter was not used, then a random GUID is part of the issuer name. To obtain value needed for `-Identity`, run the following cmdlet. Then open the TokenIssuers.txt file that is produced and find the issuer whose name is "High-Trust Add-ins  _<base64 version of issuer GUID>_". Use that entire name for  `-Identity`. >  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
   
     
@@ -247,7 +247,7 @@ The following is an example of calling the script:
     
     
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > The registration of the certificate as a token issuer is not effective immediately. It may take as long as 24 hours before all the SharePoint servers recognize the new token issuer. Running an iisreset on all the SharePoint servers would cause them to immediately recognize the issuer, if you can do that without disturbing SharePoint users. 
   
     
@@ -308,7 +308,7 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
 ```
 
 
-> [!TIP]
+> **TIP**
 > The tips at the end of the preceding section apply here as well, but for the  `-Identity` parameter of the `Remove-SPTrustedSecurityTokenIssuer` cmdlet, use the client ID if the `-TokenIssuerFriendlyName` parameter was not used with HighTrustConfig-ForSingleApp.ps1.
   
     

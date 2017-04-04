@@ -37,7 +37,7 @@ Una Complemento de SharePoint puede usar casi cualquier tipo de almacenamiento d
     
   
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Es probable que en algún momento decida actualizar su Complemento de SharePoint. Cuando una Complemento de SharePoint incluye componentes de SharePoint en una web de complemento, el proceso de actualización crea una copia completa de la web de complemento. Por este motivo, las listas de SharePoint muy largas en la web de complemento hacen que el proceso de actualización consuma mucho tiempo y recursos de procesador en el servidor de base de datos de contenido. Debería evitar colocar "grandes cantidades de datos" en listas de SharePoint en la web de complemento. 
   
     

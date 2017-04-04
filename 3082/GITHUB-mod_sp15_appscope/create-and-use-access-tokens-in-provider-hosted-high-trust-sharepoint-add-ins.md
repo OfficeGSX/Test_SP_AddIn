@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # Crear y usar tokens de acceso en complementos de SharePoint de elevada confianza hospedados por el proveedor
 Conozca el rol de los tokens de acceso en los complementos de elevada confianza para SharePoint y cómo su código trabaja con ellos.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > **Este artículo está enteramente dedicado al uso de los tokens de acceso en el sistema de autorización de elevada confianza, no en el sistema de ACS.** Para más información sobre cómo usar tokens de seguridad en el sistema de ACS, vea [Administrar tokens de seguridad en complementos de confianza baja hospedados por el proveedor para SharePoint](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md). 
   
     
@@ -24,7 +24,7 @@ En el sistema de autorización de elevada confianza, **el componente remoto de s
 <a name="AccessTokens"> </a>
 
 
-> [!NOTA]
+> **NOTA**
 >  Al leer este artículo, especialmente acerca de las tareas que su código debe realizar, recuerde que si usa código administrado, Microsoft Office Developer Tools para Visual Studio agregan a todos los proyectos de Complemento de SharePoint dos archivos de código generado, SharePointContext.cs (o .vb) y TokenHelper.cs (o .vb) que hacen la mayor parte de estas tareas automáticamente. El código de administración de tokens de su aplicación suele consistir en unas cuantas llamadas a las clases en estos archivos. El objetivo de este tema es ayudar a los desarrolladores que no usan código administrado (y a los que tratan de solucionar problemas de tokens).>  Encontrará vínculos a bibliotecas de OAuth para diferentes lenguajes y plataformas aquí:>  [OAuth 2.0](http://oauth.net/2/) Vaya a **Bibliotecas de cliente**.>  En [github](https://github.com/), busque "OAuth 2" y "token web JSON" (sin comillas). 
   
     
@@ -123,7 +123,7 @@ El siguiente es un **ejemplo de un token de acceso generado por un Complemento d
     
     
 
-> [!NOTA]
+> **NOTA**
 >  Tenga en cuenta que los tokens de acceso de elevada confianza que su código crea son diferentes de los que Azure ACS crea cuando se usa el sistema de autorización de confianza baja:>  La notificación **alg** en el encabezado es "none" porque el token de acceso de una llamada a usuario+complemento desde un complemento de elevada confianza no está firmado.>  La dirección URL del complemento en el valor **aud** de este ejemplo es un servidor local, que es lo normal para el sistema de elevada confianza.>  No hay ninguna notificación **identityprovider**, pero hay una **nii** (emisor de identidad de nombre) con el mismo tipo de valores que los tokens de acceso de la notificación **identityprovider** usados en el sistema de autorización de confianza baja. (Para obtener más información sobre este valor cuando el proveedor de identidad está basado en SAML, vea las publicaciones en el blog de Steve Peschka [Seguridad en complementos de SharePoint: parte 8](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx) y [Usar complementos de SharePoint con sitios SAML y FBA en SharePoint 2013](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx)). >  No hay ninguna notificación **actor**, pero hay una notificación **actortoken** que contiene un token interno codificado en base 64 con una duración de 12 horas.
   
     
@@ -207,7 +207,7 @@ En la tabla 2 se describen las notificaciones que su código debe incluir en el 
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Si el complemento de elevada confianza usa la  [directiva solo de complemento](add-in-authorization-policy-types-in-sharepoint-2013.md) y realiza una llamada solo de complemento a SharePoint, el token mostrado aquí es en realidad el token de acceso. No hay ningún token externo. Además, no hay ninguna notificación **trustedfordelegation**, porque los permisos del usuario son irrelevantes en una llamada solo de complemento. 
   
     

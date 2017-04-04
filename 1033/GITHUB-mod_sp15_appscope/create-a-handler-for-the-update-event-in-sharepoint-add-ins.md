@@ -7,7 +7,7 @@ ms.assetid: 0fa088c5-54c6-482c-84ed-51c4f77c4127
 
 # Create a handler for the update event in SharePoint Add-ins
 Create and use a handler for the update event of a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -26,7 +26,7 @@ Be thoroughly familiar with both  [Handling add-in events](handle-events-in-shar
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!NOTE]
+> **NOTE**
 > **Version numbering system:** For consistency, this topic assumes that the add-in version numbers are 1.0.0.0, 2.0.0.0, 3.0.0.0, and so on. However, the logic and guidance applies no matter what your numbering system is.
   
     
@@ -166,7 +166,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > If you add a component to an add-in in an **UpgradedEventEndpoint** handler, be sure to add the same code to an **InstalledEventEndpoint** handler because you want that component included in the add-in on a brand new installation as well. Also, you should add an [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) (or revise it) for the add-in to remove the component. For the most part, anything that was added or changed by the **InstalledEventEndpoint** should be reversed or deleted by the **UninstallingEventEndpoint**. One exception is that data that will remain useful after the add-in is removed from the second-stage recycle bin should not be deleted. (Websites, other than the add-in web, that are created by the add-in should be considered data.) 
   
     
@@ -244,7 +244,7 @@ catch (Exception e)
 ```
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > Assigning **SPRemoteEventServiceStatus.CancelWithError** (or **SPRemoteEventServiceStatus.CancelNoError**) to the  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) property is crucial. This property is what signals the infrastructure to roll back the update. But SharePoint will retry your handler three times before it rolls back the update.
   
     

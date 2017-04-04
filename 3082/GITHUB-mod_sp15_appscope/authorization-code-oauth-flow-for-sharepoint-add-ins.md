@@ -12,7 +12,7 @@ Conozca el flujo de OAuth para complementos que solicitan permiso para acceder a
 <a name="Overview"> </a>
 
 
-> [!NOTA]
+> **NOTA**
 > En este artículo se da por hecho que conoce cómo  [Crear complementos de SharePoint que usen autorización de baja confianza](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) y los conceptos y principios relativos a OAuth. Para obtener más información sobre OAuth, vea [OAuth.net](http://oauth.net/) y el [Protocolo de autorización web (oauth)](http://datatracker.ietf.org/doc/active/#oauth). 
   
     
@@ -23,7 +23,7 @@ En algunos escenarios, un complemento puede pedir permiso para acceder a los rec
     
     
 
-> [!NOTA]
+> **NOTA**
 > Este tipo de complementos solo pueden ejecutarlos usuarios que tienen permisos de administración sobre los recursos a los que el complemento quiere acceder. Por ejemplo, si un complemento solicita solo un permiso de lectura para un sitio web, un usuario que tenga derechos de lectura, pero no de administración, en el sitio web no podrá ejecutar el complemento. 
   
     
@@ -50,7 +50,7 @@ En esta sección se resume el flujo de autenticación y autorización de OAuth p
     
     
 
-> [!NOTA]
+> **NOTA**
 > El flujo **implica una serie de interacciones entre su complemento, SharePoint, el servidor de autorización (que es ACS) y el usuario final** en tiempo de ejecución. Por eso, el flujo necesita SharePoint Online o una granja de servidores de SharePoint que esté conectada a Internet para poder comunicarse con ACS. Las granjas de servidores de SharePoint que no están conectadas a Internet deben usar [el sistema de autorización de elevada confianza](creating-sharepoint-add-ins-that-use-high-trust-authorization.md). 
   
     
@@ -101,7 +101,7 @@ Los siguientes son los pasos en el flujo de código de autenticación.
     
 
     
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Estos pasos hacen referencia a los métodos del archivo TokenHelper.cs (or .vb). Este código administrado no está compilado, por lo tanto, no hay temas de referencia sobre él. No obstante, el archivo en sí está comentado con descripciones de toda clase, parámetros de miembro y valores devueltos. Contemple tener una copia de este archivo abierta para consultar a medida que lea estos pasos. 
   
     
@@ -158,7 +158,7 @@ Si no usa código administrado, los alias de ámbito se usan en el campo de ámb
     
     
 
-> [!NOTA]
+> **NOTA**
 > Vea la descripción de los ámbitos en  [Permisos de complemento en SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

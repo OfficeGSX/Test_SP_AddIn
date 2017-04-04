@@ -39,7 +39,7 @@ ms.assetid: 6906eb86-8270-4098-8106-1e8d0d3c212e
     
   
  **Руководство по созданию среды SharePoint Online** с помощью подписки SharePoint Online, которую можно использовать для разработки, см. в статье [Создание сайта разработчика с использованием актуальной подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). **Инструкции по созданию локальной среды** см. в статье [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
-> [!Примечание]
+> **Примечание**
 > Эта статья посвящена только средам разработки надстроек SharePoint. Если вы хотите разрабатывать решения ферм, см. статью  [Настройка общей среды разработки для SharePoint 2013](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx). Если вы планируете разработать оба варианта, начните с последней статьи, а затем ознакомьтесь с дополнительными действиями по разработке надстроек SharePoint, описанными в статье  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md). 
   
     

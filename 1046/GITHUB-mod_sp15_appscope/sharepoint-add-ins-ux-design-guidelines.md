@@ -126,7 +126,7 @@ Se você não estiver criando páginas ASPX hospedado no SharePoint, mas você a
 
   - Copie a biblioteca para seu próprio site e fazer referência a ela a partir daí.
     
-    > [!CUIDADO]
+    > **CUIDADO**
       > Se você optar por essa alternativa seu suplemento será não beneficiar atualizações para o controle.
 2. Adicione o elemento de DOM de espaço reservado onde o controle será processado, conforme mostrado neste exemplo.
     

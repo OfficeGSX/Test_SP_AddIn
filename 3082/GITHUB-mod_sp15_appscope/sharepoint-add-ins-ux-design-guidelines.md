@@ -126,7 +126,7 @@ Si no está compilando páginas ASPX hospedadas en SharePoint, pero aún así, q
 
   - Copie la biblioteca en su propio sitio web y haga referencia a la misma desde allí.
     
-    > [!PRECAUCIóN]
+    > **PRECAUCIóN**
       > Si opta por esta alternativa, el complemento no se beneficiará de las actualizaciones para el control. 
 2. Agregue el elemento DOM del marcador donde se vaya a representar el control, tal como se muestra en este ejemplo.
     

@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando presiona F5, Visual Studio compila la solución, implementa el complemento y abre la página de permisos para el complemento. 
 2. Elija el botón **Confiar**.
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http o https  <br/> |7000-10000  <br/> |
    
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Los puertos de salida están sujetos a la disponibilidad del firewall del host. En particular, en SharePoint Online solo están disponibles http-80 y https-443. 
   
     
     
 
 |
-|La excepción no controlada **SP no está definida**. <br/> |Asegúrese de que puede obtener acceso al archivo SP.RequestExecutor.js en una ventana del explorador.  <br/> Si usa el servidor local como entorno de desarrollo, debe desactivar la comprobación de bucle invertido de IIS. Ejecute el siguiente comando desde un símbolo del sistema de Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!PRECAUCIóN]> No se recomienda deshabilitar la comprobación de bucle invertido de IIS en un entorno de producción.           |
+|La excepción no controlada **SP no está definida**. <br/> |Asegúrese de que puede obtener acceso al archivo SP.RequestExecutor.js en una ventana del explorador.  <br/> Si usa el servidor local como entorno de desarrollo, debe desactivar la comprobación de bucle invertido de IIS. Ejecute el siguiente comando desde un símbolo del sistema de Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **PRECAUCIóN**> No se recomienda deshabilitar la comprobación de bucle invertido de IIS en un entorno de producción.           |
 |El tamaño de la respuesta del extremo remoto supera el límite configurado.  <br/> |El tamaño de la respuesta de las solicitudes del proxy web no debe superar los 200 KB.  <br/> |
    
 

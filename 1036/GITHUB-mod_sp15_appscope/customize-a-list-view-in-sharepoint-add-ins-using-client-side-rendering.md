@@ -126,7 +126,7 @@ La figure 1 montre un affichage rendu côté client d'une liste d'annonces.
   
   - Il indique une valeur pour l'élément **JSLink** renvoyant à un fichier JavaScript mis en service avec le complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La propriété JSLink n'est pas prise en charge sur les listes d'enquêtes ou d'événements. Un calendrier SharePoint est une liste d'événements. 
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 2. Sélectionnez le bouton **Approuver**.
     

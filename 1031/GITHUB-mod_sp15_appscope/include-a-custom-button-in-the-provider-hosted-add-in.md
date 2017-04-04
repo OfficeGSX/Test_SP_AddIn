@@ -20,7 +20,7 @@ Dies ist der dritte einer Reihe von Artikeln über die Grundlagen der Entwicklun
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu vom Anbieter gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) herunterladen und die Datei „BeforeRibbonButton.sln" öffnen.
   
     
@@ -90,7 +90,7 @@ In diesem Abschnitt fügen Sie ein Markup in das Add-In ein, das eine Schaltflä
 
 1.  *Wenn Visual Studio geöffnet ist, müssen Sie es schließen*  und die Projektmappe ChainStore erneut öffen, damit Visual Studio Ihre neue Liste erkennen kann. (Führen Sie Visual Studio als Administrator aus.)
     
-    > [!HINWEIS]
+    > **HINWEIS**
       >  Die Einstellungen für Startprojekte in Visual Studio werden normalerweise auf die Standardwerte zurückgesetzt, wann immer die Projektmappe erneut geöffnet wird. Führen Sie die folgenden Schritte immer unmittelbar nach dem erneuten Öffnen der Beispielprojektmappe in dieser Artikelreihe durch:>  Klicken Sie mit der rechten Maustaste oben im **Projektmappen-Explorer** auf den Projektmappenknoten, und wählen Sie **Startprojekte festlegen** aus.>  Stellen Sie sicher, dass alle drei Projekte in der Spalte **Aktion** auf **Start** festgelegt sind.
 2. Klicken Sie mit der rechten Maustaste auf das Projekt **ChainStore** im **Projektmappen-Explorer**, und wählen Sie **Hinzufügen | Neues Element** aus.
     

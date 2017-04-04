@@ -19,7 +19,7 @@ Wenn das Add-In in den Office Store hochgeladen wird, führt Microsoft Validieru
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie Ihr Add-In mit Microsoft Office-Entwicklertools für Visual Studio entwickeln und bereitstellen, wird das Add-In direkt auf der SharePoint-Zieltestwebsite installiert. Da es nicht über den Office Store übergeben wird, findet die oben beschriebene Überprüfung nicht statt. 
   
     
@@ -65,7 +65,7 @@ Websitebesitzer installieren SharePoint-Add-Ins von der Seite **Eigene Add-Ins**
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Manchmal kann ein vorübergehender Verlust der Netzwerkverbindung die Installation blockieren. Wenn die Installation aus irgendeinem Grund fehlschlägt, führt die Installationsinfrastruktur drei Wiederholungsversuche durch. Wenn sie nicht erfolgreich sind, wird dies auf der Benutzeroberfläche angezeigt. Benutzer können die Installation zu einem späteren Zeitpunkt erneut versuchen. 
   
     
@@ -88,7 +88,7 @@ Wenn das SharePoint-Add-In ein Add-In-Web umfasst, wird das Add-In-Web gelöscht
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn ein Benutzer ein Add-In entfernt, wird es in die erste Phase des Papierkorbs verschoben. Wird es dort gelöscht, wird es in die zweite Phase des Papierkorbs verschoben. Wird es aus der zweiten Phase des Papierkorbs gelöscht, dann wird das Add-In vollständig deinstalliert und kann nicht wiederhergestellt werden. 
   
     

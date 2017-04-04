@@ -67,7 +67,7 @@ A menos que não tenha sido especificado, é necessário presumir que cada um de
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Quando você estiver criando um provedor Suplemento do SharePoint hospedado com um aplicativo da Web ASP.NET e adicionar um assembly a um conjunto para o projeto do aplicativo da Web no Visual Studio, defina a propriedade **Copy Local** do assembly para **True**, a menos que você saiba que este já está instalado no servidor Web ou você possa garantir que ele está instalado antes de implantar o suplemento. O .NET Framework está instalado nas Microsoft Azure Funções da Web e em Azure Web Sites. Mas os assemblies cliente SharePoint 2013, bem como as diversas extensões de código e as fundações gerenciadas da Microsoft, não estão instalados. Office Developer Tools para Visual Studio 2012 adiciona automaticamente as referências para alguns assemblies usados com frequência nos Suplementos do SharePoint e define a propriedade **Cópia Local**. 
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tentar acessar outras propriedades, o código lançará uma exceção porque não há outras propriedades disponíveis. 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se preferir, você pode usar o método **LoadQuery** para armazenar o valor de retorno em outro conjunto em vez de usar a propriedade **web.Lists**. Você também precisará adicionar instruções **using** para [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) e [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Além disso, é necessário adicionar um alias à instrução em uso para o namespace [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) , de modo que possa se referir às classes sem equívocos. Por exemplo, `using SP = Microsoft.SharePoint.Client;`. 
   
     
@@ -339,7 +339,7 @@ Este exemplo adiciona um campo à lista do SharePoint. É necessário adicionar 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O exemplo usa **context.CastTo** para realizar uma conversão. Antes de executar a consulta, a biblioteca cliente não sabe o tipo real do "campo" do objeto retornado, e **SharePoint.Field** é o único tipo possível. Se você souber o tipo real, use o método **ClientContext.CastTo<RealType>** para converter o objeto.
   
     
@@ -382,7 +382,7 @@ Este exemplo recupera todos os itens de uma lista do SharePoint. Você também p
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você pode usar a propriedade  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) para restringir ainda mais os itens que são retornados a eles em uma pasta especificada.
   
     
@@ -541,7 +541,7 @@ Se você deseja recuperar informações sobre um campo específico, use o métod
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O método  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) usado neste exemplo é um método remoto. Ele não usa os dados do conjunto do cliente, mesmo se este já estiver preenchido.
   
     
@@ -1004,7 +1004,7 @@ Para executar códigos condicionalmente, use um objeto  [ConditionalScope](https
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O método de chamada e as propriedades de configuração presentes em um escopo condicional não são permitidas, porque a biblioteca do cliente não acompanha os efeitos colaterais das chamadas de método e as configurações de propriedade. Você deve usar somente o **Load** dentro do escopo condicional.
   
     

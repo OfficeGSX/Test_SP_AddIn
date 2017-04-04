@@ -41,7 +41,7 @@ Les éléments suivants sont des conditions préalables à la réalisation des p
   
 - **Un compte d'entreprise dans Microsoft Azure.** Voir [Créer un compte d'utilisateur professionnel dans Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580)
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Connectez-vous à votre compte Office 365 (login.microsoftonline.com) pour modifier le mot de passe temporaire une fois le compte créé. 
 - **Un point de terminaison OData SAP** contenant des exemples de données. Pour en savoir plus, consultez [Passerelle SAP pour Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -67,7 +67,7 @@ Dans l'exemple de cet article, le complément SellerDashboard manipule les donn�
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Pour obtenir une démonstration vidéo de ce complément, regardez la vidéo  [Webinaire technique : Passerelle SAP pour Microsoft et modèle de développement Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=517378) sur BrightTalk. La démonstration de la fonctionnalité du complément démarre après 48 minutes.
   
     
@@ -434,7 +434,7 @@ public interface IInventoryItem
     
     La plupart des propriétés ont le même type que les propriétés dans le schéma de base de données SAP, sauf pour StockNo, dont le type **int** a été modifié et défini sur **string**. Ceci est dû au fait que StockNo est utilisé comme un moyen de définir la relation entre les données de SAP et la bibliothèque d'images SharePoint.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > StockNo doit avoir le type **string**, car la valeur stockée dans la bibliothèque d'images SharePoint est **Text**. Ces deux types doivent correspondre afin d'accomplir le mashup de données.
 
     La mise en œuvre des deux interfaces est dans CarInventoryModel/InventoryItem.cs et CarInventoryModel/InventoryCollection.cs.
@@ -457,7 +457,7 @@ La bibliothèque d'images dans le site hôte de SharePoint s'appelle ContosoMoto
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Les noms des colonnes sont sensibles à la casse. 
   
     
@@ -823,7 +823,7 @@ Suivez les étapes de cette section pour déployer le complément. Avant de dép
   
 2. Dans le menu de gauche, cliquez sur **Sites web**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vous utiliserez ce site web pour héberger le complément SharePoint hébergé par un fournisseur pour le SellerDashboard. 
 3. Dans la barre de commandes située au bas de la page, cliquez sur **Nouveau**.
     
@@ -892,7 +892,7 @@ Les étapes de cette section décrivent l'enregistrement de l'exemple de complé
   
 3. Sur la page Active Directory, cliquez sur le répertoire qui a été configuré pour la passerelle SAP pour Microsoft.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       >  Si vous ne savez pas lequel a été utilisé, demandez à l'administrateur de la passerelle SAP pour Microsoft. Conseil : il s'agit du répertoire qui contient les utilisateurs et les groupes pour la passerelle SAP pour Microsoft.
 4. Dans la barre de navigation supérieure, choisissez **APPLICATIONS**.
     
@@ -921,7 +921,7 @@ Les étapes de cette section décrivent l'enregistrement de l'exemple de complé
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Vous devez enregistrer le complément avec Azure AD deux fois : une fois à des fins de débogage et une autre fois pour le déployer pour la production, comme décrit à l'étape 10. > Pour enregistrer le complément à des fins de débogage, utilisez l' **URL DE CONNEXION** et l' **URI ID D'APPLICATION** avec l'URL de débogage du projet SellerDashboard.Server afin de pouvoir exécuter le débogueur Visual Studio (F5). Cette URL aura la forme https://localhost. *nnnn*  , où *nnnn*  est un numéro de port. Vous trouverez cette URL dans le volet Propriétés de Visual Studio.> Ensuite, lorsque vous êtes prêt pour le déploiement pour la production, modifiez l'enregistrement pour utiliser l'URL de production correcte. 
   
     

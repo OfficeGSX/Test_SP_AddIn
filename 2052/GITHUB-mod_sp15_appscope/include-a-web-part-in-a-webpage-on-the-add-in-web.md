@@ -45,7 +45,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   ```
 
 
-    > [!警告]
+    > **警告**
       > 可以添加 Web 部件元素，如 **<WebPartPages:XsltListViewWebPart>** 作为 **WebPartZone** 的子元素。但是，这在 SharePoint 外接程序中通常不是好的做法。如果外接程序需要更新，在 aspx 文件中插入的 Web 部件元素在某些情况下可能导致更新失败，并显示消息"具有此 ID 的 Web 部件已添加到此页面"。对于本程序后面所述的页面，我们建议您将 Web 部件添加到元素清单。
 4. 打开页面的元素清单文件，通常称为 elements.xml，并位于与 aspx 文件相同的项目文件夹中。
     
@@ -81,7 +81,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
 
 7. 添加 **webPart** 标记作为 **webParts** 元素的子元素。下面是一个添加 **XsltListViewWebPart** 的示例。该示例假定名为"测试列表"的自定义列表是同一个外接程序项目的一部分。有关如何将自定义类表添加到外接程序 Web 中的信息，请参阅 [创建包括自定义 SharePoint 列表和内容类型的提供商托管的外接程序](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md)。 
     
-    > [!注释]
+    > **注释**
       >  请注意，Web 部件没有 ID 属性。最佳做法是仅在确实需要的两种情况下包含 Web 部件的显式 ID：>  Web 部件将添加到 SharePoint Wiki 页面。>  Web 部件是将连接的两个或多个 Web 部件之一。
 
   ```

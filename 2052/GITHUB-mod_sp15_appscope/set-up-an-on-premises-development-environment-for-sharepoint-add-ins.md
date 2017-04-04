@@ -30,7 +30,7 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
     
   
 
-> [!注释]
+> **注释**
 > 仅支持在 Windows Server 2008 R2Service Pack 1 x64 或 Windows Server 2012 上安装 SharePoint。如果想要在 Windows 7 或 Windows 8 上为 SharePoint 开发 SharePoint 外接程序，则可以注册 Office 365 开发人员网站并远程开发应用程序。 
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. 安装完成后，系统将提示您启动 SharePoint 产品和技术配置向导。
     
-    > [!注释]
+    > **注释**
       > 如果您使用加入域但未连接到域控制器的计算机，则 SharePoint 产品和技术配置向导可能失败。如果出现此错误，请直接或通过虚拟专用网络 (VPN) 连接来连接到域控制器，或者使用在计算机上拥有管理权限的本地帐户登录。 
 7. 完成配置向导后，您会看到新 SharePoint 网站的"模板选择"页面。在此页面上，选择"开发人员网站"模板。您只能将 Visual Studio 中的 SharePoint 外接程序部署到开发人员网站。
     
@@ -135,7 +135,7 @@ dir /od *.log
   
 6. 选择"保存并关闭"。
     
-    > [!注释]
+    > **注释**
       > 如果您收到一条消息告知您尝试创建的配置文件已存在，则请选择"取消并返回"。 
 7. 返回"管理用户配置文件"页上，您应看到"配置文件总数: 1"。
     
@@ -189,7 +189,7 @@ dir /od *.log
     
     
 
-> [!注释]
+> **注释**
 > 对于生产场而言，必须在 Intranet 内部创建 DNS 路由策略，还可以选择配置防火墙。有关如何为 SharePoint 外接程序创建和配置生产环境的详细信息，请参阅 [安装和管理 SharePoint 加载项](http://technet.microsoft.com/zh-cn/library/fp161232%28v=office.15%29)。 
   
     
@@ -200,7 +200,7 @@ dir /od *.log
     
     
 
-> [!注释]
+> **注释**
 > 以场管理员身份登录后，您必须执行以下过程中的所有步骤，并且必须作为管理员运行命令提示符和 SharePoint Management Shell。 
   
     
@@ -303,7 +303,7 @@ Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
     
     
 
-> [!提示]
+> **提示**
 > 在将 Sharepoint 承载的加载项部署到您的安装中后，系统可能会在您尝试启动应用程序时提示您使用凭据登录。您将需要禁用环回检查来清除这些提示。有关如何禁用环回检查的说明，请参阅 [当您浏览的网站使用集成身份验证并承载于 IIS 5.1 或更高版本上时收到 401.1 错误](http://support.microsoft.com/kb/896861)。 
   
     

@@ -126,7 +126,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
   
   - 为指向使用外接程序预配的 JavaScript 文件的 **JSLink** 元素提供一个值。
     
-    > [!注释]
+    > **注释**
       > 调查列表或事件列表不支持 JSLink 属性。SharePoint 日历是事件列表。 
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. 按 F5 键。
     
-    > [!注释]
+    > **注释**
       > 按 F5 时，Visual Studio 将生成解决方案、部署外接程序并打开外接程序的权限页。 
 2. 选择"信任"按钮。
     

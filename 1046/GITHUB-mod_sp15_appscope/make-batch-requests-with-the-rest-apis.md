@@ -34,7 +34,7 @@ SharePoint Online (e no local SharePoint 2016 e posterior) e o Office 365 APIs i
   
 - Uma parte pode ser uma operação de leitura (ou chamada de função), ou um conjunto de alterações de uma ou mais escrever operações (ou invocações de função). Um conjunto de alterações em si é um MIME tipo  *com diversas partes/resumida*  com subpartes que contêm inserir, atualizar ou excluir operações.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Neste momento, SharePoint e Office 365 APIs não suportam a funcionalidade "tudo ou nada" para conjuntos de alterações que tenham mais de uma operação dentro deles. Se qualquer uma das operações filho falhar, os outros ainda concluir e não são revertidos.
 
 ## Code samples

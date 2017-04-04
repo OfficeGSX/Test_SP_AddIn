@@ -35,21 +35,21 @@ ms.assetid: 6e0e530a-7d8b-48ab-8d0c-a878ddbf5be1
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關 SharePoint 主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials)在存放庫並開啟 BeforeClientRenderedControl.sln 檔案。
   
     
     
 
 您可以使用一點的用戶端JavaScript **JSLink**屬性的控制項，例如 **SPField.JSLink**指派JavaScript檔案以自訂的網頁組件、 大部分類型的欄位 (欄) 及其他控制項，轉譯。您也可以新增用戶端驗證邏輯以這種方式。 本文中您要使用用戶端轉譯自訂欄位清單中的員工方向SharePoint Add-in的轉譯。
-> [!注意事項]
+> **注意事項**
 > 如果使用者在其瀏覽器中停用JavaScript ，SharePoint 會改為使用伺服器端呈現和驗證。
   
     
     
 
 
-> [!注意事項]
+> **注意事項**
 > 屬性不支援調查或事件 JSLink 列出。將 SharePoint 行事曆是事件] 清單中。
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. 要告訴 SharePoint，以使用您的自訂JavaScript，將新的屬性、 **JSLink**，新增至 **Field**項目，然後將指派其值為下列 URL：  `~site/Scripts/OrientationStageRendering.js`。
     
-    > [!注意事項]
+    > **注意事項**
       > **JSLink**屬性一定是檔案，不一種方法。沒有要告訴 SharePoint 哪一種方法來執行方法。這就是為什麼檔案包含一種方法可將會自動執行。
 
     **Field**元素的開始標籤現在看起來像下列。

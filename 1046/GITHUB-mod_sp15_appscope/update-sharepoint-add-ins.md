@@ -28,7 +28,7 @@ Você pode atualizar seu Suplemento do SharePoint usando o suporte atualizando i
     
 Um usuário pode instalar a atualização sem primeiro desinstalar a versão anterior. A atualização de infraestrutura testa a instalação da atualização e ele será revertida se houver erros.
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Você não pode alterar o  *tipo de suplemento*  usando o sistema de atualização. Por exemplo, você não pode alterar um suplemento do hospedado no SharePoint para hospedado em provedor com uma atualização. Para fazer uma alteração de tipo, você precisa [migrar de um suplemento antigo para um novo](sharepoint-add-ins-update-process.md#Major). Em particular, desde que  [o programa de visualização para suplementos auto-hospedados foi fechado](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), você deve estar ciente de que você não pode atualizar um suplemento auto-hospedado para um suplemento hospedado pelo provedor. Você precisará converter o suplemento, conforme explicado em  [Converter um auto-hospedados Add-in do SharePoint em um suplemento hospedado em provedor](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md).
   
     
@@ -200,7 +200,7 @@ A Figura 2 ilustra estas etapas.
     
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você precisar ver o aviso de "atualização disponível" no suplemento lado a lado com mais freqüência que a cada 24 horas, você pode usar o método descrito no  [Processo de atualização para um SharePoint Add-in](sharepoint-add-ins-update-process.md#Minor) para tornar o aviso aparecer imediatamente.
   
     

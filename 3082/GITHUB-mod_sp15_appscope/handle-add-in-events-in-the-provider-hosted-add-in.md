@@ -32,7 +32,7 @@ Este es el séptimo de una serie de artículos sobre los conceptos básicos de d
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeAdd-inEventHandlers.sln.
   
     
@@ -87,7 +87,7 @@ La depuración de receptores de eventos requiere el uso del Bus de servicio de A
     
     
 
-> [!NOTA]
+> **NOTA**
 >  La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos:>  Haga clic con el botón derecho en el nodo de solución en la parte superior del **Explorador de soluciones** y seleccione **Establecer proyectos de inicio**. >  Asegúrese de que los tres proyectos estén establecidos en **Iniciar** en la columna **Acción**. 
   
     
@@ -282,7 +282,7 @@ private void DeleteTenant(string tenantName)
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > En un artículo anterior de esta serie, configuró el proyecto para recompilar la base de datos corporativa cada vez que se presiona F5. Con esto se vacía la tabla **Inquilinos**. 
   
     

@@ -13,7 +13,7 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
     
 
 
-> [!注意事項]
+> **注意事項**
 > 本文是關於SharePoint Add-ins分散式透過組織目錄及註冊 AppRegNew.aspx 頁面。如果增益集在賣方儀表板註冊，請參閱 [建立或更新用戶端識別碼和賣方儀表板中的機密資料](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update)。
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!秘訣]
+> **秘訣**
 > 根據預設，該增益集機密持續時間一年。您可以設定此為較短或再 （上限 3 年） **New-MsolServicePrincipalCredential**指令程式的三個的電話上使用 **-EndDate**參數。參數的值必須是設定為不能超過 3 年從 **DateTime.Now** [DateTime](http://msdn2.microsoft.com/ZH-TW/library/03ybds8y)物件。
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## 更新遠端 web 應用程式在 Visual Studio 中使用新的密碼
 
 
-> [!重要]
+> **重要**
 > 如果增益集原先建立以預先發行版本Microsoft Office Developer Tools for Visual Studio，它可能包含過時 TokenHelper.cs （或.vb） 檔案的版本。如果檔案不包含 「 secondaryClientSecret 」 的字串，則過期，必須會之前，您可以使用新的密碼來更新 web 應用程式被取代。若要取得的發行版本檔案的複本，您會需要Visual Studio 2012年或更新版本。建立新的SharePoint Add-in專案中Visual Studio。複製 TokenHelper 檔案，到您SharePoint Add-in的 web 應用程式專案。
   
     

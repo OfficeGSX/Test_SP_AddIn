@@ -13,7 +13,7 @@ Clientschlüssel für SharePoint-Add-Ins, die mithilfe der AppRegNew.aspx-Seite 
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Artikel geht es um SharePoint-Add-Ins, die über einen Organisationskatalog verteilt und über die Seite AppRegNew.aspx registriert werden. Wenn das Add-In über das Verkäuferdashboard registriert ist, finden Sie weitere Informationen unter  [Erstellen oder Aktualisieren von Client-IDs und geheimen Clientschlüsseln im Verkäuferdashboard](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update). 
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!TIPP]
+> **TIPP**
 > Standardmäßig ist der geheime Schlüssel des Add-Ins für ein Jahr gültig. Sie können diesen Zeitraum verkürzen oder verlängern (bis auf maximal drei Jahre), indem Sie den Parameter **-EndDate** für die drei Aufrufe des Cmdlets **New-MsolServicePrincipalCredential** verwenden. Der Wert des Parameters muss ein [DateTime](http://msdn2.microsoft.com/DE-DE/library/03ybds8y)-Objekt sein, das nicht mehr als drei Jahre nach **DateTime.Now** liegt.
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## Aktualisieren der Remote-Webanwendung in Visual Studio zum Verwenden des neuen geheimen Schlüssels
 
 
-> [!WICHTIG]
+> **WICHTIG**
 > Wenn Ihr Add-In ursprünglich mit einer Vorabversion von Microsoft Office-Entwicklertools für Visual Studio erstellt wurde, enthält es möglicherweise eine veraltete Version der Datei TokenHelper.cs (oder TokenHelper.vb). Wenn die Datei die Zeichenfolge „secondaryClientSecret" nicht enthält, ist sie veraltet und muss ausgetauscht werden, bevor Sie die Webanwendung durch einen neuen geheimen Schlüssel aktualisieren können. Um eine Kopie einer endgültigen Version der Datei abzurufen, benötigen Sie Visual Studio 2012 oder höher. Erstellen Sie ein neues SharePoint-Add-In-Projekt in Visual Studio. Kopieren Sie die TokenHelper-Datei in das Webanwendungsprojekt Ihres SharePoint-Add-Ins. 
   
     

@@ -283,7 +283,7 @@ Aktualisieren Sie das Visual Studio-Toolfenster **SQL Server-Objekt-Explorer**, 
     
 
     
-> [!HINWEIS]
+> **HINWEIS**
 >  Abhängig davon, wie die Datenbank für das automatisch gehostete Add-In erstellt wurde, sind möglicherweise einige weitere Schritte erforderlich, um es für Azure bereitzustellen. Zusätzliche Anweisungen finden Sie in den folgenden Artikeln in MSDN:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ Nach der Bereitstellung der Website startet Visual Studio den Standard-Debugging
     
 
     
-> [!HINWEIS]
+> **HINWEIS**
 > Zusätzliche Optionen für das Bereitstellen von ASP.NET-Webanwendungen an eine Azure-Website finden Sie in der Azure-Dokumentation:  [So stellen Sie eine Microsoft Azure-Website bereit](http://azure.microsoft.com/documentation/articles/web-sites-deploy). 
   
     
@@ -583,7 +583,7 @@ Erstellen Sie danach eine neue GUID, und ersetzen Sie die vorhandene GUID im Att
     
 
     
-> [!WICHTIG]
+> **WICHTIG**
 > Würde die vorhandene Produkt-ID verwendet werden, würde SharePoint die Fehlermeldung "Das bereitgestellte Add-In unterscheidet sich von einem anderen Add-In mit der gleichen Version und Produkt-ID" zurückgeben, wenn das konvertierte Add-In installiert wird. 
   
     

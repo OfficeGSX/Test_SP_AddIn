@@ -24,7 +24,7 @@ Después de instalar Fiddler en el servidor de aplicaciones web, agregue el sigu
     
     
 
-> [!NOTA]
+> **NOTA**
 > Asegúrese de quitar este marcado si no está ejecutando Fiddler. Si no quita el marcado, el complemento no podrá hacer solicitudes de HTTP. 
   
     

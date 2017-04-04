@@ -27,7 +27,7 @@ Vous pouvez récupérer l'identité et les informations utilisateur de différen
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour obtenir des instructions sur la manière de configurer un environnement de développement adapté à vos besoins, voir  [Commencer à créer des compléments hébergés par un fournisseur pour SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -98,7 +98,7 @@ Vous pouvez utiliser la méthode suivante pour récupérer le nom de connexion d
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les API se trouvent dans l'espace de noms Microsoft.SharePoint.Client.Utilities dans l'assembly  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/fr-fr/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx). 
   
     

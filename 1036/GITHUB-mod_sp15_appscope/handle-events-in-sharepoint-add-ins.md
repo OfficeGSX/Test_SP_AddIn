@@ -32,7 +32,7 @@ Les Compléments SharePoint hébergés par SharePoint ne prennent pas en charge 
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les événements de site web et de collection de sites ne sont pas pris en charge dans Compléments SharePoint. 
   
     
@@ -61,7 +61,7 @@ Pour gérer des événements d'élément de liste et de liste, créez des récep
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les RER ont le même objectif que les récepteurs d'événements dans les solutions de batterie de serveurs. Toutefois, les récepteurs d'événements ont un code personnalisé qui s'exécute sur les serveurs SharePoint, c'est la raison pour laquelle ils ne peuvent pas être utilisés dans les Compléments SharePoint. 
   
     
@@ -104,7 +104,7 @@ Votre complément peut gérer les événements d'élément de liste suivants.
 ||ItemFileConverted  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > * Ces deux nouveaux événements ne sont peut-être pas disponibles dans l'interface de Visual Studio. S'ils ne le sont pas, choisissez ItemDeleting ou ItemDeleted, puis renommez-les manuellement. 
   
     
@@ -157,7 +157,7 @@ Pour modifier les événements gérés par le récepteur d'événements, ouvrez 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour plus d'informations sur les RER, y compris des informations de dépannage, voir  [Questions les plus fréquentes sur les récepteurs d'événements distants](handle-events-in-sharepoint-add-ins.md#RERFAQ). 
   
     
@@ -179,7 +179,7 @@ L'événement **AppInstalled** s'exécute immédiatement une fois que SharePoint
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Lorsque vous installez un complément avec une  [étendue de location](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md), il est installé dans la collection de sites de catalogue de compléments et l'événement AppInstalled s'exécute uniquement à ce moment-là. Le complément est visible dans plusieurs sites web de la location, mais l'événement ne s'exécute pas séparément pour chacun d'eux. 
   
     
@@ -198,13 +198,13 @@ Outre l'annulation d'une installation de complément, cet événement peut être
   
 - Définir des paramètres d'initialisation relatifs à une instance d'application. Par exemple, votre complément peut avoir un conteneur des propriétés de complément web pour conserver les paramètres variant d'une instance du complément à une autre. Votre gestionnaire AppInstalled peut écrire les différentes valeurs dans le conteneur des propriétés en fonction, par exemple, du type de site web hôte (comme un site d'équipe ou un site blog).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vérifier si le site web hôte est un site AppCatalog. Il s'agit d'un bon moyen pour détecter si le complément a été installé avec une étendue de location. Voir  [Locations et étendues de déploiement des compléments pour SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - Effectuer une configuration relative à une instance d'application dans l'application web distante du complément, comme l'ajout d'une table à une base de données.
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > L'implémentation de l'événement AppInstalled doit être réalisée en moins de 30 secondes, sinon l'infrastructure de l'installation SharePoint considère que l'implémentation a échoué. L'infrastructure réexécute l'événement  *et répète votre code depuis le début*  jusqu'à trois fois. Après quatre expirations, SharePoint annule toute l'installation du complément. Toutes les incidences de cette action sont exposées dans la rubrique [Inclure une logique de restauration et une logique « Déjà terminé » dans vos gestionnaires d'événements de complément](#Rollback). 
   
     
@@ -262,7 +262,7 @@ Si SharePoint rencontre une erreur lors du traitement de l'un des trois événem
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > **Remarque à propos de l'événement AppUninstalling :** les points précédents s'appliquent à l'événement AppUninstalling autant qu'aux deux autres événements de complément. Par exemple, si votre gestionnaire de l'événement de désinstallation supprime une ligne dans une base de données distante et rencontre une erreur, la ligne doit être restaurée. Étant donné que votre service envoie un message d'annulation à SharePoint, le complément n'est pas supprimé de la Corbeille. S'il est restauré à partir de là et réutilisé, il est possible qu'il ne fonctionne pas sans cette entrée de la base de données.> Toutefois, votre gestionnaire AppUninstalling opère  *avant*  que SharePoint supprime le complément de la Corbeille. Par conséquent, si SharePoint lui-même rencontre une erreur et doit annuler la suppression, votre gestionnaire ne peut en aucun cas annuler ce qu'il a effectué.
   
     
@@ -363,7 +363,7 @@ Vous ne pouvez pas toujours utiliser la stratégie de délégation de gestionnai
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Si l'événement AppInstalled échoue, SharePoint supprime le site web de complément, le cas échéant. Si l'événement AppUpated échoue, SharePoint restaure le site web de complément à son état avant mise à jour. Par conséquent, vos gestionnaires ne doivent jamais restaurer des actions qu'ils entreprennent sur le site web de complément. Si votre gestionnaire effectue des actions sur le site web hôte et sur le site web de complément, il doit d'abord traiter le site web de complément. Ainsi, l'utilisation de la stratégie de délégation de gestionnaire pour le site web hôte est sécurisée. Même si les actions du site web de complément réussissent et que les actions du site web hôte échouent, il n'existe aucune logique de restauration non exécutée. 
   
     

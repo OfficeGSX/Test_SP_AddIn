@@ -38,7 +38,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par un fournisseur, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) et ouvrir le fichier BeforeProgrammaticButton.sln.
   
     
@@ -48,7 +48,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 ## Nouvel ajout du bouton personnalisé au projet
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :>  Cliquez avec le bouton droit sur le nœud de la solution en haut de l' **Explorateur de solutions** et sélectionnez **Définir les projets de démarrage**. >  Assurez-vous que les trois projets sont définis sur **Début** dans la colonne **Action**. 
   
     
@@ -132,7 +132,7 @@ RegistrationId="100"
   
   -  La valeur de l'élément `action.Name` provient de l'attribut **ID** de l'élément **CustomAction** du fichier element.xml dans **AjouterEmployéBDEntreprise**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > **Vous devez modifier la valeur  `action.Name` dans le code ci-dessous afin qu'elle corresponde à la valeur qui apparaît dans votre fichier elements.xml.** Le composant GUID du nom sera différent. Notez qu'il existe un caractère « . » entre le GUID et le reste du nom. Voici un exemple de la ligne.>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
   ```cs
@@ -285,7 +285,7 @@ webScopedEmployeeAction.DeleteObject();
 
 1.  Ouvrez la page **Contenu du site** du site web de la boutique de Hong Kong *et supprimez la liste **Employés locaux**.* 
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Le retrait d'un complément dans Visual Studio ne supprime pas les listes créées par le complément. Vous devez donc le supprimer manuellement chaque fois que vous testez le code qui le crée.
 2.  Utilisez la touche F5 pour déployer et exécuter votre complément. Visual Studio héberge l'application web distante dans IIS Express et héberge la base de données SQL dans SQL Express. Il réalise également une installation temporaire du complément sur votre site SharePoint de test et l'exécute immédiatement. Vous êtes invité à accorder des autorisations au complément avant l'ouverture de sa page d'accueil.
     
@@ -295,7 +295,7 @@ webScopedEmployeeAction.DeleteObject();
   
 4.  Accédez à la page **Contenu du site**. La liste **Employés locaux** est à cet endroit, car votre logique de première exécution l'y a ajoutée.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Si la liste n'est pas cet endroit ou que vous détectez d'autres éléments indiquant que le code de première exécution ne s'exécute pas, il se peut que la table **Clients** ne soit pas vidée lorsque vous appuyez sur F5. La cause la plus commune de ce phénomène est que le projet **ChainCorporateDB** n'est plus défini comme projet de démarrage dans Visual Studio. Consultez la remarque en haut de cet article pour résoudre ce problème. Assurez-vous également que vous avez configuré la base de données afin qu'elle soit régénérée comme décrit dans la rubrique relative à la [ Configuration de Visual Studio pour régénérer la base de données d'entreprise à chaque session de débogage](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5.  Ouvrez la liste et ajoutez un élément.
     

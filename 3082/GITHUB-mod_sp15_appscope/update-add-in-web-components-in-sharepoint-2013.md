@@ -90,7 +90,7 @@ Las Microsoft Office Developer Tools para Visual Studio están pensadas para cre
 
   
 
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > No agregue comentarios "<!-- -->" al archivo  _{FeatureName}_.features. La infraestructura de actualización no admite comentarios y se producirá un error en la actualización si hay comentarios en el archivo. Se usan en los ejemplos de marcado de este artículo únicamente para indicar dónde debería ir su marcado. 
   
     
@@ -124,7 +124,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
 
     Llegado este punto, el archivo debería parecerse al del siguiente ejemplo.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Puede que Office Developer Tools para Visual Studio ya hayan agregado el marcado anterior y hayan copiado algunos de los elementos de la sección **ElementManifests** en la sección **ApplyElementManifests** a modo ilustrativo. *Elimínelos.*  Aunque es probable que tenga que volver a incluirlos posteriormente, resulta más fácil y más seguro empezar con una sección **ApplyElementManifests** vacía. Las entradas redundantes de componentes que no hayan cambiado pueden tener serias consecuencias, como, por ejemplo, alargar tanto el proceso de actualización que el tiempo de espera se agote y se genere un error.
 
 
@@ -229,7 +229,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       >  No elimine el manifiesto original. El XML de característica usa tanto el nuevo como el antiguo.>  No copie ningún elemento **ElementFile** de la sección **ElementManifests** a la sección **ApplyElementManifests** incluso si se ha modificado el archivo al que se hace referencia en **ElementFile**. 
 2. Abra todos los archivos de manifiesto de elemento a los que se hace referencia en la sección **ApplyElementManifests** y asegúrese de que todos los elementos [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) tengan un atributo **ReplaceContents** y se establezcan en **TRUE**. A continuación se muestra un ejemplo. Es posible que las Office Developer Tools para Visual Studio ya lo hayan hecho, pero debe comprobarlo. Realice esta acción incluso para los manifiestos de elementos de las versiones anteriores del complemento. Este es uno de los pocos métodos en los que es una buena práctica editar un archivo de manifiesto de elemento existente.
     
@@ -247,7 +247,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       >  Si la página se configuró para permitir que los usuarios la personalicen, este marcado tiene el efecto secundario de eliminar las personalizaciones. Los usuarios tendrán que repetirlas.>  Si el elemento web se agregó a la página siguiendo las indicaciones de [Incluir un elemento web en una página web de aplicación](include-a-web-part-in-a-webpage-on-the-add-in-web.md), el marcado del elemento web se encuentra en el manifiesto de elementos, por lo que cambiar las propiedades del elemento web es una excepción a la regla general de que no debe editarse un archivo de manifiesto de elemento como parte de una actualización de complemento. 
 4. Como alternativa a cambiar una página, también tiene la opción de usar el redireccionamiento a una página nueva siguiendo estos pasos. 
     
@@ -385,7 +385,7 @@ Cuando actualiza una Complemento de SharePoint por segunda (tercera, etc.) vez, 
     
     Observe también que el atributo **BeginVersion** no se usa en ninguno de los elementos **VersionRange**. Esto se debe a que el valor predeterminado para el atributo **BeginVersion** es 0.0.0.0, que es el valor deseado porque queremos que todas las acciones de actualización se apliquen a todas las instancias del complemento anteriores a la versión especificada en el atributo **EndVersion**. 
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       >  El elemento **VersionRange** determina solo cuáles son las versiones de la característica a las que se aplican las actualizaciones. No determina cuáles son las versiones del complemento que reciben una notificación de que hay una actualización disponible (la notificación se desencadena únicamente mediante el número de versión del complemento). En las 24 horas siguientes a la publicación de una nueva versión del complemento en el catálogo de complementos de la organización o en la Tienda Office, todas las instancias instaladas del complemento, independientemente de la versión, muestran la notificación de que hay una actualización disponible en su icono de la página **Contenido del sitio**. >  El elemento **VersionRange** no afecta al nuevo número de versión de la característica ni del complemento recién actualizados. Estos dos números siempre se cambian al último número de versión, independientemente del rango de versiones en el que estaba la característica antes de la actualización. Esto ofrece otra buena razón para evitar el uso de un atributo **BeginVersion**. El atributo **BeginVersion** se puede usar para bloquear algunas acciones de actualización para que nunca se lleven a cabo en algunas instancias del complemento. Pero no puede bloquear el hecho de que las versiones de la característica o el complemento se incrementen a la versión más reciente. De manera que el uso de un atributo **BeginVersion** podría crear la situación en la que dos instancias del complemento tuvieran el mismo número de versión de complemento y el mismo número de versión de la característica de la web del complemento, pero que tuvieran diferentes componentes en sus webs de complemento.
 
 ## Comprobación de la implementación de los componentes de la web del complemento
@@ -422,7 +422,7 @@ Siga estos pasos para comprobar la implementación de la característica de la w
   
 8. Para cada una de estas instancias de listas personalizadas, elija el vínculo **Personalizar "nombre_de_la_lista"** y compruebe en la página de configuración de la lista que la lista tiene las columnas y los tipos de contenido esperados.
     
-    > [!NOTA]
+    > **NOTA**
       > Si en la página no hay ninguna sección **Tipos de contenido**, habilite la administración de tipos de contenido. Elija el vínculo **Configuración avanzada** y, en la página Configuración avanzada, habilite la administración de tipos de contenido y luego elija **Aceptar**. Se le redirige a la página anterior, donde ahora aparece una lista de la sección **Tipos de contenido**. 
 9. Cerca de la parte superior de la página se encuentra la **dirección web** de la lista. Si incluyó elementos de ejemplo en la definición de la instancia de lista, copie la dirección y péguela en la barra de direcciones del explorador y luego navegue hasta la lista. Compruebe que la lista contiene los elementos de ejemplo que creó.
     

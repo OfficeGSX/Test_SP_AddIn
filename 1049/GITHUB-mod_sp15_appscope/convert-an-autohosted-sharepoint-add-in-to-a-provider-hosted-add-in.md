@@ -283,7 +283,7 @@ Microsoft SharePoint 2013 представил новый подход к рас
     
 
     
-> [!Примечание]
+> **Примечание**
 >  В зависимости от способа создания базы данных для надстройки с автоматическим размещением могут понадобиться дополнительные действия при его развертывании в Azure. Дополнительные указания см. в следующих статьях MSDN:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ Microsoft SharePoint 2013 представил новый подход к рас
     
 
     
-> [!Примечание]
+> **Примечание**
 > Подробнее о дополнительных вариантах для развертывания веб-приложений ASP.NET на платформе Веб-сайт Azure см. документацию по Azure о  [развертывании веб-сайта Microsoft Azure](http://azure.microsoft.com/documentation/articles/web-sites-deploy). 
   
     
@@ -583,7 +583,7 @@ Microsoft SharePoint 2013 представил новый подход к рас
     
 
     
-> [!Важно!]
+> **Важно!**
 > Если вы не замените существующий атрибут ProductId, SharePoint возвратит ошибку "Предоставленная надстройка отличается от другой надстройки с такой же версией и таким же кодом продукта" при установке преобразованной надстройки. 
   
     

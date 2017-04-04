@@ -7,7 +7,7 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # O que há de novo no Office Developer Tools para Visual Studio 2013
 Você pode desenvolver Suplementos do SharePoint usando os seguintes novos recursos disponíveis no Office Developer Tools for Visual Studio.
-> [!DICA]
+> **DICA**
 > Baixe a versão mais recente do que o  [Office Developer Tools para Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013).
   
     

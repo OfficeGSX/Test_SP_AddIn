@@ -29,7 +29,7 @@ Dies ist der sechste einer Reihe von Artikeln über die Grundlagen der Entwicklu
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu von SharePoint gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Lösung, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_SP-Hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) herunterladen und die Datei „BeforeWorkflow.sln" öffnen.
   
     
@@ -100,7 +100,7 @@ Der Workflow sendet eine E-Mail, um einen Mitarbeiter der Personalabteilung zu b
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > An verschiedenen Punkten während des Entwerfens Ihres Workflows wird ein blaues Rautensymbol mit einem Ausrufezeichen 
   
     
@@ -255,7 +255,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
     
     
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn die Konsole **Diensttesthost** nicht geöffnet wird, müssen Sie möglicherweise das Workflow-Debugging aktivieren. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Öffnen Sie im Bereich **Eigenschaften** die Registerkarte **SharePoint**, und aktivieren Sie das Kontrollkästchen **Workflow-Debugging aktivieren**. 
 3. Navigieren Sie zum E-Mail-Postfach (Outlook) Ihres Office 365-Entwicklerkontos. Dort finden Sie eine E-Mail mit dem Betreff „ *Employee*  is ready for HR paperwork", wobei *Employee*  der Name des Mitarbeiters ist, deren Element Sie bearbeitet haben. Im Textkörper der E-Mail steht: „ *Employee*  is waiting in the lobby to fill out benefits and employment forms." Im Folgenden sehen Sie ein Beispiel:
     
@@ -269,7 +269,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
     
     
     
-    > [!TIPP]
+    > **TIPP**
       > Wenn der Workflow gestartet, aber niemals abgeschlossen und die E-Mail nicht gesendet wird, versuchen Sie, die Debugsitzung zu beenden, und drücken Sie einige Male erneut F5, bevor Sie davon ausgehen, dass etwas in Ihrem Code nicht in Ordnung ist. Manchmal liegt das Problem bei SharePoint Online. > Wenn weiterhin Probleme auftreten, versuchen Sie, einen Inhaltstyp namens **ListFieldsContentType**, falls dieser noch nicht vorhanden ist, zum Abschnitt **ContentTypes** der schema.xml-Datei hinzuzufügen. Das folgende ist ein Beispiel für das Markup.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

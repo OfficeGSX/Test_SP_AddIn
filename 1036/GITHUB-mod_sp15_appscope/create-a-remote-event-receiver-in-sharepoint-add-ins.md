@@ -31,7 +31,7 @@ Pour suivre cet article et entrer le code vous-même, téléchargez l'exemple  [
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cet exemple utilise un fichier TokenHelper.cs généré par Outils de développement Office pour Visual Studio. Il s'agissait de la version en cours lors de la création de l'exemple, mais il existe peut-être maintenant une version plus récente. L'exemple est tout de même utile pour créer votre premier récepteur d'événement distant. Cependant, lorsque vous serez prêt à aller plus loin, consultez les exemples répertoriés dans la section Étapes suivantes ci-dessous, car ils sont mis à jour plus régulièrement. 
   
     
@@ -115,7 +115,7 @@ Pour suivre cet article et entrer le code vous-même, téléchargez l'exemple  [
     
   
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > Au moment où cet article a été écrit, les Outils de développement Office pour Visual Studio ajoutent des références à toutes les assemblys nécessaires lorsque le récepteur est créé, mais il est possible que les versions ultérieures des outils ne le permettent pas. Si vous obtenez des erreurs de compilation, ajoutez simplement les références manquantes ; par exemple, vous devrez peut-être ajouter des références à System.ServiceModel ou System.ComponentModel.DataAnnotations. 
 
 

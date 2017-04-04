@@ -20,7 +20,7 @@ SharePoint アドインにカスタム列を含める方法について説明し
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeColumns.sln ファイルを開くこともできます。
   
     

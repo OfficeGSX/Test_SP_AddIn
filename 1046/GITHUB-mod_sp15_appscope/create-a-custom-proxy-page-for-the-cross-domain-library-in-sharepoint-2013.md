@@ -86,7 +86,7 @@ Para ler dados de serviço remoto, você deve fazer o seguinte:
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O atributo **AllowedRemoteHostUrl** é usado para especificar o domínio remoto. O **~remoteAppUrl** resolve para a URL do suplemento remota. Para obter mais informações sobre tokens, consulte [Explore a estrutura de manifesto de aplicativo e o pacote de um SharePoint Add-in](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md).
 
 ### Para criar uma página personalizada de proxy
@@ -188,7 +188,7 @@ Para ler dados de serviço remoto, você deve fazer o seguinte:
   ```
 
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Em um de produção Suplemento do SharePoint, você deve fornecer a lógica de autorização e retornar o valor apropriado no objeto **originAuthorityValidator** nas configurações.
 
 ### Para criar uma página de conteúdo
@@ -335,7 +335,7 @@ Response.End();
   
 2. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 3. Escolha o botão **De confiança**.
     

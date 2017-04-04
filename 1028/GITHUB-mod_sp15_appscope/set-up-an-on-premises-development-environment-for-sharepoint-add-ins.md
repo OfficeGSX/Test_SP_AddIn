@@ -30,7 +30,7 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
     
   
 
-> [!注意事項]
+> **注意事項**
 > 只有在Windows Server 2008 R2 Service Pack 1 x64 或 Windows Server 2012 上可支援SharePoint安裝。如果您想開發SharePoint Add-ins的SharePointWindows 7或Windows 8上，您可以註冊Office 365開發人員網站及遠端開發增益集。
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. 安裝完成後，系統會提示您啟動 [SharePoint 產品及技術設定精靈]。
     
-    > [!注意事項]
+    > **注意事項**
       > 如果您使用的已加入網域，但可在網域控制站未連接的電腦的 [SharePoint 產品及技術設定精靈可能會失敗。如果您看到此失敗、 連線至網域控制站其直接或透過虛擬私人網路 (VPN) 連線或登入本機帳戶的電腦具有系統管理權限。
 7. [設定精靈] 完成之後，您會看到新SharePoint網站的 [ **範本選擇**] 頁面。在此頁面上，選擇 **開發人員網站**範本。您可以僅部署SharePoint Add-insVisual Studio從開發人員網站。
     
@@ -135,7 +135,7 @@ dir /od *.log
   
 6. 選取 [ **儲存並關閉**。
     
-    > [!注意事項]
+    > **注意事項**
       > 如果您要取得您嘗試已建立的設定檔存在的訊息，請選取 [ **取消並返回**。
 7. 在 [ **管理使用者設定檔**] 頁面上，您應該看到 **設定檔總數: 1**。
     
@@ -189,7 +189,7 @@ dir /od *.log
     
     
 
-> [!注意事項]
+> **注意事項**
 > 適用於實際執行伺服器陣列，您必須建立內部網路中的 DNS 路由策略及選擇性地設定防火牆。如需如何建立及設定SharePoint Add-ins的實際執行環境的詳細資訊，請參閱 [安裝和管理 SharePoint 增益集](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29) 。
   
     
@@ -200,7 +200,7 @@ dir /od *.log
     
     
 
-> [!注意事項]
+> **注意事項**
 > 您必須執行的所有步驟中的下列程序時伺服器陣列系統管理員身分登入與您必須以系統管理員身分執行命令提示字元中與 SharePoint 管理命令介面。
   
     
@@ -303,7 +303,7 @@ Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
     
     
 
-> [!秘訣]
+> **秘訣**
 > SharePoint 主控增益集部署至您的安裝後，系統可能會提示您嘗試啟動它時，使用您的認證登入。您必須停用回送檢查除去這些提示。請參閱 [您會收到錯誤 401.1 瀏覽網站所使用整合式驗證與裝載於 IIS 5.1 或更新版本時](http://support.microsoft.com/kb/896861)如需如何停用回送檢查的指示。
   
     

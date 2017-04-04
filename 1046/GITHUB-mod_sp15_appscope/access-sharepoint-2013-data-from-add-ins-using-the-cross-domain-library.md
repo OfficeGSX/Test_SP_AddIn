@@ -20,7 +20,7 @@ Figura 1 mostra uma solicitação bloqueada em domínios.
     
     
 Quando um usuário solicita uma página do seu domínio suplemento (1), a comunicação do lado do cliente é vinculada somente para esse domínio. O suplemento pode emitir chamadas de cliente na página apenas para outros recursos no mesmo domínio. No entanto, suplementos geralmente exigem recursos de outros domínios, como o domínio de SharePoint, para atender os cenários. No código da sua página, você pode tentar emitir uma solicitação para o domínio de SharePoint (2), que é bloqueado pelo navegador. Geralmente, você vê um erro de **acesso negado**. O erro não sugerem que você não tem permissões para os recursos solicitados mas, provavelmente, você ainda não consegue emitir uma solicitação para os recursos mencionados.Quando você usa a biblioteca de domínio cruzado, as páginas da Web no seu suplemento podem acessar dados em seu domínio suplemento e o domínio SharePoint. A biblioteca de domínio cruzado é uma alternativa do lado do cliente no formulário de um arquivo de JavaScript (SP RequestExecutor.js) que está hospedado no site SharePoint que você pode fazer referência no seu suplemento remoto. A biblioteca de domínio cruzado permite interagir com mais de um domínio em sua página de suplemento remoto através de um proxy. É uma boa opção se você gosta suplemento código executado no cliente, em vez de no servidor, e se houver obstáculos de conectividade, como firewalls, entre SharePoint e sua infraestrutura remota. Você pode acessar dados na web host  por exemplo, você pode acessar listas que usuários finais interagem com, independentemente de seu suplemento. Ou você pode acessar dados na web suplemento, como listas de especificamente provisionadas para seu suplemento suplementos também podem acessar outros conjuntos de sites e sites desde o suplemento tem permissões de escopo do locatário e ele foi implantado como uma instalação de lote usando o catálogo de suplemento.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Neste tópico, **domínio suplemento** refere-se para o domínio que hospeda as páginas de suplemento. Isso pode ser o domínio de uma web remota aplicativo em um provedor hospedado, mas suplemento páginas também pode estar em SharePoint na web suplemento e fazer chamadas para o domínio de web de host. No último cenário, o domínio suplemento é o domínio da web suplemento.
   
     
@@ -101,7 +101,7 @@ Figura 2 mostra uma página da Web que exibe os dados na web suplemento.
   
 4. Selecione o **provedor hospedado** como a opção de hospedagem para seu suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Você também pode usar a biblioteca de domínio cruzado em um suplemento hospedado no SharePoint. No entanto, em um suplemento hospedado no SharePoint a página add-in já está no suplemento web, no qual caso para que ele não será necessário biblioteca entre domínios ler os itens de lista. Para uma amostra de suplemento hospedado no SharePoint que lê dados na web host, consulte  [usar a biblioteca de domínio cruzado em um hospedado no SharePoint suplemento (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814) ou [Acessar dados da web host](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) neste artigo.
 
 ### Criar itens de lista na web suplemento
@@ -156,7 +156,7 @@ Figura 2 mostra uma página da Web que exibe os dados na web suplemento.
   
   - Cria uma instância do objeto **RequestExecutor**. Por padrão, RequestExecutor usa web suplemento como o site de contexto.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Você pode alterar o site de contexto para outros sites diferentes web suplemento usando o ponto de extremidade do **AppContextSite** (REST) ou o objeto (JSOM). Para saber mais sobre AppContextSite, consulte [Acessar dados da web host](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) posteriormente neste artigo.
   - Problemas de uma chamada REST para o ponto de extremidade de itens de lista.
     
@@ -280,7 +280,7 @@ Figura 2 mostra uma página da Web que exibe os dados na web suplemento.
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressionar F5, Visual Studio cria a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **Confiar**.
     

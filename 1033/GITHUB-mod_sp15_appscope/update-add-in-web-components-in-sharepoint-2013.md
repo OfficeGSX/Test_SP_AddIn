@@ -7,7 +7,7 @@ ms.assetid: 6da6ac25-53b7-4dd2-8637-a86e7ca1f3ff
 
 # Update add-in web components in SharePoint 2013
 Update pages, lists, content types, and other add-in web components in a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -97,7 +97,7 @@ The Microsoft Office Developer Tools for Visual Studio are oriented to creating 
 
   
 
-> [!CAUTION]
+> **CAUTION**
 > Do not add "<!-- -->" comments to the  _{FeatureName}_.features file. Comments are not supported by the upgrade infrastructure and the upgrade will fail if comments are in the file. They are used in the markup examples of this article only to indicate to you where your markup should go. 
   
     
@@ -131,7 +131,7 @@ Use the following steps to update the add-in web Feature.
 
     At this point the file should resemble the following example.
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > The Office Developer Tools for Visual Studio may have already added the above markup and copied some elements from the **ElementManifests** section to the **ApplyElementManifests** section as an illustration. *Delete these.*  Although you may end up putting some of them back in later steps, it is easier and safer to start with an empty **ApplyElementManifests** section. Redundant entries for components that have not changed can have bad consequences, including possibly lengthening the update process enough that it times-out and fails.
 
 
@@ -236,7 +236,7 @@ Use the following steps to update the add-in web Feature.
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       >  Do not delete the original manifest. The Feature XML is using both of the old and new ones.>  Do not copy any **ElementFile** elements from the **ElementManifests** section to the **ApplyElementManifests** section even if the file that is referenced in the **ElementFile** has been changed.
 2. Open every element manifest file that is referenced in the **ApplyElementManifests** section and ensure that any [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) elements have a **ReplaceContents** attribute and that it is set to **TRUE**. The following is an example. The Office Developer Tools for Visual Studio may have done this already, but you should verify it. Do this even for the element manifests from previous versions of the add-in. This is one of the few ways in which it is a good practice to edit an existing element manifest file.
     
@@ -254,7 +254,7 @@ Use the following steps to update the add-in web Feature.
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       >  If the page was configured to allow users to customize it, then this markup has the side effect of removing those customizations. Users will have to repeat them.>  If the Web Part was added to the page following the guidance in [Include a Web Part in a webpage on the add-in web](include-a-web-part-in-a-webpage-on-the-add-in-web.md), then the Web Part markup is in the elements manifest, so changing the Web Part's properties is an exception to the general rule that you should not edit an element manifest file as part of an add-in update. 
 4. As an alternative to changing a page, you also have the option of using redirection to a new page using the following steps. 
     
@@ -392,7 +392,7 @@ When you update a SharePoint Add-in for the second (or third, and so on) time, y
     
     Notice also that the **BeginVersion** attribute is not used in any of the **VersionRange**s. This is because the default value for the **BeginVersion** attribute is 0.0.0.0, and that is the value that you want because you want all upgrade actions applied to every instance of the add-in that is earlier than the version that is specified in the **EndVersion** attribute.
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       >  The **VersionRange** element determines only which versions of the Feature the upgrades are applied to. It does not determine which versions of the add-in get a notification that an update is available—the notification is triggered only by the add-in version number. Within 24 hours of a new version of the add-in being available in the organization's add-in catalog or the Office Store, every installed instance of the add-in, regardless of version, has the notification that an update is available appear on its tile in the **Site Contents** page.>  The **VersionRange** does not affect the new version number of the newly upgraded Feature or the newly updated add-in. Those two numbers are always changed to the latest version number, regardless of what version range the Feature was in before the upgrade. This provides another good reason to avoid using a **BeginVersion** attribute. The **BeginVersion** attribute can be used to block some upgrade actions from ever occurring on some add-in instances. But it cannot block the Feature or add-in versions from being raised to the latest version. So the use of a **BeginVersion** attribute could create a situation in which two instances of your add-in could have the same add-in version number and the same add-in web Feature version number, but have different components in their add-in webs.
 
 ## Verify deployment of add-in web components
@@ -429,7 +429,7 @@ Follow these steps to verify the deployment of the add-in web Feature and its co
   
 8. For each of these custom list instances, choose the **Customize "name_of_list "** link, and verify on the list settings page that the list has the expected content types and columns.
     
-    > [!NOTE]
+    > **NOTE**
       > If there is no **Content Types** section on the page, you must enable management of content types. Choose the **Advanced Settings** link and, on the Advanced Settings page, enable management of content types, and then choose **OK**. You are returned to the previous page, and there is now a list of **Content Types** section.
 9. Near the top of the page is the **web address** of the list. If you included sample items in your list instance definition, copy the address and paste it into the address bar of your browser, and then navigate to the list. Verify that the list has the sample items that you created.
     

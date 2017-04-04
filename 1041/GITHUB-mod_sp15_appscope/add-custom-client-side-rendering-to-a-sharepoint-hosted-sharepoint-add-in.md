@@ -35,21 +35,21 @@ SharePoint アドイン ページ でコントロールのレンダリングと�
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeClientRenderedControl.sln ファイルを開くこともできます。
   
     
     
 
 簡単なクライアント側の JavaScript を使用して、Web パーツのレンダリング、ほとんどのタイプのフィールド (列)、およびその他のいくつかのコントロールをカスタマイズできます。これは、 **SPField.JSLink** など、コントロールの **JSLink** プロパティに JavaScript ファイルを割り当てることで行います。また、クライアント側の検証ロジックをこの方法で追加することもできます。この記事では、クライアント側のレンダリングを使用することで、新入社員オリエンテーション SharePoint アドイン のリストにあるフィールドのレンダリングをカスタマイズします。
-> [!メモ]
+> **メモ**
 > エンドユーザーのブラウザーで JavaScript が無効になっている場合、SharePoint はサーバー側のレンダリングと検証にフォールバックします。 
   
     
     
 
 
-> [!メモ]
+> **メモ**
 > JSLink プロパティは、アンケート リストやイベント リストではサポートされません。SharePoint の予定表は、イベント リストです。 
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. SharePoint にカスタム JavaScript を使用するよう指示するには、新しい属性 **JSLink** を **Field** 要素に追加して、次の URL を値として割り当てます。 `~site/Scripts/OrientationStageRendering.js`
     
-    > [!メモ]
+    > **メモ**
       > **JSLink** プロパティは、常にメソッドではなくファイルです。SharePoint にどのメソッドを実行するか指示する方法はありません。このため、自動的に動作するメソッドがファイルに含まれます。
 
     **Field** 要素の開始タグは、次のようになります。

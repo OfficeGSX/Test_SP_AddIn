@@ -20,7 +20,7 @@ Dies ist der dritte einer Reihe von Artikeln über die Grundlagen der Entwicklun
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu von SharePoint gehosteten Apps durchgearbeitet haben, haben Sie eine Visual Studio Lösung, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_SP-Hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) herunterladen und die Datei „BeforeColumns.sln" öffnen.
   
     

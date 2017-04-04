@@ -46,7 +46,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) および [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |デジタル証明書の基本的な概念について説明します。  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > 高信頼 SharePoint アドイン は、オンプレミスの SharePoint にのみインストール可能であり、Microsoft SharePoint Online にはインストールできません。それらは、クラウド ベースではなくオンプレミスの Web アプリケーションを主として意図したものです。この記事では、このような状況でアドインを発行する方法について説明します。また、この記事で言及する「顧客」は、SharePoint アドイン をインストールしてアドインのリモート コンポーネントのホストとなる事業所のことを指します。 
   
     
@@ -230,7 +230,7 @@ ISS マネージャー 8 を使用している場合、次の手順はスキッ�
   
 4. シリアル番号 ( *スペースを含めない*  ) をテキスト ファイルにコピーし、それを SharePoint アドイン の開発者に渡します。
     
-    > [!ヒント]
+    > **ヒント**
       > 一部の開発者ブログ投稿やフォーラムの質問では、シリアル番号をクリップボードに直接コピーすると、非表示の文字を含む文字列が作成され、SharePoint アドイン のコードでシリアル番号が認識されなくなるという現象が報告されています。コピーする代わりに、手動で入力することを考慮してください。 
 次に、証明書の cer バージョンを作成します。それには、リモート Web サーバーの公開鍵が含まれており、SharePoint がリモート Web アプリケーションからの要求を暗号化解除したり、それらの要求でトークンへのアクセスを検証したりするのに使用されます。それは、リモート Web サーバー上で作成された後、SharePoint ファームに移されます。
   
@@ -314,7 +314,7 @@ ISS マネージャー 8 を使用している場合、次の手順はスキッ�
     
   
 
-> [!メモ]
+> **メモ**
 > 証明書をトークン発行元として登録しても、それはすぐには有効になりません。それが有効になるまで、アドインは動作しません。すべての SharePoint サーバーが新しいトークン発行元を認識するまでに 24 時間かかることもあります。SharePoint ユーザーの作業を妨げることなく iisreset をすべての SharePoint サーバー上で実行することが可能なら、それによって発行元が直ちに認識されるようになります。 
   
     
@@ -325,7 +325,7 @@ ISS マネージャー 8 を使用している場合、次の手順はスキッ�
 <a name="WebConfig"> </a>
 
 
-> [!ヒント]
+> **ヒント**
 > 修正済み web.config を含むコード サンプルについては、「 [PnP / サンプル / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)」を参照してください。 
   
     
@@ -351,7 +351,7 @@ web.config ファイルを編集し、 `appSettings` ノードの以下のキー
     
   
 
-> [!メモ]
+> **メモ**
 > Office Developer Tools for Visual Studio により、 **ClientSigningCertificatePath** および **ClientSigningCertificatePassword** のアドイン設定キーが追加されている可能性があります。それらは、実際に運用するアドインでは使用されないものなので、削除してください。
   
     
@@ -383,7 +383,7 @@ Office Developer Tools for Visual Studio によって生成される TokenHelper
     
     
 
-> [!ヒント]
+> **ヒント**
 > 修正済み tokenhelper.cs を含むコード サンプルについては、「 [PnP / サンプル / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)」を参照してください。 
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!ヒント]
+> **ヒント**
 > Microsoft では、Visual Studio と Office Developer Tools for Visual Studio の更新スケジュールの頻度が以前よりも高くなっており、ドキュメンテーションに記されている変更内容がいつでも最新のものとは限りません。このセクションは、2013 年 10 月にリリースされたバージョンの Visual Studio、およびそこに含まれていたバージョンの Office Developer Tools for Visual Studio を使用して執筆されたものです。Visual Studio またはツールについて、それよりも前あるいは後のバージョンを使用している場合は、Visual Studio のヘルプやブログ投稿を調べて、ここに示されている手順に相当する処理の実行方法を確認してください。 
   
     

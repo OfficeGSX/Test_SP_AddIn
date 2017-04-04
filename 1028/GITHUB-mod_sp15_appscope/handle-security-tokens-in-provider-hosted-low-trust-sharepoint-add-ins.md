@@ -7,7 +7,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # 處理安全性權杖的提供者主控低信任層級 SharePoint 增益集
 了解之內容的存取，並重新整理低信任層級、 提供者主控SharePoint Add-ins及如何使用您的程式碼中所使用的授權的 token。
-> [!重要]
+> **重要**
 > **本文是完全相關的安全性權杖使用低信任層級授權系統都不高信任系統。** 如需使用的 token 高信任系統中的資訊，請參閱 [建立及使用存取權杖中提供者主控高信任 SharePoint 增益集](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md)。
   
     
@@ -80,7 +80,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
     
   
 
-> [!注意事項]
+> **注意事項**
 > 在大多數情況下，您將不能夠使用"AccessToken"為快取機碼一樣簡單的字詞，因為增益集必須保留不同的使用者和 SharePoint 伺服器陣列租用的權杖不同。如果增益集使用 [快顯 Token 流程](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows)、 沒有可用來區分快取的語彙基元的 SharePoint 所提供的特殊 **CacheKey** 。本節說明問題有哪些以及您的應用程式未使用的快顯 Token 流程時執行的項目。
   
     
@@ -111,7 +111,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
     
     
 
-> [!注意]
+> **注意**
 > **不安全的作法是儲存在 cookie 中存取權杖。** 通常是很好的作法若要避免擁有透過瀏覽器存取 token 複雜。
   
     
@@ -246,7 +246,7 @@ SharePoint Add-in可能會有未架設在相同網域的遠端 web 應用程式�
     
   
 
-> [!重要]
+> **重要**
 > 使用者瀏覽至另一個頁面或重新整理] 頁面上或權杖會遺失前必須發生前兩個工作。例如，ASP.NET web 表單應用程式中，請考慮這些工作 **Page_Load**方法 (在設定格式化的條件的程式碼區塊只能在要求不是回傳時才會執行)。在 ASP.NET MVC 應用程式，請考慮這些工作的預設控制站方法。
   
     
@@ -279,7 +279,7 @@ SharePointContextToken contextToken =
     
     
 
-> [!重要]
+> **重要**
 > 我們提醒您一次因為它是非常重要： 請勿使用用戶端的 *存取*  權杖快取。它會使用僅適用於內容權杖的安全。
   
     

@@ -13,7 +13,7 @@ Les sites, les listes et les éléments de liste SharePoint sont des types d' **
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour obtenir des liens vers des articles sur la définition des autorisations affinées, voir  [Ressources supplémentaires](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources). 
   
     

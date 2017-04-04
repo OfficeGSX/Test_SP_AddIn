@@ -35,7 +35,7 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par un fournisseur, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) et ouvrir le fichier BeforeFirstRunLogic.sln.
   
     
@@ -49,7 +49,7 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :>  Cliquez avec le bouton droit sur le nœud de la solution en haut de l' **Explorateur de solutions** et sélectionnez **Définir les projets de démarrage**. >  Assurez-vous que les trois projets sont définis sur **Début** dans la colonne **Action**. 
   
     
@@ -139,7 +139,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
   ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Il est possible que vous vous demandiez pourquoi le complément utilise des numéros de version et un test « inférieur à » pour déterminer la réponse à une simple question : le complément s'exécute-t-il pour la première fois ? Nous pourrions tout aussi bien avoir un champ de chaîne simple dans la table **Clients** défini sur « pas encore exécuté » dans le gestionnaire d'installation, puis le modifier sur « exécuté une fois » par la logique de première exécution une fois que les composants SharePoint sont déployés.>  Pour le complément de Chain Store, un simple test pourrait fonctionner. Cependant, il est généralement recommandé d'utiliser les numéros de version. En effet, un complément de production est susceptible d'être mis à jour sur place dans le futur (c'est-à-dire, mis à jour après qu'il a déjà été installé). Lorsque cela se produira, votre logique de complément devra être sensible à plus de possibilités quepas encore exécuté etdéjà exécuté une fois. Par exemple, supposons que vous souhaitez ajouter une liste supplémentaire au site web hôte dans la mise à niveau de la version 1.0.0.0 à 2.0.0.0. Vous pouvez le faire dans un gestionnaire d'événements de mise à jour ou dans une logique de « première exécution après mise à jour ». De toute façon, votre logique de déploiement devra déployer de nouveaux composants, mais elle devra également éviter d'essayer de redéployer les composants qui ont été déployés dans une version précédente du complément. Le numéro de version 1.0.0.0 signalerait que les composants de la version 1.0.0.0 ont été déployés, mais que la logique de première exécution après mise à jour ne s'est pas encore exécutée.
   
     
@@ -383,7 +383,7 @@ private static void CreateLocalEmployeesList()
   
 4.  Accédez à la page **Contenu du site**. La liste **Employés locaux** est à cet endroit, car votre logique de première exécution l'y a ajoutée.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Si la liste n'est pas cet endroit ou que vous détectez d'autres éléments indiquant que le code de première exécution ne s'exécute pas, il se peut que la table **Clients** ne soit pas vidée lorsque vous appuyez sur F5. La cause la plus commune de ce phénomène est que le projet **ChainCorporateDB** n'est plus défini comme projet de démarrage dans Visual Studio. Consultez la remarque en haut de cet article pour résoudre ce problème. Assurez-vous également que vous avez configuré la base de données afin qu'elle soit régénérée comme décrit dans la rubrique relative à la [ Configuration de Visual Studio pour régénérer la base de données d'entreprise à chaque session de débogage](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5.  Ouvrez la liste et ajoutez un élément. Notez que sur le nouveau formulaire de l'élément, le champ **Ajouté à la base de données d'entreprise** n'apparaît plus, il ne peut par conséquent pas être défini manuellement. Cela s'applique aussi au formulaire de modification d'élément.
     

@@ -13,7 +13,7 @@ SharePoint-Websites, Listen und Listenelemente sind **SecurableObject**-Typen. S
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Unter  [Zusätzliche Ressourcen](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) finden Sie Links zu Artikeln zum Festlegen abgestimmter Berechtigungen.
   
     

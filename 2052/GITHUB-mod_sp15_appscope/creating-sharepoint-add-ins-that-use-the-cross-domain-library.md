@@ -29,7 +29,7 @@ ms.assetid: e63411ef-7137-4f1c-aac5-a3414ec88154
     
 
 
-> [!注释]
+> **注释**
 > 跨域库还可用于允许反向访问数据，即允许 SharePoint 页面上的 JavaScript 访问远程域中的数据。有关详细信息，请参阅 [从 SharePoint 页面访问远程数据](#ReverseDirection)。 
   
     
@@ -43,7 +43,7 @@ SharePoint 跨域库包含在文件 SP.RequestExecutor.js 中，该文件位于�
     
     
 
-> [!警告]
+> **警告**
 >  `postMessage()` 函数仅可在支持 HTML 5 的浏览器上运行，因此使用跨域库的 SharePoint 外接程序将不能在旧浏览器上运行。
   
     
@@ -71,7 +71,7 @@ SharePoint 跨域库包含在文件 SP.RequestExecutor.js 中，该文件位于�
   ```
 
 
-> [!注释]
+> **注释**
 > 如果您使用第二个选项（ **Internal** 外接程序主体），您可以使用仅 JavaScript 和跨域库访问 SharePoint。SharePoint 客户端对象模型对 **Internal**SharePoint 外接程序为冻结状态，因此您不能具有同时使用跨域库和低信任或高信任系统的双授权系统。 
   
     

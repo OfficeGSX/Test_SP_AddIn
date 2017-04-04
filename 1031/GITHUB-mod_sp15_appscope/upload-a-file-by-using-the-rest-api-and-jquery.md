@@ -36,7 +36,7 @@ Beide Codebeispiele in diesem Artikel verwenden die REST-API und jQuery AJAX-Anf
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > In JavaScript geschriebene vom Anbieter gehostete Add-Ins müssen die domänenübergreifende SP.RequestExecutor-Bibliothek verwenden, um Anforderungen an eine SharePoint-Domäne zu senden. Ein Beispiel dazu finden Sie unter  [Hochladen einer Datei mithilfe der domänenübergreifenden Bibliothek](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
   
     

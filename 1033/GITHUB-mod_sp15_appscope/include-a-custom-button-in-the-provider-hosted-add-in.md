@@ -7,7 +7,7 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
 
 # Include a custom button in the provider-hosted add-in
 Learn how to include a custom ribbon button in a provider-hosted SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -21,7 +21,7 @@ This is the third in a series of articles about the basics of developing provide
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeRibbonButton.sln file.
   
     
@@ -91,7 +91,7 @@ In this section, you include markup in the add-in that will deploy a button to t
 
 1.  *If Visual Studio is open, you have to close it*  and reopen the Chain Store solution so that Visual Studio can discover your new list. (Run Visual Studio as an administrator.)
     
-    > [!NOTE]
+    > **NOTE**
       >  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
 2. Right-click the **ChainStore** project in **Solution Explorer** and choose **Add | New Item**. 
     

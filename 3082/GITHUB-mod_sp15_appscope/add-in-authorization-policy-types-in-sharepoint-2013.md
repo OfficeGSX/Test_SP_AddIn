@@ -39,7 +39,7 @@ SharePoint proporciona tres tipos de directivas de autorización:
     
     
     
-    > [!NOTA]
+    > **NOTA**
       > Ciertas API necesitan un contexto de usuario y no pueden ejecutarse con una directiva de solo complemento. Entre ellas, se incluyen muchas API para interactuar con Project Server 2013 y ejecutar consultas de búsqueda. 
 
 ### Consultar un escenario de ejemplo de un complemento que usa la directiva de solo complemento
@@ -74,7 +74,7 @@ Para poder realizar llamadas de solo complemento a SharePoint, el complemento de
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Complementos de SharePoint, se usa para llamar "aplicaciones de SharePoint". Para mantener la compatibilidad con versiones anteriores, el esquema de manifiesto de aplicación no se ha modificado, por lo que aparece la cadena "app" en los nombre de elementos y atributos de mayo. 
   
     
@@ -123,7 +123,7 @@ if (contextTokenString != null)
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Los complementos que no realizan llamadas autenticadas de OAuth (por ejemplo, los complementos que solo tienen JavaScript ejecutándose en la web de complemento) no pueden usar la directiva de solo complemento. Pueden solicitar el permiso, pero no podrán beneficiarse de él porque para hacerlo se necesita que se pase un token de OAuth de solo complemento. Solo los complementos con aplicaciones web que se ejecuten fuera de SharePoint pueden crear y pasar tokens de solo complemento. 
   
     

@@ -12,7 +12,7 @@ Aprenda o fluxo de OAuth para suplementos que a permissão para acessar os recur
 <a name="Overview"> </a>
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este artigo pressupõe que você está familiarizado com  [Criando Add-ins do SharePoint que usam a autorização de baixa confiança](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) e com os conceitos e princípios por trás do OAuth. Para obter mais informações sobre o OAuth, consulte [OAuth.net](http://oauth.net/) e [Protocolo de autorização de Web (oauth)](http://datatracker.ietf.org/doc/active/#oauth).
   
     
@@ -23,7 +23,7 @@ Em alguns cenários, um suplemento pode solicitar permissão para acessar os rec
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esse tipo de suplemento pode ser executado somente por usuários que têm permissões de gerenciar os recursos que o suplemento deseja acessar. Por exemplo, se um suplemento solicitar apenas permissão de leitura para um site, um usuário que tem de leitura, mas não gerenciar, direitos para o site não pode executar o suplemento.
   
     
@@ -50,7 +50,7 @@ Esta seção resume o fluxo de autenticação e autorização do OAuth para um s
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O fluxo **envolve uma série de interações entre o add-in, SharePoint, o servidor de autorização (que é o ACS) e o usuário final** em tempo de execução. Portanto, o fluxo requer SharePoint Online ou um farm de SharePoint que é conectado à Internet para que ele pode se comunicar com o ACS. farms de SharePoint que não estão conectados à Internet devem usar [o sistema de autorização de alta confiança](creating-sharepoint-add-ins-that-use-high-trust-authorization.md).
   
     
@@ -101,7 +101,7 @@ A seguir estão as etapas no fluxo de código de autenticação.
     
 
     
-> [!DICA]
+> **DICA**
 > Essas etapas se referir a métodos no arquivo TokenHelper.cs (ou. vb). Este código gerenciado não é compilado, portanto não há nenhum tópicos de referência para ele. No entanto, o arquivo em si é totalmente comentado com descrições de cada classe, o parâmetro de membro e o valor de retorno. Considere a ter uma cópia dela abertas para consultar à medida que você leia estas etapas.
   
     
@@ -158,7 +158,7 @@ Se você não estiver usando código gerenciado, os aliases de escopo são usado
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter uma descrição dos escopos, consulte  [Suplemento permissões no SharePoint 2013](add-in-permissions-in-sharepoint-2013.md).
   
     

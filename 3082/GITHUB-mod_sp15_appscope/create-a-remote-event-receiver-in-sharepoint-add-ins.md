@@ -31,7 +31,7 @@ Para continuar con este artículo y escribir el código usted mismo, descargue e
     
     
 
-> [!NOTA]
+> **NOTA**
 > En este ejemplo se usa un archivo TokenHelper.cs generado por Office Developer Tools para Visual Studio. Esta era la versión más reciente cuando se creó el ejemplo, pero es posible que no lo sea versión más reciente cuando lea esto. Con todo, sigue siendo un excelente ejemplo para crear su primer RER. Cuando esté listo para avanzar, consulte los ejemplos que aparecen en la sección Pasos siguientes abajo, ya que es bastante probable que estén actualizados. 
   
     
@@ -115,7 +115,7 @@ Para continuar con este artículo y escribir el código usted mismo, descargue e
     
   
 
-    > [!NOTA]
+    > **NOTA**
       > En el momento en el que se redactó este artículo, Office Developer Tools para Visual Studio agregaba referencias a todos los ensamblados necesarios cuando el receptor se creaba, pero es posible que las versiones más recientes de las herramientas no lo hagan. Si obtiene errores de compilador, bastará con agregar las referencias que faltan (por ejemplo, necesitará agregar referencias a System.ServiceModel o System.ComponentModel.DataAnnotations). 
 
 

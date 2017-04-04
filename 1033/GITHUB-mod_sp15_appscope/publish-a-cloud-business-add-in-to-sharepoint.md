@@ -7,7 +7,7 @@ ms.assetid: b528a23f-72c3-42cb-8265-1c5b9238d404
 
 # Publish a cloud business add-in to SharePoint
 You can publish your cloud business add-in as a provider-hosted SharePoint add-in. A provider-hosted add-in gives you the flexibility of deploying your web app and database to an on-premise SharePoint site, to Microsoft Azure, or to a third-party hosting site. After you publish your add-in, others can run it from SharePoint on their computers and mobile devices.You can publish your add-in directly to a site using WebDeploy, or you can create a package for your add-in that can be deployed to multiple servers.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -35,7 +35,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
   
 3. On the **Application Server Configuration** page, choose the **IIS Server** option button, and then choose **Next**.
     
-    > [!NOTE]
+    > **NOTE**
       > If you have a publish settings (.publishsettings or .pubxml) file that was created for another add-in, you can use that file to provide the rest of the information that you need for publishing. If so, choose the **Import Settings** button in the wizard.
 4. On the **Publish Output** page, choose the **Publish directly to a server now** option button, and then choose **Next**.
     
@@ -65,7 +65,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
     
   
 
-    > [!NOTE]
+    > **NOTE**
       > If you're publishing through a firewall, you might have to open port 8172. 
 6. In the **Site/application** text box, enter the names of the IIS website and your add-in.
     
@@ -73,7 +73,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
     
     If you're publishing to IIS on your own computer for testing, or you're publishing to a server on your internal network, enter the site and add-in name as they appear in IIS Manager. For example, if you're publishing the add-in MyApp to the default website in IIS, enter Default Web Site/MyApp.
     
-    > [!NOTE]
+    > **NOTE**
       > If you're publishing to an existing web folder and want to remove any existing content, select the **Remove additional files at destination** check box.
 7. In the **User Name** and **Password** text boxes, enter credentials for an account that has sufficient authority to perform deployment tasks on the destination web server, and then choose **Next**.
     
@@ -85,7 +85,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
   
 9. On the **Data connections** page, on the **Database Connections** tab, enter the administrator and user connection strings for the database server where you want to publish your add-in's database.
     
-    > [!NOTE]
+    > **NOTE**
       > The database doesn't have to be located on the server where you are publishing the add-in. 
 10. On the **Attached Data Sources** tab, update the connection strings for any additional connections as needed, and then choose **Next**.
     
@@ -127,7 +127,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
   
 3. On the **Application Server Configuration** page, choose the **IIS Server** option button, and then choose **Next**.
     
-    > [!NOTE]
+    > **NOTE**
       > If you have a publish settings (.publishsettings or .pubxml) file that was created for another add-in, you can use that file to provide the rest of the information that you need for publishing. If so, choose the **Import Settings** button in the wizard.
 4. On the **Publish Output** page, choose the **Create a package on disk** option button, and then choose **Next**.
     

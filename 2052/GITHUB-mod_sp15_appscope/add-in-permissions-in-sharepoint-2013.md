@@ -64,7 +64,7 @@ SharePoint 外接程序使用权限请求指定正常运行所需的权限。权
     
     
 
-> [!注释]
+> **注释**
 > 本节中介绍的范围仅适用于列表内容和库内容。有关其他功能的范围的信息，请参阅本文的 [了解外接程序权限的类型和权限范围](#Perm_types)一节。 
   
     
@@ -75,7 +75,7 @@ SharePoint 外接程序使用权限请求指定正常运行所需的权限。权
     
     
 
-> [!注释]
+> **注释**
 > SharePoint 外接程序具有其自己的标识，它是一个安全主体，称为外接程序主体。与用户和组一样，外接程序主体具有特定权限。外接程序主体具有对外接程序 Web 的完全控制权限，因此它只需要对位于主机 Web 或外接程序 Web 之外的其他位置的 SharePoint 资源的请求权限。有关外接程序 Web 的详细信息，请参阅 [SharePoint 外接程序体系结构的重要方面和开发前景](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)和 [SharePoint 2013 中的主机 Web、外接程序 Web 和 SharePoint 组件](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md)。 
   
     
@@ -126,14 +126,14 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
   
 
-> [!注释]
+> **注释**
 > 有关读取、写入、管理和完全控制权限的详细信息，请参阅 [规划外接程序权限管理](http://technet.microsoft.com/zh-cn/library/jj219576%28office.15%29.aspx)。 
   
     
     
 
 
-> [!注释]
+> **注释**
 > 这些权限对应于 SharePoint 的下列默认权限级别：读者、参与者、设计者和完全控制。有关用户权限级别的详细信息，请参阅 [用户权限和权限级别](http://technet.microsoft.com/zh-cn/library/cc288074.aspx)。 > 外接程序权限名称与 SharePoint 用户角色权限名称不匹配，目的是为了避免混淆用户角色权限和外接程序权限。由于自定义与 SharePoint 用户角色关联的权限不会影响外接程序权限请求级别，因此外接程序权限名称与对应的 SharePoint 用户角色不匹配，但完全控制权限除外，其不可通过权限管理用户界面进行自定义。 
   
     
@@ -154,7 +154,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
   
 
-> [!注释]
+> **注释**
 > Office 商店应用程序在外接程序可请求的权限类型上具有一些限制。有关详细信息，请参阅本文的 [了解外接程序权限的类型和权限范围](#Perm_types)一节。 
   
     
@@ -196,7 +196,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
     
 
-> [!注释]
+> **注释**
 > 表 2 中使用的 URI 是文本值。 
   
     
@@ -285,7 +285,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
     
 
-> [!注释]
+> **注释**
 > 这些表中使用的 URI 为文本值。 
   
     
@@ -304,7 +304,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 |http://sharepoint/bcs/connection  <br/> |阅读  <br/> |
    
 
-> [!注释]
+> **注释**
 > 有关 BCS 外接程序权限请求范围的详细信息，请参阅  [SharePoint 2013 中的 Business Connectivity Services](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx)。 
   
     
@@ -327,7 +327,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!注释]
+> **注释**
 > 有关搜索外接程序权限请求范围的详细信息，请参阅  [SharePoint 2013 中的搜索](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx)。 
   
     
@@ -342,7 +342,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
     
 
-> [!注释]
+> **注释**
 > 应在具有所需 Project Server 功能和服务的环境中测试使用 Project Server 2013 功能和服务的外接程序。默认情况下不会使用 SharePoint Server 安装了解 Project Server 2013 权限范围的 Project Server 2013 权限提供程序程序集。有关详细信息，请参阅 Project Server 2013 开发人员文档。 
   
     
@@ -381,7 +381,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 |http://sharepoint/social/microfeed  <br/> |读取、写入、管理、完全控制  <br/> |
    
 
-> [!注释]
+> **注释**
 > 有关社交功能外接程序权限请求范围的详细信息，请参阅 [访问社交功能的外接程序权限请求](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms)。 
   
     
@@ -404,7 +404,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 |http://sharepoint/taxonomy  <br/> |读取、写入  <br/> |
    
 
-> [!注释]
+> **注释**
 > 有关分类外接程序权限请求范围的详细信息，请参阅  [添加 SharePoint 2013 功能](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx)。 
   
     
@@ -438,7 +438,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 ||||
 |:-----|:-----|:-----|
 |**范围 URI** <br/> |**属性** <br/> |**类型** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > [!注释]> 有关 **BaseTemplateId** 和列表基本模板对应的整数值的详细信息，请参阅 [List 元素（列表）](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) 的 **Type** 属性。          |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **注释**> 有关 **BaseTemplateId** 和列表基本模板对应的整数值的详细信息，请参阅 [List 元素（列表）](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) 的 **Type** 属性。          |
    
 
 ## 管理外接程序权限并进行故障排除

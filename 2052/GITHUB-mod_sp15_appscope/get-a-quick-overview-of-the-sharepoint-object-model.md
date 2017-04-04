@@ -23,7 +23,7 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
     
   
 
-> [!注释]
+> **注释**
 > 如果您阅读过关于提供程序托管的外接程序的系列文章，那么您应该具有 Visual Studio 解决方案，可以继续阅读本主题。您还可以从  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) 下载存储库并打开 BeforeSharePointWriteOps.sln 文件。
   
     

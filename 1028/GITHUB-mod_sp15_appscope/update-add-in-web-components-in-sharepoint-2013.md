@@ -90,7 +90,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
 
   
 
-> [!注意]
+> **注意**
 > 請勿加上"<!--->"  _{FeatureName}_.features 檔案的註解。註解不受支援的升級的基礎結構和註解的檔案中升級將會失敗。使用本文標記範例中只能以指出您您標記應移出。
   
     
@@ -124,7 +124,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
 
     此時檔案應該類似下列的範例。
     
-    > [!重要]
+    > **重要**
       > Office Developer Tools for Visual Studio可能已經新增上述標記並從 **ElementManifests** ] 區段中的某些項目複製到 **ApplyElementManifests** ] 區段中為圖例。 *刪除這些。*  雖然您最後可能有些放在稍後步驟後，它是更輕鬆地和比較安全空 **ApplyElementManifests**一節的開頭。重複的項目尚未變更的元件可以有錯誤的後果，包括還延長更新程序足夠的時間延展並失敗。
 
 
@@ -229,7 +229,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 不要刪除原始的資訊清單。功能 XML 會使用這兩個舊的和新的錯誤。> 不要複製任何 **ElementFile**元素從 **ElementManifests**區段 **ApplyElementManifests**小節即使已變更為 **ElementFile**中所參照的檔案。
 2. 開啟所參照的 **ApplyElementManifests** ] 區段中的每個元素資訊清單檔案，並確保任何 [檔案](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx)元素具有 **ReplaceContents**屬性和它設為 **TRUE**。以下是範例。Office Developer Tools for Visual Studio可能已完成這已經，不過您應該驗證它。這樣即使的元素資訊清單從舊版的增益集。這是一個很少的方式在其中的編輯現有的元素資訊清單檔案很好的作法。
     
@@ -247,7 +247,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > 如果頁面已設定為允許使用者自訂它，然後此標記的效果端移除這些自訂項目。使用者必須重複執行它們。> 如果網頁組件新增至 [在 [增益集在 web 上網頁中包含網頁組件](include-a-web-part-in-a-webpage-on-the-add-in-web.md)，然後的網頁組件的標記中的指引是元素資訊清單] 頁面上下列項目，所以變更網頁組件屬性是您不應編輯元素資訊清單檔案的增益集更新一部分的一般規則的例外狀況。
 4. 若要變更頁面或者，也可以選擇使用重新導向至新的頁面使用下列步驟。
     
@@ -385,7 +385,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
     
     請注意 **BeginVersion**屬性不適用於任何 **VersionRange**s。這是因為 **BeginVersion**屬性的預設值為 0.0.0.0，而您想因為您想要套用至每個執行個體以前版本 **EndVersion**屬性中指定的增益集的所有升級動作的值。
     
-    > [!重要]
+    > **重要**
       > **VersionRange**元素會決定僅功能之哪個版本升級會套用至。它不會判斷哪個版本的增益集取得有可用的更新通知  通知觸發只能由增益集版本號碼。要用於組織的增益集目錄或Office Store、 增益集] 中的每個已安裝執行個體的增益集的新版本的 24 小時內的版本，不管已有可用的更新通知會出現在其並排顯示在 [ **網站內容**] 頁面上。> **VersionRange**不會影響新升級的功能或剛更新的增益集的新版本號碼。這些兩個號碼永遠會變更為最新的版本號碼，不論此功能已在升級前何種版本範圍。這可避免使用 **BeginVersion**屬性的另一個很好的理由。 **BeginVersion**屬性可用來封鎖從屬於發生在某些增益集執行個體上一些升級動作。但它不能封鎖的功能或從要乘以次方的最新版本的增益集 (英文) 版本。因此 **BeginVersion**屬性使用無法建立增益集的兩個執行個體可能有相同的增益集版本號碼及相同增益集 web 功能版本號碼，但其增益集的 web 中有不同元件的狀況。
 
 ## 確認部署增益集 web 元件
@@ -422,7 +422,7 @@ Microsoft Office Developer Tools for Visual Studio會導向到建立新的增益
   
 8. 針對每個這些自訂清單執行個體中，選擇 [ **自訂"name_of_list"** ] 連結，並確認 [清單設定] 頁面上清單有預期的內容類型和欄。
     
-    > [!注意事項]
+    > **注意事項**
       > 如果頁面上有無 **內容類型**] 區段中，您必須啟用 [管理內容類型。選擇 [ **進階設定**] 連結，在 [進階設定] 頁面上啟用 [管理內容類型，然後選擇 **[確定]**。回到上一個] 索引標籤和現在有 **內容類型**] 區段中的清單。
 9. 頁面頂端附近是清單的 **網頁地址**。如果您清單執行個體定義中包含範例項目，請複製地址並將它貼到您的瀏覽器的位址列，然後瀏覽至清單。確認清單中具有您所建立的範例項目。
     

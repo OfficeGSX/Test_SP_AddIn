@@ -37,7 +37,7 @@ Une Complément SharePoint peut utiliser pratiquement tout type de stockage de d
     
   
 
-> [!CONSEIL]
+> **CONSEIL**
 > Vous devrez probablement mettre à niveau votre Complément SharePoint à un moment donné. Lorsqu'une Complément SharePoint inclut des composants SharePoint sur un site web de complément, le processus de mise à niveau procède à une copie complète du site web de complément. Pour cette raison, la présence de longues listes SharePoint sur le site web de complément allonge le processus de mise à niveau et entraîne une utilisation intensive du processeur sur le serveur de base de données de contenu. Vous devez éviter de placer des « données volumineuses » dans les listes SharePoint sur le site web de complément. 
   
     

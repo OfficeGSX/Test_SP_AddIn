@@ -13,7 +13,7 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
     
 
 
-> [!注释]
+> **注释**
 > 本文介绍通过组织目录分配且使用 AppRegNew.aspx 页面注册的 SharePoint 外接程序。如果外接程序是通过卖家面板注册的，请参阅 [在卖方仪表板中创建或更新客户端 ID 和密码](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update)。 
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!提示]
+> **提示**
 > 默认情况下，外接程序密钥的有效期为一年。您可以在三次调用 **New-MsolServicePrincipalCredential** cmdlet 时，使用 **-EndDate** 参数将其设置为更短或更长（最长可设置为 3 年）。参数的值必须是设置为从 **DateTime.Now** 不超过 3 年的 [DateTime](http://msdn2.microsoft.com/ZH-CN/library/03ybds8y) 对象。
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## 在 Visual Studio 中更新远程 Web 应用程序，以使用新的密码
 
 
-> [!重要信息]
+> **重要信息**
 > 如果您的外接程序最初是使用 Visual Studio Microsoft Office 开发人员工具的预发布版本来创建的，则其中可能包含 TokenHelper.cs（或 .vb）文件的过期版本。如果此文件中未包含"secondaryClientSecret"字符串，则意味着文件已过期，必须在使用新密码更新此 Web 应用程序之前对其进行替换。要获得该文件的发布版本副本，需要 Visual Studio 2012 或更高版本。在 Visual Studio 中创建一个新的 SharePoint 外接程序项目。将其中的 TokenHelper 文件复制到您的 SharePoint 外接程序的 Web 应用程序项目中。 
   
     

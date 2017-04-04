@@ -37,7 +37,7 @@ Wenn Ihre von einem Anbieter gehostete SharePoint-Add-In über eine Webanwendung
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > Um sicherzustellen, dass Ihre SharePoint-Client-ID und Ihr geheimer Clientschlüssel mit Ihrem Webprojekt veröffentlicht werden, sodass Ihre Webinhalte auf SharePoint-Daten zugreifen können, veröffentlichen Sie Ihr SharePoint-Add-In-Projekt von der Seite **Add-In veröffentlichen**. Sie können diese Seite aufrufen, indem Sie das Kontextmenü der SharePoint-Add-In - nicht das Kontextmenü der Webapp - aufrufen, und dann den Befehl **Veröffentlichen** auswählen.
   
     
@@ -71,7 +71,7 @@ Ihre SharePoint-Add-In ist in der Regel mit einer Hostwebanwendung verknüpft, d
     
     Wenn Sie Ihre SharePoint-Add-In an den Office Store übermitteln möchten, müssen Sie für die Client-ID und den geheimen Clientschlüssel Werte verwenden, die im Verkäuferdashboard erstellt werden. Sie können für Client-IDs und geheime Clientschlüssel Werte verwenden, die Sie in der Entwicklungsphase mithilfe der Seite "appregnew.aspx" erstellt haben. Add-Ins, die Sie an den Office Store übermitteln, müssen allerdings Client-IDs und geheime Clientschlüssel verwenden, die Sie vom Verkäuferdashboard erhalten. Außerdem sollten Sie das Veröffentlichungsprofil auf Ihrer Azure-Website erstellen und es dann in Visual Studio importieren, anstatt ein Profil im Assistenten **Veröffentlichungsprofil erstellen** zu erstellen. Wenn Sie ein Profil in Azure erstellen, werden alle Einstellungen auf der Registerkarte **Verbindung**für Sie in Visual Studio bereitgestellt. Weitere Informationen zum Importieren oder Erstellen eines Veröffentlichungsprofils finden Sie unter  [Erstellen eines Veröffentlichungsprofils](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
-    > [!TIPP]
+    > **TIPP**
       > Wenn Sie Webinhalte nicht direkt veröffentlichen können, können Sie ein Webbereitstellungspaket erstellen, das ein Administrator für Sie im Web bereitstellen kann. Um ein Webbereitstellungspaket zu erstellen, erstellen Sie ein neues Profil, wählen Sie die Registerkarte **Verbindung** und dann in der Liste **Veröffentlichungsmethode** die Option **Webbereitstellungspaket** aus.
 
 ### So stellen Sie Ihr Web-App-Projekt bereit
@@ -106,7 +106,7 @@ Ihre SharePoint-Add-In ist in der Regel mit einer Hostwebanwendung verknüpft, d
     
     Sie müssen eine Adresse angeben, die mit dem Präfix "https" beginnt. Siehe hierzu  [Warum müssen meine Add-Ins SSL-gesichert sein?](http://msdn.microsoft.com/library/jj591603#bk_q7).
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Azure-Websites bieten automatisch einen https-Endpunkt. Wenn Sie Ihr Add-In auf einer Office Store-Website oder im Office Store veröffentlichen, muss die Adresse mit einem https-Präfix beginnen. Wenn Sie das Add-In allerdings auf einer lokalen Website veröffentlichen, können Sie ein http-Präfix verwenden. 
 
     Im Textfeld **Wie lautet die Client-ID des Add-Ins?** sollte bereits die Client-ID angezeigt werden, die Sie im Veröffentlichungsprofil eingegeben haben.

@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # URL 字串及權杖中 SharePoint 增益集
 了解哪些 URL token 都可供使用的SharePoint Add-ins。
-> [!重要]
+> **重要**
 > 如需在SharePoint 2013和語彙基元這些 Url 中使用建構 Url 的一般資訊，請參閱 [Url 及 SharePoint 2013 中的權杖](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx)。本主題說明SharePoint Add-ins中可用的 token。
   
     

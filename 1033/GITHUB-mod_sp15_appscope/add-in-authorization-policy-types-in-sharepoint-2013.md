@@ -7,7 +7,7 @@ ms.assetid: 124879c7-a746-4c10-96a7-da76ad5327f0
 
 # Add-in authorization policy types in SharePoint 2013
 Learn about the different authorization policies for add-ins in SharePoint: add-in-only policy, user+add-in policy, and user-only policy. It also provides guidelines for using add-in-only policy.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -40,7 +40,7 @@ SharePoint provides three types of authorization policies:
     
     
     
-    > [!NOTE]
+    > **NOTE**
       > Certain APIs require a user context and can't be executed with an add-in-only policy. These include many APIs for interacting with Project Server 2013 and for performing search queries. 
 
 ### See an example scenario of an add-in that uses the add-in-only policy
@@ -75,7 +75,7 @@ To be able to make add-in-only calls to SharePoint, your add-in must request per
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > SharePoint Add-ins used to be called "apps for SharePoint". To maintain backward compatibility, the app manifest schema was not changed, so the string "app" appears in may element and attribute names. 
   
     
@@ -124,7 +124,7 @@ if (contextTokenString != null)
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > Add-ins that do not make OAuth authenticated calls (for example, add-ins that are only JavaScript running in the add-in web) cannot use the add-in-only policy. They can request the permission, but they will not be able to take advantage of it because doing so requires passing an add-in-only OAuth token. Only add-ins with web applications running outside of SharePoint can create and pass add-in-only tokens. 
   
     

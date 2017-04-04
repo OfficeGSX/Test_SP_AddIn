@@ -7,7 +7,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # Utiliser le widget expérimental d'affichage de liste de bureau dans les compléments pour SharePoint
 Découvrez comment utiliser le widget d'affichage de liste de bureau sur n'importe quelle page web, même si celle-ci n'est pas hébergée par SharePoint. Employez le widget d'affichage de liste dans vos compléments pour afficher des données dans des listes hébergées par un site SharePoint.
-> [!REMARQUE]
+> **REMARQUE**
 > Les Office Web Widgets - Expérimental ne sont fournis qu'à des fins de recherche et de commentaires de la part des utilisateurs. Ne les employez pas en phase de production. Le comportement des Office Web Widgets peut changer considérablement dans les prochaines versions. Lisez les  [Termes du contrat de licence Office Web Widgets - Expérimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -47,7 +47,7 @@ Le widget d'affichage de liste utilise la bibliothèque inter-domaines pour obte
     
     
 
-> [!ATTENTION]
+> **ATTENTION**
 > Le widget d'affichage de liste de bureau n'active pas tous les scénarios de l'affichage de liste natif. 
   
     
@@ -119,7 +119,7 @@ Pour utiliser le widget d'affichage de liste, vous devez effectuer les opératio
   
 - Créer une liste dans le site web de complément. Cette étape garantit également qu'un site web de complément est créé lorsque les utilisateurs déploient le complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La bibliothèque inter-domaines nécessite l'existence d'un site web de complément. Le widget d'affichage de liste communique avec SharePoint à l'aide de la bibliothèque inter-domaines. 
 - Créer une page de complément déclarant une instance de widget d'affichage de liste à l'aide du code HTML.
     
@@ -139,7 +139,7 @@ Pour utiliser le widget d'affichage de liste, vous devez effectuer les opératio
   
 4. Sélectionnez **Hébergement par le fournisseur** comme option d'hébergement pour votre complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vous pouvez également utiliser le widget d'affichage de liste de bureau avec d'autres options d'hébergement ou même avec des compléments Office ou votre propre site web. 
 5. Sélectionnez **Application Web Forms ASP.NET** comme type de projet d'application web.
     
@@ -315,7 +315,7 @@ Pour utiliser le widget d'affichage de liste, vous devez effectuer les opératio
   ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'exemple de code ci-dessus spécifie explicitement les URL de site web hôte et de complément pour initialiser le runtime des contrôles Office. Toutefois, si les URL de site web hôte et de complément sont précisées respectivement dans les paramètres de chaîne de requête **SPAppWebUrl** et **SPHostUrl**, vous pouvez transmettre un objet vide et le code tentera d'obtenir les paramètres automatiquement. Les paramètres **SPAppWebUrl** et **SPHostUrl** sont inclus dans la chaîne de requête lorsque vous utilisez le jeton **{StandardTokens}**.
   
     
@@ -342,7 +342,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 2. Sélectionnez le bouton **Approuver**.
     

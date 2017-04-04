@@ -98,7 +98,7 @@ Em geral, um Suplemento do SharePoint pode conter um ou mais dos componentes da 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > ***** Os componentes que estão marcados com um asterisco (*) são abordados em mais detalhes na seção de [Advertências de implantação de componentes do SharePoint](#SpecialCases) neste artigo.
   
     
@@ -202,10 +202,10 @@ A seguir estão algumas limitações e detalhes referentes a implantação de ce
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O novo elemento  [WebTemplate](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) para manifestos de suplemento não é a mesma marcação como o elemento de [WebTemplate](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) que pode ser incluído em recursos. O elemento **WebTemplate** que pode ser incluído nos recursos define um tipo de site, mas o elemento **WebTemplate** para manifestos de suplemento simplesmente identifica o tipo de site usar. Para obter mais informações sobre o manifesto do add-in de um Suplemento do SharePoint, consulte [Estrutura do pacote de suplemento](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#SPAppModelArch_Package).
 
-    > [!CUIDADO]
+    > **CUIDADO**
       > Não use o elemento **WebTemplate** no manifesto do suplemento para designar a qualquer do site do SharePoint interno configurações de definição de como o tipo de site da web add-in. Nós não suportamos usando qualquer uma das configurações de definição de site interno, que não seja **APP#0**, para suplemento webs.
 
     Para obter mais informações sobre configurações de definição de site e modelos da web, consulte  [Working with Site Templates and Definitions](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).

@@ -90,7 +90,7 @@ O Microsoft Office Developer Tools for Visual Studio são voltado para a criaç�
 
   
 
-> [!CUIDADO]
+> **CUIDADO**
 > Não adicione "<!--->" comentários para o arquivo de .features  _{FeatureName}_. Comentários não são compatíveis com a infraestrutura de atualização e a atualização irá falhar se os comentários são no arquivo. Eles são usados nos exemplos deste artigo marcação apenas para indicar a você onde sua marcação deve ir.
   
     
@@ -124,7 +124,7 @@ Use as seguintes etapas para atualizar o suplemento web recurso.
 
     Neste ponto o arquivo deve se parecer com o exemplo a seguir.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > O Office Developer Tools for Visual Studio talvez já adicionado a marcação acima e copiados alguns elementos da seção **ElementManifests** à seção **ApplyElementManifests** como uma ilustração. *Excluí-las.*  Embora você pode acabar colocar alguns deles novamente nas etapas posteriores, é mais fácil e segura iniciar com uma seção vazia **ApplyElementManifests**. Entradas redundantes para componentes que não foram alteradas podem ter consequências ruim, incluindo possivelmente aumentando o processo de atualização suficiente o que ele vezes-out e falha.
 
 
@@ -229,7 +229,7 @@ Use as seguintes etapas para atualizar o suplemento web recurso.
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Não exclua o manifesto original. O XML de recurso está usando ambas aqueles antigas e novas.> Não copie quaisquer elementos **ElementFile** da seção **ElementManifests** à seção **ApplyElementManifests**, mesmo se o arquivo que é referenciado no **ElementFile** tiver sido alterado.
 2. Abra cada arquivo de manifesto do elemento mencionado na seção **ApplyElementManifests** e garantir que quaisquer elementos do [arquivo](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) tenham um atributo de **ReplaceContents** e que ele está definido como **TRUE**. O exemplo a seguir é um exemplo. O Office Developer Tools for Visual Studio talvez ainda tiver feito isso, mas você deve verificar a ele. Fazer isso mesmo para os manifestos de elemento de versões anteriores do suplemento. Essa é uma das poucas maneiras em que ele é uma boa prática para editar um arquivo de manifesto de elemento existente.
     
@@ -247,7 +247,7 @@ Use as seguintes etapas para atualizar o suplemento web recurso.
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se a página tiver sido configurada para permitir que usuários personalizá-la, em seguida, essa marcação tem o efeito de lado de remover as personalizações. Os usuários terão de ser repetidos-los.> Se a Web Part foi adicionada ao seguinte página que as orientações em  [Incluir uma Web Part em uma página da Web na web suplemento](include-a-web-part-in-a-webpage-on-the-add-in-web.md), em seguida, a marcação de Web Part são no manifesto elementos, portanto, alterar as propriedades de Web Part é uma exceção à regra geral que você não deve editar um arquivo de manifesto do elemento como parte de uma atualização do suplemento.
 4. Como alternativa para alterar uma página, você também tem a opção de usar o redirecionamento para uma nova página usando as etapas a seguir.
     
@@ -385,7 +385,7 @@ Quando você atualiza um Suplemento do SharePoint para o tempo de segundo (ou te
     
     Observe também que o atributo **BeginVersion** não é usado em qualquer uma do s **VersionRange**. Isso ocorre porque o valor padrão para o atributo **BeginVersion** é 0.0.0.0 e que é o valor que você deseja porque você deseja que todas as ações de atualização aplicadas a cada instância do add-in que é anterior à versão que é especificado no atributo **EndVersion**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > O elemento **VersionRange** determina apenas quais versões do recurso as atualizações são aplicadas aos. Ele não determinar quais versões do add-in de obtém uma notificação que está disponível uma atualização  notificação é disparada somente pelo número de versão do suplemento. Dentro de 24 horas de uma nova versão do add-in está sendo disponível no catálogo de suplemento da organização ou o Office Store, cada instância instalada do add-in, independentemente da versão, tem a notificação de que está disponível uma atualização aparecer no seu lado a lado na página **Conteúdo** do Site.> O **VersionRange** não afeta o novo número de versão do recurso recém-atualizados ou o suplemento recém-atualizados. Esses dois números sempre são alterados para o número da versão mais recente, independentemente de qual intervalo de versão que o recurso se encontrava antes da atualização. Isso oferece outro bom motivo para evitar o uso de um atributo **BeginVersion**. O atributo **BeginVersion** pode ser usado para bloquear algumas ações de atualização nunca ocorra em algumas instâncias do suplemento. Mas ele não pode bloquear o recurso ou versões de suplemento seja gerado para a versão mais recente. Portanto, o uso de um atributo **BeginVersion** foi possível criar uma situação na qual duas instâncias do seu suplemento poderia ter o mesmo número de versão do suplemento e a web de suplemento mesma número de versão do recurso, mas têm componentes diferentes nos seus webs suplemento.
 
 ## Verificar a implantação do suplemento de web components
@@ -422,7 +422,7 @@ Siga estas etapas para verificar a implantação da web suplemento recurso e seu
   
 8. Para cada uma dessas instâncias de lista personalizada, escolha o link **Personalizar "name_of_list"** e verifique se na página de configurações de lista lista tem as esperada de tipos de conteúdo e colunas.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se não houver nenhuma seção **Tipos de conteúdo** na página, você deve habilitar o gerenciamento de tipos de conteúdo. Escolha o link de **Configurações avançadas** e, na página Configurações avançadas, habilitar o gerenciamento de tipos de conteúdo e escolha **OK**. Você retorna à página anterior e agora é uma lista de **Tipos de conteúdo** de seção.
 9. Na parte superior da página é o **endereço da web** da lista. Se você incluiu itens de exemplo em sua definição de instância de lista, copie o endereço e colá-lo na barra de endereços do navegador e, em seguida, navegue até a lista. Verifique se a lista tem os itens de amostra que você criou.
     

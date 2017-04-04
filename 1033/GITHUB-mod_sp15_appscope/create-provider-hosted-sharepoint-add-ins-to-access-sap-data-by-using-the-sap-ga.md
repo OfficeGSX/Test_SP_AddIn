@@ -7,7 +7,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
 
 # Create provider-hosted SharePoint Add-ins to access SAP data by using the SAP Gateway for Microsoft
 Learn how you can build a SharePoint Add-in that can access SAP data.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -35,7 +35,7 @@ The following are prerequisites to the procedures in this article:
   
 - **An organizational account in Microsoft Azure**. See  [Manually register your app with Azure AD so it can access Office 365 APIs](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount).
     
-    > [!NOTE]
+    > **NOTE**
       > Login to your Office 365 account (login.microsoftonline.com) to change the temporary password after the account is created. 
 - **A SAP OData endpoint** with sample data in it. See the documentation for [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -62,7 +62,7 @@ OAuth 2.0 in Azure AD enables applications to access multiple resources hosted b
     
     
 
-> [!TIP]
+> **TIP**
 > If your SharePoint Add-in accesses SharePoint in addition to accessing SAP Gateway for Microsoft, then it will need to use  *both*  systems: Azure AD to get an access token to SAP Gateway for Microsoft and the ACS authorization system to get an access token to SharePoint. The tokens from the two sources are not interchangeable. For more information, see [Optionally, add SharePoint access to the ASP.NET application](#SharePoint). 
   
     
@@ -125,7 +125,7 @@ For a detailed description and diagram of the OAuth flow used by OAuth 2.0 in Az
 
 1. Login into the  [Azure Management portal](https://manage.windowsazure.com) with your Azure administrator account.
     
-    > [!NOTE]
+    > **NOTE**
       > For security purposes, we recommend against using an administrator account when developing add-ins. 
 2. Choose **Active Directory** on the left side.
     
@@ -211,7 +211,7 @@ For a detailed description and diagram of the OAuth flow used by OAuth 2.0 in Az
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       > Your application is known to Azure AD by the "localhost" URL you used to register it. The client ID and client key are associated with that identity. When you are ready to stage your application to an Azure Web Site, you will re-register it with a new URL. 
 4. Still in the **appSettings** section, add an **Authority** key and set its value to the Office 365 domain ( *some_domain*  .onmicrosoft.com) of your organizational account. In the continuing example, the organizational account is Bob@<O365_domain>.onmicrosoft.com, so the authority is `<O365_domain>.onmicrosoft.com`. 
     
@@ -251,7 +251,7 @@ For a detailed description and diagram of the OAuth flow used by OAuth 2.0 in Az
 
 7. Save and close the web.config file.
     
-    > [!TIP]
+    > **TIP**
       > Do not leave the web.config file open when you run the Visual Studio debugger (F5). The Office Developer Tools for Visual Studio change the **ClientId** value (not the **ida:ClientID**) every time you press F5. This requires you to respond to a prompt to reload the web.config file, if it is open, before debugging can execute. 
 
 ### Add a helper class to authenticate to Azure AD
@@ -421,7 +421,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!TIP]
+> **TIP**
 > The AADAuthHelper class has only minimal error handling. For a robust, production quality SharePoint Add-in, add more error handling as described in this MSDN node:  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx). 
   
     
@@ -477,7 +477,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > Delete this line when you are ready to deploy the ASP.NET application to staging. See  [Modify the add-in and stage it to Azure and Office 365](#Stage). 
 5. Add the following code to the **Page_Load** method. The string you pass to the `GetSAPData` method is an OData query.
     
@@ -629,7 +629,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!NOTE]
+> **NOTE**
 > While you are debugging the SharePoint Add-in, the Office Developer Tools for Visual Studio re-register it with Azure ACS each time you press F5 in Visual Studio. When you stage the SharePoint Add-in, you have to give it a long-term registration. See the section  [Modify the add-in and stage it to Azure and Office 365](#Stage). 
   
     
@@ -711,7 +711,7 @@ When you have finished debugging the SharePoint Add-in using F5 in Visual Studio
   
 8. Register the add-in with Azure ACS. This must be done even if the add-in does not access SharePoint and will not use tokens from ACS, because the same process also registers the add-in with the Add-in Management Service of the Office 365 subscription, which is a requirement. (It is called "Add-in Management Service" because SharePoint Add-ins were originally called "apps for SharePoint".) You perform the registration on the AppRegNew.aspx page of any SharePoint website in the Office 365 subscription. For details, see  [Register SharePoint Add-ins 2013](register-sharepoint-add-ins-2013.md). As part of this process you will obtain a new client ID and client secret. Insert these values in the web.config for the **ClientId** (not **ida:ClientID**) and **ClientSecret** keys.
     
-    > [!CAUTION]
+    > **CAUTION**
       > If for any reason you press F5 after making this change, the Office Developer Tools for Visual Studio will overwrite one or both of these values. For that reason, you should keep a record of the values obtained with AppRegNew.aspx and always verify that the values in the web.config are correct just before you publish the ASP.NET application. 
 
 ### Publish the ASP.NET application to Azure and install the add-in to SharePoint

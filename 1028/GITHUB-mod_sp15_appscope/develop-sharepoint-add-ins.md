@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # 開發 SharePoint 的增益集
 尋找深入的文章與資源以協助您在SharePoint Add-ins中建置進階的功能。
-> [!注意事項]
+> **注意事項**
 > 本文假設您熟悉文章 [SharePoint Add-ins](sharepoint-add-ins.md)和快速入門它連結至資料。
   
     

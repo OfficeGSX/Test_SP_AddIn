@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # Arbeiten mit Listen und Listenelementen unter Verwendung von REST
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint 2013-REST-Schnittstelle durchführen.
-> [!TIPP]
+> **TIPP**
 > Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Verwenden Sie  `application/json;odata=verbose` im `accept`-Header, wenn die Antwort im JSON-Format erfolgen soll. Verwenden Sie  `application/atom+xml` im `accept`-Header, wenn die Antwort im Atom-Format erfolgen soll. 
   
     
@@ -116,7 +116,7 @@ Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim 
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Eigenschaft **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** im vorherigen Beispiel) ist besonders wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als Eigenschaft **type** in den Metadaten übergeben werden, die Sie grundsätzlich beim Erstellen und Aktualisieren von Listenelemente im Textkörper der HTTP-Anforderung übergeben.
   
     
@@ -214,7 +214,7 @@ Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die OData-Abfrageoption $skip funktioniert nicht beim Abfragen von Listenelementen. In vielen Situationen können Sie stattdessen die Option  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.
   
     
@@ -280,7 +280,7 @@ Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
   
     
@@ -307,7 +307,7 @@ Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
   
     

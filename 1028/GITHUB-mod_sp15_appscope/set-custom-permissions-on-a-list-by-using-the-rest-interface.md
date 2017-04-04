@@ -13,7 +13,7 @@ SharePoint網站、 清單及清單項目是 **SecurableObject**類型。根據�
     
 
 
-> [!注意事項]
+> **注意事項**
 > 請參閱設定微調權限的相關文章連結 [的其他資源](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources)。
   
     

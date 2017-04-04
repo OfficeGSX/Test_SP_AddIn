@@ -10,7 +10,7 @@ Visual Studio を使用して でリモート イベントをデバッグでき�
 ## リモート SharePoint テスト サイトのデバッグの構成
 
 
-> [!メモ]
+> **メモ**
 > このセクションに記されている手順は、SharePoint テスト サイトが Visual Studio とは別のコンピューター上にある場合か、テスト サイトとして SharePoint Online 開発者向けサイトを使用している場合にのみ該当します。SharePoint と Visual Studio が同じコンピューター上にある場合には、このセクションはスキップしてください。 
   
     

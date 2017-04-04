@@ -14,7 +14,7 @@ Pour que les composants distants d'un Complément SharePoint hébergé par un fo
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Cela n'est pas obligatoire pour les compléments hébergés par SharePoint. 
   
     
@@ -43,7 +43,7 @@ Pour inscrire votre complément auprès de Azure ACS, indiquez les informations 
     
   
 Une fois que vous avez inscrit votre complément, celui-ci possède une identité de complément et devient un  *principal de sécurité*  , appeléprincipal de complément. Par la suite, une fois le complément installé, les administrateurs SharePoint peuvent récupérer les informations relatives à ce principal de complément en particulier.Lorsqu'un utilisateur attribue initialement à un complément des autorisations d'accès aux ressources SharePoint (soit lors de l'installation, soit lors de son exécution, en fonction de la conception de l'application), SharePoint récupère des informations sur le complément à partir d'Azure ACS. SharePoint stocke ensuite ces informations dans la base de données du service de gestion des applications de la location ou de la batterie de serveurs SharePoint, à l'exception de la clé secrète client, qui est uniquement stockée dans Azure ACS. SharePoint n'a jamais connaissance de la clé secrète du complément. Le service de base de données de contenu et les autres composants, tels que le service de profil utilisateur, peuvent directement obtenir le nom d'affichage d'un complément et d'autres informations de base auprès du service partagé de gestion des applications. Pour en savoir plus, voir la section  [Récupération des informations d'inscription du complément et des informations du principal de complément ](register-sharepoint-add-ins-2013.md#Retrieve) dans cet article.
-> [!REMARQUE]
+> **REMARQUE**
 > Cet article suppose que vous connaissez déjà les concepts et principes fondamentaux sur lesquels se fonde OAuth 2.0 Framework. Pour plus d'informations, voir  [OAuth.net](http://oauth.net/) et [Protocole d'autorisation web (oauth)](http://datatracker.ietf.org/doc/active/). 
   
     
@@ -60,7 +60,7 @@ Vous pouvez inscrire votre complément pour obtenir son identité de trois faço
 
 |**Méthode d'inscription**|**Détails**|
 |:-----|:-----|
-|Utilisez Visual Studio et Outils de développement Microsoft Office pour Visual Studio pour créer une identité de complément temporaire.  <br/> |L'Assistant Outils de développement Office pour Visual Studio inscrit temporairement votre complément auprès du service ACS et du service de gestion d'applications de votre site web de test SharePoint. Lorsque vous exécutez le complément à partir de Visual Studio (F5), cette identité est utilisée. Les outils insèrent également l'ID client et la clé secrète client dans les fichiers web.config et AppManifest.xml.  <br/> Lorsque vous êtes prêt à publier votre complément, vous pouvez utiliser l'Assistant de publication Visual Studio pour accéder à Mon tableau de bord vendeur et effectuer l'inscription. Si vous ne commercialisez pas votre Complément SharePoint dans l'Office Store, utilisez la page AppRegNew.aspx pour inscrire l'application. (Les étapes exactes sont décrites ci-dessous.)  <br/> > [!REMARQUE]> Si votre complément demande l'autorisation d'accéder aux ressources SharePoint dynamiquement au moment de l'exécution plutôt que lors de l'installation, vous ne pouvez pas utiliser Visual Studio pour créer des identités de complément.           |
+|Utilisez Visual Studio et Outils de développement Microsoft Office pour Visual Studio pour créer une identité de complément temporaire.  <br/> |L'Assistant Outils de développement Office pour Visual Studio inscrit temporairement votre complément auprès du service ACS et du service de gestion d'applications de votre site web de test SharePoint. Lorsque vous exécutez le complément à partir de Visual Studio (F5), cette identité est utilisée. Les outils insèrent également l'ID client et la clé secrète client dans les fichiers web.config et AppManifest.xml.  <br/> Lorsque vous êtes prêt à publier votre complément, vous pouvez utiliser l'Assistant de publication Visual Studio pour accéder à Mon tableau de bord vendeur et effectuer l'inscription. Si vous ne commercialisez pas votre Complément SharePoint dans l'Office Store, utilisez la page AppRegNew.aspx pour inscrire l'application. (Les étapes exactes sont décrites ci-dessous.)  <br/> > **REMARQUE**> Si votre complément demande l'autorisation d'accéder aux ressources SharePoint dynamiquement au moment de l'exécution plutôt que lors de l'installation, vous ne pouvez pas utiliser Visual Studio pour créer des identités de complément.           |
 |Inscrivez l'application par le biais de Mon tableau de bord vendeur.  <br/> |Si vous envisagez d'utiliser votre complément dans plusieurs batteries de serveurs ou clients SharePoint, passez par Mon tableau de bord vendeur pour inscrire votre complément, que vous souhaitiez ou non le commercialiser dans le Office Store ou le rendre disponible via le catalogue de compléments. Lorsque vous l'inscrivez dans le Mon tableau de bord vendeur, vous pouvez concevoir votre complément avec une architecture à plusieurs clients sans nécessiter que les administrateurs de clients ou de batteries de serveurs s'inscrivent séparément. En outre, si vous prévoyez de publier votre complément dans le Office Store, vous devez l'inscrire via Mon tableau de bord vendeur. Vous n'avez pas à utiliser le magasin pour publier un complément déjà inscrit auprès de Mon tableau de bord vendeur.  <br/> Pour plus d'informations, voir  [Création ou mise à jour d'ID et de clés secrètes client dans le service Mon tableau de bord vendeur](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx).  <br/> |
 |Utilisez la page AppRegNew.aspx.  <br/> |Utilisez le formulaire AppRegNew pour inscrire votre Complément SharePoint si vous envisagez d'utiliser le complément uniquement dans un client ou dans une batterie de serveurs. Par exemple, si vous créez des compléments pour une organisation et que vous allez les distribuer via le catalogue de compléments de l'organisation, vous pouvez utiliser la page AppRegNew.aspx d'un site web dans un client ou une batterie de serveurs pour inscrire le complément.  <br/> Vous ne pouvez pas publier un complément inscrit via la page AppRegNew.aspx dans le Office Store. Pour les compléments publiés dans le Office Store, vous devez obtenir une identité à partir du Mon tableau de bord vendeur.  <br/> |
    
@@ -87,7 +87,7 @@ Vous pouvez inscrire votre complément pour obtenir son identité de trois faço
   
   - **Secret du complément**: également appelé clé secrète client. Il s'agit d'une chaîne opaque. Elle est générée sur la page AppRegNew.aspx à l'aide du bouton **Générer**. Vous trouverez ci-après un exemple de secret de complément : **xvVpG0AgVIJfch6ldu4dLUlcZyysmGqBRbpFDu6AfJw=**.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Les clés secrètes de complément ont une durée de validité. Si vous inscrivez le complément auprès de Mon tableau de bord vendeur, vous pouvez définir sa date d'expiration jusqu'à 3 ans plus tard. Dans le tableau de bord, vous pouvez également ajouter de nouvelles clés secrètes lorsque les anciennes arrivent à expiration. La nouvelle clé secrète sera activée dans toutes les instances du complément. Si vous inscrivez votre complément à l'aide d'AppRegNew.aspx, la clé secrète expire un an plus tard. Pour en savoir plus, voir  [Remplacement d'une clé secrète client arrivant à expiration dans un complément pour SharePoint](replace-an-expiring-client-secret-in-a-sharepoint-add-in.md). 
   - **Titre**: titre convivial (par exemple,Complément d'impression de photos Contoso). Les utilisateurs sont invités à accorder ou refuser des autorisations lorsque le complément en demande. Ce titre s'affiche en tant que nom du complément à l'invite de consentement. 
     
@@ -132,7 +132,7 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
     
     
 
-> [!CONSEIL]
+> **CONSEIL**
 > Si vous publiez votre Complément SharePoint à l'aide de l'Assistant Publication de Visual Studio, Visual Studio vous invite à entrer un ID client et une clé secrète client au cours du processus de publication, puis insère ces informations aux emplacements appropriés à votre place. 
   
     
@@ -141,7 +141,7 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
 
 1. Dans le fichier web.config de votre projet Visual Studio, entrez la valeur d'ID du complément pour la valeur de **ClientId** (elle remplace la valeur temporaire entrée par les outils).
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Toutes les lettres du GUID de l'ID client doivent être en minuscules. 
 
     Voici un exemple :
@@ -172,7 +172,7 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
 
 3. Dans le fichier AppManifest.xml de votre projet Visual Studio, entrez la valeur de l'ID du complément pour la valeur de **ClientId**,  *en minuscules*  .
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Le manifeste du complément n'est pas applicable aux applications web qui demandent l'autorisation d'accéder aux ressources SharePoint à la volée. Il ne s'agit pas vraiment de « Compléments SharePoint ». Ils ne sont pas installés sur SharePoint et n'ont pas de manifeste de complément. Pour en savoir plus, voir  [Flux OAuth de code d'authentification pour les compléments SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins.md). 
 
     L'exemple suivant illustre l'utilisation de la valeur **ClientId** dans le fichier AppManifest.xml.

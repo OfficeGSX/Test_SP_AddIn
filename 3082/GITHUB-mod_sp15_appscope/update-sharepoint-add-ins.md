@@ -28,7 +28,7 @@ Puede actualizar su Complemento de SharePoint mediante el soporte a la actualiza
     
 Un usuario puede instalar la aplicación sin desinstalar primero la versión anterior. La infraestructura de actualización comprueba la instalación de la actualización y la revierte si se produce algún error.
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > No puede cambiar el  *tipo de complemento*  mediante el sistema de actualización. Por ejemplo, no se puede cambiar el hospedaje de un complemento que esté hospedado por SharePoint para que lo hospede un proveedor mediante una actualización. Para realizar un cambio, debe [migrar de un complemento antiguo a uno nuevo](sharepoint-add-ins-update-process.md#Major). En particular, desde que se  [cerró el programa de vista previa para complementos autohospedados](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), debe tener en cuenta que no se puede actualizar un complemento autohospedado a un complemento hospedado por el proveedor. Debe convertir el complemento, tal como se explica en  [Convertir un complemento autohospedado por SharePoint en uno hospedado por el proveedor](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md). 
   
     
@@ -200,7 +200,7 @@ La figura 2 ilustra estos pasos.
     
 
     
-> [!NOTA]
+> **NOTA**
 > Si necesita ver el aviso "actualización disponible" en el icono del complemento con mayor frecuencia que cada 24 horas, puede usar el método descrito en  [Proceso de actualización de un complemento para SharePoint](sharepoint-add-ins-update-process.md#Minor) para hacer que el aviso aparezca de forma inmediata.
   
     

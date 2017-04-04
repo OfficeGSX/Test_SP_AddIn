@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # SharePoint 外接程序中的 URL 字符串和标记
 了解可在 SharePoint 外接程序中使用的 URL 标记。
-> [!重要信息]
+> **重要信息**
 > 有关在 SharePoint 2013 中构造 URL 和在这些 URL 中使用标记的常规信息，请参阅 [SharePoint 2013 中的 URL 和标记](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx)。本主题介绍 SharePoint 外接程序中可用的标记。 
   
     

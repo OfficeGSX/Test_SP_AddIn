@@ -93,7 +93,7 @@ Tabelle 1 enthält die am meisten verwendeten Haupt-APIs, die meistenteils auf T
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP. WebTemplateCollection Object (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > Bevor Sie, wie in der Tabelle gezeigt, einen REST-Endpunkt-URI verwenden, ersetzen Sie die  `…`-Abkürzung durch den Pfad zu Ihrer SharePoint-Website, z. B.  `http://<site collection>/<site>/_api/web/lists`. 
   
     

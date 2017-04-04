@@ -64,7 +64,7 @@ Dans SharePoint 2013, le service d'émission de jeton de sécurité (STS) de ser
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le service STS de serveur à serveur n'est pas destiné à être utilisé pour l'authentification des utilisateurs. C'est pourquoi ce même service ne figurera pas dans la page de connexion de l'utilisateur, dans la section **Fournisseur d'authentification** sur le site Administration centrale ou dans le Sélecteur de personnes dans SharePoint 2013.
   
     
@@ -203,7 +203,7 @@ Le script Windows PowerShell que vous créez dans cette section est destiné à 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Assurez-vous que vous avez suivi la procédure décrite dans la rubrique  [Configurer les services de SharePoint en vue d'une utilisation des compléments de serveur à serveur](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) (ce qui constitue une condition préalable pour cet article). Si ce n'est pas le cas, vous devez effectuer cette configuration maintenant, avant de continuer.
   
     
@@ -248,7 +248,7 @@ $fullIssuerIdentifier = $specificIssuerId + '@' + $realm
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > La valeur  `$specificIssuerId` doit être un GUID car, dans un environnement de production, chaque certificat doit avoir un émetteur unique. Toutefois, dans ce contexte où vous utilisez le même certificat pour déboguer tous les compléments à haut niveau de fiabilité, vous pouvez coder en dur la valeur. Si, pour une raison quelconque, vous utilisez un GUID différent de celui utilisé ici, * **assurez-vous que toutes les lettres du GUID sont en minuscules*** . L'infrastructure SharePoint exige actuellement l'utilisation de lettres minuscules pour les GUID d'émetteur de certificat.
 5. Ajoutez les lignes suivantes pour enregistrer le certificat sous la forme d'un émetteur de jeton approuvé. Le paramètre  `-Name` doit être unique. Ainsi, dans une configuration de production, il est courant d'utiliser un GUID pour une partie ou la totalité du nom. Toutefois, dans ce contexte, vous pouvez utiliser un nom convivial. Le commutateur `-IsTrustBroker` est nécessaire pour garantir que vous pouvez utiliser le même certificat pour tous les compléments à haut niveau de fiabilité que vous développez. La commande `iisreset` est requise pour que votre émetteur de jeton soit immédiatement enregistré. Sans cette dernière, il se peut que vous deviez patienter jusqu'à 24 heures avant que le nouvel émetteur soit enregistré.
     
@@ -288,7 +288,7 @@ Dans cette section, vous apprenez à créer un Complément SharePoint à haut ni
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Comme indiqué dans la section  [Conditions préalables à la création de compléments à haut niveau de fiabilité](#Prereq), cet article part du principe que vous savez comment créer un Complément SharePoint hébergé par le fournisseur. Pour plus d'informations, voir  [Commencer à créer des compléments hébergés par un fournisseur pour SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     

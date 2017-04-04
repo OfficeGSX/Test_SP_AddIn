@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # 使用用戶端的人員選擇 」 控制項中 SharePoint 主控 SharePoint 增益集
 了解如何使用用戶端的人員選擇 」 控制項中SharePoint-主控SharePoint Add-ins。
-> [!重要]
+> **重要**
 > 本主題假設您了解如何建立 SharePoint 主控的SharePoint Add-in。若要了解如何建立 web 應用程式，請參閱 [開始建立提供者主控 SharePoint 增益集](get-started-creating-provider-hosted-sharepoint-add-ins.md)啟動。
   
     
@@ -43,7 +43,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
     
   
 
-> [!注意事項]
+> **注意事項**
 > 選擇器和其功能的定義 **clientforms.js**、 **clientpeoplepicker.js**及 **autofill.js**指令碼檔案位於伺服器上的%ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS 資料夾中。
   
     
@@ -58,7 +58,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
     
     
 
-> [!注意事項]
+> **注意事項**
 > 移至 [在 Office 365 上設定 SharePoint 增益集的開發環境](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md)以了解如何將開發人員網站註冊並開始使用Napa。
   
     
@@ -79,7 +79,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如需如何設定適合您需求的開發環境的指引，請參閱 [Start building Office and SharePoint Add-ins](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx)。
   
     
@@ -171,7 +171,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 根據您的環境，您可能沒有明確地參照所有這些相依性。
   
     

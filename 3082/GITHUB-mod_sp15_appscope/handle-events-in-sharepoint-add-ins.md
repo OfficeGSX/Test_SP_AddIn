@@ -32,7 +32,7 @@ Los Complementos de SharePoint hospedados en SharePoint no admiten el control de
     
 
 
-> [!NOTA]
+> **NOTA**
 > Los eventos de sitios web y de la colección de sitios no son compatibles con Complementos de SharePoint. 
   
     
@@ -61,7 +61,7 @@ Para controlar eventos de lista y elemento de lista, se deben crear receptores d
     
   
 
-> [!NOTA]
+> **NOTA**
 > Los RER tienen el mismo propósito que los receptores de eventos en soluciones de granja de servidores; pero los receptores de eventos tienen código personalizado que se ejecuta en los servidores de SharePoint, por lo que no se pueden usar en Complementos de SharePoint. 
   
     
@@ -104,7 +104,7 @@ El complemento puede controlar los siguientes eventos de elemento de lista.
 ||ItemFileConverted  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > *Puede que estos dos nuevos eventos no estén disponibles en la IU de Visual Studio. Si no lo están, elija ItemDeleting o ItemDeleted y cambie manualmente los nombres. 
   
     
@@ -157,7 +157,7 @@ Para cambiar los eventos que controla el receptor de eventos remotos, abra el **
     
     
 
-> [!NOTA]
+> **NOTA**
 > Para obtener información adicional sobre RER, incluida información para solucionar problemas, vea  [Preguntas frecuentes sobre los receptores de eventos remotos](handle-events-in-sharepoint-add-ins.md#RERFAQ). 
   
     
@@ -179,7 +179,7 @@ El evento **AppInstalled** se ejecuta inmediatamente después de que SharePoint 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Cuando instala un complemento con  [Ámbito de inquilino](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md), se instala en la colección de sitios de catálogo de complementos, y el evento AppInstalled se ejecuta solo en ese momento. El complemento está visible en varios sitios web en el arrendamiento, pero el evento no se ejecuta de forma independiente para cada uno de estos. 
   
     
@@ -198,13 +198,13 @@ Además de cancelar una instalación de complemento, este evento se puede usar c
   
 - Establecer la configuración de inicialización relativa a la instancia de aplicación. Por ejemplo, el complemento puede tener un contenedor de propiedades de complemento web para almacenar la configuración que varía de una instancia del complemento a otra. El controlador AppInstalled puede escribir diferentes valores en el contenedor de propiedades, en función de, por ejemplo, el tipo de sitio web de host (como sitio de grupo o sitio de Blog).
     
-    > [!NOTA]
+    > **NOTA**
       > Comprobar si la web de host es un sitio de AppCatalog es una buena forma de detectar si se ha instalado el complemento con ámbito de inquilino. Consulte  [Arrendamientos y ámbitos de implementación de los complementos para SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - Realizar una configuración relativa a la instancia de la aplicación en la aplicación web remota del complemento, como agregar una tabla a una base de datos.
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > La implementación del evento AppInstalled debe completarse en 30 segundos. Si no, la infraestructura de instalación de SharePoint pensará que ha habido algún error. La infraestructura volverá a ejecutar el evento  *y repetirá el código desde el principio*  hasta tres veces más. Después de cuatro tiempos de espera, SharePoint revertirá la instalación del complemento completa. Todas las consecuencias de estos hechos se describen en [Incluir la lógica de reversión y la lógica de "acciones realizadas" en los controladores de evento de complemento](#Rollback). 
   
     
@@ -262,7 +262,7 @@ Si SharePoint encuentra un error al procesar alguno de los tres eventos de compl
     
   
 
-> [!NOTA]
+> **NOTA**
 > **Nota especial sobre el evento AppUninstalling:** Los puntos anteriores se aplican al evento AppUninstalling tanto como a los otros dos eventos de complementos. Por ejemplo, si el controlador para el evento de desinstalación elimina una fila de una base de datos remota y, a continuación, encuentra un error, la fila debe restaurarse. Dado que el servicio va a enviar un mensaje de cancelación a SharePoint, el complemento no se quitará de la papelera de reciclaje. Si se restaura desde allí y se vuelve a usar, es posible que no funcione sin esa entrada de la base de datos.> Sin embargo, se completa el controlador AppUninstalling  *antes*  de que SharePoint quite el complemento de la papelera de reciclaje. Por lo tanto, si SharePoint encuentra un error y necesita cancelar la eliminación, no hay ninguna forma para el controlador de deshacer lo que ha hecho.
   
     
@@ -363,7 +363,7 @@ No puede usar siempre la estrategia de delegación de controlador. Por ejemplo, 
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Si se produce un error en el evento AppInstalled, SharePoint eliminará el web de complemento, si existe. Si se produce un error en el evento AppUpated, SharePoint restaurará el web de complemento a su estado anterior a la actualización. Por este motivo, los controladores nunca deben revertir acciones que realizan en el web de complemento. Si el controlador realiza acciones en el web de host y el web de complemento, primero debe encargarse del web de complemento. Si lo hace, se puede usar la estrategia de delegación de controlador para el web de host. Incluso si las acciones web de complemento fueran correctas y se produjera un error en las acciones web de host, no hay ninguna lógica de reversión que queda sin ejecutar. 
   
     

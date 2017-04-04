@@ -7,14 +7,14 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # Localize SharePoint Add-ins
 Localize a SharePoint Add-in by using resource files, JavaScript resource files, and other techniques.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!NOTE]
+> **NOTE**
 > This topic assumes that you are familiar with basic creation of SharePoint Add-ins; and with SharePoint Features, the distinction between add-in webs and host webs,  [what kind of SharePoint components can be in an add-in](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps), and the basics of localization with .resx files. 
   
     
@@ -42,7 +42,7 @@ Also, be aware of the following:
 
 -  The procedures in this article assume that you are using the most recent version of [Office Developer Tools for Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013), or  [Office Developer Tools for Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).
     
-    > [!NOTE]
+    > **NOTE**
       > If your test SharePoint website is an on premise SharePoint farm instead of a Microsoft SharePoint Online Developer Site, you may need to install the language packs for the languages in which you are translating your SharePoint Add-in. For more information, see  [Install or uninstall language packs for SharePoint 2013](http://technet.microsoft.com/en-us/library/cc262108%28v=office.15%29.aspx) and [Language packs in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/ff463597%28v=office.15%29.aspx), and the download links in the latter. 
 - The screen shots and code examples in this article reflect the sample  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization). You can download the sample to see the results of the procedures described in this article.
     
@@ -56,7 +56,7 @@ An add-in web can contain specific kinds of SP components. For more information 
     
     
 
-> [!NOTE]
+> **NOTE**
 > Resource files cannot be shared by multiple add-in web Features. For each Feature in the .wsp file, you have to create separate sets of resource files. 
   
     
@@ -76,7 +76,7 @@ An add-in web can contain specific kinds of SP components. For more information 
     
     When edited, this "invariant language" file contains the strings that are used in the **Feature** gallery on all sites in languages for which you are *not*  going to be providing a localized version of strings. So the language used for the strings in this file should be the language that is most likely to be a second language of people using SharePoint. Traditionally, English is used for this purpose, but in some scenarios another language might be a better choice. For example, in some regions, French may be a more common second language of the users than English. The continuing example in this topic uses English as the invariant language.
     
-    > [!NOTE]
+    > **NOTE**
       > a SharePoint Add-in cannot be installed on a website whose language is not listed in the **Supported Locales** section of the add-in manifest. Keep in mind that when this article discusses languages for which you are *not*  going to be providing a localized add-in, you do still have to add such languages to the add-in manifest. See the procedure **To create resource files for the host web** in this article for more details about supported locales in the add-in manifest.
 4. In the **Name** column of the top row in the **Resource Editor**, enter a descriptive name for the string (or other resource)—for example, OrdersListInstance_Title andOrdersListInstance_Description. These names of localizable resources are not themselves localized. Each resource must have its own name. 
     
@@ -104,7 +104,7 @@ An add-in web can contain specific kinds of SP components. For more information 
   
 12. Repeat the last four steps for each foreign language. 
     
-    > [!NOTE]
+    > **NOTE**
       > Consider adding a language-specific file for the same language as your invariant language. If you do, you can copy the rows without changing the values of the strings. In many situations, it is not necessary to have a language-specific file for the same language that is used in the resource file for the invariant language, especially when the only resources in the files are strings. But resource files can contain images, icons, files, and other kinds of resources too. Sometimes, you need the invariant language resource file to use an image or other resource that is different from the corresponding resource in  *any*  of the language-specific files.
 13. For each file, verify that the **Build Action** property is set to **Content**.
     
@@ -256,11 +256,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     This markup loads one of your JavaScript files. It determines which language file to load by reading the SharePoint resource named "language_value." This resource resolves to a language-culture name in the pattern  _LL_- _CC_ that was described in an earlier procedure. Specifically, it resolves to the language of the add-in web.
     
-    > [!NOTE]
+    > **NOTE**
       > The SharePoint resource "language_value" is never null, so a file named "Resources.js" would never be called by this script. That is why you did not make one in the preceding procedure. When the value of "language_value" is a language for which there is no .js file, this script loads nothing. The next step explains how strings get an invariant language value in that situation. 
 3. For each localizable element and attribute value on the page, give it a default value in the invariant language, but then use JavaScript to assign it the appropriate variable from the Resources. _LL_- _CC_.js file. For example, if the page has a title in an **h2** element, give the element an **id** attribute and then insert a **script** element below the localized elements to assign localized strings to the **innerText** property of the localized elements. This localization code should only run if a Resources. _LL_- _CC_.js file loaded and declared the variables. So put it in a conditional block that first tests whether one of the variables is defined. If it is not, then no resource script loaded and the default (invariant) values should remain unchanged. The following is an example. 
     
-    > [!TIP]
+    > **TIP**
       > The word "INVARIANT" has been added to the first of the invariant strings. You would not do this in a production add-in, but while you are testing, it is a useful way of seeing at a glance whether invariant language strings are being used or whether the Resources. _LL_- _CC_.js file for the language that happens to be your invariant language was loaded. 
 
   ```HTML
@@ -337,7 +337,7 @@ The essential method for localizing host web components is the same as for local
   
 4. Repeat the previous step for each locale you want to support with a localized version of the add-in. An additional Resources. _LL_- _CC_.resx file is created for each locale.
     
-    > [!NOTE]
+    > **NOTE**
       > The **Build Action** property of each of these files is set to **Content**, not **Resource**.  *Don't change this setting.* 
 5. Also add locale entries for every locale where you want your add-in to be installable, but where it should use the invariant language; that is, locales for which you will  *not*  be providing a localized version of the add-in. *Delete the .resx files that are created for these locales.* 
     
@@ -363,7 +363,7 @@ The essential method for localizing host web components is the same as for local
   ```
 
 
-    > [!CAUTION]
+    > **CAUTION**
       > The value of **Title** can contain *only*  the call to the resource. There can be no other text, symbols, or white space.
 2. To call localized resources in other XML files, such as Elements.xml for add-in parts and custom actions, you use the same format that you used in the add-in manifest file.
     
@@ -413,7 +413,7 @@ If there are localizable string values in your web application's JavaScript, you
     
     
 
-> [!NOTE]
+> **NOTE**
 > This section only discusses string localization. For more powerful localization needs, such as localization of date or currency formatting, consider using a localization or globalization library, such as the  [Globalize add-on for jQuery](https://github.com/jquery/globalize). 
   
     

@@ -12,7 +12,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 <a name="Overview"> </a>
 
 
-> [!メモ]
+> **メモ**
 > この記事では、読者が  [低信頼承認を使用する SharePoint アドインの作成](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) および OAuth の基礎となっている概念や原理を理解していることを前提としています。OAuth の詳細については、「 [OAuth.net](http://oauth.net/)」および「 [Web 承認プロトコル (OAuth)](http://datatracker.ietf.org/doc/active/#oauth)」を参照してください。 
   
     
@@ -23,7 +23,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!メモ]
+> **メモ**
 > この種類のアドインは、アドインでアクセスするリソースに対する管理権限を持つユーザーのみが実行できます。たとえば、アドインが特定の Web サイトに対する読み取りアクセス許可のみを要求する場合、その Web サイトに対する読み取り権限を持っていても管理権限がないユーザーはこのアドインを実行できません。 
   
     
@@ -50,7 +50,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!メモ]
+> **メモ**
 > フローには、実行時の **アドイン、SharePoint、認証サーバー (ACS)、およびエンド ユーザーの間の一連のやりとりが含まれます** 。このため、フローでは SharePoint Online または SharePoint のファームのいずれかがインターネットに接続していて ACS と通信できることが必要です。インターネットに接続していない SharePoint ファームは、 [高信頼承認システム](creating-sharepoint-add-ins-that-use-high-trust-authorization.md)を使用する必要があります。 
   
     
@@ -101,7 +101,7 @@ Contoso がオンラインで写真印刷サービスを提供しているとし
     
 
     
-> [!ヒント]
+> **ヒント**
 > これらの手順は TokenHelper.cs (または .vb) ファイルのメソッドを参照します。このマネージ コードはコンパイルされていないため、これに関する参照トピックはありません。ただし、ファイルそのものには、それぞれのクラス、メンバー パラメーター、および戻り値について詳細なコメントが付いています。これらの手順を読む際に参照できるよう、このファイルのコピーを開いておくことをお勧めします。 
   
     
@@ -158,7 +158,7 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
     
 
-> [!メモ]
+> **メモ**
 > スコープについては、「 [SharePoint 2013 でのアドインのアクセス許可](add-in-permissions-in-sharepoint-2013.md)」を参照してください。 
   
     

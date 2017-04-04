@@ -7,7 +7,7 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # 使用 REST 处理文件夹和文件
 了解如何使用 SharePoint 2013 REST 界面对文件夹和文件执行基本的创建、读取、更新和删除 (CRUD) 操作。
-> [!提示]
+> **提示**
 > SharePoint Online（和本地 SharePoint 2016 及更高版本）REST 服务支持使用 OData  `$batch` 查询选项，将多个请求合并到对该服务的单个调用中。有关详细信息和代码示例的链接，请参阅 [使用 REST API 发出批处理请求](make-batch-requests-with-the-rest-apis.md)。 
   
     
@@ -184,7 +184,7 @@ Headers:
     
     
 
-> [!注释]
+> **注释**
 > **PUT** 是可用于更新文件的唯一方法。不允许使用 **MERGE** 方法。
   
     
@@ -269,7 +269,7 @@ headers:
     
     
 
-> [!警告]
+> **警告**
 > 此方法将只适用于 Internet Explorer 10 和其他浏览器的最新版本。 
   
     
@@ -384,7 +384,7 @@ headers:
     
     
 
-> [!注释]
+> **注释**
 > **PUT** 是可用于更新文件的唯一方法。不允许使用 **MERGE** 方法。
   
     

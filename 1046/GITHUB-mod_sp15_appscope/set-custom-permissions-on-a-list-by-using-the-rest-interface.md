@@ -13,7 +13,7 @@ SharePoint sites, listas e itens de lista são tipos de **SecurableObject**. Por
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Consulte os  [recursos adicionais](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) para obter links para artigos sobre a configuração das permissões refinadas.
   
     

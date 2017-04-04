@@ -26,7 +26,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeSharePointWriteOps.sln 檔案。
   
     
@@ -40,7 +40,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
     
     
 
-> [!注意事項]
+> **注意事項**
 > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：> 以滑鼠右鍵按一下頂端的 [ **方案總管中**的 [解決方案] 節點並選取 [ **設定啟動專案**。> 請確定所有三個專案設定以 **啟動**[ **動作**] 欄中。
   
     
@@ -136,7 +136,7 @@ private void SetLocalEmployeeSyncStatus()
   
 9. [] 頁面上將似乎重新載入因為 EmployeeAdder] 頁面上的 **Page_Load**方法會重新導向給它。員工的 **公司 DB 已新增**欄位的值已變更為 [ **是]**。
     
-    > [!注意事項]
+    > **注意事項**
       > 項目會防止使用者手動變更值 **新增至公司 DB**讓清單及公司的資料庫不一致的方式？Nothing 沒有可用。您將這一系列更新文章中取得此問題的解決方案。
 10. 若要結束偵錯工作階段，關閉瀏覽器視窗或停止在Visual Studio中偵錯。每次您按 F5、 Visual Studio會撤銷舊版增益集和安裝最新的其中一個。
     

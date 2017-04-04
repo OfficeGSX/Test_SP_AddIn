@@ -116,7 +116,7 @@ switch (properties.EventType)
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > Los eventos **AppInstalled**, **AppUpdated** y **AppInstalling**, si tiene controladores para ellos, obtendrán sus propias direcciones URL registradas en el manifiesto del complemento. Por lo tanto,  *es posible*  tener extremos diferentes para ellos; pero este artículo (y Office Developer Tools para Visual Studio) presupone que tienen exactamente el mismo extremo. Por este motivo, el código debe determinar qué evento lo llamó.
 8. Tal como se explicó en  [Incluir la lógica de reversión y la lógica de "acciones realizadas" en los controladores de evento de complemento](handle-events-in-sharepoint-add-ins.md#Rollback), si algo sale mal en la lógica de instalación, casi siempre deberá cancelar la instalación del complemento, y necesitará que SharePoint revierta lo hecho para la instalación y que el controlador también reviertan lo hecho. Una forma de lograr estos objetivos es agregar el siguiente código dentro de **case** para el evento AppInstalled.
     
@@ -138,7 +138,7 @@ case SPRemoteEventType.AppInstalled:
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > Mueva el código de instalación que tarda más de 30 segundos en el complemento mismo. Puede agregarlo a la lógica de "primera ejecución" que se ejecuta la primera vez que se inicia el complemento. El complemento puede mostrar un mensaje que dice algo como "Estamos trabajando para usted". De forma opcional, el complemento puede indicar al usuario que ejecute el código de instalación. > Si la lógica de "primera ejecución" no es factible para el complemento, otra opción es hacer que el controlador de eventos inicie un proceso asíncrono remoto y luego que devuelva inmediatamente un objeto  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) con el **Status** establecido en **Continue**. Un punto débil de esta estrategia es que, si el proceso remoto falla, no tiene forma de indicar a SharePoint que revierta la instalación del complemento. 
 9. Como se explicó en  [Estrategias de arquitectura del controlador de eventos de complemento](handle-events-in-sharepoint-add-ins.md#Strategies), la estrategia preferida es la delegación de controlador, aunque no es posible en todos los escenarios. En el ejemplo de este artículo, le mostramos cómo implementar la estrategia de delegación de controlador a la hora de agregar una lista a la web de hospedaje. (Para obtener información sobre cómo crear un controlador de evento AppInstalled similar que no use la estrategia de delegación de controlador, consulte el ejemplo  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents)).
     
@@ -268,7 +268,7 @@ using (condScope.StartScope())
   ```
 
 
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > **SOLUCIÓN DE PROBLEMAS:** Para probar si el bloque **StartCatch** se especificó en el momento correcto, usted necesita encontrar una manera de producir una excepción en tiempo de ejecución en el servidor de SharePoint. Un **throw** o dividir por cero no funcionará porque producen excepciones *en el cliente*  antes de que el tiempo de ejecución del cliente pueda siquiera agrupar el código y enviarlo al servidor (con el método **ExecuteQuery**). En cambio, agregue las siguientes líneas al bloque **StartTry**. El tiempo de ejecución en el cliente acepta esto, pero genera una excepción en el servidor, que es lo que usted necesita. >  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
   
     
@@ -344,10 +344,10 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
   ```
 
 
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > **DEPURACIÓN:** Independientemente de que esté usando la estrategia de delegación de controlador, cuando pase por el código con el depurador, recuerde que, en cualquier escenario en que el controlador devuelva un estado de cancelación, SharePoint llamará al controlador nuevamente, hasta tres veces más. Por lo tanto, el depurador reciclará el código hasta cuatro veces.
 
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > **ARQUITECTURA DE CÓDIGO:** Como puede instalar componentes en la web de complemento con marcado declarativo fuera del controlador, generalmente no le conviene usar ninguno de los 30 segundos que el controlador tiene disponible para interactuar con la web de complemento. Si lo hace, recuerde que el código requiere un objeto [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) por separado para la web de complemento. Esto significa que la web de complemento y la web de hospedaje son componentes diferentes, del mismo modo en que una base de datos de SQL Server es diferente a cada uno de ellos. Por lo que un método que llama a la web de complemento está en el bloque **try** del bloque AppInstalled **case**, tal como el método TryCreateList en el ejemplo que continúa. Sin embargo, el controlador  *no*  necesita revertir acciones realizadas en la web de complemento. Si encuentra un error, solo necesita cancelar el evento, porque SharePoint eliminará toda la web de complemento si se cancela el evento.
 
 ## Crear un receptor de eventos de desinstalación de complemento

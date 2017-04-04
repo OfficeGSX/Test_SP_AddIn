@@ -7,7 +7,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
 
 # Create a custom proxy page for the cross-domain library in SharePoint 2013
 Learn how to create a custom proxy page to access data in a remote service from a SharePoint webpage by using the cross domain library in SharePoint. 
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -93,7 +93,7 @@ To read data from the remote service, you must do the following:
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       > The **AllowedRemoteHostUrl** attribute is used to specify the remote domain. The **~remoteAppUrl** resolves to the remote add-in URL. For more information about tokens, see [Explore the app manifest structure and the package of a SharePoint Add-in](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### To create a custom proxy page
@@ -195,7 +195,7 @@ To read data from the remote service, you must do the following:
   ```
 
 
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > In a production SharePoint Add-in, you must provide the authorization logic and return the appropriate value in the **originAuthorityValidator** object in settings.
 
 ### To create a content page
@@ -342,7 +342,7 @@ Response.End();
   
 2. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in. 
 3. Choose the **Trust It** button.
     

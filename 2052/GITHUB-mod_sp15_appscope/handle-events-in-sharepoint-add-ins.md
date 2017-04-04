@@ -32,7 +32,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
     
 
 
-> [!注释]
+> **注释**
 > 网站事件和网站集事件在 SharePoint 外接程序中不受支持。 
   
     
@@ -61,7 +61,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
     
   
 
-> [!注释]
+> **注释**
 > 在 服务器场解决方案中，RER 的作用和事件接收器相同；但事件接收器有运行在 SharePoint 服务器上的自定义代码，所以它们不能用在 SharePoint 外接程序中。 
   
     
@@ -104,7 +104,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
 ||ItemFileConverted  <br/> |
    
 
-> [!注释]
+> **注释**
 > *这两个新事件可能在 Visual Studio UI 中不可用。如果不可用，请选择 ItemDeleting 或 ItemDeleted，然后手动更改名称。 
   
     
@@ -157,7 +157,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
     
     
 
-> [!注释]
+> **注释**
 > 有关 RER 的其他信息，包括一些故障排除信息，请参阅 [远程事件接收器常见问题](handle-events-in-sharepoint-add-ins.md#RERFAQ)。 
   
     
@@ -179,7 +179,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
     
     
 
-> [!注释]
+> **注释**
 > 当您安装含 [租户作用域](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)的加载项时，会将其安装到加载项目录网站集中，仅在这个时候会运行 AppInstalled 事件。可在租赁的多个网站中看到该加载项，但该事件不会为每个网站单独运行。 
   
     
@@ -198,13 +198,13 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
   
 - 设置应用实例相关的初始化设置。例如，您的加载项可以有一个加载项 Web 属性包，用于保存从该加载项的一个实例变为另一个实例的设置。您的 AppInstalled 处理程序可以将不同的值写入属性包中，即，根据主机 Web 的网站类型（如工作组网站或博客网站）写入。
     
-    > [!注释]
+    > **注释**
       > 检查主机 Web 是否是 AppCatalog 站点，是检测该加载项是否在租户作用域内安装的好方法。请参阅  [SharePoint 外接程序的租赁和部署范围](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。 
 - 在加载项的远程 Web 应用程序中执行应用实例相关的配置，例如将表格添加到数据库中。
     
   
 
-> [!重要信息]
+> **重要信息**
 > 必须在 30 秒内执行"AppInstalled"事件，否则 SharePoint 安装基础结构会认为安装失败。基础结构将返回事件， *并从头开始重复代码*  ，最多再重复三次。四次超时后，SharePoint 将回滚整个外接程序安装。有关对这些事项完整意义的介绍，请参阅 [将回滚逻辑和"已完成"逻辑包括在您的加载项事件处理程序中](#Rollback)。 
   
     
@@ -262,7 +262,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
     
   
 
-> [!注释]
+> **注释**
 > **关于 AppUninstalling 事件的特别注意事项：**前面要点适用于 AppUninstalling 事件，同样也适用于其他两个加载项事件。例如，如果您用于卸载事件的处理程序删除了远程数据库中的一行内容，然后遇到了一个错误，则该行需要还原。由于您的服务将向 SharePoint 发送取消消息，所以该加载项不会从回收站中删除。如果将它从回收站还原并再次使用，则在没有该数据库条目的情况下可能会发生失败。 > 但是，您的 AppUninstalling 处理程序会在 SharePoint 将加载项从回收站中删除 *之前*  完成操作。因此，如果 SharePoint 本身遇到错误，并且需要取消删除，那么您的处理程序将无法撤消它完成的操作。
   
     
@@ -363,7 +363,7 @@ SharePoint 加载项模型不提供将自定义服务器端代码存储在 Share
     
     
 
-> [!提示]
+> **提示**
 > 如果 AppInstalled 事件发生失败，SharePoint 将删除加载项 Web（如果有的话）；如果 AppUpated 事件发生失败， SharePoint 将把加载项 Web 还原到其更新前的状态。为此，您的处理程序完全不需要回滚它们对加载项 Web 执行的操作。如果您的处理程序在主机 Web 和应用程序 Web 上执行操作，它应首先处理加载项 Web。这样做可以可安全地对主机 Web 使用处理程序委派策略。即使加载项 Web 操作成功执行，而主机 Web 操作失败，也不会有未执行的回滚逻辑。 
   
     

@@ -12,7 +12,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 <a name="Overview"> </a>
 
 
-> [!注意事項]
+> **注意事項**
 > 本文假設您已熟悉使用 [建立 SharePoint 增益集使用低信任層級授權](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)與概念與 OAuth 背後的原則。如需 OAuth 的詳細資訊，請參閱 [OAuth.net](http://oauth.net/)和 [Web 的驗證通訊協定 (oauth)](http://datatracker.ietf.org/doc/active/#oauth)。
   
     
@@ -23,7 +23,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!注意事項]
+> **注意事項**
 > 僅有管理的增益集想要存取之資源的權限的使用者可以執行這種類型的增益集。例如，如果增益集要求的僅的讀取權限的網站具有讀取，但沒有管理使用者權限至網站無法執行增益集。
   
     
@@ -50,7 +50,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!注意事項]
+> **注意事項**
 > 流程 **包括一系列的增益集、 SharePoint、 授權伺服器 (這是 ACS) 之間的互動與使用者** 在執行階段。因此，流程需要SharePoint Online或連線至網際網路，可以彼此 ACS 讓SharePoint伺服器陣列。無法連線至網際網路的SharePoint伺服器陣列必須使用 [高信任授權系統](creating-sharepoint-add-ins-that-use-high-trust-authorization.md)。
   
     
@@ -101,7 +101,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
 
     
-> [!秘訣]
+> **秘訣**
 > 這些步驟，請參閱 TokenHelper.cs (或.vb) 檔案中的方法。未編譯此 managed 程式碼，因此有它沒有參照主題。不過，檔案本身完全標記為備註的與每個類別成員參數的描述及傳回值。請考慮擁有一份開啟，請參閱 ＜ 您閱讀這些步驟。
   
     
@@ -158,7 +158,7 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
     
 
-> [!注意事項]
+> **注意事項**
 > 範圍的說明，請參閱 [增益集 (英文) SharePoint 2013 權限](add-in-permissions-in-sharepoint-2013.md)。
   
     

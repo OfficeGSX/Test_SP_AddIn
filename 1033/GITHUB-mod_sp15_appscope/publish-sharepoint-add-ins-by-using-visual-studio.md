@@ -10,7 +10,7 @@ ms.assetid: 8137d0fa-52e2-4771-8639-60af80f693bb
 
 # Publish SharePoint Add-ins by using Visual Studio
 Learn how to publish your SharePoint Add-in by using Microsoft Visual Studio 2013 or Visual Studio 2012. If the add-in has an associated web application, you deploy it first. Then, as for all SharePoint Add-ins, you package the SharePoint Add-in and then publish it. You can also optionally choose to submit your add-in for inclusion on the Office Store.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -44,7 +44,7 @@ If your provider-hosted SharePoint Add-in has a web application, deploy the file
     
     
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > To ensure that your SharePoint Client ID and Client Secret values get published with your web project, which allows your web content to access SharePoint data, publish your SharePoint Add-in project from the **Publish your add-in** page. You access this page by opening the shortcut menu for the SharePoint Add-in, not the shortcut menu for the web app, and then choosing the **Publish** command.
   
     
@@ -78,7 +78,7 @@ Your SharePoint Add-in typically has an associated host web application that you
     
     If you plan to submit your SharePoint Add-in to the Office Store, be sure to use client ID and client secret values that are created in the Seller Dashboard. You can use client IDs and client secret values that you generate by using the appregnew.aspx page during the development phase, but add-ins that you submit to the Office Store must use client IDs and client secrets that you get from the Seller Dashboard. Also, you should create the publishing profile on your Azure site and then import it into Visual Studio, rather than creating a profile in the **Create publishing profile** wizard. When you create a profile in Azure, all of the settings on the **Connection** tab are provided for you in Visual Studio. For more information about how to import or create a publishing profile, see [Creating a Publish Profile](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
-    > [!TIP]
+    > **TIP**
       > If you can't publish web content directly, you can create a web deploy package that an administrator can deploy to the web for you. To create a web deploy package, create a new profile, choose the **Connection** tab, and then choose **Web Deploy Package** in the **Publish method** list.
 
 ### To deploy your web app project
@@ -113,7 +113,7 @@ Your SharePoint Add-in typically has an associated host web application that you
     
     You must specify an address that starts with the "https" prefix. See  [Why do my add-ins have to be SSL-secured?](http://msdn.microsoft.com/library/jj591603#bk_q7).
     
-    > [!NOTE]
+    > **NOTE**
       > Azure web sites automatically provide an https endpoint. If you publish your add-in on an Office Store site or to the Office Store, the address must start with an https prefix. However, if you publish the add-in to an on-premises site, you can use an http prefix. 
 
     In the **What is the add-in's client ID?** text box, the client ID that you entered in the publishing profile should already appear.

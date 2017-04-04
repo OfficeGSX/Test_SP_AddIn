@@ -7,7 +7,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
 
 # Set up a development environment for SharePoint Add-ins on Office 365
 Set up a development environment for SharePoint Add-ins on an Office 365 Developer Site.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -50,7 +50,7 @@ The registry path will change in future versions of Visual Studio.
 <a name="o365_signup"> </a>
 
 
-> [!NOTE]
+> **NOTE**
 >  You might already have access to an Office 365 Developer Site:> **Are you an MSDN subscriber?** Visual Studio Enterprise with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Do you have one of the following Office 365 subscription plans?**> **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more information, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -71,7 +71,7 @@ Three ways to get an Office 365 plan.
     
   
 
-> [!TIP]
+> **TIP**
 > Open these links in another window or tab in order to keep the following instructions handy. 
   
     
@@ -116,7 +116,7 @@ Three ways to get an Office 365 plan.
   
 
     
-> [!NOTE]
+> **NOTE**
 > If you're logged on to another Microsoft account when you try to sign up for a developer account, you might get this message: "Sorry, that user ID you entered didn't work. It looks like it's not valid. Be sure you enter the user ID that your organization assigned to you. Your user ID usually looks like  *someone@example.com*  or *someone@example.onmicrosoft.com*  ."> If you see this message, log out of the Microsoft account you were using and try again. If you still get the message, clear your browser cache or switch to **InPrivate Browsing** and then fill out the form.
   
     

@@ -19,7 +19,7 @@ Sie sollten ungefähr mit  [Behandeln von Add-In-Ereignissen](handle-events-in-s
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > **Versionsnummerierungssystem:** Aus Konsistenzgründen wird bei diesem Thema davon ausgegangen, dass die App-Versionsnummern 1.0.0.0, 2.0.0.0, 3.0.0.0 usw.lauten. Die Logik und Anweisungen gelten jedoch unabhängig vom Nummerierungssystem, das Sie verwenden.
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!WICHTIG]
+> **WICHTIG**
 > Wenn Sie eine Komponente zu einer App in einem **UpgradedEventEndpoint**-Handler hinzufügen, sollten Sie den gleichen Code zu einem **InstalledEventEndpoint**-Handler hinzufügen, da diese Komponente auch bei einer Neuinstallation in der App enthalten sein soll. Außerdem sollten Sie für die App einen  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) hinzufügen (oder diesen überarbeiten), um die Komponente zu entfernen. Fast alles, was durch den **InstalledEventEndpoint** hinzugefügt oder geändert wurde, sollte durch den **UninstallingEventEndpoint** zurückgesetzt oder gelöscht werden. Eine Ausnahme stellen Daten dar, die nach dem Entfernen der App aus dem endgültigen Papierkorb weiterhin nützlich sind. Diese sollten nicht gelöscht werden. (Websites, mit Ausnahme des App-Web, die von der App erstellt werden, sollten als Daten betrachtet werden.)
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!WICHTIG]
+> **WICHTIG**
 > Wichtig ist, der  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) -Eigenschaft **SPRemoteEventServiceStatus.CancelWithError** (oder **SPRemoteEventServiceStatus.CancelNoError**) zuzuweisen. Diese Eigenschaft signalisiert der Infrastruktur, das Update zurückzusetzen. Aber SharePoint ruft den Handler bis zu drei Mal auf, bevor das Update zurückgesetzt wird. 
   
     

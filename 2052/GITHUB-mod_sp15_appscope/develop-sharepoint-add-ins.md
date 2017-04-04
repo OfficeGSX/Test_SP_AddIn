@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # 开发 SharePoint 外接程序
 查找可帮助您将高级功能构建到 SharePoint 外接程序的深度文章和资源。
-> [!注释]
+> **注释**
 > 本文假设您熟悉文章  [SharePoint 外接程序](sharepoint-add-ins.md)以及文章所链接到的入门材料。 
   
     

@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. F5 キーを押します。
     
-    > [!メモ]
+    > **メモ**
       > F5 キーを押すと、Visual Studio によってソリューションが構築され、アドインが展開され、アドインのアクセス許可ページが表示されます。 
 3. [ **信頼する**] ボタンをクリックします。
     

@@ -19,7 +19,7 @@ Se o suplemento for carregado para o Office Store, Microsoft executa algumas ver
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Quando você estiver desenvolvendo o add-in e implantá-lo com Microsoft Office Developer Tools for Visual Studio, o suplemento é instalado diretamente no site do SharePoint de teste de destino. Desde que ele não está passando por meio do Office Store, não ocorrerá a verificação de validação descrito acima.
   
     
@@ -65,7 +65,7 @@ Proprietários de sites instalar Suplementos do SharePoint da página **seus sup
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Em alguns casos, uma perda temporária de uma conexão de rede pode bloquear a instalação. Se a instalação falhar por qualquer motivo, a infraestrutura de instalação repetirá três vezes. Se não tiver êxito, uma indicação da falha aparece na interface do usuário. Os usuários podem tentar novamente a instalação mais tarde.
   
     
@@ -88,7 +88,7 @@ Se o Suplemento do SharePoint inclui um suplemento de web, o suplemento da web �
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Quando um usuário remove um suplemento, ele é movido para a Lixeira de primeira estágio. Excluí-lo a partir daí move para a Lixeira de segunda estágio. Se ele for excluído da Lixeira de segundo estágio, ela é desinstalada completamente e não pode ser restaurada.
   
     

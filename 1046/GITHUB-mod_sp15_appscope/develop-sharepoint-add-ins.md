@@ -10,7 +10,7 @@ ms.assetid: 71ddde4b-fac4-4d8c-aa2e-524f9c2c4c99
 
 # Desenvolver suplementos do SharePoint
 Encontre detalhados artigos e recursos para ajudá-lo a criar recursos avançados na sua Suplementos do SharePoint.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este artigo pressupõe que você está familiarizado com o artigo  [Suplementos do SharePoint](sharepoint-add-ins.md) e o guia de Introdução material que ela está vinculada.
   
     

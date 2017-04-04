@@ -13,7 +13,7 @@ SharePoint 网站、列表和列表项的类型为 **SecurableObject**。默认�
     
 
 
-> [!注释]
+> **注释**
 > 有关设置细化权限的文章的链接，请参阅 [其他资源](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources)。 
   
     

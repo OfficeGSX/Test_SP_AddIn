@@ -126,7 +126,7 @@ La Figura 1 muestra una vista de representación de cliente de una lista de anun
   
   - Proporciona un valor para el elemento **JSLink** que apunta a un archivo JavaScript que se aprovisiona con el complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > La propiedad JSLink no es compatible con las listas de encuesta o de eventos. Un calendario de SharePoint es una lista de eventos. 
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando presiona F5, Visual Studio compila la solución, implementa el complemento y abre la página de permisos para el complemento. 
 2. Presione el botón **Confiar**.
     

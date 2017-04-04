@@ -8,7 +8,7 @@ ms.assetid: 2f65ba3f-b246-4064-b4fb-ad18399d387a
 
 # Use an Office 365 SharePoint site to authorize provider-hosted add-ins on an on-premises SharePoint site
 Use an Office 365 SharePoint site to create an environment where you can use ACS to establish trust between a provider-hosted add-in and an on-premises SharePoint 2013 farm, just as you would if you were developing add-ins for an Office 365 SharePoint site.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -131,7 +131,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > The  [Configure a one-way hybrid environment with SharePoint Server 2013 and Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx) document that is available for download on the [SharePoint 2013 hybrid resources page](http://www.microsoft.com/en-us/download/details.aspx?id=35593) explains in greater detail how to replace the default STS certificate of your on-premises farm with a certificate from a well-known certification authority or a self-signed certificate.
   
     
@@ -187,7 +187,7 @@ The function below does all the work to configure your on-premises SharePoint 20
 
 1. On the on-premises SharePoint server, copy the code in the function into a text file and save it with the name MySharePointFunctions.psm1 to one or the other of the following folders (not both). You may have to create parts of the path, if it includes folders that do not already exist. Notice that in both cases, the lowest folder in the path has to have the same name as the file.
     
-    > [!TIP]
+    > **TIP**
       > The file has to be saved as ANSI format, not UTF-8. PowerShell may give syntax errors when it loads a file with a non-ANSI format. Windows NotePad will default to saving it as ANSI. If you use any other editor to save the file, be sure you are saving it as ANSI. 
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`, where  _username_ is the farm administrator who will be executing the file.

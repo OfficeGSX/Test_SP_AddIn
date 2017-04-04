@@ -10,7 +10,7 @@ ms.assetid: 21de092e-27f2-4000-bbb7-cb5cbfeaf195
 ## 为远程 SharePoint 测试网站配置调试
 
 
-> [!注释]
+> **注释**
 > 此部分中的程序只适用于您的测试 SharePoint 网站位于不同于 Visual Studio 的另一台计算机上（或是在您将 SharePoint Online 开发人员网站作为您的测试网站）的情况。如果 SharePoint 和 Visual Studio 位于同一台计算机上，则跳过此部分。 
   
     

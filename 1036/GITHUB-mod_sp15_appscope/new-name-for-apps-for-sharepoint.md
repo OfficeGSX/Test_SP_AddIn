@@ -25,7 +25,7 @@ Nous mettons actuellement à jour nos produits, la documentation, les exemples e
 |Application web  <br/> |complément web  <br/> |
    
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le nom du lanceur d'applications et de la page **Mes applications** dans Office 365 ne change pas. La page **Mes applications** lance les applications internes, ainsi que les applications web autonomes utilisant Azure AD pour l'authentification.
   
     

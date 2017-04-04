@@ -19,7 +19,7 @@ Avoir lu les articles relatifs à la  [Gestion des événements de complément](
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > **Système de numérotation des versions :** par souci de cohérence, cet article suppose que les numéros de version de complément sont 1.0.0.0, 2.0.0.0, 3.0.0.0, et ainsi de suite. Cependant, la logique et ces conseils s'appliquent quel que soit votre système de numérotation.
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si vous ajoutez un composant à un complément dans un gestionnaire **UpgradedEventEndpoint**, n'oubliez pas d'ajouter le même code dans un gestionnaire **InstalledEventEndpoint**, car le composant doit également être inclus dans le complément lors d'une nouvelle installation. En outre, vous devez ajouter un élément  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) (ou le réviser) pour que le complément puisse supprimer le composant. Tout ce qui a été ajouté ou modifié par le gestionnaire **InstalledEventEndpoint** doit être annulé ou supprimé par le gestionnaire **UninstallingEventEndpoint**. La seule exception concerne les données qui resteront utiles après la suppression du complément de la corbeille secondaire et qui ne doivent pas être supprimées. (Les sites web créés par le complément, autres que le site web de complément, doivent être considérés comme des données.) 
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Il est essentiel d'affecter l'élément **SPRemoteEventServiceStatus.CancelWithError** (ou **SPRemoteEventServiceStatus.CancelNoError**) à la propriété  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) . C'est cette propriété qui signale à l'infrastructure d'annuler la mise à jour. Cependant, SharePoint appellera votre gestionnaire trois fois avant d'annuler la mise à jour.
   
     

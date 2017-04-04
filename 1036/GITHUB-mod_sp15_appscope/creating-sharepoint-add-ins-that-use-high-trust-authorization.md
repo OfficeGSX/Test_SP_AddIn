@@ -51,7 +51,7 @@ Un complément à haut niveau de fiabilité est un Complément SharePoint héber
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Cette rubrique vous aide à comprendre le système d'autorisation à haut niveau de fiabilité pour les Compléments SharePoint. Pour obtenir des informations pratiques sur la création et le déploiement de compléments à haut niveau de fiabilité, consultez les rubriques suivantes :>  [Créer des compléments à haut niveau de fiabilité pour SharePoint 2013](create-high-trust-sharepoint-add-ins.md)>  [Empaquetage et publication de compléments SharePoint à haut niveau de fiabilité](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -62,7 +62,7 @@ Dans SharePoint 2013, le service d'émission de jeton de sécurité (STS) fourni
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le service STS n'est pas destiné à l'authentification des utilisateurs. C'est pour cette raison que ce service ne figure pas sur la page de connexion de l'utilisateur, dans la section **Fournisseur d'authentification** sur le site Administration centrale ou dans le sélecteur de personnes dans SharePoint 2013.
   
     
@@ -202,7 +202,7 @@ Voici un exemple de section **appSettings** pour un Complément SharePoint à ha
 ```
 
 
-> [!REMARQUE DE SéCURITé]
+> **REMARQUE DE SéCURITé**
 > L'exemple qui précède suppose que le certificat est stocké dans le système de fichiers. Ceci est acceptable à des fins de développement et de débogage. Dans un Complément SharePoint à haut niveau de fiabilité de production, le certificat est généralement stocké dans le magasin de certificats Windows, et les clés **ClientSigningCertificatePath** et **ClientSigningCertificatePassword** sont généralement remplacées par une clé **ClientSigningCertificateSerialNumber**. 
   
     

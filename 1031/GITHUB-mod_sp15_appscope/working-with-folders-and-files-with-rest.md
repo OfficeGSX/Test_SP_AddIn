@@ -7,7 +7,7 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # Arbeiten mit Ordnern und Dateien mit REST
 Erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Ordner und Dateien mit der SharePoint 2013-REST-Schnittstelle durchführen.
-> [!TIPP]
+> **TIPP**
 > Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -184,7 +184,7 @@ Das folgende Beispiel zeigt, wie Sie eine Datei **aktualisieren** und dazu die *
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die **MERGE** -Methode ist nicht zulässig.
   
     
@@ -269,7 +269,7 @@ Binärdateien mit einer Größe von über 1,5 Megabyte (MB) müssen über die RE
     
     
 
-> [!VORSICHT]
+> **VORSICHT**
 > Diese Vorgehensweise funktioniert nur mit Internet Explorer 10 und den neuesten Versionen anderer Browser. 
   
     
@@ -384,7 +384,7 @@ Das folgende Beispiel zeigt, wie Sie eine Dateianlage für ein Listenelement **a
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die **MERGE** -Methode ist nicht zulässig.
   
     

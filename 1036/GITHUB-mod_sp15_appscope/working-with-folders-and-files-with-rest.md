@@ -7,7 +7,7 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # Utilisation de dossiers et de fichiers à l'aide de l'interface REST
 Découvrez comment effectuer des opérations CRUD (create, read, update et delete ; créer, lire, mettre à jour et supprimer) de base sur les dossiers et les fichiers à l'aide de l'interface REST SharePoint 2013.
-> [!CONSEIL]
+> **CONSEIL**
 > Le service REST SharePoint Online (et SharePoint sur site 2016 et ultérieur) prend en charge la combinaison de plusieurs requêtes en un seul appel au service à l'aide de l'option de requête  `$batch` OData. Pour plus de détails et des liens vers des exemples de code, reportez-vous à [Effectuer des requêtes de lot avec les API REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -184,7 +184,7 @@ L'exemple ci-après montre comment **mettre à jour** un fichier à l'aide de la
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > **PUT** est la seule méthode permettant de mettre à jour un fichier. La méthode **MERGE** n'est pas autorisée.
   
     
@@ -269,7 +269,7 @@ Pour télécharger un fichier binaire dont la taille est supérieure à 1,5 még
     
     
 
-> [!ATTENTION]
+> **ATTENTION**
 > Cette approche ne fonctionne qu'avec Internet Explorer 10 et les versions les plus récentes des autres navigateurs. 
   
     
@@ -384,7 +384,7 @@ L'exemple ci-après montre comment **mettre à jour** un fichier joint à un él
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > **PUT** est la seule méthode permettant de mettre à jour un fichier. La méthode **MERGE** n'est pas autorisée.
   
     

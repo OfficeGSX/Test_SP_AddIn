@@ -25,7 +25,7 @@ ms.assetid: 623fdab7-856e-4a89-9f5d-748a2ba1ef2e
     
     如需建立使用低信任層級系統SharePoint Add-in的詳細資訊，請參閱 SDK 節點 [建立 SharePoint 增益集使用低信任層級授權](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)。
     
-    > [!注意事項]
+    > **注意事項**
       > 安裝的增益集的客戶必須具備Office 365帳戶。這會需要以Azure ACS來提供增益集的存取權。不過，在客戶不需要任何其他用途使用帳戶和增益集可以安裝至內部部署SharePoint的伺服器陣列的伺服器陣列上一些簡單的設定工作之後。
 - **高信任層級**： 提供者主控增益集可以使用數位憑證建立與SharePoint信任。 高信任系統是主要用於供增益集之遠端元件都架設在內部部署。可安裝的增益集未連線至網際網路的SharePoint伺服器陣列。增益集無法安裝於SharePoint Online或售出Office Store中。
     

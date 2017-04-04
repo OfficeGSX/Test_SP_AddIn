@@ -16,7 +16,7 @@ Configurar o ambiente de desenvolvimento para depurar eventos remotos no usando 
 ## Configurar a depuração para um site de teste do SharePoint remoto
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os procedimentos nesta seção se aplicam somente quando o teste de site do SharePoint está em um computador diferente do Visual Studio ou se estiver usando um SharePoint Online Site do desenvolvedor como seu site de teste. Se o SharePoint e Visual Studio estiverem no mesmo computador, ignore esta seção.
   
     

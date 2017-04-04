@@ -26,7 +26,7 @@ Pour plus d'informations sur cette utilisation de la bibliothèque, voir  [Crée
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > La bibliothèque inter-domaine SharePoint peut également être utilisée dans l'autre sens. Autrement dit, sur les pages web à distance, JavaScript peut l'utiliser pour accéder aux données à partir de SharePoint. Pour plus d'informations sur cette utilisation de la bibliothèque, voir  [Création de compléments pour SharePoint qui utilisent la bibliothèque inter-domaine](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md). 
   
     

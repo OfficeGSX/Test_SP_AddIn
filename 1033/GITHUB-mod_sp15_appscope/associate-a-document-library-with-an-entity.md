@@ -7,7 +7,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 # Associate a document library with an entity
 By using the document library feature in SharePoint, you can create or upload documents associated with individual items in a list or entity. For example, you might use a document library to store sales literature and product manuals for each product in a list. In a Cloud Business Add-in, you can associate a document library with an entity by creating a relationship.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -23,7 +23,7 @@ The process of associating a document library with an entity involves three step
 
 1. Add a SharePoint document library to your project as a data source.
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > You must first create a document library on your SharePoint site. It must contain a custom column that maps to a unique field in your entity. 
 2. Create a relationship between the document library and an entity.
     
@@ -64,7 +64,7 @@ The process of associating a document library with an entity involves three step
   
 
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > The document library must already exist and must contain a custom column that maps to a unique field in your entity. 
 5. In the **Specify the name of the data source**, enter a name, and then choose the **Finish** button.
     
@@ -104,7 +104,7 @@ The process of associating a document library with an entity involves three step
   
 
     
-    > [!NOTE]
+    > **NOTE**
       > The field must be of the same data type as the **Foreign** key field.
 
 ### To add a document library to a new screen set

@@ -50,7 +50,7 @@ Otro método para exponer una Complemento de SharePoint es a través de un eleme
     
     
 
-> [!NOTA]
+> **NOTA**
 > También puede implementar elementos de complemento en el sitio web de complemento. Para hacerlo, el marcado para el elemento web formaría parte de una característica en un archivo. wsp en el paquete del complemento y no en la característica del sitio web host. 
   
     
@@ -157,7 +157,7 @@ Un Complemento de SharePoint puede usar casi cualquier tipo de almacenamiento de
     
   
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Es probable que actualice su Complemento de SharePoint en algún momento. Cuando un Complemento de SharePoint incluye componentes de SharePoint en un complemento web, el proceso de actualización realiza una copia completa del complemento web. Por este motivo, si se usan listas de SharePoint de gran tamaño en un complemento web, el proceso de actualización tardará mucho tiempo en completarse y consumirá un gran número de recursos en el servidor de bases de datos de contenido. No agregue macrodatos en listas de SharePoint del complemento web. 
   
     
@@ -265,7 +265,7 @@ o
     
     
 
-> [!NOTA]
+> **NOTA**
 > La infraestructura de instalación del complemento activará automáticamente dichas características en la web de complemento al crearse. 
   
     

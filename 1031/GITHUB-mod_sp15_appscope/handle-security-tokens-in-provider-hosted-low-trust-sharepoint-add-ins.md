@@ -7,7 +7,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # Handhabung von Sicherheitstoken in vom Anbieter gehosteten Add-Ins für SharePoint mit niedriger Vertrauensebene
 Erfahren Sie mehr über die Kontext-, Zugriffs- und Aktualisierungstoken, die für die Autorisierung der vom Anbieter gehosteten SharePoint-Add-Ins mit niedriger Vertrauensebene verwendet werden, und wie Sie mit diesen in Ihrem Code arbeiten können.
-> [!WICHTIG]
+> **WICHTIG**
 > **In diesem Artikel geht es um die Verwendung von Sicherheitstoken im Autorisierungssystem mit niedriger Vertrauensebene, nicht um das besonders vertrauenswürdige System.** Informationen zur Verwendung von Token im besonders vertrauenswürdigen System finden Sie unter [Erstellen und Verwenden von Zugriffstoken in vom Anbieter gehostete besonders vertrauenswürdige SharePoint-Add-Ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md). 
   
     
@@ -80,7 +80,7 @@ Je nach Architektur Ihrer SharePoint-Add-In und der Hosting-Plattform gibt es ve
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > In den meisten Szenarien können Sie nicht so einfache Begriffe wie "Zugriffstoken" als Cacheschlüssel verwenden, weil Ihr Add-In die Token für verschiedene Benutzer und SharePoint-Farms/-Mandanten voneinander unterscheiden können muss. Wenn Ihr Add-In den  [Kontexttokenablauf](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows) verwendet, wird ein spezieller **CacheKey** von SharePoint bereitgestellt, der verwendet werden kann, um zwischengespeicherte Token zu unterscheiden. In diesem Abschnitt wird erklärt, worin die Probleme liegen und was Sie tun können, wenn Ihre Anwendung nicht den Kontexttokenablauf verwendet.
   
     
@@ -111,7 +111,7 @@ Wenn Ihre Anwendung schließlich sowohl Aufrufe nur für das Add-In als auch fü
     
     
 
-> [!VORSICHT]
+> **VORSICHT**
 > **Das Speichern des Zugriffstokens in einem Cookie ist keine sichere Vorgehensweise.** Für gewöhnlich wird als eine bewährte Methode vermieden, das Zugriffstoken über den Browser zu übergeben.
   
     
@@ -246,7 +246,7 @@ Ein Kontexttoken wird nur im  [Kontexttokenablauf](creating-sharepoint-add-ins-t
     
   
 
-> [!WICHTIG]
+> **WICHTIG**
 > Die ersten zwei Aufgaben müssen durchgeführt werden, bevor der Benutzer zu einer anderen Seite navigiert oder die Seite aktualisiert, da sonst das Token verloren ist. Ziehen Sie beispielsweise bei einer ASP.NET-Web Forms-Anwendung in Betracht, diese Aufgaben in der **Page_Load**-Methode durchzuführen (in einem Bedingungscodeblock, der nur ausgeführt wird, wenn die Anforderung kein Postback ist). Bei einer ASP.NET-MVC-Anwendung können Sie diese Aufgaben in der Standardcontrollermethode durchführen. 
   
     
@@ -279,7 +279,7 @@ Sie können ganze Kontexttoken oder nur das Aktualisierungstoken und bestimmte a
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > Wir erinnern Sie noch einmal, weil es wirklich wichtig ist: Verwenden Sie keinen clientseitigen Cache für das  *Zugriffstoken*  . Dieser ist nur für das Kontexttoken sicher.
   
     

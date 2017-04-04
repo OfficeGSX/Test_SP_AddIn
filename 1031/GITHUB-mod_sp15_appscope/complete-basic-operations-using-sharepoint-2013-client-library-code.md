@@ -67,7 +67,7 @@ Sofern nicht ausdrücklich etwas Anderes angegeben wird, kann davon ausgegangen 
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie ein vom Anbieter gehostetes SharePoint-Add-In mit einer ASP.NET-Webanwendung erstellen und einen Verweis zu einer Assembly des Webanwendungsprojekts in Visual Studio hinzufügen, müssen Sie die Eigenschaft **Lokal kopieren** der Assembly auf **True** festlegen, sofern Sie nicht sicher wissen, dass die Assembly bereits auf dem Web-Server installiert ist, oder Sie sicherstellen können, dass sie installiert wird, bevor Sie das Add-In bereitstellen. .NET Framework wird in Microsoft Azure-Webrollen und Azure-Websites installiert. Die SharePoint 2013-Client-Assemblys und die verschiedenen Erweiterungen durch verwalteten Code und Foundations von Microsoft werden nicht installiert. Office Developer Tools für Visual Studio 2012 fügt zu häufig in SharePoint-Add-Ins verwendeten Assemblys automatisch Verweise hinzu und legt die Eigenschaft **Lokal kopieren** fest.
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Beim Versuch, auf andere Eigenschaften zuzugreifen, wird eine Ausnahme ausgelöst, weil keine anderen Eigenschaften verfügbar sind. 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Stattdessen können Sie den Rückgabewert mithilfe der **LoadQuery**-Methode auch in einer anderen Auflistung statt der **web.Lists**-Eigenschaft speichern. Zudem müssen Sie **using**-Anweisungen für  [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) und [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) hinzufügen. Fügen Sie der using-Anweisung für den [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) -Namespace einen Alias hinzu, damit Sie unzweideutig auf die Klassen dieses Namespace verweisen können. Beispiel: `using SP = Microsoft.SharePoint.Client;`. 
   
     
@@ -339,7 +339,7 @@ In diesem Beispiel wird ein Feld zu einer SharePoint-Liste hinzugefügt. Fügen 
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Beispiel wird mit **context.CastTo** eine Typumwandlung durchgeführt. Vor der Ausführung der Abfrage weiß die Clientbibliothek nicht, welchen Typ das zurückgegebene Objekt "field" eigentlich hat, und **SharePoint.Field** ist der einzig mögliche Typ. Wenn Sie den tatsächlichen Typ kennen, können Sie den Objekttyp mit der **ClientContext.CastTo<RealType>**-Methode umwandeln. 
   
     
@@ -382,7 +382,7 @@ In diesem Beispiel werden die Elemente einer SharePoint-Liste abgerufen. Zudem m
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Sie können die  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) -Eigenschaft verwenden, um die Elemente, die zurückgegeben werden, weiter auf die Elemente eines angegebenen Ordners zu beschränken.
   
     
@@ -541,7 +541,7 @@ Wenn Sie Informationen aus einem bestimmten Feld abrufen möchten, verwenden Sie
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die in diesem Beispiel verwendete  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) -Methode ist eine Remotemethode. Sie verwendet selbst dann nicht die Daten aus der Clientauflistung, wenn diese bereits Daten enthält.
   
     
@@ -1004,7 +1004,7 @@ Zur bedingten Ausführung von Code legen Sie unter Verwendung eines  [Conditiona
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Es ist nicht zulässig, in einem bedingten Bereich Methoden aufzurufen und Eigenschaften festzulegen, weil die Clientbibliothek die Nebenwirkungen der Methodenaufrufe und Eigenschafteneinstellungen nicht verfolgen kann. Im bedingten Bereich sollten Sie nur **Load** verwenden.
   
     

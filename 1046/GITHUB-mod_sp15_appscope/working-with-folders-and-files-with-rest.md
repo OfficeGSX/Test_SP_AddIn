@@ -7,7 +7,7 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # Trabalhando com pastas e arquivos com REST
 Saiba como realizar básica criar, ler, atualizar e excluir operações CRUD () em pastas e arquivos com a interface REST do SharePoint 2013.
-> [!DICA]
+> **DICA**
 > SharePoint Online (e no local SharePoint 2016 e posterior) combinando várias solicitações em uma única chamada para o serviço usando a opção de consulta OData  `$batch` oferece suporte a serviço REST. Para obter detalhes e links para exemplos de código, consulte [Fazem solicitações de lote com as APIs REST](make-batch-requests-with-the-rest-apis.md).
   
     
@@ -184,7 +184,7 @@ O exemplo a seguir mostra como **Atualizar** um arquivo usando o método **PUT**
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > **Colocar** é o único método que você pode usar para atualizar um arquivo. O método **MERGE** não é permitido.
   
     
@@ -269,7 +269,7 @@ Quando você precisa carregar um arquivo binário que for maior do que 1,5 MB (M
     
     
 
-> [!CUIDADO]
+> **CUIDADO**
 > Essa abordagem funcionará apenas com o Internet Explorer 10 e as versões mais recentes de outros navegadores.
   
     
@@ -384,7 +384,7 @@ O exemplo a seguir mostra como **Atualizar** um anexo de arquivo a uma lista de 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > **Colocar** é o único método que você pode usar para atualizar um arquivo. O método **MERGE** não é permitido.
   
     

@@ -85,7 +85,7 @@ Um suplemento de alta confiança é um provedor hospedado Suplemento do SharePoi
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este tópico ajuda você a entender o sistema de autorização de alta confiança para Suplementos do SharePoint. Para obter informações práticas sobre como criar e implantar os suplementos de alta confiança, consulte os tópicos a seguir:>  [Criar o SharePoint de alta confiança Add-ins](create-high-trust-sharepoint-add-ins.md)>  [Embalar e publicar Add-ins do SharePoint de alta confiança](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -96,7 +96,7 @@ Em SharePoint 2013, o serviço de token de segurança (STS) fornece tokens de ac
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O STS não é destinado a autenticação do usuário. Portanto, você não verá o STS listado na usuário entrar página, na seção de **Provedor de autenticação** na Administração Central, ou no seletor de pessoas no SharePoint 2013.
   
     
@@ -236,7 +236,7 @@ A seguir está um exemplo de uma seção de **appSettings** para uma alta confia
 ```
 
 
-> [!OBSERVAçãO SOBRE SEGURANçA]
+> **OBSERVAçãO SOBRE SEGURANçA**
 > O exemplo anterior pressupõe que o certificado está armazenado no sistema de arquivos. Isso é aceitável para o desenvolvimento e a depuração. Em um de alta confiança de produção Suplemento do SharePoint, o certificado é geralmente armazenado no repositório de certificados do Windows e as chaves **ClientSigningCertificatePath** e **ClientSigningCertificatePassword** normalmente são substituídas por uma chave de **ClientSigningCertificateSerialNumber**.
   
     

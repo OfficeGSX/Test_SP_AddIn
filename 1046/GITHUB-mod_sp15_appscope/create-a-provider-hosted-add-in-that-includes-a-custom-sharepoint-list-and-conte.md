@@ -53,7 +53,7 @@ A maioria dos componentes clássico do SharePoint, como tipos de conteúdo perso
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter orientações sobre como configurar um ambiente de desenvolvimento que atenda às suas necessidades, consulte  [começar a criar o Office e SharePoint suplementos](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx).
   
     
@@ -299,7 +299,7 @@ Os procedimentos desta seção, você cria um Suplemento do SharePoint que inclu
   
 17. Pode haver dois elementos **ContentType** no arquivo, uma com o valor do atributo **Name** daActingRole e outro chamado **ListFieldsContentType**. Portanto, apenas a uma chamada ActingRole pertence, exclua quaisquer outros elementos de **ContentType**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Não haja quebras de linha entre os elementos de **ContentType**, nesse caso pode parecer a primeira que não há apenas uma. Role para a direita e marque cuidadosamente para que outras pessoas.
 18. O elemento **Fields** deve ter dois elementos de **Field** (que não são em uma única linha se não houver nenhuma quebra de linha entre eles). Um exatamente deve duplicar o elemento **Field** no elements de coluna de site do **ator** e o outro deverá duplicar exatamente o elemento **Field** o elements de coluna de site **CastingStatus**. Se houver não uma correspondência exata, incluindo todos os elementos de filho (como o **CHOICES** e **MAPPINGS** elementos), copiar o elemento **Field** do arquivo de Elements de coluna do site e cole-o no lugar o elemento de incompatíveis **Field** no arquivo Schema.
     
@@ -383,7 +383,7 @@ Os procedimentos desta seção, você cria um Suplemento do SharePoint que inclu
 
 - Desenvolva o aplicativo da web, como faria com qualquer outro aplicativo web sua pilha de plataforma preferencial. Para uma pilha de Microsoft, você pode usar o serviço web REST/OData ou em um dos modelos de objeto do cliente em SharePoint 2013. Para uma pilha de não sejam da Microsoft, você pode usar os pontos de extremidade do resto/OData no SharePoint 2013 para executar operações de (CRUD) criar/leitura/atualização/excluir dados em web suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você adiciona uma referência a um assembly ao seu projeto de aplicativo da web em Visual Studio, defina a propriedade **Cópia Local** do assembly como **True**, a menos que você sabe que o conjunto já está instalado no servidor web, ou você pode garantir que ele está instalado antes de implantar o seu suplemento. O .NET Framework é instalado em funções da Web de Microsoft Azure e Azure Web Sites. Mas os conjuntos de cliente SharePoint 2013 e o Microsoft várias extensões de código gerenciado e fundações não estão instaladas. Office Developer Tools para Visual Studio 2012 automaticamente adiciona referências a alguns conjuntos comumente usados no Suplementos do SharePoint e define a propriedade **Cópia Local**.
 
     Para o exemplo contínuo, você desenvolver um aplicativo web do ASP.NET. Siga as etapas abaixo.
@@ -595,7 +595,7 @@ Se o suplemento não estiver funcionando, você deve considerar se um erro na ma
   
 8. Escolha o link **Personalizar "caracteres em Hamlet"** e verifique se na página de configurações da lista que o tipo de conteúdo somente para a lista é seu tipo de conteúdo personalizado **ActingRole** e que seu duas novas colunas de site, **Ator/Actress** e **Status de projeção** estão listadas na seção **colunas**. (A coluna título pode aparecer com seu nome interno **título**, em vez do nome de exibição **caractere** que você forneceu-lo).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se não houver nenhuma seção **Tipos de conteúdo** na página, você deve habilitar o gerenciamento de tipos de conteúdo. Clique no link **Configurações avançadas**, na página **Configurações avançadas**, ativar o gerenciamento de tipos de conteúdo e clique em **OK**. Você voltará para a página anterior e agora há uma lista de **Tipos de conteúdo de** seção.
 9. Próximo à parte superior da página é o **Endereço Web** da lista. Copie esta e colá-lo na barra de endereços do seu navegador e, em seguida, navegue até a lista. Verifique se a lista possui os itens de exemplo que você criou. (A coluna título pode aparecer com seu nome interno **título**, em vez do nome de exibição **caractere** que você forneceu-lo).
     

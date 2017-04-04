@@ -67,7 +67,7 @@ Excepto donde se especifique lo contrario, puede suponer que cada uno de estos e
     
     
 
-> [!NOTA]
+> **NOTA**
 > Cuando haga un Complemento de SharePoint hospedado por el proveedor con una aplicación web ASP.NET y agregue una referencia a un ensamblado en el proyecto de aplicación web en Visual Studio, establezca la propiedad **Copia local** del ensamblado en **True**, salvo que sepa que el ensamblado ya está instalado en el servidor web o pueda asegurarse de que se instale antes de implementar el complemento. La aplicación .NET Framework está instalada en los roles web de Microsoft Azure y los Sitios web de Azure. Pero no están instalados los ensamblados de cliente de SharePoint 2013 ni las distintas fundaciones ni extensiones de código administrado de Microsoft. Office Developer Tools para Visual Studio 2012 agrega automáticamente referencias a algunos ensamblados que se usan con frecuencia en complementos para SharePoint y configura la propiedad **Copia local**. 
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Si trata de obtener acceso a otras propiedades, el código produce una excepción porque las otras propiedades no están disponibles. 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > Como alternativa, puede usar el método **LoadQuery**para almacenar el valor devuelto en otra colección, en vez de utilizar la propiedad **web.Lists**. También tendrá que agregar las instrucciones **using** para [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) y [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Además, agregue un alias a la instrucción que se usa para el espacio de nombres de [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) , así puede hacer referencia a sus clases de forma inequívoca. Por ejemplo, `using SP = Microsoft.SharePoint.Client;`. 
   
     
@@ -339,7 +339,7 @@ En este ejemplo se agrega un campo a una lista de SharePoint. Agregue un alias a
     
     
 
-> [!NOTA]
+> **NOTA**
 > El ejemplo usa **context.CastTo** para la conversión. Antes de ejecutar la consulta, la biblioteca de cliente no conoce el tipo real del objeto devuelto "campo" y **SharePoint.Field** es el único tipo posible. Si conoce el tipo real, puede usar el método **ClientContext.CastTo<RealType>** para convertir el objeto.
   
     
@@ -382,7 +382,7 @@ En este ejemplo se recuperan los elementos de una lista de SharePoint. También 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Puede usar la propiedad  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) para restringir aún más los elementos que se devuelven a los que se encuentran en una carpeta determinada.
   
     
@@ -541,7 +541,7 @@ Si desea recuperar información sobre un campo específico, use el método **Fie
     
     
 
-> [!NOTA]
+> **NOTA**
 > El método  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) usado en este ejemplo es un método remoto. No utiliza los datos de la colección del cliente incluso si ya está llena.
   
     
@@ -1004,7 +1004,7 @@ Para ejecutar código de forma condicional, establezca un ámbito condicional co
     
     
 
-> [!NOTA]
+> **NOTA**
 > No se permite llamar al método y establecer las propiedades dentro de un ámbito condicional, porque la biblioteca de cliente no realiza el seguimiento de los efectos secundarios de las llamadas a métodos y valores de la propiedad. Dentro del ámbito condicional solo debe usar **Load**. 
   
     

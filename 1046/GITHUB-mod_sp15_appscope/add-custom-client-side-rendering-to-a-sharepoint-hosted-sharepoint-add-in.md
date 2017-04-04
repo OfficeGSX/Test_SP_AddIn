@@ -35,21 +35,21 @@ Esse é o oitavo em uma série de artigos sobre noções básicas do desenvolvim
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado no SharePoint suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) e abra o arquivo BeforeClientRenderedControl.sln.
   
     
     
 
 Você pode usar um pouco de cliente JavaScript para personalizar a renderização de Web Parts, a maioria dos tipos de campos (colunas) e alguns outros controles, atribuindo um arquivo JavaScript à propriedade **JSLink** do controle, como **SPField.JSLink**. Você também pode adicionar lógica de validação do lado do cliente dessa maneira. Neste artigo, você personalizar a renderização de um campo em uma lista da orientação do funcionário Suplemento do SharePoint usando renderização do lado do cliente.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se o usuário final tiver JavaScript desabilitada em seu navegador, SharePoint se voltará para validação e renderização do lado do servidor.
   
     
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > A propriedade não é suportada em pesquisa ou eventos de JSLink lista. Um calendário do SharePoint é uma lista de eventos.
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. Para informar ao SharePoint para usar seu personalizado JavaScript, adicione um novo atributo, **JSLink**, para o elemento de **Field** e atribua a seguinte URL como seu valor: `~site/Scripts/OrientationStageRendering.js`.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > A propriedade **JSLink** sempre é um arquivo, não um método. Não há um meio para informar ao SharePoint qual método Execute. É por isso que o arquivo contém um método que será executado automaticamente.
 
     A marca de início para o elemento **Field** agora terá aparência semelhante ao seguinte.

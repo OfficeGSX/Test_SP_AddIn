@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # Création et utilisation de jetons d'accès dans les compléments à haut niveau de fiabilité hébergés par un fournisseur pour SharePoint
 Découvrez le rôle des jetons d'accès dans les compléments SharePoint à haut niveau de fiabilité et le fonctionnement de votre code avec eux.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > **Cet article est entièrement consacré à l'utilisation des jetons d'accès dans le système d'autorisation à haut niveau de fiabilité, et non dans le système ACS.** Pour en savoir plus sur l'utilisation des jetons de sécurité dans le système ACS, voir [Gestion des jetons de sécurité dans les compléments SharePoint à faible niveau de fiabilité hébergés par le fournisseur](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md). 
   
     
@@ -24,7 +24,7 @@ Dans le système d'autorisation à haut niveau de fiabilité, **le composant dis
 <a name="AccessTokens"> </a>
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Au cours de la lecture de cet article, en particulier dans les parties relatives aux tâches que votre code doit effectuer, n'oubliez pas que si vous utilisez le code managé, les Outils de développement Microsoft Office pour Visual Studio ajoutent à tous les projets de Complément SharePoint deux fichiers de code généré, SharePointContext.cs (ou .vb) et TokenHelper.cs (ou .vb) qui accomplissent la plupart de ces tâches à votre place. Le code de gestion du jeton de votre application n'effectue généralement que quelques appels aux classes de ces fichiers. Les informations contenues dans cette rubrique sont destinées à aider les développeurs qui n'utilisent pas le code managé (et à aider ceux qui souhaitent résoudre des problèmes en relation avec les jetons).>  Pour plus de langues et de plateformes, accédez aux liens vers les bibliothèques OAuth en cliquant sur :>  [OAuth 2.0](http://oauth.net/2/) : faites défiler jusqu'à **Client Libraries** (bibliothèques clientes).>  Pour plus d'informations, effectuez une recherche sur [github](https://github.com/) pour « OAuth 2 » et « jeton web JSON » (sans les guillemets).
   
     
@@ -123,7 +123,7 @@ L'exemple suivant illustre **un jeton d'accès généré par un Complément Shar
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  N'oubliez pas que les jetons d'accès à haut niveau de fiabilité créés par votre code sont différents de ceux créés par Azure ACS si le système d'autorisation à faible niveau de fiabilité est utilisé :>  La revendication **alg** dans l'en-tête est « none », car le jeton d'accès d'un appel utilisateur + complément provenant d'un complément à haut niveau de fiabilité n'est pas signé.>  Dans cet exemple, l'URL de complément dans la valeur **aud** est celle d'un serveur local, ce qui est normal pour le système à haut niveau de fiabilité.>  Il n'existe aucune revendication **identityprovider**, mais un émetteur d'identité de nom **nii** qui a des valeurs semblables à celles des jetons d'accès de revendication **identityprovider** utilisés dans le système d'autorisation à faible niveau de fiabilité. (Pour en savoir plus sur cette valeur si le fournisseur d'identité est basé sur SAML, voir les articles de blog de Steve Peschka intitulés [Sécurité dans les compléments SharePoint (partie 8)](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx) et [Utilisation des compléments SharePoint avec des sites SAML et FBA dans SharePoint 2013](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx). >  Il n'existe aucune revendication **actor**, mais il existe une revendication **actortoken** qui contient un jeton interne encodé en base 64 d'une durée de vie de 12 heures.
   
     
@@ -207,7 +207,7 @@ Le tableau 2 décrit les revendications que votre code doit intégrer dans le co
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si le complément à haut niveau de fiabilité utilise la  [stratégie complément uniquement](add-in-authorization-policy-types-in-sharepoint-2013.md) et effectue un appel complément uniquement à SharePoint, le jeton indiqué ici sert de jeton d'accès. Il n'existe pas de jeton externe ni de réclamation **trustedfordelegation**, car les autorisations de l'utilisateur ne sont pas pertinentes pour un appel complément uniquement. 
   
     

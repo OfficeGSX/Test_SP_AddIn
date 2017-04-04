@@ -16,7 +16,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
 1. Fügen Sie Ihrem Projekt eine SharePoint-Dokumentbibliothek als Datenquelle hinzu.
     
-    > [!WICHTIG]
+    > **WICHTIG**
       > Sie müssen zunächst eine Dokumentbibliothek auf Ihrer SharePoint-Website erstellen. Sie muss eine benutzerdefinierte Spalte enthalten, die einem eindeutigen Feld in Ihrer Entität zugeordnet ist. 
 2. Erstellen Sie eine Beziehung zwischen der Dokumentbibliothek und einer Entität.
     
@@ -57,7 +57,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
   
 
     
-    > [!WICHTIG]
+    > **WICHTIG**
       > Die Dokumentbibliothek muss bereits vorhanden sein und eine benutzerdefinierte Spalte enthalten, die einem eindeutigen Feld in Ihrer Entität zugeordnet ist. 
 5. Geben Sie unter **Geben Sie den Namen der Datenquelle an** einen Namen ein und klicken Sie dann auf die Schaltfläche **Fertig stellen**.
     
@@ -97,7 +97,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
   
 
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Das Feld muss den gleichen Datentyp aufweisen wie das Feld **Fremdschlüssel**. 
 
 ### So fügen Sie einer neuen Bildschirmgruppe eine Dokumentbibliothek hinzu

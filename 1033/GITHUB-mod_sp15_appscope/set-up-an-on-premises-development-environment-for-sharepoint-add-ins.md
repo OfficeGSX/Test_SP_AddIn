@@ -7,7 +7,7 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
 
 # Set up an on-premises development environment for SharePoint Add-ins
 Learn how to set up a development environment that is specifically suited to developing SharePoint Add-ins with an on-premises installation of SharePoint.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -37,7 +37,7 @@ Depending on your specific requirements and budget, you can choose from the foll
     
   
 
-> [!NOTE]
+> **NOTE**
 > Installation of SharePoint is supported only on Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012. If you want to develop SharePoint Add-ins for SharePoint on Windows 7 or Windows 8, you can sign up for an Office 365 Developer Site and develop add-ins remotely. 
   
     
@@ -79,7 +79,7 @@ dir /od *.log
 
 6. After the installation is complete, you're prompted to start the SharePoint Products and Technologies Configuration Wizard.
     
-    > [!NOTE]
+    > **NOTE**
       > The SharePoint Products and Technologies Configuration Wizard may fail if you're using a computer that is joined to a domain but that is not connected to a domain controller. If you see this failure, connect to a domain controller either directly or through a Virtual Private Network (VPN) connection, or sign in with a local account that has administrative privileges on the computer. 
 7. After the configuration wizard is complete, you see the **Template Selection** page of the new SharePoint site. On this page, choose the **Developer Site** template. You can only deploy SharePoint Add-ins from Visual Studio to a Developer Site.
     
@@ -142,7 +142,7 @@ In this step, you configure services in SharePoint for server-to-server add-in u
   
 6. Select **Save and Close**.
     
-    > [!NOTE]
+    > **NOTE**
       > If you get a message saying that the profile you are trying to create already exists, select **Cancel and Go Back**. 
 7. Back on the **Manage User Profiles** page, you should see **Total number of profiles: 1**.
     
@@ -196,7 +196,7 @@ For development purposes, you can modify your hosts file as you need to route yo
     
     
 
-> [!NOTE]
+> **NOTE**
 > For production farms, you would have to create a DNS routing strategy within your intranet and optionally configure your firewall. See  [Install and Manage SharePoint Add-ins](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29) for more information about how to create and configure a production environment for SharePoint Add-ins.
   
     
@@ -207,7 +207,7 @@ Perform the steps in the following procedure to create an isolated add-in domain
     
     
 
-> [!NOTE]
+> **NOTE**
 > You must perform all of the steps in the following procedure while logged in as the farm administrator, and you must run the command prompt and the SharePoint Management Shell as an administrator. 
   
     
@@ -310,7 +310,7 @@ See  [Deploying and installing SharePoint Add-ins: methods and options](deployin
     
     
 
-> [!TIP]
+> **TIP**
 > After you deploy a SharePoint-hosted add-in to your installation, you may be prompted to log in with your credentials when you try to launch it. You will need to disable the loopback check to get rid of these prompts. See  [You receive error 401.1 when you browse a Web site that uses Integrated Authentication and is hosted on IIS 5.1 or a later version](http://support.microsoft.com/kb/896861) for instructions on how to disable the loopback check.
   
     

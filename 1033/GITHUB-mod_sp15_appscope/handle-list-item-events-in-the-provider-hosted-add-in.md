@@ -7,7 +7,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
 
 # Handle list item events in the provider-hosted add-in
 Learn how to handle list item events in a provider-hosted SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -42,7 +42,7 @@ This is the tenth in a series of articles about the basics of developing provide
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeRER.sln file.
   
     
@@ -52,7 +52,7 @@ You saw in an earlier article in this series that when an order is placed, it is
 ## Programmatically deploy the Expected Shipments list
 
 
-> [!NOTE]
+> **NOTE**
 > The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles: 
   
     
@@ -135,7 +135,7 @@ CreateExpectedShipmentsList();
 ## Create the list item event receiver
 
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series of articles, then you have already configured your development environment for debugging remote event receivers. If you have not done that, see  [Configure the solution for event receiver debugging](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug) before you go any further in this topic.
   
     
@@ -146,7 +146,7 @@ The Office Developer Tools for Visual Studio include a **Remote Event Receiver**
     
     
 
-> [!NOTE]
+> **NOTE**
 > List and list item event receivers are called remote event receivers (RER) because their code is remote from SharePoint, either in the cloud or in an on-premises server outside the SharePoint farm. However, the events that trigger them are in SharePoint.
   
     
@@ -161,7 +161,7 @@ The Office Developer Tools for Visual Studio include a **Remote Event Receiver**
   
 3. The tools create an interface file, a *.svc file, and a code behind file. We don't need the interface file IRemoteEventReceiver1.cs, so delete it. (The tools may have opened it automatically. If so, close and delete it.)
     
-    > [!NOTE]
+    > **NOTE**
       > When you created the add-in event receivers for the installed and uninstalling events in an earlier article in this series, the Office Developer Tools for Visual Studio added their URLs to the app manifest file. List and list item event receivers are not registered in the app manifest. Instead, they are registered (in a provider-hosted add-in) programmatically. You'll do that in a later step. 
 4. Open the code behind file: RemoteEventReceiver1.svc.cs. Replace its entire contents with the following code. Note the following about this code:
     
@@ -415,7 +415,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       > The **KeyNotFoundException** is also the reason why we have to leave the **Added to Inventory** field visible on the Edit Item form. SharePoint does not include fields that are hidden on the Edit Item form in **AfterProperties**. 
 
     The entire method should now look like the following.
@@ -670,7 +670,7 @@ The add-in event and list item event receivers are Windows Communication Service
     
   
 
-> [!NOTE]
+> **NOTE**
 >  Manually copying the service bus URL and pasting (a modified version of) it into the web.config is not the only way of dealing with the need for a different URL when debugging a remote event receiver from when it is running in production.>  We could programmatically store the value of **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** somewhere in SharePoint or the remote database, and then have our first-run code read it and assign it to the `receiver.ReceiverUrl` property.>  We could register the list item event receiver as part of the add-in installed event handler. Then we could programmatically read **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**, modify it, and assign it to  `receiver.ReceiverUrl` without having to store it anywhere. This strategy would require that the **Expected Shipments** list also be created in the add-in installed event handler, since it would have to exist before the handler could be registered with it. (Note also, that we could combine our add-in event receiver and list item event receiver into a single receiver (that is, the same .svc and .svc.cs files). In that case, no modification of the URL is necessary before using it as the value of `receiver.ReceiverUrl`.) 
   
     

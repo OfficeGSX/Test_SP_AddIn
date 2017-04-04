@@ -124,7 +124,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!NOTA]
+> **NOTA**
 > En el documento  [Configuración de un entorno híbrido unidireccional con SharePoint Server 2013 y Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx), disponible para su descarga en la  [página de recursos híbridos de SharePoint 2013](http://www.microsoft.com/es-es/download/details.aspx?id=35593), se explica en detalle cómo reemplazar el certificado STS predeterminado de la granja de servidores local con un certificado procedente de una entidad de certificación conocida o con un certificado autofirmado. 
   
     
@@ -180,7 +180,7 @@ La función que se incluye más abajo realiza todo el trabajo para configurar el
 
 1. En el servidor de SharePoint local, copie el código de la función en un archivo de texto y guárdelo con el nombre MySharePointFunctions.psm1 en alguna de las siguientes carpetas (no en ambas). Es posible que deba crear partes de la ruta de acceso si incluye carpetas que aún no existen. Observe que, en ambos casos, la carpeta inferior de la ruta de acceso tiene que tener el mismo nombre que el archivo.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > El archivo se debe guardar en formato ANSI, no en UTF-8. PowerShell podría generar errores de sintaxis si carga un archivo que no tiene un formato ANSI. El Bloc de notas de Windows lo guarda de forma predeterminada como ANSI. Si usa cualquier otro editor para guardar el archivo, asegúrese que lo guarda como ANSI. 
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`, donde  _username_ es el administrador de la granja de servidores que ejecutará el archivo.

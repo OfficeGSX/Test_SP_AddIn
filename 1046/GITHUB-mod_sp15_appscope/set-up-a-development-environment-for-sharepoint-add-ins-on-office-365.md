@@ -49,7 +49,7 @@ O caminho de registro será alterado em futuras versões do Visual Studio.
 <a name="o365_signup"> </a>
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 >  É possível que você já tenha acesso a um Office 365 Developer Site:> **Você é um assinante do MSDN?** Assinantes do Visual Studio Enterprise com MSDN recebem uma Assinatura de Desenvolvedor do Office 365 como benefício. [Resgate seu benefício agora.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Você tem um dos planos de assinatura do Office 365 a seguir?**> **Se sim, um administrador da assinatura do Office 365 pode criar um Site do Desenvolvedor** usando o [centro de administração do Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para saber mais, consulte  [Criar um site do desenvolvedor em uma assinatura existente do Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -70,7 +70,7 @@ Três formas de obter um plano do Office 365.
     
   
 
-> [!DICA]
+> **DICA**
 > Abra estes links em outra janela ou guia para manter as instruções a seguir acessíveis. 
   
     
@@ -115,7 +115,7 @@ Três formas de obter um plano do Office 365.
   
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você estiver conectado a outra conta da Microsoft quando tentar se inscrever em uma conta de desenvolvedor, é possível que receba esta mensagem: "A ID de usuário que você inseriu não funcionou. Aparentemente, ela não é válida. Verifique se você inseriu a ID de usuário atribuída pela sua organização. Sua ID de usuário, geralmente, é similar a  *nome@exemplo.com*  ou *nome@exemplo.onmicrosoft.com*  ."> Se você receber essa mensagem, faça logoff da conta da Microsoft que estava usando e tente novamente. Se continuar recebendo a mensagem, limpe o cache do navegador ou alterne para a **Navegação InPrivate** e, em seguida, preencha o formulário.
   
     

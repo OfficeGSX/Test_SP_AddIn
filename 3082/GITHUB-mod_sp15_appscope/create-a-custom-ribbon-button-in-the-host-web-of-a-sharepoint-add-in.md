@@ -38,7 +38,7 @@ Este es el noveno de una serie de artículos sobre los fundamentos del desarroll
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados en SharePoint, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) y abrir el archivo BeforeRibbon.sln.
   
     
@@ -81,7 +81,7 @@ Agregará el botón a la cinta de opciones de un calendario en la web de host. R
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > El siguiente procedimiento requiere que el calendario esté visible en la interfaz de usuario de Visual Studio, pero no estará visible si Visual Studio estaba abierto cuando creó el calendario. Antes de continuar, cierre Visual Studio y salga también de las ventanas del explorador y consolas de PowerShell donde haya iniciado sesión en el sitio para desarrolladores. 
   
     

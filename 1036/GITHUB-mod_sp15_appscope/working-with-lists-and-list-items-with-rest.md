@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # Utilisation d'une liste et de ses éléments avec REST
 Découvrez comment effectuer des opérations CRUD (create, read, update et delete ; créer, lire, mettre à jour et supprimer) de base sur les listes et les éléments de liste à l'aide de l'interface REST SharePoint 2013.
-> [!CONSEIL]
+> **CONSEIL**
 > Le service REST SharePoint Online (et SharePoint sur site 2016 et ultérieur) prend en charge la combinaison de plusieurs requêtes en un seul appel au service à l'aide de l'option de requête  `$batch` OData. Pour plus de détails et des liens vers des exemples de code, reportez-vous à [Effectuer des requêtes de lot avec les API REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Utilisez  `application/json;odata=verbose` dans l'en-tête `accept` si vous voulez obtenir la réponse en JSON. Employez `application/atom+xml` dans l'en-tête `accept` si vous voulez obtenir la réponse au format Atom.
   
     
@@ -116,7 +116,7 @@ Le code XML ci-après donne un exemple des propriétés de liste qui sont renvoy
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > La propriété **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** dans l'exemple précédent) est particulièrement importante lorsque vous voulez créer et mettre à jour des éléments de liste. Cette valeur doit être transmise à la propriété **type** dans les métadonnées transmises dans le corps de la requête HTTP lors de la création et la mise à jour d'éléments de liste.
   
     
@@ -214,7 +214,7 @@ L'exemple ci-après montre comment **récupérer** tous les éléments d'une lis
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'option de requête OData $skip ne fonctionne pas pour l'interrogation d'éléments de liste. Dans de nombreuses situations, vous pouvez utiliser l'option  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) à la place.
   
     
@@ -280,7 +280,7 @@ L'exemple ci-après montre comment **créer** un élément de liste.
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour effectuer cette opération, vous devez connaître la propriété **ListItemEntityTypeFullName** de la liste et la transmettre comme valeur de **type** dans le corps de la requête HTTP.
   
     
@@ -307,7 +307,7 @@ L'exemple ci-après montre comment **mettre à jour** un élément de liste.
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Pour effectuer cette opération, vous devez connaître la propriété **ListItemEntityTypeFullName** de la liste et la transmettre comme valeur de **type** dans le corps de la requête HTTP.
   
     

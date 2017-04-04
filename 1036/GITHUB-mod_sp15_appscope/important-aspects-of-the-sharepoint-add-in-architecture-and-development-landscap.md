@@ -50,7 +50,7 @@ Une autre manière d'exposer un Complément SharePoint est par l'intermédiaire 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Vous pouvez également déployer les composants de complément sur le site web de complément. Pour implémenter cela, le balisage du composant WebPart sera un composant de fonctionnalité dans un fichier .wsp dans le package de complément, pas dans la fonctionnalité du site web hôte. 
   
     
@@ -157,7 +157,7 @@ Un Complément SharePoint peut utiliser presque tout type de stockage de donnée
     
   
 
-> [!CONSEIL]
+> **CONSEIL**
 > Vous devrez probablement mettre à niveau votre Complément SharePoint à un moment donné. Lorsqu'un Complément SharePoint inclut des composants SharePoint sur un site web de complément, le processus de mise à niveau procède à une copie complète du site web de complément. Pour cette raison, la présence de longues listes SharePoint sur le site web de complément allonge le processus de mise à niveau et entraîne une utilisation intensive du processeur sur le serveur de base de données de contenu. Vous devez éviter de placer des « données volumineuses » dans les listes SharePoint sur le site web de complément. 
   
     
@@ -265,7 +265,7 @@ or
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'infrastructure d'installation du complément activera automatiquement ces fonctionnalités dans le site web de complément dès sa création. 
   
     

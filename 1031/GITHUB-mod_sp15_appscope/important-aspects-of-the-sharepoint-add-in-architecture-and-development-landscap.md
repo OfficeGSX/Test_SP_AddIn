@@ -50,7 +50,7 @@ Eine andere Möglichkeit zum Anzeigen eines SharePoint-Add-In ist über ein Add-
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Sie können Add-In-Parts auch für die Add-In-Website bereitstellen. Dazu muss das Markup für das Webpart Teil eines Features in einer WSP-Datei im Add-In-Paket sein, nicht im Hostweb-Feature. 
   
     
@@ -157,7 +157,7 @@ Ein SharePoint-Add-In kann nahezu jede Art von strukturiertem Datenspeicher verw
     
   
 
-> [!TIPP]
+> **TIPP**
 > Zu einem bestimmten Zeitpunkt werden Sie Ihr SharePoint-Add-In aktualisieren. Wenn ein SharePoint-Add-In SharePoint-Komponenten in einem Add-In-Web umfasst, erstellt der Upgradeprozess eine vollständige Kopie des Add-In-Webs. Deshalb ist der Upgradeprozess durch die großen SharePoint-Listen im Add-In-Web sehr zeitaufwendig und prozessorintensiv auf dem Inhaltsdatenbankserver. Sie sollten es also vermeiden, "große Datenmengen" in SharePoint-Listen im Add-In-Web abzulegen. 
   
     
@@ -265,7 +265,7 @@ oder
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Add-In-Installationsinfrastruktur aktiviert diese Features im Add-In-Web automatisch, wenn es erstellt wird. 
   
     

@@ -30,7 +30,7 @@ Le service REST SharePoint prend en charge un large éventail d'opérateurs de c
     
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > Le service REST SharePoint Online (et SharePoint sur site 2016 et ultérieur) prend en charge la combinaison de plusieurs requêtes en un seul appel au service à l'aide de l'option de requête  `$batch` OData. Pour plus de détails et des liens vers des exemples de code, reportez-vous à [Effectuer des requêtes de lot avec les API REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -44,7 +44,7 @@ L'option de requête  [$select](http://www.odata.org/documentation/odata-version
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > En général, si vous n'indiquez pas l'option de requête  `$select`, le service REST renvoie tous les champs disponibles par défaut. Mais il arrive que des objets SharePoint comprennent des propriétés dont la récupération mobilise beaucoup de ressources ; pour optimiser les performances du service REST, ces propriétés ne sont pas incluses dans la requête par défaut et doivent faire l'objet d'une demande explicite. > Par exemple, la propriété **SPWeb.EffectiveBasePermissions** n'est pas renvoyée par défaut et doit être demandée explicitement à l'aide de l'option de requête `$select`. 
   
     
@@ -84,7 +84,7 @@ Dans le service REST SharePoint, les utilisateurs sont représentés par leur no
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les requêtes d'utilisateurs basées sur l'appartenance ne sont pas prises en charge. > L'utilisation de l'opérateur **Current** pour lancer des requêtes à l'aide de l'ID de l'utilisateur en cours n'est pas prise en charge.
   
     
@@ -112,7 +112,7 @@ Les options de requête  [$top](http://www.odata.org/documentation/odata-version
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > L'option de requête $skip ne fonctionne pas avec les requêtes pour les éléments de liste SharePoint. 
   
     
@@ -135,7 +135,7 @@ L'option $skiptoken permet d'ignorer des éléments jusqu'à celui spécifié et
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Lorsque vous utilisez ces options de requête, tenez compte du fait que la pagination dans OData est ordinale. Par exemple, supposons que vous implémentez un bouton Page suivante pour afficher des éléments de liste SharePoint. Vous utilisez le service REST pour activer le bouton et pour qu'il renvoie les éléments 1 à 20 lorsque vous cliquez dessus, puis les éléments 21 à 40, et ainsi de suite. Toutefois, imaginons qu'un autre utilisateur supprime les éléments 4 et 18 entre deux clics sur le bouton Suivant. Dans ce cas, l'ordre des éléments restants est réinitialisé et l'affichage des éléments 21 à 40 ignore deux éléments. 
   
     

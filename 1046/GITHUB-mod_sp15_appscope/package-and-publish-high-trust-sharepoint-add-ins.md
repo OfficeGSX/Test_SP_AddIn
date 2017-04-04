@@ -46,7 +46,7 @@ Tabela 1 relaciona alguns artigos úteis que podem ajudá-lo a entender os conce
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx) e [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |Saiba as ideias básicas por trás de certificados digitais. <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Alta confiança Suplementos do SharePoint só pode ser instalado no local do SharePoint, não para Microsoft SharePoint Online, e eles se destinam principalmente para uso com um local, em vez de aplicativo web baseado em nuvem. Este artigo explica como publicar o suplemento nesse cenário. Além disso, neste artigo 'cliente' refere-se aos negócios que instala o Suplemento do SharePoint e hospeda os componentes remotos do add-in.
   
     
@@ -230,7 +230,7 @@ O próximo procedimento se aplica ao Gerenciador de IIS 7 e 8.
   
 4. Copie o número de série,  *sem espaços*  , para um arquivo de texto e dê a ela ao desenvolvedor do Suplemento do SharePoint.
     
-    > [!DICA]
+    > **DICA**
       > Algumas postagens de blog do desenvolvedor e o relatório de perguntas de Fórum que cria uma cadeia de caracteres com caracteres ocultos copiando o número de série diretamente para a área de transferência que torna o número de série não reconhecíveis ao código no Suplemento do SharePoint. Considere a possibilidade de digitar manualmente o número, em vez de copiá-la.
 Em seguida, você cria uma versão de cer do certificado. Este arquivo contém a chave pública do servidor web remoto e é usada pelo SharePoint para descriptografar solicitações do aplicativo web remoto e validar os tokens de acesso nessas solicitações. Ele é criado no servidor web remoto e depois movido para o farm do SharePoint.
   
@@ -314,7 +314,7 @@ O procedimento a seguir configura o certificado como um emissor de token confiá
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O registro do certificado como um emissor de token não tem efeito imediato e o suplemento não funcionarão até que ele esteja. Pode levar desde que 24 horas antes de todos os servidores do SharePoint reconhecem o novo emissor de token. Executar um comando iisreset em todos os servidores do SharePoint, se você pode fazer isso sem atrapalhar os usuários do SharePoint, causaria-los reconhecer imediatamente o emissor.
   
     
@@ -325,7 +325,7 @@ O procedimento a seguir configura o certificado como um emissor de token confiá
 <a name="WebConfig"> </a>
 
 
-> [!DICA]
+> **DICA**
 > Para um exemplo de código que inclui um Web. config modificadas, consulte  [PnP / amostras / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)..
   
     
@@ -351,7 +351,7 @@ Edite o arquivo Web. config para que ele contém novos valores para as seguintes
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Chaves de configuração do suplemento para **ClientSigningCertificatePath** e **ClientSigningCertificatePassword**tenha adicionado a Office Developer Tools for Visual Studio. Eles não são usados em um suplemento de produção e devem ser excluídos.
   
     
@@ -383,7 +383,7 @@ O arquivo de TokenHelper.cs (ou. vb) gerado pela Office Developer Tools for Visu
     
     
 
-> [!DICA]
+> **DICA**
 > Para um exemplo de código que inclui um tokenhelper.cs modificadas, consulte  [PnP / amostras / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)..
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!DICA]
+> **DICA**
 > A Microsoft atualiza Visual Studio e Office Developer Tools for Visual Studio em uma agenda muito mais frequente que no passado e documentação sempre não podem ser atualizadas para se manter atualizado com as alterações. Esta seção foi escrita usando a versão do Visual Studio lançada em outubro de 2013 e a versão do Office Developer Tools for Visual Studio que foi incluída nela. Se você estiver trabalhando com uma versão anterior ou posterior do Visual Studio ou as ferramentas, talvez você precise consultar a Ajuda de Visual Studio e postagens de blog para localizar as equivalentes maneiras de realizar as etapas destes procedimentos.
   
     

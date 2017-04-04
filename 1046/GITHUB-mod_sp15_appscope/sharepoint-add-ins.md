@@ -17,7 +17,7 @@ Existem dois tipos básicos de Suplementos do SharePoint: hospedados pelo ShareP
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Um aplicativo de dispositivo, como um aplicativo móvel, não é realmente um "Suplemento do SharePoint", mesmo quando acessa o SharePoint. O mesmo se aplica a um aplicativo da Web que é iniciado fora do SharePoint. Caso pretenda desenvolver qualquer um desses tipos de aplicativo, confira  [SharePoint de acesso do dispositivo móvel e nativo apps](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx). 
   
     
@@ -60,7 +60,7 @@ Existem dois tipos básicos de Suplementos do SharePoint: hospedados pelo ShareP
     
   
 
-> [!DICA]
+> **DICA**
 > **Examine alguns Suplementos do SharePoint na** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint) para ter uma ideia do que você pode desenvolver. Ou abra um site do SharePoint 2013 e instale alguns dos Suplementos do SharePoint gratuitos. Basta navegar até ** Conteúdo do Site | Adicionar um suplemento | SharePoint Store**. 
   
     
@@ -153,7 +153,7 @@ Todos os componentes do SharePoint que podem estar em um suplemento hospedado pe
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > **O "provedor" é quem detém a conta do servidor ou da nuvem.** Pode ser a mesma empresa ou organização que possue o farm do SharePoint ou a locação do SharePoint Online na qual o suplemento deve estar instalado. Mas o desenvolvedor do suplemento pode ser também o provedor. Normalmente, quando o suplemento é criado para uma organização, ela fornece a hospedagem. No entanto, quando um suplemento é criado para várias organizações, é mais provável que o desenvolvedor hospede os componentes remotos. A hospedagem do desenvolvedor é obrigatória quando o Suplemento do SharePoint é comercializado por meio da Office Store, porque o desenvolvedor não tem qualquer informação de contato dos compradores do suplemento. Nesse cenário, as diversas instâncias do suplemento reconhecem a URI do componente remoto porque ele é especificado no manifesto do suplemento.
   
     
@@ -235,7 +235,7 @@ Pronto para começar?
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você for iniciante no desenvolvimento no SharePoint e na Web, você se beneficiará mais ao começar com o curso gratuito na Microsoft Virtual Academy ou ao trabalhar com um livro sobre desenvolvimento no SharePoint 2013 . 
   
     

@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Office Web Widget 實驗性的概觀
 了解 Office Web Widget - 您可以使用Office 增益集、 SharePoint Add-ins，與網站中的 Experimental。
-> [!注意]
+> **注意**
 > Office Web Widget - Experimental 只提供進行研究 (英文) 和意見反應。不在實際執行案例中使用。Office Web Widget 行為可能會大幅在未來的版本中變更。閱讀並檢閱 [Office Web Widget 實驗的授權條款](office-web-widgetsexperimental-license-terms.md)。
   
     
@@ -121,7 +121,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
     
 
     
-> [!注意事項]
+> **注意事項**
 > 此刻、 桌面清單檢視 widget 只顯示資料。它並不提供編輯功能。
   
     

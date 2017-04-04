@@ -13,7 +13,7 @@ Vous pouvez référencer la feuille de style d'un site web SharePoint dans votre
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si vos pages web utilisent le contrôle Chrome ou la page maître du complément, les styles sont déjà disponibles et prêts à l'emploi et vous n'avez pas besoin de référencer manuellement la feuille de style en suivant la procédure de cet article. 
   
     
@@ -250,7 +250,7 @@ La Figure 1 illustre une page web SharePoint utilisant une feuille de style.
   
 2. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 3. Choisissez le bouton **Approuver**.
     

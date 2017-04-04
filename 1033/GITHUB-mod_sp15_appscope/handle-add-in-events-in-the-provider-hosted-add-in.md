@@ -7,7 +7,7 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
 
 # Handle add-in events in the provider-hosted add-in
 Learn how to customize the installation of a provider-hosted SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -33,7 +33,7 @@ This is the seventh in a series of articles about the basics of developing provi
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeAdd-inEventHandlers.sln file.
   
     
@@ -88,7 +88,7 @@ Debugging of event receivers requires the use of the Azure Service Bus. Follow t
     
     
 
-> [!NOTE]
+> **NOTE**
 >  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
   
     
@@ -283,7 +283,7 @@ private void DeleteTenant(string tenantName)
   ```
 
 
-> [!NOTE]
+> **NOTE**
 > In an earlier article in this series, you configured the project to rebuild the corporate database each time you press F5. This empties the **Tenants** table.
   
     

@@ -41,7 +41,7 @@ Im Folgenden finden Sie die Voraussetzungen zu den Vorgehensweisen in diesem Art
   
 - **Ein Organisationskonto in Microsoft Azure.** Weitere Informationen finden Sie unter [Erstellen eines Organisationsbenutzerkontos in Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Melden Sie sich in Ihrem Office 365-Konto (login.microsoftonline.com) an, um das temporäre Kennwort zu ändern, nachdem das Konto erstellt wurde. 
 - **Ein SAP OData-Endpunkt** mit Beispieldaten. Weitere Informationen finden Sie in der Dokumentation zu [SAP-Gateway für Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -67,7 +67,7 @@ Im Beispiel in diesem Artikel werden die Fahrzeugbestandsdaten aus SAP und die z
     
     
 
-> [!TIPP]
+> **TIPP**
 > Eine Videovorführung dieses Add-Ins finden Sie im Video  [Technisches Webinar - SAP-Gateway für Microsoft und das Microsoft Azure-Entwicklungsmodell](http://go.microsoft.com/fwlink/?LinkId=517378) auf BrightTalk. Das Demo der Add-In-Funktionalität beginnt ab der 48. Minute.
   
     
@@ -434,7 +434,7 @@ public interface IInventoryItem
     
     Die meisten Eigenschaften weisen den gleichen Typ auf wie die Eigenschaften in dem SAP-Datenbankschema, mit Ausnahme von StockNo, deren Typ von **int** zu **string** geändert wurde. Das liegt daran, dass StockNo zum Definieren der Beziehung zwischen den SAP-Daten und der SharePoint-Bildbibliothek verwendet wird.
     
-    > [!TIPP]
+    > **TIPP**
       > StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
 
     Die Implementierung von zwei Schnittstellen findet in "CarInventoryModel/InventoryItem.cs" und "CarInventoryModel/InventoryCollection.cs" statt.
@@ -457,7 +457,7 @@ Die Bildbibliothek auf der SharePoint-Hostwebsite heißt "ContosoMotorsPictureLi
     
     
 
-> [!TIPP]
+> **TIPP**
 > Bei Spaltennamen wird die Groß-/Kleinschreibung beachtet. 
   
     
@@ -823,7 +823,7 @@ Führen Sie zum Bereitstellen des Add-Ins die in diesem Abschnitt beschriebenen 
   
 2. Klicken Sie im linken Menü auf **Websites**.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Diese Website werden Sie zum Hosten des vom SharePoint-Anbieter gehosteten Add-Ins für SellerDashboard verwenden. 
 3. Klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Neu**.
     
@@ -892,7 +892,7 @@ In den Schritten in diesem Abschnitt wird beschrieben, wie das Beispiel-Add-In �
   
 3. Klicken Sie auf der Active Directory-Seite auf das Verzeichnis, das für das SAP-Gateway für Microsoft konfiguriert wurde.
     
-    > [!TIPP]
+    > **TIPP**
       >  Wenn Sie nicht sicher sind, welches verwendet wurde, schauen Sie im SAP-Gateway nach Microsoft-Administrator. Hinweis: Es ist das Verzeichnis, das die Benutzer und Gruppen für das SAP-Gateway für Microsoft enthält.
 4. Wählen Sie auf der oberen Navigationsleiste **ANWENDUNGEN**.
     
@@ -921,7 +921,7 @@ In den Schritten in diesem Abschnitt wird beschrieben, wie das Beispiel-Add-In �
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Sie müssen das Add-In mit Azure AD zweimal registrieren: Einmal für Debuggingzwecke und dann noch mal zum Bereitstellen für die Produktion, wie in Schritt 10 beschrieben. > Verwenden Sie zum Registrieren des Add-Ins für Debuggingzwecke **URL FÜR ANMELDUNG** und **APP-ID-URI** mit der Debugging-URL des SellerDashboard.Server-Projekts, damit Sie den Visual Studio-Debugger (F5) ausführen können. Diese URL weist das Format https://localhost. *nnnn*  auf, wobei *nnnn*  eine Portnummer ist. Diese URL finden Sie im Bereich "Eigenschaften" in Visual Studio.> Bearbeiten Sie die Registrierung zur Verwendung der richtigen Produktions-URL, wenn Sie für die Bereitstellung für die Produktion bereit sind. 
   
     

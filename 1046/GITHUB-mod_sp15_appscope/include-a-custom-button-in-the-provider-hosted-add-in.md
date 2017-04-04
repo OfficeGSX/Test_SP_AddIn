@@ -20,7 +20,7 @@ Esta é a terceira em uma série de artigos sobre noções básicas do desenvolv
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado em provedor suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) e abra o arquivo BeforeRibbonButton.sln.
   
     
@@ -90,7 +90,7 @@ Nesta seção, você deve incluir a marcação do add-in que irá implantar um b
 
 1.  *Se Visual Studio é aberto, você precisa para fechá-lo*  e reabra a solução de repositório de cadeia de modo que Visual Studio possam descobrir sua nova lista. (Executar Visual Studio como um administrador).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > As configurações para projetos de inicialização no Visual Studio tendem a reverter para a configuração padrão sempre que a solução for reaberta. Sempre, siga estas etapas imediatamente após reabri-lo a solução de exemplo nesta série de artigos:> Com o botão direito no nó da solução na parte superior do **Gerenciador de soluções** e selecione **definir projetos de inicialização**.> Verifique se que todos os três projetos estão definidos para **Iniciar** na coluna **ação**.
 2. Com o botão direito do projeto **ChainStore** no **Solution Explorer** e escolha **Adicionar | Novo Item**.
     

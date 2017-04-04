@@ -27,7 +27,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
     
   
 
-> [!Примечание]
+> **Примечание**
 > Руководство по настройке среды разработки, соответствующей вашим потребностям, см. в статье  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -98,7 +98,7 @@ ClientContext clientContext =
     
     
 
-> [!Примечание]
+> **Примечание**
 > API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx). 
   
     

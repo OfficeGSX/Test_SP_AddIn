@@ -20,7 +20,7 @@ Abbildung 1 zeigt eine blockierte domänenübergreifende Anforderung.
     
     
 Wenn ein Benutzer eine Webseite aus Ihrer Add-In-Domäne (1) anfordert, ist die clientseitige Kommunikation nur an diese Domäne gebunden. Ihr Add-In kann clientseitige Aufrufe von der Webseite nur zu anderen Ressourcen in derselben Domäne machen. Add-Ins fordern normalerweise aber Ressourcen von anderen Domänen an, wie der SharePoint-Domäne, um ihre Szenarien zu erfüllen. Im Code auf Ihrer Webseite können Sie versuchsweise eine Anforderung an die SharePoint-Domäne (2) senden, die vom Browser blockiert wird. Normalerweise sehen Sie die Fehlermeldung **Zugriff verweigert**. Der Fehler impliziert aber nicht, dass Sie keine Berechtigungen für die angeforderten Ressourcen haben, sondern Sie können in der Regel nur keine Anforderung an die genannten Ressourcen senden.Wenn Sie die domänenübergreifende Bibliothek verwenden, können die Webseiten in Ihrem Add-In auf Daten in der Add-In-Domäne und in der SharePoint-Domäne zugreifen. Die domänenübergreifende Bibliothek ist eine clientseitige Alternative in Form einer auf der SharePoint-Website gehosteten JavaScript-Datei (SP.RequestExecutor.js), auf die Sie in Ihrem Remote-Add-In verweisen können. Die domänenübergreifende Bibliothek ermöglicht Ihnen, über einen Proxy auf der Remote-Add-In-Seite mit mehreren Domänen zu interagieren. Diese Option ist geeignet, wenn Sie den Add-In-Code auf dem Client statt auf dem Server ausführen möchten oder wenn Konnektivitätsbarrieren, z. B. Firewalls, zwischen SharePoint und der Remoteinfrastruktur bestehen. Sie können auf Daten im Hostweb zugreifen - beispielsweise können Sie auf Listen zugreifen, mit denen Endbenutzer unabhängig von Ihrem Add-In interagieren. Oder Sie können auf Daten im Add-In zugreifen, wie Listen, die speziell für Ihr Add-In bereitgestellt wurden. Add-Ins mit Mandantenbereich können zudem auf andere Websitesammlungen und Websites zugreifen, sofern das Add-In über die erforderlichen Berechtigungen verfügt und als Batchinstallation mittels des Add-In-Katalogs bereitgestellt wurde.
-> [!HINWEIS]
+> **HINWEIS**
 > In diesem Thema bezieht sich **Add-In-Domäne** auf die Domäne, die die Add-In-Seiten hostet. Dies kann die Domäne einer Remote-Webanwendung in einem Add-In, die vom Anbieter gehostet wird, sein, oder Add-In-Seiten können sich auch in SharePoint im Add-In-Web befinden und Aufrufe an die Hostwebdomäne machen. In diesem Fall ist die Add-In-Domäne die Domäne des Add-In-Webs.
   
     
@@ -101,7 +101,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
   
 4. Wählen Sie **Vom Anbieter gehostet** als Hostingoption für Ihr Add-In.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Sie können die domänenübergreifende Bibliothek auch in einem Von SharePoint gehostetes Add-In verwenden. In einem Von SharePoint gehostetes Add-In befindet sich die Add-In-Seite jedoch bereits im Add-In-Web. In diesem Fall benötigt sie nicht die domänenübergreifende Bibliothek zum Lesen von Listenelementen. Weitere Informationen zu einem Von SharePoint gehostetes Add-In-Beispiel, das Daten im Hostweb lesen kann, finden Sie unter  [Verwenden der domänenübergreifenden Bibliothek in einem von SharePoint gehosteten Add-In (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814) oder unter [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) später in diesem Artikel.
 
 ### Erstellen von Listenelementen im Add-In-Web
@@ -156,7 +156,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
   
   - Instantiiert das **RequestExecutor**-Objekt. Standardmäßig verwendet RequestExecutor das Add-In-Web als Kontextwebsite.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Sie können die Kontextwebsite durch andere Websites, die sich von der Add-In-Web unterscheiden, mithilfe des **AppContextSite**-Endpunkts (REST) oder -Objekts (JSOM) ersetzen. Weitere Informationen zu AppContextSite finden Sie in  [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) weiter unten in diesem Artikel.
   - Gibt einen REST-Aufruf an den Listenelementendpunkt aus.
     
@@ -280,7 +280,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die App bereit und öffnet die Berechtigungsseite für die App. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

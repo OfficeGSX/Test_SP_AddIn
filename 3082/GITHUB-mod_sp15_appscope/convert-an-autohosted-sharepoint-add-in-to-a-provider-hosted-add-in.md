@@ -283,7 +283,7 @@ Actualice la ventana de herramientas **Explorador de objetos de SQL Server** de 
     
 
     
-> [!NOTA]
+> **NOTA**
 >  En función de la forma de crearse la base de datos del complemento autohospedado, podría necesitarse trabajo adicional para implementarlo en Azure. Consulte los siguientes artículos de MSDN para obtener orientación adicional:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ Después de implementar el sitio web, Visual Studio iniciará el explorador de d
     
 
     
-> [!NOTA]
+> **NOTA**
 > Consulte la documentación de Azure para ver más opciones para implementar aplicaciones web ASP.NET en un Sitio web de Azure:  [Cómo implementar un sitio web de Microsoft Azure](http://azure.microsoft.com/documentation/articles/web-sites-deploy). 
   
     
@@ -583,7 +583,7 @@ A continuación, cree un nuevo GUID y sustituya el existente en el atributo **Pr
     
 
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si se usara el identificador de producto existente, SharePoint devolvería el error "El complemento proporcionado difiere de otro complemento con la misma versión y el mismo identificador del producto" al instalar el complemento convertido. 
   
     

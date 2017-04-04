@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # Vorgehensweise: Erstellen von Add-Ins für SharePoint, die von anonymen Benutzern verwendet werden können
 Erfahren Sie, wie Sie SharePoint-Add-Ins erstellen, die von anonymen Benutzern auf öffentlich zugänglichen Microsoft SharePoint 2013-Websites verwendet werden können.
-> [!WICHTIG]
+> **WICHTIG**
 > Wenn in diesem Artikel der Begriff  *lokal*  SharePoint 2013 verwendet wird, wird davon ausgegangen, dass Service Pack 1 für SharePoint 2013 installiert wurde.
   
     
@@ -77,7 +77,7 @@ Um ein vom Anbieter gehostetes Add-In für anonyme Benutzer zugänglich zu mache
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn die SharePoint-Website für anonyme Benutzer zugänglich ist, erlaubt sie anstatt HTTPS-Zugriff normalerweise HTTP-Zugriff. Es können Sicherheitsprobleme auftreten, wenn in diesem Szenario die Nur-Add-In-Richtlinie für Add-Ins verwendet wird. Nähere Informationen dazu sowie eine Methode zur Behebung der Probleme finden Sie unter  [Was jeder Entwickler über SharePoint-Add-Ins, CSOM und anonyme Veröffentlichungswebsites wissen muss](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -129,7 +129,7 @@ Wenn Ihr Add-In das JavaScript-Objektmodell (JSOM) von SharePoint verwendet, gib
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie die Anforderung, dass Benutzer die Berechtigung **Remoteschnittstellen verwenden** besitzen, deaktivieren, hat dies Auswirkungen auf den Datenschutz. Nähere Informationen finden Sie unter [Was jeder Entwickler über SharePoint-AApps, CSOM und anonyme Veröffentlichungswebsites wissen muss](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx). 
   
     
@@ -162,7 +162,7 @@ Wenn Ihre SharePoint-Testinstallation lokal ist, müssen Sie die ersten beiden u
     
     
 
-> [!WICHTIG]
+> **WICHTIG**
 > a>Wenn möglich, sollten Sie das SharePoint-Add-In auf einer Website installieren,  *bevor*  Sie die ersten beiden Verfahren ausführen. Add-Ins können nicht auf jede Website in einer lokalen SharePoint-Webanwendung installiert werden, wenn die Webanwendung für anonymen Zugriff installiert wurde. Wenn die Webanwendung bereits für anonymen Zugriff installiert wurde, müssen Sie die Einstellung vorübergehend deaktivieren, um das Add-In zu installiere
   
     
@@ -189,7 +189,7 @@ Wenn Ihre SharePoint-Testinstallation lokal ist, müssen Sie die ersten beiden u
   
 6. a>(Optional) Deaktivieren Sie das Kontrollkästchen **Berechtigung 'Remoteschnittstellen verwenden' verlangen**. Dadurch wird Code und Skript, der bzw. das im Kontext eines anonymen Benutzers ausgeführt wird, erlaubt, in jeder Websitesammlung Aufrufe an das Clientobjektmodell von SharePoint zu richten. Sie können die Anforderung für keine Websitesammlung erneut aktivieren. Wenn Sie das Kontrollkästchen aktiviert lassen, bedeutet dies, dass anonyme Benutzer standardmäßig nicht auf die Clientobjektmodelle zugreifen können, aber Sie können die Anforderung für bestimmte Websitesammlungen deaktivieren (und ihnen den Zugriff erlauben
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Im Zusammenhang mit der Entwicklung von SharePoint-Add-Ins für anonyme Benutzer ist diese Einstellung nur für in SharePoint gehostete Apps von Bedeutung. Vom Anbieter gehostete SharePoint-Add-Ins, die auf anonyme Benutzer ausgelegt sind, verwenden eine Technik, welche die Berechtigungen des Benutzers irrelvant machen. Weitere Informationen hierzu finden Sie oben im Abschnitt  [Erstellen von anbietergehosteten Add-Ins, die anonym zugänglich sind](#Cloud-hosted)
 7. a>Wählen Sie zum Schließen des Formulars **Speichern** au
     
@@ -199,7 +199,7 @@ Wenn Ihre SharePoint-Testinstallation lokal ist, müssen Sie die ersten beiden u
   
 9. Wählen Sie im Formular **Einschränkungen für anonymen Zugriff** die Zone aus, und achten Sie darauf, dass das Optionsfeld **Keine** aktiviert ist. Wenn die SharePoint-Add-In, die Sie testen, nur Leserechte für SharePoint-Daten benötigt, aktivieren Sie stattdessen **Schreiben verweigern**.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > a>Dies ist eine weitere Einstellung, die im Zusammenhang mit der Entwicklung von SharePoint-Add-Ins für anonyme Benutzer nur für in SharePoint gehosteten Add-Ins von Bedeutung is 
 10. Wenn Sie in Schritt 2 eine neue Webanwendung erstellt haben, müssen Sie darin eine Websitesammlung erstellen.
     
@@ -224,7 +224,7 @@ Wenn Ihre SharePoint-Testinstallation lokal ist, müssen Sie die ersten beiden u
     
   
 
-> [!WICHTIG]
+> **WICHTIG**
 > Das folgende Verfahren kann nur auf einer öffentlichen Website in SharePoint Online ausgeführt werden. (Weitere Informationen zur Verwendung von öffentlichen Websites in Microsoft SharePoint Online finden Sie unter  [Hilfe zu öffentlichen Websites für Office 365](http://office.microsoft.com/de-de/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).) 
   
     
@@ -245,7 +245,7 @@ a>Wenn Sie ein in SharePoint gehostetes Add-In entwickeln und es auf eine ShareP
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > a>Dieses Verfahren kann nicht in einer SharePoint Online-Websitesammlung ausgeführt werden. Daher können in SharePoint gehostete Add-Ins, die in SharePoint Online installiert sind und von anonymen Benutzern verwendet werden sollen, keine Listen oder Bibliotheken aufrufe 
   
     

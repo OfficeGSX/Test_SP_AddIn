@@ -19,7 +19,7 @@ Estar completamente familiarizado com tanto  [Manipulando eventos de suplemento]
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > **Sistema de numeração de versão:** Para obter consistência, este tópico pressupõe que os números de versão do suplemento são 1.0.0.0, 2.0.0.0, 3.0.0.0 e assim por diante. No entanto, a lógica e orientação aplica não importa qual é o seu sistema de numeração.
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Se você adicionar um componente para um suplemento em um manipulador de **UpgradedEventEndpoint**, certifique-se de adicionar o mesmo código para um manipulador de **InstalledEventEndpoint** porque você deseja que esse componente incluído no add-in em uma nova instalação. Além disso, você deve adicionar um [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) (ou revisá-lo) para o suplemento Remover o componente. Na maioria das vezes, tudo o que foi adicionado ou alterados pelo **InstalledEventEndpoint** deve ser revertido ou excluído pelo **UninstallingEventEndpoint**. Uma exceção é que os dados permanecerão útil depois que o suplemento for removido da Lixeira de segundo estágio não devem ser excluídos. (Sites, além da web do suplemento, que são criados pelo suplemento devem ser considerados dados.)
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Atribuindo **SPRemoteEventServiceStatus.CancelWithError** (ou **SPRemoteEventServiceStatus.CancelNoError**) à propriedade  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) é crucial. Essa propriedade é o que sinaliza a infraestrutura para reverter a atualização. Mas SharePoint repetirá seu manipulador três vezes antes que ele reverte a atualização.
   
     

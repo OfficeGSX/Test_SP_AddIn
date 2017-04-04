@@ -26,7 +26,7 @@ SharePoint アドインでは、SharePoint ページまたはコンポーネン�
     
     
 
-> [!メモ]
+> **メモ**
 > また、SharePoint クロス ドメイン ライブラリは、逆方向でも使用できます。つまり、リモート Web ページの JavaScript からこのライブラリを使用して SharePoint のデータへのアクセスに使用できます。ライブラリのこの使用方法の詳細については、「 [クロス ドメイン ライブラリを使用する SharePoint アドインの作成](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md)」を参照してください。 
   
     

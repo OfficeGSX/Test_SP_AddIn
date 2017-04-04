@@ -35,21 +35,21 @@ Cet article est le huitième d'une série sur les concepts de base du développe
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeClientRenderedControl.sln.
   
     
     
 
 Vous pouvez utiliser un code JavaScript court côté client pour personnaliser le rendu des composants WebPart, la plupart des types de champs (colonnes) et certains autres contrôles, en attribuant un fichier JavaScript à la propriété **JSLink** du contrôle, comme **SPField.JSLink**. Vous pouvez également ajouter une logique de validation côté client de cette manière. Cet article vous permet de personnaliser le rendu d'un champ dans une liste de Complément SharePoint d'orientation d'employés à l'aide de rendu côté client.
-> [!REMARQUE]
+> **REMARQUE**
 > Si l'utilisateur final a désactivé JavaScript dans son navigateur, SharePoint applique le rendu et la validation côté serveur. 
   
     
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  La propriété JSLink n'est pas prise en charge sur les listes d'enquêtes ou d'événements. Un calendrier SharePoint est une liste d'événements.
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. Pour indiquer à SharePoint d'utiliser votre code JavaScript personnalisé, ajoutez un nouvel attribut, **JSLink**, à l'élément **Field**, puis attribuez l'URL suivante en tant que valeur :  `~site/Scripts/OrientationStageRendering.js`.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > La propriété **JSLink** est toujours un fichier, pas une méthode. Il n'existe aucun moyen d'indiquer à SharePoint la méthode à exécuter. C'est pourquoi le fichier contient une méthode qui s'exécute automatiquement.
 
     La balise de début de l'élément **Field** se présente désormais comme suit.

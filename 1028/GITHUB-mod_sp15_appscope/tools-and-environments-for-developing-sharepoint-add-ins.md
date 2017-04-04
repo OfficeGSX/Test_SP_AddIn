@@ -39,7 +39,7 @@ ms.assetid: 6906eb86-8270-4098-8106-1e8d0d3c212e
     
   
  **若要建立SharePoint Online環境** 使用可用的開發、 SharePoint Online訂閱查看 [建立現有的 Office 365 訂閱開發人員網站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 **若要建立的內部部署環境** ，請參閱 [設定內部部署開發環境的 SharePoint 增益集](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)。
-> [!注意事項]
+> **注意事項**
 > 本主題僅並與開發SharePoint Add-ins的環境。如果您打算開發伺服器陣列解決方案，請參閱 [設定 SharePoint 2013 的一般開發環境](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx)。如果您想要執行這兩種類型的開發、 開頭後面的文章，並會看到 [  [設定內部部署開發環境的 SharePoint 增益集](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)的其他步驟您需要開發SharePoint Add-ins。
   
     

@@ -86,7 +86,7 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > L'attribut **AllowedRemoteHostUrl** est utilisé pour spécifier le domaine distant. L'attribut **~remoteAppUrl** est résolu en URL du complément distant. Pour plus d'informations sur les jetons, voir [Explorer la structure du manifeste d'application et le package d'un complément pour SharePoint](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### Pour créer une page de proxy personnalisé
@@ -188,7 +188,7 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
   ```
 
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Dans un Complément SharePoint de production, vous devez fournir la logique d'autorisation et renvoyer la valeur adéquate dans l'objet **originAuthorityValidator** des paramètres.
 
 ### Pour créer une page de contenu
@@ -335,7 +335,7 @@ Response.End();
   
 2. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 3. Cliquez sur le bouton **Trust It** (Faire confiance).
     

@@ -13,7 +13,7 @@ Vous devez mettre à jour un complément SharePoint si vous ajoutez des fonction
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Vous ne pouvez pas modifier le  *type de complément*  à l'aide du système de mise à jour. Par exemple, vous ne pouvez pas profiter d'une mise à jour pour transformer un complément hébergé par SharePoint en complément hébergé par un fournisseur. Pour changer de type, vous devez [migrer d'un ancien complément vers un nouveau complément](#Major). En particulier, puisque  [le programme de prévisualisation pour les compléments auto-hébergés a été fermé](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), vous devez savoir que vous ne pouvez pas mettre à jour un complément auto-hébergé en complément hébergé par un fournisseur. Vous devez convertir le complément tel qu'expliqué dans  [Conversion d'un complément auto-hébergé pour SharePoint en complément hébergé par un fournisseur](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md). 
   
     
@@ -47,7 +47,7 @@ Dans les 24 heures suivant le téléchargement de votre mise à jour vers le cat
     
 
     
-> [!CONSEIL]
+> **CONSEIL**
 >  Lorsque vous développez une mise à jour, vous ne voulez pas attendre 24 heures à chaque fois que vous téléchargez une nouvelle version vers votre catalogue de compléments SharePoint de test. Pour plus d'informations sur la façon de mettre à jour un complément immédiatement, voir [Mettre à jour un complément sans attendre 24 heures](update-sharepoint-add-ins.md#ImmediateUpdateNotice). >  Par défaut, SharePoint recherche toutes les 24 heures des mises à jour des compléments installés. Un administrateur de batterie de serveurs peut définir la fréquence sur une autre valeur à l'aide de la commande SharePoint Management Shell suivante, oùn est le nombre d'heures entre les recherches.>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`>  Si la valeur est définie sur 0, la vérification est effectuée à chaque exécution du travail du minuteur intégré **Mise à jour interne de l'état du complément**, soit toutes les heures par défaut. Les administrateurs de batterie de serveurs peuvent utiliser l'administration centrale pour modifier la fréquence du travail du minuteur ou l'exécuter immédiatement. 
   
     
@@ -77,14 +77,14 @@ SharePoint 2013 effectue les actions suivantes lorsqu'un utilisateur installe un
   
 - SharePoint 2013 exécute le service web **UpgradedEventEndpoint**, si un tel service est enregistré dans le manifeste du complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si le complément est hébergé par un fournisseur, vous fournissez la logique de mise à jour pour tous les composants hors SharePoint du complément. Vous pouvez mettre à jour la plupart de ces composants séparément par rapport à la mise à jour du Complément SharePoint lui-même, de la même façon que vous avez installé ces composants séparément par rapport à l'installation du complément. Certaines modifications ne doivent néanmoins être effectuées que lorsque l'utilisateur met à jour le Complément SharePoint. Cette logique peut être intégrée à un service web **UpgradedEventEndpoint** ou dans une logique de « première exécution après mise à jour » du complément lui-même.
 - SharePoint 2013 rend le complément et ses composants disponibles à nouveau.
     
   
 
     
-> [!REMARQUE]
+> **REMARQUE**
 > Si le schéma d'une liste dans le site web de complément est modifié, la liste est sauvegardée avec le reste du site web de complément. Cette opération peut prendre un certain temps si la liste contient un grand volume de données. Si le processus de mise à jour ne peut pas être effectué en 1 heure, il s'arrête et la mise à jour est annulée. 
   
     
@@ -99,7 +99,7 @@ Dans certains scénarios, vous souhaiterez peut-être créer un complément enti
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les éléments du catalogue de compléments d'une organisation se distinguent par le  *nom de fichier*  du package du complément et non par l'ID de produit ou le nom du complément. Si le nouveau complément possède le même nom de fichier de package que l'ancien, il remplacera l'ancien dans le catalogue de compléments, et l'ancien complément n'apparaîtra plus sur la page **Ajouter un complément**. Si vous activez le contrôle de version sur le package du complément lorsque vous le téléchargez vers le catalogue, l'ancienne version du fichier (qui correspond à l'ancien complément) est toujours disponible dans l'historique de l'élément. Vous pouvez télécharger l'ancien package du complément ou le restaurer, mais il est impossible d'avoir l'ancien complément et le nouveau en tant qu'éléments distincts dans le catalogue ou sur la page **Ajouter un complément**, à moins qu'ils n'aient des noms de fichier différents. 
   
     
@@ -118,7 +118,7 @@ En principe, vous pouvez réutiliser dans le nouveau complément une source de d
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous implémentez un service web **InstalledEventEndpoint** ou **UpgradedEventEndpoint** qui installe des composants, nous vous recommandons d'implémenter également un service web **UninstallingEventEndpoint** permettant de désinstaller ces mêmes composants. Vous vous conformerez ainsi aux principes de conception selon lesquels les compléments doivent être autonomes et désinstallés correctement. Cependant, les données utiles pour les utilisateurs une fois le complément désinstallé ne doivent pas être supprimées. Les sites web créés par un complément autre que le site web de complément sont généralement considérés comme des données.
   
     

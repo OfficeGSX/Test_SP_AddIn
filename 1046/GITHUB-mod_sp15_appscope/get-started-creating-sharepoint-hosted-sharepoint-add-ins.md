@@ -60,7 +60,7 @@ Há várias maneiras de configurar um ambiente de desenvolvimento para Suplement
 <a name="o365_signup"> </a>
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 >  Talvez você já tenha acesso a um Office 365 Developer Site.> **Você é assinante do MSDN?** Os assinantes do Visual Studio Ultimate e do Visual Studio Premium com MSDN recebem uma Assinatura de Desenvolvedor do Office 365 como benefício. [Resgate seu benefício hoje.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Você tem um dos planos de assinatura do Office 365 a seguir?**> **Nesse caso, um administrador de assinatura do Office 365 pode criar um Site do Desenvolvedor** usando o [centro de administração do Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para saber mais, consulte  [Criar um site do desenvolvedor em uma assinatura existente do Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -78,7 +78,7 @@ Existem duas maneiras de obter um plano do Office 365.
     
   
 
-> [!DICA]
+> **DICA**
 > Cada um destes links é aberto em uma nova janela ou guia para que você ainda possa ver as instruções a seguir. 
   
     
@@ -123,7 +123,7 @@ Existem duas maneiras de obter um plano do Office 365.
   
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você estiver conectado a outra conta da Microsoft ao tentar inscrever-se em uma conta de desenvolvedor, poderá ver esta mensagem: "Desculpe, a ID do usuário inserida não funcionou. Aparentemente, ela não é válida. Insira a ID do usuário que sua organização atribuiu a você. Geralmente, sua ID do usuário se parece com  *nome@exemplo.com*  ou *nome@exemplo.onmicrosoft.com*  ".> Se essa mensagem for exibida, faça logout da conta da Microsoft que você estava usando e tente novamente. Se ainda obtiver a mensagem, limpe o cache do seu navegador ou alterne para a **Navegação InPrivate** e então preencha o formulário.
   
     

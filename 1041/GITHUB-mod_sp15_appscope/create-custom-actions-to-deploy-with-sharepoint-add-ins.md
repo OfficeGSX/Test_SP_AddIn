@@ -84,7 +84,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     
   
 
-    > [!重要]
+    > **重要**
       > 選択されたアイテムがあるときには、ItemURL トークンと ItemID トークンのみ受け渡しされます。運用環境用の SharePoint アドイン では、アイテムが選択されていない状況については、コードで適切に処理する必要があります。この例では、アイテムが選択されていないことをユーザーに通知します。 
 
   ```HTML
@@ -192,7 +192,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     
   
 
-> [!メモ]
+> **メモ**
 > この例では、ユーザーがメニューからカスタム アクションを選択すると、リモート Web ページが全画面表示されます。カスタム メニュー アクションが **HostWebDialog** 属性を使用することにより、リモート Web ページをダイアログ ボックスで開くこともできます。詳細については、「 [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)」を参照してください。 
   
     
@@ -269,7 +269,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!メモ]
+    > **メモ**
       > リボンのカスタム アクションは **SelectedListId** と **SelectedItemId** を使用します。 **ListId** と **ItemId** は、メニュー アイテムのカスタム アクションでのみ機能します。
 
 ### ホスト Web のホーム ページにアドインのスタート ページを設定する
@@ -292,7 +292,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
 
 1. F5 キーを押します。
     
-    > [!メモ]
+    > **メモ**
       > F5 キーを押すと、Visual Studio によってソリューションが構築され、アドインが展開され、アドインのアクセス許可ページが表示されます。 
 2. [ **信頼する**] ボタンを選択します。開発者サイトの既定のページが開きます。
     

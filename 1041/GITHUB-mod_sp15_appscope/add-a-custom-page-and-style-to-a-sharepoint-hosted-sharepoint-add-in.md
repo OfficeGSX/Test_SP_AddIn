@@ -32,7 +32,7 @@ ms.assetid: 91a20d79-318f-44ce-9877-3fa07d03aa09
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforePage.sln ファイルを開くこともできます。
   
     

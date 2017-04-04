@@ -37,7 +37,7 @@ Si votre Complément SharePoint hébergé par le fournisseur comporte une applic
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Pour vous assurer que votre ID client SharePoint et votre clé secrète client sont publiés avec votre projet web, afin de permettre à votre contenu web d'accéder aux données SharePoint, publiez votre projet de Complément SharePoint à partir de la page **Publier votre complément**. Vous pouvez accéder à cette page en ouvrant le menu contextuel du Complément SharePoint, et non celui de l'application web, puis en sélectionnant la commande **Publier**. 
   
     
@@ -71,7 +71,7 @@ Votre Complément SharePoint est généralement associé à une application web 
     
     Si vous prévoyez de soumettre votre Complément SharePoint à l'Office Store, veillez à utiliser l'ID et la clé secrète clients créés dans Mon tableau de bord vendeur. Vous pouvez utiliser des ID et des clés secrètes clients générés à l'aide de la page appregnew.aspx lors de la phase de déploiement, mais les compléments que vous soumettez à l'Office Store doivent utiliser les ID et les clés secrètes clients obtenus à partir de Mon tableau de bord vendeur. Vous devez également créer le profil de publication sur votre site Azure, puis l'importer dans Visual Studio au lieu de créer un profil dans l'Assistant **Créer un profil de publication**. Lorsque vous créez un profil dans Azure, tous les paramètres de l'onglet **Connexion** sont déjà définis dans Visual Studio. Pour plus d'informations sur l'importation ou la création d'un profil de publication, voir [Création d'un profil de publication](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Si vous ne pouvez pas publier de contenu Web directement, vous pouvez créer un package Web Deploy pouvant être déployé pour vous par un administrateur. Pour créer un package Web Deploy, créez un profil, sélectionnez l'onglet **Connexion**, puis cliquez sur **Package Web Deploy** dans la liste **Méthode de publication**. 
 
 ### Pour déployer votre projet d'application web
@@ -106,7 +106,7 @@ Votre Complément SharePoint est généralement associé à une application web 
     
     Vous devez spécifier une adresse commençant par le préfixe « https ». Pour plus d'informations, voir  [Pourquoi mes compléments doivent-ils être sécurisés par une protection SSL ?](http://msdn.microsoft.com/library/jj591603#bk_q7).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Les sites web Azure fournissent automatiquement un point de terminaison HTTPS. Si vous publiez votre complément sur un site de l'Office Store ou sur l'Office Store, l'adresse doit commencer par un préfixe HTTPS. Cependant, si vous publiez le complément sur un site local, vous pouvez utiliser un préfixe HTTP. 
 
     L'ID client que vous avez entré dans le profil de publication devrait déjà apparaître dans la zone de texte **Quel est l'ID client du complément ?**.

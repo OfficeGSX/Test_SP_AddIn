@@ -8,7 +8,7 @@ ms.assetid: d4b5c277-ed50-420c-8a9b-860342284b72
 
 # Use OData query operations in SharePoint REST requests
 Learn how to use a wide range of OData query string operators to select, filter, and order the data you request from the SharePoint REST service. 
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -25,7 +25,7 @@ Learn how to use a wide range of OData query string operators to select, filter,
     
   
 The SharePoint REST service supports a wide range of OData query string operators that enable you to select, filter, and order the data you request.
-> [!TIP]
+> **TIP**
 > The SharePoint Online (and on-premise SharePoint 2016 and later) REST service supports combining multiple requests into a single call to the service by using the OData  `$batch` query option. For details and links to code samples, see [Make batch requests with the REST APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -39,7 +39,7 @@ Use the  [$select](http://www.odata.org/documentation/odata-version-2-0/uri-conv
     
     
 
-> [!NOTE]
+> **NOTE**
 > In general, if you do not specify the  `$select` query option, the REST service returns all available fields by default. However, in a few cases, some SharePoint objects include properties that are very resource intensive to retrieve; to optimize REST service performance, these properties are not included in the default query, and must be explicitly requested.> For example, the **SPWeb.EffectiveBasePermissions** property is not returned by default, and must be explicitly requested using the `$select` query option.
   
     
@@ -79,7 +79,7 @@ In the SharePoint REST service, users are represented by the user's friendly (di
     
     
 
-> [!NOTE]
+> **NOTE**
 > Membership-based user queries are not supported. > Usage of the **Current** operator to do queries using the ID of the current user is not supported.
   
     
@@ -107,7 +107,7 @@ Use the  [$top](http://www.odata.org/documentation/odata-version-2-0/uri-convent
     
     
 
-> [!NOTE]
+> **NOTE**
 > The $skip query option does not work with queries for SharePoint list items. 
   
     
@@ -130,7 +130,7 @@ The $skiptoken option enables you to skip over items until the specified item is
     
     
 
-> [!NOTE]
+> **NOTE**
 > When using these query options, take into account that paging in OData is ordinal. For example, suppose you are implementing a next page button to display SharePoint list items. You use the REST service to enable the button to return items 1 through 20 when clicked, then items 21 through 40, and so on. However, suppose another user deletes items 4 and 18 between clicks of the next button. In such a case, the ordinal positioning of the remaining items is reset, and displaying items 21 through 40 actually skips over two items. 
   
     

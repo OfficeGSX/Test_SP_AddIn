@@ -30,7 +30,7 @@ En función de sus requisitos y presupuesto específicos, podrá elegir alguna d
     
   
 
-> [!NOTA]
+> **NOTA**
 > Las instalación de SharePoint es compatible únicamente en Windows Server 2008 R2 Service Pack 1 x64 o en Windows Server 2012. Si quiere desarrollar Complementos de SharePoint para SharePoint en Windows 7 o en Windows 8, puede registrarse en un Sitio para desarrolladores de Office 365 y desarrollar complementos de forma remota. 
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. Una vez se haya completado la instalación, se le solicitará que inicie el Asistente para configuración de Productos y Tecnologías de SharePoint.
     
-    > [!NOTA]
+    > **NOTA**
       > Es posible que se produzca un error en el Asistente para configuración de Productos y Tecnologías de SharePoint si usa un equipo que esté conectado a un dominio, pero no a un controlador de dominio. Si se produce este error, establezca una conexión con un controlador de dominio directamente o mediante una conexión de red privada virtual (VPN) o bien inicie sesión con una cuenta local que disponga de privilegios administrativos en el equipo. 
 7. Una vez que haya finalizado el asistente de configuración, verá la página **Selección de plantilla** del nuevo sitio de SharePoint. En esta página, elija la plantilla **Sitio para desarrolladores**. Solamente podrá implementar Complementos de SharePoint desde Visual Studio en un Sitio para desarrolladores.
     
@@ -135,7 +135,7 @@ En este paso, configurará servicios en SharePoint para el uso de complementos d
   
 6. Seleccione **Guardar y cerrar**.
     
-    > [!NOTA]
+    > **NOTA**
       > Si recibe un mensaje que indica que ya existe el perfil que trata de crear, seleccione **Cancelar y volver atrás**. 
 7. Al volver a la página **Administrar perfiles de usuario**, debería ver **Número total de perfiles: 1**.
     
@@ -189,7 +189,7 @@ Con fines de desarrollo, podrá modificar el archivo de hosts según vaya necesi
     
     
 
-> [!NOTA]
+> **NOTA**
 > Para las granjas de servidores de producción, debería crear una estrategia de enrutamiento de DNS dentro de la intranet y opcionalmente configurar su firewall. Consulte  [Instalar y administrar complementos de SharePoint](http://technet.microsoft.com/es-es/library/fp161232%28v=office.15%29) para obtener más información sobre cómo crear y configurar un entorno de producción para Complementos de SharePoint.
   
     
@@ -200,7 +200,7 @@ Siga los pasos del procedimiento a continuación para crear un dominio aislado d
     
     
 
-> [!NOTA]
+> **NOTA**
 > Es preciso seguir todos los pasos del procedimiento de más abajo habiendo iniciado sesión como administrador de granja y debe ejecutar el símbolo del sistema y la Consola de administración de SharePoint como administrador. 
   
     
@@ -303,7 +303,7 @@ Consulte  [Implementación e instalación de aplicaciones para SharePoint: méto
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Después de implementar en la instalación un complemento hospedado en SharePoint, puede que se le pida iniciar sesión con sus credenciales al tratar de iniciarla. Tendrá que deshabilitar la comprobación de bucle invertido para evitar estos mensajes. Vea  [Aparece el error 401.1 cuando explora un sitio web que usa Autenticación integrada y que está hospedado en IIS 5.1 o una versión posterior](http://support.microsoft.com/kb/896861/es-es) para consultar cómo deshabilitar la comprobación de bucle invertido.
   
     

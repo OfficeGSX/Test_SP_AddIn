@@ -13,7 +13,7 @@ SharePoint のサイト、リスト、およびリスト項目は、 **Securable
     
 
 
-> [!メモ]
+> **メモ**
 > 詳細に設定されたアクセス許可の設定の記事のリンクについては、「 [その他の技術情報](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources)」を参照してください。 
   
     

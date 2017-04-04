@@ -32,7 +32,7 @@ In SharePoint gehostete SharePoint-Add-Ins unterstützen keine Ereignisbehandlun
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Websiteereignisse und Websitesammlungsereignisse werden in SharePoint-Add-Ins nicht unterstützt. 
   
     
@@ -61,7 +61,7 @@ Zur Behandlung von Listen- und Listenelementereignissen erstellen Sie Remoteerei
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > RERs dienen demselben Zweck wie Ereignisempfänger in Farmlösungen. Ereignisempfänger weisen jedoch benutzerdefinierten Code auf, der auf den SharePoint-Servern ausgeführt wird, sodass sie nicht in SharePoint-Add-Ins verwendet werden können. 
   
     
@@ -104,7 +104,7 @@ Ihr Add-In kann die folgenden Listenelementereignisse behandeln.
 ||ItemFileConverted  <br/> |
    
 
-> [!HINWEIS]
+> **HINWEIS**
 > *Diese zwei neuen Ereignisse sind möglicherweise nicht in der Visual Studio-Benutzeroberfläche verfügbar. Falls nicht, wählen Sie „ItemDeleting" oder „ItemDeleted" aus, und ändern Sie die Namen dann manuell. 
   
     
@@ -157,7 +157,7 @@ Um die Ereignisse zu ändern, die der Remote-Ereignisempfänger behandelt, öffn
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Weitere Informationen zu RERs, einschließlich Informationen zur Problembehandlung, finden Sie unter  [FAQ für Remote-Ereignisempfänger](handle-events-in-sharepoint-add-ins.md#RERFAQ). 
   
     
@@ -179,7 +179,7 @@ Das Ereignis **AppInstalled** wird ausgeführt, unmittelbar nachdem SharePoint a
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Beim Installieren eines Add-Ins mit  [Mandantenbereich](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md) wird das Add-In in der Add-In-Katalog-Websitesammlung installiert, und das AppInstalled-Ereignis wird dann und nur dann ausgeführt. Das Add-In wird in mehreren Websites des Mandanten angezeigt, aber das Ereignis wird nicht separat für jede ausgeführt.
   
     
@@ -198,13 +198,13 @@ Neben dem Abbruch der Add-In-Installation kann dieses Ereignis für viele andere
   
 - Festlegen der App-Instanz-relativen Initialisierungseinstellungen. Beispielsweise kann Ihr Add-In einen Add-In-Web-Eigenschaftenbehälter zum Speichern von Einstellungen enthalten, die von einer Instanz des Add-Ins zur anderen variieren. Der AppInstalled-Handler kann, z. B. basierend auf dem Websitetyp des Hostwebs (z. B. Teamwebsite oder Blog-Website), unterschiedliche Werte in den Eigenschaftenbehälter schreiben.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Durch Überprüfen, ob das Hostweb eine AppCatalog-Website ist, lässt sich einfach feststellen, ob das Add-In mit Mandantenbereich installiert wurde. Siehe  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - Ausführen App-Instanz-relativer Konfiguration in der Remotewebanwendung des Add-ins, z. B. Hinzufügen einer Tabelle zu einer Datenbank.
     
   
 
-> [!WICHTIG]
+> **WICHTIG**
 > Die Implementierung des AppInstalled-Ereignisses muss innerhalb von 30 Sekunden abgeschlossen sein. Andernfalls geht die SharePoint-Installationsinfrastruktur davon aus, dass ein Fehler aufgetreten ist. Die Infrastruktur führt das Ereignis erneut aus  *und wiederholt den Code von Anfang an*  bis zu drei Mal zusätzlich. Nach vier Timeouts wird die gesamte Add-In-Installation von SharePoint zurückgesetzt. Die kompletten Auswirkungen dieser Tatsachen werden unter [Einbeziehen von Rollbacklogik und "Bereits erledigt"-Logik in Add-In-Ereignishandler](#Rollback) erörtert.
   
     
@@ -262,7 +262,7 @@ Wenn in SharePoint bei der Verarbeitung eines der drei Add-In-Ereignisse ein Feh
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > **Spezieller Hinweis zum AppUninstalling-Ereignis:** Die vorstehenden Punkte gelten für das AppUninstalling-Ereignis ebenso wie für die anderen beiden Add-In-Ereignisse. Beispielsweise muss, wenn der Handler für das Uninstalling-Ereignis eine Zeile in einer Remotedatenbank löscht und dann ein Fehler auftritt, die Zeile wiederhergestellt werden. Da Ihr Dienst eine Abbruchnachricht an SharePoint senden wird, wird das Add-In nicht aus dem Papierkorb entfernt. Wenn sie von dort wiederhergestellt und erneut verwendet wird, wird sie eventuell ohne diesen Datenbankeintrag nicht funktionieren.> Ihr AppUninstalling-Handler wird jedoch abgeschlossen,  *bevor*  SharePoint das Add-In aus dem Papierkorb entfernt. Tritt in SharePoint selbst ein Fehler auf und muss das Entfernen abgebrochen werden, besteht somit keine Möglichkeit für den Handler, seine Aktionen rückgängig zu machen.
   
     
@@ -363,7 +363,7 @@ Sie können nicht immer die Handlerdelegierungsstrategie verwenden. Wenn der Han
     
     
 
-> [!TIPP]
+> **TIPP**
 > Wenn das AppInstalled-Ereignis fehlschlägt, löscht SharePoint das Add-In-Web, wenn eines vorhanden ist. Und wenn das AppUpated-Ereignis fehlschlägt, stellt SharePoint das Add-In-Web im Zustand vor der Aktualisierung wieder her. Aus diesem Grund müssen die Handler nie Aktionen zurücksetzen, die sie im Add-In-Web ausführen. Wenn Ihr Ereignishandler Aktionen im Hostweb und im Add-In-Web ausführen, sollte das Add-In-Web zuerst behandelt werden. So kann die Handlerdelegierungsstrategie für das Hostweb sicher verwendet werden. Selbst wenn die Add-In-Web-Aktionen erfolgreich ausgeführt werden und in den Hostweb-Aktionen Fehler auftreten, bleibt keine Rollbacklogik unausgeführt. 
   
     

@@ -46,7 +46,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx)和 [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |了解數位憑證背後的基本概念。 <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 高信任SharePoint Add-ins只能以安裝在內部部署 SharePoint，不適用於Microsoft SharePoint Online、 和主要對象搭配內部部署，而不是雲端式 web 應用程式。本文說明如何將發佈該案例中的 [增益集。此外，本文中 「 客戶 」 是指 business 傳回安裝SharePoint Add-in和主控遠端元件的增益集。
   
     
@@ -230,7 +230,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
   
 4. 將序號， *不含空格*  ，複製到的文字檔案並將其提供給SharePoint Add-in的開發人員。
     
-    > [!秘訣]
+    > **秘訣**
       > 某些開發人員部落格文章及論壇 (英文) 問題報表的序號直接複製到剪貼簿建立隱藏任何字元的字串，會序號無法辨識的程式碼中SharePoint Add-in。請考慮手動輸入而不是將它複製編號。
 接下來您建立之憑證的 cer 版本。這包含公開金鑰的遠端網頁伺服器與 SharePoint 所用解密的遠端 web 應用程式的要求及驗證這些要求的存取 token。將會建立遠端網頁伺服器上，然後將其移至 SharePoint 伺服器陣列。
   
@@ -314,7 +314,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
   
 
-> [!注意事項]
+> **注意事項**
 > 註冊為權杖發行者的憑證不是有效立即且增益集將無法運作到為止。可能需要只要之前的所有 SharePoint 伺服器都辨識新的權杖發行者的 24 小時。執行 iisreset 所有 SharePoint 伺服器上，您可以執行的動作不干擾 SharePoint 使用者，將會導致其立即辨識發行者。
   
     
@@ -325,7 +325,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 <a name="WebConfig"> </a>
 
 
-> [!秘訣]
+> **秘訣**
 > 包含經過修改的 web.config 的程式碼範例，請參閱 [PnP / 範例 (英文) / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore).
   
     
@@ -351,7 +351,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
   
 
-> [!注意事項]
+> **注意事項**
 > Office Developer Tools for Visual Studio可能已新增 **ClientSigningCertificatePath**和 **ClientSigningCertificatePassword**的增益集設定機碼。這些不適用於實際執行增益集和應刪除。
   
     
@@ -383,7 +383,7 @@ Office Developer Tools for Visual Studio所產生的 TokenHelper.cs (或.vb) 檔
     
     
 
-> [!秘訣]
+> **秘訣**
 > 包含經過修改的 tokenhelper.cs 程式碼範例，請參閱 [PnP / 範例 (英文) / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore).
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!秘訣]
+> **秘訣**
 > Microsoft 更新Visual Studio並永遠無法更新Office Developer Tools for Visual Studio比過去和文件中的更常排程隨時變更。本節是撰寫使用Visual Studio於 2013 年 10 日發行的版本與Office Developer Tools for Visual Studio中其所包含的版本。如果您正在處理Visual Studio或工具的舊版或更新版本，您可能需要查閱Visual Studio說明與部落格文章，以尋找相等方法執行這些程序中的步驟。
   
     

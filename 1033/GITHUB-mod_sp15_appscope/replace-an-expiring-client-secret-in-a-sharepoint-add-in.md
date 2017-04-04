@@ -7,14 +7,14 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
 
 # Replace an expiring client secret in a SharePoint Add-in
 Learn how to add a new client secret for a SharePoint Add-in that is registered with AppRegNew.aspx.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 Client secrets for SharePoint Add-ins that are registered using the AppRegNew.aspx page expire after one year. This article explains how to add a new secret for the add-in, as well as how to create a new client secret that is valid for three years.
-> [!NOTE]
+> **NOTE**
 > This article is about SharePoint Add-ins that are distributed through an organization catalog and registered with the AppRegNew.aspx page. If the add-in is registered on the Seller Dashboard, see  [Create or update client IDs and secrets in the Seller Dashboard](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update). 
   
     
@@ -120,7 +120,7 @@ $newClientSecret
     
   
 
-> [!TIP]
+> **TIP**
 > By default, the add-in secret lasts one year. You can set this to a shorter or longer (up to 3 years maximum) by using the **-EndDate** parameter on the three calls of the **New-MsolServicePrincipalCredential** cmdlet. The value of the parameter must be a [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y) object set to no longer than 3 years from **DateTime.Now**. 
   
     
@@ -130,7 +130,7 @@ $newClientSecret
 ## Update the remote web application in Visual Studio to use the new secret
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > If your add-in was originally created with a prerelease version the Microsoft Office Developer Tools for Visual Studio, it may contain an out-of-date version of the TokenHelper.cs (or .vb) file. If the file does not contain the string "secondaryClientSecret", it is out-of-date and it must be replaced before you can update the web application with a new secret. To obtain a copy of a release version of the file, you need Visual Studio 2012 or later. Create a new SharePoint Add-in project in Visual Studio. Copy the TokenHelper file from it to the web application project of your SharePoint Add-in. 
   
     

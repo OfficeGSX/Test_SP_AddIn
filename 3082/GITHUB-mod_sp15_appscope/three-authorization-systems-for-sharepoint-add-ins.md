@@ -25,7 +25,7 @@ En SharePoint, una Complemento de SharePoint es una entidad de seguridad de iden
     
     Para más información sobre la creación de un Complemento de SharePoint que use el sistema de confianza baja, vea el nodo del SDK  [Crear complementos de SharePoint que usen autorización de baja confianza](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
     
-    > [!NOTA]
+    > **NOTA**
       > El cliente que instala el complemento debe tener una cuenta de Office 365. Esto es necesario para que el complemento acceda a Azure ACS. Sin embargo, el cliente no necesita usar la cuenta para nada más y el complemento se puede instalar en una granja de SharePoint local tras realizar algunas tareas simples de configuración. 
 - **Elevada confianza**: un complemento hospedado por el proveedor puede establecer confianza con SharePoint con certificados digitales. El sistema de elevada confianza está pensado principalmente para los complementos cuyos componentes remotos están hospedados localmente. El complemento se puede instalar en una granja de SharePoint que no esté conectada a Internet, pero no se puede instalar en SharePoint Online ni vender en la Tienda Office.
     

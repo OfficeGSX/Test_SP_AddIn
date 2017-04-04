@@ -21,7 +21,7 @@ Napa ist ein Tool, mit dem Sie von SharePoint gehostete SharePoint-Add-Ins erste
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Installation von Napa wird nicht für lokale SharePoint-Bereitstellungen unterstützt. 
   
     
@@ -34,7 +34,7 @@ Durch die Verwendung von Napa können Sie Ihr SharePoint-Add-Ins im Browser stat
     
 
 Durch Befolgen der Schritte in diesem Artikel erfahren Sie, wie Sie ein einfaches in SharePoint gehostetes SharePoint-Add-In mithilfe von Napa erstellen. Das von Ihnen erstellte Add-In enhält Steuerelemente und Code für das Verwalten von Listen und Listenelementen.
-> [!HINWEIS]
+> **HINWEIS**
 > Sie können mit Napa nur von SharePoint gehostete, keine von Anbietern gehostete SharePoint-Add-Ins erstellen. Informationen zu den Unterschieden finden Sie unter  [SharePoint-Add-Ins](sharepoint-add-ins.md). > Sie können in Napa nicht die Add-In-Aktualisierungssemantik von SharePoint verwenden, die unter  [Aktualisieren von Add-In-Webkomponenten in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) beschrieben ist. Wenn Sie also eine in Napa erstellte App aktualisieren müssen, müssen Sie diese zuerst in Visual Studio importieren. Anweisungen dazu finden Sie später in diesem Artikel.> Sie können ein SharePoint-Add-In auch mit Visual Studio erstellen. Weitere Informationen finden Sie unter  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
   
     
@@ -49,7 +49,7 @@ Wenn Sie noch kein SharePoint Online-Abonnement haben, das Sie für die Entwicku
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 >  Möglicherweise haben Sie bereits Zugriff auf eine Website für Office 365-Entwickler.> **Sind Sie MSDN-Abonnent?** Visual Studio Ultimate und Visual Studio Premium mit MSDN-Abonnenten erhalten als Bonus ein einjähriges Office 365 Developer-Abonnement. [Lösen Sie Ihren Bonus heute ein.](https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1402926170&amp;rver=6.0.5276.0&amp;wp=MCMBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fsubscriptions%2fmanage%2fdefault.aspx&amp;lc=1033&amp;id=254354&amp;mkt=de-DE)> **Besitzen Sie einen der folgenden Office 365 Abonnementpläne?**> **Falls ja, kann ein Administrator des Office 365-Abonnements eine Website für Entwickler** über das [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx) erstellen. Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -67,7 +67,7 @@ Es gibt zwei Wege zu einem Office 365-Plan.
     
   
 
-> [!TIPP]
+> **TIPP**
 > Jeder dieser Links wird in einem anderen Fenster oder einer anderen Registerkarte geöffnet, damit die nachfolgenden Anweisungen übersichtlich bleiben. 
   
     
@@ -112,7 +112,7 @@ Es gibt zwei Wege zu einem Office 365-Plan.
   
 
     
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie beim Versuch, sich bei einem Entwicklerkonto anzumelden, bei einem anderen Microsoft-Konto angemeldet sind, wird möglicherweise die folgende Nachricht angezeigt: „Die eingegebene Benutzer-ID hat leider nicht funktioniert. Sie ist anscheinend nicht gültig. Geben Sie die Benutzer-ID ein, die Ihnen von Ihrem Unternehmen zugewiesen wurde. Ihre Benutzer-ID hat in der Regel das Format  *someone@example.com*  oder *someone@example.onmicrosoft.com*  ."> Wenn diese Nachricht angezeigt wird, melden Sie sich vom Microsoft-Konto ab, und versuchen Sie es erneut. Sollte die Nachricht weiterhin angezeigt werden, löschen Sie den Browsercache, oder wechseln Sie zu **InPrivate-Browsen** und füllen Sie das Formular aus.
   
     
@@ -279,7 +279,7 @@ In diesem Verfahren fügen Sie JavaScript-Code hinzu, damit Benutzer Listen im S
   
 2. Fügen Sie in der Datei **App.js** die Variablen `web`,  `lists` und `listItemcollection` zu den beiden Standardvariablen hinzu, und ändern Sie den Code in der Funktion `$(document).ready()` in das folgende Beispiel.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Im Code werden gewellte Unterstreichungen angezeigt. Diese werden im Laufe der nächsten Schritte ausgeblendet. 
 
   ```
@@ -533,7 +533,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Werden die Listenelemente nicht angezeigt, wenn Sie das Add-In ausführen, stellen Sie sicher, dass die  `displayLists();`-Anweisung nach dem vorhergehenden Code kommt. 
 
     Im nächsten Schritt fügen Sie JavaScript-Funktionen für die neuen Definitionen und eine Unterstützungsfunktion ( `getItems()`) hinzu. In der folgenden Tabelle sind die Hauptfunktionen beschrieben.

@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # As cadeias de caracteres da URL e tokens SharePoint Add-ins
 Saiba quais símbolos de URL estão disponíveis para uso em Suplementos do SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Para obter informações gerais sobre URLs construindo em SharePoint 2013 e o uso de tokens dessas URLs, consulte  [URLs e tokens do SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). Este tópico descreve os tokens que estão disponíveis no Suplementos do SharePoint.
   
     

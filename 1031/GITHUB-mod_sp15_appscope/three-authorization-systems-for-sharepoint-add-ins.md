@@ -25,7 +25,7 @@ In SharePoint ist eine SharePoint-Add-In genau wie ein Benutzer ein Identitätsp
     
     Weitere Informationen zum Erstellen einer SharePoint-Add-In, die das System mit niedriger Vertauensebene verwendet, finden Sie im SDK-Knoten  [Erstellen von SharePoint-Add-Ins, die die Autorisierung mit niedriger Vertrauensebene verwenden](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Der Kunde, der die App installiert, muss über ein Office 365-Konto verfügen. Dieses ist erforderlich, damit die App Zugriff auf Azure ACS hat. Der Kunde benötigt dieses Konto jedoch für keinen anderen Zweck und die App kann in einer lokalen SharePoint-Farm installiert werden, nachdem einige einfache Konfigurationsaufgaben auf der Farm durchgeführt wurden. 
 - **Besonders vertrauenswürdig**: Eine vom Anbieter gehostete App kann eine Vertrauensstellung mit SharePoint einrichten, indem sie digitale Zertifikate verwendet. Das besonders vertrauenswürdige System ist primär für Apps vorgesehen, deren Remotekomponenten lokal gehostet werden. Die App kann in einer SharePoint-Farm installiert werden, die nicht mit dem Internet verbunden ist. Die App kann nicht auf SharePoint Online installiert oder im Office Store verkauft werden.
     

@@ -331,7 +331,7 @@ jQuery.ajax({
     
     
 
-> [!注释]
+> **注释**
 > 在 JavaScript 中写入的云托管的外接程序组件必须使用跨域库中的 **SP.RequestExecutor** 对象访问 SharePoint 数据。跨域库请求无需包含访问令牌。
   
     
@@ -358,7 +358,7 @@ jQuery.ajax({
     
     
 
-> [!注释]
+> **注释**
 > 云托管的外接程序需要外接程序 Web 实例，才能在使用跨域库时访问 SharePoint 数据。 
   
     
@@ -375,7 +375,7 @@ jQuery.ajax({
 |SharePoint 承载  <br/> |外接程序 Web 组件访问其他网站集中的数据（仅租户范围的外接程序）  <br/> | _<应用程序 Web URL>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<目标网站 URL>_'  <br/> |
    
 
-> [!注释]
+> **注释**
 > 跨域库数据访问方案还需要相应的外接程序权限。有关详细信息，请参阅 [访问主机 Web 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)和 [访问各网站集的数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope)。 
   
     

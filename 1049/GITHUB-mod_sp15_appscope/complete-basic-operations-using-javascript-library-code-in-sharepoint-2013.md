@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint 2013
 Сведения о том, как писать код для выполнения базовых операций с помощью клиентской объектной модели JavaScript в SharePoint 2013.
-> [!Примечание]
+> **Примечание**
 > Пример создания Надстройка SharePoint "Hello World", использующей библиотеку JavaScript, см. в статье  [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md). 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!Примечание]
+> **Примечание**
 > Если вы пытаетесь получить доступ к другим свойствам, код создает исключение, потому что остальные свойства недоступны. 
   
     
@@ -788,7 +788,7 @@ function deleteFolder(resultpanel) {
     
     
 
-> [!Примечание]
+> **Примечание**
 > С помощью объектной модели JavaScript можно работать только с файлами размером до 1,5 МБ. Чтобы отправлять более крупные файлы, используйте REST. Дополнительные сведения см. в разделе  [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles). 
   
     
@@ -1051,7 +1051,7 @@ function onQueryFailed(sender, args) {
     
     
 
-> [!Примечание]
+> **Примечание**
 > При создании запросов для клиентской объектной модели с помощью LINQ применяется поставщик  [LINQ to Objects](http://msdn.microsoft.com/library/bb397919.aspx), а не  [LINQ to SharePoint](http://msdn.microsoft.com/library/ee535491.aspx), который можно использовать только при написании кода для серверной 
   
     

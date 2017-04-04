@@ -23,7 +23,7 @@ Un package de Complément SharePoint est un fichier doté d'une extension « .ap
   
 - **Fonctionnalités du site web hôte avec les actions personnalisées ou les composants de complément :** Outre les composants SharePoint 2013 déployés sur le site web de complément, un Complément SharePoint peut également déployer une ou plusieurs actions personnalisées (éléments de menu contextuel ou extensions du ruban) sur le site web hôte. Pour ce faire, il faut inclure dans le package du complément une fonctionnalité non comprise dans le fichier .wsp du package et qui déploie les composants qui iront sur le site web hôte. Cette fonctionnalité « souple » est appelée fonctionnalité du site web hôte. Les composants de complément sont déployés sur le site web hôte de la même manière. La fonctionnalité du site web hôte consiste en un fichier feature.xml SharePoint 2013 standard et d'un ou de plusieurs fichiers associés elements.xml. Par exemple, un fichier elements.xml pour une action personnalisée contient un balisage **CustomAction** pour l'action personnalisée. Il peut également inclure le balisage pour les composants de complément. Seuls ces deux types de composants peuvent figurer dans la fonctionnalité du site web hôte. Ces fonctionnalités du site web hôte ne sont pas détaillées dans le manifeste du complément. Cependant, elles représentent des « composants » dans le sens OPC et il existe une relation OPC explicite entre le manifeste du complément et chacun de ces fichiers. Pour obtenir un exemple de package de complément contenant une fonctionnalité du site web hôte, voir [Créer des actions personnalisées à déployer avec les compléments pour SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Les administrateurs locataires ont la possibilité d'effectuer une installation par lot d'un Complément SharePoint sur plusieurs sites web. Un complément installé de cette manière est dit avoir une étendue **Tenant**. Si le complément n'a pas été installé en lots, mais séparément sur chaque site, il a une étendue **Web**. Si la fonctionnalité du site web hôte inclut les extensions de ruban ou les composants du complément, elles ne sont pas déployées sur les sites web hôtes si le complément est installé par lot, donc seuls les éléments de menu contextuels sont déployés avec les compléments à étendue locataire. L'étendue du complément ne doit pas être confondue avec l'étendue de la fonctionnalité. L'étendue de la fonctionnalité détermine où les éléments sont déployés dans une fonctionnalité. Les possibilités sont **Farm**, **WebApplication**, **Site** (soit collection de sites) et **Web**. Seule l'option **Web** est permise pour les fonctionnalités dans les Compléments SharePoint (les fonctionnalités du site web hôte et les fonctionnalités comprises dans le fichier .wsp dans un package de complément). L'étendue du complément se rapporte à l'étendue de l'installation d'un complément. Les possibilités sont **Web**, auquel cas le complément a été installé sur un ou plusieurs sites web site par site et **Tenant**, auquel cas le complément a été installé par lot sur tout ou partie des sous-ensembles de sites web du locataire d'un client. Pour plus d'informations sur les étendues **Tenant** et **Web**, voir  [Locations et étendues de déploiement des compléments pour SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - **Fichiers de ressources de localisation (.resx) :** ils servent à localiser les aspects d'un manifeste de complément, y compris le titre de l'application et les aspects des fonctionnalités du site web hôte dans le package du complément. (Les composants individuels du package du complément se trouvant dans leur propre package, comme les fichiers .wsp, les packages Sites web Azure et les manifestes de complément, ont chacun leurs propres processus de localisation qui sont appliqués exactement de la même manière que si les éléments en question ne faisaient pas partie d'un Complément SharePoint.) Pour obtenir un exemple de package de complément comprenant des fichiers .resx pour une fonctionnalité du site web hôte, voir [Localiser les compléments pour SharePoint](localize-sharepoint-add-ins.md).
     
@@ -45,7 +45,7 @@ Chaque Complément SharePoint comprend un fichier appmanifest.xml. Ce fichier do
   
 - L'URL de la page d'accueil, c'est-à-dire de la page qui s'affiche au lancement du complément. Cela peut être une page du site web de complément, une page basée sur le cloud ou une page située sur un serveur web ISV.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Dans certains cas, il peut y avoir des restrictions sur le type de fichier pouvant être spécifié dans l'élément **StartPage**. Pour plus d'informations, voir  [L'élément StartPage (PropertiesDefinition, complexType) (manifeste SharePoint Add-in)](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx). > Quand vous associez plusieurs paramètres de requête dans la valeur **StartPage**, vous devez utiliser l'esperluette encodée «  `&amp;amp;` » plutôt que « `&amp;` » ou un point-virgule pour les ajouter ensemble.
 - D'autres propriétés du complément. Il s'agit du titre et des paramètres régionaux pris en charge par le complément (les deux sont obligatoires), des URL des services traitant les événements avant l'installation, après la mise à niveau et avant la désinstallation, ainsi que du modèle web à utiliser quand le site web de complément est créé.
     
@@ -60,7 +60,7 @@ Chaque Complément SharePoint comprend un fichier appmanifest.xml. Ce fichier do
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le fichier manifeste du complément est le seul élément obligatoire dans le package du complément, mais tous les éléments de la liste précédente ne sont pas des composants obligatoires du fichier. 
   
     
@@ -79,7 +79,7 @@ Vous devez utiliser l'élément **SupportedLocales** ou **SupportedLanguages** d
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Les valeurs de l'attribut de l' **Scope** de l'élément **AppPermissionRequest** sont structurées comme des URL, mais sont en réalité des chaînes littérales. Aucun composant de la valeur **Scope** exemple de l'exemple suivant n'est un espace réservé. Pour plus d'informations sur les autorisations, voir [Autorisations des compléments dans SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     
@@ -124,7 +124,7 @@ SharePoint 2013 fournit plusieurs jetons pouvant être utilisés dans l'élémen
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Ces jetons ne sont pas utilisés dans l'attribut **Scope** d'un élément **AppPermissionRequest**. 
   
     

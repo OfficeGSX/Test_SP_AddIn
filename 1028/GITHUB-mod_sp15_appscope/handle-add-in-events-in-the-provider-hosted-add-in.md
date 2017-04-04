@@ -32,7 +32,7 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeAdd inEventHandlers.sln 檔案。
   
     
@@ -87,7 +87,7 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
     
     
 
-> [!注意事項]
+> **注意事項**
 > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：> 以滑鼠右鍵按一下頂端的 [ **方案總管中**的 [解決方案] 節點並選取 [ **設定啟動專案**。> 請確定所有三個專案設定以 **啟動**[ **動作**] 欄中。
   
     
@@ -282,7 +282,7 @@ private void DeleteTenant(string tenantName)
   ```
 
 
-> [!注意事項]
+> **注意事項**
 > 在舊版這一系列的文章，您設定每次您按 F5 重建公司資料庫的專案。這會清空 **Tenants**表格。
   
     

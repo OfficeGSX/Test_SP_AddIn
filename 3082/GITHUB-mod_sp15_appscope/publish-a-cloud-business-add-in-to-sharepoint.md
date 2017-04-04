@@ -28,7 +28,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
   
 3. En la página **Configuración del servidor de aplicación**, elija el botón de opción **Servidor IIS** y, a continuación, elija **Siguiente**.
     
-    > [!NOTA]
+    > **NOTA**
       > Si tiene un archivo de configuración de publicación (.publishsettings o .pubxml) que fue creado para otro complemento, puede usar dicho archivo para proporcionar el resto de la información necesaria para la publicación. Si es así, elija el el botón **Configuración de importación** en el asistente.
 4. En la página **Publicar salida**, elija el botón de opción **Publicar directamente en un servidor ahora** y, a continuación, elija **Siguiente**.
     
@@ -58,7 +58,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
     
   
 
-    > [!NOTA]
+    > **NOTA**
       > Si está publicando a través de un servidor de seguridad, tendrá que abrir el puerto 8172. 
 6. En el cuadro de texto **Sitio/aplicación**, escriba los nombres del sitio web IIS y su complemento.
     
@@ -66,7 +66,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
     
     Si está publicando en IIS en su equipo propio para realizar pruebas, o si está publicando en un servidor en su red interna, escriba el nombre del sitio y del complemento como aparecen en el Administrador de IIS. Por ejemplo, si el complemento MiAplicación se está publicando en el sitio web predeterminado en IIS, escriba Sitio web predeterminado/MiAplicación.
     
-    > [!NOTA]
+    > **NOTA**
       > Si está publicando en una carpeta web existente y desea quitar todo el contenido, active la casilla **Quitar archivos adicionales en destino**. 
 7. En los cuadros de texto **Nombre de usuario** y **Contraseña**, escriba las credenciales para una cuenta que tenga suficiente autoridad para realizar tareas de implementación el servidor web de destino y, a continuación, elija **Siguiente**.
     
@@ -78,7 +78,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
   
 9. En la página **Conexiones de datos**, en la pestaña **Conexiones de base de datos**, escriba las cadenas de conexión del usuario y del administrador para el servidor de base de datos donde desea publicar la base de datos de su complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > La base de datos no tiene que estar ubicada en el servidor donde va a publicar el complemento. 
 10. En la pestaña **Orígenes de datos adjuntos**, actualice las cadenas de conexión para conexiones adicionales según sea necesario y, a continuación, elija **Siguiente**.
     
@@ -120,7 +120,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
   
 3. En la página **Configuración del servidor de aplicación**, elija el botón de opción **Servidor IIS** y, a continuación, elija **Siguiente**.
     
-    > [!NOTA]
+    > **NOTA**
       > Si tiene un archivo de configuración de publicación (.publishsettings o .pubxml) que fue creado para otro complemento, puede usar dicho archivo para proporcionar el resto de la información necesaria para la publicación. Si es así, elija el el botón **Configuración de importación** en el asistente.
 4. En la página **Publicar salida**, elija el botón de opción **Crear un paquete en un disco** y, a continuación, elija **Siguiente**.
     

@@ -7,14 +7,14 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # Use the client-side People Picker control in SharePoint-hosted SharePoint Add-ins
 Learn how to use the client-side People Picker control in SharePoint-hosted SharePoint Add-ins.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > This topic assumes that you know how to create a SharePoint-hosted SharePoint Add-in. To learn how to create one, start at  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -50,7 +50,7 @@ The picker has the following components:
     
   
 
-> [!NOTE]
+> **NOTE**
 > The picker and its functionality are defined in the **clientforms.js**, **clientpeoplepicker.js**, and **autofill.js** script files, which are located in the %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS folder on the server.
   
     
@@ -65,7 +65,7 @@ This article assumes that you create the SharePoint Add-in by using Napa on an O
     
     
 
-> [!NOTE]
+> **NOTE**
 > Go to  [Set up a development environment for SharePoint Add-ins on Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) to find out how to sign up for a Developer Site and start using Napa.
   
     
@@ -86,7 +86,7 @@ If you're not using Napa on a Developer Site, you'll need the following:
     
   
 
-> [!NOTE]
+> **NOTE**
 > For guidance about how to set up a development environment that fits your needs, see  [Start building Office and SharePoint Add-ins](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx). 
   
     
@@ -178,7 +178,7 @@ The first example shows the page markup for the **PlaceHolderMain** **asp:Conten
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > Depending on your environment, you might not have to explicitly reference all of these dependencies. 
   
     

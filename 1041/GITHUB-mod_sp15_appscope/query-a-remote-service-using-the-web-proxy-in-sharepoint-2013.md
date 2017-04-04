@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. F5 キーを押します。
     
-    > [!メモ]
+    > **メモ**
       > F5 キーを押すと、Visual Studio によってソリューションが構築され、アドインが展開され、アドインのアクセス許可ページが表示されます。 
 2. [ **信頼する**] ボタンを選択します。
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http または https  <br/> |7000 ～ 10000  <br/> |
    
 
-> [!重要]
+> **重要**
 > 送信ポートは、ホスト ファイアウォールの可用性に依存しています。具体的には、SharePoint Onlineでは http-80 および https-443 だけが使用可能です。 
   
     
     
 
 |
-|未処理の例外 " **SP は未定義です。** " <br/> |ブラウザー ウィンドウで SP.RequestExecutor.js ファイルにアクセスできることを確認してください。  <br/> ローカル サーバーを開発環境として使用している場合は、IIS のループバック チェックを無効にする必要があります。Windows PowerShell コマンド プロンプトから以下のコマンドを実行してください。  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!注意]> 運用環境では、IIS のループバック チェックを無効にすることはお勧めしません。           |
+|未処理の例外 " **SP は未定義です。** " <br/> |ブラウザー ウィンドウで SP.RequestExecutor.js ファイルにアクセスできることを確認してください。  <br/> ローカル サーバーを開発環境として使用している場合は、IIS のループバック チェックを無効にする必要があります。Windows PowerShell コマンド プロンプトから以下のコマンドを実行してください。  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **注意**> 運用環境では、IIS のループバック チェックを無効にすることはお勧めしません。           |
 |リモート エンドポイントからの応答のサイズが、構成された制限を超えています。  <br/> |Web プロキシ要求の応答のサイズは 200 KB 未満でなければなりません。  <br/> |
    
 

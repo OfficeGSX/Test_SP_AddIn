@@ -27,7 +27,7 @@ Existen distintas formas de recuperar la identidad e información del usuario, e
     
   
 
-> [!NOTA]
+> **NOTA**
 > En el siguiente enlace encontrará información sobre cómo configurar un entorno de desarrollo que se ajuste a sus necesidades:  [Empezar a crear complementos hospedados en proveedor para SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -98,7 +98,7 @@ A continuación, se describe otro método para recuperar el nombre de inicio de 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Las API se encuentran en el espacio de nombres Microsoft.SharePoint.Client.Utilities en el ensamblado Microsoft.SharePoint.Client.dll [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/es-es/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx). 
   
     

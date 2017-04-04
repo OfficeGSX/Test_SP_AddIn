@@ -67,7 +67,7 @@ using Microsoft.SharePoint.Client;
     
     
 
-> [!メモ]
+> **メモ**
 > ASP.NET Web アプリケーションでプロバイダー向けのホスト型 SharePoint アドインを作成しており、Visual Studio で Web アプリケーション プロジェクトにアセンブリへの参照を追加する場合、アセンブリが既に Web サーバーにインストールされていることがわかっているのでない限り、アセンブリの [ **Copy Local**] プロパティを [ **True**] に設定します。あるいは、アドインを展開する前に確実にインストールされるようにすることもできます。.NET Framework は Microsoft Azure Web ロールおよび Azure Web サイト にインストールされます。ただし、SharePoint 2013 クライアント アセンブリと各種の Microsoft マネージ コード拡張機能および基盤はインストールされません。Office Developer Tools for Visual Studio 2012 は、SharePoint アドインでよく使われる一部のアセンブリへの参照を自動的に追加し、[ **Copy Local**] プロパティを設定します。 
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!メモ]
+> **メモ**
 > 他のプロパティへのアクセスを試行した場合、他のプロパティは使用できないので、このコードは例外をスローします。 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!メモ]
+> **メモ**
 > **web.Lists** プロパティではなく **LoadQuery** メソッドを使用して、戻り値を別のコレクションに格納することもできます。また、 [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) および [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 用の **using** ステートメントを追加する必要があります。さらに、 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 名前空間用の using ステートメントに対するエイリアスを追加して、そのクラスを明確に参照できるようにします。例: `using SP = Microsoft.SharePoint.Client;`
   
     
@@ -339,7 +339,7 @@ context.ExecuteQuery();
     
     
 
-> [!メモ]
+> **メモ**
 > この例では、 **context.CastTo** を使用してキャストを行います。クライアント ライブラリは、クエリの実行前は、返されるオブジェクト "フィールド" の実際の型がわからないため、 **SharePoint.Field** が唯一の可能な型になります。実際の型がわかっている場合は、 **ClientContext.CastTo<RealType>** メソッドを使用してオブジェクトをキャストできます。
   
     
@@ -382,7 +382,7 @@ context.ExecuteQuery();
     
     
 
-> [!メモ]
+> **メモ**
 >  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) プロパティを使用して、特定のフォルダーに返されるアイテムを制限できます。
   
     
@@ -541,7 +541,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-> [!メモ]
+> **メモ**
 > この例で使用されている  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) メソッドはリモート メソッドです。クライアント コレクションが既に入力されている場合でも、クライアント コレクションのデータを使用することはありません。
   
     
@@ -1004,7 +1004,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-> [!メモ]
+> **メモ**
 > 条件範囲内でメソッドの呼び出しとプロパティの設定を行うことは許可されていません。これは、クライアント ライブラリでは、メソッドの呼び出しとプロパティの設定の副次的影響を追跡しないためです。条件範囲の中では、 **Load** のみを使用する必要があります。
   
     

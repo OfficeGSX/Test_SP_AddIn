@@ -27,7 +27,7 @@ Cuando se crean nuevas colecciones de sitios en el arrendamiento, los complement
     
     
 
-> [!NOTA]
+> **NOTA**
 > El ámbito de complemento no debe confundirse con el ámbito de función. El ámbito de función determina dónde se implementarán los elementos de una función. Las posibilidades incluyen **Farm**, **WebApplication**, **Site** (es decir, colección de sitios) y **Web**. Solo se permite **Web** para funciones de Complementos de SharePoint (tanto funciones de web de host como funciones dentro de un .wsp en un paquete de complementos).> El ámbito de complemento no debe confundirse con los niveles de permiso del complemento. Los Complementos de SharePoint pueden pedir permisos a todas las partes del contenido de SharePoint o solo a las seleccionadas en los niveles de lista, web, colección de sitios y arrendamiento. La instalación de un complemento con ámbito de inquilino no le concede los permisos que, de otra forma, tendría; ni cancela las concesiones fundamentales del modelo de seguridad de SharePoint. Para obtener más información sobre los permisos del complemento, vea  [Permisos de complemento en SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

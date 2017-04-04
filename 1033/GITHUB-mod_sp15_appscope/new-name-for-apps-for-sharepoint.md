@@ -7,7 +7,7 @@ ms.assetid: 05b07b04-6c8b-4b7e-bd86-e32c589dfead
 
 # New name for apps for SharePoint
 
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -26,7 +26,7 @@ We are currently updating our products, documentation, samples, and other resour
 |app web  <br/> |add-in web  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > The name of the app launcher and the **My apps** page in Office 365 is not changing. The **My apps** page launches first-party apps and standalone web applications that authenticate using Azure AD.
   
     

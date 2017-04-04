@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # Use o controle People Picker de cliente no hospedado no SharePoint SharePoint suplementos
 Aprenda a usar o controle de selecionador de pessoas do lado do cliente em SharePoint-hospedado Suplementos do SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Este tópico pressupõe que você saiba como criar um hospedado no SharePoint Suplemento do SharePoint. Para saber como criar um, inicie em  [Introdução à criação de suplementos do SharePoint hospedados pelo provedor](get-started-creating-provider-hosted-sharepoint-add-ins.md).
   
     
@@ -43,7 +43,7 @@ O seletor de tem os seguintes componentes:
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O seletor e sua funcionalidade são definidos nos arquivos de script **clientforms.js**, **clientpeoplepicker.js**e **autofill.js**, que estão localizados na pasta %ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\ TEMPLATE\\LAYOUTS no servidor.
   
     
@@ -58,7 +58,7 @@ Este artigo pressupõe que você crie o Suplemento do SharePoint usando Napa em 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Vá para  [Configurar um ambiente de desenvolvimento para suplementos do SharePoint no Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) para descobrir como Inscreva-se para um Site do desenvolvedor e começar a usar o Napa.
   
     
@@ -79,7 +79,7 @@ Se você não estiver usando Napa em um Site do desenvolvedor, será necessário
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter orientação sobre como configurar um ambiente de desenvolvimento que atenda às suas necessidades, consulte  [Start building Office and SharePoint Add-ins](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx).
   
     
@@ -171,7 +171,7 @@ O primeiro exemplo mostra a marcação de página para o **PlaceHolderMain** **a
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Dependendo do seu ambiente, você não pode precisar fazer referência explícita todas essas dependências.
   
     

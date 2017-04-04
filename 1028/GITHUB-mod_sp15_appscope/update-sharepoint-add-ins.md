@@ -28,7 +28,7 @@ ms.assetid: 3edcb33c-fa9e-4e9e-82d6-5519fd981324
     
 使用者可以安裝更新而不第一個解除安裝舊版。更新基礎結構測試更新安裝並回復如果有任何錯誤會回復。
     
-> [!重要]
+> **重要**
 > 您無法變更使用更新系統的 *增益集類型*  。例如，就無法變更增益集從 SharePoint 主控的更新裝載提供者。若要變更的類型時，您需要 [從舊增益集新增一個移轉](sharepoint-add-ins-update-process.md#Major)。特別自 [在關閉自動裝載的增益集的預覽程式](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/)，您應該注意您無法提供者主控增益集來更新自動裝載增益集。您必須將轉換增益集 [將自動裝載 SharePoint 增益集轉換成提供者主控增益集 (英文)](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md)所述。
   
     
@@ -200,7 +200,7 @@ ms.assetid: 3edcb33c-fa9e-4e9e-82d6-5519fd981324
     
 
     
-> [!注意事項]
+> **注意事項**
 > 如果您需要查看在增益集的 「 可更新 」 通知並排顯示每隔 24 小時進行較頻繁，您可以使用 [更新程序的 SharePoint 增益集](sharepoint-add-ins-update-process.md#Minor)所述的方法將會緊接著顯示的通知。
   
     

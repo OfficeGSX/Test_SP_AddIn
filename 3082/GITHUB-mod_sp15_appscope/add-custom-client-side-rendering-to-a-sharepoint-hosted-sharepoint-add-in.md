@@ -35,21 +35,21 @@ Este es el octavo de una serie de artículos sobre los fundamentos del desarroll
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados en SharePoint, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) y abrir el archivo BeforeClientRenderedControl.sln.
   
     
     
 
 Puede usar un pequeño JavaScript de cliente para personalizar la representación de elementos web, la mayoría de los tipos de campos (columnas) y algunos otros controles asignando un archivo de JavaScript a la propiedad **JSLink** del control, como **SPField.JSLink**. También puede agregar lógica de validación de cliente de esta manera. En este artículo, personalizamos la representación de un campo en una lista del Complemento de SharePoint Orientación del empleado mediante la representación del lado cliente.
-> [!NOTA]
+> **NOTA**
 > Si el usuario final tiene JavaScript deshabilitado en el explorador, SharePoint revertirá a la representación y la validación de servidor. 
   
     
     
 
 
-> [!NOTA]
+> **NOTA**
 > La propiedad JSLink no es compatible con las listas de encuesta o de eventos. Un calendario de SharePoint es una lista de eventos. 
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. Para indicar a SharePoint que use el JavaScript personalizado, agregue un nuevo atributo, **JSLink**, al elemento **Field** y, a continuación, asigne la siguiente dirección URL como valor correspondiente: `~site/Scripts/OrientationStageRendering.js`.
     
-    > [!NOTA]
+    > **NOTA**
       > La propiedad **JSLink** siempre es un archivo, no un método. No hay ninguna forma de indicar a SharePoint qué método ejecutar. Ese es el motivo por el cual el archivo contiene un método que se ejecuta automáticamente.
 
     La etiqueta de apertura del elemento **Field** ahora será similar a la siguiente.

@@ -25,7 +25,7 @@ ms.assetid: 623fdab7-856e-4a89-9f5d-748a2ba1ef2e
     
     有关创建使用低信任系统的 SharePoint 外接程序的详细信息，请参阅 SDK 节点 [创建使用低信任授权的 SharePoint 外接程序](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)。
     
-    > [!注释]
+    > **注释**
       > 安装外接程序的客户必须具有 Office 365 帐户。向外接程序授予 Azure ACS 访问权限时需要此帐户。但是客户不需要将此帐户用于任何其他目的，在服务器场上完成一些简单的配置任务后，外接程序即可安装到本地 SharePoint 场。 
 - **高信任**：提供程序承载的外接程序可以使用数字证书，与 SharePoint 建立信任。高信任系统主要用于其远程组件在本地承载的外接程序。外接程序可以安装到未连接到 Internet 的 SharePoint 场。外接程序不能安装到 SharePoint Online，也不能在 Office 商店中出售。
     

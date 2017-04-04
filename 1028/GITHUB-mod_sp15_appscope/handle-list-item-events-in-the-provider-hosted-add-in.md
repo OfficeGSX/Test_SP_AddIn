@@ -41,7 +41,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeRER.sln 檔案。
   
     
@@ -51,7 +51,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
 ## 以程式設計方式部署預期出貨清單
 
 
-> [!注意事項]
+> **注意事項**
 > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：
   
     
@@ -134,7 +134,7 @@ CreateExpectedShipmentsList();
 ## 建立清單項目事件接收器
 
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已透過此系列文章工作，然後已設定開發環境適用於偵錯的遠端事件接收器。如果您未完成的請參閱 ＜  [設定偵錯的事件接收器的解決方案](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug)之前您前往任何進一步本主題中。
   
     
@@ -145,7 +145,7 @@ Office Developer Tools for Visual Studio包括可新增到SharePoint Add-in解�
     
     
 
-> [!注意事項]
+> **注意事項**
 > 清單及清單項目事件接收器稱為的遠端事件接收器(RER) 因為其程式碼是遠端從 SharePoint]，在雲端中或在 SharePoint 伺服器陣列外的內部伺服器。不過，會觸發這些事件會在 SharePoint 中。
   
     
@@ -160,7 +160,7 @@ Office Developer Tools for Visual Studio包括可新增到SharePoint Add-in解�
   
 3. 工具所建立的介面檔案、 *.svc 檔案與程式碼後置檔案。我們不需要介面檔案 IRemoteEventReceiver1.cs，所以將其刪除。(工具可能會有其自動開啟。若是如此，關閉並將其刪除。)
     
-    > [!注意事項]
+    > **注意事項**
       > 當您建立增益集的事件接收器安裝及解除安裝舊版的這一系列文章中的事件時， Office Developer Tools for Visual Studio會新增其 Url 的應用程式資訊清單檔案。清單及清單項目事件接收器不會註冊應用程式資訊清單中。而這些 (中註冊的提供者主控增益集) 以程式設計方式。您將在稍後步驟這麼做。
 4. 開啟的程式碼後置檔案: RemoteEventReceiver1.svc.cs。以其整個內容取代下列程式碼。請注意下列有關這段程式碼：
     
@@ -414,7 +414,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > **KeyNotFoundException**也是為什麼我們需要欄位請保留 **已新增至庫存**可見的編輯項目] 表單上的原因。SharePoint 不包括隱藏 **AfterProperties**中編輯項目] 表單的欄位。
 
     整個方法現在看起來應類似如下。
@@ -669,7 +669,7 @@ using System.Web.Configuration;
     
   
 
-> [!注意事項]
+> **注意事項**
 > 手動複製服務匯流排 URL 並貼至 (修改版本) 它將 web.config 並不是唯一方式的不同 URL 需要處理偵錯從當執行時在生產環境中的遠端事件接收器時。> 我們無法以程式設計方式將值儲存 **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**的某處 SharePoint 或遠端資料庫中且然後我們初次執行的程式碼讀取並將其指派給 `receiver.ReceiverUrl`屬性。> 我們無法將清單項目事件接收器登錄的增益集已安裝的事件處理常式的一部分。然後我們無法以程式設計方式讀取 **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**、 修改它，並將其指派給 `receiver.ReceiverUrl`而不需要任何地方儲存。這項策略會需要的 **預期出貨**也建立清單的增益集已安裝的事件處理常式中由於它必須存在於之前的處理常式無法註冊與它。(此外，請注意我們無法合併為我們的增益集事件接收器和清單項目事件接收器的單一接收器 (也就是相同的.svc 及。 svc.cs 檔案)。在該情況下 URL 的任何修改不是  `receiver.ReceiverUrl` 的必要之前使用值)。
   
     

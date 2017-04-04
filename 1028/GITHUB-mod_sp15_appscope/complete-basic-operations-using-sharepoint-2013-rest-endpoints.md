@@ -331,7 +331,7 @@ jQuery.ajax({
     
     
 
-> [!注意事項]
+> **注意事項**
 > 雲端裝載增益集元件撰寫的JavaScript必須使用 **SP.RequestExecutor**物件中的跨網域文件庫來存取SharePoint資料。包含存取權杖，不需要跨網域文件庫要求。
   
     
@@ -358,7 +358,7 @@ jQuery.ajax({
     
     
 
-> [!注意事項]
+> **注意事項**
 > 增益集網站執行個體的雲端裝載增益集存取SharePoint資料時所使用的跨網域文件庫。
   
     
@@ -375,7 +375,7 @@ jQuery.ajax({
 |SharePoint-裝載於 <br/> |增益集 web 元件存取其他網站集合 （租用戶範圍增益集只） 中的資料 <br/> | _<app web url>_/_api SP./AppContextSite(@target)/web/title? @ 目標 =' _<target site url>_' <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 跨網域資料存取案例也需要適當的增益集權限。如需詳細資訊，請參閱 [從主機 web Access 資料](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)和 [Access 資料跨網站集合](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope)。
   
     

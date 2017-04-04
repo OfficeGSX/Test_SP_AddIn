@@ -64,7 +64,7 @@ Un Complemento de SharePoint usa solicitudes de permisos para especificar los pe
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los ámbitos descritos en esta sección solo se aplican al contenido de la lista y al contenido de la biblioteca. Para más información sobre los ámbitos de otras características, vea la sección  [Descripción de los tipos de permisos de complementos y ámbitos de permisos](#Perm_types) en este artículo.
   
     
@@ -75,7 +75,7 @@ Los ámbitos de solicitud de permisos indican la ubicación en la jerarquía de 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Un Complemento de SharePoint tiene su propia identidad y es una entidad de seguridad, denominada entidad de seguridad de complemento. Al igual que los usuarios y los grupos, una entidad de seguridad de complemento tiene determinados permisos o derechos. La entidad de seguridad de complemento tiene derechos de control total sobre la web de complemento, de modo que solo necesita solicitar permisos a los recursos de SharePoint de la web de host u otras ubicaciones fuera de la web de complementos, Para más información sobre la web de complementos, consulte  [Aspectos importantes del panorama de desarrollo y arquitectura de los complementos para SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md) y [Hospedar webs, webs de complementos y componentes de SharePoint en SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md). 
   
     
@@ -126,14 +126,14 @@ Los permisos indican las actividades que puede hacer un complemento dentro del �
     
   
 
-> [!NOTA]
+> **NOTA**
 > Para más información sobre qué derechos Read, Write, Manage y FullControl incluye, vea  [Planear la administración de permisos de aplicaciones en SharePoint 2013](https://technet.microsoft.com/es-es/library/jj219576%28office.15%29.aspx). 
   
     
     
 
 
-> [!NOTA]
+> **NOTA**
 > Estos derechos se corresponden con los niveles de permisos de usuario predeterminados de SharePoint: Reader, Contributor, Designer y Full Control. Para más información, vea  [Permisos de usuario y niveles de permisos](http://technet.microsoft.com/es-es/library/cc288074.aspx). > Los nombres de derechos de complementos no coinciden con los nombres de derechos de roles de usuario de SharePoint, para evitar confusiones entre derechos de complementos y derechos de roles de usuario. Dado que la personalización de permisos asociados a roles de usuarios de SharePoint no afecta a los niveles de solicitud de permisos de complementos, los nombres de derechos de complementos no coinciden con los roles de usuario de SharePoint correspondientes, excepto Full Control, que no se puede personalizar con la interfaz de usuario de administración de permisos. 
   
     
@@ -154,7 +154,7 @@ Además:
     
   
 
-> [!NOTA]
+> **NOTA**
 > Las aplicaciones de Tienda Office tienen algunas restricciones sobre el tipo de derechos que puede solicitar un complemento. Para más información, vea la sección  [Descripción de los tipos de permisos de complementos y ámbitos de permisos](#Perm_types) de este artículo.
   
     
@@ -196,7 +196,7 @@ La tabla 2 muestra el ámbito de solicitud de permisos para el contenido de la b
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los URI usados en la tabla son valores literales. 
   
     
@@ -285,7 +285,7 @@ El ámbito de solicitud de permisos para otras características de SharePoint se
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los URI usados en las tablas son valores literales. 
   
     
@@ -304,7 +304,7 @@ La tabla 3 muestra el ámbito de solicitud de permisos para Servicios de conecti
 |http://sharepoint/bcs/connection  <br/> |Read  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Para más información sobre el ámbito de solicitud de permisos de complementos de BCS, vea  [Servicios de conectividad empresarial de SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx). 
   
     
@@ -327,7 +327,7 @@ La tabla 4 muestra el ámbito de solicitud de permisos para Search. También enu
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Para más información sobre el ámbito de solicitud de permisos de complementos de Search, vea  [Buscar en SharePoint 2013](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx). 
   
     
@@ -342,7 +342,7 @@ La tabla 5 muestra el ámbito de solicitud de permisos para Project Server 2013.
     
     
 
-> [!NOTA]
+> **NOTA**
 > Un complemento que usa servicios y características de Project Server 2013 se debe probar en un entorno que tenga los servicios y las características necesarias de Project Server. El ensamblado del proveedor de permisos de Project Server 2013 que conoce los ámbitos de permisos de Project Server 2013 no se instala de forma predeterminada con SharePoint Server. Para más información, vea la documentación del desarrollador de Project Server 2013. 
   
     
@@ -381,7 +381,7 @@ La tabla 6 muestra el ámbito de solicitud de permisos para funciones sociales. 
 |http://sharepoint/social/microfeed  <br/> |Read, Write, Manage, FullControl  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Para más información sobre el ámbito de solicitud de permisos de complementos de funciones sociales, vea  [Solicitudes de permiso de complementos para acceder a funciones sociales](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms). 
   
     
@@ -404,7 +404,7 @@ La tabla 7 muestra el ámbito de solicitud de permisos para taxonomía. También
 |http://sharepoint/taxonomy  <br/> |Read, Write  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > Para más información sobre el ámbito de solicitud de permisos de complementos de taxonomía, vea  [Agregar capacidades de SharePoint 2013](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx). 
   
     
@@ -438,7 +438,7 @@ La propiedad **BaseTemplateId** es un elemento secundario, no un atributo del el
 ||||
 |:-----|:-----|:-----|
 |**URI de ámbito** <br/> |**Propiedad** <br/> |**Tipo** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entero  <br/> > [!NOTA]> Para más información sobre **BaseTemplateId** y el correspondiente valor entero para la plantilla de lista base, vea el atributo **Type** de [Elemento List (Lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entero  <br/> > **NOTA**> Para más información sobre **BaseTemplateId** y el correspondiente valor entero para la plantilla de lista base, vea el atributo **Type** de [Elemento List (Lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
    
 
 ## Administrar y solucionar problemas de permisos de complementos

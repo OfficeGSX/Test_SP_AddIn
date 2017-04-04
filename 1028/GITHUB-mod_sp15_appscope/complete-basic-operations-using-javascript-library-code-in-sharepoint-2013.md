@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # 使用 SharePoint 2013 中的 JavaScript 程式庫程式碼完成基本作業
 深入了解如何使用 SharePoint 2013 中的 JavaScript 用戶端物件模型來撰寫程式碼，以執行基本作業。
-> [!注意事項]
+> **注意事項**
 > 如需使用 JavaScript 程式庫的 "Hello World" 層級範例 SharePoint Add-in，請參閱  [使用 SharePoint JavaScript Api 來處理 SharePoint 資料](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md)。 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 如果您嘗試存取其他屬性，程式碼會擲回例外，因為沒有其他屬性可用。 
   
     
@@ -788,7 +788,7 @@ function deleteFolder(resultpanel) {
     
     
 
-> [!注意事項]
+> **注意事項**
 > 您只可以使用 JavaScript 物件模型，處理多達 1.5 MB 的檔案。若要上載較大的檔案，請使用 REST (具象狀態傳輸)。如需詳細資訊，請參閱 [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles)。 
   
     
@@ -1051,7 +1051,7 @@ function onQueryFailed(sender, args) {
     
     
 
-> [!注意事項]
+> **注意事項**
 > 當您使用 LINQ 來針對用戶端物件模型建立查詢時，會使用  [LINQ to Objects](http://msdn.microsoft.com/zh-tw/library/bb397919)，而不是  [LINQ to SharePoint provider](http://msdn.microsoft.com/zh-tw/library/ee535491)，後者只有當您撰寫針對伺服器物件模型的程式碼時，才可以使用。 
   
     

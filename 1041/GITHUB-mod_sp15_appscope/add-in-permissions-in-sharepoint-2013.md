@@ -64,7 +64,7 @@ SharePoint アドインはアクセス許可要求を使用して、正常に機
     
     
 
-> [!メモ]
+> **メモ**
 > このセクションで説明する範囲は、リストコンテンツとライブラリ コンテンツのみに適用されます。他の機能の範囲の詳細については、この記事の「 [アドインのアクセス許可の種類とアクセス許可の範囲を理解する](#Perm_types)」セクションを参照してください。 
   
     
@@ -75,7 +75,7 @@ SharePoint アドインはアクセス許可要求を使用して、正常に機
     
     
 
-> [!メモ]
+> **メモ**
 > SharePoint アドインは独自の ID を持つ、アドイン プリンシパルと呼ばれるセキュリティ プリンシパルです。ユーザーやグループと同じように、アドイン プリンシパルには一定のアクセス許可または権限があります。アドイン プリンシパルには、アドイン Web に対するフル コントロール権限があるため、必要なのは、ホスト Web や他の場所など、アドイン Web の外側にある SharePoint リソースのアクセス許可を要求することだけです。アドイン Web の詳細については、「 [SharePoint アドインのアーキテクチャおよび開発環境に関する重要な要素](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)」および「 [SharePoint 2013 のホスト Web、アドイン Web、および SharePoint コンポーネント](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md)」を参照してください。 
   
     
@@ -126,14 +126,14 @@ SharePoint は、コンテンツ データベースおよびテナンシー内�
     
   
 
-> [!メモ]
+> **メモ**
 > Read、Write、Manage、および FullControl 権限の内容の詳細については、「 [SharePoint 2013 でアドインの権限管理を計画する](http://technet.microsoft.com/ja-jp/library/jj219576%28office.15%29.aspx)」を参照してください。 
   
     
     
 
 
-> [!メモ]
+> **メモ**
 > これらの権限は、SharePoint の既定のユーザー アクセス許可レベルである、読み取り、投稿、デザイン、およびフル コントロールに対応します。ユーザーのアクセス許可レベルの詳細については、「 [ユーザー権限とアクセス許可レベル](http://technet.microsoft.com/ja-jp/library/cc288074.aspx)を参照してください。 > アドインの権限名は、SharePoint ユーザー ロールの権限名とは一致しません。これは、ユーザー ロールの権限とアドインの権限の混同を避けるためです。SharePoint ユーザー ロールに関連付けられるアクセス許可をカスタマイズしても、アドインのアクセス許可要求レベルに影響しないため、アドインの権限名は、フル コントロール以外は対応する SharePoint ユーザー ロールと一致せず、アクセス許可管理ユーザー インターフェイスを通してカスタマイズすることはできません。 
   
     
@@ -154,7 +154,7 @@ SharePoint は、コンテンツ データベースおよびテナンシー内�
     
   
 
-> [!メモ]
+> **メモ**
 > Office ストア アプリには、アドインが要求できる権限の種類に関して、いくつかの制限があります。詳細については、この記事の「 [アドインのアクセス許可の種類とアクセス許可の範囲を理解する](#Perm_types)」セクションを参照してください。 
   
     
@@ -196,7 +196,7 @@ Office ストア アプリでは、Read、Write、および、Manage 権限の�
     
     
 
-> [!メモ]
+> **メモ**
 > 表 2 で使用されている URI はリテラル値です。 
   
     
@@ -285,7 +285,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
     
     
 
-> [!メモ]
+> **メモ**
 > 表で使用されている URI はリテラル値です。 
   
     
@@ -304,7 +304,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 |http://sharepoint/bcs/connection  <br/> |Read  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > BCS アドインのアクセス許可要求範囲の詳細については、「 [SharePoint 2013 の Business Connectivity Services](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx)」を参照してください。 
   
     
@@ -327,7 +327,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > 検索アドインのアクセス許可要求範囲の詳細については、「 [SharePoint 2013 の検索](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx)」を参照してください。 
   
     
@@ -342,7 +342,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
     
     
 
-> [!メモ]
+> **メモ**
 > Project Server 2013 の機能とサービスを使用するアドインは、必要な Project Server の機能とサービスが用意された環境でテストする必要があります。Project Server 2013 のアクセス許可範囲を認識する Project Server 2013 のアクセス許可プロバイダー アセンブリは、既定では SharePoint Server にインストールされません。詳細については、Project Server 2013 の開発者ドキュメントを参照してください。 
   
     
@@ -381,7 +381,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 |http://sharepoint/social/microfeed  <br/> |Read、Write、Manage、FullControl  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > ソーシャル機能アドインでのアクセス許可の要求スコープの詳細については、「 [ソーシャル機能にアクセスするためのアドインのアクセス許可要求](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms)」を参照してください。 
   
     
@@ -404,7 +404,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 |http://sharepoint/taxonomy  <br/> |Read、Write  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > タクソノミー アドインのアクセス許可要求範囲の詳細については、「 [SharePoint 2013 機能の追加](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx)」を参照してください。 
   
     
@@ -438,7 +438,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 ||||
 |:-----|:-----|:-----|
 |**範囲 URI** <br/> |**プロパティ** <br/> |**型** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > [!メモ]> **BaseTemplateId** およびリスト ベース テンプレートに対応する整数値の詳細については、 [List 要素 (リスト)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) の **Type** 属性を参照してください。          |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **メモ**> **BaseTemplateId** およびリスト ベース テンプレートに対応する整数値の詳細については、 [List 要素 (リスト)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) の **Type** 属性を参照してください。          |
    
 
 ## アドインのアクセス許可の管理とトラブルシューティング

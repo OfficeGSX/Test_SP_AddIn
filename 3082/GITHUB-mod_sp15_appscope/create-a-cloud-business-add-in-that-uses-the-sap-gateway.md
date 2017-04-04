@@ -41,7 +41,7 @@ Los siguientes son los requisitos previos para los procedimientos descritos en e
   
 - **Una cuenta organizativa de Microsoft Azure.** Consulte [Crear una cuenta organizativa de usuario en Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
     
-    > [!NOTA]
+    > **NOTA**
       > Inicie sesión en su cuenta de Office 365 (login.microsoftonline.com) para cambiar la contraseña temporal una vez que la cuenta se haya creado. 
 - **Un extremo OData de SAP** que incluya datos de ejemplo. Consulte la documentación de [Puerta de enlace de SAP para Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -67,7 +67,7 @@ En el ejemplo de este artículo, el complemento SellerDashboard manipula los dat
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Para ver una demostración en vídeo de este complemento, vea el vídeo  [Seminario web técnico: Puerta de enlace de SAP para Microsoft &amp; Modelo de desarrollo de Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=517378) en BrightTalk. La demostración de la funcionalidad de la aplicación comienza a los 48 minutos en la línea de tiempo.
   
     
@@ -434,7 +434,7 @@ public interface IInventoryItem
     
     La mayoría de las propiedades tiene el mismo tipo que las propiedades en el esquema base de datos de SAP, excepto StockNo, cuyo tipo se ha cambiado de **int** a **string**. Esto es porque StockNo se usa como una manera de definir la relación entre los datos de SAP y la biblioteca de imágenes de SharePoint.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > StockNo debe tener el tipo **string** porque el valor almacenado en la biblioteca de imágenes de SharePoint es **Text**. Estos dos tipos deben coincidir para lograr el mashup de datos.
 
     La implementación de las dos interfaces se encuentra en CarInventoryModel/InventoryItem.cs y CarInventoryModel/InventoryCollection.cs.
@@ -457,7 +457,7 @@ La biblioteca de imágenes en el sitio de host de SharePoint se denomina Contoso
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Los nombres de columna distinguen mayúsculas de minúsculas. 
   
     
@@ -823,7 +823,7 @@ Complete los pasos de esta sección para implementar el complemento. Antes de im
   
 2. En el menú de la izquierda, haga clic en **Sitios web**.
     
-    > [!NOTA]
+    > **NOTA**
       > Usará este sitio web para hospedar el complemento de SharePoint hospedado por el proveedor para SellerDashboard. 
 3. En la barra de comandos en la parte inferior de la página, haga clic en **Nuevo**.
     
@@ -892,7 +892,7 @@ Los pasos de esta sección describen cómo registrar el complemento de ejemplo d
   
 3. En la página de Active Directory, haga clic en el directorio que se ha configurado para la puerta de enlace de SAP para Microsoft.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       >  Si no está seguro de cuál se usó, consulte al administrador de la puerta de enlace de SAP para Microsoft. Sugerencia: Es el directorio que contiene los usuarios y grupos para la puerta de enlace de SAP para Microsoft.
 4. En la barra de navegación superior, elija **APLICACIONES**.
     
@@ -921,7 +921,7 @@ Los pasos de esta sección describen cómo registrar el complemento de ejemplo d
     
   
 
-> [!NOTA]
+> **NOTA**
 > Debe registrar el complemento con Azure AD dos veces: una vez con fines de depuración, y luego para implementarlo para la producción, como se describe en el paso 10. > Para registrar el complemento con fines de depuración, use la **DIRECCIÓN URL DE INICIO DE SESIÓN** y el **URI DE ID. DE APLICACIÓN** con la dirección URL de depuración del proyecto SellerDashboard.Server para poder ejecutar el depurador de Visual Studio (F5). Esta dirección URL debe tener el formato https://localhost. *nnnn*  , donde *nnnn*  es un número de puerto. Puede encontrar esta dirección URL en el panel Propiedades en Visual Studio.> A continuación, cuando esté listo para la implementación de producción, edite el registro para usar la dirección URL correcta de producción. 
   
     

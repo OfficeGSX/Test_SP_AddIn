@@ -29,7 +29,7 @@ SharePoint アドインにワークフローを含める方法について説明
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeWorkflow.sln ファイルを開くこともできます。
   
     
@@ -100,7 +100,7 @@ SharePoint アドインにワークフローを含める方法について説明
     
     
 
-> [!メモ]
+> **メモ**
 > ワークフローの設計のさまざまなタイミングで、内側に感嘆符がある青いダイヤ型の記号 
   
     
@@ -255,7 +255,7 @@ SharePoint アドインにワークフローを含める方法について説明
     
     
     
-    > [!メモ]
+    > **メモ**
       > **Test Service Host** コンソールが開かない場合は、ワークフローのデバッグを有効にする必要があります。 **ソリューション エクスプローラー**でプロジェクトの名前を右クリックして、[ **プロパティ**] を選択します。[ **プロパティ**] ペインの [ **SharePoint**] タブを開き、[ **ワークフロー デバッグの有効化**] ボックスをオンにします。 
 3. Office 365 開発者アカウントの電子メールの受信ボックス (Outlook) に移動します。" *Employee*  is ready for HR paperwork." という件名の電子メールがあります。 *Employee*  は項目を編集した従業員の名前です。電子メールの本文には、" *Employee*  is waiting in the lobby to fill out benefits and employment forms." と記載されています。例を次に示します。
     
@@ -269,7 +269,7 @@ SharePoint アドインにワークフローを含める方法について説明
     
     
     
-    > [!ヒント]
+    > **ヒント**
       > ワークフローが開始しても完了せず、電子メールが送信されない場合は、デバッグ セッションを終了して、コードに問題があると判断する前に、さらに F5 キーを数回押してみてください。問題が SharePoint Online にある場合があります。 > それでも問題が解決しないときは、 **ListFieldsContentType** というコンテンツ タイプがない場合は schema.xml ファイルの **ContentTypes** セクションに追加します。マークアップの例を次に示します。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

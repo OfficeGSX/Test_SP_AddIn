@@ -7,7 +7,7 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # Visual Studio 2013 的 Office 开发人员工具的新增功能
 您可以通过使用适用于 Visual Studio Office 开发人员工具 的以下新功能开发 SharePoint 外接程序。 
-> [!提示]
+> **提示**
 > 下载最新版本的  [Visual Studio 2013 的 Office 开发人员工具](http://aka.ms/OfficeDevToolsForVS2013)。 
   
     

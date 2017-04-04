@@ -25,7 +25,7 @@ SharePoint, um Suplemento do SharePoint é uma identidade principal, assim como 
     
     Para obter mais informações sobre como criar um Suplemento do SharePoint que usa o sistema de baixa confiança, consulte o nó do SDK  [Criando Add-ins do SharePoint que usam a autorização de baixa confiança](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O cliente que instala o suplemento deve ter uma conta de Office 365. Isso é necessário fornecer o acesso suplemento para o Azure ACS. No entanto, o cliente não precisa usar a conta para qualquer outro fim e o suplemento pode ser instalado em um farm no local SharePoint depois de algumas tarefas de configuração simples no farm.
 - **Alta confiança**: um suplemento hospedado em provedor pode estabelecer relação de confiança com SharePoint usando certificados digitais. O sistema de alta confiança é principalmente pretendida para suplementos cujos componentes remotos são hospedados no local. O suplemento pode ser instalado em um farm de SharePoint que não está conectado à Internet. O suplemento o não pode ser instalado em SharePoint Online ou vendido na Office Store.
     

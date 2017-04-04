@@ -7,7 +7,7 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # Neuerungen bei Office-Entwicklungstools für Visual Studio 2013
 Sie können SharePoint-Add-Ins mithilfe der folgenden neuen Features entwickeln, die in den Office-Entwicklertools für Visual Studio verfügbar sind. 
-> [!TIPP]
+> **TIPP**
 > Laden Sie die aktuelle Version von  [Office Developer Tools für Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) herunter.
   
     

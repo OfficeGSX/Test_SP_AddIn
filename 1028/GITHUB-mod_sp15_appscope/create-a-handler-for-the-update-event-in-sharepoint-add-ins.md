@@ -19,7 +19,7 @@ ms.assetid: 0fa088c5-54c6-482c-84ed-51c4f77c4127
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!注意事項]
+> **注意事項**
 > **版本編號系統:**一致性，如本主題假設的增益集版本號碼是 1.0.0.0、 2.0.0.0、 3.0.0.0，依此類推。不過的邏輯和指引適用於編號系統的是中。
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!重要]
+> **重要**
 > 如果您將元件新增至 [增益集之 **UpgradedEventEndpoint**處理常式中時，請務必將相同的程式碼新增至 **InstalledEventEndpoint**處理常式因為您要包含在增益集，以及全新安裝的元件。此外，您應該新增 [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) (或修改其) 增益集元件中移除。大致上，已新增或變更的 **InstalledEventEndpoint**的任何項目必須回復或刪除 **UninstallingEventEndpoint**。有一個例外是不刪除增益集已從第二階段資源回收筒之後仍然有用的資料。(網站以外的增益集 web 所建立的增益集應該會視為 data。)
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!重要]
+> **重要**
 > 將 **SPRemoteEventServiceStatus.CancelWithError** (或 **SPRemoteEventServiceStatus.CancelNoError**) 指派給 [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) 屬性很重要。此屬性是什麼訊號回復更新基礎結構。但 SharePoint 會重試您處理常式三次再回復更新。
   
     

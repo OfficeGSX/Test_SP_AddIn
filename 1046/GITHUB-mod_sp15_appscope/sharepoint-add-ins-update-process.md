@@ -13,7 +13,7 @@ Você precisa atualizar um Add-in do SharePoint, se você adicionar funcionalida
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Você não pode alterar o  *tipo de suplemento*  usando o sistema de atualização. Por exemplo, você não pode alterar um suplemento do hospedado no SharePoint para hospedado em provedor com uma atualização. Para fazer uma alteração de tipo, você precisa [migrar de um suplemento antigo para um novo](#Major). Em particular, desde que  [o programa de visualização para suplementos auto-hospedados foi fechado](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), você deve estar ciente de que você não pode atualizar um suplemento auto-hospedado para um suplemento hospedado pelo provedor. Você precisará converter o suplemento, conforme explicado em  [Converter um auto-hospedados Add-in do SharePoint em um suplemento hospedado em provedor](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md).
   
     
@@ -47,7 +47,7 @@ Dentro de 24 horas após carregar sua atualização para o catálogo do suplemen
     
 
     
-> [!DICA]
+> **DICA**
 > Quando você estiver desenvolvendo uma atualização, você não deseja aguardar 24 horas toda vez que você carrega uma nova versão em seu catálogo de suplemento do SharePoint de teste. Para obter informações sobre como atualizar imediatamente um add-in, consulte  [Atualizar um suplemento sem aguardar a 24 horas](update-sharepoint-add-ins.md#ImmediateUpdateNotice) .> Por padrão, o SharePoint verifica cada 24 horas atualizações para suplementos instalados. Um administrador de farm pode definir isso para outro valor usando o seguinte comando SharePoint Management Shell, onde n é o número de horas entre as verificações.>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`> Se o valor for definido como 0, a seleção é feita sempre que o trabalho de timer internas **Internal suplemento estado atualização** é executado, que por padrão é a cada hora. Administradores de farm podem usar a Administração Central para alterar a frequência do trabalho de timer ou executá-lo imediatamente.
   
     
@@ -77,14 +77,14 @@ SharePoint 2013 irá fazer o seguinte quando um usuário instala uma atualizaç�
   
 - SharePoint 2013 executa o serviço web de **UpgradedEventEndpoint**, se qualquer um estiver registrado no manifesto do suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se o suplemento estiver hospedado em provedor, você fornecer a lógica de atualização para todos os componentes não SharePoint do add-in. Na maioria das vezes, você atualizar esses componentes separadamente da atualização da Suplemento do SharePoint propriamente dito, assim como você instalou esses componentes separadamente da instalação do add-in. Mas, pode haver algumas alterações que devem acontecer somente quando um usuário atualiza o Suplemento do SharePoint. Essa lógica pode passar em um serviço da web **UpgradedEventEndpoint** ou em "primeiro execute após atualização" lógica do add-in em si.
 - SharePoint 2013 disponibiliza o suplemento e seus componentes novamente.
     
   
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se o esquema de qualquer lista no web add-in está sendo alterado, a lista é feita backup juntamente com o restante da web add-in. Isso pode levar algum tempo se houver muitos dados na lista. Se o processo de atualização não é possível concluir em 1 hora, ele pára e a atualização é revertida.
   
     
@@ -99,7 +99,7 @@ Em alguns cenários, convém produzir um suplemento totalmente novo para substit
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Itens no catálogo do suplemento de uma organização são diferenciados pelo  *nome de arquivo*  do pacote suplemento, e não a ID do produto ou o nome do add-in. Se o novo suplemento tem o mesmo nome de arquivo do pacote que o antigo, ele substituirá o antigo no catálogo add-in e o suplemento antigo não terá mais aparecem na página **Adicionar um suplemento**. Se você habilitar o controle de versão no pacote do suplemento quando você o carrega no catálogo, a versão antiga do arquivo (que é o aplicativo antigo) ainda está disponível no histórico do item. Você pode baixar o pacote de suplemento antigo ou revertê-la, mas não é possível ter ambos os antigos e novos suplementos como itens separados no catálogo ou na página **Adicionar um suplemento**, a menos que tenham nomes de arquivo distintos.
   
     
@@ -118,7 +118,7 @@ Em princípio, você pode reutilizar uma fonte de dados externa, compute compone
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > É recomendável que se você implementar um **InstalledEventEndpoint** ou um **UpgradedEventEndpoint** que instala componentes, você também deve implementar um **UninstallingEventEndpoint** que desinstala esses mesmos componentes. Fazer isso está em conformidade com os princípios de design que suplementos devem ser autônomos e desinstalar corretamente. No entanto, os dados que ainda seria útil aos usuários após o suplemento é desinstalado não devem ser excluídos. Sites criados por um suplemento, que não seja a web suplemento, geralmente devem ser considerados dados.
   
     

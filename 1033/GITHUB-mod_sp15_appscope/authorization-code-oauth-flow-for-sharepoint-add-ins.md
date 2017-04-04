@@ -8,7 +8,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 
 # Authorization Code OAuth flow for SharePoint Add-ins
 Learn the OAuth flow for add-ins that request permission to access SharePoint resources on the fly, and how to use the OAuthAuthorize.aspx page and the SharePoint redirect URI.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -19,7 +19,7 @@ Learn the OAuth flow for add-ins that request permission to access SharePoint re
 <a name="Overview"> </a>
 
 
-> [!NOTE]
+> **NOTE**
 > This article assumes that you are familiar with  [Creating SharePoint Add-ins that use low-trust authorization](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) and with the concepts and principles behind OAuth. For more information about OAuth, see [OAuth.net](http://oauth.net/) and [Web Authorization Protocol (oauth)](http://datatracker.ietf.org/doc/active/#oauth). 
   
     
@@ -30,7 +30,7 @@ In some scenarios, an add-in can request permission to access SharePoint resourc
     
     
 
-> [!NOTE]
+> **NOTE**
 > This type of add-in can only be run by users who have Manage permissions to the resources the add-in wants to access. For example, if an add-in requests only Read permission to a website, a user who has Read, but not Manage, rights to the website cannot run the add-in. 
   
     
@@ -57,7 +57,7 @@ This section summarizes the OAuth authentication and authorization flow for a Sh
     
     
 
-> [!NOTE]
+> **NOTE**
 > The flow **involves a series of interactions between your add-in, SharePoint, the authorization server (which is ACS), and the end user** at runtime. So, the flow requires either SharePoint Online or a SharePoint farm that is connected to the Internet so it can communicate with ACS. SharePoint farms that are not connected to the Internet must use [the high-trust authorization system](creating-sharepoint-add-ins-that-use-high-trust-authorization.md). 
   
     
@@ -108,7 +108,7 @@ The following are the steps in the Authentication Code Flow.
     
 
     
-> [!TIP]
+> **TIP**
 > These steps refer to methods in the TokenHelper.cs (or .vb) file. This managed code is not compiled, so there are no reference topics for it. However, the file itself is fully commented with descriptions of every class, member parameter, and return value. Consider having a copy of it open to refer to as you read these steps. 
   
     
@@ -165,7 +165,7 @@ If you are not using managed code, the scope aliases are used in the scope field
     
     
 
-> [!NOTE]
+> **NOTE**
 > For a description of the scopes, see  [Add-in permissions in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

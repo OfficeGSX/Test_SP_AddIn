@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # 建立及使用存取權杖中提供者主控高信任 SharePoint 增益集
 了解高信任 SharePoint 增益集與您的程式碼與它們的運作方式的存取權杖的角色。
-> [!重要]
+> **重要**
 > **本文是完全相關的存取權杖使用高信任授權系統都不 ACS system。** 安全性權杖 ACS 系統中之使用者的相關資訊，請參閱 [處理安全性權杖的提供者主控低信任層級 SharePoint 增益集](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md)。
   
     
@@ -24,7 +24,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 <a name="AccessTokens"> </a>
 
 
-> [!注意事項]
+> **注意事項**
 > 閱讀本文時請記住，特別是關於您的程式碼必須執行的工作]，如果您使用 managed 程式碼， Microsoft Office Developer Tools for Visual Studio將新增至每個SharePoint Add-in專案的兩個產生程式碼檔案、 SharePointContext.cs (或.vb) 和 TokenHelper.cs (或.vb) 可讓您執行大部分的這些工作。您的應用程式權杖通常處理程式碼包含少數撥給這些檔案中的類別。本主題中的詳細資料是以協助開發人員未使用 managed 程式碼 (和可協助使用者可以使用的疑難排解問題權杖)。> 在許多語言和平台的 OAuth 文件庫的連結都是：>  [2.0 OAuth](http://oauth.net/2/)捲動到 **用戶端文件庫** 。> 您可以找到更多搜尋 [github](https://github.com/)的"OAuth 2" 和"JSON web 語彙基元"(不含引號)。
   
     
@@ -123,7 +123,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
     
 
-> [!注意事項]
+> **注意事項**
 > 請注意您的程式碼會建立高信任存取 token 不同時要使用低信任層級驗證系統建立Azure ACS ：> 因為未簽署的存取權杖中使用者 + 來自高信任層級增益集的增益集呼叫 **alg**宣告標頭中的為"none"。> 增益集 URL **aud**值在此範例中的為正常的高信任系統在內部部署伺服器。> 沒有 **identityprovider**宣告，但沒有 **nii** (名稱識別簽發者) 具有相同種類的值為 low 信任授權系統中所用的 **identityprovider**宣告存取 token。(如需此值時 SAML 型身分識別提供者，請參閱 [安全性中 SharePoint 增益集組件 8](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx)及 [使用 SharePoint 增益集使用 SAML 與 FBA Sites in SharePoint 2013](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx)的 Steve Peschka 部落格文章。> 沒有 **actor**宣告，但沒有包含基底 64 編碼 inner 權杖使用 12 小時壽命 **actortoken**宣告。
   
     
@@ -207,7 +207,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 如果使用 [增益集僅在原則](add-in-authorization-policy-types-in-sharepoint-2013.md)高信任層級增益集，而且它進行SharePoint新增-僅在呼叫，如下所示的 token 是實際存取權杖。沒有外圍權杖。此外，沒有任何 **trustedfordelegation**宣告，因為使用者的權限已新增-僅在通話的無關。
   
     

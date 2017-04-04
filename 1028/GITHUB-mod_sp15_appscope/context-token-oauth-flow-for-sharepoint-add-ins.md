@@ -19,7 +19,7 @@ ms.assetid: 526c8c4a-5cbb-4efc-87d9-23ac73655cf4
     
     
 
-> [!注意事項]
+> **注意事項**
 > 遠端元件也可裝載回應SharePoint等項目清單或清單項目發生的事件的事件接收器。Contoso.com 可能會想要回應的遠端事件的範例是清單事件，例如新增或移除清單項目 ；或網頁事件，例如新增或刪除網站。如需如何建立的遠端事件接收器的詳細資訊，請參閱 [在 SharePoint 增益集建立的遠端事件接收器](create-a-remote-event-receiver-in-sharepoint-add-ins.md)。
   
     

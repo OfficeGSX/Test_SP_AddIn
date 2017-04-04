@@ -126,7 +126,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
   
   - Bereitstellen eines Werts für das **JSLink**-Element, das auf eine JavaScript-Datei zeigt, die zusammen mit der App bereitgestellt wird.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > The JSLink property is not supported on Survey or Events lists. A SharePoint calendar is an Events list. 
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die App bereit und öffnet die Berechtigungsseite für die App. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

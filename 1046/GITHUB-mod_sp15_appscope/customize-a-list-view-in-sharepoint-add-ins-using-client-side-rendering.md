@@ -126,7 +126,7 @@ A Figura 1 mostra um modo de exibição renderizado do cliente de uma lista de c
   
   - Fornece um valor para o elemento **JSLink** que aponta para um arquivo de JavaScript que é provisionado com o suplemento.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > A propriedade não é suportada em pesquisa ou eventos de JSLink lista. Um calendário do SharePoint é uma lista de eventos.
 
   ```XML
@@ -243,7 +243,7 @@ function postRenderHandler(ctx) {
 
 1. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 2. Escolha o botão **De confiança**.
     

@@ -17,7 +17,7 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: in SharePoint gehostet u
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Eine Geräte-App, wie zum Beispiel eine mobile App, ist keine "SharePoint-Add-In" im eigentlichen Sinne, auch wenn sie auf SharePoint zugreift. Das gleiche gilt für eine Webanwendung, die außerhalb von SharePoint gestartet wird. Wenn Sie diese Art von Apps entwickeln möchten, finden Sie weitere Informationen unter  [Zugreifen auf SharePoint aus mobile und systemeigene Gerät apps](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx). 
   
     
@@ -60,7 +60,7 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: in SharePoint gehostet u
     
   
 
-> [!TIPP]
+> **TIPP**
 > **Sehen Sie sich ein Paar SharePoint-Add-Ins im** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint) an, um einen Eindruck zu erhalten, welche Möglichkeiten bei der Entwicklung Sie haben. Sie können auch eine SharePoint 2013-Website aufrufen und einige der kostenlosen SharePoint-Add-Ins installieren. Navigieren Sie einfach zu ** Websiteinhalte | ein Add-In hinzufügen | SharePoint Store**. 
   
     
@@ -153,7 +153,7 @@ Alle SharePoint-Komponenten, die in einem von SharePoint gehosteten Add-In sein 
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > **„Anbieter" ist, wer den Server oder das Cloud-Konto besitzt.** Das kann dasselbe Unternehmen oder dieselbe Organisation sein, das bzw. die die SharePoint-Farm oder den SharePoint Online-Mandanten besitzt, in der bzw. dem das Add-In installiert werden soll. Es kann jedoch auch der Entwickler des Add-Ins der Anbieter sein. Wenn ein Add-In für eine Organisation erstellt wird, übernimmt in der Regel diese Organisation das Hosting. Wenn ein Add-In jedoch für mehrere Organisationen erstellt wird, ist es wahrscheinlicher, dass der Entwickler die Remotekomponenten hostet. Das Entwicklerhosting ist verpflichtend, wenn das die SharePoint-Add-In über den Office Store vermarktet wird, da der Entwickler in der Regel keine Kontaktinformationen der Add-In-Käufer hat. In diesem Szenario kennen die verschiedenen Instanzen des Add-Ins den URI der Remotekomponente, da dieser im Add-In-Manifest angegeben ist.
   
     
@@ -235,7 +235,7 @@ Sind Sie bereit zu beginnen?
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie Anfänger in der SharePoint- und Webentwicklung sind, profitieren Sie am meisten, wenn Sie mit dem kostenlosen Kurs der Microsoft Virtual Academy oder einem Buch zur SharePoint 2013-Entwicklung beginnen. 
   
     

@@ -29,7 +29,7 @@ No entanto,  [para segurança](http://msdn.microsoft.com/en-us/library%28d=robot
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Biblioteca do domínio cruzado também é usada para permitir o acesso aos dados na direção contrária; ou seja, para permitir JavaScript em uma página de SharePoint para acessar dados em um domínio remoto. Consulte  [Dados de acesso remotos de uma página do SharePoint](#ReverseDirection) para obter mais informações.
   
     
@@ -43,7 +43,7 @@ Biblioteca do domínio cruzado SharePoint está contida no arquivo SP. RequestEx
     
     
 
-> [!CUIDADO]
+> **CUIDADO**
 > A função de  `postMessage()` funciona somente em navegadores que oferecem suporte a HTML 5, portanto Suplementos do SharePoint que usam a biblioteca entre domínios não funcionará nos navegadores mais antigos.
   
     
@@ -71,7 +71,7 @@ Obviamente, os componentes de remota a Suplemento do SharePoint ainda terá que 
   ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você usar a segunda opção (um **Internal** suplemento principal), em seguida, você pode usar apenas JavaScript e a biblioteca entre domínios para acessar SharePoint. O modelo de objeto do cliente SharePoint seja bloqueado em **Internal**Suplementos do SharePoint, portanto você não pode ter um sistema de autorização dual que usa a biblioteca de entre domínios e os sistemas de confiança baixa ou alta confiança.
   
     

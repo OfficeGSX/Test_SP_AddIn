@@ -21,7 +21,7 @@ Para usar o sistema de baixa confiança, o Suplemento do SharePoint primeiro dev
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > O registro requer que o aplicativo tem um domínio da Internet. Qualquer domínio existente pode ser usado para essa finalidade, mas você não pode ser 100% certas que qualquer domínio em que você não possui sempre existirá, portanto, um aplicativo web precisa ser parte de um aplicativo de dispositivo nativo, mesmo que o componente do aplicativo web não reproduzido nenhuma outra função que to ativar o registro. Para uma amostra de código avançado projetado dessa maneira, consulte  [provisionar os sites em lotes com o modelo de suplemento](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6).
   
     

@@ -10,7 +10,7 @@ Einrichten der Entwicklungsumgebung zum Debuggen von Remoteereignissen in mithil
 ## Konfigurieren des Debuggens für eine SharePoint-Remotetestwebsite
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Verfahren in diesem Abschnitt gelten nur, wenn sich die SharePoint-Testwebsite auf einem anderen Computer als Visual Studio befindet (oder wenn Sie eine SharePoint Online-Entwicklerwebsite als Testwebsite verwenden). Wenn sich SharePoint und Visual Studio auf demselben Computer befinden, überspringen Sie diesen Abschnitt. 
   
     

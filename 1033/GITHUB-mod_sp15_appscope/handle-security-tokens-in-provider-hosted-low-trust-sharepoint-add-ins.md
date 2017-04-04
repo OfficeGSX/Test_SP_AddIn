@@ -7,14 +7,14 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # Handle security tokens in provider-hosted low-trust SharePoint Add-ins
 Learn about the context, access, and refresh tokens that are used for authorization by low-trust, provider-hosted SharePoint Add-ins, and how to work with them in your code.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
     
 
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > **This article is entirely about the use of security tokens in the low-trust authorization system, not the high-trust system.** For information about the use of tokens in the high-trust system, see [Create and use access tokens in provider-hosted high-trust SharePoint Add-ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md). 
   
     
@@ -93,7 +93,7 @@ Depending on your SharePoint Add-in's architecture and the hosting platform, the
     
   
 
-> [!NOTE]
+> **NOTE**
 > In most scenarios, you won't be able to use terms as simple as "AccessToken" as the caching key because your add-in must keep the tokens for different users and SharePoint farms/tenancies distinct. If your add-in uses the  [Context Token flow](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows), there is special **CacheKey** provided by SharePoint that can be used to distinguish cached tokens. This section explains what the issues are and what to do when your application is not using the Context Token flow.
   
     
@@ -124,7 +124,7 @@ Finally, if your application makes both add-in-only and user+add-in calls to Sha
     
     
 
-> [!CAUTION]
+> **CAUTION**
 > **It is not a secure practice to store the access token in a cookie.** It is usually a good practice to avoid having the access token pass through the browser.
   
     
@@ -259,7 +259,7 @@ A context token is used only in the  [Context Token flow](creating-sharepoint-ad
     
   
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > The first two tasks must occur before the user navigates to another page or refreshes the page or the token is lost. For example, in an ASP.NET web forms application, consider doing those tasks in the **Page_Load** method (in a conditional code block that runs only when the request is not a postback). In an ASP.NET MVC application, consider doing these tasks in the default controller method.
   
     
@@ -292,7 +292,7 @@ You can **cache** whole context token, or just the refresh token and certain oth
     
     
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > We remind you one more time because it's really important: do not use client-side caching for the  *access*  token. It is safe to use it only for the context token.
   
     

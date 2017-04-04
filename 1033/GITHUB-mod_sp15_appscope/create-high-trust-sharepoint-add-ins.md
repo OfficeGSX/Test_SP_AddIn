@@ -7,7 +7,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
 
 # Create high-trust SharePoint Add-ins
 Learn how to create a high-trust SharePoint Add-in. A high-trust add-in uses digital certificates to establish a trust between the remote web application and SharePoint 2013. High-trust add-ins can only be installed to on premises SharePoint, not to Microsoft SharePoint Online, and they are primarily intended for use with an on premises, rather than cloud-based, web application.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -71,7 +71,7 @@ In SharePoint 2013, the server-to-server security token service (STS) provides a
     
     
 
-> [!NOTE]
+> **NOTE**
 > The server-to-server STS isn't intended for user authentication. Therefore, you won't see the server-to-server STS listed on the user sign-in page, in the **Authentication Provider** section in Central Administration, or in the People Picker in SharePoint 2013.
   
     
@@ -210,7 +210,7 @@ The Windows PowerShell script that you create in this section is intended to sup
     
     
 
-> [!NOTE]
+> **NOTE**
 > Double-check that you have completed the steps in  [Configure services in SharePoint for server-to-server add-in use](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) (which is listed as a prerequisite for this article). If not, you must configure it now, before you proceed.
   
     
@@ -255,7 +255,7 @@ $fullIssuerIdentifier = $specificIssuerId + '@' + $realm
   ```
 
 
-    > [!NOTE]
+    > **NOTE**
       > The  `$specificIssuerId` value must be a GUID because in a production environment each certificate must have a unique issuer. However, in this context, where you use the same certificate to debug all your high-trust add-ins, you can hard code the value. If for any reason, you use a different GUID from the one used here, * **be sure that any letters in the GUID are lower case*** . The SharePoint infrastructure currently requires lower case for certificate issuer GUIDs.
 5. Add the following lines to register the certificate as a trusted token issuer. The  `-Name` parameter must be unique so in a production configuration, it is common to use a GUID as part (or all) of the name, but in this context, you can use a friendly name. The `-IsTrustBroker` switch is needed to ensure that you can use the same certificate for all the high-trust add-ins you develop. The `iisreset` command is required to make your token issuer registered immediately. Without it, you might have to wait as long as 24 hours for the new issuer to be registered.
     
@@ -295,7 +295,7 @@ In this section, you learn how to create a high-trust SharePoint Add-in using Vi
     
     
 
-> [!NOTE]
+> **NOTE**
 > As stated in the  [Prerequisites for creating high-trust add-ins](#Prereq) section, this article assumes you know how to create a provider-hosted SharePoint Add-in. For more information, see [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     

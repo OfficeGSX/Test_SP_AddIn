@@ -20,7 +20,7 @@ ms.assetid: 0fbc9a8b-d652-44a8-b821-578afd8f33dc
     
   
 
-> [!Примечание]
+> **Примечание**
 > Если вы уже ознакомились с предыдущими статьями этого цикла о надстройках с размещением в SharePoint, у вас должно быть решение Visual Studio, которое поможет изучить и эту статью. Кроме того, вы можете скачать репозиторий на странице  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeColumns.sln.
   
     

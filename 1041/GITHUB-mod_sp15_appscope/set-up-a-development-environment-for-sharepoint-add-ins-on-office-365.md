@@ -49,7 +49,7 @@ Office 365 開発者向けサイトで SharePoint アドインの開発環境を
 <a name="o365_signup"> </a>
 
 
-> [!メモ]
+> **メモ**
 >  Office 365 開発者向けサイトに対するアクセス権が既にある場合もあります。> **MSDN サブスクライバーですか?** Visual Studio Enterprise の MSDN サブクスライバーはその特典として Office 365 Developer のサブスクリプションを受けられます。 [すぐに特典をお受け取りください。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **次のいずれかの Office 365 サブスクリプション プランをお持ちですか?**> **お持ちの場合、Office 365 サブスクリプションの管理者は  [Office 365 管理センター](https://portal.microsoftonline.com/admin/default.aspx)を使用して 開発者向けサイト** を作成できます。詳しくは、「 [既存の Office 365 サブスクリプション内で開発者向けサイトを作成する](create-a-developer-site-on-an-existing-office-365-subscription.md)」をご覧ください。 
   
     
@@ -70,7 +70,7 @@ Office 365 プランを取得するには、次の 3 つの方法があります
     
   
 
-> [!ヒント]
+> **ヒント**
 > これらのリンクを別のウィンドウかタブで開いて、以下の手順をすぐに実行できるようにします。 
   
     
@@ -115,7 +115,7 @@ Office 365 プランを取得するには、次の 3 つの方法があります
   
 
     
-> [!メモ]
+> **メモ**
 > 開発者アカウントにサインアップする際に別の Microsoft アカウントでログオンすると、「入力したユーザー ID が正常に機能しませんでした。無効である可能性があります。組織によって割り当てられた ユーザー ID を入力していることを確認してください。通常、 *someone@example.com*  や *someone@example.onmicrosoft.com*  のような形式をしています」というメッセージが表示されることがあります。> このメッセージが表示される場合、使用した Microsoft アカウントをログアウトし、もう一度やり直してください。引き続きこのメッセージが表示される場合には、ブラウザーのキャッシュをクリアするか、[ **InPrivate ブラウズ**] に切り替えてから、フォームに記入してください。 
   
     

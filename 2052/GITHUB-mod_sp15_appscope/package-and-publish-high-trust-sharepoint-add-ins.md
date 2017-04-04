@@ -46,7 +46,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 | [Digital Certificates](http://msdn.microsoft.com/library/e523b335-0156-4f47-b55c-b80495587c4f.aspx)和 [Working with Certificates](http://msdn.microsoft.com/library/6ffb8682-8f07-4a45-afbb-8d2487e9dbc3.aspx) <br/> |了解数字证书背后的基本思想。  <br/> |
    
 
-> [!注释]
+> **注释**
 > 高信任 SharePoint 外接程序只能安装到本地 SharePoint，不能安装到 Microsoft SharePoint Online，它们主要用于本地 Web 应用程序，而不是基于云的 Web 应用程序。本文介绍在该场景中如何发布外接程序。同样，在本文中，"客户"指安装 SharePoint 外接程序并托管外接程序的远程组件的企业。 
   
     
@@ -230,7 +230,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
   
 4. 将序列号（ *不包括空格*  ）复制到文本文件，然后将其提供给 SharePoint 外接程序的开发人员。
     
-    > [!提示]
+    > **提示**
       > 某些开发人员博客文章和论坛问题报告称，将序列号直接复制到剪贴板会产生一个包含隐藏字符的字符串，导致序列号对 SharePoint 外接程序中的代码不可识别。可以考虑手动键入数字，而不是进行复制。 
 接下来，您将创建证书的 cer 版本。此版本包含远程 Web 服务器的公钥，供 SharePoint 用于解密远程 Web 应用程序发出的请求并验证这些请求中的访问令牌。此版本在远程 Web 服务器上创建，然后移至 SharePoint 服务器场。
   
@@ -314,7 +314,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
   
 
-> [!注释]
+> **注释**
 > 将证书注册为令牌颁发者不会立即生效，外接程序需等注册生效后才能运行。可能需要 24 小时，才能使所有 SharePoint 服务器识别新的令牌颁发者。在所有 SharePoint 服务器上运行 iisreset 会使它们立即识别颁发者，前提是您可以在不影响 SharePoint 用户的情况下执行此操作。 
   
     
@@ -325,7 +325,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 <a name="WebConfig"> </a>
 
 
-> [!提示]
+> **提示**
 > 对于包含已修改 web.config 的代码示例，请参阅  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)。 
   
     
@@ -351,7 +351,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
   
 
-> [!注释]
+> **注释**
 > Visual Studio Office 开发人员工具 可能已添加 **ClientSigningCertificatePath** 和 **ClientSigningCertificatePassword** 的外接程序设置键。这些键在生产外接程序中不能使用，应该删除。
   
     
@@ -383,7 +383,7 @@ Visual Studio Office 开发人员工具 生成的 TokenHelper.cs（或 .vb）文
     
     
 
-> [!提示]
+> **提示**
 > 对于包含已修改 tokenhelper.cs 的代码示例，请参阅  [PnP / Samples / Core.OnPrem.S2S.WindowsCertStore](https://github.com/OfficeDev/PnP/tree/dev/Samples/Core.OnPrem.S2S.WindowsCertStore)。 
   
     
@@ -460,7 +460,7 @@ private static X509Certificate2 GetCertificateFromStore()
 <a name="Package"> </a>
 
 
-> [!提示]
+> **提示**
 > Microsoft 对 Visual Studio 和 Visual Studio Office 开发人员工具 的更新比过去频繁得多，文档无法始终与变更保持一致。本节使用 2013 年 10 月发布的 Visual Studio 版本及其中的 Visual Studio Office 开发人员工具 版本编写。如果您使用 Visual Studio 或工具的更早或更晚版本，您可能需要查阅 Visual Studio 帮助和博客文章，以查找执行这些过程中的步骤的相当方式。 
   
     

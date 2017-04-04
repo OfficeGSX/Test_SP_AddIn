@@ -13,7 +13,7 @@ Debe actualizar un complemento para SharePoint si agrega funciones, corrige un e
     
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > No puede cambiar el  *tipo de complemento*  mediante el sistema de actualización. Por ejemplo, no se puede cambiar el hospedaje de un complemento que esté hospedado por SharePoint para que lo hospede un proveedor mediante una actualización. Para realizar un cambio, debe [migrar de un complemento antiguo a uno nuevo](#Major). En particular, desde que se  [cerró el programa de vista previa para complementos autohospedados](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), debe tener en cuenta que no se puede actualizar un complemento autohospedado a un complemento hospedado por el proveedor. Debe convertir el complemento, tal como se explica en  [Convertir un complemento autohospedado por SharePoint en uno hospedado por el proveedor](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md). 
   
     
@@ -47,7 +47,7 @@ En las 24 horas siguientes a la carga de la actualización en el catálogo de co
     
 
     
-> [!SUGERENCIA]
+> **SUGERENCIA**
 >  Cuando está desarrollando una actualización, no quiere esperar 24 horas cada vez que carga una nueva versión al catálogo de complementos para SharePoint de prueba. Vea la sección [Actualice un complemento sin esperar las 24 horas](update-sharepoint-add-ins.md#ImmediateUpdateNotice) para obtener información sobre cómo actualizar de forma inmediata un complemento.>  De forma predeterminada, SharePoint comprueba cada 24 horas la existencia de actualizaciones de los complementos instalados. Un administrador de una granja de servidores puede configurar un nuevo valor usando el siguiente comando Shell de administración de SharePoint, donden es el número de horas entre comprobaciones.>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`>  Si el valor se establece en 0, entonces la comprobación se realiza cada vez que el trabajo de temporizador integrado **Actualización de estado de complemento interna** se ejecuta, lo que de forma predeterminada sucede cada hora. Los administradores de granjas de servidores pueden usar el Administrador central para cambiar la frecuencia de trabajo del temporizador o ejecutarlo inmediatamente.
   
     
@@ -77,14 +77,14 @@ SharePoint 2013 hará lo siguiente cuando un usuario instale una actualización 
   
 - SharePoint 2013 ejecuta el servicio web **UpgradedEventEndpoint**, si registra algo en el manifiesto del complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > Si el complemento está hospedado por el proveedor, proporcione la lógica de actualización para todos los componentes que no sean de SharePoint del complemento. En la mayoría de los casos, la actualización de estos componentes se realiza de forma independiente a la actualización de la propia Complemento de SharePoint, igual que cuando instaló esos componentes de forma independiente a la instalación del complemento. Pero puede haber algunos cambios que solo deberían suceder cuando un usuario está actualizando la Complemento de SharePoint. Esta lógica también puede ir en un servicio web **UpgradedEventEndpoint** o en una lógica "ejecutar primero después de actualizar" del propio complemento.
 - SharePoint 2013 hace que el complemento y sus componentes vuelvan a estar disponibles.
     
   
 
     
-> [!NOTA]
+> **NOTA**
 > Si se está modificando el esquema de cualquiera de las listas en la web del complemento, se hará una copia de seguridad de dicha lista junto con el resto de la web del complemento. Esto puede llevar algo de tiempo si hay una gran cantidad de datos en la lista. Si el proceso de actualización no se ha completado en una hora, se detiene y la actualización se revierte. 
   
     
@@ -99,7 +99,7 @@ En algunos casos, es posible que desee crear un complemento desde cero para reem
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los elementos de un catálogo de complementos de la organización se distinguen por el  *nombre de archivo*  del paquete del complemento, no por el identificador del producto ni por el nombre del complemento. Si el complemento nuevo tiene el mismo nombre de archivo del paquete que el antiguo, lo reemplazará en el catálogo de complementos y este ya no volverá a aparecer en la página **Agregar un complemento**. Si habilita el control de versiones en el paquete del complemento cuando lo carga en el catálogo, la antigua versión del archivo (que es la aplicación antigua) aún estará disponible en el historial del elemento. Puede descargar el paquete del complemento antiguo para revertirlo, pero no habrá forma de disponer de ambas versiones del complemento como elementos separados en el catálogo ni en la página **Agregar un complemento**, a menos que tengan nombres de archivo distintos. 
   
     
@@ -118,7 +118,7 @@ En principio, puede reutilizar un origen de datos externo, un componente calcula
     
     
 
-> [!NOTA]
+> **NOTA**
 > Le recomendamos que si implementa un **InstalledEventEndpoint** o un **UpgradedEventEndpoint** que instala componentes, debería implementar también un **UninstallingEventEndpoint** que desinstale esos mismos componentes. Hacerlo así cumple con los principios de diseño que establecen que los complementos deben ser autocontenidos y desinstalarse limpiamente. Sin embargo, no deberían eliminarse aquellos datos que aún pudieran resultar de utilidad a los usuarios después de la desinstalación del complemento. Los sitios web creados por un complemento, distintos de la web de complemento, normalmente deberían considerarse datos.
   
     

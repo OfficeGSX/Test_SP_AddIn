@@ -37,7 +37,7 @@ SharePoint 外接程序可以在 SharePoint 2013 的内部和外部以及 Micros
     
   
 
-> [!提示]
+> **提示**
 > 在某些情况下，您可能会升级 SharePoint 外接程序。当 SharePoint 外接程序包含外接程序 Web 中的 SharePoint 组件时，升级过程会完整复制外接程序 Web。因此，外接程序 Web 中的大型 SharePoint 列表会让内容数据库服务器上的升级过程变得耗时并占用大量处理器资源。应该避免将"大数据"放到外接程序 Web 上的 SharePoint 列表中。 
   
     

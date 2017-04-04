@@ -30,7 +30,7 @@ Je nach Ihren spezifischen Anforderungen und Ihrem Budget können Sie unter folg
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Installation von SharePoint wird nur unter Windows Server 2008 R2 Service Pack 1 x64 oder Windows Server 2012 unterstützt. Wenn Sie SharePoint-Add-Ins für SharePoint unter Windows 7 oder Windows 8 entwickeln möchten, können Sie sich für eine Office 365 Developer Site registrieren und Add-Ins remote entwickeln. 
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. Wenn die Installation abgeschlossen ist, werden Sie aufgefordert, den Konfigurations-Assistenten für SharePoint-Produkte und -Technologien zu starten.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Bei der Ausführung des Konfigurations-Assistenten für SharePoint-Produkte und -Technologien können Fehler auftreten, wenn Sie einen an eine Domäne angebundenen Computer verwenden, der nicht mit einem Domänencontroller verbunden ist. Bei diesem Fehler müssen Sie entweder direkt oder über eine VPN-Verbindung (Virtuelles Privates Netzwerk) eine Verbindung mit einem Domänencontroller herstellen oder sich mit einem lokalen Konto anmelden, das über Administratorrechte für den Computer verfügt. 
 7. Nach Abschluss des Konfigurations-Assistenten wird die neue Seite **Vorlagenauswahl** der neuen SharePoint-Website angezeigt. Wählen Sie auf dieser Seite die Vorlage **Developer Site** aus. Sie können SharePoint-Add-Ins nur aus Visual Studio für eine Developer Site bereitstellen.
     
@@ -135,7 +135,7 @@ IIn diesem Schritt konfigurieren Sie Dienste in SharePoint für die Verwendung i
   
 6. Wählen Sie **Speichern und schließen** aus.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn eine Meldung mit der Information angezeigt wird, dass das zu erstellende Profil bereits vorhanden ist, wählen Sie **Abbrechen und zurückgehen** aus.
 7. Die Seite **Benutzerprofile verwalten**, die daraufhin wieder angezeigt wird, sollte den Eintrag **Gesamtanzahl der Profile: 1** enthalten.
     
@@ -189,7 +189,7 @@ Für Entwicklungszwecke können Sie Ihre Hostdatei nach Bedarf ändern, um den E
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Für Produktionsfarmen müssen Sie eine DNS-Weiterleitungsstrategie innerhalb Ihres Intranets erstellen und die Firewall konfigurieren. Weitere Informationen zum Erstellen und Konfigurieren einer Produktionsumgebung für SharePoint-Add-Ins finden Sie unter  [Installieren und Verwalten von SharePoint-Add-Ins](http://technet.microsoft.com/de-de/library/fp161232%28v=office.15%29). 
   
     
@@ -200,7 +200,7 @@ Führen Sie die Schritte im folgenden Verfahren aus, um eine isolierte Add-In-Do
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Führen Sie alle Schritte im folgenden Verfahren aus, während Sie als Farmadministrator angemeldet sind. Führen Sie die Eingabeaufforderung und die SharePoint-Verwaltungsshell als Administrator aus. 
   
     
@@ -303,7 +303,7 @@ Unter  [Bereitstellen und Installieren von SharePoint-Add-Ins: Methoden und Opti
     
     
 
-> [!TIPP]
+> **TIPP**
 > Nachdem Sie in Ihrer Installation ein von SharePoint gehostetes Add-In bereitgestellt haben, werden Sie beim Starten des Add-Ins möglicherweise dazu aufgefordert, sich mit Ihren Anmeldeinformationen anzumelden. Sie müssen die Loopbackprüfung deaktivieren, um diese Aufforderungen zu vermeiden. Eine Anleitung zur Deaktivierung der Loopbackprüfung finden Sie unter  [Fehler 401.1 beim Aufrufen einer Website, die integrierte Authentifizierung verwendet und mit IIS 5.1 oder einer höheren Version gehostet wird](http://support.microsoft.com/kb/896861/de-de). 
   
     

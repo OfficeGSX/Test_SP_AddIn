@@ -283,7 +283,7 @@ SharePoint 2013 自動裝載增益集轉換至裝載提供者增益集包含多�
     
 
     
-> [!注意事項]
+> **注意事項**
 > 根據如何建立資料庫時自動裝載增益集，可能需要將其部署至 Azure 一些額外的工作。請參閱 MSDN 中的其他指導的下列文章：>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ SharePoint 自動裝載增益集] 中的 Office 365 中填入這些設定的值�
     
 
     
-> [!注意事項]
+> **注意事項**
 > 請參閱 Azure 的文件部署至Azure 網站ASP.NET web 應用程式的其他選項： [如何部署 Microsoft Azure 網站](http://azure.microsoft.com/documentation/articles/web-sites-deploy)。
   
     
@@ -583,7 +583,7 @@ AppManifest.xml 檔案的程式碼] 檢視中移除兩個參照至 ASP.NET MVC w
     
 
     
-> [!重要]
+> **重要**
 > 如果使用現有的 ProductId SharePoint 會傳回錯誤 」 所提供的增益集不同於其他增益集具有相同的版本及產品識別碼"轉換後的增益集安裝的情況。
   
     

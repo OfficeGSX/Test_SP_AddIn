@@ -18,7 +18,7 @@ Pour héberger le complément, vous aurez besoin d'un site du développeur Share
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Vous pouvez également héberger un complément de gestion des informations professionnelles dans le Cloud sur un site SharePoint 2013. 
   
     
@@ -677,7 +677,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
   
 12. Sur la page **Contenu du site > Vos compléments**, choisissez la vignette **Appareil Contoso**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Il se peut que vous deviez accéder à la seconde page des compléments pour trouver la vignette **Appareil Contoso**. 
 13. Dans la boîte de dialogue **Ajouter une liste personnalisée**, choisissez la zone de texte **Nom**, saisissez Appareil Contoso, puis cliquez sur le bouton **Créer**.
     
@@ -732,7 +732,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
     Les entités sont ajoutées au nouveau nœud **Données de développeur**, sous le nœud **Sources de données** dans l' **Explorateur de solutions** et l'entité **AppareilContoso** s'ouvre dans le concepteur d'entités.
     
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vous avez peut-être remarqué qu'une entité **UserInformationLists** a également été ajoutée. Cette liste est ajoutée par SharePoint afin de gérer les champs ou les listes **CreatedBy** et **ModifiedBy**. 
 5. Dans la fenêtre **Propriétés**, choisissez la propriété **Nom complet**, et changez-la en Équipement.
     
@@ -1097,7 +1097,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
     
     Le fichier est ajouté à l'onglet **Documents**.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Si vous choisissez un document Office, vous pouvez l'afficher dans le complément. 
 13. Cliquez sur le bouton Ajouter un document, puis, dans la boîte de dialogue **Créer un nouveau fichier**, choisissez le **Document Word**.
     
@@ -1116,7 +1116,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
     Ce nom sera utilisé comme nom de fichier pour le document.
     
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si vous n'entrez pas un nom de fichier, il sera enregistré avec le nom par défaut **Document.docx**. Une fois enregistré, le nom de fichier peut être modifié en y accédant dans la bibliothèque de documents dans SharePoint. 
 15. Cliquez sur le bouton précédent dans votre navigateur pour revenir au complément. Le **Rapport d'incident** doit apparaître sur l'onglet **Documents**.
     

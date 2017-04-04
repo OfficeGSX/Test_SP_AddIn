@@ -45,7 +45,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   ```
 
 
-    > [!注意]
+    > **注意**
       > 有可能新增網頁組件元素，例如 **<WebPartPages:XsltListViewWebPart>** **WebPartZone**的子。但是這通常是在SharePoint Add-in故障的作法。如果增益集曾經需要更新、 插入 aspx 檔案中的網頁組件元素可能會造成在某些情況下"具有此識別碼的網頁組件已新增到此頁面上。 」 訊息失敗的更新建議您稍後說明此程序的網頁組件新增至頁面元素資訊清單。
 4. 開啟 [] 頁面上的元素資訊清單檔案。這通常會呼叫 elements.xml 和位於 aspx 檔案相同的專案資料夾。
     
@@ -81,7 +81,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
 
 7. 新增 **webPart**標記為 **webParts**元素的子項。下列是新增 **XsltListViewWebPart**的範例。它假設名為"Test List"之自訂清單相同的增益集專案的一部分。如需如何將自訂清單新增至增益集的網站的資訊，請參閱 [建立提供者主控增益集包含的自訂 SharePoint 清單與內容類型](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md)。
     
-    > [!注意事項]
+    > **注意事項**
       > 請注意 [網頁組件沒有 ID 屬性。 就只能在兩個案例中是真正必要網頁組件包含未明確 ID 的最佳作法：> 網頁組件新增至SharePoint wiki 頁面。> 網頁組件是一種將連線的兩個或多個網頁組件。
 
   ```

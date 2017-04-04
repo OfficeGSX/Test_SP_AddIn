@@ -331,7 +331,7 @@ Os suplementos hospedados na nuvem usam o OAuth ou a biblioteca entre domínios 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os componentes de suplemento hospedados na nuvem escritos em JavaScript devem usar o objeto **SP.RequestExecutor** na biblioteca entre domínios para acessar os dados do SharePoint. As solicitações de biblioteca entre domínios não precisam incluir um token de acesso.
   
     
@@ -358,7 +358,7 @@ As solicitações de bibliotecas entre domínios usam esse formato ao acessar da
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Uma instância de Web de suplementos é necessária para que um suplemento hospedado na nuvem possa acessar dados do SharePoint ao usar a biblioteca entre domínios. 
   
     
@@ -375,7 +375,7 @@ As solicitações de bibliotecas entre domínios usam esse formato ao acessar da
 |Hospedado no SharePoint  <br/> |Componente da Web de suplementos acessando os dados em outros conjuntos de sites (somente suplementos no escopo do locatário)  <br/> | _<url da web do aplicativo>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<url do site de destino>_'  <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os cenários de acesso de dados entre domínios também exigem permissões de suplemento apropriadas. Para saber mais, confira  [Acessar dados da Web do host](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) e [Acessar dados entre conjuntos de sites](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope). 
   
     

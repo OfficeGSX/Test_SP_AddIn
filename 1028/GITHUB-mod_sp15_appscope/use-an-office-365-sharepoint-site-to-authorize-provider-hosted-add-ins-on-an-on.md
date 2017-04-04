@@ -124,7 +124,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 可供下載 [的混合式 SharePoint 2013 資源頁面](http://www.microsoft.com/en-us/download/details.aspx?id=35593)上 [設定 Office 365 與 SharePoint Server 2013 單向混合式環境](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx)文件更詳細說明如何知名的憑證授權單位的憑證或自我簽署的憑證取代您的內部部署伺服器陣列的預設 STS 憑證。
   
     
@@ -180,7 +180,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 
 1. 在內部部署 SharePoint 伺服器上，在函數中複製的程式碼，將文字檔案並加以儲存以一個或另一下列資料夾 (而非兩者) MySharePointFunctions.psm1 名稱。您可能必須建立的路徑，部分包含不存在的資料夾。請注意，在這兩種情況下，[最低] 資料夾的路徑中已有相同的名稱另存檔案。
     
-    > [!秘訣]
+    > **秘訣**
       > 若要儲存為 ANSI 格式，不 utf-8 有檔案。PowerShell 載入使用非 ANSI 格式的檔案時，可能會提供語法錯誤。若要將其儲存為 ANSI 預設 Windows 記事本。如果您使用任何其他編輯器來儲存檔案時，請確定您要將其儲存為 ANSI。
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`，其中 _username_是將會執行檔案的伺服器陣列管理員。

@@ -36,7 +36,7 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
     
     
 
-> [!注意事項]
+> **注意事項**
 > 在 JavaScript 中撰寫的提供者主控增益集必須使用 SP.RequestExecutor 跨網域程式庫來傳送要求至 SharePoint 網域。如需範例，請參閱 [使用跨網域程式庫上傳檔案](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd)。 
   
     

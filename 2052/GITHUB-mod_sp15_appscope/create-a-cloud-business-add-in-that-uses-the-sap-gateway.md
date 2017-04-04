@@ -40,7 +40,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
   
 - **Microsoft Azure 中的组织帐户。** 请参阅 [在 Azure AD 中创建组织用户帐户](http://go.microsoft.com/fwlink/?LinkID=512580)。
     
-    > [!注释]
+    > **注释**
       > 创建帐户后，登录到您的 Office 365 帐户 (login.microsoftonline.com) 以更改临时密码。 
 - **SAP OData 终结点** 及其中的示例数据。请参阅 [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) 文档。
     
@@ -66,7 +66,7 @@ Contoso Motors 是一家虚构的汽车销售公司，它代表一种实际的�
     
     
 
-> [!提示]
+> **提示**
 > 有关此外接程序的视频演示，请观看 BrightTalk 上的视频 [技术网络研讨会 - SAP Gateway for Microsoft 与 Microsoft Azure 开发模型](http://go.microsoft.com/fwlink/?LinkId=517378)。此应用程序功能的演示从 48:00 分钟开始。 
   
     
@@ -433,7 +433,7 @@ public interface IInventoryItem
     
     大多数属性的类型与 SAP 数据库架构中的属性相同，StockNo 除外，其类型已从 **int** 更改为 **string**。这是因为 StockNo 用作定义 SAP 数据与 SharePoint 图片库之间关系的一种方式。
     
-    > [!提示]
+    > **提示**
       > StockNo 的类型必须为 **string** ，因为 SharePoint 图片库中存储的值为 **Text** 。这两种类型必须匹配才能实现数据混搭。
 
     两个界面的实现为 CarInventoryModel/InventoryItem.cs 和 CarInventoryModel/InventoryCollection.cs。
@@ -456,7 +456,7 @@ SharePoint 主机网站中的图片库名为 ContosoMotorsPictureLibrary，其�
     
     
 
-> [!提示]
+> **提示**
 > 列名称需区分大小写。 
   
     
@@ -822,7 +822,7 @@ private ClientContext AppWebContext
   
 2. 在左侧菜单中，单击"网站"。
     
-    > [!注释]
+    > **注释**
       > 您将使用此网站为 SellerDashboard 托管 SharePoint 提供程序托管的外接程序。 
 3. 在页面底部的命令栏中，单击"新建"。
     
@@ -891,7 +891,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
   
 3. 在 Active Directory 页上，单击为 SAP Gateway for Microsoft 配置的目录。
     
-    > [!提示]
+    > **提示**
       >  如果您不确定使用的是哪个目录，请咨询您的 SAP Gateway for Microsoft 管理员。提示：它是包含 SAP Gateway for Microsoft 的用户和组的目录。
 4. 在导航栏顶部，选择"应用程序"。
     
@@ -920,7 +920,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
     
   
 
-> [!注释]
+> **注释**
 > 您必须在 Azure AD 中注册外接程序两次，一次是为了进行调试，另一次是为了将其部署用于生产，如步骤 10 中所述。 > 要注册外接程序以进行调试，请将"登录 URL"和"APP ID URI"与 SellerDashboard.Server 项目的调试 URL 一起使用，以便您可以运行 Visual Studio 调试器 (F5)。 此 URL 的格式为 https://localhost. *nnnn*  ，其中 *nnnn*  是端口号。在 Visual Studio 中的"属性"窗格中，您可以找到此 URL。> 然后，当您准备好部署用于生产时，编辑注册以使用正确的生产 URL。 
   
     

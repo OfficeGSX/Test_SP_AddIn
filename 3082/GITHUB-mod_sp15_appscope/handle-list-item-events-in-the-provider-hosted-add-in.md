@@ -41,7 +41,7 @@ Este es el décimo de una serie de artículos sobre los conceptos básicos de de
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeRER.sln.
   
     
@@ -51,7 +51,7 @@ En un artículo anterior de esta serie vimos que, cuando se realiza un pedido, s
 ## Implementar mediante programación la lista Envíos esperados
 
 
-> [!NOTA]
+> **NOTA**
 > La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos: 
   
     
@@ -134,7 +134,7 @@ CreateExpectedShipmentsList();
 ## Crear el receptor de eventos de elemento de lista
 
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie de artículos, ya tiene configurado el entorno de desarrollo para depurar receptores de eventos remotos. Si no lo ha hecho, consulte  [Configurar la solución para la depuración de receptores de eventos](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug) antes de avanzar en este tema.
   
     
@@ -145,7 +145,7 @@ El Office Developer Tools para Visual Studio incluye un elemento **Receptor de e
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los receptores de eventos de lista y elemento de lista se denominan receptores de eventos remotos (RER) porque su código es remoto desde SharePoint, ya sea en la nube o en un servidor local fuera de la granja de servidores de SharePoint. Sin embargo, los eventos que los desencadenan son de SharePoint.
   
     
@@ -160,7 +160,7 @@ El Office Developer Tools para Visual Studio incluye un elemento **Receptor de e
   
 3. Las herramientas crean un archivo de interfaz, un archivo *.svc y un archivo de código subyacente. No es necesario el archivo de interfaz IRemoteEventReceiver1.cs, así que puede eliminarlo. (Las herramientas pueden haberlo abierto automáticamente. Si es así, ciérrelo y elimínelo).
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando creó los receptores de eventos de complemento para los eventos instalados y de desinstalación en un artículo anterior de esta serie, el Office Developer Tools para Visual Studio agregó sus direcciones URL al archivo de manifiesto de aplicación. Los receptores de lista y elementos de lista no están registrados en el manifiesto de aplicación. En su lugar, se registran mediante programación en un complemento hospedado por el proveedor. Hará eso en un paso posterior. 
 4. Abra el archivo de código subyacente: RemoteEventReceiver1.svc.cs. Reemplace todo el contenido por el siguiente código. Tenga en cuenta lo siguiente sobre este código:
     
@@ -414,7 +414,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > **KeyNotFoundException** también es el motivo por el que tenemos que dejar el campo **Agregado al inventario** visible en el formulario Editar elemento. SharePoint no incluye los campos que están ocultos en el formulario Editar elemento en **AfterProperties**. 
 
     El método completo ahora debería ser similar al siguiente:
@@ -669,7 +669,7 @@ Los receptores de evento de complemento y evento de elemento de lista son servic
     
   
 
-> [!NOTA]
+> **NOTA**
 >  Copiar manualmente la dirección URL del bus de servicio y pegarla (tras modificarla) en el archivo web.config no es la única manera de obtener una dirección URL diferente al depurar un receptor de eventos remotos de cuando se está ejecutando en producción.>  Mediante programación podríamos almacenar el valor de **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** en algún lugar de SharePoint o la base de datos remota y, a continuación, hacer que nuestro código de la primera vista lo lea y asigne a la propiedad `receiver.ReceiverUrl`. >  Podríamos registrar el receptor de eventos de elemento de lista como parte del controlador de eventos instalado del complemento. A continuación, podríamos leer mediante programación **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**, modificarla y asignarla a  `receiver.ReceiverUrl` sin tener que almacenarla en ningún sitio. Esta estrategia requeriría que la lista **Envíos esperados** también se creara en el controlador de eventos instalado del complemento, ya que debería existir antes de que el controlador se pudiera registrar con ella. (Tenga en cuenta también que se podrían combinar nuestro receptor de eventos de complemento y el receptor de eventos de elemento de lista en un único destinatario (es decir, los mismos archivos .svc y svc.cs). En ese caso, no es necesaria ninguna modificación de la dirección URL antes de usarla como valor de `receiver.ReceiverUrl`). 
   
     

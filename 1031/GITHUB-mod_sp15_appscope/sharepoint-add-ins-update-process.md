@@ -13,7 +13,7 @@ Sie müssen ein Add-In für SharePoint aktualisieren, wenn Sie Funktionen hinzuf
     
 
 
-> [!WICHTIG]
+> **WICHTIG**
 > Sie können den  *Add-In-Typ*  nicht über ein Update des Systems ändern. Sie können beispielsweise nicht ein in SharePoint gehostetes Add-In durch ein Update in ein vom Anbieter gehostetes Add-In ändern. Um den Add-In-Typ zu ändern, müssen Sie [von einem alten Add-In in ein neues Add-In migrieren](#Major). Insbesondere da  [das Vorabprogramm für automatisch gehostete Add-Ins beendet wurde](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), sollten Sie beachten, dass ein automatisch gehostetes Add-In nicht durch ein Update in ein vom Anbieter gehostetes Add-In geändert werden kann. Sie müssen das Add-In wie in  [Konvertieren eines automatisch gehosteten Add-Ins für SharePoint in ein vom Anbieter gehostetes Add-In](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md) erklärt konvertieren.
   
     
@@ -47,7 +47,7 @@ Innerhalb von 24 Stunden, nachdem Sie das Update im Add-In-Katalog eines Unterne
     
 
     
-> [!TIPP]
+> **TIPP**
 >  Wenn Sie ein Update entwickeln, möchten Sie nicht jedes Mal 24 Stunden warten, wenn Sie eine neue Version in Ihren SharePoint-Add-In-Testkatalog hochladen. Informationen dazu, wie Sie ein Add-In sofort aktualisieren, finden Sie unter [Aktualisieren eines Add-Ins, ohne 24 Stunden zu warten](update-sharepoint-add-ins.md#ImmediateUpdateNotice). >  SharePoint prüft standardmäßig alle 24 Stunden auf Updates für installierte Add-Ins. Ein Farmadministrator kann hierfür einen anderen Wert festlegen, indem er den folgenden SharePoint-Verwaltungsshell-Befehl verwendet, wobein für die Anzahl der Stunden zwischen Prüfungen liegt.>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`>  Wird der Wert auf 0 festgelegt, wird die Prüfung jedes Mal durchgeführt, wenn der integrierte Timer-Job **Interne Add-In-Statusaktualisierung** ausgeführt wird, was standardmäßig jede Stunde ist. Farmadministratoren können die Häufigkeit des Timer-Jobs über die zentrale Verwaltung ändern oder diesen sofort ausführen.
   
     
@@ -77,14 +77,14 @@ SharePoint 2013 führt die folgenden Aktionen aus, wenn ein Benutzer ein Update 
   
 - SharePoint 2013 führt den **UpgradedEventEndpoint**-Webdienst aus, wenn im Add-In-Manifest keiner registriert ist.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Handelt es sich um ein von einem Anbieter gehostetes Add-In, dann stellen Sie die Updatelogik für alle Komponenten des Add-Ins bereit, die keine SharePoint-Komponenten sind. Sie aktualisieren diese Logik größtenteils separat vom Update der SharePoint-Add-In selbst, genauso wie Sie diese Komponenten separat von der Installation des Add-Ins installiert haben. Es kann aber einige Änderungen geben, die nur durchgeführt werden sollten, wenn ein Benutzer die SharePoint-Add-In aktualisiert. Diese Logik kann in einen **UpgradedEventEndpoint**-Webdienst oder in die Logik für den "ersten Start nach dem Update" eingefügt werden. 
 - SharePoint 2013 macht das Add-In und die zugehörigen Komponenten wieder verfügbar.
     
   
 
     
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn das Schema einer Liste im Add-In-Web geändert wird, wird die Liste zusammen mit dem restlichen Add-In-Web gesichert. Dieser Vorgang kann einige Zeit in Anspruch nehmen, wenn die Liste viele Daten enthält. Wenn der Updateprozess nach einer Stunde nicht abgeschlossen ist, wird er angehalten und das Update zurückgesetzt. 
   
     
@@ -99,7 +99,7 @@ In einigen Szenarien ist es sinnvoll, eine völlig neues Add-In zu erstellen, da
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Elemente im Add-In-Katalog einer Organisation werden durch den  *Dateinamen*  des Add-In-Pakets unterschieden, nicht durch die Produkt-ID oder den Namen des Add-Ins. Wenn das neue Add-In den gleichen Paketdateinamen hat wie das alte Add-In, wird das alte Add-In im Add-In-Katalog ersetzt, und das alte Add-In wird nicht mehr auf der Seite **Add-In hinzufügen** angezeigt. Wenn Sie Versionsverwaltung für das Add-In-Paket aktivieren, wenn Sie es zum Katalog hochladen, bleibt die alte Version der Datei (das alte Add-In) im Verlauf des Elements verfügbar. Sie können das alte Add-In-Paket herunterladen oder es wiederherstellen. Sowohl die alten als auch die neuen Add-Ins können aber nur dann als separate Elemente im Katalog oder auf der Seite **Add-In hinzufügen** platziert werden, wenn sie unterschiedliche Dateinamen haben.
   
     
@@ -118,7 +118,7 @@ Im Prinzip können Sie eine externe Datenquelle, Rechenkomponente oder eine ande
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie einen **InstalledEventEndpoint** oder einen **UpgradedEventEndpoint** implementieren, der Komponenten installiert, empfehlen wir, auch einen **UninstallingEventEndpoint** zu implementieren, der diese Komponenten deinstalliert. Dadurch werden die Designgrundsätze erfüllt, dass Add-Ins eigenständig sein und sauber deinstalliert werden sollten. Daten, die für die Benutzer auch nach der Deinstallation des Add-Ins nützlich wären, sollten aber nicht entfernt werden. Websites, die durch ein Add-In erstellt wurden - mit Ausnahme des Add-In-Webs - sollten als Daten betrachtet werden.
   
     

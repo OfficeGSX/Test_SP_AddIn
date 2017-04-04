@@ -84,7 +84,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
   
 
-    > [!重要]
+    > **重要**
       > ItemURL 和項目識別碼權杖只取得傳遞時沒有選取項目。 在實際執行品質SharePoint Add-in、 程式碼必須處理的情況其中會選取任何項目。本範例會在程式碼會提醒使用者已選取任何項目。
 
   ```HTML
@@ -192,7 +192,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
   
 
-> [!注意事項]
+> **注意事項**
 > 在這個範例中，遠端網頁在完整視窗開啟當使用者從功能表選取自訂動作。自訂功能表動作可以也開啟 [遠端網頁] 對話方塊中可以使用 **HostWebDialog**屬性。如需詳細資訊，請參閱 [SharePoint-增益集在-當地語系化](https://github.com/OfficeDev/SharePoint-Add-in-Localization)。
   
     
@@ -269,7 +269,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!注意事項]
+    > **注意事項**
       > 功能區自訂動作使用 **SelectedListId**和 **SelectedItemId**。 **ListId**和 **ItemId**適用於只能與功能表項目的自訂動作。
 
 ### 設為主機網站首頁上的增益集開始頁面
@@ -292,7 +292,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
 
 1. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio建置解決方案、 增益集、 部署和增益集的權限] 頁面會隨即開啟。
 2. 選擇 [ **信任它**] 按鈕。開發人員網站的預設頁面隨即開啟。
     

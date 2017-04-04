@@ -28,7 +28,7 @@ ms.assetid: 3edcb33c-fa9e-4e9e-82d6-5519fd981324
     
 用户在安装更新时无需先卸载较早版本。更新基础架构会测试更新安装，如果有任何错误便会回滚安装。
     
-> [!重要信息]
+> **重要信息**
 > 不能使用更新系统更改 *外接程序类型*  。例如，您不能使用更新将 SharePoint 托管的外接程序更改为提供程序托管的外接程序。若要更改类型，需要 [从旧外接程序迁移到新外接程序](sharepoint-add-ins-update-process.md#Major)。特别是，由于 [自动托管的外接程序的预览计划已结束](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/)，您应该意识到无法将自动托管的外接程序更新为提供程序托管的外接程序。必须按 [将自动托管的 SharePoint 外接程序转换为提供商托管的外接程序](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md)中所述转换外接程序。 
   
     
@@ -200,7 +200,7 @@ ms.assetid: 3edcb33c-fa9e-4e9e-82d6-5519fd981324
     
 
     
-> [!注释]
+> **注释**
 > 如果需要更频繁地查看外接程序磁贴中的"更新可用"通知，而不是每 24 小时查看一次，可以使用  [SharePoint 外接程序的更新过程](sharepoint-add-ins-update-process.md#Minor)中描述的方法让通知立即显示。 
   
     

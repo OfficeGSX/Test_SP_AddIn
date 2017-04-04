@@ -20,7 +20,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
     
 用户在请求外接程序域 (1) 的页面时，客户端通信仅与该域绑定。您的外接程序可以仅向同一域中的其他资源从页面发起客户端调用。然而，外接程序通常需要来自其他域的资源（如 SharePoint 域）来实现方案。在您页面的代码中，您可以尝试向被浏览器阻止的 SharePoint 域 (2) 发出一个请求。通常可以看到 **禁止访问** 错误。此错误不表示您不具有访问请求资源的权限，而最有可能的是，您甚至无法向提及的资源发出请求。您在使用跨域库时，外接程序中的网页可以访问外接程序域和 SharePoint 域中的数据。跨域库是 SharePoint 网站（可在远程外接程序中引用）上托管的 JavaScript 文件 (SP.RequestExecutor.js) 形式的客户端替代项。利用跨域库，您可以通过代理与远程外接程序页中的多个域交互。如果您想让外接程序代码在客户端，而不是服务器中运行，或者 SharePoint 与您的远程基础结构之间存在连接障碍（如防火墙），则这是一个不错的选择。您可以访问主机 Web 中的数据：例如，无论您的外接程序如何，您都可以访问最终用户与之交互的列表。或者，您也可以访问外接程序 Web 中的数据，例如专门为外接程序设置的列表。外接程序还可以访问其他网站集和网站，只要外接程序具有租户级权限，且使用外接程序目录作为批量安装进行了部署。
-> [!注释]
+> **注释**
 > 本主题中， **外接程序域** 指托管了外接程序页面的域。可以是提供商托管的外接程序页面中的远程 Web 应用程序域，但外接程序页面还可以在外接程序 Web 中的 SharePoint 之上，并向主机 Web 域发起调用。在后一种方案中，外接程序域是外接程序 Web 的域。
   
     
@@ -101,7 +101,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
 4. 选择"提供程序托管"作为您的外接程序的托管选项。
     
-    > [!注释]
+    > **注释**
       > 您还可以使用 SharePoint 承载的外接程序中的跨域库。然而，在 SharePoint 承载的外接程序中，外接程序页面已存在于外接程序 Web 中，在这种情况下，就无需使用跨域库读取列表项。对于读取主机 Web 中的数据的 SharePoint 承载的外接程序示例，请参阅 [在 SharePoint 托管的外接程序中使用跨域库 (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814)或参阅本文后面的 [访问主机 Web 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)。 
 
 ### 在外接程序 Web 中创建列表项
@@ -156,7 +156,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
   - 实例化 **RequestExecutor** 对象。默认情况下，RequestExecutor 使用外接程序 Web 作为上下文网站。
     
-    > [!注释]
+    > **注释**
       > 您可以使用 **AppContextSite** 终结点 (REST) 或对象 (JSOM) 将上下文网站更改为其他不同于外接程序 Web 的网站。若要了解有关 AppContextSite 的详细信息，请参阅本文后面的 [访问主机 Web 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)。 
   - 向列表项终结点发起 REST 调用。
     
@@ -280,7 +280,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
 
 1. 按 F5 键。
     
-    > [!注释]
+    > **注释**
       > 按 F5 时，Visual Studio 将生成解决方案、部署外接程序并打开外接程序的权限页。 
 2. 选择"信任它"按钮。
     

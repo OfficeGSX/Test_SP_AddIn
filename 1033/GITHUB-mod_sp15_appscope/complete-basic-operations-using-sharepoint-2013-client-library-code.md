@@ -7,7 +7,7 @@ ms.assetid: 5a69c9e3-73bf-4ed5-bc19-182056bdb394
 
 # Complete basic operations using SharePoint 2013 client library code
 Learn how to write code to perform basic operations with the SharePoint 2013 .NET Framework client object model (CSOM).
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -74,7 +74,7 @@ Except where specified otherwise, you can assume that each of these examples is 
     
     
 
-> [!NOTE]
+> **NOTE**
 > When you are making a provider-hosted SharePoint Add-in with an ASP.NET web application and you add a reference to an assembly to the web application project in Visual Studio, set the **Copy Local** property of the assembly to **True**, unless you know that the assembly is already installed on the web server, or you can ensure that it is installed before you deploy your add-in. The .NET Framework is installed on Microsoft Azure Web Roles and Azure Web Sites. But the SharePoint 2013 client assemblies and the various Microsoft managed code extensions and foundations are not installed. Office Developer Tools for Visual Studio 2012 automatically adds references to some assemblies commonly used in SharePoint Add-ins and sets the **Copy Local** property.
   
     
@@ -149,7 +149,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > If you try to access other properties, the code throws an exception because other properties are not available. 
   
     
@@ -253,7 +253,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!NOTE]
+> **NOTE**
 > Alternatively, you can use the **LoadQuery** method to store the return value in another collection, rather than use the **web.Lists** property. You will also need to add **using** statements for [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) and [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Also, add an alias to the using statement for [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) namespace so you can refer to its classes unambiguously. For example, `using SP = Microsoft.SharePoint.Client;`. 
   
     
@@ -346,7 +346,7 @@ This example adds a field to a SharePoint list. add an alias to the using statem
     
     
 
-> [!NOTE]
+> **NOTE**
 > The example uses **context.CastTo** to do a cast. Before executing the query, the client library does not know the real type of the returned object "field" and **SharePoint.Field** is the only possible type. If you know the real type, you can use the **ClientContext.CastTo<RealType>** method to cast the object.
   
     
@@ -389,7 +389,7 @@ This example retrieves the items in a SharePoint list. You will also need to add
     
     
 
-> [!NOTE]
+> **NOTE**
 > You can use the  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) property to further restrict the items that are returned to those in a specified folder.
   
     
@@ -548,7 +548,7 @@ If you want to retrieve information about a specific field, use the **Fields.Get
     
     
 
-> [!NOTE]
+> **NOTE**
 > The  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) method used in this example is a remote method. It does not use the data from the client collection even if the client collection is already populated.
   
     
@@ -1011,7 +1011,7 @@ To conditionally execute code, set a conditional scope by using a  [ConditionalS
     
     
 
-> [!NOTE]
+> **NOTE**
 > Calling method and setting properties within a conditional scope are not permitted, because the client library does not track the side effects of method calls and property settings. You should use only **Load** inside the conditional scope.
   
     

@@ -13,7 +13,7 @@ AppRegNew.aspx ページを使用して登録されている SharePoint アド�
     
 
 
-> [!メモ]
+> **メモ**
 > この記事は、組織のカタログを通じて配布され、AppRegNew.aspx ページを使用して登録された SharePoint アドインについて書かれています。アドインが 販売者ダッシュボード上で登録されたものである場合は、「 [販売者ダッシュボードでクライアント ID とクライアント シークレットを作成または更新する](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx#bk_update)」を参照してください。 
   
     
@@ -119,7 +119,7 @@ $newClientSecret
     
   
 
-> [!ヒント]
+> **ヒント**
 > 既定で、アドイン シークレットの有効期限は 1 年です。この設定は、 **New-MsolServicePrincipalCredential** コマンドレットの 3 つの呼び出しで **-EndDate** パラメーターを使用することにより、短くまたは長くする (最大 3 年) ことができます。このパラメーターの値は **DateTime.Now** から 3 年以内に設定された [DateTime](http://msdn2.microsoft.com/JA-JP/library/03ybds8y) オブジェクトでなければなりません。
   
     
@@ -129,7 +129,7 @@ $newClientSecret
 ## Visual Studio でリモート Web アプリケーションを更新し、新しいシークレットを使用する
 
 
-> [!重要]
+> **重要**
 > アドインがプレリリース バージョンの Microsoft Office Developer Tools for Visual Studio を使用して作成されている場合、期限が切れたバージョンの TokenHelper.cs (または .vb) ファイルが含まれている可能性があります。ファイルに文字列 "secondaryClientSecret" が含まれていない場合、このファイルは期限が切れており、新しいシークレットで Web アプリケーションを更新する前にファイルを置き換える必要があります。ファイルのリリース バージョンのコピーを入手するには、Visual Studio 2012 以降が必要です。Visual Studio で新しい SharePoint アドイン プロジェクトを作成します。TokenHelper ファイルをそのプロジェクトから SharePoint アドインの Web アプリケーション プロジェクトにコピーします。 
   
     

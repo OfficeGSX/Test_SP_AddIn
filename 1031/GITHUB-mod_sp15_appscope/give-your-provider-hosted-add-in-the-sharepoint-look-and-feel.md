@@ -114,7 +114,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
   
 
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie auf die Kachel klicken, wird die Startseite nicht geöffnet, weil Visual Studio die IIS Express-Sitzung schließt, wenn Sie das Debuggen beenden. 
 
 ## Konfigurieren von Visual Studio zum erneuten Erstellen der Unternehmensdatenbank bei jeder Debugsitzung
@@ -258,7 +258,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Die letzte aspx-Datei des Projekts, EmployeeAdder.aspx, wird tatsächlich nie gerendert, deshalb sollten sie deren Benutzeroberfläche nicht ändern. Sie erfahren mehr darüber in einem späteren Artikel dieser Reihe. 
 
     Das Chromsteuerelement soll sich jedoch nicht auf diesen Seiten befinden. Wir möchten lediglich auf die SharePoint-CSS-Bibliothek zugreifen. Fügen Sie für jede dieser vier das folgende Markup zum Element **head** hinzu.

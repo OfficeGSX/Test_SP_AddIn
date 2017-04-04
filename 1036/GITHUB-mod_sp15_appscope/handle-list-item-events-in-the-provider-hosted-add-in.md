@@ -41,7 +41,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par un fournisseur, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) et ouvrir le fichier BeforeRER.sln.
   
     
@@ -51,7 +51,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
 ## Déploiement par programmation de la liste Livraisons attendues
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :
   
     
@@ -134,7 +134,7 @@ CreateExpectedShipmentsList();
 ## Création du récepteur d'événement d'élément de liste
 
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez étudié cette série d'articles, vous avez déjà configuré votre environnement de développement pour le débogage de récepteurs d'événements distants. Si vous ne l'avez pas fait, consultez la rubrique relative à la [ Configuration de la solution pour le débogage de récepteurs d'événements](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug) avant d'aller plus loin.
   
     
@@ -145,7 +145,7 @@ CreateExpectedShipmentsList();
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Les récepteurs d'événements de liste et d'élément de liste sont appelés desrécepteurs d'événements distants (RER), car leur code est distant de SharePoint et se trouve soit dans le cloud, soit dans un serveur local en dehors de la batterie de serveurs SharePoint. Cependant, les événements qui les déclenchent sont dans SharePoint.
   
     
@@ -160,7 +160,7 @@ CreateExpectedShipmentsList();
   
 3.  Les outils créent un fichier d'interface, un fichier *.svc et un fichier code-behind. Nous n'avons pas besoin du fichier d'interface IRemoteEventReceiver1.cs, donc supprimez-le. (Il est possible que les outils se soient ouverts automatiquement. Si c'est le cas, fermez-les et supprimez-les.)
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Lorsque vous avez créé les récepteurs d'événements de complément pour les événements installés et de désinstallation dans le cadre d'un autre article de cette série, les Outils de développement Office pour Visual Studio ont ajouté leurs URL au fichier manifeste d'application. Les récepteurs d'événements de liste et d'élément de liste ne sont pas enregistrés dans le manifeste d''application. Au lieu de cela, ils sont enregistrés par programmation dans un complément hébergé par un fournisseur. Vous réaliserez cette opération à une étape ultérieure.
 4.  Ouvrez le fichier code-behind RemoteEventReceiver1.svc.cs. Remplacez l'ensemble de son contenu par le code suivant. Notez ce qui suit à propos de ce code :
     
@@ -414,7 +414,7 @@ catch (KeyNotFoundException)
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       >  L'exception **KeyNotFoundException** est également la raison pour laquelle nous avons laissé le champ **Ajouté à l'inventaire** visible sur le formulaire Modifier l'élément. SharePoint n'inclut pas les champs masqués du formulaire Modifier l'élément dans **AfterProperties**. 
 
      La méthode doit désormais se présenter comme suit.
@@ -669,7 +669,7 @@ using System.Web.Configuration;
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Lors du débogage d'un récepteur d'événements distant, le fait de copier manuellement l'URL du bus de services et de la coller (version modifiée) dans le fichier web.config ne constitue pas la seule façon de répondre à la nécessité d'une URL différente de celle utilisée lors de l'exécution en production.>  Il est possible de stocker par programmation la valeur de l'élément **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri** quelque part dans SharePoint ou sur la base de données distante, de la faire lire par le code de première exécution, puis de l'attribuer à la propriété `receiver.ReceiverUrl`. >  Nous pouvons inscrire le récepteur d'événements d'élément de liste dans le cadre du gestionnaire d'événements de complément installé. Ensuite, nous pouvons lire par programmation l'élément **System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri**, le modifier et l'attribuer à l'élément  `receiver.ReceiverUrl` sans avoir à le stocker quelque part. Cette stratégie nécessite que la liste **Livraisons attendues** ait également été créée dans le gestionnaire d'événements de complément installé, car elle doit exister avant que le gestionnaire puisse s'inscrire auprès d'elle. Notez également que nous pouvons combiner notre récepteur d'événements de complément à un récepteur d'événements d'élément de liste afin d'obtenir un seul récepteur (autrement dit, les mêmes fichiers .svc et .svc.cs). Dans ce cas, aucune modification de l'URL n'est nécessaire avant de l'utiliser comme valeur de l'élément `receiver.ReceiverUrl`. 
   
     

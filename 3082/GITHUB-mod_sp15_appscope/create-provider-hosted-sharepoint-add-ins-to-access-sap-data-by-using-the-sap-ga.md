@@ -34,7 +34,7 @@ Los siguientes son los requisitos previos de los procedimientos de este artícul
   
 - **Una cuenta de organización en Microsoft Azure**. Vea  [Agregar manualmente de común acuerdo para la aplicación de la vista previa de las API de Office 365](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount).
     
-    > [!NOTA]
+    > **NOTA**
       > Inicie sesión en su cuenta de Office 365 (login.microsoftonline.com) para cambiar la contraseña temporal después de crear la cuenta. 
 - **Un extremo OData de SAP** que incluya datos de muestra. Vea la documentación de [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -61,7 +61,7 @@ OAuth 2.0 en Azure AD permite que las aplicaciones tengan acceso a varios recurs
     
     
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > Si su Complemento de SharePoint accede a SharePoint además de a Puerta de enlace de SAP para Microsoft, necesitará usar  *ambos*  sistemas: Azure AD para obtener un token de acceso a Puerta de enlace de SAP para Microsoft y el sistema de autorización ACS para obtener un token de acceso a SharePoint. Los tokens de los dos orígenes no son intercambiables. Para obtener más información, vea [También puede agregar acceso para SharePoint a la aplicación ASP.NET](#SharePoint). 
   
     
@@ -124,7 +124,7 @@ Para obtener una descripción detallada y un diagrama del flujo de OAuth que usa
 
 1. Inicie sesión en el  [Portal de administración de Azure](https://manage.windowsazure.com) con su cuenta de administrador de Azure.
     
-    > [!NOTA]
+    > **NOTA**
       > Por motivos de seguridad, desaconsejamos usar una cuenta de administrador durante el desarrollo de complementos. 
 2. Elija **Active Directory** a la izquierda.
     
@@ -210,7 +210,7 @@ Para obtener una descripción detallada y un diagrama del flujo de OAuth que usa
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > Azure AD reconoce su aplicación por la dirección URL "localhost" que usó para registrarla. El identificador de cliente y la clave de cliente están asociados a esa identidad. Cuando esté listo para pasar la aplicación a la fase de ensayo a un Sitio web de Azure, volverá a registrarla con una dirección URL nueva. 
 4. Aún en la sección **appSettings**, agregue una clave **Authority** y establezca su valor en el dominio de Office 365 ( *some_domain*  .onmicrosoft.com) de su cuenta de organización. En nuestro ejemplo, la cuenta de organización es Bob@<O365_domain>.onmicrosoft.com, por lo que la entidad es `<O365_domain>.onmicrosoft.com`. 
     
@@ -250,7 +250,7 @@ Para obtener una descripción detallada y un diagrama del flujo de OAuth que usa
 
 7. Guarde y cierre el archivo web.config.
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > No deje abierto el archivo web.config cuando ejecute el depurador de Visual Studio (F5). Office Developer Tools para Visual Studio cambia el valor de **ClientId** (no el de **ida:ClientID**) cada vez que presiona F5. Esto requiere que responda a un mensaje para volver a cargar el archivo web.config, si está abierto, para poder ejecutar la depuración. 
 
 ### Agregue una clase auxiliar para la autenticación en Azure AD
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > La clase AADAuthHelper realiza un control de errores mínimo. Para obtener un Complemento de SharePoint de producción sólida y de calidad, agregue más control de errores tal y como se describe en este nodo de MSDN:  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx). 
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Elimine esta línea cuando esté listo para implementar la aplicación ASP.NET en el entorno de ensayo. Vea  [Modificar el complemento y pasarlo a la fase de ensayo a Azure y Office 365.](#Stage). 
 5. Agregue el código siguiente al método **Page_Load**. La cadena que pasa al método  `GetSAPData` es una consulta de OData.
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > Mientras depura el Complemento de SharePoint, Office Developer Tools para Visual Studio vuelve a registrarlo con Azure ACS cada vez que presiona F5 en Visual Studio. Cuando pase el Complemento de SharePoint a la fase de ensayo, tiene que proporcionarle un registro a largo plazo. Vea la sección  [Modificar el complemento y pasarlo a la fase de ensayo a Azure y Office 365.](#Stage). 
   
     
@@ -710,7 +710,7 @@ Cuando termine de depurar el Complemento de SharePoint usando F5 en Visual Studi
   
 8. Registre el complemento en Azure ACS. Esto se debe hacer incluso si el complemento no accede a SharePoint y no usa los tokens de ACS, porque el mismo proceso registra también el complemento con el Servicio de administración de complementos de la suscripción de Office 365, que es algo obligatorio. (Se llama "Servicio de administración de complementos" porque los Complementos de SharePoint se denominaban en un principio "aplicaciones para SharePoint"). El registro se realiza en la página AppRegNew.aspx de cualquier sitio web de SharePoint de la suscripción de Office 365. Para obtener detalles, consulte  [Registrar complementos de SharePoint 2013](register-sharepoint-add-ins-2013.md). Como parte de este proceso, obtendrá un nuevo identificador de cliente y un secreto de cliente. Inserte estos valores en web.config para las claves **ClientId** (no **ida:ClientID**) y **ClientSecret**.
     
-    > [!PRECAUCIóN]
+    > **PRECAUCIóN**
       > Si por cualquier motivo presiona F5 después de hacer este cambio, Office Developer Tools para Visual Studio sobrescribirá uno o ambos de estos valores. Por eso debería guardar un registro de los valores obtenidos con AppRegNew.aspx y comprobar siempre que los valores en web.config son los correctos antes de publicar la aplicación ASP.NET. 
 
 ### Publicar la aplicación ASP.NET en Azure e instalar el complemento en SharePoint

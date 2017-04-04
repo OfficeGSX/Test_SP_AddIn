@@ -18,7 +18,7 @@ Para hospedar o suplemento, você precisará também um site do desenvolvedor do
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você também pode hospedar um suplemento de negócios de nuvem em um site do SharePoint 2013.
   
     
@@ -677,7 +677,7 @@ A primeira etapa é adicionar alguns modelos de lista pré-preenchida ao seu sit
   
 12. Sobre o **conteúdos do Site > seus suplementos** página, escolha os blocos de **Aparelhos de Contoso**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Você pode precisar ir para a segunda página de suplementos para encontrar os blocos de **Aparelhos de Contoso**.
 13. Na caixa de diálogo **Adicionar lista personalizada**, escolha a caixa de texto **nome** e digiteContoso aparelhose, em seguida, clique no botão **criar**.
     
@@ -732,7 +732,7 @@ A primeira etapa é adicionar alguns modelos de lista pré-preenchida ao seu sit
     As entidades são adicionadas para um novo nó de **Dados de desenvolvedor** sob o nó de **Fontes de dados** no **Solution Explorer**, e a entidade **ContosoApparatus** é aberto no designer de entidade.
     
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Você deve ter percebido que uma entidade **UserInformationLists** também foi adicionada. Esta lista é usada pelo SharePoint para gerenciar os campos de **Propriedades CreatedBy** e **ModifiedBy** para listas.
 5. Na janela **Propriedades**, escolha a propriedade de **Nome de exibição** e alterá-la paraaparelhos.
     
@@ -1097,7 +1097,7 @@ Na cena de um incidente Commander o incidente foi documentar muitas coisas, algu
     
     O arquivo é adicionado à guia **documentos**.
     
-    > [!DICA]
+    > **DICA**
       > Se você escolher um documento do Office, você poderá exibi-la do add-in.
 13. Escolha o botão Adicionar documento e na caixa de diálogo **criar um novo arquivo**, escolha o **documento do Word**.
     
@@ -1116,7 +1116,7 @@ Na cena de um incidente Commander o incidente foi documentar muitas coisas, algu
     Isso será usado como o nome de arquivo para o documento.
     
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você não inserir um nome de arquivo, ele será salvo com o nome padrão **Document.docx**. Depois de salvo, o nome de arquivo só pode ser alterado por acessá-lo na biblioteca de documentos no SharePoint.
 15. Escolha o botão Voltar no seu navegador para retornar para o suplemento. O documento de **Relatório de incidente** deve aparecer na guia **documentos**.
     

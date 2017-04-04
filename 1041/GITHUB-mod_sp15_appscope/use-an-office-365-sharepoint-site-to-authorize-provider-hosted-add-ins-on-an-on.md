@@ -124,7 +124,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!メモ]
+> **メモ**
 >  [SharePoint 2013 ハイブリッド環境に関する資料のページ](http://www.microsoft.com/ja-jp/download/details.aspx?id=35593)からダウンロードして利用できる「 [SharePoint Server 2013 および Office 365 で一方向のハイブリッド環境を構成する](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx)」という文書では、社内ファームの既定の STS 証明書を既知の証明書発行機関の証明書または自己署名証明書に置き換える方法をさらに詳細に説明しています。 
   
     
@@ -180,7 +180,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 
 1. 社内 SharePoint サーバーで、関数のコードをテキスト ファイルにコピーし、MySharePointFunctions.psm1 という名前で次の (両方ではなく) いずれかのフォルダーに保存します。存在していないフォルダーを含む場合は、パスの一部を作成しなければならない場合があります。いずれの場合も、パスの最下位のフォルダーは、ファイルと同じ名前である必要があります。
     
-    > [!ヒント]
+    > **ヒント**
       > ファイルは UTF-8 ではなく ANSI 形式で保存する必要があります。PowerShell で ANSI 以外の形式のファイルを読み込むと、構文エラーが表示される場合があります。Windows メモ帳では、既定で ANSI 形式で保存されます。その他のエディターを使用してファイルを保存するときは、必ず ANSI 形式で保存します。 
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`。ここで、 _username_ はファイルを実行するファーム管理者です。

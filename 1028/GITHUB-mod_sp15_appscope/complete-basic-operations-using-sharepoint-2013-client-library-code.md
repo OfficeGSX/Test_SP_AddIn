@@ -67,7 +67,7 @@ using Microsoft.SharePoint.Client;
     
     
 
-> [!注意事項]
+> **注意事項**
 > 當您製作由提供者裝載 SharePoint Add-in 與 ASP.NET Web 應用程式，並且將組件的參考新增至 Visual Studio 中的 Web 應用程式專案時，請將組件的 **Copy Local** 屬性設為 **True**，除非您知道該組件已安裝在網頁伺服器上，或者您可以確定在您部署增益集之前已安裝。.NET Framework 安裝在 Microsoft Azure Web 角色和 Azure 網站上。但是 SharePoint 2013 用戶端組件和各種 Microsoft 受管理的程式碼擴充和基礎則未安裝。Visual Studio 2012 Office 開發人員工具 會自動新增 SharePoint 增益集通用之部份組件的參考，並且設定 **Copy Local** 屬性。
   
     
@@ -142,7 +142,7 @@ label1.Text = web. Description;
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 如果您嘗試存取其他屬性，程式碼會擲回例外，因為沒有其他屬性可用。 
   
     
@@ -246,7 +246,7 @@ foreach (List list in web.Lists)
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 或者，您可以使用 **LoadQuery** 方法以在其他集合中儲存傳回值，而不是使用 **web.Lists** 屬性。您也必須為 [System.Collections.Generic](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) 和 [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 新增 **using** 陳述式。另外，為 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 命名空間新增 using 陳述式的別名，以便明確地參考其類別。例如， `using SP = Microsoft.SharePoint.Client;`。 
   
     
@@ -339,7 +339,7 @@ context.ExecuteQuery();
     
     
 
-> [!注意事項]
+> **注意事項**
 > 此範例使用 **context.CastTo** 進行轉換。執行查詢之前，用戶端程式庫不知道傳回物件「欄位」的實際類型，且 **SharePoint.Field** 是唯一可能的類型。如果您知道實際類型，可以使用 **ClientContext.CastTo<RealType>** 方法來轉換物件。
   
     
@@ -382,7 +382,7 @@ context.ExecuteQuery();
     
     
 
-> [!注意事項]
+> **注意事項**
 > 您可以使用  [FolderServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.CamlQuery.FolderServerRelativeUrl.aspx) 屬性，進一步限制傳回指定資料夾的項目。
   
     
@@ -541,7 +541,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-> [!注意事項]
+> **注意事項**
 > 此範例中所使用的  [GetByInternalNameOrTitle](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.FieldCollection.GetByInternalNameOrTitle.aspx) 方法是遠端方法。即使已填入用戶端集合，它也不會使用來自用戶端集合的資料。
   
     
@@ -1004,7 +1004,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-> [!注意事項]
+> **注意事項**
 > 不允許在條件範圍內呼叫方法和設定屬性，因為用戶端程式庫不會追蹤方法呼叫和屬性設定的副作用。您應該僅在條件範圍內使用 **Load**。 
   
     

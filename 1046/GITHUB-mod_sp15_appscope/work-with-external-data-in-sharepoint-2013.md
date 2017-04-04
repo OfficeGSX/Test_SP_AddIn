@@ -26,7 +26,7 @@ Para obter detalhes sobre como usar a biblioteca dessa maneira, consulte  [Criar
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Biblioteca do domínio cruzado SharePoint também pode ser usada na outra direção; ou seja, JavaScript em páginas da web remoto pode usá-lo para acessar dados de SharePoint. Para obter mais informações sobre esse uso da biblioteca, consulte  [Criando Add-ins do SharePoint que usam a biblioteca entre domínios](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md).
   
     

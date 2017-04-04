@@ -64,7 +64,7 @@ En SharePoint 2013, el servicio de token de seguridad (STS) de servidor a servid
     
     
 
-> [!NOTA]
+> **NOTA**
 > El STS de servidor a servidor no está diseñado para la autenticación de usuarios. Por lo tanto, el STS de servidor a servidor no se verá en la página de inicio de sesión de usuario, en la sección **Proveedor de autenticación** de Administración central ni en el Selector de personas de SharePoint 2013.
   
     
@@ -203,7 +203,7 @@ El script Windows PowerShell que cree en esta sección está diseñado para admi
     
     
 
-> [!NOTA]
+> **NOTA**
 > Compruebe que ha completado los pasos de  [Configurar servicios en SharePoint para el uso de complementos de servidor a servidor](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) (que aparece como requisito previo en este artículo). En caso contrario, debe configurarlos ahora, antes de continuar.
   
     
@@ -248,7 +248,7 @@ $fullIssuerIdentifier = $specificIssuerId + '@' + $realm
   ```
 
 
-    > [!NOTA]
+    > **NOTA**
       > El valor  `$specificIssuerId` debe ser un GUID porque en un entorno de producción cada certificado debe tener un emisor único. Sin embargo, en este contexto, donde se usa el mismo certificado para depurar todos los complementos de elevada confianza, se puede codificar el valor. Si por cualquier motivo, usa un GUID diferente del usado aquí, * **asegúrese de que las letras del GUID estén en minúsculas*** . Actualmente, la infraestructura de SharePoint necesita minúsculas para los GUID de emisor del certificado.
 5. Agregue las siguientes líneas para registrar el certificado como emisor de tokens de confianza. El parámetro  `-Name` debe ser único, por lo que, en una configuración de producción, se suele usar un GUID como parte (o la totalidad) del nombre, pero en este contexto se puede usar un nombre descriptivo. El conmutador `-IsTrustBroker` es necesario para garantizar que puede usar el mismo certificado para todos los complementos de elevada confianza que desarrolle. El comando `iisreset` es necesario para que el emisor de token quede registrado inmediatamente. Sin este comando, es posible que deba esperar unas 24 horas para registrar el nuevo emisor.
     
@@ -288,7 +288,7 @@ En esta sección, aprenderá a crear una Complemento de SharePoint de elevada co
     
     
 
-> [!NOTA]
+> **NOTA**
 > Como se mencionó en la sección  [Requisitos previos para crear complementos de elevada confianza](#Prereq), en este artículo se asume que sabe crear una Complemento de SharePoint hospedada por el proveedor. Para más información, consulte  [Empezar a crear complementos hospedados en proveedor para SharePoint](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     

@@ -13,7 +13,7 @@ Los sitios, las listas y los elementos de lista de SharePoint son tipos de **Sec
     
 
 
-> [!NOTA]
+> **NOTA**
 > En  [Recursos adicionales](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) encontrará vínculos a artículos sobre la configuración de permisos específicos.
   
     

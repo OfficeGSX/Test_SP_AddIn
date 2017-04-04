@@ -7,7 +7,7 @@ ms.assetid: e858fce6-7a8f-4b1e-b053-64dc75345801
 
 # 创建可供匿名用户使用的 SharePoint 外接程序
 了解在面向公众的 Microsoft SharePoint 2013 网站上如何创建可供匿名用户使用的 SharePoint 外接程序。
-> [!重要信息]
+> **重要信息**
 > 在本文中，不论在哪里提到 *内部部署*  SharePoint 2013，我们都假定已安装 Service Pack 1 for SharePoint 2013。
   
     
@@ -77,7 +77,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
     
     
 
-> [!注释]
+> **注释**
 > 如果 SharePoint 网站可由匿名用户访问，通常允许 HTTP（而非 HTTPS）访问。当仅外接程序策略用于此方案中的外接程序时，存在潜在安全问题。有关消除风险的详细信息和方法，请参阅 [关于 SharePoint 外接程序、CSOM 和匿名发布网站每位开发人员需要知道的内容](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx)。 
   
     
@@ -129,7 +129,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
     
     
 
-> [!注释]
+> **注释**
 > 关闭用户必须具有 **使用远程界面** 权限的要求对信息隐私具有一定影响。有关详细信息，请参阅 [关于 SharePoint 外接程序、CSOM 和匿名发布网站每位开发人员需要知道哪些内容](http://blogs.msdn.com/b/kaevans/archive/2013/10/24/what-every-developer-needs-to-know-about-sharepoint-apps-csom-and-anonymous-publishing-sites.aspx)。 
   
     
@@ -162,7 +162,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
     
     
 
-> [!重要信息]
+> **重要信息**
 > 如有必要，您应先将 SharePoint 外接程序安装到网站，然后再执行前两个步骤。当 Web 应用程序已配置为允许匿名访问时，外接程序无法安装到本地 SharePoint Web 应用程序中的任何网站。如果 Web 应用程序已配置为允许匿名访问，您必须临时还原该设置以安装外接程序。 
   
     
@@ -189,7 +189,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
   
 6. （可选）取消选中"需要'使用远程界面'权限"框。执行此操作可允许代码和脚本在匿名用户上下文中运行，以调用每个网站集上的 SharePoint 客户端对象模型。您无法对任何网站集重新启用此要求。将框保留选中状态意味着默认情况下，匿名用户无法访问客户端对象模型，但您可以对特定网站集禁用此要求（并向其授予访问权限）。
     
-    > [!注释]
+    > **注释**
       > 在为匿名用户开发 SharePoint 外接程序的上下文中，此设置仅对 SharePoint 托管的外接程序有意义。专为匿名用户设计的提供程序托管的 SharePoint 外接程序使用的技术使用户权限变得无关紧要。有关详细信息，请参阅上面的 [创建可匿名访问的提供程序托管的外接程序](#Cloud-hosted)一节。 
 7. 选择"保存"以关闭表单。
     
@@ -199,7 +199,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
   
 9. 在"匿名访问限制"表单中，选择区域并确保"无"单选按钮已启用。如果您当前测试的 SharePoint 外接程序 仅需要对 SharePoint 数据的只读权限，请改为启用"拒绝写入"。
     
-    > [!注释]
+    > **注释**
       > 这是在为匿名用户开发 SharePoint 外接程序的上下文中，仅对 SharePoint 托管的外接程序有意义的另一项设置。 
 10. 如果您在第 2 步中创建了新的 Web 应用程序，您必须在其中创建网站集。
     
@@ -224,7 +224,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
     
   
 
-> [!重要信息]
+> **重要信息**
 > 以下过程只能在 SharePoint Online 中的公共网站上执行。（有关在 Microsoft SharePoint Online 中使用公共网站的详细信息，请参阅  [Office 365 的公共网站帮助](http://office.microsoft.com/zh-cn/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1)。） 
   
     
@@ -245,7 +245,7 @@ SharePoint 承载和提供程序承载的 SharePoint 外接程序可匿名访问
     
     
 
-> [!注释]
+> **注释**
 > 此过程无法在 SharePoint Online 网站集中执行，因此安装到 SharePoint Online 且计划供匿名用户访问的 SharePoint 托管的外接程序无法访问列表或库。 
   
     

@@ -35,21 +35,21 @@ Dies ist der achte in einer Reihe von Artikeln über die Grundlagen der Entwickl
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn Sie diese Reihe zu von SharePoint gehosteten Add-Ins durchgearbeitet haben, haben Sie eine Visual Studio-Projektmappe, die Sie verwenden können, um mit diesem Thema fortzufahren. Sie können außerdem das Repository unter  [SharePoint_SP-Hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) herunterladen und die Datei „BeforeClientRenderedControl.sln" öffnen.
   
     
     
 
 Sie können etwas clientseitiges JavaScript verwenden, um das Rendering von Webparts, der meisten Typen von Feldern (Spalten) und anderer Steuerelemente anzupassen, indem Sie eine JavaScript-Datei zur Eigenschaft **JSLink** des Steuerelements zuweisen, z. B. **SPField.JSLink**. Sie können auch clientseitige Validierungslogik auf diese Weise hinzufügen. In diesem Artikel passen Sie das Rendering eines Felds in einer Liste des SharePoint-Add-Ins für die Mitarbeitereinführung mithilfe von clientseitigem Rendering an.
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn der Endbenutzer JavaScript in seinem Browser deaktiviert hat, greift SharePoint auf das serverseitige Rendering und Validieren zurück. 
   
     
     
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > The JSLink property is not supported on Survey or Events lists. A SharePoint calendar is an Events list. 
   
     
@@ -142,7 +142,7 @@ function renderOrientationStage(ctx) {
   
 9. Um SharePoint mitzuteilen, Ihr benutzerdefiniertes JavaScript zu verwenden, fügen Sie das neue Attribut **JSLink** zum Element **Field** hinzu, und weisen dann die folgende URL als Wert zu: `~site/Scripts/OrientationStageRendering.js`.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Die Eigenschaft **JSLink** ist immer eine Datei, keine Methode. Es gibt keine Möglichkeit, SharePoint mitzuteilen, welche Methode ausgeführt werden soll. Aus diesem Grund enthält die Datei eine Methodet, die automatisch ausgeführt wird.
 
     Das Start-Tag für das Element **Field** sieht nun wie folgt aus.

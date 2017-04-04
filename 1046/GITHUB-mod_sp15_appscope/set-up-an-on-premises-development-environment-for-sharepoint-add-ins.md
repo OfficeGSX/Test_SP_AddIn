@@ -30,7 +30,7 @@ Dependendo dos seus requisitos e do seu orçamento específicos, você poderá e
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > A instalação do SharePoint só tem suporte no Windows Server 2008 R2 Service Pack 1 x64 ou no Windows Server 2012. Caso pretenda desenvolver o Suplementos do SharePoint para o SharePoint, no Windows 7 ou no Windows 8, inscreva-se em um Site do Desenvolvedor do Office 365 e desenvolva suplementos remotamente. 
   
     
@@ -72,7 +72,7 @@ dir /od *.log
 
 6. Após a conclusão da instalação, será solicitado que você inicie o Assistente de Configuração de Produtos e Tecnologias do SharePoint.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O Assistente de Configuração de Produtos e Tecnologias do SharePoint poderá falhar se você estiver usando um computador que tenha ingressado em um domínio mas que não esteja conectado a um controlador de domínio. Caso você veja essa falha, conecte-se a um controlador de domínio diretamente ou por meio de uma conexão VPN (Rede Virtual Privada) ou entre com uma conta local com privilégios administrativos no computador. 
 7. Após a conclusão do assistente de configuração, você verá a página **Seleção de Modelo** do novo site do SharePoint. Nessa página, escolha o modelo **Site do Desenvolvedor**. Você só poderá implantar Suplementos do SharePoint do Visual Studio para um Site do Desenvolvedor.
     
@@ -135,7 +135,7 @@ Nesta etapa, você configura serviços no SharePoint para uso de suplementos de 
   
 6. Selecione **Salvar e Fechar**.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você obtiver uma mensagem dizendo que o perfil que você está tentando criar já existe, selecione **Cancelar e Voltar**. 
 7. Novamente na página **Gerenciar Perfis de Usuário**, você deverá ver **Número total de perfis: 1**.
     
@@ -189,7 +189,7 @@ Para fins de desenvolvimento, você pode modificar seu arquivo de hosts à medid
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para a produção de farms, você deve criar uma estratégia de roteamento de DNS em sua intranet e, opcionalmente, configurar o seu firewall. Confira  [Instalar e gerenciar suplementos do SharePoint](https://technet.microsoft.com/pt-br/library/fp161232%28v=office.15%29) para saber mais sobre como criar e configurar um ambiente de produção para Suplementos do SharePoint.
   
     
@@ -200,7 +200,7 @@ Execute as etapas no procedimento a seguir para criar um domínio do suplemento 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você deve executar todas as etapas no procedimento a seguir enquanto estiver conectado como o administrador de farm e deve executar o prompt de comando e o Shell de Gerenciamento do SharePoint como um administrador. 
   
     
@@ -303,7 +303,7 @@ Confira  [Implantando e instalando os suplementos do SharePoint: métodos e opç
     
     
 
-> [!DICA]
+> **DICA**
 > Depois de implantar um suplemento hospedado no SharePoint em sua instalação, talvez seja solicitado que você faça logon com suas credenciais ao tentar iniciá-lo. Será necessário desabilitar a verificação de loopback para livrar-se desses avisos. Consulte  [Você recebe o erro 401.1 quando navega em um site que usa a Autenticação Integrada e que está hospedado no IIS 5.1 ou em uma versão mais recente](http://support.microsoft.com/pt-br/kb/896861) para obter instruções sobre como desabilitar a verificação de loopback.
   
     

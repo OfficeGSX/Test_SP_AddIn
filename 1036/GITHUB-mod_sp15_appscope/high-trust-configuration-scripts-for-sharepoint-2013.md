@@ -89,7 +89,7 @@ Voici le code pour le script. Il vous suffit de le copier dans un éditeur de te
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le fichier doit être enregistré au format ANSI, et non UTF-8. PowerShell peut générer de fausses erreurs de syntaxe lors de l'exécution d'un fichier dans un format autre que ANSI. Par défaut, le Bloc-notes et l'éditeur PowerShell procéderont à l'enregistrement au format ANSI. Si vous utilisez un autre éditeur pour enregistrer le fichier, veillez à l'enregistrer au format ANSI. 
   
     
@@ -142,7 +142,7 @@ Voici un exemple d'exécution de ce script.
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > L'inscription du certificat en tant qu'émetteur de jeton n'est pas immédiatement effective. Cela peut prendre 24 heures pour que tous les serveurs SharePoint reconnaissent le nouvel émetteur de jeton. L'exécution d'une commande IISreset sur tous les serveurs SharePoint permet la reconnaissance immédiate de l'émetteur par tous ces serveurs, si ceci est réalisable sans déranger les utilisateurs SharePoint. 
   
     
@@ -204,7 +204,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 ```
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > Si le script renvoie une erreur après l'exécution correcte de la ligne  `New-SPTrustedRootAuthority`, il ne peut pas être réexécuté tant que cet objet n'a pas été supprimé. Utilisez l'applet de commande suivante, où la valeur du paramètre  `-Identity` est identique à celle du paramètre `-CertName` dans le script.>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> Si l'émetteur de jeton doit être supprimé pour une raison quelconque, utilisez l'applet de commande suivante : >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> Si le paramètre  `-TokenIssuerFriendlyName` a été utilisé, indiquez la même valeur pour `-Identity`. Si le paramètre  `-TokenIssuerFriendlyName` n'a pas été utilisé, un GUID aléatoire est employé pour le nom de l'émetteur. Pour obtenir la valeur requise pour `-Identity`, exécutez l'applet de commande suivante. Copiez ensuite le fichier TokenIssuers.txt créé et trouvez l'émetteur portant le nom « Compléments à haut niveau de fiabilité  _<version Base 64 du GUID de l'émetteur>_ ». Utilisez ce nom complet pour `-Identity`. >  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
   
     
@@ -240,7 +240,7 @@ Voici un exemple d'appel du script :
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > L'inscription du certificat en tant qu'émetteur de jeton n'est pas immédiatement effective. Cela peut prendre 24 heures pour que tous les serveurs SharePoint reconnaissent le nouvel émetteur de jeton. L'exécution d'une commande IISreset sur tous les serveurs SharePoint permet la reconnaissance immédiate de l'émetteur par tous ces serveurs, si ceci est réalisable sans déranger les utilisateurs SharePoint. 
   
     
@@ -301,7 +301,7 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
 ```
 
 
-> [!CONSEIL]
+> **CONSEIL**
 > Les conseils donnés à la fin de la section précédente s'appliquent ici aussi. Toutefois, pour le paramètre  `-Identity` de l'applet de commande `Remove-SPTrustedSecurityTokenIssuer`, utilisez l'ID client si le paramètre  `-TokenIssuerFriendlyName` n'a pas été utilisé avec HighTrustConfig-ForSingleApp.ps1.
   
     

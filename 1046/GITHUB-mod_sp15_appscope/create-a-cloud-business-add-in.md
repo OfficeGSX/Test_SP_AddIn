@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # Criar um suplemento de negócios nuvem
 Usando o modelo de suplemento de negócios de nuvem no Visual Studio, você pode criar suplementos de SharePoint 2013 ou SharePoint no Office 365 otimizados para adição e o gerenciamento de dados.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você também pode criar um Suplemento do SharePoint usando o suplemento para o modelo do SharePoint 2013.
   
     

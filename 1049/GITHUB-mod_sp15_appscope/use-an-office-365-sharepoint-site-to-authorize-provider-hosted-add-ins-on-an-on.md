@@ -124,7 +124,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!Примечание]
+> **Примечание**
 > В документе  [Настройка односторонней гибридной среды с SharePoint Server 2013 и Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx), который можно скачать на  [странице гибридных ресурсов SharePoint 2013](http://www.microsoft.com/ru-ru/download/details.aspx?id=35593), подробнее объясняется, как заменить сертификат STS по умолчанию, расположенный в локальной ферме, на сертификат из известного центра сертификации или самозаверяющий сертификат. 
   
     
@@ -180,7 +180,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 
 1. На локальном сервере SharePoint скопируйте код из функции в текстовый файл и сохраните его под именем MySharePointFunctions.psm1 в одну из следующих папок (но не в обе). Возможно, понадобится создать части пути, если он содержит папки, которых еще не существует. Обратите внимание, что в обоих случаях папка, находящаяся на самом низком уровне пути, должна иметь то же имя, что и файл.
     
-    > [!Совет]
+    > **Совет**
       > Файл необходимо сохранить в формате ANSI, а не UTF-8. При загрузке файла в формате, отличном от ANSI, в PowerShell могут возникать ошибки синтаксиса. По умолчанию Windows NotePad сохраняет файлы в формате ANSI. Если для сохранения файла используется другой редактор, обязательно выберите формат ANSI. 
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`, где  _имя пользователя_ принадлежит администратору фермы, который будет запускать файл.

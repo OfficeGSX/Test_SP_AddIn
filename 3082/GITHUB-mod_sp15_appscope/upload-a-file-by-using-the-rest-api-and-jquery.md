@@ -36,7 +36,7 @@ En los dos ejemplos de código que se usan en este artículo se usa la API de RE
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los complementos hospedados por el proveedor escritos en JavaScript deben usar la biblioteca SP.RequestExecutor entre dominios para enviar solicitudes a un dominio de SharePoint. Para conocer un ejemplo, consulte el tema sobre cómo  [cargar un archivo mediante la biblioteca entre dominios](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
   
     

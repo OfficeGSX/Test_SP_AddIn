@@ -17,7 +17,7 @@ Cet article est le deuxième d'une série sur les concepts de base du développe
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous avez suivi cette série sur les compléments hébergés par SharePoint, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser pour cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) et ouvrir le fichier BeforeColumns.sln.
   
     

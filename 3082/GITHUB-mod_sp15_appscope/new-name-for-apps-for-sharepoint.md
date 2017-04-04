@@ -25,7 +25,7 @@ Estamos actualizando nuestros productos, documentación, ejemplos y otros recurs
 |web de complemento  <br/> |web de complemento  <br/> |
    
 
-> [!NOTA]
+> **NOTA**
 > El nombre del selector de complementos y la página **Mis complementos** en Office 365 no cambia. En la página **Mis complementos** se inician los complementos de origen y las aplicaciones web independientes que se autentican mediante Azure AD.
   
     

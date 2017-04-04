@@ -13,7 +13,7 @@ Sie können in einer SharePoint-Add-In auf das Stylesheet einer SharePoint-Websi
     
 
 
-> [!WICHTIG]
+> **WICHTIG**
 > Wenn Sie für Ihre Webseiten das Chromsteuerelement oder die App-Masterseite verwenden, sind die Formatvorlagen für Sie bereits verfügbar. Sie müssen dann nicht manuell auf das Stylesheet verweisen, indem Sie das in diesem Artikel beschriebene Verfahren nutzen. 
   
     
@@ -250,7 +250,7 @@ In Abbildung 1 ist eine SharePoint-Webseite dargestellt, die das Stylesheet verw
   
 2. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt die App bereit und öffnet die Berechtigungsseite für die App. 
 3. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

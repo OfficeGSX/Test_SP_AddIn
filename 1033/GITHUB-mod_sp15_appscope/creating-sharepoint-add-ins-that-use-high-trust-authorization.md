@@ -7,7 +7,7 @@ ms.assetid: 135bf6be-b118-4d2c-8d40-27f5060b06f3
 
 # Creating SharePoint Add-ins that use high-trust authorization
 Learn about high-trust SharePoint Add-ins, which use digital certificates to establish trust between SharePoint and the remote components that access SharePoint.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -52,7 +52,7 @@ A high-trust add-in is a provider-hosted SharePoint Add-in that is installed to 
     
     
 
-> [!NOTE]
+> **NOTE**
 >  This topic helps you understand the high-trust authorization system for SharePoint Add-ins. For practical information about creating and deploying high-trust add-ins, see the following topics:>  [Create high-trust SharePoint Add-ins](create-high-trust-sharepoint-add-ins.md)>  [Package and publish high-trust SharePoint Add-ins](package-and-publish-high-trust-sharepoint-add-ins.md)
   
     
@@ -63,7 +63,7 @@ In SharePoint 2013, the security token service (STS) provides access tokens for 
     
     
 
-> [!NOTE]
+> **NOTE**
 > The STS isn't intended for user authentication. So, you won't see the STS listed on the user sign-in page, in the **Authentication Provider** section in Central Administration, or in the People Picker in SharePoint 2013.
   
     
@@ -203,7 +203,7 @@ Following is an example of an **appSettings** section for a high-trust SharePoin
 ```
 
 
-> [!SECURITY NOTE]
+> **SECURITY NOTE**
 > The preceding example assumes that the certificate is stored on the file system. This is acceptable for development and debugging. In a production high-trust SharePoint Add-in, the certificate is usually stored in the Windows Certificate Store, and the **ClientSigningCertificatePath** and **ClientSigningCertificatePassword** keys are typically replaced by a **ClientSigningCertificateSerialNumber** key.
   
     

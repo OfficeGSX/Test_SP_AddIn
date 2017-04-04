@@ -37,7 +37,7 @@ Se seu provedor hospedado Suplemento do SharePoint tiver um aplicativo web, impl
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Para garantir que sua ID de cliente do SharePoint e o segredo cliente valores obtém publicados com seu projeto da web, que permite que o conteúdo da web acessar dados do SharePoint, publicar seu projeto Suplemento do SharePoint na página **publicar seu suplemento**. Você pode acessar esta página abrindo o menu de atalho para o Suplemento do SharePoint, não o menu de atalho para o aplicativo da web, e, em seguida, escolhendo o comando **Publicar**.
   
     
@@ -71,7 +71,7 @@ Seu Suplemento do SharePoint normalmente tem um aplicativo web host associado qu
     
     Se você planeja enviar seu Suplemento do SharePoint para o Office Store, certifique-se de usar ID do cliente e valores de secreta do cliente que são criados no painel vendedor. Você pode usar as IDs de cliente e os valores de secreta de cliente que você gerar usando a página de appregnew.aspx durante a fase de desenvolvimento, mas suplementos enviados para a Office Store devem usar IDs de cliente e senhas dos clientes que obteve de painel vendedor. Além disso, você deve criar o perfil de publicação no seu site de Azure e importe-os para Visual Studio, em vez de criar um perfil no assistente **Criar perfil de publicação**. Quando você cria um perfil no Azure, todas as configurações na guia **conexão** são fornecidas em Visual Studio. Para saber mais sobre como importar ou criar um perfil de publicação, consulte [criar um perfil publicar](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
-    > [!DICA]
+    > **DICA**
       > Se você não pode publicar conteúdo da web diretamente, você pode criar uma web implantar pacote que um administrador pode implantar na Web para você. Para criar uma web implantar pacote, criar um novo perfil, escolha a guia **conexão** e em seguida, escolha o **Pacote de implantação da Web** na lista **método de publicação**.
 
 ### Para implantar o seu projeto de aplicativo web
@@ -106,7 +106,7 @@ Seu Suplemento do SharePoint normalmente tem um aplicativo web host associado qu
     
     Você deve especificar um endereço que começa com o prefixo "https". Consulte  [por que meus suplementos precisa ser protegida por SSL?](http://msdn.microsoft.com/library/jj591603#bk_q7).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > sites de Azure automaticamente fornecem um ponto de extremidade https. Se você publicar seu suplemento em um site de Office Store ou o Office Store, o endereço deve começar com um prefixo https. No entanto, se você publicar o suplemento para um site local, você pode usar um prefixo http.
 
     No **o que é ID do cliente do suplemento?** caixa de texto, a ID do cliente que você inseriu no perfil de publicação já deverá aparecer.

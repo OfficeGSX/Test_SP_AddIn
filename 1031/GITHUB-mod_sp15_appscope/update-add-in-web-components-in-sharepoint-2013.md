@@ -90,7 +90,7 @@ Die Microsoft Office-Entwicklertools für Visual Studio sind darauf ausgelegt, n
 
   
 
-> [!VORSICHT]
+> **VORSICHT**
 > Fügen Sie keine "<!-- -->"-Kommentare zur Datei  _{FeatureName}_.features hinzu. Kommentare werden von der Aktualisierungsinfrastruktur nicht unterstützt, und bei der Aktualisierung tritt ein Fehler auf, wenn sich Kommentare in der Datei befinden. Sie werden in den Markupbeispielen in diesem Artikel nur verwendet, um Ihnen zu zeigen, wie Sie Ihren Code einfügen sollten. 
   
     
@@ -124,7 +124,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 
     Zu diesem Zeitpunkt sollte die Datei dem folgenden Beispiel ähneln.
     
-    > [!WICHTIG]
+    > **WICHTIG**
       > Die Office-Entwicklertools für Visual Studio hat möglicherweise bereits das obige Markup hinzugefügt und einige Elemente als Abbildung aus dem Abschnitt **ElementManifests** in den Abschnitt **ApplyElementManifests** kopiert. *Löschen Sie diese Elemente.*  Auch wenn Sie einige dieser Elemente möglicherweise im Laufe der nächsten Schritte zurücksetzen müssen, ist es leichter und sicherer, mit einem leeren **ApplyElementManifests**-Abschnitt zu beginnen. Redundante Einträge für nicht geänderte Komponenten können negative Auswirkungen haben, z. B. kann der Updateprozess dadurch so viel Zeit in Anspruch nehmen, dass er einen Timeout verursacht und abgebrochen wird. 
 
 
@@ -229,7 +229,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       >  Löschen Sie nicht das ursprüngliche Manifest. Die Feature-XML-Datei verwendet sowohl das alte als auch das neue Manifest.>  Kopieren Sie keine **ElementFile**-Elemente aus dem Abschnitt **ElementManifests** in den Abschnitt **ApplyElementManifests**, selbst wenn sich die Datei, auf die in **ElementFile** verwiesen wird, geändert hat.
 2. Öffnen Sie jede Elementmanifestdatei, auf die im Abschnitt **ApplyElementManifests** verwiesen wird, und stellen Sie sicher, dass alle [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx)-Elemente über ein **ReplaceContents**-Attribut verfügen und dies auf **TRUE** festgelegt ist. Nachfolgend ist ein Beispiel gezeigt. Die Office-Entwicklertools für Visual Studio haben dies möglicherweise bereits durchgeführt, aber Sie sollten es überprüfen, auch für die Elementemanifeste aus früheren Versionen des Add-Ins. Dies ist eine der Situationen, in denen es eine gute Vorgehensweise ist, eine vorhandene Elementmanifestdatei zu bearbeiten.
     
@@ -247,7 +247,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       >  Wenn die Seite so konfiguriert wurde, dass Benutzer sie anpassen können, hat dieses Markup den Nebeneffekt, dass diese Anpassungen entfernt werden. Benutzer müssen die Anpassungen wiederholen.>  Wenn das Webpart mithilfe der Anweisungen unter [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) hinzugefügt wurde, befindet sich das Webpartmarkup im Elementmanifest. Das Ändern der Eigenschaften des Webparts ist also eine Ausnahme zu der allgemeinen Regeln, dass eine Elementmanifestdatei nicht als Teil eines Add-In-Updates bearbeitet werden sollte.
 4. Als Alternative zum Ändern einer Seite können Sie auch mit den folgenden Schritten eine Umleitung auf eine neue Seite verwenden. 
     
@@ -385,7 +385,7 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
     
     Beachten Sie auch, dass das Attribut **BeginVersion** in keinem der **VersionRange**-Elemente verwendet wird. Der Grund dafür ist, dass der Standardwert für das Attribut **BeginVersion** „0.0.0.0" lautet, und dies der gewünschte Wert ist, denn alle Aktualisierungsaktionen sollen auf jede Instanz des Add-Ins angewendet werden, dessen Version unter dem im Attribut **EndVersion** festgelegten Wert liegt.
     
-    > [!WICHTIG]
+    > **WICHTIG**
       >  Das Element **VersionRange** bestimmt nur, auf welche Versionen des Features die Upgrades angewendet werden. Es bestimmt nicht, welche Versionen des Add-Ins eine Benachrichtigung erhalten, dass ein Update verfügbar ist - die Benachrichtigung wird allein durch die Versionsnummer des Add-Ins ausgelöst. Innerhalb von 24 Stunden, nachdem eine neue Version des Add-Ins im Add-In-Katalog der Organisation oder dem Office Store verfügbar wird, erhält jede installierte Instanz des Add-Ins unabhängig von der Version die Benachrichtigung auf ihrer Kachel auf der Seite **Websiteinhalt**, dass ein Update verfügbar ist. >  Das Element **VersionRange** wirkt sich nicht auf die Versionsnummer des neu aktualisierten Features oder Add-Ins aus. Diese zwei Nummern werden immer auf die aktuellste Versionnummer gesetzt, unabhängig davon, zu welchem Versionsbereich das Feature vor der Aktualisierung gehört hat. Dies ist ein weiterer Grund, auf die Verwendung eines **BeginVersion**-Attributs zu verzichten. Das Attribut **BeginVersion** kann verwendet werden, um Aktualisierungsaktionen für einige Add-In-Instanzen dauerhaft zu sperren. Es kann jedoch nicht verhindern, dass die Feature- oder Add-In-Version auf die aktuellste Version gesetzt wird. Daher kann die Verwendung des Attributs **BeginVersion** dazu führen, dass zwei Instanzen eines Add-Ins die gleiche Add-In-Versionsnummer und die gleiche Versionsnummer für das Add-In-Web-Feature besitzen, während sich in ihrem Add-In-Web unterschiedliche Komponenten befinden.
 
 ## Überprüfen der Bereitstellung von Add-In-Web-Komponenten
@@ -422,7 +422,7 @@ Führen Sie die folgenden Schritte aus, um die Bereitstellung des Add-In-Web-Fea
   
 8. Klicken Sie bei jeder dieser benutzerdefinierten Listeninstanzen auf den Link **"Name_der_Liste" anpassen** und überprüfen Sie auf der Seite "Listeneinstellungen", ob die Liste über die richtigen Inhaltstypen und Spalten verfügt.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn es auf der Seite keinen **Inhaltstypen**-Abschnitt gibt, müssen Sie die Verwaltung der Inhaltstypen aktivieren. Klicken Sie auf den Link **Erweiterte Einstellungen**, aktivieren Sie auf der Seite "Erweiterte Einstellungen" die Verwaltung der Inhaltstypen und klicken Sie anschließend auf **OK**. Sie werden dann wieder auf die vorherige Seite weitergeleitet, wo sich jetzt ein Abschnitt mit einer Liste von **Inhaltstypen** befindet.
 9. Nahe am Kopf der Seite befindet sich die **Webadresse** der Liste. Wenn zu Sie Beispielelemente zu Ihrer Listeninstanzdefinition hinzugefügt haben, kopieren Sie die Adresse und fügen Sie diese in die Adressleiste Ihres Browsers ein und navigieren Sie dann zu der Liste. Überprüfen Sie, ob inder Liste die von Ihnen erstellten Beispielelemente enthalten sind.
     

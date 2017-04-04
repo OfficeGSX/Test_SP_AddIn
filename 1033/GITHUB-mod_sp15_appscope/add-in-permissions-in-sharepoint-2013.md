@@ -8,7 +8,7 @@ ms.assetid: 5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4
 
 # Add-in permissions in SharePoint 2013
 Learn about add-in permissions in SharePoint, including types of add-in permissions, permission request scopes, and managing permissions. This article also discusses the differences in add-in permission rights, user rights, and Office Store app rights.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -65,7 +65,7 @@ A SharePoint Add-in uses permission requests to specify the permissions that it 
     
     
 
-> [!NOTE]
+> **NOTE**
 > The scopes described in this section apply to list content and library content only. For information about scopes for other features, see the  [Understand the types of add-in permissions and permission scopes](#Perm_types) section in this article.
   
     
@@ -76,7 +76,7 @@ Permission request scopes indicate the location in the SharePoint hierarchy wher
     
     
 
-> [!NOTE]
+> **NOTE**
 > A SharePoint Add-in has its own identity and is a security principal, called an add-in principal. Like users and groups, an add-in principal has certain permissions or rights. The add-in principal has full control rights to the add-in web so it only needs to request permissions to SharePoint resources in the host web or other locations outside the add-in web. For more information about add-in web, see  [Important aspects of the SharePoint Add-in architecture and development landscape](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md) and [Host webs, add-in webs, and SharePoint components in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md). 
   
     
@@ -127,14 +127,14 @@ Permissions indicate the activities that an add-in is permitted to do within the
     
   
 
-> [!NOTE]
+> **NOTE**
 > For more information about what Read, Write, Manage, and FullControl rights include, see  [Plan add-in permissions management](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx). 
   
     
     
 
 
-> [!NOTE]
+> **NOTE**
 > These rights correspond to the default user permission levels of SharePoint: Reader, Contributor, Designer, and Full Control. For more information about user permission levels, see  [User permissions and permission levels](http://technet.microsoft.com/en-us/library/cc288074.aspx). > The add-ins rights names do not match SharePoint user roles rights names, to avoid confusion between user roles rights and add-in rights. Because customizing the permissions that are associated with SharePoint user roles does not affect add-in permission request levels, the add-in rights names do not match the corresponding SharePoint user roles, except Full Control, which can't be customized through the permissions management user interface. 
   
     
@@ -155,7 +155,7 @@ In addition:
     
   
 
-> [!NOTE]
+> **NOTE**
 > Office Store apps have some restrictions as to what type of rights an add-in can request. For more information, see the  [Understand the types of add-in permissions and permission scopes](#Perm_types) section in this article.
   
     
@@ -197,7 +197,7 @@ Table 2 shows the permission request scope for list and library content. It also
     
     
 
-> [!NOTE]
+> **NOTE**
 > The URIs used in Table 2 are literal values. 
   
     
@@ -286,7 +286,7 @@ The permission request scope for other SharePoint features are listed in the fol
     
     
 
-> [!NOTE]
+> **NOTE**
 > The URIs used in the tables are literal values. 
   
     
@@ -305,7 +305,7 @@ Table 3 shows the permission request scope for Business Connectivity Services (B
 |http://sharepoint/bcs/connection  <br/> |Read  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > For more information about the BCS add-in permission request scope, see  [Business Connectivity Services in SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx). 
   
     
@@ -328,7 +328,7 @@ Table 4 shows the permission request scope for Search. It also lists the rights 
 |http://sharepoint/search  <br/> |QueryAsUserIgnoreAppPrincipal  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > For more information about the Search add-in permission request scope, see  [Search in SharePoint 2013](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx). 
   
     
@@ -343,7 +343,7 @@ Table 5 shows the permission request scope for Project Server 2013. It also list
     
     
 
-> [!NOTE]
+> **NOTE**
 > An add-in that uses Project Server 2013 features and services should be tested in an environment that has the required Project Server features and services. The Project Server 2013 permission provider assembly that knows about Project Server 2013 permission scopes is not installed by default with SharePoint Server. For more information, see the Project Server 2013 developer documentation. 
   
     
@@ -382,7 +382,7 @@ Table 6 shows the permission request scope for social features. It also lists th
 |http://sharepoint/social/microfeed  <br/> |Read, Write, Manage, FullControl  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > For more information about social features add-in permission request scope, see  [Add-in permission requests for accessing social features](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms). 
   
     
@@ -405,7 +405,7 @@ Table 7 shows the permission request scope for taxonomy. It also lists the right
 |http://sharepoint/taxonomy  <br/> |Read, Write  <br/> |
    
 
-> [!NOTE]
+> **NOTE**
 > For more information about the taxonomy add-in permission request scope, see  [Add SharePoint 2013 capabilities](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx). 
   
     
@@ -439,7 +439,7 @@ The **BaseTemplateId** property is a child element, not an attribute of the **Ap
 ||||
 |:-----|:-----|:-----|
 |**Scope URI** <br/> |**Property** <br/> |**Type** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > [!NOTE]> For more information about **BaseTemplateId** and the corresponding integer value for the list base template, see the **Type** attribute of the [List Element (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **NOTE**> For more information about **BaseTemplateId** and the corresponding integer value for the list base template, see the **Type** attribute of the [List Element (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
    
 
 ## Manage and troubleshoot add-in permissions

@@ -7,7 +7,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 
 # Programmatically deploy a custom button in the provider-hosted add-in
 Learn how to programmatically register a custom ribbon button with a custom list in the same provider-hosted SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -39,7 +39,7 @@ This is the ninth in a series of articles about the basics of developing provide
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about provider-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) and open the BeforeProgrammaticButton.sln file.
   
     
@@ -49,7 +49,7 @@ In this article you will learn how to include a custom ribbon button in the a Sh
 ## Re-add the custom button to the project
 
 
-> [!NOTE]
+> **NOTE**
 >  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
   
     
@@ -133,7 +133,7 @@ RegistrationId="100"
   
   - The value of the  `action.Name` comes from the **ID** attribute of the **CustomAction** element in the element.xml file in **AddEmployeeToCorpDB**.
     
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > **You must change the  `action.Name` value in the code below to match the value in your elements.xml file.** The GUID part of the name will be different. Note that there is a "." character between the GUID and the rest of the name. The following is an example of the line.>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
   ```cs
@@ -286,7 +286,7 @@ Since the add-in is now adding adding and deleting web-scoped custom actions, we
 
 1. Open the **Site Contents** page of the Hong Kong store's website *and remove the **Local Employees** list!* 
     
-    > [!NOTE]
+    > **NOTE**
       > Retracting an add-in in Visual Studio, does not remove lists that are created by the add-in, so you need to manually delete it any time you are testing code that creates it. 
 2. Use the F5 key to deploy and run your add-in. Visual Studio hosts the remote web application in IIS Express and hosts the SQL database in a SQL Express. It also makes a temporary installation of the add-in on your test SharePoint site and immediately runs the add-in. You are prompted to grant permissions to the add-in before it's start page opens.
     
@@ -296,7 +296,7 @@ Since the add-in is now adding adding and deleting web-scoped custom actions, we
   
 4. Navigate to the **Site Contents** page. The **Local Employees** list is present because your first-run logic added it.
     
-    > [!NOTE]
+    > **NOTE**
       > If the list is not there or you have other indications that the first-run code is not executing, it may be that the **Tenants** table is not being reverted to an empty state when you press F5. The most common cause of this is that the **ChainCorporateDB** project is no longer set as a startup project in Visual Studio. See the note near the top of this article for how to fix this. Also be sure that you've configured the database to be rebuilt as described in [Configure Visual Studio to rebuild the corporate database with each debugging session](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5. Open the list and add an item.
     

@@ -23,7 +23,7 @@ SharePoint Add-in套件為可遵守 [開放封裝慣例 (OPC)](http://msdn.micro
   
 - **主控 web 功能與自訂動作或增益集組件：**部署至增益集 web SharePoint 2013元件，除了SharePoint Add-in也可以部署一個以上的自訂動作 (快顯功能表項目或功能區擴充功能) 到主機網站。這被藉由包括增益集套件中不是這樣的套件.wsp 檔案內和的部署會移至主機 web 元件的功能。此 「 寬鬆"功能稱為主機 web 功能。增益集組件會部署到主機網站相同的方式。主機 web 功能是由標準SharePoint 2013 feature.xml 檔案以及一或多個相關聯的 elements.xml 檔案所組成。Elements.xml 檔案自訂動作，例如，包含自訂動作的 **CustomAction**標記。它也可以包含增益集組件的標記。僅限這兩種元件可以在主機網站功能。這些主控的 web 功能不會分項增益集資訊清單中。不過，他們"組件 」 中 OPC 有意義且沒有明確 OPC 關係的增益集資訊清單和每個這些檔案。如需包含主機 web 功能的增益集套件的範例，請參閱 [建立部署與 SharePoint 增益集的自訂動作](create-custom-actions-to-deploy-with-sharepoint-add-ins.md)。
     
-    > [!注意事項]
+    > **注意事項**
       > 租用戶系統管理員可以選擇要安裝多個網站SharePoint Add-in批次。增益集已安裝以這種方式是說有 **Tenant**範圍。如果增益集尚未安裝批次，而每個網站分開安裝它具有 **Web**範圍。若主機 web 功能包括功能區擴充功能或增益集組件、 未部署至主機 web 如果增益集是批次安裝，因此唯一的快顯功能表項目時部署的租用戶範圍增益集增益集範圍不應混淆功能範圍。功能範圍決定之部署的功能中的項目。各種可能性是 **Farm**、 **WebApplication**、 **Site** (也就是網站集合) 及 **Web**。僅限 **Web**選項是SharePoint Add-ins (兩者裝載 web 功能和功能內的增益集套件.wsp) 中允許的功能。增益集範圍是指的增益集已安裝的範圍。各種可能性是 **Web**，在增益集的大小寫具有一或多個網站的網站，並 **Tenant**，在其中增益集的大小寫已安裝網站的所有或部分子集客戶的租用中的批次安裝。如需 **Tenant**與 **Web**範圍的詳細資訊，請參閱 [租用和部署範圍的 SharePoint 增益集](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。
 - **當地語系化的資源檔案 (.resx)：**這些是針對當地語系化的增益集資訊清單包含增益集的層面標題和主機的層面 web 功能增益集套件中。(增益集套件的每個自己套件，例如.wsp 檔案、 Azure 網站與add-in資訊清單內的個別部分可以完全相同他們就是有問題的項目不屬SharePoint Add-in一部分套用自己當地語系化程序)。例如包括.resx 檔案的主機 web 功能的增益集套件中，請參閱 [找出 SharePoint 增益集](localize-sharepoint-add-ins.md)。
     
@@ -45,7 +45,7 @@ SharePoint Add-in套件為可遵守 [開放封裝慣例 (OPC)](http://msdn.micro
   
 - [開始] 頁面即會開啟時啟動增益集] 頁面的 URL。這可以是在增益集 web 頁面、 雲端式頁面或 ISV 網頁伺服器上的頁面。
     
-    > [!注意事項]
+    > **注意事項**
       > 在某些情況下，可能會有可 **StartPage**元素中指定的檔案類型的限制。如需詳細資訊，請參閱 [首頁元素 (PropertiesDefinition complexType) (SharePoint 增益集資訊清單)](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx)。> 當您會結合 **StartPage**值中的多個查詢參數時，您必須使用而不是" `&amp;`"或分號分隔的編碼的 &amp;" `&amp;amp;`"一起附加它們。
 - 增益集的其他屬性。這些包括標題和支援的增益集 (兩者都是必要的)] 中的處理後續安裝的服務 Url 的地區設定升級後前解除安裝事件及建立增益集網頁時所使用的網站範本。
     
@@ -60,7 +60,7 @@ SharePoint Add-in套件為可遵守 [開放封裝慣例 (OPC)](http://msdn.micro
     
   
 
-> [!注意事項]
+> **注意事項**
 > 增益集資訊清單檔案是在增益集套件的唯一必要項目，但不是所有的前一個清單中的項目所必要的組件的檔案。
   
     
@@ -79,7 +79,7 @@ SharePoint Add-in套件為可遵守 [開放封裝慣例 (OPC)](http://msdn.micro
     
     
 
-> [!注意事項]
+> **注意事項**
 > **AppPermissionRequest**元素 **Scope**屬性值的結構類似 Uri，但他們實際常值字串。在下列範例中的範例 **Scope**值沒有部分是預留位置。如需權限的詳細資訊，請參閱 [增益集 (英文) SharePoint 2013 權限](add-in-permissions-in-sharepoint-2013.md)。
   
     
@@ -124,7 +124,7 @@ SharePoint 2013提供數種可使用於 **StartPage**元素及增益集及增益
     
     
 
-> [!注意事項]
+> **注意事項**
 > **Scope**元素之屬性的 **AppPermissionRequest**中不使用這些權杖。
   
     

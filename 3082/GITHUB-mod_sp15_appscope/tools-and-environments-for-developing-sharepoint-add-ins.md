@@ -39,7 +39,7 @@ Tenga en cuenta lo siguiente:
     
   
  **Para crear el entorno de SharePoint Online** mediante una suscripción de SharePoint Online que puede usar para desarrollo, consulte [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). **Para crear el entorno local**, consulte [Configurar un entorno de desarrollo en el nivel local para complementos para SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
-> [!NOTA]
+> **NOTA**
 > Este tema solo se ocupa de entornos de desarrollo de Complementos de SharePoint. Si va a desarrollar soluciones de granja de servidores, consulte  [Configurar un entorno de desarrollo general para SharePoint 2013](http://msdn.microsoft.com/library/08e4e4e1-d960-43fa-85df-f3c279ed6927%28Office.15%29.aspx). Si planea efectuar ambos tipos de desarrollo, comience con el último artículo y consulte  [Configurar un entorno de desarrollo en el nivel local para complementos para SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) para conocer los pasos adicionales que necesita para desarrollar Complementos de SharePoint.
   
     

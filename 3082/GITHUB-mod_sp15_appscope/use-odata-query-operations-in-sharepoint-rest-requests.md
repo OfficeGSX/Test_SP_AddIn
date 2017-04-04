@@ -30,7 +30,7 @@ El servicio REST de SharePoint admite una amplia variedad de operadores de caden
     
 
 
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > El servicio REST de SharePoint Online (y SharePoint 2016 local o versiones posteriores) admite la combinación de varias solicitudes en una sola llamada al servicio mediante el uso de la opción de consulta  `$batch` de OData. Para obtener información detallada y vínculos a los ejemplos de código, vea [Realizar solicitudes de lote con las API de REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -44,7 +44,7 @@ Use la opción de consulta  [$select](http://www.odata.org/documentation/odata-v
     
     
 
-> [!NOTA]
+> **NOTA**
 > En general, si no especifica la opción de consulta  `$select`, el servicio REST devuelve todos los campos disponibles de forma predeterminada. Pero, en unos pocos casos, algunos objetos de SharePoint incluyen propiedades que consumen muchos recursos en su recuperación; para optimizar el rendimiento del servicio REST, estas propiedades no se incluyen en la consulta predeterminada, y es necesario solicitarlas explícitamente. > Por ejemplo, la propiedad **SPWeb.EffectiveBasePermissions** no se devuelve de forma predeterminada, y es necesario solicitarla explícitamente con la opción de consulta `$select`. 
   
     
@@ -84,7 +84,7 @@ En el servicio REST de SharePoint, los usuarios están representados con el nomb
     
     
 
-> [!NOTA]
+> **NOTA**
 > No se admiten las consultas de usuario basadas en pertenencia. > No se admite el uso del operador **Current** para hacer consultas con el Id. del usuario actual.
   
     
@@ -112,7 +112,7 @@ Use las opciones de consulta  [$top](http://www.odata.org/documentation/odata-ve
     
     
 
-> [!NOTA]
+> **NOTA**
 > La opción de consulta $skip no funciona con consultas para elementos de lista de SharePoint. 
   
     
@@ -135,7 +135,7 @@ La opción $skiptoken le permite omitir elementos hasta que se alcanza el elemen
     
     
 
-> [!NOTA]
+> **NOTA**
 > Cuando use estas opciones de consulta, tenga en cuenta que el paginado en OData es ordinal. Por ejemplo, supongamos que está implementando un botón de página siguiente para mostrar los elementos de lista de SharePoint. Usa el servicio REST para permitir que el botón devuelva los elementos 1 a 20 al hacer clic en ellos, después los elementos 21 a 40 y así sucesivamente. Pero supongamos que otro usuario elimina los elementos 4 y 18 entre clics del botón siguiente. En tal caso, se restablece el posicionamiento ordinal de los elementos restantes, y la visualización de los elementos 21 a 40 omite dos elementos. 
   
     

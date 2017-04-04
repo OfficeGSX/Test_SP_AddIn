@@ -29,7 +29,7 @@ Este é o sexto em uma série de artigos sobre noções básicas do desenvolvime
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tiver trabalhado através desta série sobre hospedado no SharePoint suplementos, então você possui uma solução de Visual Studio que você pode usar para continuar com este tópico. Você também pode baixar o repositório em  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) e abra o arquivo BeforeWorkflow.sln.
   
     
@@ -100,7 +100,7 @@ O fluxo de trabalho envia um email para notificar um membro da equipe de RH que 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > AT vários momentos durante a criação de seu fluxo de trabalho, um símbolo de losango azul com um ponto de exclamação nela, 
   
     
@@ -255,7 +255,7 @@ O fluxo de trabalho envia um email para notificar um membro da equipe de RH que 
     
     
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se não abrir o console do **Host do serviço de teste**, você pode precisar habilitar a depuração de fluxo de trabalho. Com o botão direito no nome do projeto no **Solution Explorer** e escolha **Propriedades**. Abra a guia do **SharePoint** no painel de **Propriedades** e a caixa de seleção para **Ativar o fluxo de trabalho de depuração**.
 3. Navegue até a caixa de entrada do email (Outlook) da sua conta de desenvolvedor do Office 365. Há um email com o assunto *"funcionário*  está pronta para a documentação de RH." onde o *funcionário*  é o nome do funcionário cujo item que você editou. O corpo do email diz *"Funcionário*  está aguardando no lobby para preencher formulários de emprego e benefícios." Este é um exemplo:
     
@@ -269,7 +269,7 @@ O fluxo de trabalho envia um email para notificar um membro da equipe de RH que 
     
     
     
-    > [!DICA]
+    > **DICA**
       > Se o fluxo de trabalho começa, mas nunca for concluído, e não será enviado um email, tente encerrar a sessão de depuração e tentar F5 novamente algumas vezes antes de concluir lá é algo errado em seu código. Em alguns casos, o problema está em SharePoint Online.> Se você ainda estiver tendo problemas, tente adicionar um tipo de conteúdo chamado **ListFieldsContentType**, se não houver um já, a seção **ContentTypes** do arquivo Schema. XML. O exemplo a seguir é um exemplo da marcação.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

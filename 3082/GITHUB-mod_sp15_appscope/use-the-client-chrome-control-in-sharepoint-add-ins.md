@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Cuando presiona F5, Visual Studio compila la solución, implementa el complemento y abre la página de permisos para el complemento. 
 3. Presione el botón **Confiar**.
     

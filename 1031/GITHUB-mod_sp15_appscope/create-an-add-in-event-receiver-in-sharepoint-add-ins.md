@@ -116,7 +116,7 @@ switch (properties.EventType)
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Falls Sie für die Ereignisse **AppInstalled**, **AppUpdated** und **AppInstalling** über Handler verfügen, wird für jedes eine eigene URL im Add-In-Manifest registriert. So *können*  Sie unterschiedliche Endpunkte dafür verwenden. Aber in diesem Artikel (und den Office-Entwicklertools für Visual Studio) wird angenommen, dass sie genau denselben Endpunkt haben. Deshalb muss der Code bestimmen, durch welches Ereignis er aufgerufen wurde.
 8. Wie unter  [Einbeziehen von Rollbacklogik und "Bereits erledigt"-Logik in Add-In-Ereignishandler](handle-events-in-sharepoint-add-ins.md#Rollback) erläutert wurde, möchten Sie bei einem Fehler in der Installationslogik fast immer, dass die Installation des Add-Ins abgebrochen wird und alle Installationsaktionen von SharePoint zurückgesetzt werden. Außerdem sollen die Aktionen Ihres Handlers zurückgesetzt werden. Eine Möglichkeit dazu besteht darin, folgenden Code in der **case**-Struktur für das AppInstalled-Ereignis hinzuzufügen.
     
@@ -138,7 +138,7 @@ case SPRemoteEventType.AppInstalled:
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Verschieben Sie Installationscode, der mehr als 30 Sekunden dauert, in das Add-In selbst. Sie können ihn zu "Erster Start"-Logik hinzufügen, die beim ersten Ausführen des Add-Ins ausgeführt wird. Das Add-In könnte eine Meldung im Sinne von "Das Add-In wird nun für Sie vorbereitet" anzeigen. Alternativ kann das Add-In den Benutzer zum Ausführen des Initialisierungscodes auffordern. > Ist "Erster Start"-Logik für Ihr Add-In nicht machbar, können Sie den Ereignishandler auch einen asynchronen Remoteprozess starten lassen und dann sofort ein  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) -Objekt mit dem **Status**-Wert **Continue** zurückgeben. Ein Schwachpunkt dieser Strategie ist, dass bei einem Fehler des Remoteprozesses keine Möglichkeit besteht, SharePoint zum Zurücksetzen der Add-In-Installation aufzufordern.
 9. Wie unter  [Strategien für die Architektur von Add-In-Ereignishandlern](handle-events-in-sharepoint-add-ins.md#Strategies) erläutert, wird die Handlerdelegierungsstrategie bevorzugt, auch wenn sie nicht in jedem Szenario möglich ist. Im fortlaufenden Beispiel zeigen wir Ihnen, wie Sie die Handlerdelegierungsstrategie implementieren, wenn Sie eine Liste zum Hostweb hinzufügen. (Informationen zum Erstellen eines ähnlichen AppInstalled-Ereignishandlers, der nicht die Handlerdelegierungsstrategie verwendet, finden Sie im Beispiel [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
     
@@ -268,7 +268,7 @@ using (condScope.StartScope())
   ```
 
 
-    > [!TIPP]
+    > **TIPP**
       > **PROBLEMBEHANDLUNG:** Zum Testen, ob der **StartCatch**-Block wie beabsichtigt betreten wird, brauchen Sie eine Möglichkeit, eine Laufzeitausnahme auf dem SharePoint-Server auszulösen. Die Verwendung von **throw** oder eine Division durch Null funktioniert nicht, da diese *clientseitige*  Ausnahmen auslösen, bevor die Clientlaufzeit den Code bündeln und an den Server senden kann (mit der **ExecuteQuery**-Methode). Fügen Sie stattdessen dem **StartTry**-Block die folgenden Zeilen hinzu. Die clientseitige Laufzeit akzeptiert dies, veranlasst jedoch wie gewünscht eine serverseitige Ausnahme. >  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
   
     
@@ -344,10 +344,10 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
   ```
 
 
-    > [!TIPP]
+    > **TIPP**
       > **DEBUGGEN:** Unabhängig davon, ob Sie die Handlerdelegierungsstrategie verwenden, sollten Sie beim Durchlaufen des Codes mit dem Debugger bedenken, dass in jedem Szenario, in dem der Handler einen "Cancel"-Status zurückgibt, SharePoint den Handler erneut aufrufen wird, und das bis zu drei Mal mehr. Somit durchläuft der Debugger den Code bis zu vier Mal.
 
-    > [!TIPP]
+    > **TIPP**
       > **CODEARCHITEKTUR:** Da Sie Komponenten im Add-In-Web mit deklarativem Markup außerhalb des Handlers installieren können, möchten Sie in der Regel keine der 30 Sekunden, die der Handler zur Verfügung hat, für die Interaktion mit dem Add-In-Web verbrauchen. Wenn Sie es dennoch tun, denken Sie daran, dass Ihr Code ein separates [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) -Objekt für das Add-In-Web benötigt. Dies bedeutet, dass Add-In-Web und Hostweb verschiedene Komponenten sind, ebenso wie sie sich von einer SQL Server-Datenbank unterscheiden. Daher befindet sich eine Methode, die das Add-In-Web aufruft, im **try**-Block des **case**-Blocks für AppInstalled, genau so wie die TryCreateList-Methode im fortlaufenden Beispiel. Der Handler muss jedoch Aktionen im Add-In-Web  *nicht*  zurücksetzen. Wenn ein Fehler auftritt, muss er nur das Ereignis abbrechen, da SharePoint das gesamte Add-In-Web löscht, wenn das Ereignis abgebrochen wird.
 
 ## Erstellen eines Ereignisempfängers für das deinstallierende Add-In

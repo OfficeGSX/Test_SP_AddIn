@@ -41,7 +41,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
   
 - **In Microsoft Azure 組織帳戶。** 請參閱 [建立組織的使用者帳戶在 Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580)。
     
-    > [!注意事項]
+    > **注意事項**
       > Office 365 帳戶 (login.microsoftonline.com) 來建立帳戶之後變更暫時密碼登入。
 - 將含有範例資料中 **的 SAP OData 端點** 。請參閱 [Microsoft SAP 閘道](http://go.microsoft.com/fwlink/?LinkId=507635)文件。
     
@@ -67,7 +67,7 @@ Contoso 馬達是虛構自動銷售公司代表真實公司汽車經銷商順序
     
     
 
-> [!秘訣]
+> **秘訣**
 > 此增益集的視訊示範，請觀看 [技術網路-SAP Gateway for Microsoft &amp; Microsoft Azure 開發模型](http://go.microsoft.com/fwlink/?LinkId=517378)影片 BrightTalk 上。應用程式的功能示範開始在時間表上 48:00 分鐘。
   
     
@@ -434,7 +434,7 @@ public interface IInventoryItem
     
     大部分的內容 SAP 資料庫結構描述，但不包括 StockNo，其類型已從 **int**變更 **string**中有相同的類型為屬性。這是因為 StockNo 會用來做為定義的 SAP 資料與 SharePoint 圖片庫之間的關係。
     
-    > [!秘訣]
+    > **秘訣**
       > 因為 SharePoint 圖片庫中所儲存的值是 **文字** StockNo 必須具備類型 **字串** 。這兩種類型必須符合才能完成資料 mashup。
 
     實作的兩個介面是 CarInventoryModel/InventoryItem.cs 和 CarInventoryModel/InventoryCollection.cs 中。
@@ -457,7 +457,7 @@ public interface IInventoryItem
     
     
 
-> [!秘訣]
+> **秘訣**
 > 資料行名稱會區分大小寫。
   
     
@@ -823,7 +823,7 @@ private ClientContext AppWebContext
   
 2. 在 [左] 功能表中按一下 [ **網站**]。
     
-    > [!注意事項]
+    > **注意事項**
       > 您將使用此網站來主控 SharePoint 提供者主控的增益集 SellerDashboard。
 3. 在命令列中在頁面底部，按一下 [ **新增**]。
     
@@ -892,7 +892,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
   
 3. 在 [active directory] 頁面上按一下 [已針對 SAP 閘道設定為 Microsoft 目錄]。
     
-    > [!秘訣]
+    > **秘訣**
       > 如果您不確定哪一個用，詢問您的 SAP 閘道 Microsoft 管理員。 提示: 它是包含的使用者和群組 SAP 閘道的 Microsoft 目錄。
 4. 在上方導覽列中，選擇 [ **應用程式** ]。
     
@@ -921,7 +921,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
     
   
 
-> [!注意事項]
+> **注意事項**
 > 您必須以 Azure AD 兩次註冊增益集： 一次適用於偵錯，然後再為實際執行，部署為所述步驟 10。> 若要偵錯用途登錄的增益集，使用 **登 ON URL**和 **應用程式識別碼 URI** SellerDashboard.Server 專案的偵錯 url，讓您可以執行 Visual Studio 偵錯工具 (F5)。 此 URL 會是表單 https://localhost。 *nnnn*  、 *nnnn*  所在的連接埠號碼。 您可以在 Visual Studio 中的 [內容] 窗格中找到此 URL。> 接著，當您準備好的實際執行部署，編輯註冊使用正確的實際執行的 URL。
   
     

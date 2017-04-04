@@ -19,7 +19,7 @@ Avec un complément hébergé par un fournisseur, vous disposez d'une applicatio
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le composant distant peut aussi héberger des récepteurs d'événements qui répondent aux événements qui se produisent pour les éléments SharePoint, tels que des listes ou des éléments de liste. Les événements distants auxquels le serveur Contoso.com peut vouloir répondre sont, par exemple, les événements de liste, tels que l'ajout ou la suppression d'un élément de liste, ou des événements web, tels que l'ajout ou la suppression d'un site. Pour en savoir plus sur la création de récepteurs d'événements distants, voir  [Créer un récepteur d'événements distant dans des compléments pour SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins.md). 
   
     

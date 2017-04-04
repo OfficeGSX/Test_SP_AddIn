@@ -19,7 +19,7 @@ Si le complément est téléchargé sur le Office Store, Microsoft exécute des 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Lorsque vous développez votre complément et le déployez avec Outils de développement Microsoft Office pour Visual Studio, le complément est installé directement dans le site SharePoint de test cible. Comme il ne passe pas par Office Store, le contrôle de validation décrit ci-dessus ne se produit pas. 
   
     
@@ -65,7 +65,7 @@ Les propriétaires de sites web peuvent installer des Compléments SharePoint à
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > La perte temporaire de la connexion réseau peut parfois bloquer l'installation. Si celle-ci échoue pour une raison ou une autre, son infrastructure effectuera trois tentatives. Si ces dernières échouent, un indicateur d'échec apparaît sur l'interface utilisateur. Les utilisateurs pourront effectuer ultérieurement une nouvelle tentative d'installation. 
   
     
@@ -88,7 +88,7 @@ Si le Complément SharePoint comporte un site web de complément, celui-ci est s
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Quand un utilisateur supprime un complément, celui-ci est déplacé vers la Corbeille premier niveau. Sa suppression de cet emplacement le fait passer à la Corbeille second niveau. Sa suppression de la Corbeille second niveau le désinstalle complètement et il ne peut pas être restauré. 
   
     

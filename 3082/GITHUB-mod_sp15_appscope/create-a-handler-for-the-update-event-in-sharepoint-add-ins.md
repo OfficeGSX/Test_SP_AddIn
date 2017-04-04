@@ -19,7 +19,7 @@ Debe familiarizarse con  [Control de eventos de complemento](handle-events-in-sh
 <a name="UpgradedEventEndpoint"> </a>
 
 
-> [!NOTA]
+> **NOTA**
 > **Sistema de numeración de versiones:** por cuestiones de coherencia, este tema supone que los números de versión del complemento son 1.0.0.0, 2.0.0.0, 3.0.0.0, etc. No obstante, la lógica y las instrucciones se aplican independientemente del sistema de numeración que se use.
   
     
@@ -159,7 +159,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
   ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si agrega un componente a un complemento de un controlador **UpgradedEventEndpoint**, asegúrese de agregar el mismo código a un controlador **InstalledEventEndpoint** porque también querrá que se incluya ese componente en el complemento de una instalación totalmente nueva. Además, debe agregar [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) (o revisarlo) para que el complemento quite el componente. En la mayoría de casos, todo aquello que el controlador **InstalledEventEndpoint** agregue o cambie se debería revertir o eliminar con el controlador **UninstallingEventEndpoint**. Una excepción es que los datos que seguirán siendo de utilidad después de quitar el complemento de la papelera de reciclaje de la segunda etapa no se deberían eliminar. (Los sitios web, que no sean las web de complementos, que haya creado el complemento se deben considerar como datos). 
   
     
@@ -237,7 +237,7 @@ catch (Exception e)
 ```
 
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Es fundamental asignar **SPRemoteEventServiceStatus.CancelWithError** (o **SPRemoteEventServiceStatus.CancelNoError**) a la propiedad  [Status](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.Status.aspx) . Esta propiedad es la encargada de indicar a la infraestructura que revierta la actualización. Sin embargo, SharePoint volverá a probar el controlador tres veces antes de revertir la actualización.
   
     

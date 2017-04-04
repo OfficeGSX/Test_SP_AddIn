@@ -7,7 +7,7 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
 
 # Troubleshooting high-trust SharePoint Add-ins
 Get some help with problems developing high-trust SharePoint Add-ins.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -25,7 +25,7 @@ After you have installed Fiddler on the web application server, add the followin
     
     
 
-> [!NOTE]
+> **NOTE**
 > Ensure that you remove this markup if you are not running Fiddler. If you don't remove the markup, your add-in won't be able to make HTTP requests. 
   
     

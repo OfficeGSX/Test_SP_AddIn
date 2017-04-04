@@ -27,7 +27,7 @@ Há maneiras diferentes para recuperar a identidade do usuário e informações,
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter orientação sobre como configurar um ambiente de desenvolvimento que atenda às suas necessidades, consulte  [Introdução à criação de suplementos do SharePoint hospedados pelo provedor](get-started-creating-provider-hosted-sharepoint-add-ins.md).
   
     
@@ -98,7 +98,7 @@ A seguir está uma outra maneira de recuperar o nome de logon do usuário. Se vo
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > As APIs são no namespace Microsoft.SharePoint.Client.Utilities no assembly  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) .
   
     

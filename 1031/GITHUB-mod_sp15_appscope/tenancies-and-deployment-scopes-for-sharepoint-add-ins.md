@@ -27,7 +27,7 @@ Wenn im Mandanten neue Websitesammlungen erstellt werden, werden Add-Ins, die zu
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Der Add-In-Bereich sollte nicht mit dem Featurebereich verwechselt werden. Der Featurebereich bestimmt, wo die Elemente eines Features bereitgestellt werden. Die Möglichkeiten sind **Farm**, **WebApplication**, **Site** (d. h. Websitesammlung) und **Web**. Für Features in SharePoint-Add-Ins (Hostwebfeatures wie auch Features in einer WSP-Datei in einem Add-In-Paket) ist ausschließlich **Web** zulässig.> Der Add-In-Bereich sollte ebenfalls nicht mit den Add-In-Berechtigungsstufen verwechselt werden. SharePoint-Add-Ins können Berechtigungen für alle oder ausgewählte Teile von SharePoint-Inhalten auf der Listen-, Web-, Websitesammlungs- und Mandantenebene anfordern. Durch das Installieren eines Add-Ins mit Mandantenbereich erhält das Add-In weder zusätzliche Berechtigungen noch werden wesentliche Bedingungen des SharePoint-Sicherheitsmodells außer Kraft gesetzt. Weitere Informationen zu Add-In-Berechtigungen finden Sie unter  [Add-In-Berechtigungen in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     

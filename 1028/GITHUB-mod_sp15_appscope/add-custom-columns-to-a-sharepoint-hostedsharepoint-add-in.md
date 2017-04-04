@@ -20,7 +20,7 @@ ms.assetid: 0fbc9a8b-d652-44a8-b821-578afd8f33dc
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關 SharePoint 主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials)在存放庫並開啟 BeforeColumns.sln 檔案。
   
     

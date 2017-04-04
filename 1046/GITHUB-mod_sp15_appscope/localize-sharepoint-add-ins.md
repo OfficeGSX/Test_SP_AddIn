@@ -7,7 +7,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 # Localizar os suplementos do SharePoint
 Localiza um Suplemento do SharePoint usando arquivos de recursos, arquivos de recursos JavaScript e outras técnicas.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Este tópico pressupõe que você esteja familiarizado com a criação básica de Suplementos do SharePoint; e com recursos de SharePoint, a distinção entre suplemento webs e webs de host,  [que tipo de componentes do SharePoint pode estar em um suplemento](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#TypesOfSPComponentsInApps)e os conceitos básicos de localização com arquivos. resx.
   
     
@@ -35,7 +35,7 @@ Além disso, você deve estar ciente dos seguintes procedimentos:
 
 - Os procedimentos neste artigo consideram que você está usando a versão mais recente do [Office Developer Tools para Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013)ou  [Office Developer Tools para Visual Studio de 2015](http://aka.ms/OfficeDevToolsForVS2015).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se seu site do SharePoint de teste é um local no farm do SharePoint, em vez de um Microsoft SharePoint Online Site do desenvolvedor, você pode precisar instalar os pacotes de idiomas para os idiomas nos quais você esteja traduzindo sua Suplemento do SharePoint. Para obter mais informações, consulte  [instalar ou desinstalar pacotes de idiomas para o SharePoint 2013](http://technet.microsoft.com/en-us/library/cc262108%28v=office.15%29.aspx) e [pacotes de idiomas no SharePoint Server 2013](http://technet.microsoft.com/en-us/library/ff463597%28v=office.15%29.aspx)e os links para download no último.
 - As capturas de tela e os exemplos de código neste artigo refletem a amostra  [SharePoint-adicionar-em-localização](https://github.com/OfficeDev/SharePoint-Add-in-Localization). Você pode baixar o exemplo para ver os resultados dos procedimentos descritos neste artigo.
     
@@ -49,7 +49,7 @@ Um suplemento de web pode conter determinados tipos de componentes do SP. Para o
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Arquivos de recurso não podem ser compartilhados por vários recursos de suplemento de web. Para cada recurso no arquivo. wsp, você precisa criar conjuntos separados dos arquivos de recursos.
   
     
@@ -69,7 +69,7 @@ Um suplemento de web pode conter determinados tipos de componentes do SP. Para o
     
     Quando editado, esse arquivo "idiomas constante" contém as cadeias de caracteres que são usadas na Galeria de **recurso** em todos os sites em idiomas para o qual você está *não*  ir para fornecer uma versão localizada de cadeias de caracteres. Então o idioma usado para as cadeias de caracteres neste arquivo deve ser o idioma que é mais provável de ser um segundo idioma de pessoas usando o SharePoint. Tradicionalmente, inglês é usado para essa finalidade, mas, em alguns cenários outro idioma pode ser uma melhor opção. Por exemplo, em algumas regiões, francês podem ser um idioma de segundo mais comuns dos usuários do inglês. O exemplo contínuo neste tópico usa o inglês como idioma constante.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > um Suplemento do SharePoint não pode ser instalado em um site cujo idioma não estiver listado na seção **Localidades com suporte** de manifesto do suplemento. Tenha em mente que quando este artigo aborda os idiomas para o qual você está *não*  seria fornecendo um localizado add-in, você ainda precisará adicionar esses idiomas para o manifesto do suplemento. Consulte o procedimento **para criar arquivos de recurso para a web host** neste artigo para obter mais detalhes sobre as localidades com suporte no manifesto do suplemento.
 4. Na coluna **nome** da linha superior no **Editor de recursos**, insira um nome descritivo para a cadeia de caracteres (ou outros recursos)  por exemplo, OrdersListInstance_Title eOrdersListInstance_Description. Esses nomes de recursos localizáveis não são propriamente localizados. Cada recurso deve ter seu próprio nome.
     
@@ -97,7 +97,7 @@ Um suplemento de web pode conter determinados tipos de componentes do SP. Para o
   
 12. Repita as etapas últimos quatro para cada idioma estrangeiro.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Considere a adição de um arquivo específico do idioma para o mesmo idioma como seu idioma constante. Se fizer isso, você pode copiar as linhas sem alterar os valores das cadeias de caracteres. Em várias situações, não é necessário ter um arquivo específico do idioma para o mesmo idioma usado no arquivo de recurso para o idioma constante, especialmente quando os únicos recursos nos arquivos são cadeias de caracteres. Mas arquivos de recurso podem conter ícones, imagens, arquivos e outros tipos de recursos muito. Às vezes, você precisa do arquivo de recurso de idioma constante para usar uma imagem ou outro recurso que seja diferente do recurso correspondente na  *qualquer*  dos arquivos específicos de idioma.
 13. Para cada arquivo, verifique se a propriedade **Build Action** é definida para **conteúdo**.
     
@@ -249,11 +249,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
     Essa marcação carrega um dos seus arquivos de JavaScript. Ele determina quais arquivos de idioma carregar lendo o recurso de SharePoint chamado "language_value". Este recurso é resolvido para um nome de cultura do idioma em que o padrão  _LL_- _CC_ que foi descrita em um procedimento anterior. Especificamente, ele resolve para o idioma da web add-in.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O recurso de SharePoint "language_value" nunca é nulo, para que um arquivo chamado "Resources.js" nunca seria chamado por esse script. Isso acontece porque você não fez uma no procedimento anterior. Quando o valor de "language_value" é um idioma para o qual não há nenhum arquivo. js, esse script carrega nothing. A próxima etapa explica como as cadeias de caracteres obtém um valor de constante idioma nessa situação.
 3. Para cada elemento localizável e o valor do atributo na página, dê a ela um valor padrão no idioma constante, mas, em seguida, usar JavaScript atribuí-lo a variável apropriada dos recursos.  _LL_- arquivo do _CC_. js. Por exemplo, se a página tem um título em um elemento **h2**, dê o elemento um atributo **id** e insira um elemento **script** abaixo os elementos localizados para atribuir cadeias de caracteres localizadas à propriedade **innerText** dos elementos localizados. Este código de localização deverá ser executado somente se um recurso. _LL_- _CC_. js arquivo carregado e as variáveis declaradas. Portanto, colocá-lo em um bloco condicional que primeiro testa se a uma das variáveis é definida. Se não for, nenhum script de recurso carregado, e os valores (constante) do padrão devem permanecer inalterados. O exemplo a seguir é um exemplo.
     
-    > [!DICA]
+    > **DICA**
       > A palavra "Constante" foi adicionada para a primeira das cadeias de caracteres constante. Você não deseja fazer isso em um suplemento de produção, mas enquanto você estiver testando, é uma forma útil de ver rapidamente se as cadeias de caracteres de idioma constante estão sendo usadas ou os recursos.  _LL_- arquivo do _CC_. js para o idioma que vem a ser seu idioma constante foi carregado.
 
   ```HTML
@@ -330,7 +330,7 @@ O método essencial para a localização de componentes web do host é igual do 
   
 4. Repita a etapa anterior para cada localidade em que você deseja suportar com uma versão traduzida do suplemento. Um recursos adicionais.  _LL_- arquivo. resx _CC_é criado para cada localidade.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > A propriedade **Build Action** de cada um desses arquivos é definida como o **conteúdo**, não o **recurso**.  *Não alterar essa configuração.* 
 5. Também adicionar entradas de localidade para cada localidade onde deseja que seu suplemento seja instalado, mas onde ela deve usar o idioma constante; ou seja, localidades para o qual você irá  *não*  fornecer uma versão traduzida do add-in. *exclua os arquivos. resx que são criados para essas localidades.* 
     
@@ -356,7 +356,7 @@ O método essencial para a localização de componentes web do host é igual do 
   ```
 
 
-    > [!CUIDADO]
+    > **CUIDADO**
       > O valor da **Title** pode conter *somente*  a chamada para o recurso. Não pode haver nenhum texto, símbolos ou espaços em branco.
 2. Para chamar recursos localizados em outros arquivos XML, como Elements. XML para o suplemento partes e ações personalizadas, você pode usar o mesmo formato que você usou no suplemento do arquivo de manifesto.
     
@@ -406,7 +406,7 @@ Se houver valores de cadeia de caracteres localizável no JavaScript da seu apli
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esta seção aborda somente a localização de cadeia de caracteres. Para mais poderosas necessidades de localização, como a localização de data ou moeda formatação, considere o uso de uma biblioteca de localização ou globalização, como o  [complemento Globalize para jQuery](https://github.com/jquery/globalize).
   
     

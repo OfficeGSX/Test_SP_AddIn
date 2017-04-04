@@ -7,7 +7,7 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 
 # Trabajar con carpetas y archivos con REST
 Aprenda a realizar operaciones básicas de creación, lectura, actualización y eliminación (CRUD) en carpetas y archivos con la interfaz REST de SharePoint 2013.
-> [!SUGERENCIA]
+> **SUGERENCIA**
 > El servicio REST de SharePoint Online (y SharePoint 2016 local o versiones posteriores) admite la combinación de varias solicitudes en una sola llamada al servicio mediante el uso de la opción de consulta  `$batch` de OData. Para obtener información detallada y vínculos a los ejemplos de código, vea [Realizar solicitudes de lote con las API de REST](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -184,7 +184,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** un archivo usando el mé
     
     
 
-> [!NOTA]
+> **NOTA**
 > **PUT** es el único método que puede usarse para actualizar un archivo; no se permite el método **MERGE**.
   
     
@@ -269,7 +269,7 @@ Cuando necesita subir un archivo binario de más de 1,5 megabytes (MB), la inter
     
     
 
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > Este método solo funciona con Internet Explorer 10 y las últimas versiones de otros exploradores. 
   
     
@@ -384,7 +384,7 @@ En el ejemplo siguiente se muestra cómo **actualizar** un archivo adjunto a un 
     
     
 
-> [!NOTA]
+> **NOTA**
 > **PUT** es el único método que puede utilizarse para actualizar un archivo; no se permite el método **MERGE**.
   
     

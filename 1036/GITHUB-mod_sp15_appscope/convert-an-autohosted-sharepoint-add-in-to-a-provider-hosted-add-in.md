@@ -283,7 +283,7 @@ Actualisez la fenêtre d'outils **Explorateur d'objets SQL Server** dans Visual 
     
 
     
-> [!REMARQUE]
+> **REMARQUE**
 >  Selon la manière dont la base de données a été créée pour le complément auto-hébergé, un travail supplémentaire peut être nécessaire pour la déployer vers Azure. Consultez les articles suivants dans MSDN pour obtenir des conseils supplémentaires :>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ Après le déploiement du site web, Visual Studio lancera le navigateur de débo
     
 
     
-> [!REMARQUE]
+> **REMARQUE**
 > Reportez-vous à la documentation Azure pour connaître des options supplémentaires pour le déploiement d'applications web ASP.NET sur un Site web Azure :  [Procédure de déploiement d'un site web Microsoft Azure](http://azure.microsoft.com/fr-fr/documentation/articles/web-sites-deploy). 
   
     
@@ -583,7 +583,7 @@ Ensuite, créez un GUID et remplacez le GUID existant dans l'attribut **ProductI
     
 
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Si le ProductId existant était utilisé, SharePoint indiquerait l'erreur suivante lors de l'installation du complément converti : « Le complément fourni diffère d'un autre complément doté d'un ID de version et de produit identiques ». 
   
     

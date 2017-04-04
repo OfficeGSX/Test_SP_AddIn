@@ -421,7 +421,7 @@ Categories from the Northwind database exposed as an OData service:
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 2. Choisissez le bouton **Approuver**.
     
@@ -455,14 +455,14 @@ Categories from the Northwind database exposed as an OData service:
 |http ou https  <br/> |7 000-10 000  <br/> |
    
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > La disponibilité des ports sortants est tributaire du pare-feu de l'hôte. Plus particulièrement, seuls http-80 et https-443 sont disponibles sur SharePoint Online. 
   
     
     
 
 |
-|Exception non gérée **SP n'est pas défini**. <br/> |Assurez-vous d'avoir accédé au fichier SP.RequestExecutor.js dans une fenêtre de navigateur.  <br/> Si vous utilisez votre serveur local comme environnement de développement, vous devez désactiver la vérification en boucle d'IIS (Internet Information Services). Exécutez la commande suivante à partir d'une invite de commandes Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> [!ATTENTION]> La désactivation de la vérification en boucle d'IIS n'est pas recommandée dans un environnement de production.           |
+|Exception non gérée **SP n'est pas défini**. <br/> |Assurez-vous d'avoir accédé au fichier SP.RequestExecutor.js dans une fenêtre de navigateur.  <br/> Si vous utilisez votre serveur local comme environnement de développement, vous devez désactiver la vérification en boucle d'IIS (Internet Information Services). Exécutez la commande suivante à partir d'une invite de commandes Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **ATTENTION**> La désactivation de la vérification en boucle d'IIS n'est pas recommandée dans un environnement de production.           |
 |La taille de la réponse du point de terminaison distant va au-delà de la limite configurée.  <br/> |La taille de la réponse des requêtes du proxy web ne doit pas dépasser 200 Ko.  <br/> |
    
 

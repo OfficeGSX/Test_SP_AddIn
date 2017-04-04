@@ -27,7 +27,7 @@ Je nachdem, welche Informationen Sie abrufen möchten, können Benutzeridentitä
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Anleitungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -98,7 +98,7 @@ Nachfolgend wird eine andere Möglichkeit zum Abrufen des Anmeldenamens des Benu
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die APIs befinden sich im Namespace **Microsoft.SharePoint.Client.Utilities** in der Assembly [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/de-de/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx). 
   
     

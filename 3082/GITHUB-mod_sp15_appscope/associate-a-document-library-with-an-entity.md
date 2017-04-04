@@ -16,7 +16,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 1. Agregar una biblioteca de documentos de SharePoint al proyecto como origen de datos.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > En primer lugar debe crear una biblioteca de documentos en el sitio de SharePoint. Debe contener una columna personalizada que se asigna a un campo único en la entidad. 
 2. Crear una relación entre la biblioteca de documentos y una entidad.
     
@@ -57,7 +57,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
   
 
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > La biblioteca de documentos ya debe existir y debe contener una columna personalizada que se asigna a un campo único en la entidad. 
 5. En **Especifique el nombre del origen de datos**, escriba un nombre y, a continuación, elija el botón **Finalizar**.
     
@@ -97,7 +97,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
   
 
     
-    > [!NOTA]
+    > **NOTA**
       > El campo debe ser del mismo tipo de datos que el campo de claves **Externas**. 
 
 ### Para agregar una biblioteca de documentos a un nuevo conjunto de pantallas

@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # Erstellen eines Cloud-Geschäfts-Add-Ins
 Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins für SharePoint 2013 oder SharePoint in Office 365 erstellen, die für das Hinzufügen und Verwalten von Daten optimiert sind.
-> [!HINWEIS]
+> **HINWEIS**
 > Sie können auch ein SharePoint-Add-In entwickeln, indem Sie die Add-In-Vorlage für SharePoint 2013 verwenden. 
   
     

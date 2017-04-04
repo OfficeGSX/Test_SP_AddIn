@@ -10,7 +10,7 @@ ms.assetid: cd1eda9e-8e54-4223-93a9-a6ea0d18df70
 
 # SharePoint Add-ins
 SharePoint Add-ins are self-contained extensions of SharePoint websites that you create, and that run without custom code on the SharePoint server.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -24,7 +24,7 @@ There are two basic kinds of SharePoint Add-ins — SharePoint-hosted and provid
     
     
 
-> [!NOTE]
+> **NOTE**
 > A device app, such as mobile app, isn't really a "SharePoint Add-in" even when it accesses SharePoint. The same is true of a web application that is launched from outside of SharePoint. If you want to develop any of these kinds of apps, see  [Access SharePoint from mobile and native device apps](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx). 
   
     
@@ -67,7 +67,7 @@ There are two basic kinds of SharePoint Add-ins — SharePoint-hosted and provid
     
   
 
-> [!TIP]
+> **TIP**
 > **Take a look at a few SharePoint Add-ins in the** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint) to get a sense of what you can develop. Or open a SharePoint 2013 website and install some of the free SharePoint Add-ins. Just navigate to ** Site Contents | add an add-in | SharePoint Store**. 
   
     
@@ -160,7 +160,7 @@ Any SharePoint component that can be in a SharePoint-hosted add-in can also be i
     
     
 
-> [!NOTE]
+> **NOTE**
 > **The "provider" is whoever owns the server or cloud account.** It can be the same company or organization that owns the SharePoint farm or SharePoint Online tenancy where the add-in is to be installed. But the developer of the add-in can also be the provider. Typically, when an add-in is created for an organization, the organization provides the hosting. However, when an add-in is created for multiple organizations, it's more likely that the developer hosts the remote components. Developer-hosting is mandatory if the SharePoint Add-in is being marketed through the Office Store, because the developer doesn't have any contact information for the add-in purchasers. In this scenario, the various instances of the add-in know the URI of the remote component because it is specified in the add-in manifest.
   
     
@@ -242,7 +242,7 @@ Ready to get started?
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you're a beginner at both SharePoint and web development, you'd benefit most by starting with the free course at Microsoft's Virtual Academy, or working through a book about SharePoint 2013 development. 
   
     

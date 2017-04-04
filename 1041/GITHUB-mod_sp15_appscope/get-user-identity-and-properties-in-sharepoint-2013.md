@@ -27,7 +27,7 @@ SharePoint 2013 でユーザー ID とユーザー情報を取得します。
     
   
 
-> [!メモ]
+> **メモ**
 > ニーズに合った開発環境をセットアップする方法については、「 [プロバイダー ホスト型 SharePoint アドインの作成を始める](get-started-creating-provider-hosted-sharepoint-add-ins.md)」を参照してください。 
   
     
@@ -98,7 +98,7 @@ ClientContext clientContext =
     
     
 
-> [!メモ]
+> **メモ**
 > API は  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ja-jp/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) アセンブリの Microsoft.SharePoint.Client.Utilities 名前空間にあります。
   
     

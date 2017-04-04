@@ -7,7 +7,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # Créer un complément de gestion des informations professionnelles dans le Cloud
 En utilisant le modèle de complément de gestion d'informations professionnelles dans le Cloud dans Visual Studio, vous pouvez créer dans SharePoint 2013 ou SharePoint sur Office 365 des compléments qui sont optimisés pour l'ajout et la gestion des données.
-> [!REMARQUE]
+> **REMARQUE**
 > Vous pouvez également créer un Complément SharePoint à l'aide du modèle de complément pour SharePoint 2013. 
   
     

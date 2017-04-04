@@ -29,7 +29,7 @@ Este es el sexto de una serie de artículos sobre los fundamentos del desarrollo
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados en SharePoint, tiene una solución Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) y abrir el archivo BeforeWorkflow.sln.
   
     
@@ -100,7 +100,7 @@ El flujo de trabajo envía un correo electrónico para notificar a alguien de RR
     
     
 
-> [!NOTA]
+> **NOTA**
 > En varios momentos durante el diseño del flujo de trabajo, aparecerá el símbolo de un diamante azul con un signo de admiración 
   
     
@@ -255,7 +255,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
     
     
     
-    > [!NOTA]
+    > **NOTA**
       > Si la consola **Host de servicio de prueba** no se abre, es posible que deba habilitar el depurador de flujos de trabajo. Haga clic con el botón secundario en el nombre del proyecto en el **Explorador de soluciones** y elija **Propiedades**. Abra la pestaña **SharePoint** en el panel **Propiedades** y marque la casilla **Habilitar depuración de flujos de trabajo**. 
 3. Vaya a la carpeta de entrada (Outlook) de su cuenta de desarrollador de Office 365. Habrá un mensaje con el asunto " *Empleado*  está listo para el papeleo de RRHH",, en el que *Empleado*  es el nombre del empleado cuyo elemento ha editado. El cuerpo del mensaje dice: " *Empleado*  está esperando en el vestíbulo a completar los formularios de condiciones y el contrato de trabajo." Lo siguiente es un ejemplo:
     
@@ -269,7 +269,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
     
     
     
-    > [!SUGERENCIA]
+    > **SUGERENCIA**
       > Si el flujo de trabajo comienza pero no llega a completarse y no se envía el correo electrónico, pruebe a terminar la sesión de depuración y use F5 unas cuantas veces más antes de concluir que existe algún error en el código. A veces, el problema está en SharePoint Online. > Si todavía tiene problemas, pruebe a agregar un tipo de contenido llamado **ListFieldsContentType**, si es que no lo hay ya, a la sección **ContentTypes** del archivo schema.xml. Lo siguiente es un ejemplo de código de marcado.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
   
     

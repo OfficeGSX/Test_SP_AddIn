@@ -31,7 +31,7 @@ Um diesem Artikel zu folgen und den Code selbst einzugeben, laden Sie das Beispi
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Dieses Beispiel verwendet eine TokenHelper.cs-Datei, die mithilfe von Office-Entwicklertools für Visual Studio generiert wurde. Bei Erstellung des Beispiels war dies die aktuelle Version, aber wenn Sie diesen Artikel lesen, ist dies möglicherweise nicht die aktuellste Version. Das Beispiel ist weiterhin hervorragend für das Erstellen Ihrer ersten RER geeignet. Aber wenn Sie bereit sind, darüber hinaus zu gehen, sollten Sie sich die Beispiele im Abschnitt „Nächste Schritte" ansehen. Diese sind wahrscheinlich auf dem neuesten Stand. 
   
     
@@ -115,7 +115,7 @@ Um diesem Artikel zu folgen und den Code selbst einzugeben, laden Sie das Beispi
     
   
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Zu dem Zeitpunkt, zu dem dieser Artikel geschrieben wurde, wurden von Office-Entwicklertools für Visual Studio alle Verweise auf alle benötigten Assemblys hinzugefügt, als der Empfänger erstellt wurde. In höheren Versionen des Tools ist dies möglicherweise nicht der Fall. Wenn Compilerfehler auftreten, fügen Sie einfach die fehlenden Verweise hinzu. Möglicherweise müssen Sie Verweise auf System.ServiceModel oder System.ComponentModel.DataAnnotations hinzufügen. 
 
 

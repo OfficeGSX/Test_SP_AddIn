@@ -30,7 +30,7 @@ Der SharePoint REST-Dienst unterstütz eine Reihe von OData-Abfragezeichenfolgeo
     
 
 
-> [!TIPP]
+> **TIPP**
 > Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md). 
   
     
@@ -44,7 +44,7 @@ Verwenden Sie die Abfrageoption  [$select](http://www.odata.org/documentation/od
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Generell gilt, wenn Sie die  `$select`-Abfrageoption nicht angeben, gibt der REST-Dienst standardmäßig alle verfügbaren Felder zurück. Es kann jedoch manchmal vorkommen, dass einige SharePoint-Objekte Eigenschaften enthalten, deren Abruf äußerst ressourcenintensiv is. Um die Leistung des REST-Dienstes zu optimieren, sind diese Eigenschaften in der Standardabfrage nicht enthalten und müssen explizit angefordert werden. > Die Eigenschaft **SPWeb.EffectiveBasePermissions** wird beispielsweise standardmäßig nicht zurückgegeben und muss explizit mittels der `$select`-Abfrageoption angefordert werden. 
   
     
@@ -84,7 +84,7 @@ Beim SharePoint REST-Dienst werden die Benutzer durch ihren Anzeigennamen reprä
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Mitgliedschaftsbasierte Benutzerabfragen werden nicht unterstützt > Die Verwendung des **Current**-Operators, um Abfragen mit der ID des aktuellen Benutzers durchzuführen, wird nicht unterstützt. 
   
     
@@ -112,7 +112,7 @@ Verwenden Sie die Abfrageoptionen  [$top](http://www.odata.org/documentation/oda
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Abfrageoption $skip funktioniert nicht bei Abfragen für SharePoint-Listenelemente. 
   
     
@@ -135,7 +135,7 @@ Mit der Option $skiptoken können Sie Elemente bis zum angegebenen Element über
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Beachten Sie bei der Verwendung dieser Abfrageoptionen, dass das Unterteilen in OData ordinal ist. Nehmen Sie beispielsweise an, dass Sie eine "Nächste Seite"-Schaltfläche implementieren, um SharePoint-Listenelemente anzuzeigen. Sie verwenden den REST-Dienst, damit die Schaltfläche die Elemente 1 bis 20 zurückgibt, wenn sie angeklickt wird, dann die Elemete 21 bis 40 usw. Nehmen Sie jedoch an, dass ein anderer Benutzer die Elemente 4 und 18 zwischen den Klicks auf "Nächste Seite" löscht. In so einem Fall wird die ordinale Position der verbleibenden Elemente zurückgesetzt und beim Anzeigen der Elemente 21 bis 40 werden eigentlich zwei Elemente übersprungen. 
   
     

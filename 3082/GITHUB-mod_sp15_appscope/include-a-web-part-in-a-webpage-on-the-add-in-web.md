@@ -45,7 +45,7 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
   ```
 
 
-    > [!PRECAUCIóN]
+    > **PRECAUCIóN**
       > Es posible agregar un elemento web, por ejemplo **<WebPartPages:XsltListViewWebPart>**, como un elemento secundario de la **WebPartZone**. Sin embargo, este no es un procedimiento recomendado en un Complemento de SharePoint. Si alguna vez es necesario actualizar el complemento, un elemento web insertado en el archivo aspx puede generar un error de actualización en algunos escenarios con el mensaje "Ya se ha agregado un elemento web con este Id. a esta página". Se recomienda agregar elementos web al manifiesto de elementos para la página, tal como se describe más adelante en este procedimiento. 
 4. Abra el archivo de manifiesto del elemento para la página. Por lo general, se denomina elements.xml y se encuentra en la misma carpeta del proyecto que el archivo aspx.
     
@@ -81,7 +81,7 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
 
 7. Agregue el marcado de **webPart** como un elemento secundario del elemento **webParts**. A continuación, se muestra un ejemplo en el que se agrega un **XsltListViewWebPart**. Se asume que hay una lista personalizada denominada "Lista de prueba" como parte del mismo proyecto de complemento. Para obtener más información sobre cómo agregar una lista personalizada a una web de complemento, vea  [Crear un complemento hospedado por el proveedor que incluya un tipo de contenido y una lista de SharePoint personalizados](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
-    > [!NOTA]
+    > **NOTA**
       >  Tenga en cuenta que el elemento web no tiene una propiedad ID. Es un procedimiento recomendado incluir un identificador explícito para el elemento web solo en los dos casos en los que realmente es necesario:>  El elemento web se agrega a una página wiki de SharePoint.>  El elemento web es uno de dos o más elementos web que se conectarán.
 
   ```

@@ -283,7 +283,7 @@ Atualize a janela da ferramenta do Visual Studio **Explorador de objetos do SQL 
     
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Dependendo de como o banco de dados foi criado para o suplemento auto-hospedados, algum trabalho extra talvez seja necessário implantá-lo no Azure. Consulte os seguintes artigos no MSDN para obter orientação adicional:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
@@ -502,7 +502,7 @@ Depois de implantar o site, Visual Studio iniciará o padrão de depuração do 
     
 
     
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Consulte a documentação do Windows Azure para obter outras opções para implantar aplicativos de web do ASP.NET em um Azure Web Site:  [como implantar um Site do Microsoft Azure](http://azure.microsoft.com/documentation/articles/web-sites-deploy).
   
     
@@ -583,7 +583,7 @@ Em seguida, crie um novo GUID e substitua o GUID existente no atributo **Product
     
 
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Se o ProductId existente foi usado SharePoint retornaria o erro "o suplemento fornecido difere do outro suplemento com a mesma ID de produto e versão" quando o suplemento convertido está instalado.
   
     

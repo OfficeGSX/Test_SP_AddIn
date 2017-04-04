@@ -7,7 +7,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 # Usar el widget experimental Vista de lista de escritorio en complementos para SharePoint
 Aprenda a usar el widget Vista de lista de escritorio en cualquier página web aunque no esté hospedada en SharePoint. Use el widget Vista de lista en los complementos para mostrar datos de las listas que se hospedan en un sitio de SharePoint.
-> [!NOTA]
+> **NOTA**
 > Los Office Web Widgets: Experimental solo se proporcionan con fines de investigación y comentarios. No se deben usar en situaciones de producción. El comportamiento de Office Web Widgets puede cambiar significativamente en futuras versiones. Lea y revise los  [Términos de licencia de Office Web Widgets: Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -47,7 +47,7 @@ El widget Vista de lista usa la biblioteca entre dominios para obtener los datos
     
     
 
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > El widget Vista de lista de escritorio no habilita todos los escenarios de la vista de lista nativa. 
   
     
@@ -119,7 +119,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
   
 - Crear una lista en la web de complemento. Este paso también garantiza que se cree una web de complemento cuando los usuarios implementen el complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Vista de lista se comunica con SharePoint usando la biblioteca entre dominios. 
 - Crear una página de complemento que declare una instancia del widget Vista de lista con formato HTML.
     
@@ -139,7 +139,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
   
 4. Seleccione **Hospedado por el proveedor** como la opción de hospedaje del complemento.
     
-    > [!NOTA]
+    > **NOTA**
       > También puede utilizar el widget Vista de lista de escritorio con otras opciones de hospedaje o incluso con complementos para Office o su propio sitio web. 
 5. Seleccione **Aplicación de formularios Web Forms ASP.NET** como tipo de proyecto de aplicación web.
     
@@ -315,7 +315,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > El ejemplo de código anterior especifica explícitamente las direcciones URL de la web de host y la web de complemento para inicializar el tiempo de ejecución de los controles de Office. Sin embargo, si las direcciones URL de la web de complemento y la web de host se especifican en los parámetros de cadena de consulta **SPAppWebUrl** y **SPHostUrl** respectivamente, se puede pasar un objeto vacío para que el código intente obtener los parámetros de forma automática. Los parámetros **SPAppWebUrl** y **SPHostUrl** se incluyen en la cadena de consulta cuando se usa el token **{StandardTokens}**.
   
     
@@ -342,7 +342,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Al presionar F5, Visual Studio crea la solución, implementa el complemento y abre la página de permisos del complemento. 
 2. Elija el botón **Confiar**.
     

@@ -29,7 +29,7 @@ Toutefois,  [par sécurité](http://msdn.microsoft.com/fr-fr/library/cc709423%28
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > La bibliothèque inter-domaine est également utilisée pour autoriser l'accès aux données dans le sens inverse, autrement dit pour autoriser JavaScript sur une page SharePoint à accéder aux données dans un domaine à distance. Pour plus d'informations, voir  [Accès aux données à distance à partir d'une page SharePoint](#ReverseDirection). 
   
     
@@ -43,7 +43,7 @@ La bibliothèque inter-domaine SharePoint est contenue dans le fichier SP.Reques
     
     
 
-> [!ATTENTION]
+> **ATTENTION**
 > La fonction  `postMessage()` ne donne de résultats que sur les navigateurs prenant en charge HTML 5. Par conséquent, les Compléments SharePoint qui utilisent la bibliothèque inter-domaine ne fonctionnent pas sur les navigateurs plus anciens.
   
     
@@ -71,7 +71,7 @@ Pour SharePoint, la bibliothèque inter-domaine est chargée sur une page de l'a
   ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous optez pour la deuxième option (un principal de complément **Internal**), vous pouvez utiliser uniquement JavaScript et la bibliothèque inter-domaines pour accéder à SharePoint. Le modèle objet client SharePoint est bloqué pour les Compléments SharePoint **Internal**. Vous ne pouvez donc pas disposer d'un double système d'autorisation qui utilise à la fois la bibliothèque inter-domaines et le système à faible niveau de fiabilité ou le système à haut niveau de fiabilité. 
   
     

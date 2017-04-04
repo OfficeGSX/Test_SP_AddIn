@@ -21,7 +21,7 @@ Napa は、SharePoint ホスト型 SharePoint アドインの作成に使用で�
     
 
 
-> [!メモ]
+> **メモ**
 > オンプレミスの SharePoint に Napa をインストールすることはできません。 
   
     
@@ -34,7 +34,7 @@ Napa を使用すると、Visual Studio ではなくブラウザーの中で Sha
     
 
 この記事では、Napaを使用して簡単な SharePoint ホスト型 SharePoint アドインを作成する方法を説明します。ここで作成するアドインには、リストとリスト アイテムを管理するためのコントロールとコードが含まれています。
-> [!メモ]
+> **メモ**
 > Napa を使用して作成できるのは SharePoint ホスト型の SharePoint アドインだけで、プロバイダー ホスト型は作成できません。両者の違いについては、「 [SharePoint アドイン](sharepoint-add-ins.md)」を参照してください。 > 「 [SharePoint 2013 でアドイン Web コンポーネントを更新する](update-add-in-web-components-in-sharepoint-2013.md)」で説明されている SharePoint のアドイン更新セマンティクスは Napa では使用できません。したがって、Napa で作成したアドインを更新する必要がある場合には、最初に Visual Studio にエクスポートする必要があります。その方法に関する指示は、この記事で後述します。 > Visual Studio を使用して SharePoint アドインを作成することもできます。詳細については、「 [SharePoint ホスト型の SharePoint アドインの作成を始める](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)」を参照してください。 
   
     
@@ -49,7 +49,7 @@ Napa を使用すると、Visual Studio ではなくブラウザーの中で Sha
     
     
 
-> [!メモ]
+> **メモ**
 >  既に Office 365 開発者向けサイト にアクセスできる可能性があります。> **MSDN サブスクライバーになっておられますか?** MSDN のサブスクライバーが所有する Visual Studio Ultimate および Visual Studio Premium には、特典として Office 365 Developer サブスクリプションが付いています。 [すぐに特典を利用できます。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **以下のいずれかの Office 365 サブスクリプション プランをお持ちですか。**> **お持ちの場合には、Office 365 サブスクリプションの管理者は  [Office 365 管理センター](https://portal.microsoftonline.com/admin/default.aspx)を利用して開発者向けサイト** を作成できます。詳細については、「 [既存の Office 365 サブスクリプション内で開発者向けサイトを作成する](create-a-developer-site-on-an-existing-office-365-subscription.md)」を参照してください。 
   
     
@@ -67,7 +67,7 @@ Office 365 プランを取得する方法は 2 つあります。
     
   
 
-> [!ヒント]
+> **ヒント**
 > 後続の手順を引き続き参照できるように、これらのリンクは新しいウィンドウまたはタブで開きます。 
   
     
@@ -112,7 +112,7 @@ Office 365 プランを取得する方法は 2 つあります。
   
 
     
-> [!メモ]
+> **メモ**
 > 開発者アカウントにサインアップしようとするときに別の Microsoft アカウントでログオンしている場合は、「入力されたユーザー ID は機能しませんでした。有効なユーザー ID ではない可能性があります。組織で割り当てられたユーザー ID を入力していることを確認してください。ユーザー ID は通常、 *someone@example.com*  または *someone@example.onmicrosoft.com*  の形式です」のようなメッセージが表示されることがあります。> このメッセージが表示された場合、使用していた Microsoft アカウントからログアウトし、もう一度やり直してください。引き続きこのメッセージが表示される場合は、ブラウザー キャッシュを消去するか、[ **InPrivate ブラウズ**] に切り替え、フォームにデータを入力します。 
   
     
@@ -279,7 +279,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
   
 2. [ **App.js**] ファイルで、 `web`、 `lists`、 `listItemcollection` 変数を 2 つの既定の変数に追加し、 `$(document).ready()` 関数のコードを次の例のように変更します。
     
-    > [!メモ]
+    > **メモ**
       > このコードではエラーの波線が表示されます。波線は後の手順で消えます。 
 
   ```
@@ -533,7 +533,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!メモ]
+    > **メモ**
       > アドインを実行するときにリスト アイテムが表示されない場合は、 `displayLists();` ステートメントが前のコードの後にあることを確認します。
 
     次の手順で、新しく定義した JavaScript 関数と、サポート関数 ( `getItems()`) を追加します。次の表は、主要な関数の機能を示しています。

@@ -114,7 +114,7 @@ Não vamos para ensinar ASP.NET ou T-SQL de programação em desta série, mas v
   
 
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Se você clicar na lado a lado, a página inicial não será aberto porque Visual Studio fecha a sessão IIS Express quando você interromper a depuração.
 
 ## Configurar Visual Studio para reconstruir o banco de dados corporativo com cada sessão de depuração
@@ -258,7 +258,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > O último arquivo aspx do projeto, EmployeeAdder.aspx, nunca na verdade é processado, portanto você não altere sua interface do usuário. Você saberá mais sobre ele em um artigo posterior desta série.
 
     Mas não queremos que o controle de cromo essas páginas. Queremos apenas o acesso à biblioteca do SharePoint CSS. Para cada um desses quatro, adicione a seguinte marcação ao elemento **head**.

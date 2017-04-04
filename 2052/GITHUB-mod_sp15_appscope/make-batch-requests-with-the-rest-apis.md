@@ -34,7 +34,7 @@ SharePoint Online（和本地 SharePoint 2016 及更高版本）和 Office 365 A
   
 - 一个部分可为一个读取操作（或函数调用），也可以为一个或多个写入操作（或函数调用）的 ChangeSet。ChangeSet 本身为 MIME 类型  *multipart/mixed*  ，其各个部分包含插入、更新或删除操作。
     
-    > [!重要信息]
+    > **重要信息**
       > 目前，SharePoint 和 Office 365 API 对包含多个操作的 ChangeSets 不支持"全部或全无"功能。如果任一子操作失败，其他操作仍会完成，并且不会回滚。 
 
 ## 代码示例

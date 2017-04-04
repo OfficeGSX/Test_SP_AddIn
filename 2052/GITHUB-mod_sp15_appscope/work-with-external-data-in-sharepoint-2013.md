@@ -26,7 +26,7 @@ ms.assetid: 1534a5f4-1d83-45b4-9714-3a1995677d85
     
     
 
-> [!注释]
+> **注释**
 > SharePoint 跨域库也可以用于其他方向；即，远程网页上的 JavaScript 可以使用它访问 SharePoint 中的数据。有关库的此用途的详细信息，请参阅 [创建使用跨域库的 SharePoint 外接程序](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md)。 
   
     

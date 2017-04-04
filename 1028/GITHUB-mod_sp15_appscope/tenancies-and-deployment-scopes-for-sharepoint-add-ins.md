@@ -27,7 +27,7 @@ SharePoint Add-in具有增益集的範圍。兩個可能增益集範圍是web �
     
     
 
-> [!注意事項]
+> **注意事項**
 > 增益集範圍不應與功能範圍混淆。功能範圍決定之部署的功能中的項目。各種可能性包括 **Farm**、 **WebApplication**、 **Site** (也就是網站集合) 及 **Web**。 **Web**SharePoint Add-ins (兩者裝載 web 功能和功能內的增益集套件.wsp) 中允許的功能。> 增益集 (英文) 範圍也不應混淆與增益集權限等級。SharePoint Add-ins可以要求所有的權限或選取的清單、 網頁伺服器、 網站集合和租用層級的 SharePoint 內容的部分。與租用戶範圍安裝增益集並未提供讓它它否則沒有、 的權限，也不會取消 SharePoint 安全性模型的主要佈建。如需增益集的權限的詳細資訊，請參閱 [增益集 (英文) SharePoint 2013 權限](add-in-permissions-in-sharepoint-2013.md)。
   
     

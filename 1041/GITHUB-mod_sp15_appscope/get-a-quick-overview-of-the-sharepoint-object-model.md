@@ -23,7 +23,7 @@ SharePoint オブジェクト モデルのいくつかの主なクラスの概�
     
   
 
-> [!メモ]
+> **メモ**
 > プロバイダー ホスト型アドインに関するこのシリーズを続けて学習している場合は、このトピックを続行するために利用できる Visual Studio ソリューションがあります。また、 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) でリポジトリをダウンロードして、BeforeSharePointWriteOps.sln ファイルを開くこともできます。
   
     

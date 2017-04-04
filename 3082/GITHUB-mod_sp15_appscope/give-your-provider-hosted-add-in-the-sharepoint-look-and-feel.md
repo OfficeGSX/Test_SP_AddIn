@@ -114,7 +114,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
   
 
     
-    > [!NOTA]
+    > **NOTA**
       > Si hace clic en el icono, no se abrirá la página de inicio porque Visual Studio cierra la sesión de IIS Express cuando detiene la depuración. 
 
 ## Configurar Visual Studio para recompilar la base de datos corporativa con cada sesión de depuración
@@ -258,7 +258,7 @@ protected void Page_Load(object sender, EventArgs e)
     
   
 
-    > [!NOTA]
+    > **NOTA**
       > El último archivo aspx en el proyecto, EmployeeAdder.aspx, nunca se representa en verdad, de modo que no cambie su interfaz de usuario. Obtendrá más información en un artículo posterior de esta serie. 
 
     Pero no queremos el control de cromo en estas páginas. Queremos el acceso a la biblioteca CSS de SharePoint. Para cada uno de estos cuatro, agregue el marcado siguiente al elemento **head**.

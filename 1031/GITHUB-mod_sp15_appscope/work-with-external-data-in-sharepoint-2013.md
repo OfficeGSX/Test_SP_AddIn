@@ -26,7 +26,7 @@ Details zur Verwendung der Bibliothek auf diese Weise finden Sie unter  [Erstell
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die domänenübergreifende Bibliothek SharePoint kann auch in die andere Richtung verwendet werden; d. h. JavaScript auf Remotewebseiten kann sie verwenden, um auf Daten aus SharePoint zuzugreifen. Weitere Informationen zu dieser Verwendung der Bibliothek finden Sie unter  [Erstellen von SharePoint-Add-Ins, die die domänenübergreifende Bibliothek verwenden](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md). 
   
     

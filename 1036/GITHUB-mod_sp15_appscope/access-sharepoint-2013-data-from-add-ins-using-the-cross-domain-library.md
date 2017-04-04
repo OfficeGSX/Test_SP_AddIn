@@ -20,7 +20,7 @@ La figure 1 illustre une requête bloquée sur plusieurs domaines.
     
     
 Lorsqu'un utilisateur demande une page du domaine de votre complément (1), la communication côté client est uniquement liée à ce domaine. Votre complément peut émettre des appels côté client à partir de la page uniquement vers d'autres ressources dans le même domaine. Toutefois, les compléments nécessitent généralement des ressources d'autres domaines, tels que le domaine SharePoint, pour accomplir leurs scénarios. Dans le code de votre page, vous pouvez essayer d'émettre une requête vers le domaine SharePoint (2) qui est bloqué par le navigateur. Généralement, une erreur **Accès refusé** s'affiche. Cela ne signifie pas que vous ne disposez pas des autorisations aux ressources demandées mais, plus probablement, que vous ne pouvez même pas émettre une requête vers les ressources mentionnées.Lorsque vous utilisez la bibliothèque inter-domaines, les pages web de votre complément peuvent accéder aux données du domaine de votre complément et du domaine SharePoint. La bibliothèque inter-domaines est une alternative côté client ayant la forme d'un fichier JavaScript (SP.RequestExecutor.js) hébergé sur le site web SharePoint que vous pouvez référencer dans votre complément distant. La bibliothèque inter-domaines vous permet d'interagir avec plusieurs domaines dans la page de votre complément distant via un proxy. C'est une bonne option si vous préférez que le code de votre complément s'exécute dans le client plutôt que sur le serveur, et s'il existe des barrières de connectivité telles que des pare-feu, entre SharePoint et votre infrastructure distante. Vous pouvez accéder aux données dans le site web hôte (par exemple, vous pouvez accéder à des listes avec lesquelles les utilisateurs finaux interagissent indépendamment de votre complément). Vous pouvez également accéder aux données sur le site web du complément, telles que des listes spécifiquement fournies pour votre complément. Les compléments peuvent aussi accéder à d'autres collections de sites et sites web tant que le complément dispose d'autorisations d'étendue client et est déployé en tant qu'installation par lots à l'aide du catalogue de compléments.
-> [!REMARQUE]
+> **REMARQUE**
 > Dans cette rubrique, **domaine de votre complément** fait référence au domaine qui héberge les pages du complément. Il peut s'agir du domaine d'une application web distante dans une application hébergée par un fournisseur, mais les pages du complément peuvent également se trouver sur SharePoint dans le site web du complément et effectuer des appels vers le domaine du site web hôte. Dans ce dernier scénario, le domaine du complément est le domaine du site web du complément.
   
     
@@ -101,7 +101,7 @@ La figure 2 illustre une page web qui affiche les données sur le site web du co
   
 4. Sélectionnez **Hébergement par le fournisseur** comme option d'hébergement pour votre complément.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vous pouvez également utiliser la bibliothèque inter-domaines dans une Application hébergée par SharePoint. Cependant, dans une Application hébergée par SharePoint, la page du complément se trouve déjà dans le site web du complément, et, dans ce cas, elle n'a pas besoin que la bibliothèque inter-domaines lise les éléments de liste. Pour obtenir un exemple d'Application hébergée par SharePoint qui lit des données dans le site web hôte, voir la page relative à l' [utilisation de la bibliothèque inter-domaines dans un complément hébergé par SharePoint (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814) ou la section [Accéder aux données à partir du site web hôte](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) plus loin dans cet article.
 
 ### Créer des éléments de liste sur le site web du complément
@@ -156,7 +156,7 @@ La figure 2 illustre une page web qui affiche les données sur le site web du co
   
   - Instancie l'objet **RequestExecutor**. Par défaut, RequestExecutor utilise le site web du complément comme site de contexte.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Vous pouvez remplacer le site de contexte par des sites autres que le site web du complément en utilisant le point de terminaison (REST) ou l'objet (JSOM) **AppContextSite**. Pour en savoir plus sur AppContextSite, voir la section  [Accéder aux données à partir du site web hôte](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) plus loin dans cet article.
   - Émet un appel REST à destination du point de terminaison des éléments de liste.
     
@@ -280,7 +280,7 @@ La figure 2 illustre une page web qui affiche les données sur le site web du co
 
 1. Appuyez sur la touche F5.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Lorsque vous appuyez sur F5, Visual Studio génère la solution, déploie le complément et ouvre la page des autorisations pour le complément. 
 2. Cliquez sur le bouton **Trust It** (Faire confiance).
     

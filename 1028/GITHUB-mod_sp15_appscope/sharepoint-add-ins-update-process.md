@@ -13,7 +13,7 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
     
 
 
-> [!重要]
+> **重要**
 > 您無法變更使用更新系統的 *增益集類型*  。例如，就無法變更增益集從 SharePoint 主控的更新裝載提供者。若要變更的類型時，您需要 [從舊增益集新增一個移轉](#Major)。特別自 [在關閉自動裝載的增益集的預覽程式](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/)，您應該注意您無法提供者主控增益集來更新自動裝載增益集。您必須將轉換增益集 [將自動裝載 SharePoint 增益集轉換成提供者主控增益集 (英文)](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md)所述。
   
     
@@ -47,7 +47,7 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
     
 
     
-> [!秘訣]
+> **秘訣**
 > 當您開發更新時，您不想要等到 24 小時每次將新的版本上傳至您的測試 SharePoint 增益集目錄。如需如何立即更新增益集的資訊，請參閱 [增益集更新而不需要等候 24 小時](update-sharepoint-add-ins.md#ImmediateUpdateNotice)。> 根據預設，SharePoint 會檢查每隔 24 小時的更新已安裝的增益集。伺服器陣列管理員可以設定此為其他值使用下列SharePoint Management Shell命令，其中n是檢查之間的時數。>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`> 如果值設為 0，然後會進行檢查，每次內建的計時器工作 **Internal 增益集狀態更新**執行其預設值為每小時。伺服器陣列管理員可以使用管理中心變更計時器工作的頻率或立即執行。
   
     
@@ -77,14 +77,14 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
   
 - SharePoint 2013執行 **UpgradedEventEndpoint** web 服務，如有任何已登錄的增益集資訊清單中。
     
-    > [!注意事項]
+    > **注意事項**
       > 如果增益集，提供者主控您的增益集的所有非 SharePoint 元件提供更新邏輯。大致上，就如同您這些元件從個別安裝的增益集的安裝更新分開的SharePoint Add-in本身，更新這些元件。但是可能會有一些使用者已更新SharePoint Add-in時應該只會發生的變更。此邏輯可繼續在 **UpgradedEventEndpoint** web 服務或增益集本身的 「 第一次更新之後執行"邏輯。
 - SharePoint 2013增益集和其元件可讓一次。
     
   
 
     
-> [!注意事項]
+> **注意事項**
 > 如果要變更任何] 清單中的增益集網站的結構描述，然後清單備份以及增益集網頁的其餘部分。這可以在許多的清單中的資料是否需要一些時間。如果更新程序無法完成在 1 小時，它會停止並回復更新。
   
     
@@ -99,7 +99,7 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
     
     
 
-> [!注意事項]
+> **注意事項**
 > 組織的增益集目錄中的項目被辨別依 *檔案名稱*  的增益集套件，不產品識別碼或增益集的名稱。如果新的增益集有舊相同的套件檔案名稱、 它要取代舊增益集資料庫目錄中，而舊的增益集將不會再出現在 [ **新增增益集**] 頁面上。如果您啟用版本設定的增益集套件當您將其上傳至目錄時，在舊版本 (這是舊的應用程式) 的檔案是仍然可以使用此項目歷程記錄中。您可以下載舊的增益集套件或還原為它，但沒有方法有兩個舊的和新增益集以不同的項目在目錄中或在 [ **新增增益集**] 頁面上除非有不同的檔案名稱。
   
     
@@ -118,7 +118,7 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
     
     
 
-> [!注意事項]
+> **注意事項**
 > 我們建議您實作 **InstalledEventEndpoint**或安裝元件 **UpgradedEventEndpoint** ，如果您應該也實作解除安裝這些相同元件 **UninstallingEventEndpoint** 。這麼做讓符合設計準則的增益集應該是自給自足及完全解除安裝。不過，應該不會刪除仍很有用的使用者的增益集已解除安裝後的資料。建立增益集、 增益集 web 以外的網站通常是先考慮資料。
   
     

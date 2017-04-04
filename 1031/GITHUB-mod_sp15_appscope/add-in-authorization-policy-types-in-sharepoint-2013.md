@@ -39,7 +39,7 @@ SharePoint bietet drei Typen von Autorisierungsrichtlinien. Die verwendete Autor
     
     
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Bestimmte APIs benötigen einen Benutzerkontext und können mit einer Nur-Add-In-Richtlinie nicht ausgeführt werden. Hierzu gehören viele APIs für die Interaktion mit Project Server 2013 und für Suchabfragen. 
 
 ### Weitere Informationen finden Sie in einem Beispielszenario eines Add-Ins, das die Nur-Add-In-Richtlinie verwendet
@@ -74,7 +74,7 @@ Um Nur-Add-In-Aufrufe an SharePoint ausführen zu können, muss Ihr Add-In die B
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > SharePoint-Add-Ins wurden "Apps für SharePoint" genannt. Damit eine Abwärtskompatibilität gewährleistet werden kann, wurde das App-Manifestschema nicht geändert, sodass die Zeichenfolge "App" in Elementen und Attributnamen angezeigt wird. 
   
     
@@ -123,7 +123,7 @@ if (contextTokenString != null)
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Add-Ins, die keine mit OAuth authentifizierten Aufrufe ausgeben (z. B. Add-Ins, die nur aus im Add-In-Web ausgeführtem JavaScript bestehen) können die Nur-Add-In-Richtlinie nicht verwenden. Sie können die Berechtigung anfordern, können sie jedoch nicht nutzen, da hierfür die Übergabe eines Nur-Add-In-OAuth-Tokens erforderlich wäre. Nur Add-Ins mit außerhalb von SharePoint ausgeführten Webanwendungen können Nur-Add-In-Token erstellen und übergeben. 
   
     

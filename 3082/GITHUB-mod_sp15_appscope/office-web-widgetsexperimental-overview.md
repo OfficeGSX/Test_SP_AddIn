@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Introducción a Office Web Widgets: Experimental
 Obtenga información sobre los Office Web Widgets: Experimental que puede usar en Complementos de Office, Complementos de SharePoint y en sitios web.
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > Los Office Web Widgets: Experimental solo se proporcionan para investigación y comentarios. No se deben usar en escenarios de producción. El comportamiento de Office Web Widgets puede cambiar significativamente en futuras versiones. Lea y revise los  [Términos de licencia de Office Web Widgets: Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -121,7 +121,7 @@ Puede especificar una vista existente en la lista y el widget representa los cam
     
 
     
-> [!NOTA]
+> **NOTA**
 > Actualmente, el widget Vista de lista de escritorio solo muestra los datos. No ofrece capacidades de edición. 
   
     

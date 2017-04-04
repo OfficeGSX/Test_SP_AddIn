@@ -331,7 +331,7 @@ POST 要求を送信するときは、 **X-RequestDigest** ヘッダーにフォ
     
     
 
-> [!メモ]
+> **メモ**
 > JavaScript で記述されている、クラウド ホスト アドインのコンポーネントは、クロスドメイン ライブラリ内の **SP.RequestExecutor** オブジェクトを使って SharePoint データにアクセスする必要があります。クロスドメイン ライブラリ要求はアクセス トークンを含める必要はありません。
   
     
@@ -358,7 +358,7 @@ OAuth アクセス トークンとそれらを取得する方法の詳細は、�
     
     
 
-> [!メモ]
+> **メモ**
 > クロスドメイン ライブラリを使うときには、クラウド ホスト アドインが SharePoint データにアクセスできるようにするためにアドイン Web インスタンスが必要となります。 
   
     
@@ -375,7 +375,7 @@ OAuth アクセス トークンとそれらを取得する方法の詳細は、�
 |SharePoint ホスト型  <br/> |別のサイト コレクション内のデータにアクセスするアドイン web コンポーネント (テナント スコープ アドインのみ）  <br/> | _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'  <br/> |
    
 
-> [!メモ]
+> **メモ**
 > クロスドメイン データ アクセスでは、適切なアドインのアクセス許可も必要です。詳しくは、「 [ホスト Web からのデータ アクセス](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)」と「 [サイト コレクション間でのデータ アクセス](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope)」をご覧ください。 
   
     

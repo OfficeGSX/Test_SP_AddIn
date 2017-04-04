@@ -34,7 +34,7 @@ Im Folgenden sind die Voraussetzungen für die Verfahren in diesem Artikel aufge
   
 - **Ein Organisationskonto in Microsoft Azure**. Weitere Informationen finden Sie unter  [Ihre Office 365-APIs Preview app manuell gemeinsamen Einverständnisses hinzufügen](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount).
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Melden Sie sich bei Ihrem Office 365-Konto (login.microsoftonline.com) an, um das temporäre Kennwort zu ändern, nachdem das Konto erstellt ist. 
 - **Ein SAP OData-Endpunkt** mit Beispieldaten. Weitere Informationen finden Sie in der Dokumentation zu [SAP-Gateway für Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -61,7 +61,7 @@ Mit OAuth 2.0 in Azure AD können Anwendungen auf mehrere Ressourcen zugreifen, 
     
     
 
-> [!TIPP]
+> **TIPP**
 > Wenn Ihr SharePoint-Add-In auf SharePoint zusätzlich zu SAP-Gateway für Microsoft zugreift, muss sie  *beide*  Systeme verwenden: Azure AD, um ein Zugriffstoken für SAP-Gateway für Microsoft zu erhalten, und das ACS-Autorisierungssystem, um ein Zugriffstoken zu SharePoint zu erhalten. Die Token aus den zwei Quellen sind nicht austauschbar. Weitere Informationen finden Sie unter [Optionales Hinzufügen eines Zugriffs auf SharePoint zur ASP.NET-Anwendung](#SharePoint). 
   
     
@@ -124,7 +124,7 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
 
 1. Melden Sie sich im  [Azure-Verwaltungsportal](https://manage.windowsazure.com) mit Ihrem Azure-Administratorkonto an.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Aus Sicherheitsgründen wird empfohlen, bei der Entwicklung von Apps kein Administratorkonto zu verwenden. 
 2. Wählen Sie auf der linken Seite **Active Directory** aus.
     
@@ -210,7 +210,7 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Azure AD kennt Ihre Anwendung über die "localhost"-URL, mit der Sie sie registriert haben. Die Client-ID und der Clientschlüssel sind mit dieser Identität verknüpft. Wenn Sie bereit sind, Ihre Anwendung an eine Azure-Website bereitzustellen, werden Sie sie mit einer neuen URL erneut registrieren. 
 4. Fügen Sie weiterhin im Bereich **appSettings** einen **Authority**-Schlüssel hinzu, und legen Sie seinen Wert auf die Office 365-Domäne ( *some_domain*  .onmicrosoft.com) Ihres Organisationskontos fest. Im fortlaufenden Beispiel ist das Organisationskonto Bob@<O365_domain>.onmicrosoft.com, deshalb ist die Autorität `<O365_domain>.onmicrosoft.com`. 
     
@@ -250,7 +250,7 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
 
 7. Speichern und schließen Sie die web.config-Datei.
     
-    > [!TIPP]
+    > **TIPP**
       > Lassen Sie die web.config-Datei nicht geöffnet, während Sie den Visual Studio-Debugger (F5) ausführen. Die Office-Entwicklertools für Visual Studio ändern den **ClientId**-Wert (nicht die **ida:ClientID**) jedes Mal, wenn Sie F5 drücken. Damit müssen Sie auf eine Aufforderung zum erneuten Laden der web.config-Datei reagieren, wenn sie geöffnet ist, bevor das Debugging ausgeführt werden kann. 
 
 ### Hinzufügen einer Hilfsklasse für die Authentifizierung bei Azure AD
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!TIPP]
+> **TIPP**
 > Die AADAuthHelper-Klasse bietet nur eine minimale Fehlerbehandlung. Für einerobustes SharePoint-Add-In in Produktionsqualität fügen Sie mehr Fehlerbehandlung hinzu, wie im folgenden MSDN-Knoten beschrieben:  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx). 
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!WICHTIG]
+    > **WICHTIG**
       > Löschen Sie diese Zeile, wenn Sie bereit sind, die ASP.NET-Anwendung für das Staging bereitzustellen. Weitere Informationen finden Sie unter  [Ändern der App und Staging an Azure und Office 365](#Stage). 
 5. Fügen Sie der **Page_Load**-Methode den folgenden Code hinzu. Die an die  `GetSAPData`-Methode übergebene Zeichenfolge ist eine OData-Abfrage.
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Während Sie das SharePoint-Add-In debuggen, wird sie von den Office-Entwicklertools für Visual Studio jedes Mal erneut bei Azure ACS registriert, wenn Sie F5 in Visual Studio drücken. Wenn Sie das SharePoint-Add-In bereitstellen, müssen Sie ihr eine langfristige Registrierung geben. Weitere Informationen finden Sie im Abschnitt  [Ändern der App und Staging an Azure und Office 365](#Stage). 
   
     
@@ -710,7 +710,7 @@ Wenn Sie das Debugging des SharePoint-Add-In mit F5 in Visual Studio abgeschloss
   
 8. Registrieren Sie die App bei Azure ACS. Dies muss auch dann durchgeführt werden, wenn die App nicht auf SharePoint zugreift, und dabei werden keine Token von ACS verwendet, da derselbe Prozess die App auch beim App-Verwaltungsdienst des Office 365-Abonnements registriert, was eine Voraussetzung ist. (Er wird als „Add-In-Verwaltungsdienst" bezeichnet, da SharePoint-Add-Ins ursprünglich „Apps für SharePoint" hießen). Sie führen die Registrierung auf der Seite AppRegNew.aspx einer beliebigen SharePoint-Website im Office 365-Abonnement durch. Ausführliche Informationen finden Sie unter  [Registrieren von SharePoint-Add-Ins 2013](register-sharepoint-add-ins-2013.md). Als Teil dieses Prozesses erhalten Sie eine neue Client-ID und einen neuen geheimen Clientschlüssel. Geben Sie diese Werte in die web.config für die Schlüssel **ClientId** (nicht **ida:ClientID**) und **ClientSecret** ein.
     
-    > [!VORSICHT]
+    > **VORSICHT**
       > Wenn Sie aus irgendeinem Grund nach dieser Änderung F5 drücken, überschreiben die Office-Entwicklertools für Visual Studio einen oder beide dieser Werte. Aus diesem Grund sollten Sie die mit AppRegNew.aspx erhaltenen Werte aufzeichnen und immer sicherstellen, dass die Werte in der web.config korrekt sind, kurz bevor Sie die ASP.NET-Anwendung veröffentlichen. 
 
 ### Veröffentlichen der ASP.NET-Anwendung an Azure und Installieren der App an SharePoint

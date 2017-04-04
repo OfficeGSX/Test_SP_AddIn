@@ -364,7 +364,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
 
 1. Presione la tecla F5.
     
-    > [!NOTA]
+    > **NOTA**
       > Al presionar F5, Visual Studio crea la solución, instala el complemento y abre la página de permisos del complemento. 
 2. Elija el botón **Confiar**.
     

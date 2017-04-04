@@ -21,7 +21,7 @@ Les outils Outils de développement Office 365 « Napa » peuvent être utilisé
     
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Nous ne prenons pas en charge l'installation de Napa sur SharePoint sur site. 
   
     
@@ -34,7 +34,7 @@ Grâce aux Outils de développement Office 365 « Napa », vous pouvez créer vo
     
 
 En suivant cet article, vous pouvez apprendre à créer un Complément SharePoint simple hébergé par SharePoint en utilisant les outils Outils de développement Office 365 « Napa ». Le complément que vous créerez inclut des commandes et le code de gestion des listes et des éléments de liste.
-> [!REMARQUE]
+> **REMARQUE**
 > Vous ne pouvez créer que des Compléments SharePoint hébergés par SharePoint avec les outils Napa. Pour plus d'informations sur les différences, voir  [Compléments](sharepoint-add-ins.md). > Vous ne pouvez pas utiliser la syntaxe de mise à jour de complément SharePoint qui est décrite à la rubrique  [Mettre à jour des composants de compléments web dans SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) dans Napa. Par conséquent, si vous devez mettre à jour un complément créé dans les outils Napa, vous devez d'abord l'exporter dans Visual Studio. Vous trouverez la procédure à suivre pour cette opération plus loin dans cet article.> Vous pouvez également créer un Complément SharePoint à l'aide de Visual Studio. Pour plus d'informations, voir  [Commencer à créer des compléments SharePoint hébergés par SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
   
     
@@ -49,7 +49,7 @@ Si vous ne disposez pas déjà d'un abonnement SharePoint Online que vous pouvez
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Vous avez peut-être déjà accès à un Site du développeur Office 365 :> **Êtes-vous abonné à MSDN ?** Les abonnés Visual Studio Ultimate et Visual Studio Premium reçoivent également un abonnement à Office 365 Développeur. [Obtenez cet avantage aujourd'hui.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Disposez-vous de l'un des plans d'abonnement Office 365 suivants ?**> **Si oui, un administrateur de l'abonnement à Office 365 peut créer un Site du développeur** à l'aide du [centre d'administration Office 365](https://portal.microsoftonline.com/admin/default.aspx). Pour plus d'informations, voir  [Créer un Site du développeur dans un abonnement Office 365 existant](create-a-developer-site-on-an-existing-office-365-subscription.md). 
   
     
@@ -67,7 +67,7 @@ Deux options pour obtenir un plan Office 365 :
     
   
 
-> [!CONSEIL]
+> **CONSEIL**
 > Chacun de ces liens s'ouvre dans une autre fenêtre ou un nouvel onglet pour que vous puissiez toujours voir les instructions. 
   
     
@@ -112,7 +112,7 @@ Deux options pour obtenir un plan Office 365 :
   
 
     
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous êtes connecté à un autre compte Microsoft lorsque vous tentez de vous connecter à un compte de développeur, il est possible qu'un message semblable à celui-ci s'affiche : « Désolé, l'identifiant utilisateur que vous avez saisi ne fonctionne pas. Il semble ne pas être valide. Veillez à saisir l'identifiant utilisateur que votre organisation vous a affecté. Votre identifiant utilisateur ressemble généralement à  *nom@exemple.com*  ou *nom@exemple.onmicrosoft.com*  . »> Si ce message s'affiche, déconnectez-vous du compte Microsoft que vous utilisiez et réessayez. Si vous obtenez toujours ce message, effacez le cache de votre navigateur ou passez en mode **Navigation InPrivate**, puis remplissez le formulaire. 
   
     
@@ -279,7 +279,7 @@ Dans cette procédure, vous allez ajouter du code JavaScript pour permettre aux 
   
 2. Dans le fichier **App.js**, ajoutez les variables  `web`,  `lists` et `listItemcollection` aux deux variables par défaut, puis modifiez le code dans la fonction `$(document).ready()` conformément à l'exemple suivant.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Des tildes illustrant des erreurs apparaîtront dans ce code. Ils disparaîtront dans les étapes ultérieures. 
 
   ```
@@ -533,7 +533,7 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > [!REMARQUE]
+    > **REMARQUE**
       > Si les éléments de la liste ne s'affichent pas lorsque vous exécutez le complément, assurez-vous que l'instruction  `displayLists();` suit le code précédent.
 
     Dans l'étape suivante, vous ajouterez des fonctions JavaScript pour les nouvelles définitions, ainsi qu'une fonction de prise en charge ( `getItems()`). Le tableau ci-dessous décrit la finalité des principales fonctions.

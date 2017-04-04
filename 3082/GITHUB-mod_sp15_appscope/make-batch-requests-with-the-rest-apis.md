@@ -34,7 +34,7 @@ SharePoint Online (y SharePoint 2016 local o versiones posteriores) y las API de
   
 - Una parte puede ser una operación de lectura (o invocación a función), o un ChangeSet de una o más operaciones de escritura (o invocaciones a funciones). Un ChangeSet es en sí mismo un tipo MIME  *de varias partes/mixta*  con subpartes que contienen operaciones para insertar, actualizar o eliminar.
     
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > En este momento, SharePoint y las API de Office 365 no admiten la funcionalidad "todo o nada" para ChangeSets que tienen más de una operación dentro. Si alguna de las operaciones secundarias falla, las otras aún se completan y no se revierten. 
 
 ## Ejemplos de código

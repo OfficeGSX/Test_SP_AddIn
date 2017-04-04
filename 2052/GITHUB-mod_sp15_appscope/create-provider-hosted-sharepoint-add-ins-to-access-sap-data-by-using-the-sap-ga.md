@@ -34,7 +34,7 @@ ms.assetid: 6091c7e8-2301-48cb-9400-a882b80f6309
   
 - **Microsoft Azure** 中的组织帐户。请参阅 [使用 Common Consent Framework 集成 Office 365 API 预览版](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount)。
     
-    > [!注释]
+    > **注释**
       > 创建帐户后，登录到您的 Office 365 帐户 (login.microsoftonline.com) 以更改临时密码。 
 - **SAP OData 终结点**及其中的示例数据。请参阅  [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) 文档。
     
@@ -61,7 +61,7 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
     
     
 
-> [!提示]
+> **提示**
 > 如果您的 SharePoint 外接程序除了访问 SAP Gateway for Microsoft 之外还访问 SharePoint，它将需要使用 *两个*  系统：使用 Azure AD 获取 SAP Gateway for Microsoft 的访问令牌，使用 ACS 授权系统获取 SharePoint 的访问令牌。这两个源的令牌不能相互交换。有关详细信息，请参阅 [可以选择将 SharePoint 访问权限添加到 ASP.NET 应用程序](#SharePoint)。 
   
     
@@ -124,7 +124,7 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
 
 1. 使用 Azure 管理员帐户登录到  [Azure 管理门户](https://manage.windowsazure.com)。
     
-    > [!注释]
+    > **注释**
       > 出于安全考虑，我们建议您在开发外接程序时使用管理员帐户。 
 2. 在左侧选择"Active Directory"。
     
@@ -210,7 +210,7 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
   ```
 
 
-    > [!注释]
+    > **注释**
       > Azure AD 通过您用于注册应用程序的"localhost"URL 来识别您的应用程序。客户端 ID 和客户端密钥与该标识相关。当您准备好将应用程序暂存到 Azure 网站，时，您需要使用新的 URL 重新注册。 
 4. 仍在 **appSettings** 部分，添加 **Authority** 密钥，将其值设置为您的组织帐户的 Office 365 域 ( *some_domain*  .onmicrosoft.com)。在下面的示例中，组织帐户为 Bob@<O365_domain>.onmicrosoft.com，因此标识为 `<O365_domain>.onmicrosoft.com`。 
     
@@ -250,7 +250,7 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
 
 7. 保存并关闭 web.config 文件。
     
-    > [!提示]
+    > **提示**
       > 当您运行 Visual Studio 调试程序 (F5) 时，请勿将 web.config 文件保持打开状态。每次您按 F5 时，Visual Studio Office 开发人员工具 都会更改 **ClientId** 值（不是 **ida:ClientID**）。如果 web.config 文件处于打开状态，则您会收到重新加载此文件的提示并做出响应，然后才能执行调试。 
 
 ### 添加帮助程序类以对 Azure AD 进行身份验证
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!提示]
+> **提示**
 > AADAuthHelper 类仅进行最少的错误的处理。要实现生产质量的可靠 SharePoint 外接程序，请增加更多错误处理，如此 MSDN 节点中所述： [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx)。 
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!重要信息]
+    > **重要信息**
       > 当您准备好将 ASP.NET 应用程序部署到暂存环境之后，删除此行。请参阅 [修改外接程序并将其暂存到 Azure 和 Office 365](#Stage)。 
 5. 将以下代码添加到 **Page_Load** 方法。您传递到 `GetSAPData` 方法的字符串是 OData 查询。
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!注释]
+> **注释**
 > 调试 SharePoint 外接程序时，每次您在 Visual Studio 中按 F5 时，Visual Studio Office 开发人员工具 都会将其在 Azure ACS 中重新注册。当您暂存 SharePoint 外接程序时，您必须对其进行长期注册。请参阅 [修改外接程序并将其暂存到 Azure 和 Office 365](#Stage)部分。 
   
     
@@ -710,7 +710,7 @@ private void GetSharePointTitle()
   
 8. 在 Azure ACS 中注册外接程序。即使外接程序不访问 SharePoint，不使用 ACS 中的令牌，也必须执行此操作，这是因为此过程也会在 Office 365 订阅的外接程序管理服务中注册外接程序，这是必要条件。（称为"外接程序管理服务"是因为 SharePoint 外接程序最初称为"SharePoint 相关应用程序"）您可在 Office 365 订阅中任何 SharePoint 网站的 AppRegNew.aspx 页面上执行注册。有关详细信息，请参阅 [注册 SharePoint 2013 外接程序](register-sharepoint-add-ins-2013.md)。作为此过程的一部分，您需获取新的客户端 ID 和客户端机密。将这些值插入 **ClientId**（不是 **ida:ClientID**）和 **ClientSecret** 密钥的 web.config。
     
-    > [!警告]
+    > **警告**
       > 进行此更改，不论您出于何种原因按 F5，Visual Studio Office 开发人员工具 将覆盖一个或两个值。因此，您应该记录在 AppRegNew.aspx 中获取的值，并始终在发布 ASP.NET 应用程序之前确认 web.config 中的值正确无误。 
 
 ### 将 ASP.NET 应用程序发布到 Azure 并将外接程序安装到 SharePoint

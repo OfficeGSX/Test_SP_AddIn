@@ -20,7 +20,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
     
 當使用者要求頁面從您增益集的網域 (1) 時，用戶端通訊結合只有該網域。增益集可以發行只以相同的網域中的其他資源的用戶端來電] 頁面。不過，增益集通常需要從其他網域，例如SharePoint網域，以滿足其案例的資源。在您的網頁程式碼，您可以嘗試發出要求，在瀏覽器會封鎖SharePoint網域 (2)。通常，您會看到 「 **拒絕存取** 」 錯誤。您沒有權限要求的資源但很可能是您無法甚至發出要求，所述的資源，並不會暗示錯誤。當您使用的跨網域文件庫時，在 [增益集網頁可以存取您增益集的網域與SharePoint網域中的資料。跨網域文件庫 (SP.是用戶端替代的JavaScript檔案格式RequestExecutor.js) 的裝載於SharePoint網站，您可以參照遠端增益集。跨網域文件庫，可讓您與多個網域，在 [遠端增益集] 頁面透過 proxy 互動。如果您喜歡在伺服器上，而不是在用戶端上執行增益集程式碼，並且連線障礙，例如SharePoint與遠端基礎結構之間的防火牆，如果是很好的選項。您可以存取主機網頁版中的資料，例如，您可以存取使用者互動的清單，無論增益集。或您可以存取增益集網頁版中的資料，例如清單特別佈建您增益集的增益集也可以存取其他網站集合和網站，只要增益集擁有 [租用戶範圍的權限及部署為使用增益集類別目錄的批次安裝。
-> [!注意事項]
+> **注意事項**
 > 在本主題中， **新增的網域** 是指裝載增益集頁面的網域。這可能是該網域的遠端代管提供者，但增益集的頁面中的應用程式也能夠在SharePoint增益集 web 以及撥打主機 web 網域。在第二個案例中，新增的網域是增益集網站的網域。
   
     
@@ -101,7 +101,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
 4. 選取 [ **提供者主控**為增益集的主機服務選項。
     
-    > [!注意事項]
+    > **注意事項**
       > 您也可以使用SharePoint 裝載的增益集跨網域文件庫。不過，在SharePoint 裝載的增益集增益集] 頁面已在增益集網站，它不需要跨網域文件庫的大小寫的讀取清單項目。如SharePoint 裝載的增益集樣本讀取主機網頁版中的資料，請參閱 [使用跨網域文件庫中的 SharePoint 裝載增益集 (剩餘)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814)或請參閱 [從主 web access 資料](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)本文稍後的。
 
 ### 在 [增益集網站上建立清單項目
@@ -156,7 +156,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
   - 產生 **RequestExecutor**物件。根據預設，RequestExecutor 使用增益集網頁內容網站。
     
-    > [!注意事項]
+    > **注意事項**
       > 您可以變更不同於增益集網站其他網站的內容網站使用 **AppContextSite**結束點 (剩餘) 或物件 (JSOM)。若要進一步瞭解 AppContextSite，請參閱本文稍後的 [從主 web access 資料](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)。
   - 問題清單項目結束點的其餘部分呼叫。
     
@@ -280,7 +280,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
 
 1. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時， Visual Studio建置解決方案部署增益集與增益集的權限頁面隨即會開啟。
 2. 選擇 [ **允許存取**] 按鈕。
     

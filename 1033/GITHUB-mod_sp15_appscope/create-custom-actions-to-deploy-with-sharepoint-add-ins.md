@@ -7,7 +7,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
 
 # Create custom actions to deploy with SharePoint Add-ins
 Learn how to create a custom action in SharePoint that deploys to the host web when you deploy a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -85,7 +85,7 @@ Follow these steps to create a custom action in the host web document libraries:
     
   
 
-    > [!IMPORTANT]
+    > **IMPORTANT**
       > The ItemURL and ItemID tokens only get passed when there is an item selected. In a production quality SharePoint Add-in, your code needs to handle situations where no item is selected. In this example the code alerts the user that no item has been selected. 
 
   ```HTML
@@ -193,7 +193,7 @@ Follow these steps to create a custom action in the host web document libraries:
     
   
 
-> [!NOTE]
+> **NOTE**
 > In this example, the remote web page opens in a full window when the user selects the custom action from the menu. Custom menu actions can also open a remote webpage in a dialog box by using the **HostWebDialog** attribute. For more information, see [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization). 
   
     
@@ -270,7 +270,7 @@ Follow these steps to create a custom action in the host web document libraries:
     
      ` <CommandUIHandler Command="Invoke_RibbonCustomAction1ButtonRequest" CommandAction="~remoteAppUrl/CustomActionTarget.aspx?{StandardTokens}&amp;amp;SPListItemId={SelectedItemId}&amp;amp;SPListId={SelectedListId}&amp;amp;SPSource={Source}&amp;amp;SPListURLDir={ListUrlDir}" />`
     
-    > [!NOTE]
+    > **NOTE**
       > Ribbon custom actions use **SelectedListId** and **SelectedItemId**. **ListId** and **ItemId** work only with menu item custom actions.
 
 ### Set the add-in start page to the host web home page
@@ -293,7 +293,7 @@ Follow these steps to create a custom action in the host web document libraries:
 
 1. Press the F5 key.
     
-    > [!NOTE]
+    > **NOTE**
       > When you press F5, Visual Studio builds the solution, deploys the add-in, and opens the permissions page for the add-in. 
 2. Choose the **Trust It** button. The default page of your developer site opens.
     

@@ -64,7 +64,7 @@ SharePoint Add-in使用權限要求指定正常運作所需的權限。權限要
     
     
 
-> [!注意事項]
+> **注意事項**
 > 清單內容和文件庫內容僅適用於本節所述的範圍。如需其他功能的範圍資訊，請參閱本文中的 [ [了解增益集的權限和權限範圍的類型](#Perm_types)] 區段。
   
     
@@ -75,7 +75,7 @@ SharePoint Add-in使用權限要求指定正常運作所需的權限。權限要
     
     
 
-> [!注意事項]
+> **注意事項**
 > SharePoint Add-in自己的身分識別，而且時的安全性主體，呼叫增益集主體。例如使用者及群組] 增益集主要有特定權限。因此它只需要要求中的主機網站或增益集網路外的其他位置的SharePoint資源的權限完全控制 」 權限的增益集 web 具有增益集主體。如需增益集網頁的詳細資訊，請參閱 [重要方面之 SharePoint 增益集架構設計和開發入門](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)和 [主機 web、 增益集 web 及 SharePoint 2013 中的 SharePoint 元件](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md)。
   
     
@@ -126,14 +126,14 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如需哪些讀取的詳細資訊，寫入、 管理和 「 完全控制 」 權限會包含，請參閱 [規劃增益集的權限管理](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx)。
   
     
     
 
 
-> [!注意事項]
+> **注意事項**
 > 這些權限對應SharePoint預設使用者權限層級： 讀者、 參與者、 設計者、 與完全控制。如需使用者權限等級的詳細資訊，請參閱 [使用者權限與權限層級](http://technet.microsoft.com/en-us/library/cc288074.aspx)。> 增益集的權限名稱不符合SharePoint使用者角色權限名稱中，若要避免使用者角色權限和增益集版權之間造成混淆。因為自訂相關聯SharePoint使用者角色的權限不會影響增益集的權限要求層級的增益集權限名稱不符合對應SharePoint使用者角色、 完全控制、 無法透過權限管理使用者介面自訂除外。
   
     
@@ -154,7 +154,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
     
   
 
-> [!注意事項]
+> **注意事項**
 > Office Store應用程式有一些限制來何種類型的權限增益集可以要求。如需詳細資訊，請參閱本文中的 [ [了解增益集的權限和權限範圍的類型](#Perm_types)] 區段。
   
     
@@ -196,7 +196,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
     
     
 
-> [!注意事項]
+> **注意事項**
 > Uri 用於表格 2 的常值。
   
     
@@ -285,7 +285,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
     
     
 
-> [!注意事項]
+> **注意事項**
 > Uri 中所使用的表格是常值。
   
     
@@ -304,7 +304,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
 |http://sharepoint/bcs/connection <br/> |讀取 <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 如需 BCS 增益集的權限要求範圍的詳細資訊，請參閱 [Business Connectivity Services in SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx)。
   
     
@@ -327,7 +327,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
 |http://sharepoint/search <br/> |QueryAsUserIgnoreAppPrincipal <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 如需搜尋增益集的權限要求範圍的詳細資訊，請參閱 [在 SharePoint 2013 中搜尋](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx)。
   
     
@@ -342,7 +342,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
     
     
 
-> [!注意事項]
+> **注意事項**
 > 使用Project Server 2013功能與服務增益集應該具有所需的 Project Server 功能與服務的環境中測試。預設SharePoint Server未安裝知道Project Server 2013權限範圍的相關之Project Server 2013權限提供者組件。如需詳細資訊，請參閱Project Server 2013開發人員文件。
   
     
@@ -381,7 +381,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
 |http://sharepoint/social/microfeed <br/> |讀取、 寫入、 管理、 「 完全控制 」 <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 如需社交功能增益集的權限要求範圍的詳細資訊，請參閱 [增益集的權限要求存取社交功能](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms)。
   
     
@@ -404,7 +404,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
 |http://sharepoint/taxonomy <br/> |讀取、寫入 <br/> |
    
 
-> [!注意事項]
+> **注意事項**
 > 如需分類增益集的權限要求範圍的詳細資訊，請參閱 [新增 SharePoint 2013 功能](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx)。
   
     
@@ -438,7 +438,7 @@ SharePoint支援租用、 內容資料庫內的四個不同的權限範圍表 1 
 ||||
 |:-----|:-----|:-----|
 |**範圍 URI** <br/> |**屬性** <br/> |**類型** <br/> |
-|http://sharepoint/content/sitecollection/web/list <br/> |**BaseTemplateId** <br/> |整數 <br/> > [!注意事項]> 如需 **BaseTemplateId**和對應的整數值清單基礎範本的詳細資訊，請參閱 [清單項目 (清單)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) **Type**屬性。          |
+|http://sharepoint/content/sitecollection/web/list <br/> |**BaseTemplateId** <br/> |整數 <br/> > **注意事項**> 如需 **BaseTemplateId**和對應的整數值清單基礎範本的詳細資訊，請參閱 [清單項目 (清單)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) **Type**屬性。          |
    
 
 ## 管理及疑難排解增益集的權限

@@ -64,7 +64,7 @@ In SharePoint 2013 stellt der Server-zu-Server-Sicherheitstokendienst Zugriffsto
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Der Server-zu-Server-Sicherheitstokendienst ist nicht für die Benutzerauthentifizierung vorgesehen. Daher wird der Server-zu-Server-Sicherheitstokendienst weder im Abschnitt **Authentifizierungsanbieter** der Zentraladministration noch in der Personenauswahl in SharePoint 2013 auf der Benutzeranmeldeseite angezeigt.
   
     
@@ -203,7 +203,7 @@ Das Windows PowerShell-Skript, das Sie in diesem Abschnitt erstellen, soll die V
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Stellen Sie sicher, dass Sie die Schritte unter  [Konfigurieren von Diensten in SharePoint für die Verwendung in Server-zu-Server-Add-Ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md#Servertoserver) (dies war als Voraussetzung für diesen Artikel aufgeführt) ordnungsgemäß ausgeführt haben. Andernfalls müssen Sie die Konfiguration jetzt vornehmen, um den Vorgang fortsetzen zu können.
   
     
@@ -248,7 +248,7 @@ $fullIssuerIdentifier = $specificIssuerId + '@' + $realm
   ```
 
 
-    > [!HINWEIS]
+    > **HINWEIS**
       > Der  `$specificIssuerId`-Wert muss eine GUID sein, da in einer Produktionsumgebung jedes Zertifikat einen eindeutigen Aussteller aufweisen muss. Allerdings können Sie in diesem Zusammenhang, in dem Sie dasselbe Zertifikat verwenden, um alle Ihre besonders vertrauenswürden Apps zu debuggen, den Wert hart codieren. Wenn Sie aus irgendeinem Grund eine andere GUID als die hier verwendete nutzen,  * **müssen Sie sicherstellen, dass alle Buchstaben in der GUID in Kleinschreibung angegeben sind*** . Die SharePoint-Infrastruktur erfordert derzeit Kleinschreibung für Zertifikataussteller-GUIDs.
 5. Fügen Sie die folgenden Zeilen hinzu, um das Zertifikat als vertrauenswürdigen Tokenherausgeber zu registrieren. Der  `-Name`-Parameter muss eindeutig sein. Daher ist es in einer Produktionskonfiguration üblich, eine GUID teilweise (oder vollständig) als Namen zu verwenden. Sie können in diesem Zusammenhang jedoch auch einen Anzeigenamen verwenden. Mit dem  `-IsTrustBroker`-Switch wird sichergestellt, dass Sie dasselbe Zertifikat für alle besonders vertrauenswürdigen Apps, die Sie entwickeln, verwenden können. Der Befehl  `iisreset` ist erforderlich, damit Ihr Tokenherausgeber sofort registriert ist. Andernfalls müssen Sie möglicherweise bis zu 24 Stunden warten, bis der neue Aussteller registriert ist.
     
@@ -288,7 +288,7 @@ In diesem Abschnitt erfahren Sie, wie Sie mithilfe von Visual Studio eine besond
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wie im Abschnitt  [Voraussetzungen für die Erstellung von besonders vertrauenswürdigen Apps](#Prereq) angegeben, wird in diesem Artikel davon ausgegangen, dass Sie wissen, wie eine von einem Anbieter gehostete SharePoint-Add-In erstellt wird. Weitere Informationen finden Sie unter [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     

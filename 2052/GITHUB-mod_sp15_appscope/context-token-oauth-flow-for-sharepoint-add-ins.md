@@ -19,7 +19,7 @@ ms.assetid: 526c8c4a-5cbb-4efc-87d9-23ac73655cf4
     
     
 
-> [!注释]
+> **注释**
 > 远程组件也可以承载对 SharePoint 项目所发生的事件做出响应的事件接收器，例如列表或列表项。Contoso.com 可能会响应的远程事件示例包括列表事件，如添加或删除列表项；或 Web 事件，如添加或删除网站。有关如何创建远程事件接收器的详细信息，请参阅 [在 SharePoint 外接程序中创建远程事件接收器](create-a-remote-event-receiver-in-sharepoint-add-ins.md)。 
   
     

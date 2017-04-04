@@ -7,7 +7,7 @@ ms.assetid: edc60550-67d2-4230-8e27-06a328c0d1f1
 
 # Verwenden des experimentellen Personenauswahl-Widgets in SharePoint-Add-Ins
 Erfahren Sie, wie Sie das Personenauswahl-Widget auf einer Webseite verwenden, auch wenn die Seite nicht in SharePoint gehostet wird. Verwenden Sie das Personenauswahl-Widget in Ihren Add-Ins, um Benutzern das Suchen und Auswählen von Personen und Gruppen zu erleichtern.
-> [!VORSICHT]
+> **VORSICHT**
 > Die Office Web Widgets - Experimental werden nur zu Recherche- und Feedbackzwecken bereitgestellt. Verwenden Sie sie nicht in Produktionsszenarios. Das Verhalten von Office Web Widgets kann sich in künftigen Versionen erheblich ändern. Lesen und prüfen Sie die  [Lizenzbedingungen für Office Web Widgets - Experimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -88,7 +88,7 @@ Um das Personenauswahl-Widget zu verwenden, müssen Sie folgende Schritte ausfü
   
 - Erstellen Sie im Add-In-Web ein Modul. Dieser Schritt stellt sicher, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Für die domänenübergreifende Bibliothek muss ein Add-In-Web vorhanden sein. Das Personenauswahl-Widget kommuniziert mithilfe der domänenübergreifenden Bibliothek mit SharePoint. 
 - Erstellen Sie eine Add-In-Seite, die eine Personenauswahl-Widget-Instanz mithilfe von Markup deklariert.
     
@@ -108,7 +108,7 @@ Um das Personenauswahl-Widget zu verwenden, müssen Sie folgende Schritte ausfü
   
 4. Wählen Sie als Hostingoption für Ihr Add-In **Von Anbieter gehostet** aus.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Sie können das Personenauswahl-Widget auch mit anderen Hostingoptionen oder sogar mit Add-Ins für Office auf Ihrer eigenen Website verwenden. 
 5. Wählen Sie als Typ des Webanwendungsprojekts **ASP.NET Webformular-Anwendung** aus.
     
@@ -125,7 +125,7 @@ Um das Personenauswahl-Widget zu verwenden, müssen Sie folgende Schritte ausfü
   
 2. ählen Sie **Visual C#-Elemente**> **Office/SharePoint**> **Modul** aus. Geben Sie einen Namen für Ihr Modul an.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie eine Von SharePoint gehostetes Add-In erstellen, müssen Sie ein eigenes Modul erstellen. 
 
 ### So fügen Sie eine neue Seite hinzu, die das Personenauswahl-Widget verwendet
@@ -244,7 +244,7 @@ Basic People Picker sample (HTML markup declaration):
   ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Das obige Codebeispiel gibt die URLs des Hostwebs und des Add-In-Webs explizit an, um die Office-Steuerelementelaufzeit zu initialisieren. Wenn die URLs des Hostwebs und des Add-In-Webs allerdings im Abfragezeichenfolgenparameter **SPAppWebUrl** bzw. **SPHostUrl** angegeben werden, können Sie ein leeres Objekt übergeben. Der Code wird dann versuchen, die Parameter automatisch abzurufen. Die Parameter **SPAppWebUrl** und **SPHostUrl** sind in der Abfragezeichenfolge enthalten, wenn Sie das Token **{StandardTokens}** verwenden.
   
     
@@ -271,7 +271,7 @@ Office.Controls.Runtime.initialize({});
 
 1. Drücken Sie F5.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 2. Klicken Sie auf die Schaltfläche **Vertrauen**.
     

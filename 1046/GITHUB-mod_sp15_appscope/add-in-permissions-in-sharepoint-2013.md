@@ -64,7 +64,7 @@ Um Suplemento do SharePoint usa solicitações de permissão para especificar as
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os escopos descritos nesta seção se aplicam ao conteúdo de lista e apenas o conteúdo da biblioteca. Para obter informações sobre escopos para outros recursos, consulte a seção de  [Compreender os tipos de escopos de permissão e permissões de suplemento](#Perm_types) neste artigo.
   
     
@@ -75,7 +75,7 @@ Escopos de solicitação de permissão indicam o local da hierarquia SharePoint 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Um Suplemento do SharePoint tem sua própria identidade e é uma entidade de segurança, chamada um suplemento principal. Assim como os usuários e grupos, um suplemento de entidade tem determinadas permissões ou direitos. A entidade de segurança tem direitos de controle total na Web do suplemento para que ele só precisa solicitar permissões para os recursos de SharePoint em web host ou outros locais fora da web do suplemento. Para obter mais informações sobre o suplemento de web, consulte  [Aspectos importantes do Add-in SharePoint arquitetura e desenvolvimento cenário](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md) e [Host webs, suplemento webs e componentes do SharePoint no SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md).
   
     
@@ -126,14 +126,14 @@ Permissões indicam as atividades que um suplemento é permitido fazer dentro do
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter mais informações sobre qual leitura, direitos de gravação, gerenciar e controle total incluem, consulte o  [plano de gerenciamento de permissões de suplemento](http://technet.microsoft.com/en-us/library/jj219576%28office.15%29.aspx).
   
     
     
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Esses direitos correspondem aos níveis de permissão do usuário padrão do SharePoint: leitor, colaborador, Designer e controle total. Para obter mais informações sobre níveis de permissão do usuário, consulte  [permissões de usuário e níveis de permissão](http://technet.microsoft.com/en-us/library/cc288074.aspx).> Os nomes de direitos de suplementos não coincidem SharePoint funções direitos nomes de usuário, para evitar a confusão entre os direitos de funções e direitos de suplemento. Como personalizar as permissões que estão associadas a funções de usuário SharePoint não afeta os níveis de solicitação de permissão do suplemento, os direitos de adicionar nomes não coincidem com as funções de usuário SharePoint correspondentes, exceto controle total, que não podem ser personalizadas por meio da interface de usuário de gerenciamento de permissões.
   
     
@@ -154,7 +154,7 @@ E mais:
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > aplicativos Office Store têm algumas restrições em relação a que tipo de direitos de um suplemento pode solicitar. Para obter mais informações, consulte a seção de  [Compreender os tipos de escopos de permissão e permissões de suplemento](#Perm_types) neste artigo.
   
     
@@ -196,7 +196,7 @@ Tabela 2 mostra o escopo de solicitação de permissão para conteúdo de lista 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os URIs usados na tabela 2 são valores literais.
   
     
@@ -285,7 +285,7 @@ O escopo de solicitação de permissão para outros recursos de SharePoint são 
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Os URIs usados nas tabelas são valores literais.
   
     
@@ -304,7 +304,7 @@ A tabela 3 mostra o escopo de solicitação de permissão para Business Connecti
 |http://SharePoint/BCS/Connection <br/> |Leitura <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter mais informações sobre o escopo de solicitação de permissão do suplemento de BCS, consulte  [Serviços Corporativos de Conectividade do SharePoint 2013](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx).
   
     
@@ -327,7 +327,7 @@ A tabela 4 mostra o escopo de solicitação de permissão para pesquisa. Ele tam
 |http://SharePoint/Search <br/> |QueryAsUserIgnoreAppPrincipal <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter mais informações sobre o escopo de solicitação de permissão do suplemento de pesquisa, consulte  [Pesquisa no SharePoint 2013](http://msdn.microsoft.com/library/59220f81-0e5e-4945-8056-cf0a116446cb%28Office.15%29.aspx).
   
     
@@ -342,7 +342,7 @@ Tabela 5 mostra o escopo de solicitação de permissão para Project Server 2013
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Um suplemento que usa os serviços e recursos de Project Server 2013 deve ser testado em um ambiente que tem os recursos necessários do Project Server e os serviços. O assembly do provedor de permissão Project Server 2013 sabe sobre escopos de permissão Project Server 2013 não é instalado por padrão com SharePoint Server. Para obter mais informações, consulte a documentação do desenvolvedor de Project Server 2013.
   
     
@@ -381,7 +381,7 @@ Tabela 6 mostra o escopo de solicitação de permissão dos recursos sociais. El
 |http://SharePoint/social/microfeed <br/> |Leitura, gravação, gerenciar, controle total <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter mais informações sobre o escopo de solicitação de permissão do suplemento de recursos sociais, consulte  [Add-in solicitações de permissão para acessar os recursos sociais](http://msdn.microsoft.com/library/8852ce36-8309-45a7-a141-2e10ac17a123%28Office.15%29.aspx#bkmk_AppPerms).
   
     
@@ -404,7 +404,7 @@ A tabela 7 mostra o escopo de solicitação de permissão para a taxonomia. Ele 
 |http://SharePoint/Taxonomy <br/> |Leitura, Gravação <br/> |
    
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter mais informações sobre o escopo de solicitação de permissão do suplemento de taxonomia, consulte  [Adicionar recursos do SharePoint 2013](http://msdn.microsoft.com/library/11ecb65e-6dc5-4cf1-80ca-3c16418697b6%28Office.15%29.aspx).
   
     
@@ -438,7 +438,7 @@ A propriedade **BaseTemplateId** é um elemento filho, não é um atributo do el
 ||||
 |:-----|:-----|:-----|
 |**URI de escopo** <br/> |**Propriedade** <br/> |**Tipo** <br/> |
-|http://sharepoint/content/sitecollection/web/list <br/> |**BaseTemplateId** <br/> |Inteiro <br/> > [!OBSERVAçãO]> Para obter mais informações sobre **BaseTemplateId** e o valor de inteiro correspondente para o modelo de lista de base, consulte o atributo **Type** do [Elemento de lista (lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).          |
+|http://sharepoint/content/sitecollection/web/list <br/> |**BaseTemplateId** <br/> |Inteiro <br/> > **OBSERVAçãO**> Para obter mais informações sobre **BaseTemplateId** e o valor de inteiro correspondente para o modelo de lista de base, consulte o atributo **Type** do [Elemento de lista (lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).          |
    
 
 ## Gerenciar e solucionar problemas de permissões de suplemento

@@ -60,7 +60,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
 <a name="o365_signup"> </a>
 
 
-> [!注意事項]
+> **注意事項**
 > 您可能已有 Office 365 開發人員網站 的存取權：> **您是 MSDN 訂閱者嗎？** Visual Studio Ultimate 和 Visual Studio Premium 的 MSDN 訂閱者可以獲得 Office 365 Developer 訂閱的權益。 [立即兌換權益。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **您有下列其中一個 Office 365 訂閱計劃嗎？**> **如果Office 365訂閱的管理員，可以建立開發人員網站** 使用 [Office 365 系統管理中心](https://portal.microsoftonline.com/admin/default.aspx)。如需詳細資訊，請參閱 [建立現有的 Office 365 訂閱開發人員網站](create-a-developer-site-on-an-existing-office-365-subscription.md)。
   
     
@@ -81,7 +81,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
     
   
 
-> [!秘訣]
+> **秘訣**
 > 開啟另一個視窗或] 索引標籤中的下列連結，以保留方便使用下列指示。
   
     
@@ -126,7 +126,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
   
 
     
-> [!注意事項]
+> **注意事項**
 > 如果您正在登入至另一個 Microsoft 帳戶嘗試註冊的開發人員帳戶時，您可能會看到此訊息： 「 抱歉，您輸入的使用者識別碼沒有運作。它看起來不正確。請確定您輸入您的組織指派給您的使用者識別碼。使用者識別碼通常看起來像是 *someone@example.com*  或 *someone@example.onmicrosoft.com*  。 」> 如果您看到該訊息、 登出您所使用的 Microsoft 帳戶並再試一次。如果您仍會收到郵件，清除 [在瀏覽器快取或切換至 **[InPrivate 瀏覽**並再填寫表單。
   
     

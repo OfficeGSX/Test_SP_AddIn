@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # 使用 REST 处理列表和列表项
 了解如何使用 SharePoint 2013 REST 界面对列表和列表项执行基本的创建、读取、更新和删除 (CRUD) 操作。
-> [!提示]
+> **提示**
 > SharePoint Online（和本地 SharePoint 2016 及更高版本）REST 服务支持使用 OData  `$batch` 查询选项，将多个请求合并到对该服务的单个调用中。有关详细信息和代码示例的链接，请参阅 [使用 REST API 发出批处理请求](make-batch-requests-with-the-rest-apis.md)。 
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!注释]
+> **注释**
 > 如果您需要 JSON 格式的响应，请在  `accept` 标头中使用 `application/json;odata=verbose`。如果您需要 Atom 格式的响应，请在  `accept` 标头中使用 `application/atom+xml`。 
   
     
@@ -116,7 +116,7 @@ Headers:
 ```
 
 
-> [!注释]
+> **注释**
 > 如果您要创建和更新列表中的项， **ListItemEntityTypeFullName** 属性（前面示例中的 **SP.Data.ProjectPolicyItemListItem**）特别重要。每当您创建和更新列表项时，此值必须作为在您的 HTTP 请求的正文中传递的元数据中的 **type** 属性传递。
   
     
@@ -214,7 +214,7 @@ Headers:
     
     
 
-> [!注释]
+> **注释**
 > 查询列表项时，OData $skip 查询选项不起作用。在很多情况下，您可以改用  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) 选项。
   
     
@@ -280,7 +280,7 @@ headers:
     
     
 
-> [!注释]
+> **注释**
 > 若要执行此操作，您必须知道列表的 **ListItemEntityTypeFullName** 属性并将它作为 HTTP 请求正文中的 **type** 的值传递。
   
     
@@ -307,7 +307,7 @@ headers:
     
     
 
-> [!注释]
+> **注释**
 > 若要执行此操作，您必须知道列表的 **ListItemEntityTypeFullName** 属性并将它作为 HTTP 请求正文中的 **type** 的值传递。
   
     

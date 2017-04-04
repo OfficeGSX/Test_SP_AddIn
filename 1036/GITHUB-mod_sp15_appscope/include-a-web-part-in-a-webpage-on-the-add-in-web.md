@@ -45,7 +45,7 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
   ```
 
 
-    > [!ATTENTION]
+    > **ATTENTION**
       > Il est possible d'ajouter un composant WebPart, tel que **<WebPartPages:XsltListViewWebPart>**, en tant qu'enfant de l'élément **WebPartZone**. Toutefois, cette opération est généralement déconseillée dans un Complément SharePoint. Si jamais le complément a besoin d'une mise à jour, l'insertion d'un élément WebPart dans le fichier .aspx peut faire échouer la mise à jour dans certains cas et le message suivant s'affiche : « Un composant WebPart portant cet ID a déjà été ajouté à cette page ». Nous vous recommandons d'ajouter les composants WebPart dans le manifeste des éléments de la page, comme décrit plus loin dans cette procédure. 
 4. Ouvrez le fichier manifeste des éléments de la page. Il est généralement appelé elements.xml et situé dans le même dossier de projet que le fichier aspx.
     
@@ -81,7 +81,7 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
 
 7. Ajoutez une balise **webPart** en tant qu'enfant de l'élément **webParts**. L'exemple de code suivant permet d'ajouter un élément **XsltListViewWebPart**. Dans cet exemple, nous partons du principe qu'une liste personnalisée appelée « Test List » fait partie du même projet. Pour plus d'informations sur la façon d'ajouter une liste personnalisée à un site web de complément, voir  [Créer un complément hébergé par un fournisseur comportant un type personnalisé de liste et de contenu SharePoint](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Notez que le composant WebPart ne possède pas une propriété ID. Il est recommandé d'inclure un ID explicite pour le composant WebPart seulement dans les deux cas où il est vraiment nécessaire :>  Le composant WebPart est ajouté à une page wiki SharePoint.>  Le composant WebPart est l'un des deux composants WebPart minimum qui seront connectés.
 
   ```

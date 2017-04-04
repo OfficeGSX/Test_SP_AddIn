@@ -7,7 +7,7 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 
 # Chaînes URL et jetons dans les compléments pour SharePoint
 Découvrez quels jetons d'URL sont utilisables dans les Compléments SharePoint.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Pour obtenir des informations générales sur la construction d'URL dans SharePoint 2013 et sur l'utilisation de jetons dans ces URL, voir  [URL et jetons dans SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). Cette rubrique décrit les jetons disponibles dans les Compléments SharePoint. 
   
     

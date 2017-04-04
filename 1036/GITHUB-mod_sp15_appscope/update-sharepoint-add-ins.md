@@ -28,7 +28,7 @@ Vous pouvez mettre à jour votre Complément SharePoint en utilisant le support 
     
 Vous pouvez installer la mise à jour sans avoir au préalable désinstallé la version antérieure. L'infrastructure de la mise à jour teste l'installation et l'annule s'il existe des erreurs.
     
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Vous ne pouvez pas modifier le  *type de complément*  à l'aide du système de mise à jour. Par exemple, vous ne pouvez pas profiter d'une mise à jour pour transformer un complément hébergé par SharePoint en complément hébergé par un fournisseur. Pour changer de type, vous devez [migrer d'un ancien complément vers un nouveau complément](sharepoint-add-ins-update-process.md#Major). En particulier, puisque  [le programme de prévisualisation pour les compléments auto-hébergés a été fermé](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), vous devez savoir que vous ne pouvez pas mettre à jour un complément auto-hébergé en complément hébergé par un fournisseur. Vous devez convertir le complément tel qu'expliqué dans  [Conversion d'un complément auto-hébergé pour SharePoint en complément hébergé par un fournisseur](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md). 
   
     
@@ -200,7 +200,7 @@ La figure 2 illustre ces étapes.
     
 
     
-> [!REMARQUE]
+> **REMARQUE**
 > Si la fréquence de 24 heures pour l'affichage de la notification de « mise à jour disponible » sur la vignette du complément n'est pas assez élevée pour vous, vous pouvez utiliser la méthode décrite dans  [Procédure de mise à jour d'un complément SharePoint](sharepoint-add-ins-update-process.md#Minor) pour que la notification apparaisse immédiatement.
   
     

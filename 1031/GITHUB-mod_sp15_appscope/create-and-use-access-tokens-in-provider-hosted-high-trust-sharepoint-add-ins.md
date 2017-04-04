@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # Erstellen und Verwenden von Zugriffstoken in vom Anbieter gehostete besonders vertrauenswürdige SharePoint-Add-Ins
 Erfahren Sie mehr über die Rolle von Zugriffstoken in besonders vertrauenswürdigen Add-Ins für SharePoint und wir Ihr Code mit diesen zusammenarbeitet.
-> [!WICHTIG]
+> **WICHTIG**
 > **In diesem Artikel geht es nur um die Verwendung von Zugriffstokens im besonders vertrauenswürdigen Autorisierungssystem, und nicht um das ACS-System.** Informationen zur Verwendung von Sicherheitstokens im ACS-System finden Sie unter [Handhabung von Sicherheitstoken in vom Anbieter gehosteten Add-Ins für SharePoint mit niedriger Vertrauensebene](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md). 
   
     
@@ -24,7 +24,7 @@ Im besonders vertrauenswürdigen Autorisierungssystem erstellt **die Remotekompo
 <a name="AccessTokens"> </a>
 
 
-> [!HINWEIS]
+> **HINWEIS**
 >  Denken Sie bei der Lektüre dieses Artikels, insbesondere in Bezug auf Aufgaben, die Ihr Code durchführen muss, daran, dass bei der Verwendung von verwaltetem Code die Microsoft Office-Entwicklertools für Visual Studio jedem SharePoint-Add-In-Projekt zwei generierte Codedateien, SharePointContext.cs (oder .vb) und TokenHelper.cs (oder .vb) hinzufügen, die den größten Teil der Arbeit für Sie übernehmen. Der Tokenverarbeitungscode Ihrer Anwendung besteht für gewöhnlich aus nur wenigen Aufrufen an die Klassen in diesen Dateien. Die ausführlichen Informationen in diesem Thema helfen Entwicklern, die keinen verwalteten Code verwenden (bei der Behandlung von Problemen mit Tokens).>  Links zu OAuth-Bibliotheken für viele Sprachen und Plattformen finden Sie unter:>  [OAuth 2.0](http://oauth.net/2/) Blättern Sie zu **Clientbibliotheken**.>  Weitere Informationen finden Sie, indem Sie [github](https://github.com/) nach "OAuth 2" und "JSON Web Token" (ohne Anführungszeichen) durchsuchen.
   
     
@@ -123,7 +123,7 @@ Im Folgenden finden Sie ein **Beispiel für ein Zugriffstoken, das von einem bes
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 >  Beachten Sie, dass sich die von Ihrem Code erstellten besonders vertrauenswürdigen Zugriffstoken von den von Azure ACS erstellten Token unterscheiden, wenn das Autorisierungssystem mit niedriger Vertrauensebene verwendet wird:>  Der **alg**-Anspruch im Header ist „none", da das Zugriffstoken in einem Benutzer-und-Add-In-Aufruf von einem besonders vertrauenswürdigen Add-In nicht signiert ist. >  Die Add-In-URL im Wert **aud** in diesem Beispiel befindet sich auf einem lokalen Server, was für das besonders vertrauenswürdige System normal ist.>  Es gibt keinen **identityprovider**-Anspruch, aber einen **nii** (Namensidentitätsaussteller) mit derselben Art von Werten wie im **identityprovider**-Anspruch, den Zugriffstoken im Autorisierungssytem mit niedriger Vertrauensebene verwenden. (Informationen zu diesem Wert bei einem SAML-basierten Identitätsanbieter finden Sie in den Blog-Posts von Steve Peschka:  [Sicherheit in SharePoint-Add-Ins - Teil 8](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx) und [Verwenden von SharePoint-Add-Ins mit SAML- und FBA-Websites in SharePoint 2013](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx). >  Es gibt keinen **actor**-Anspruch, aber einen **actortoken**-Anspruch, der ein Base64-codiertes inneres Token mit einer Gültigkeitsdauer von 12 Stunden enthält. 
   
     
@@ -207,7 +207,7 @@ In Tabelle 2 sind die Ansprüche beschrieben, die Ihr Code in den Hauptteil des 
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Wenn das besonders vertrauenswürdige Add-In die  [Nur-Add-In-Richtlinie](add-in-authorization-policy-types-in-sharepoint-2013.md) verwendet und einen Nur-Add-In-Aufruf an SharePoint durchführt, ist das hier gezeigte Token tatsächlich das Zugriffstoken. Es gibt kein äußeres Token. Darüber hinaus gibt es keinen **trustedfordelegation**-Anspruch, da die Berechtigungen des Benutzers für einen Nur-Add-In-Aufruf irrelevant sind. 
   
     

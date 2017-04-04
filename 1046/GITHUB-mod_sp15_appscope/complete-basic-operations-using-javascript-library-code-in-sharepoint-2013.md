@@ -7,7 +7,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
 # Como concluir operações básicas usando código da biblioteca do JavaScript no SharePoint 2013
 Saiba como escrever código para executar operações básicas usando o modelo de objeto de cliente no JavaScriptSharePoint 2013.
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Para obter um modelo de nível "Hello World" Suplemento do SharePoint que usa a biblioteca JavaScript, confira  [Use as APIs do SharePoint JavaScript para trabalhar com dados do SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md). 
   
     
@@ -269,7 +269,7 @@ function onQueryFailed(sender, args) {
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se você tentar acessar outras propriedades, o código lançará uma exceção porque não há outras propriedades disponíveis. 
   
     
@@ -788,7 +788,7 @@ Você pode manipular arquivos usando o modelo de objeto do JavaScript. As seçõ
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Você só pode trabalhar com arquivos de até 1,5 MB usando o modelo de objeto do JavaScript. Para carregar arquivos maiores, use REST (Representational State Transfer). Para saber mais, consulte  [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles). 
   
     
@@ -1051,7 +1051,7 @@ Quatro propriedades de objetos **ListItem** não estarão disponíveis por padr�
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Quando você usa o LINQ para criar consultas no modelo de objeto do cliente, estará usando o  [LINQ para objetos](http://msdn.microsoft.com/library/bb397919) e não o [LINQ para provedor do SharePoint](http://msdn.microsoft.com/library/ee535491), que só poderá ser usado quando você escrever código no modelo de objeto do servidor. 
   
     

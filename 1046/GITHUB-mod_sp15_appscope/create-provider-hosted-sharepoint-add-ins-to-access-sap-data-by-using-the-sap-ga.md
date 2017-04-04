@@ -34,7 +34,7 @@ A seguir são pré-requisitos para os procedimentos neste artigo:
   
 - **Uma conta organizacional do Microsoft Azure**. Consulte  [Adicionar manualmente o consentimento comum para o seu aplicativo de visualização de APIs do Office 365](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount).
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Login à sua conta do Office 365 (login.microsoftonline.com) para alterar a senha temporária depois que a conta é criada.
 - **Ponto de extremidade OData do SAP A** com dados de amostra nela. Consulte a documentação do [Gateway do SAP para o Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
     
@@ -61,7 +61,7 @@ OAuth 2.0 no Windows Azure AD permite aos aplicativos acessar vários recursos h
     
     
 
-> [!DICA]
+> **DICA**
 > Se seu Suplemento do SharePoint acessa SharePoint além acessando SAP Gateway for Microsoft, então ela precisará usar  *ambos os*  sistemas: Azure AD para obter um acesso token SAP Gateway for Microsoft e o sistema de autorização ACS para obter um acesso token para SharePoint. Os tokens de duas fontes não são intercambiáveis. Para obter mais informações, consulte [Opcionalmente, adicione o acesso ao SharePoint para o aplicativo ASP.NET](#SharePoint).
   
     
@@ -124,7 +124,7 @@ Para obter uma descrição detalhada e diagrama do fluxo de OAuth usado pelos OA
 
 1. Login para o  [portal de gerenciamento do Windows Azure](https://manage.windowsazure.com) com sua conta de administrador do Azure.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Para fins de segurança, recomendamos contra usando uma conta de administrador ao desenvolver suplementos.
 2. Escolha **Do Active Directory** no lado esquerdo.
     
@@ -210,7 +210,7 @@ Para obter uma descrição detalhada e diagrama do fluxo de OAuth usado pelos OA
   ```
 
 
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Seu aplicativo é conhecido como Azure AD pela URL "localhost" você usou para registrá-lo. A ID do cliente e a chave do cliente estão associados essa identidade. Quando você estiver pronto para preparar seu aplicativo para um Azure Web Site, você irá registrá-lo novamente com uma nova URL.
 4. Ainda na seção **appSettings**, adicione uma chave **Authority** e defina seu valor como o domínio Office 365 ( *some_domain*  . onmicrosoft.com) da sua conta organizacional. No exemplo contínuo, a conta organizacional é Bob @< O365_domain >. onmicrosoft.com, portanto, a autoridade é `<O365_domain>.onmicrosoft.com`.
     
@@ -250,7 +250,7 @@ Para obter uma descrição detalhada e diagrama do fluxo de OAuth usado pelos OA
 
 7. Salve e feche o arquivo Web. config.
     
-    > [!DICA]
+    > **DICA**
       > Não deixe o arquivo Web. config aberta quando você executa o depurador Visual Studio (F5). O Office Developer Tools for Visual Studio altere o valor de **ClientId** (não o **ida:ClientID**) sempre que você pressionar F5. Isso requer que você responder a uma pergunta ao recarregar o arquivo Web. config, se ele estiver aberto, antes de depuração pode ser executado.
 
 ### Adicionar uma classe auxiliar se autentiquem no Azure AD.
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!DICA]
+> **DICA**
 > A classe AADAuthHelper tem o tratamento de erros somente mínimos. Para uma robusta, produção qualidade Suplemento do SharePoint, adicione o tratamento de erros mais conforme descrito neste nó do MSDN:  [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx).
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!IMPORTANTE]
+    > **IMPORTANTE**
       > Exclua essa linha quando estiver pronto para implantar o aplicativo ASP.NET para preparação. Consulte  [Modificar o suplemento e estágio-lo para o Windows Azure e o Office 365](#Stage).
 5. Adicione o seguinte código para o método **Page_Load**. A cadeia de caracteres que você passa para o método `GetSAPData` é uma consulta OData.
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Enquanto você estiver depurando o Suplemento do SharePoint, o Office Developer Tools for Visual Studio registrá-lo novamente com Azure ACS toda vez que pressionar a tecla F5 em Visual Studio. Quando você deve preparar o Suplemento do SharePoint, você precisa dar a ela um registro de longo prazo. Consulte a seção  [Modificar o suplemento e estágio-lo para o Windows Azure e o Office 365](#Stage).
   
     
@@ -710,7 +710,7 @@ Quando terminar de depuração Suplemento do SharePoint usando F5 no Visual Stud
   
 8. Registre o suplemento com Azure ACS. Isso deve ser feito, mesmo se o suplemento não acessa SharePoint e não usará tokens do ACS, porque o mesmo processo também registra o suplemento com o serviço de gerenciamento de suplemento da assinatura Office 365, que é um requisito. (É chamado "Add-in do serviço de gerenciamento" porque Suplementos do SharePoint originalmente eram chamados de "aplicativos para SharePoint".) Você pode executar o registro na página de qualquer site SharePoint na assinatura do Office 365 AppRegNew.aspx. Para obter detalhes, consulte  [Registrar o SharePoint 2013 de suplementos](register-sharepoint-add-ins-2013.md). Como parte desse processo, você obterá uma nova ID de cliente e o segredo do cliente. Inserir esses valores em Web. config **ClientId** (não **ida:ClientID**) e teclas de **ClientSecret**.
     
-    > [!CUIDADO]
+    > **CUIDADO**
       > Se por alguma razão você pressionar F5 depois de fazer essa alteração, o Office Developer Tools for Visual Studio substituirá uma ou ambas desses valores. Por esse motivo, você deve manter um registro dos valores obtidos com AppRegNew.aspx e sempre verifique se os valores no Web. config estão corretos antes de você publica o aplicativo ASP.NET.
 
 ### Publique o aplicativo ASP.NET para o Windows Azure e instalar o suplemento para o SharePoint

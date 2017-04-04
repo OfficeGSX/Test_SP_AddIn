@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # 在提供程序托管的高信任 SharePoint 外接程序中创建和使用访问令牌
 了解访问令牌在高信任 SharePoint 外接程序中的角色以及您的代码如何使用这些令牌。
-> [!重要信息]
+> **重要信息**
 > **本文内容完全与访问令牌在高信任授权系统（而不是 ACS 系统）中的使用相关。** 有关在 ACS 系统中使用安全令牌的信息，请参阅 [在提供程序托管的低信任 SharePoint 外接程序中处理安全令牌](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md)。 
   
     
@@ -24,7 +24,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 <a name="AccessTokens"> </a>
 
 
-> [!注释]
+> **注释**
 >  请记住，在阅读本文时，尤其是有关您的代码必须执行的任务部分，如果您使用的是托管代码，Visual Studio Microsoft Office 开发人员工具 会向每个 SharePoint 外接程序项目添加生成的两个代码文件，即 SharePointContext.cs（或 .vb）和 TokenHelper.cs（或 .vb），这两个文件将为您执行大部分任务。您的应用程序的令牌处理代码通常仅由对这两个文件中类的一些调用组成。本主题中的详细信息旨在帮助不使用托管代码的开发人员（以及正在对令牌进行故障排除的人员）。>  很多语言和平台的 OAuth 库的链接位于以下位置：>  [OAuth 2.0](http://oauth.net/2/) 滚动到"客户端库"。>  您可以通过在 [github](https://github.com/) 中搜索"OAuth 2"和"JSON web token"（不含引号）来查找更多信息。
   
     
@@ -123,7 +123,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
     
 
-> [!注释]
+> **注释**
 >  请注意，您的代码创建的高信任访问令牌与使用低信任授权系统时 Azure ACS 创建的令牌有所不同：>  标头中的 **alg** 声明为"none"，因为高信任外接程序发出的用户+外接程序调用中的访问令牌尚未签署。>  在本示例中， **aud** 值中的外接程序 URL 为本地服务器，这对高信任系统来说很正常。>  不提供 **identityprovider** 声明，但提供与低信任授权系统中所用 **identityprovider** 声明访问令牌相同类型的值的 **nii**（名称标识颁发者）。（有关当标识提供程序基于 SAML 时该值的信息，请参阅 Steve Peschka 的博客文章  [SharePoint 外接程序的安全 - 第 8 部分](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx)和 [在 SharePoint 2013 中将 SharePoint 外接程序与 SAML 和 FBA 网站一起使用](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx)。 >  不提供 **actor** 声明，但提供包含有效期为 12 小时的 Base 64 编码的内部令牌的 **actortoken** 声明。
   
     
@@ -207,7 +207,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 ```
 
 
-> [!注释]
+> **注释**
 > 如果高信任外接程序使用 [仅外接程序策略](add-in-authorization-policy-types-in-sharepoint-2013.md)并且向 SharePoint 发出仅外接程序调用，则此处所述的令牌实际上是访问令牌。不提供外部令牌。此外，也不提供 **trustedfordelegation** 声明，因为用户的权限与仅外接程序调用无关。
   
     

@@ -35,7 +35,7 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關提供者主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials)在存放庫並開啟 BeforeFirstRunLogic.sln 檔案。
   
     
@@ -49,7 +49,7 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
     
     
 
-> [!注意事項]
+> **注意事項**
 > 啟動專案的設定中Visual Studio往往每當解決方案重新開啟後還原為預設值。一律 updatefromfile 此系列文章中的範例方案後立即執行這些步驟：> 以滑鼠右鍵按一下頂端的 [ **方案總管中**的 [解決方案] 節點並選取 [ **設定啟動專案**。> 請確定所有三個專案設定以 **啟動**[ **動作**] 欄中。
   
     
@@ -139,7 +139,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
   ```
 
 
-> [!注意事項]
+> **注意事項**
 > 您可能會想知道現在為何增益集使用的版本號碼和"小於"測試來判定簡單的答覆 [是/否問號： 為第一次執行增益集？我們剛也可能有 **承租人** 表格已設為"尚未執行"中的安裝處理常式並再變更為 「 已執行一次"由初次執行邏輯之後 SharePoint 元件部署中的簡單字串欄位。> 鏈結存放區 」 增益集、 簡單的測試會運作。不過，它通常是很好的作法使用版本號碼。這是因為實際執行增益集是可能是更新就地未來;也就被更新已安裝後。當該時間而言時，您的增益集邏輯會需要機密以上的兩種可能性not 尚未執行並已-執行一次。例如，假設您想要新增主機網站在升級至 2.0.0.0 1.0.0.0 版其他清單。"更新之後，先執行「 邏輯或中更新事件處理常式，您可以這麼做。無論如何，您部署的邏輯必須部署新的元件，但是它也需要避免嘗試重新部署在舊版的增益集已部署的元件。已部署的元件，1.0.0.0 版但的第一個執行-之後-更新邏輯尚未執行就信號 1.0.0.0 版本號碼。
   
     
@@ -383,7 +383,7 @@ private static void CreateLocalEmployeesList()
   
 4. 瀏覽至 [ **網站內容**] 頁面上。因為您初次執行的邏輯將其新增有無 **本機的員工**清單。
     
-    > [!注意事項]
+    > **注意事項**
       > 若清單並非有或具有初次執行的程式碼不執行其他表示，則可能的 **承租人**表格不被 csdeviceupdateconfiguration 空的狀態時按 F5。最常見的原因是 **ChainCorporateDB**專案已不再設定為Visual Studio啟動專案。請參閱本文針對如何修正此問題頂端附近附註。也請確定您已設定要重新 [設定Visual Studio重建每個偵錯工作階段的公司資料庫](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild)中所述的資料庫。
 5. 開啟清單並新增項目。請注意新項目表單上 **新增至公司 DB**欄位是不再存在，因此無法手動設定它。這是的編輯項目表單，則為 true。
     

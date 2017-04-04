@@ -8,7 +8,7 @@ ms.assetid: 6ce01956-6bda-45bf-9b4a-cffc0687a913
 
 # Vue d'ensemble d'Office Web Widgets - Expérimental
 Découvrez les Office Web Widgets - Expérimental et leur utilisation dans les Compléments Office, les Compléments SharePoint et les sites web.
-> [!ATTENTION]
+> **ATTENTION**
 > Les Office Web Widgets - Expérimental ne sont fournis qu'à des fins de recherche et de commentaires de la part des utilisateurs. Ne les employez pas en phase de production. Le comportement des Office Web Widgets peut changer considérablement dans les prochaines versions. Lisez les  [Termes du contrat de licence Office Web Widgets - Expérimental](office-web-widgetsexperimental-license-terms.md). 
   
     
@@ -121,7 +121,7 @@ Vous pouvez spécifier un affichage existant dans la liste, le widget présente 
     
 
     
-> [!REMARQUE]
+> **REMARQUE**
 > Pour le moment, le widget d'affichage de liste de bureau permet seulement d'afficher les données, pas de les modifier. 
   
     

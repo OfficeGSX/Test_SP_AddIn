@@ -23,7 +23,7 @@ Ein SharePoint-Add-In-Paket ist eine Datei mit der Erweiterung "APP", die dem St
   
 - **Hostweb-Features mit benutzerdefinierten Aktionen oder Add-In-Parts:** Neben den SharePoint 2013-Komponenten, die im Add-In-Web bereitgestellt werden, kann ein SharePoint-Add-In auch eine oder mehrere benutzerdefinierte Aktionen (Kontextmenübefehle oder Menübanderweiterungen) im Hostweb bereitstellen. Hierzu wird ein Feature in das Add-In-Paket eingefügt, das nicht in der .WSP-Datei des Pakets enthalten ist und das die Komponenten bereitstellt, die für das Hostweb vorgesehen sind. Dieses "freie" Feature wird als Hostweb-Feature bezeichnet. Add-In-Parts werden auf die gleiche Weise im Hostweb bereitgestellt. Das Hostweb-Feature besteht aus der SharePoint 2013-Standarddatei "feature.xml" und mindestens einer zugehörigen "elements.xml"-Datei. Die "elements.xml"-Datei für eine benutzerdefinierte Aktion enthält beispielsweise das **CustomAction**-Markup für die benutzerdefinierte Aktion. Es kann auch Markup für Add-In-Parts enthalten. Nur diese beiden Komponenten können im Hostweb-Feature enthalten sein. Diese Hostweb-Features werden im Add-In-Manifest nicht einzeln aufgeführt. Es handelt sich jedoch im Sinn von OPC um "parts", und es besteht eine explizite OPC-Beziehung zwischen dem Add-In-Manifest und jeder dieser Dateien. Ein Beispiel für ein Add-In-Paket, das ein Hostweb-Feature enthält, finden Sie unter  [Gewusst wie: Erstellen benutzerdefinierter Aktionen zur Bereitstellung mit Add-Ins für SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Mandantenadministratoren haben die Möglichkeit, ein SharePoint-Add-In per Stapelverarbeitung auf mehreren Websites zu installieren. Ein Add-In, das auf diese Weise installiert worden ist, hat den Gültigkeitsbereich **Tenant**. Wenn das Add-In nicht per Stapelverarbeitung auf mehreren Websites, sondern stattdessen auf jeder Website getrennt installiert wurde, dann hat es den Gültigkeitsbereich **Web**Wenn das Hostweb-Feature Menüband-Erweiterungen oder Add-In-Webparts enthält, dann werden diese nicht in den Hostwebs bereitgestellt, wenn das Add-In per Stapelverarbeitung installiert wird. Daher werden nur Kontextmenüelemente bei Add-Ins mit dem Gültigkeitsbereich "Tenant". Der Add-In-Bereich darf nicht mit dem Feature-Bereich verwechselt werden. Der Feature-Bereich bestimmt, wo die in einem Feature enthaltenen Elemente bereitgestellt werden. Mögliche Bereiche sind **Farm**, **WebApplication**, **Site** (d. h. die Websitesammlung) und **Web**. Nur die **Web**-Option ist für Features in SharePoint-Add-Ins zulässig (sowohl Hostweb-Features als auch Features in einer WSP-Datei in einem Add-In-Paket). Der Add-In-Bereich bezeichnet den Bereich, in dem ein Add-In installiert worden ist. Mögliche Bereiche sind **Web**, wenn das Add-In parallel auf einem oder mehreren Websites installiert wurde, und **Tenant**, wenn das Add-In auf allen oder einer Teilmenge der Websites der Mandanteneinheit eines Kunden installiert wurde. Weitere Informationen zu den Bereichen **Tenant** und **Web** finden Sie unter [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - **Lokalisierungsressourcendateien (.RESX):** Diese Dateien sind für die Lokalisierung verschiedener Aspekte des Add-In-Manifests vorgesehen, zu denen der Titel und Aspekte der Hostweb-Features im Add-In-Paket gehören. (Einzelne Teile des Add-In-Pakets, die sich in einem eigenen Paket befinden, wie WSP-Dateien, Azure-Websites-Pakete und Add-In-Manifeste, verfügen jeweils über eigene Lokalisierungsprozesse, die genauso ausgeführt werden wie bei Elementen, die nicht Teil eines SharePoint-Add-In sind.) Ein Beispiel zu einem Add-In-Paket, das die RESX-Dateien für ein Hostweb-Feature enthält, finden Sie unter [Lokalisieren von Add-Ins für SharePoint](localize-sharepoint-add-ins.md).
     
@@ -45,7 +45,7 @@ Jedes SharePoint-Add-In enthält die Datei "appmanifest.xml". Mit der Datei "app
   
 - Die URL der Startseite. Die Startseite ist die Seite, die beim Start des Add-Ins geöffnet wird. Es kann sich dabei um eine Seite im Add-In-Web, eine cloudbasierte Seite oder eine Seite auf einem Webserver des unabhängigen Softwareherstellers handeln.
     
-    > [!HINWEIS]
+    > **HINWEIS**
       > Unter Umständen gelten Einschränkungen dafür, welche Art von Datei im **StartPage**-Element angegeben werden kann. Ausführliche Informationen finden Sie unter  [StartPage-Element (PropertiesDefinition ComplexType) (SharePoint-Add-in Manifest)](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx). > Wenn Sie mehrere Abfrageparameter im **StartPage**-Wert kombinieren, müssen Sie diese Parameter durch Angabe des Codes für das kaufmännische Und-Zeichen " `&amp;amp;`" statt " `&amp;`" oder eines Semikolons aneinanderreihen. 
 - Andere Eigenschaften des Add-Ins. Hierzu gehören der Titel und die Gebietsschemas, die von dem Add-In unterstützt werden (beides erforderlich), die URLs der Dienste, welche die Ereignisse "post-install", "post-upgrade" und "pre-uninstall" behandeln, sowie die Webvorlage, die zum Erstellen des Add-In-Webs verwendet werden soll.
     
@@ -60,7 +60,7 @@ Jedes SharePoint-Add-In enthält die Datei "appmanifest.xml". Mit der Datei "app
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Lediglich die Add-In-Manifestdatei ist im Add-In-Paket erforderlich. Nicht alle oben genannten Elemente müssen in dieser Datei vorhanden sein. 
   
     
@@ -79,7 +79,7 @@ Sie müssen in Ihrem Add-In-Manifest entweder das **SupportedLocales**- oder das
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Werte des **Scope**-Attributs des **AppPermissionRequest**-Elements sind wie URIs strukturiert, es handelt sich jedoch um Zeichenfolgenliterale. Im folgenden Beispiel ist kein Teil des Beispielwerts für **Scope** ein Platzhalter. Weitere Informationen zu Berechtigungen finden Sie unter [Add-In-Berechtigungen in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     
@@ -124,7 +124,7 @@ SharePoint 2013 stellt verschiedene Token bereit, die im **StartPage**-Element u
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Diese Token werden nicht im **Scope**-Attribut des **AppPermissionRequest**-Elements verwendet. 
   
     

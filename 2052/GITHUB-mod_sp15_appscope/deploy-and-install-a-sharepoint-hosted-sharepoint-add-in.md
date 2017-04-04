@@ -17,7 +17,7 @@ ms.assetid: 3a3875d6-13e3-4411-904f-4f39acf88b95
     
   
 
-> [!注释]
+> **注释**
 > 如果您阅读过关于 SharePoint 托管的外接程序的此系列文章，那么您应该具有 Visual Studio 解决方案，可以继续阅读本主题。您还可以从  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) 下载存储库并打开 BeforeColumns.sln 文件。
   
     

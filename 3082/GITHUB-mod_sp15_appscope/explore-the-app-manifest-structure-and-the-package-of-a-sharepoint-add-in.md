@@ -23,7 +23,7 @@ Un paquete de Complemento de SharePoint es un archivo con una extensión ".app" 
   
 - **Características de la web de host con acciones personalizadas o elementos del complemento:** además de los componentes de SharePoint 2013 que se implementan en la web de complemento, un Complemento de SharePoint también puede implementar una o más acciones personalizadas (elementos de menú contextual o extensiones de cinta) en la web de host. Para ello, se debe incluir en el paquete de complemento una característica que no se incorpora en el archivo .wsp del paquete y que implementa los componentes que se van a incluir la web de host. Esta característica "fantasma" se denomina característica de la web de host. Los elementos del complemento se implementan en la web de host de la misma forma. La característica de la web de host está compuesta por un archivo feature.xml de SharePoint 2013 estándar y uno o más archivos elements.xml asociados. Los archivos elements.xml para una acción personalizada, por ejemplo, incorporan el marcado de **CustomAction** para la acción personalizada. Por otra parte, también pueden incorporar el marcado para los elementos del complemento. Únicamente estos dos tipos de componente pueden encontrarse en la característica de la web de host y no aparecen desglosados en el manifiesto del complemento. Sin embargo, son "elementos" en términos de OPC, además de que existe una relación de OPC explícita entre el manifiesto del complemento y cada uno de estos archivos. Para obtener un ejemplo de paquete de complemento que incluya una característica de la web de host, consulte [Crear acciones personalizadas para implementarlas con complementos de SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md).
     
-    > [!NOTA]
+    > **NOTA**
       > Los administradores de inquilinos cuentan con la opción de instalar por lotes un Complemento de SharePoint en varios sitios web. Los complementos que se instalan de esta forma se dice que tienen un ámbito de **Tenant**. Si el complemento no se instaló por lotes y, en su lugar, se instaló en cada sitio web de forma independiente, se dice que tiene ámbito **Web**. Si la característica de la web de host incluye extensiones de cinta o elementos de complemento, no se implementarán en los sitios web de host en caso de que el complemento se hubiera instalado por lotes, de forma que, en los complementos de ámbito de inquilino, solamente se implementan los elementos del menú contextual. El ámbito de complemento no debe confundirse con el ámbito de característica. Este último hace referencia al lugar donde se implementan los elementos en una característica. Las posibilidades son **Farm**, **WebApplication**, **Site** (es decir la colección de sitios) y **Web**. Solamente se permite la opción **Web** para las características de Complementos de SharePoint (tanto las características de la web de host como las características de un archivo .wsp de un paquete de complementos). El ámbito de complemento hace referencia al ámbito en el que se instala un complemento. Las posibilidades son **Web**, en cuyo caso el complemento se instaló en uno o más sitios web de forma individual, y **Tenant**, donde el complemento se instaló por lotes para la totalidad o un subconjunto de los sitios web en el arrendamiento de un cliente. Para obtener más información sobre los ámbitos de **Tenant** y **Web**, consulte  [Arrendamientos y ámbitos de implementación de los complementos para SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 - **Archivos de recursos de localización (.resx):** se usan para localizar ciertos aspectos del manifiesto del complemento (como el título del complemento) y de las características de la web de host en el paquete de complemento. (Los elementos individuales del paquete de complemento que se encuentran dentro de su propio paquete, como por ejemplo, los archivos .wsp, los paquetes de Sitios web de Azure y los manifiestos de complemento, cuentan cada uno de ellos con sus propios procedimientos de localización que se aplicarían exactamente como si los elementos en cuestión no formasen parte de un Complemento de SharePoint). Para obtener un ejemplo de un paquete de complemento que incluya archivos .resx para una característica de la web de host, consulte [Localizar complementos para SharePoint](localize-sharepoint-add-ins.md).
     
@@ -45,7 +45,7 @@ Cada Complemento de SharePoint incluye un archivo appmanifest.xml. Este archivo 
   
 - La dirección URL de la página de inicio, que es la página que se abre al iniciar el complemento; podría ser una página de la web de complemento, una página en la nube o una página en un servidor web del ISV.
     
-    > [!NOTA]
+    > **NOTA**
       > En algunos casos, puede haber restricciones en cuanto al tipo de archivos que se pueden especificar en el elemento **StartPage**. Para obtener más información, vea  [Elemento StartPage (PropertiesDefinition complexType) (Add in SharePoint manifiesto)](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx). > Cuando se combina más de un parámetro de consulta en el valor de la **StartPage**, debe usar la Y comercial codificada " `&amp;amp;`" en lugar de " `&amp;`" o un punto y coma para unirlos. 
 - Otras propiedades del complemento. Entre ellas se incluyen el título y las configuraciones regionales que admite el complemento (ambas son necesarias), las direcciones URL de los servicios que controlan los eventos posteriores a la instalación, posteriores a la actualización y previos a la desinstalación, y la plantilla web que se usa para crear la web de complemento.
     
@@ -60,7 +60,7 @@ Cada Complemento de SharePoint incluye un archivo appmanifest.xml. Este archivo 
     
   
 
-> [!NOTA]
+> **NOTA**
 > El archivo de manifiesto del complemento es el único elemento necesario en el paquete de complemento, pero no todos los elementos de la lista anterior son elementos obligatorios del archivo. 
   
     
@@ -79,7 +79,7 @@ Debe usar el elemento **SupportedLocales** o el elemento **SupportedLanguages** 
     
     
 
-> [!NOTA]
+> **NOTA**
 > Los valores del atributo **Scope** del elemento **AppPermissionRequest** se encuentran estructurados como URI, pero son en realidad cadenas literales. En el ejemplo siguiente, ningún elemento del valor **Scope** es un marcador. Para obtener más información sobre permisos, visite [Permisos de complemento en SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
   
     
@@ -124,7 +124,7 @@ SharePoint 2013 proporciona diversos tokens que se pueden usar en el elemento **
     
     
 
-> [!NOTA]
+> **NOTA**
 > Estos tokens no se usan en el atributo **Scope** de un elemento **AppPermissionRequest**. 
   
     

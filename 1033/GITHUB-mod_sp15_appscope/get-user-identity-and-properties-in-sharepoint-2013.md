@@ -7,7 +7,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
 
 # Get user identity and properties in SharePoint 2013
 Retrieve user identity and user information in SharePoint 2013.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -28,7 +28,7 @@ There are different ways to retrieve user identity and information, depending on
     
   
 
-> [!NOTE]
+> **NOTE**
 > For guidance on how to setup a development environment that fits your needs, see  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -99,7 +99,7 @@ The following is another way to retrieve user's login name. If you have the user
     
     
 
-> [!NOTE]
+> **NOTE**
 > The APIs are in the Microsoft.SharePoint.Client.Utilities namespace in the  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) assembly.
   
     

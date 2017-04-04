@@ -41,7 +41,7 @@ ms.assetid: 5c8767c2-317f-4bdb-8f4f-885d06da7feb
     
   
 
-> [!注意事項]
+> **注意事項**
 > 如果您有已使用透過這一系列有關 SharePoint 主控增益集，則您需要您可以使用以繼續執行本主題的Visual Studio解決方案。您也可以下載 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials)在存放庫並開啟 BeforeJSOM.sln 檔案。
   
     

@@ -124,7 +124,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
-> [!REMARQUE]
+> **REMARQUE**
 > Le document relatif à la  [configuration d'un environnement hybride à sens unique avec SharePoint Server 2013 et Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx), disponible en téléchargement sur la page  [Ressources SharePoint 2013 hybrides](http://www.microsoft.com/fr-fr/download/details.aspx?id=35593), fournit plus de détails sur le remplacement du certificat STS par défaut de votre batterie de serveurs sur site par un certificat d'une autorité de certification connue ou par un certificat auto-signé. 
   
     
@@ -180,7 +180,7 @@ La fonction ci-dessous effectue toutes les actions nécessaires pour configurer 
 
 1. Sur le serveur SharePoint sur site, copiez le code de la fonction dans un fichier texte et enregistrez-le sous le nom MySharePointFunctions.psm1 dans l'un des dossiers suivants (pas les deux). Vous devrez peut-être créer des parties du chemin, si celui-ci inclut des dossiers qui n'existent pas déjà. Dans les deux cas, le dossier situé au niveau le plus bas du chemin doit avoir le même nom que le fichier.
     
-    > [!CONSEIL]
+    > **CONSEIL**
       > Le fichier doit être enregistré au format ANSI, et non UTF-8. PowerShell peut générer de fausses erreurs de syntaxe lors du chargement d'un fichier dans un format autre que ANSI. Par défaut, le Bloc-notes de Windows procédera à l'enregistrement au format ANSI. Si vous utilisez un autre éditeur pour enregistrer le fichier, veillez à l'enregistrer au format ANSI. 
 
   -  `C:\\users\\username\\documents\\windowspowershell\\modules\\MySharePointFunctions`, où  _username_ est l'administrateur de la batterie de serveurs qui va exécuter le fichier.

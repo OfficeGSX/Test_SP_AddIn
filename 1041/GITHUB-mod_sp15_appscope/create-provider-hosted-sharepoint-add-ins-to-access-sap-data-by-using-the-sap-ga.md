@@ -34,7 +34,7 @@ SAP Gateway for Microsoft および Azure AD Authentication Library for .NET を
   
 - **Microsoft Azure 内の組織アカウント**。「 [Common Consent Framework を使用した Office 365 API プレビューの統合](http://msdn.microsoft.com/library/95479f73-15d7-426e-abdf-ae2c72b5cd33%28Office.15%29.aspx#bk_CreateOrganizationAccount)」を参照してください。
     
-    > [!メモ]
+    > **メモ**
       > アカウントが作成されたら、Office 365 アカウント (login.microsoftonline.com) にログインして一時パスワードを変更します。 
 - サンプル データがある **SAP OData エンドポイント**。 [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) のドキュメントを参照してください。
     
@@ -61,7 +61,7 @@ Azure AD で OAuth 2.0 を使用すると、Microsoft Azure によってホス�
     
     
 
-> [!ヒント]
+> **ヒント**
 > SharePoint アドインが SAP Gateway for Microsoft だけでなく SharePoint にもアクセスする場合、SAP Gateway for Microsoft へのアクセス トークンを取得するための Azure AD と、SharePoint へのアクセス トークンを取得するための ACS 承認システムの *両方*  のシステムが必要になります。2 つのリソースのトークンは、互いに交換できるものではありません。詳細については、「 [SharePoint へのアクセス許可を ASP.NET アプリケーションに追加する (オプション)](#SharePoint)」を参照してください。 
   
     
@@ -124,7 +124,7 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
 
 1. Azure 管理者アカウントで  [Azure 管理ポータル](https://manage.windowsazure.com)にログインします。
     
-    > [!メモ]
+    > **メモ**
       > セキュリティ上、アドインの開発時に管理者アカウントを使用することはお勧めしません。 
 2. 左側の [ **Active Directory**] を選択します。
     
@@ -210,7 +210,7 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
   ```
 
 
-    > [!メモ]
+    > **メモ**
       > アプリケーションは、登録用に使用した "localhost" URL によって Azure AD から認識されます。クライアント ID およびクライアント キーはその ID に関連付けられます。アプリケーションを Azure Web サイト にステージングする準備ができたら、そのアプリケーションを新しい URL に再登録します。 
 4. **appSettings** セクションで、 **Authority** キーを追加し、その値を組織アカウントの Office 365 ドメイン ( *some_domain*  .onmicrosoft.com) に設定します。このトピックの例では、組織アカウントは "Bob@<O365_domain>.onmicrosoft.com" です。それで、Authority は `<O365_domain>.onmicrosoft.com` になります。
     
@@ -250,7 +250,7 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
 
 7. web.config ファイルを保存して閉じます。
     
-    > [!ヒント]
+    > **ヒント**
       > Visual Studio デバッガー (F5) を実行するときに、web.config ファイルを開いたままにしないでください。F5 キーを押すたびに、Office Developer Tools for Visual Studio は、 **ClientId** 値 ( **ida:ClientID** ではありません) を変更します。ファイルが開いていると、デバッグを実行する前に、プロンプトに応答して web.config ファイルを再度読み込む必要が生じます。
 
 ### Azure AD への認証用のヘルパー クラスを追加する
@@ -420,7 +420,7 @@ internal static void EnsureValidAccessToken(Page page)
   ```
 
 
-> [!ヒント]
+> **ヒント**
 > AADAuthHelper クラスには、最小限のエラー処理しかありません。運用環境で使用可能な品質を持つ、堅牢な SharePoint アドインを作成するには、「 [Error Handling in OAuth 2.0](http://msdn.microsoft.com/library/561bf289-3ff9-4eea-b165-4f5f02bcc520.aspx)」の MSDN ノードで説明されているように、エラー処理をさらに追加する必要があります。 
   
     
@@ -476,7 +476,7 @@ private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net
   ```
 
 
-    > [!重要]
+    > **重要**
       > ASP.NET アプリケーションをステージングに展開する準備ができたら、この行を削除します。「 [アドインを変更して Azure および Office 365 にステージングする](#Stage)」を参照してください。 
 5. 次のコードを **Page_Load** メソッドに追加します。 `GetSAPData` メソッドに渡す文字列は、OData クエリです。
     
@@ -628,7 +628,7 @@ private void GetSharePointTitle()
   ```
 
 
-> [!メモ]
+> **メモ**
 > SharePoint アドインをデバッグする際、Visual Studio で F5 キーを押すたびに、Office Developer Tools for Visual Studio は Azure ACS にアドインを再登録します。SharePoint アドインをステージングする場合、長期の登録を行う必要があります。セクション「 [アドインを変更して Azure および Office 365 にステージングする](#Stage)」を参照してください。 
   
     
@@ -710,7 +710,7 @@ Visual Studio で F5 キーを使用して SharePoint アドインのデバッ�
   
 8. アドインを Azure ACS に登録します。アドインが SharePoint にアクセスせず、ACS からのトークンを使用しない場合であっても、この手順を実行する必要があります。それは、この同じプロセスで、アドインが Office 365 サブスクリプションのアドイン管理サービスにも登録されるためです。これは必須です (当初 SharePoint アドイン は「SharePoint 用アプリ」と呼ばれていたため、「アドイン管理サービス」と呼ばれます)。登録は Office 365 サブスクリプションの SharePoint Web サイトの AppRegNew.aspx ページで行います。詳細については、「 [SharePoint アドイン 2013 を登録する](register-sharepoint-add-ins-2013.md)」を参照してください。このプロセスの一部として、新しいクライアント ID とクライアント シークレットを取得することになります。web.config で **ClientId** ( **ida:ClientID** ではない) と **ClientSecret** キーにこれらの値を挿入します。
     
-    > [!注意]
+    > **注意**
       > この変更を行った後に、何らかの理由で F5 キーを押した場合、Office Developer Tools for Visual Studio はこれらの値の一方または両方を上書きします。そのため、AppRegNew.aspx で取得した値の記録を保持しておき、ASP.NET アプリケーションを発行する直前に、web.config のその値が正しいことを常に確認する必要があります。 
 
 ### ASP.NET アプリケーションを Azure に発行してアドインを SharePoint にインストールする

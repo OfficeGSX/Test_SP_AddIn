@@ -24,7 +24,7 @@ Une fois Fiddler installé sur le serveur de l'application web, ajoutez le balis
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Veillez à supprimer ce balisage si vous n'exécutez pas Fiddler. Si vous ne le faites pas, votre complément ne sera pas en mesure d'effectuer des requêtes HTTP. 
   
     

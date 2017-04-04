@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. Pressione a tecla F5.
     
-    > [!OBSERVAçãO]
+    > **OBSERVAçãO**
       > Quando você pressiona F5, Visual Studio aproveita a solução, implanta o suplemento e abre a página de permissões para o suplemento.
 3. Escolha o botão **De confiança**.
     

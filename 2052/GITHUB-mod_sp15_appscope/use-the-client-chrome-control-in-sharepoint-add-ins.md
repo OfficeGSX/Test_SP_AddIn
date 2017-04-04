@@ -431,7 +431,7 @@ function getQueryStringParameter(paramToRetrieve) {
   
 2. 按 F5 键。
     
-    > [!注释]
+    > **注释**
       > 按 F5 时，Visual Studio 将生成解决方案、部署外接程序并打开外接程序的权限页。 
 3. 选择"信任"按钮。
     

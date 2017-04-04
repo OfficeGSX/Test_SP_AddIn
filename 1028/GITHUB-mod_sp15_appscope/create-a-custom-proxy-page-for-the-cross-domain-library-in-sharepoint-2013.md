@@ -86,7 +86,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   ```
 
 
-    > [!注意事項]
+    > **注意事項**
       > **AllowedRemoteHostUrl**屬性用來指定遠端網域。 **~remoteAppUrl**解析為遠端增益集 (英文) URL。如需憑證的詳細資訊，請參閱 [探索應用程式資訊清單結構和套件的 SharePoint 增益集](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)。
 
 ### 若要建立自訂的 proxy] 頁面
@@ -188,7 +188,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   ```
 
 
-    > [!重要]
+    > **重要**
       > 在實際執行SharePoint Add-in，您必須提供授權邏輯並設定 **originAuthorityValidator**物件中傳回適當的值。
 
 ### 若要建立的內容] 頁面
@@ -335,7 +335,7 @@ Response.End();
   
 2. 按 F5 鍵。
     
-    > [!注意事項]
+    > **注意事項**
       > 當您按 F5 時、 Visual Studio建置解決方案、 增益集、 部署和增益集的權限] 頁面會隨即開啟。
 3. 選擇 [ **信任它**] 按鈕。
     

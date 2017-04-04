@@ -26,7 +26,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Si vous avez suivi cette série sur les compléments hébergés par un fournisseur, vous disposez d'une solution Visual Studio que vous pouvez continuer à utiliser avec cette rubrique. Vous pouvez également télécharger le référentiel à l'adresse [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) et ouvrir le fichier BeforeSharePointWriteOps.sln.
   
     
@@ -40,7 +40,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 >  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :>  Cliquez avec le bouton droit sur le nœud de la solution en haut de l' **Explorateur de solutions** et sélectionnez **Définir les projets de démarrage**. >  Assurez-vous que les trois projets sont définis sur **Début** dans la colonne **Action**. 
   
     
@@ -136,7 +136,7 @@ private void SetLocalEmployeeSyncStatus()
   
 9.  Il va vous sembler que la page se recharge, car la méthode **Page_Load** de la page EmployeeAdder vous redirige vers elle. La valeur du champ **Ajouté à la base de données d'entreprise** de l'employé a été modifiée en **Oui**.
     
-    > [!REMARQUE]
+    > **REMARQUE**
       >  Pour le moment, rien n'empêche un utilisateur de modifier manuellement la valeur **Ajouté à la base de données d'entreprise**, c'est pourquoi il est possible que la liste et la base de données soient incohérentes. Vous obtiendrez une solution à ce problème dans un article ultérieur de cette série. 
 10. Pour mettre fin à la session de débogage, fermez la fenêtre du navigateur ou arrêtez le débogage dans Visual Studio. Chaque fois que vous appuyez sur F5, Visual Studio retire la version précédente du complément et installe la plus récente.
     

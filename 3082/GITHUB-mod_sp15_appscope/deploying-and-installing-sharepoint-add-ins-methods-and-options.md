@@ -19,7 +19,7 @@ Si el complemento se carga en la Tienda Office, Microsoft ejecuta algunas compro
     
     
 
-> [!NOTA]
+> **NOTA**
 > Cuando desarrolla su complemento y lo implementa con Microsoft Office Developer Tools para Visual Studio, el complemento se instala directamente en el sitio de prueba de SharePoint de destino. Como no pasa a través de la Tienda Office, el proceso de validación anterior no tiene lugar. 
   
     
@@ -65,7 +65,7 @@ Los propietarios de sitios web instalan Complementos de SharePoint de la página
     
     
 
-> [!NOTA]
+> **NOTA**
 > En ocasiones, una pérdida temporal de la conexión a la red puede bloquear la instalación. Si una instalación no se realiza correctamente por algún motivo, la infraestructura de la instalación reintentará la operación tres veces. Si no lo consigue, aparecerá un aviso de la falla en la IU. Los usuarios pueden reintentar hacer la instalación más adelante. 
   
     
@@ -88,7 +88,7 @@ Si la Complemento de SharePoint incluye una web de complemento, ésta se elimina
     
     
 
-> [!NOTA]
+> **NOTA**
 > Cuando un usuario elimina un complemento, este se mueve a la Papelera de reciclaje de primera instancia. Si se borra de aquí, se mueve a la Papelera de reciclaje de segunda instancia. Si se borra de esta segunda Papelera, el complemento queda desinstalado por completo y no es posible restaurarlo. 
   
     

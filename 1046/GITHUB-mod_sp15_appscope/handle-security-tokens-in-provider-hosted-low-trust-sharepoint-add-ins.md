@@ -7,7 +7,7 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # Lidar com tokens de segurança no hospedado em provedor baixa confiança SharePoint suplementos
 Saiba mais sobre o contexto de acesso e atualize os tokens que são usados para autorização baixa confiança, hospedado em provedor Suplementos do SharePoint e como trabalhar com elas em seu código.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > **Neste artigo é totalmente sobre o uso de tokens de segurança no sistema de autorização de baixa confiança, não no sistema de alta confiança.** Para obter informações sobre o uso de tokens no sistema de alta confiança, consulte [Criar e usar os tokens de acesso no hospedado em provedor alta confiança SharePoint suplementos](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md).
   
     
@@ -80,7 +80,7 @@ Dependendo da sua Suplemento do SharePoint da arquitetura e a plataforma de hosp
     
   
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Na maioria dos cenários, você não conseguirá usar termos simples, como "AccessToken" como a chave de cache, porque seu suplemento deve manter os tokens para diferentes usuários e farms do SharePoint/aluguéis são distintos. Se seu suplemento usa o  [fluxo de Token de contexto](creating-sharepoint-add-ins-that-use-low-trust-authorization.md#Flows), não há especiais **CacheKey** fornecidos pelo SharePoint que pode ser usado para distinguir os tokens de cache. Esta seção explica quais são os problemas e o que fazer quando o seu aplicativo não estiver usando o fluxo de Token de contexto.
   
     
@@ -111,7 +111,7 @@ Finalmente, se seu aplicativo toma ambos adicionar-somente na e usuário + chama
     
     
 
-> [!CUIDADO]
+> **CUIDADO**
 > **Não é uma prática segura para armazenar o token de acesso em um cookie.** Geralmente é uma boa prática para evitar a passagem de token de acesso através do navegador.
   
     
@@ -246,7 +246,7 @@ Um token de contexto é usado somente no  [fluxo de Token de contexto](creating-
     
   
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > As duas primeiras tarefas devem ocorrer antes que o usuário navega para outra página ou atualiza a página ou o token é perdido. Por exemplo, em um aplicativo de formulários do ASP.NET web, considere essas tarefas no método **Page_Load** (em um bloco de código condicional que é executada somente quando a solicitação não for uma postagem). Em um aplicativo ASP.NET MVC, considere estas tarefas no método controlador padrão.
   
     
@@ -279,7 +279,7 @@ Você pode **cache de** token de contexto todo, ou apenas o token de atualizaç�
     
     
 
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > Podemos lembrá-lo mais uma vez porque ele é realmente importante: não use o cache de cliente para o token de  *acesso*  . É seguro para usá-lo apenas para o token de contexto.
   
     

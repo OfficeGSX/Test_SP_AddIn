@@ -56,7 +56,7 @@ Il existe trois catégories majeures de choix à faire lors de la conception d'u
   
 - **Interface utilisateur :** il existe trois manières d'exposer un Complément SharePoint dans SharePoint : tous les compléments sont au minimum exposés dans une page web complète. Ensuite, ils peuvent être exposés de manière facultative via un composant du complément, et via un élément de menu ou un bouton du ruban. Pour plus d'informations, voir [Conception de l'expérience utilisateur pour les compléments dans SharePoint](ux-design-for-sharepoint-add-ins.md).
     
-    > [!REMARQUE]
+    > **REMARQUE**
       > Les Compléments SharePoint peuvent être installés par vos clients sur plusieurs collections de sites dans une location, ou en procédant site par site. Les premiers sont des compléments de locations. Si vous souhaitez que vos clients puissent utiliser l'option pour les locations, vous ne devez pas inclure de bouton de ruban personnalisé ou de composant de complément. Pour plus d'informations, voir  [Locations et étendues de déploiement des compléments pour SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 
 ## Niveau d'architecture

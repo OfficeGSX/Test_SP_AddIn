@@ -7,7 +7,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
 
 # Criar e usar os tokens de acesso no hospedado em provedor alta confiança SharePoint suplementos
 Saiba mais sobre a função de tokens de acesso no SharePoint de alta confiança Add-ins e o funcionamento do seu código com eles.
-> [!IMPORTANTE]
+> **IMPORTANTE**
 > **Neste artigo é totalmente sobre o uso de tokens de acesso no sistema de autorização de alta confiança, não no sistema do ACS.** Para obter informações sobre o usuário de tokens de segurança no sistema ACS, consulte [Lidar com tokens de segurança no hospedado em provedor baixa confiança SharePoint suplementos](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).
   
     
@@ -24,7 +24,7 @@ No sistema de autorização de alta confiança, **o componente remoto de sua Sup
 <a name="AccessTokens"> </a>
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Tenha em mente ao ler este artigo, especialmente sobre tarefas que seu código deve realizar, que se você estiver usando código gerenciado, o Microsoft Office Developer Tools for Visual Studio adicionar a cada projeto Suplemento do SharePoint dois geraram código arquivos, SharePointContext.cs (ou. vb) e TokenHelper.cs (ou. vb) que faça maioria dessas tarefas para você. Normalmente o código de tratamento de token de seu aplicativo consiste em apenas algumas chamadas às classes nesses arquivos. Os detalhes deste tópico são para ajudar os desenvolvedores que não estejam usando código gerenciado (e para ajudar as pessoas com a solução de problemas com tokens).> Links para bibliotecas de OAuth para muitas plataformas e idiomas estão:>  [OAuth 2.0](http://oauth.net/2/) Role para **bibliotecas de cliente**.> Você pode encontrar mais pesquisando  [github](https://github.com/) para "OAuth 2" e "Token de web JSON" (sem as aspas).
   
     
@@ -123,7 +123,7 @@ A seguir está um **exemplo de um token de acesso gerado por um de alta confian�
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Observe que os tokens de acesso de alta confiança que seu código cria serão diferentes daquele criado pelo Azure ACS quando o sistema de autorização de baixa confiança está sendo usado:> A declaração **alg** no cabeçalho é "none", porque o token de acesso em um usuário + suplemento chamada a partir de um suplemento de alta confiança não foi assinado.> A URL do add-in no valor **aud** neste exemplo é um servidor local diante, o que é normal para o sistema de alta confiança.> Não há nenhuma declaração **identityprovider**, mas não há um **nii** (emissor de nome de identidade) com o mesmo tipo de valores, como os tokens de acesso de declaração **identityprovider** usados no sistema de autorização de baixa confiança. (Para obter informações sobre esse valor quando o provedor de identidade é baseada em SAML, consulte postagens no blog de Steve Peschka [segurança no SharePoint Add-ins - parte 8](http://blogs.technet.com/b/speschka/archive/2013/08/01/security-in-sharepoint-apps-part-8.aspx) e [usando o SharePoint suplementos com SAML e FBA Sites no SharePoint 2013](http://blogs.technet.com/b/speschka/archive/2012/12/07/using-sharepoint-apps-with-saml-and-fba-sites-in-sharepoint-2013.aspx).> Não há nenhuma declaração **actor**, mas não há uma declaração de **actortoken** que contém uma base 64 codificado inner token com um tempo de vida de 12 horas.
   
     
@@ -207,7 +207,7 @@ A tabela 2 descreve as declarações do que seu código deve incluir no corpo do
 ```
 
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Se o suplemento de alta confiança está usando a  [diretiva add-somente na](add-in-authorization-policy-types-in-sharepoint-2013.md) e faz uma chamada de add-somente para SharePoint, o token mostrado aqui é realmente o token de acesso. Não há nenhum token externa. Além disso, não há nenhuma declaração **trustedfordelegation**, já que as permissões do usuário são irrelevantes para uma chamada de add-somente na.
   
     

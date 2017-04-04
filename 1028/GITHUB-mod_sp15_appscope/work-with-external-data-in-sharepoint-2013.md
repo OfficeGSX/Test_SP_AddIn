@@ -26,7 +26,7 @@ ms.assetid: 1534a5f4-1d83-45b4-9714-3a1995677d85
     
     
 
-> [!注意事項]
+> **注意事項**
 > SharePoint跨網域文件庫也可用於其他方向 ；也就是JavaScript遠端網頁上可以使用它來存取資料從SharePoint。如需有關此使用的文件庫，請參閱 [建立 SharePoint 增益集使用的跨網域文件庫](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md)。
   
     

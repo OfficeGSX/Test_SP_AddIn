@@ -10,7 +10,7 @@ Configure el entorno de desarrollo para depurar eventos remotos mediante Visual 
 ## Configurar la depuración de un sitio de prueba de SharePoint remoto
 
 
-> [!NOTA]
+> **NOTA**
 > Los procedimientos de esta sección solo se aplican cuando el sitio de prueba de SharePoint se encuentra en un equipo diferente a Visual Studio o cuando se usa un Sitio para desarrolladores de SharePoint Online como sitio de prueba. Si SharePoint y Visual Studio están en el mismo equipo, omita esta sección. 
   
     

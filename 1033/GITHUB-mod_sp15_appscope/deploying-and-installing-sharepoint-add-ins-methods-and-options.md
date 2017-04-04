@@ -7,7 +7,7 @@ ms.assetid: d15a74a7-3c10-485a-9885-7ef11aaa0d90
 
 # Deploying and installing SharePoint Add-ins: methods and options
 Learn about the methods for publishing, installing, and uninstalling a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -26,7 +26,7 @@ If the add-in is uploaded to the Office Store, Microsoft runs some validation ch
     
     
 
-> [!NOTE]
+> **NOTE**
 > When you are developing your add-in and deploying it with Microsoft Office Developer Tools for Visual Studio, the add-in is directly installed in the target test SharePoint site. Since it is not passing through the Office Store, the validation checking described above does not occur. 
   
     
@@ -72,7 +72,7 @@ Website owners install SharePoint Add-ins from the **Your Add-ins** page as desc
     
     
 
-> [!NOTE]
+> **NOTE**
 > Sometimes a temporary loss of a network connection can block installation. If installation fails for any reason, the installation infrastructure will retry three times. If it does not succeed, an indication of the failure appears in the UI. Users can retry the installation later. 
   
     
@@ -95,7 +95,7 @@ If the SharePoint Add-in includes an add-in web, the add-in web is deleted. This
     
     
 
-> [!NOTE]
+> **NOTE**
 > When a user removes an add-in, it is moved to the first stage Recycle Bin. Deleting it from there moves it to the second stage Recycle Bin. If it is deleted from the second stage Recycle Bin, then it is completely uninstalled and cannot be restored. 
   
     

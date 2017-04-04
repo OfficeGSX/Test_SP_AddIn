@@ -38,7 +38,7 @@ SharePoint アドインのホスト Web にカスタム リボンのボタン �
     
   
 
-> [!メモ]
+> **メモ**
 > SharePoint ホスト型アドインに関するこのシリーズを続けて学習している場合は、このトピックの学習に使用できる Visual Studio ソリューションがあります。また、 [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) でリポジトリをダウンロードして、BeforeRibbon.sln ファイルを開くこともできます。
   
     
@@ -81,7 +81,7 @@ SharePoint アドインのホスト Web にカスタム リボンのボタン �
     
     
 
-> [!重要]
+> **重要**
 > 次の手順では、Visual Studio の UI に予定表を表示する必要がありますが、予定表を作成したときに Visual Studio が開いていた場合は必要ありません。続行する前に、Visual Studio を閉じて、開発者向けサイトにログインしているすべてのブラウザー ウィンドウと PowerShell コンソールからもログアウトします。 
   
     

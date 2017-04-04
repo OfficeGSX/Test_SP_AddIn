@@ -17,7 +17,7 @@ Il existe deux types d'Compléments SharePoint de base : celles hébergées par 
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > Une application pour périphérique, telle qu'une application mobile, n'est pas vraiment une « Complément SharePoint », même si elle accède à SharePoint. Ceci est également vrai pour une application web qui est lancée à partir d'un environnement extérieur à SharePoint. Si vous souhaitez développer l'un de ces types d'application, voir  [SharePoint de l'accès à partir d'applications de l'appareil mobile et native](http://msdn.microsoft.com/library/42014171-5ee5-421d-9cde-413efc3aecef%28Office.15%29.aspx). 
   
     
@@ -60,7 +60,7 @@ Il existe deux types d'Compléments SharePoint de base : celles hébergées par 
     
   
 
-> [!CONSEIL]
+> **CONSEIL**
 > **Pour savoir quelles Compléments SharePoint vous pouvez développer, le mieux est de jeter un œil à quelques-unes d'entre elles dans l'** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint). Vous pouvez aller encore plus loin en ouvrant un site web SharePoint 2013 et en installant quelques Compléments SharePoint gratuites. Il suffit d'accéder à **Contenu du site | Ajouter un complément | SharePoint Store**. 
   
     
@@ -153,7 +153,7 @@ Tout composant SharePoint pouvant se trouver dans un complément hébergé par S
     
     
 
-> [!REMARQUE]
+> **REMARQUE**
 > **Le « fournisseur » est celui qui possède le compte de serveur ou de nuage.** Il peut s'agir de la même société ou organisation que celle qui est propriétaire de la batterie SharePoint ou du client SharePoint Online sur lequel le complément doit être installé. Toutefois, le développeur du complément peut également être le fournisseur. Généralement, quand un complément est créé pour une organisation en particulier, cette organisation fournit l'hébergement. Cependant, quand un complément est créé pour plusieurs organisations, il est plus probable que le développeur héberge les composants distants. L'hébergement par le développeur s'avère obligatoire si l'Complément SharePoint est commercialisée via le Office Store, car le développeur n'a pas les coordonnées des acheteurs du complément. Dans ce scénario, les diverses instances du complément connaissent l'URI du composant distant, car il est spécifié dans le manifeste du complément.
   
     
@@ -235,7 +235,7 @@ Vous êtes prêt ?
     
   
 
-> [!REMARQUE]
+> **REMARQUE**
 > Si vous débutez en développement SharePoint et web, le mieux pour vous est de commencer par le cours gratuit de Microsoft Virtual Academy ou de parcourir un livre sur le développement SharePoint 2013. 
   
     

@@ -7,7 +7,7 @@ ms.assetid: 6e0e530a-7d8b-48ab-8d0c-a878ddbf5be1
 
 # Add custom client-side rendering to a SharePoint-hosted SharePoint Add-in
 Customize the rendering and validation of controls in SharePoint Add-ins pages.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -36,21 +36,21 @@ This is the eighth in a series of articles about the basics of developing ShareP
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about SharePoint-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) and open the BeforeClientRenderedControl.sln file.
   
     
     
 
 You can use a little client-side JavaScript to customize the rendering of Web Parts, most types of fields (columns), and some other controls, by assigning a JavaScript file to the **JSLink** property of the control, such as **SPField.JSLink**. You can also add client-side validation logic in this way. In this article you customize the rendering of a field in a list of the Employee Orientation SharePoint Add-in by using client-side rendering.
-> [!NOTE]
+> **NOTE**
 > If the end-user has JavaScript disabled in their browser, SharePoint will fall back to server-side rendering and validation. 
   
     
     
 
 
-> [!NOTE]
+> **NOTE**
 > The JSLink property is not supported on Survey or Events lists. A SharePoint calendar is an Events list. 
   
     
@@ -143,7 +143,7 @@ function renderOrientationStage(ctx) {
   
 9. To tell SharePoint to use your custom JavaScript, add a new attribute, **JSLink**, to the **Field** element, and then assign the following URL as its value: `~site/Scripts/OrientationStageRendering.js`.
     
-    > [!NOTE]
+    > **NOTE**
       > The **JSLink** property is always a file, not a method. There's no way to tell SharePoint which method to run. That is why the file contains a method that runs automatically.
 
     The start tag for the **Field** element will now look like the following.

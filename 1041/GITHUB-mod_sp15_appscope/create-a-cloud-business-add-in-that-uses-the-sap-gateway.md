@@ -40,7 +40,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
   
 - **Microsoft Azure の組織アカウント。** 「 [アプリが Office 365 API にアクセスできるように Azure AD を使用してアプリを手動で登録する](http://go.microsoft.com/fwlink/?LinkID=512580)」を参照してください。
     
-    > [!メモ]
+    > **メモ**
       > アカウントを作成したら、Office 365 アカウントにログインして (login.microsoftonline.com) 一時パスワードを変更してください。 
 - サンプル データがある **SAP OData エンドポイント** 。 [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) のドキュメントを参照してください。
     
@@ -66,7 +66,7 @@ Contoso Motors は、自動車販売特約店が自動車の在庫に関する�
     
     
 
-> [!ヒント]
+> **ヒント**
 > このアドインのビデオ デモンストレーションについては、BrightTalk のビデオ「 [SAP と Microsoft の詳しい説明: SAP Gateway for Microsoft と Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=517378)」をご覧ください。アプリの機能のデモは、タイムラインの 48:00 分から開始します。 
   
     
@@ -433,7 +433,7 @@ public interface IInventoryItem
     
     多くのプロパティは、SAP データベース スキーマのプロパティと同じ型です。例外は StockNo で、その型が **int** から **string** に変更されています。これは、StockNo が SAP データと SharePoint 画像ライブラリのリレーションシップを定義する手段として使用されるためです。
     
-    > [!ヒント]
+    > **ヒント**
       > SharePoint 画像ライブラリに格納されている値が **Text** 型であるため、StockNo は、 **string** 型でなければなりません。データ マッシュアップを実行するには、これら 2 つの型が一致していなければなりません。
 
     2 つのインターフェイスは、CarInventoryModel/InventoryItem.cs と CarInventoryModel/InventoryCollection.cs で実装されます。
@@ -456,7 +456,7 @@ SharePoint ホスト サイトの画像ライブラリには ContosoMotorsPictur
     
     
 
-> [!ヒント]
+> **ヒント**
 > 列名は大文字と小文字を区別します。 
   
     
@@ -822,7 +822,7 @@ private ClientContext AppWebContext
   
 2. 左側のメニューで、 **[Web サイト]** をクリックします。
     
-    > [!メモ]
+    > **メモ**
       > この Web サイトは、SellerDashboard 用に SharePoint のプロバイダー向けのホスト型アドインをホストするために使用します。 
 3. ページの下部にあるコマンド バーで、 **[新規]** をクリックします。
     
@@ -891,7 +891,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
   
 3. [Active Directory] ページで、SAP Gateway for Microsoft に構成したディレクトリをクリックします。
     
-    > [!ヒント]
+    > **ヒント**
       >  どのディレクトリを使用したか分からない場合は、SAP Gateway for Microsoft 管理者に問い合わせてください。ヒント: SAP Gateway for Microsoft のユーザーとグループを含むディレクトリです。
 4. 上部のナビゲーション バーで、 **[アプリケーション]** をクリックします。
     
@@ -920,7 +920,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
     
   
 
-> [!メモ]
+> **メモ**
 > アドインを Azure AD に 2 回登録する必要があります。1 回はデバッグのため、もう 1 回は運用を目的とした展開のためです (手順 10 を参照)。 > アドインをデバッグ用に登録するには、Visual Studio debugger (F5) を実行できるように、SellerDashboard.Server プロジェクトのデバッグ URL と共に **サインオン URL** と **アプリ ID URI** を使用します。この URL は、https://localhost. *nnnn*  の形式です。ここで、 *nnnn*  はポート番号です。この URL は、Visual Studio の [プロパティ] ウィンドウで確認できます。> 次に、運用のために展開する準備ができたら、登録内容を編集して正しい運用 URL を使用します。 
   
     

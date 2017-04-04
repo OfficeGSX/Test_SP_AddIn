@@ -7,7 +7,7 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 
 # 使用清單及清單項目與 REST
 了解如何執行基本建立、 讀取、 更新及刪除清單和清單項目與SharePoint 2013 REST 介面 (CRUD) 作業。
-> [!秘訣]
+> **秘訣**
 > SharePoint Online (及內部SharePoint 2016年及更新版本) REST 服務可支援合併成單一呼叫服務的多個要求使用 OData  `$batch`查詢選項。 詳細資料與程式碼範例的連結，請參閱 [請使用 REST Api 的批次要求](make-batch-requests-with-the-rest-apis.md)。
   
     
@@ -40,7 +40,7 @@ Headers:
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > 如果您想在 JSON 回應，  `accept`標頭中使用 `application/json;odata=verbose` 。如果您想 Atom 格式回應， `accept`標頭中使用 `application/atom+xml` 。
   
     
@@ -116,7 +116,7 @@ Headers:
 ```
 
 
-> [!注意事項]
+> **注意事項**
 > **ListItemEntityTypeFullName**屬性 ( **SP.Data.ProjectPolicyItemListItem**上述範例中)，請務必特別是如果您想要建立並更新清單項目。此值必須傳遞 **type**屬性中每當您建立及更新清單項目內文的 HTTP 要求傳遞的中繼資料。
   
     
@@ -214,7 +214,7 @@ Headers:
     
     
 
-> [!注意事項]
+> **注意事項**
 > OData $skip 查詢選項不適用於查詢清單項目時。5 情況，您可以使用 [  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) ] 選項。
   
     
@@ -280,7 +280,7 @@ headers:
     
     
 
-> [!注意事項]
+> **注意事項**
 > 若要執行這項作業，您必須知道清單 **ListItemEntityTypeFullName**屬性及傳遞的 **type** HTTP 要求內文中的值。
   
     
@@ -307,7 +307,7 @@ headers:
     
     
 
-> [!注意事項]
+> **注意事項**
 > 若要執行這項作業，您必須知道清單 **ListItemEntityTypeFullName**屬性及傳遞的 **type** HTTP 要求內文中的值。
   
     

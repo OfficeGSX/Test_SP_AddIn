@@ -12,7 +12,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 <a name="Overview"> </a>
 
 
-> [!注释]
+> **注释**
 > 本文假定您熟悉 [创建使用低信任授权的 SharePoint 外接程序](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)以及 OAuth 背后的概念和原理。有关 OAuth 的详细信息，请参阅  [OAuth.net](http://oauth.net/) 和 [Web 授权协议 (oauth)](http://datatracker.ietf.org/doc/active/#oauth)。 
   
     
@@ -23,7 +23,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!注释]
+> **注释**
 > 运行此类外接程序的用户必须对外接程序要访问的资源拥有管理权限。例如，当外接程序仅请求对网站的读取权限时，如果用户拥有对该网站的读取权限，但没有管理权限，则不能运行该外接程序。 
   
     
@@ -50,7 +50,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
     
 
-> [!注释]
+> **注释**
 > 该流 **涉及您的外接程序、SharePoint、授权服务器（即 ACS）和最终用户** 之间在运行时的一系列交互。因此，该流要求 SharePoint Online 或 SharePoint 服务器场连接到 Internet，以便可与 ACS 通信。未连接到 Internet 的 SharePoint 服务器场必须使用 [高信任授权系统](creating-sharepoint-add-ins-that-use-high-trust-authorization.md)。 
   
     
@@ -101,7 +101,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
 
     
-> [!提示]
+> **提示**
 > 这些步骤参照 TokenHelper.cs（或 .vb）文件中的方法。此托管代码未编译，因此没有相关参考主题。然而，文件本身添加了全面注释，带有每个类、成员参数和返回值的说明。请考虑在阅读这些步骤时打开一个副本作为参考。 
   
     
@@ -158,7 +158,7 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
     
 
-> [!注释]
+> **注释**
 > 有关范围的说明，请参阅  [SharePoint 2013 中的外接程序权限](add-in-permissions-in-sharepoint-2013.md)。 
   
     

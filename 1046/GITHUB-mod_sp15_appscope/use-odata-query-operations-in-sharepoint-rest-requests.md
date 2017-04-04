@@ -30,7 +30,7 @@ O serviço REST SharePoint suporta um operadores de cadeia de caracteres de cons
     
 
 
-> [!DICA]
+> **DICA**
 > O serviço REST do SharePoint Online (e a versão local do SharePoint 2016 e posterior) dá suporte à combinação de várias solicitações em uma única chamada para o serviço usando a opção de consulta  `$batch` do OData. Para obter mais detalhes e links para exemplos de códigos, confira [Fazem solicitações de lote com as APIs REST](make-batch-requests-with-the-rest-apis.md).
   
     
@@ -44,7 +44,7 @@ Use a opção de consulta  [$select](http://www.odata.org/documentation/odata-ve
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Em geral, se você não especificar a opção de consulta  `$select` , o serviço REST retorna todos os campos disponíveis por padrão. No entanto, em alguns casos, alguns objetos SharePoint incluem propriedades que são recursos com muita intensidade para recuperar; para otimizar o desempenho do serviço restante, essas propriedades não são incluídas na consulta padrão e devem ser explicitamente solicitadas.> Por exemplo, a propriedade **SPWeb.EffectiveBasePermissions** não é retornada por padrão e deve ser solicitada explicitamente usando a opção de consulta `$select` .
   
     
@@ -84,7 +84,7 @@ No serviço REST SharePoint, os usuários são representados pelo nome do usuár
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Não há suporte para consultas de usuário baseada em associação.> Não há suporte para o uso do operador **Current** fazer consultas usando a ID do usuário atual.
   
     
@@ -112,7 +112,7 @@ Use as opções de consulta  [$top](http://www.odata.org/documentation/odata-ver
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > A opção de consulta $skip não funciona com consultas para itens de lista do SharePoint.
   
     
@@ -135,7 +135,7 @@ A opção $skiptoken permite ignorar itens até que o item especificado é alcan
     
     
 
-> [!OBSERVAçãO]
+> **OBSERVAçãO**
 > Ao usar essas opções de consulta, leve em consideração que paginação no OData é ordinal. Por exemplo, suponha que você está implementando um botão próxima página para exibir itens de lista do SharePoint. Você usar o serviço REST para habilitar o botão retornar itens 1 a 20 quando clicado, e itens 21 até 40 e assim por diante. No entanto, suponha que outro usuário exclui itens 4 e 18 entre cliques do botão próximo. Nesse caso, o posicionamento ordinal dos itens restantes é redefinido e realmente exibindo itens 21 a 40 ignora mais de dois itens.
   
     

@@ -7,7 +7,7 @@ ms.assetid: 5c8767c2-317f-4bdb-8f4f-885d06da7feb
 
 # Use the SharePoint JavaScript APIs to work with SharePoint data
 Use the SharePoint JavaScript object model to work with SharePoint data from JavaScript on pages in the add-in web.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -42,7 +42,7 @@ This is the 10th in a series of articles about the basics of developing SharePoi
     
   
 
-> [!NOTE]
+> **NOTE**
 > If you have been working through this series about SharePoint-hosted add-ins, then you have a Visual Studio solution that you can use to continue with this topic. You can also download the repository at  [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) and open the BeforeJSOM.sln file.
   
     

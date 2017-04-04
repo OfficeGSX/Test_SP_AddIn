@@ -35,7 +35,7 @@ Este es el octavo de una serie de artículos sobre los conceptos básicos de des
     
   
 
-> [!NOTA]
+> **NOTA**
 > Si ha estado trabajando en esta serie sobre complementos hospedados por el proveedor, ya tiene una solución de Visual Studio que puede usar para continuar con este tema. También puede descargar el repositorio en  [SharePoint_Provider-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_Provider-hosted_Add-ins_Tutorials) y abrir el archivo BeforeFirstRunLogic.sln.
   
     
@@ -49,7 +49,7 @@ En este artículo se agrega código a la página de inicio del Complemento de Sh
     
     
 
-> [!NOTA]
+> **NOTA**
 >  La configuración de los Proyectos de inicio en Visual Studio tiende a volver a los valores predeterminados cuando se vuelve a abrir la solución. Siempre siga estos pasos inmediatamente después de volver a abrir la solución de ejemplo en esta serie de artículos:>  Haga clic con el botón derecho en el nodo de solución en la parte superior del **Explorador de soluciones** y seleccione **Establecer proyectos de inicio**. >  Asegúrese de que los tres proyectos estén establecidos en **Iniciar** en la columna **Acción**. 
   
     
@@ -139,7 +139,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > Posiblemente ahora se pregunte por qué el complemento usa números de versión y una prueba "menor que" para averiguar la respuesta de una simple pregunta que se responde con "sí" o "no": ¿el complemento se está ejecutando por primera vez? También podríamos tener un campo de cadena simple en la tabla **Inquilinos** que se establezca en "no ejecutado aún" en el controlador de instalación y, a continuación, cambia a "ya se ejecutó una vez" por la lógica de la primera vista después de que se implementan los componentes de SharePoint.> Para el complemento Chain Store, una prueba sencilla bastaría. Sin embargo, generalmente se recomienda usar números de versión. Esto se debe a que es probable que un complemento de producción se actualice in situ en el futuro, es decir, que se actualiza una vez instalado. Cuando llegue ese momento, la lógica del complemento deberá poder detectar más posibilidades aparte de no ejecutado aún yya se ejecutó una vez. Por ejemplo, supongamos que quiere agregar una lista adicional a la web de host en la actualización de la versión 1.0.0.0 a 2.0.0.0. Puede hacer esto en un controlador de eventos de actualización o en la lógica "ejecutar después de actualizar". En ambos casos, la lógica de implementación tendrá que implementar componentes nuevos, pero también necesitará evitar que vuelva a implementar los componentes que se implementaron en una versión anterior del complemento. Un número de versión 1.0.0.0 indicaría que se implementaron los componentes de la versión 1.0.0.0 pero que la lógica de la primera vista después de la actualización no se ejecutó. 
   
     
@@ -383,7 +383,7 @@ Dado que el complemento ahora está agregando una lista a la web de host, no sol
   
 4. Vaya a la página **Contenido del sitio**. La lista **Empleados locales** está presente porque la lógica de la primera vista la agregó.
     
-    > [!NOTA]
+    > **NOTA**
       > Si la lista no existe o usted tiene otras indicaciones de que no se ejecuta el código de la primera vista, es posible que la tabla **Inquilinos** no se esté revirtiendo a un estado vacío al presionar F5. La causa más común de esto es que el proyecto **ChainCorporateDB** ya no está establecido como proyecto de inicio en Visual Studio. Consulte la nota que hay en la parte superior de este artículo sobre cómo solucionar este problema. Además, asegúrese de que configuró la base de datos para que se recompile como se describe en [Configurar Visual Studio para recompilar la base de datos corporativa con cada sesión de depuración](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5. Abra la lista y agregue un elemento. Tenga en cuenta que, en el formulario de nuevo elemento, el campo **Agregado a BD corporativa** ya no está presente, por lo que no se puede establecer manualmente. Esto también ocurre con el formulario de edición de elemento.
     

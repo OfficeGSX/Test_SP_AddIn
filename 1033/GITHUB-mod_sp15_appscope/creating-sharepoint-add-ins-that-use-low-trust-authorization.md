@@ -7,7 +7,7 @@ ms.assetid: c33966ab-1515-407c-b1ac-8c653eab10dc
 
 # Creating SharePoint Add-ins that use low-trust authorization
 Learn about the low-trust authorization system for SharePoint Add-ins.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -28,7 +28,7 @@ To use the low-trust system, the SharePoint Add-in must first be registered with
     
     
 
-> [!NOTE]
+> **NOTE**
 > Registration requires that the application have an Internet domain. Any existing domain can be used for this purpose, but you can't be 100% certain that any domain you don't own will always exist, so a web application would need to be part of a native device application even if the web application component played no other role than to enable registration. For an advanced code sample that is designed in this way, see  [Provision sites in batches with the add-in model](http://code.msdn.microsoft.com/Provision-sites-in-batches-fcf31bc6). 
   
     

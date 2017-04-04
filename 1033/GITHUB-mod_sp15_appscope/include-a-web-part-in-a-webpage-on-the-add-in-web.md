@@ -7,7 +7,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
 
 # Include a Web Part in a webpage on the add-in web
 Learn how to include a Web Part on a page in a SharePoint Add-in.
-> [!NOTE]
+> **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
   
     
@@ -52,7 +52,7 @@ For the prerequisites, see  [Get started creating SharePoint-hosted SharePoint A
   ```
 
 
-    > [!CAUTION]
+    > **CAUTION**
       > It is possible to add a Web Part element, such as **<WebPartPages:XsltListViewWebPart>** as a child of the **WebPartZone**. But this is generally a bad practice in a SharePoint Add-in. If the add-in ever needs to be updated, a Web Part element inserted in the aspx file can cause the update to fail in some scenarios with the message "A web part with this ID has already been added to this page." We recommend that you add web parts to the elements manifest for the page as described later of this procedure. 
 4. Open the element manifest file for the page. This is usually called elements.xml and is located in the same project folder as the aspx file.
     
@@ -88,7 +88,7 @@ For the prerequisites, see  [Get started creating SharePoint-hosted SharePoint A
 
 7. Add **webPart** markup as a child of the **webParts** element. The following is an example that adds an **XsltListViewWebPart**. It assumes that a custom list called "Test List" is part of the same add-in project. For information about how to add a custom list to an add-in web, see  [Create a provider-hosted add-in that includes a custom SharePoint list and content type](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
-    > [!NOTE]
+    > **NOTE**
       >  Note that the Web Part does not have an ID property. It is a best practice to include an explicit ID for the Web Part only in the two cases where it is really required:>  The Web Part is being added to a SharePoint wiki page.>  The Web Part is one of two or more Web Parts that will be connected.
 
   ```

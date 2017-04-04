@@ -29,7 +29,7 @@ Sin embargo,  [por razones de seguridad](http://msdn.microsoft.com/es-es/library
     
 
 
-> [!NOTA]
+> **NOTA**
 > La biblioteca entre dominios también se usa para obtener acceso a los datos en la dirección contraria; es decir, para permitir que el JavaScript de una página de SharePoint tenga acceso a los datos de un dominio remoto. Vea  [Acceso remoto a los datos de una página de SharePoint](#ReverseDirection) para más información.
   
     
@@ -43,7 +43,7 @@ La biblioteca entre dominios de SharePoint está contenida en el archivo SP.Requ
     
     
 
-> [!PRECAUCIóN]
+> **PRECAUCIóN**
 > La función  `postMessage()` solo sirve en exploradores compatibles con HTML 5, por lo que los Complementos de SharePoint que usen la biblioteca entre dominios no funcionarán en los exploradores antiguos.
   
     
@@ -71,7 +71,7 @@ Los componentes remotos del Complemento de SharePoint seguirán teniendo que rec
   ```
 
 
-> [!NOTA]
+> **NOTA**
 > Si usa la segunda opción (una entidad de seguridad de complemento **Internal**), solo puede usar JavaScript y la biblioteca entre dominios para obtener acceso a SharePoint. El modelo de objetos de cliente de SharePoint está bloqueado para los Complementos de SharePoint de tipo **Internal**, de modo que no puede tener un sistema de autorización doble que use a la vez la biblioteca entre dominios y los sistemas de confianza baja o de elevada confianza. 
   
     

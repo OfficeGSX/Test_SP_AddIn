@@ -7,7 +7,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
 
 # Verwenden des clientseitigen Steuerelements "Personenauswahl" in von SharePoint gehosteten Share Point-Add-Ins
 Erfahren Sie, wie das clientseitige Steuerelement "Personenauswahl" in SharePoint-gehosteten SharePoint-Add-Ins verwendet wird.
-> [!WICHTIG]
+> **WICHTIG**
 > In diesem Thema wird davon ausgegangen, dass Sie wissen, wie eine von SharePoint-gehostete SharePoint-Add-In erstellt wird. Wenn Sie mehr über das Erstellen erfahren möchten, beginnen Sie mit  [Erste Schritte beim Erstellen von von einem Anbieter gehosteten SharePoint-Add-Ins](get-started-creating-provider-hosted-sharepoint-add-ins.md). 
   
     
@@ -43,7 +43,7 @@ Die Auswahl umfasst die folgenden Komponenten:
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Die Auswahl und ihre Funktionalität sind in den Skriptdateien **clientforms.js**, **clientpeoplepicker.js** und **autofill.js** definiert, die sich im Ordner "%ProgramFiles%\\Common Files\\Microsoft Shared\\web server extensions\\15\\TEMPLATE\\LAYOUTS" auf dem Server befinden.
   
     
@@ -58,7 +58,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie die SharePoint-Add-In mithilf
     
     
 
-> [!HINWEIS]
+> **HINWEIS**
 > Unter  [Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) erhalten Sie Informationen zur Anmeldung für eine Entwicklerwebsite und zu den ersten Schritten mit Napa.
   
     
@@ -79,7 +79,7 @@ Wenn Sie nicht Napa auf einer Entwicklerwebsite verwenden, benötigen Sie Folgen
     
   
 
-> [!HINWEIS]
+> **HINWEIS**
 > Anleitungen zum Einrichten einer Entwicklungsumgebung, die Ihren Anforderungen entspricht, finden Sie unter  [Erste Schritte beim Erstellen von Apps für Office und SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea%28Office.15%29.aspx). 
   
     
@@ -171,7 +171,7 @@ Das erste Beispiel zeigt das Seitenmarkup für die **PlaceHolderMain**- **asp:Co
 ```
 
 
-> [!HINWEIS]
+> **HINWEIS**
 > Abhängig von Ihrer Umgebung müssen Sie möglicherweise nicht explizit auf all diese Abhängigkeiten verweisen. 
   
     
