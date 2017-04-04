@@ -63,12 +63,11 @@ Obviamente, os componentes de remota a Suplemento do SharePoint ainda terá que 
   
 - Em um SharePoint hospedado add-in, você pode deixar o suplemento de tipo de entidade definido como seu padrão, que é **Internal**. Defina o atributo **AllowedRemoteHostUrl** do elemento **Internal** para a URL do aplicativo web remoto, como no exemplo a seguir.
     
-  ```
-  
+```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
 </AppPrincipal>
-  ```
+```
 
 
 > **OBSERVAçãO**

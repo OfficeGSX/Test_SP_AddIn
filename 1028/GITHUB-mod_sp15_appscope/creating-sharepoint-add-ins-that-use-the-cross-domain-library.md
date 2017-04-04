@@ -63,12 +63,11 @@ SharePoint，它會建立隱藏的 iFrame 主控從SharePoint網域特殊的 pro
   
 - SharePoint 主控增益集] 中您可以將增益集主體類型維持設為其預設值為 **Internal**。然後將 **AllowedRemoteHostUrl**屬性 **Internal**元素的遠端 web 應用程式，如下列範例所示的 url。
     
-  ```
-  
+```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
 </AppPrincipal>
-  ```
+```
 
 
 > **注意事項**

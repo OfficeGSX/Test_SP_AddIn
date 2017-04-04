@@ -63,12 +63,11 @@ Los componentes remotos del Complemento de SharePoint seguirán teniendo que rec
   
 - En un complemento hospedado en SharePoint, puede dejar el tipo de entidad de seguridad del complemento establecido en el valor predeterminado, que es **Internal**. Luego establezca el atributo **AllowedRemoteHostUrl** del elemento **Internal** en la dirección URL de la aplicación web remota, como en el ejemplo siguiente.
     
-  ```
-  
+```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
 </AppPrincipal>
-  ```
+```
 
 
 > **NOTA**
