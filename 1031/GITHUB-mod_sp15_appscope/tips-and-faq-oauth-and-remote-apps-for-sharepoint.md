@@ -2,10 +2,9 @@
 
 # Tipps und FAQ: OAuth und Remote-Apps für SharePoint
 Dieses Thema ist jetzt veraltet. Unter den Links unten finden Sie Informationen dazu, wo sich die Inhalte jetzt befinden. 
- * **Gilt für:*** 
-  
-    
-    
+
+
+
 
 
 ||

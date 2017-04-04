@@ -2,15 +2,14 @@
 
 # Hospedar complementos para SharePoint en un servicio de nube de Microsoft Azure
 Aprenda a hospedar una Complemento de SharePoint hospedada por el proveedor en un servicio de nube de Microsoft Azure en vez de en una aplicación web, a agregar una Complemento de SharePoint a un rol web de Azure y sepa por qué el hospedaje en Azure podría ser mejor que en una aplicación web.
- * **Hace referencia a:*** 
-  
-    
-    
+
+
+
 
 
 |||
 |:-----|:-----|
-|**En este artículo**          [Requisitos previos](#SP15createselfhostapp_bk_prereq)           [Cómo hospedar una Complemento de SharePoint en un servicio de nube de Azure](#SP15HostAzure_bk_HowTo)           [¿Por qué usar Azure?](#SP15HostAzure_bk_Why)           [Recursos adicionales](#SP15Devapps_AddtionalResources)||
+|**En este artículo** <BR/> [Requisitos previos](#SP15createselfhostapp_bk_prereq) <BR/> [Cómo hospedar una Complemento de SharePoint en un servicio de nube de Azure](#SP15HostAzure_bk_HowTo) <BR/> [¿Por qué usar Azure?](#SP15HostAzure_bk_Why) <BR/> [Recursos adicionales](#SP15Devapps_AddtionalResources)||
    
 
 ## Requisitos previos

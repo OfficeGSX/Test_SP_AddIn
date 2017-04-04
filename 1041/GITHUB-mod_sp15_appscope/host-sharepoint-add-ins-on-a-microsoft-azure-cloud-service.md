@@ -2,15 +2,14 @@
 
 # Microsoft Azure クラウド サービスで SharePoint アドインをホストする
 Web アプリの代わりに Microsoft Azure クラウド サービス上にプロバイダー ホスト型の SharePoint アドインをホストする方法、Azure Web ロールに SharePoint アドインを追加する方法、および Web アプリ上よりも Azure 上でホストするほうが良い理由について説明します。
- * **適用対象:*** 
-  
-    
-    
+
+
+
 
 
 |||
 |:-----|:-----|
-|**この記事の内容**          [前提条件](#SP15createselfhostapp_bk_prereq)           [Azure クラウド サービス上で SharePoint アドインをホストする方法](#SP15HostAzure_bk_HowTo)           [Azure を使用する理由](#SP15HostAzure_bk_Why)           [その他のリソース](#SP15Devapps_AddtionalResources)||
+|**この記事の内容** <BR/> [前提条件](#SP15createselfhostapp_bk_prereq) <BR/> [Azure クラウド サービス上で SharePoint アドインをホストする方法](#SP15HostAzure_bk_HowTo) <BR/> [Azure を使用する理由](#SP15HostAzure_bk_Why) <BR/> [その他のリソース](#SP15Devapps_AddtionalResources)||
    
 
 ## 前提条件

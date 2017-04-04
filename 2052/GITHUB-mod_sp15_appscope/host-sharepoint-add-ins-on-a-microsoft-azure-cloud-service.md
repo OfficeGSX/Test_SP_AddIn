@@ -2,15 +2,14 @@
 
 # 在 Microsoft Azure 云服务中承载 SharePoint 2013 加载项
 了解如何在 Microsoft Azure 云服务（而非 Web 应用）中托管提供程序托管的 SharePoint 外接程序，如何将 SharePoint 外接程序添加到 Azure Web 角色，以及托管在 Azure 上可能比托管在 Web 应用上更好的原因。
- * **适用范围：*** 
-  
-    
-    
+
+
+
 
 
 |||
 |:-----|:-----|
-|**本文内容**          [先决条件](#SP15createselfhostapp_bk_prereq)           [如何在 Azure 云服务上托管 SharePoint 外接程序](#SP15HostAzure_bk_HowTo)           [为何使用 Azure？](#SP15HostAzure_bk_Why)           [其他资源](#SP15Devapps_AddtionalResources)||
+|**本文内容** <BR/> [先决条件](#SP15createselfhostapp_bk_prereq) <BR/> [如何在 Azure 云服务上托管 SharePoint 外接程序](#SP15HostAzure_bk_HowTo) <BR/> [为何使用 Azure？](#SP15HostAzure_bk_Why) <BR/> [其他资源](#SP15Devapps_AddtionalResources)||
    
 
 ## 先决条件

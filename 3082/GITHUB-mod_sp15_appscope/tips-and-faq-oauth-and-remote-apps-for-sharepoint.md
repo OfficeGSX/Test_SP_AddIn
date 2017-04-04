@@ -2,10 +2,9 @@
 
 # Sugerencias y preguntas frecuentes: OAuth y aplicaciones remotas para SharePoint
 Este tema ya está obsoleto. Consulte los siguientes vínculos para encontrar dónde se encuentra el contenido. 
- * **Hace referencia a:*** 
-  
-    
-    
+
+
+
 
 
 ||

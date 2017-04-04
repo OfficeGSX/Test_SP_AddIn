@@ -2,10 +2,9 @@
 
 # Conseils et forum aux questions : OAuth et les applications pour SharePoint distantes
 Cette rubrique est maintenant obsolète. Consultez les liens ci-dessous pour déterminer où le contenu a été déplacé. 
- * **S'applique à :*** 
-  
-    
-    
+
+
+
 
 
 ||
