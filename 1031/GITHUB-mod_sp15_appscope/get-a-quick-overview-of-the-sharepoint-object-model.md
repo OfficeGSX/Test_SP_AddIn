@@ -37,7 +37,7 @@ In der folgenden Tabelle finden Sie die Hierarchie von Inhalten in SharePoint un
     
     
 
-||
+
 |**Entität**|**Klasse**|**Bemerkungen**|
 |:-----|:-----|:-----|
 |Lokale SharePoint-Serverfarm oder SharePoint Online-Abonnement (auch als Mandant bezeichnet)  <br/> ||Es gibt nur eingeschränkten programmgesteuerten Zugriff auf diese Ebene in CSOM. Es gibt z. B. keine Klasse „Farm" oder „Abonnements" oder „Mandant". (Das serverseitige SharePoint-Objektmodell, das in Add-Ins nicht verwendet werden kann, ermöglicht den programmgesteuerten Zugriff auf diese Entitäten.)  <br/> |
