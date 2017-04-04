@@ -28,16 +28,14 @@ En el siguiente ejemplo se muestra cómo **recuperar** una lista específica si 
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 
 > **NOTA**
@@ -52,16 +50,14 @@ En el siguiente ejemplo se muestra cómo **recuperar** una lista específica si 
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 El XML siguiente muestra un ejemplo de las propiedades de lista que se devuelven cuando solicita el tipo de contenido XML.
   
@@ -69,8 +65,7 @@ El XML siguiente muestra un ejemplo de las propiedades de lista que se devuelven
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -112,8 +107,7 @@ El XML siguiente muestra un ejemplo de las propiedades de lista que se devuelven
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>
-```
+  </content>```
 
 
 > **NOTA**
@@ -130,8 +124,7 @@ En el siguiente ejemplo se muestra cómo **crear** una lista.
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -142,8 +135,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **actualizar** una lista usando el método **MERGE**.
   
@@ -151,8 +143,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** una lista usando el mét
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -164,8 +155,7 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el ejemplo siguiente se muestra cómo **crear** un **campo personalizado** para una lista.
   
@@ -173,8 +163,7 @@ En el ejemplo siguiente se muestra cómo **crear** un **campo personalizado** pa
     
 
 
-
-```
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -183,8 +172,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **eliminar** una lista.
   
@@ -192,8 +180,7 @@ En el siguiente ejemplo se muestra cómo **eliminar** una lista.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -202,8 +189,7 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-
-```
+```
 
 
 ## Trabajar con elementos de lista usando REST
@@ -220,16 +206,14 @@ En el ejemplo siguiente se muestra cómo **recuperar** todos los elementos de un
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 En el siguiente ejemplo se muestra cómo **recuperar** un elemento de lista específico.
   
@@ -237,16 +221,14 @@ En el siguiente ejemplo se muestra cómo **recuperar** un elemento de lista espe
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 El XML siguiente muestra un ejemplo de las propiedades de elemento de lista que se devuelven cuando solicita el tipo de contenido XML.
   
@@ -254,8 +236,7 @@ El XML siguiente muestra un ejemplo de las propiedades de elemento de lista que 
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -272,8 +253,7 @@ El XML siguiente muestra un ejemplo de las propiedades de elemento de lista que 
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>
-```
+</content>```
 
 En el siguiente ejemplo se muestra cómo **crear** un elemento de lista.
   
@@ -288,8 +268,7 @@ En el siguiente ejemplo se muestra cómo **crear** un elemento de lista.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -299,8 +278,7 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **actualizar** un elemento de lista.
   
@@ -315,8 +293,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** un elemento de lista.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -328,8 +305,7 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **eliminar** un elemento de lista.
   
@@ -337,8 +313,7 @@ En el siguiente ejemplo se muestra cómo **eliminar** un elemento de lista.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -347,8 +322,7 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Uso de valores ETag para el control de versiones en documentos y elementos de lista

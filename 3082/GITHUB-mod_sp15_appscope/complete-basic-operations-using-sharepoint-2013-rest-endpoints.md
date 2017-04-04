@@ -72,8 +72,7 @@ El siguiente código C# muestra cómo hacer esta solicitud **GET** que devuelve 
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -84,8 +83,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Esta solicitud sería algo diferente si escribe el complemento en JavaScript pero usa la biblioteca entre dominios de SharePoint 2013. En este caso, no necesita proporcionar un token de acceso. El código siguiente muestra el aspecto de esta solicitud si usa la biblioteca entre dominios y quiere recibir la representación OData de las listas como XML en vez de JSON. (Como Atom es el formato de respuesta predeterminado, no hay que incluir un encabezado.) **Accept**. Consulte  [Cómo obtener acceso a los datos de SharePoint 2013 desde aplicaciones con la biblioteca entre dominios](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md), para obtener más información sobre cómo usar la biblioteca entre dominios.
   
@@ -93,8 +91,7 @@ Esta solicitud sería algo diferente si escribe el complemento en JavaScript per
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -107,8 +104,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 El código del ejemplo siguiente muestra cómo solicitar una representación JSON de todas las listas de un sitio usando C#. Se presupone que el usuario tiene un token de acceso OAuth que se almacena en la variable  `accessToken`.
   
@@ -116,16 +112,14 @@ El código del ejemplo siguiente muestra cómo solicitar una representación JSO
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### Obtener propiedades que no se devuelven con el recurso
@@ -161,8 +155,7 @@ Cuando cree, actualice o elimine entidades de SharePoint, es importante que teng
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -171,8 +164,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Si usa el flujo de autorización y autenticación descrito en  [Autorización y autenticación de complementos de SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md), no necesita incluir el resumen de solicitud en sus solicitudes.
   
@@ -188,8 +180,7 @@ Si va a crear una Complemento de SharePoint hospedada en SharePoint, no tiene qu
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -207,8 +198,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 En el ejemplo siguiente se muestra cómo actualizar la lista que se creó en el ejemplo anterior. El ejemplo cambia el título de la lista, usa JQuery y presupone que esta operación se está ejecutando en un complemento hospedado en SharePoint.
   
@@ -216,8 +206,7 @@ En el ejemplo siguiente se muestra cómo actualizar la lista que se creó en el 
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -234,8 +223,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 El valor de la clave **IF-MATCH** en los encabezados de solicitud es el punto en el que se especifica el valor **etag** de una lista o elemento de lista. Este valor en concreto se aplica únicamente a las listas y elementos de lista, y tiene como objetivo ayudarle a evitar que se produzcan problemas de simultaneidad al actualizar dichas entidades. En el ejemplo anterior se usa un asterisco (*) para este valor y puede usarlo siempre que no tenga que preocuparse por evitar problemas de simultaneidad, de lo contrario, deberá obtener el valor **etag** o una lista o elemento de lista, ejecutando una solicitud **GET** que recupere la entidad. Los encabezados de la respuesta HTTP que obtenga pasarán el etag como el valor de la clave **ETag**. Este valor se incluye también en los metadatos de la entidad. En el ejemplo siguiente se muestra la etiqueta  `<entry>` de apertura del nodo XML que contiene la información de la lista. La propiedad **m:etag** contiene el valor **etag**.
   
@@ -243,14 +231,12 @@ El valor de la clave **IF-MATCH** en los encabezados de solicitud es el punto en
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## Creación de un sitio con REST
@@ -260,8 +246,7 @@ En el siguiente ejemplo se muestra cómo crear un sitio en JavaScript.
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -285,8 +270,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## Cómo difieren las solicitudes REST por entorno.
@@ -387,8 +371,7 @@ Las Complementos de SharePoint pueden obtener la dirección URL de la web de com
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -425,8 +408,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## Propiedades usadas en solicitudes de REST

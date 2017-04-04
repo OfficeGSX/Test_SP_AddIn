@@ -108,12 +108,12 @@ Abra la web de host (su sitio web de prueba para desarrolladores) y compruebe qu
     
   
 
-  ```
+ ```
   
 var notStartedItems;
 var calendarList;
 var scheduledItems;
-  ```
+ ```
 
 3. Cuando se ejecuta un Complemento de SharePoint, SharePoint llama a su página de inicio y agrega algunos parámetros de consulta a la dirección URL de la página de inicio. Uno de esos es  `SPHostUrl`, que es la dirección URL de la web de host. El complemento necesita esta información para realizar llamadas a los datos de web de host, así que cerca de la parte superior del archivo Add-in.js, justo debajo de la declaración de variables para  `scheduledItems`, agregue la siguiente línea. Tenga en cuenta lo siguiente sobre este código:
     
@@ -124,14 +124,14 @@ var scheduledItems;
     
   
 
-  ```
+ ```
   
 var hostWebURL = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
-  ```
+ ```
 
 4. Agregue el siguiente código en la parte final del archivo. Esta función puede usarse para leer los parámetros de consulta. 
     
-  ```
+ ```
   // Utility functions
 
 function getQueryStringParameter(paramToRetrieve) {
@@ -144,7 +144,7 @@ function getQueryStringParameter(paramToRetrieve) {
         }
      }
  }
-  ```
+ ```
 
 5. Agregue la siguiente función al archivo Add-in.js en algún lugar encima de la sección de devoluciones de llamada con error. Tenga en cuenta lo siguiente sobre este código:
     
@@ -155,7 +155,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```
+ ```
   
 function ensureOrientationScheduling() {
 
@@ -170,14 +170,14 @@ function ensureOrientationScheduling() {
     clientContext.executeQueryAsync(getScheduledOrientations, onGetNotStartedItemsFail);
     return false;
 }
-  ```
+ ```
 
 6. Agregue la siguiente función en el archivo Add-in.js justo debajo de la función anterior. Observe que usa el objeto  `hostWebContext` para identificar la lista que se consulta.
     
     > **NOTA**
       > Observe que no se agrega ningún marcado de la consulta a la consulta CAML. El efecto de no tener ninguna consulta real en el objeto de consulta es asegurarse de que se recuperarán  *todas*  las horas de la listas. Si la lista fuese muy grande, la solicitud al servidor podría tardar demasiado. En ese caso, necesitaríamos buscar otra manera de realizar nuestro objetivo. Pero en esta situación de ejemplo con una lista muy pequeña (y las listas de calendario casi siempre son pequeñas) obtener la lista completa, para que podamos iterar a través de ella en el cliente, realmente nos ayudará a minimizar el número de llamadas al servidor, es decir, las llamadas de **executeQueryAsync**. 
 
-  ```
+ ```
   
 function getScheduledOrientations() {
 
@@ -190,7 +190,7 @@ function getScheduledOrientations() {
     clientContext.load(scheduledItems);
     clientContext.executeQueryAsync(scheduleAsNeeded, onGetScheduledItemsFail);
 }
-  ```
+ ```
 
 7. Agregue la siguiente función al archivo. Tenga en cuenta lo siguiente sobre este código:
     
@@ -213,7 +213,7 @@ function getScheduledOrientations() {
     
   
 
-  ```
+ ```
   
 function scheduleAsNeeded() {
 
@@ -264,21 +264,21 @@ function scheduleAsNeeded() {
         clientContext.executeQueryAsync(onScheduleItemsSuccess, onScheduleItemsFail);
     }
 }
-  ```
+ ```
 
 8. Agregue el siguiente controlador de éxito que se llama cuando se agregan al calendario los elementos sin programar previamente.
     
-  ```
+ ```
   
 function onScheduleItemsSuccess() {
     alert('There was one or more unscheduled orientations and they have been added to the '
               + 'Employee Orientation Schedule calendar.');
 }
-  ```
+ ```
 
 9. Agregue las siguientes funciones de error a la sección de devoluciones de llamada con error del archivo.
     
-  ```
+ ```
   
 function onGetNotStartedItemsFail(sender, args) {
     alert('Unable to get the not-started items. Error:' 
@@ -294,18 +294,18 @@ function onScheduleItemsFail(sender, args) {
     alert('Unable to schedule items on host web calendar. Error:' 
         + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 10. Abra el archivo default.aspx y busque el elemento **asp:Content** con el identificador **PlaceHolderMain**.
     
   
 11. Agregue el siguiente marcado justo debajo del botón  `purgeCompletedItems`.
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return ensureOrientationScheduling()"
   ID="ensureorientationschedulingbutton" Text="Ensure all items are on the Calendar" /></p>
-  ```
+ ```
 
 12. Recompile el proyecto en Visual Studio.
     
@@ -316,7 +316,7 @@ function onScheduleItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -334,7 +334,7 @@ function onScheduleItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## Especificar los permisos para la web de host que el complemento necesita

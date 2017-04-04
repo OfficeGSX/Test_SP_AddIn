@@ -108,12 +108,12 @@ SharePoint JavaScript オブジェクト モデル (JSOM) を使用して、ア�
     
   
 
-  ```
+ ```
   
 var notStartedItems;
 var calendarList;
 var scheduledItems;
-  ```
+ ```
 
 3. SharePoint アドインが実行されると、SharePoint はスタート ページを呼び出して、そのスタート ページ URL にいくつかのクエリ パラメーターを追加します。その 1 つが  `SPHostUrl` で、当然のことながら、これはホスト Web の URL です。アドインではホスト Web データに対する呼び出しを行うためにこの情報が必要となるため、Add-in.js ファイルの上部付近の `scheduledItems` の変数宣言の下に、次の行を追加します。このコードの以下の点にご注目ください。
     
@@ -124,14 +124,14 @@ var scheduledItems;
     
   
 
-  ```
+ ```
   
 var hostWebURL = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
-  ```
+ ```
 
 4. このファイルの下部に次のコードを追加します。この関数は、クエリ パラメーターの読み取りに使用できます。 
     
-  ```
+ ```
   // Utility functions
 
 function getQueryStringParameter(paramToRetrieve) {
@@ -144,7 +144,7 @@ function getQueryStringParameter(paramToRetrieve) {
         }
      }
  }
-  ```
+ ```
 
 5. Add-in.js ファイルの失敗コールバック セクションより上のどこかに次の関数を追加します。このコードの以下の点にご注目ください。
     
@@ -155,7 +155,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```
+ ```
   
 function ensureOrientationScheduling() {
 
@@ -170,14 +170,14 @@ function ensureOrientationScheduling() {
     clientContext.executeQueryAsync(getScheduledOrientations, onGetNotStartedItemsFail);
     return false;
 }
-  ```
+ ```
 
 6. Add-in.js ファイルの前述の関数のすぐ下に次の関数を追加します。この関数は  `hostWebContext` オブジェクトを使用してクエリ対象リストを識別します。
     
     > **メモ**
       > CAML クエリに追加されるクエリ マークアップはないことにご注目ください。クエリ オブジェクト内に実際のクエリがないと、 *すべて*  のリスト アイテムが取得されることになります。リストが非常に大きい場合は、許容できないほどの長時間に渡ってサーバーに対する要求が実行される可能性があります。その場合は、必要な処理を実行する別の方法を探すことができます。しかし、非常に小さなリスト (予定表リストもほとんどの場合、小さなリストです) を使用するこのサンプル ソリューションでは、リスト全体を取得してクライアント上で反復処理すれば、実際には、サーバーへの呼び出し、つまり **executeQueryAsync** の呼び出し回数を最小限に抑えることができます。
 
-  ```
+ ```
   
 function getScheduledOrientations() {
 
@@ -190,7 +190,7 @@ function getScheduledOrientations() {
     clientContext.load(scheduledItems);
     clientContext.executeQueryAsync(scheduleAsNeeded, onGetScheduledItemsFail);
 }
-  ```
+ ```
 
 7. 以下の関数をファイルに追加します。このコードの以下の点にご注目ください。
     
@@ -213,7 +213,7 @@ function getScheduledOrientations() {
     
   
 
-  ```
+ ```
   
 function scheduleAsNeeded() {
 
@@ -264,21 +264,21 @@ function scheduleAsNeeded() {
         clientContext.executeQueryAsync(onScheduleItemsSuccess, onScheduleItemsFail);
     }
 }
-  ```
+ ```
 
 8. 次の成功ハンドラーを追加します。これは、以前にスケジュールされていなかったアイテムが予定表に追加されると呼び出されます。
     
-  ```
+ ```
   
 function onScheduleItemsSuccess() {
     alert('There was one or more unscheduled orientations and they have been added to the '
               + 'Employee Orientation Schedule calendar.');
 }
-  ```
+ ```
 
 9. ファイルの失敗コールバック セクションに次の失敗関数を追加します。
     
-  ```
+ ```
   
 function onGetNotStartedItemsFail(sender, args) {
     alert('Unable to get the not-started items. Error:' 
@@ -294,18 +294,18 @@ function onScheduleItemsFail(sender, args) {
     alert('Unable to schedule items on host web calendar. Error:' 
         + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 10. default.aspx ファイルを開き、ID **PlaceHolderMain** の **asp:Content** 要素を見つけます。
     
   
 11. 次のマークアップを  `purgeCompletedItems` ボタンのすぐ下に追加します。
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return ensureOrientationScheduling()"
   ID="ensureorientationschedulingbutton" Text="Ensure all items are on the Calendar" /></p>
-  ```
+ ```
 
 12. Visual Studio でこのプロジェクトをリビルドします。
     
@@ -316,7 +316,7 @@ function onScheduleItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -334,7 +334,7 @@ function onScheduleItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## アドインが必要とするホスト Web へのアクセス許可の指定

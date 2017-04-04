@@ -191,15 +191,15 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
   
 2. Office Developer Tools for Visual Studio により、 `<appSettings>` セクションに SharePoint アドインの **ClientID** および **ClientSecret** の要素が既に追加されています。(これらの要素は、ASP.NET アプリケーションが SharePoint にアクセスする場合に Azure ACS 承認システムで使用されます。このトピックの例ではこれらを無視できますが、削除することはできません。これらの要素はプロバイダー ホスト型の SharePoint アドインに必要であり、アドインが SharePoint データにアクセスしない場合でもそのことに変わりはありません。Visual Studio で F5 キーを押すたびに、その値が変更されます。) 以下の 2 つの要素をセクションに追加します。これらは、アプリケーションにより、Azure AD に対する認証のために使用されます。(OAuth ベースの認証および承認システムでは、ユーザーと同様、アプリケーションもセキュリティ プリンシパルであることを思い出してください。)
     
-  ```
+ ```
   
 <add key="ida:ClientID" value="" />
 <add key="ida:ClientKey" value="" />
-  ```
+ ```
 
 3. 前の手順で Azure AD ディレクトリから保存したクライアント ID を、 **ida:ClientID** キーの値として 挿入します。大文字小文字および句読点は、コピーしたままの状態にし、値の先頭および末尾にスペース文字を含めないように注意します。 **ida:ClientKey** キーには、ディレクトリから保存した *キー*  を使用します。ここでも、スペース文字を含めないように、また何も変更しないように注意します。これで、 `<appSettings>` セクションは、次のようになります。( **ClientId** 値は、GUID または空の文字列に設定されます。)
     
-  ```
+ ```
   
 <appSettings>
   <add key="ClientId" value="" />
@@ -207,36 +207,36 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
   <add key="ida:ClientID" value="4da99afe-08b5-4bce-bc66-5356482ec2df" />
   <add key="ida:ClientKey" value="URwh/oiPay/b5jJWYHgkVdoE/x7gq3zZdtcl/cG14ss=" />
 </appSettings>
-  ```
+ ```
 
 
     > **メモ**
       > アプリケーションは、登録用に使用した "localhost" URL によって Azure AD から認識されます。クライアント ID およびクライアント キーはその ID に関連付けられます。アプリケーションを Azure Web サイト にステージングする準備ができたら、そのアプリケーションを新しい URL に再登録します。 
 4. **appSettings** セクションで、 **Authority** キーを追加し、その値を組織アカウントの Office 365 ドメイン ( *some_domain*  .onmicrosoft.com) に設定します。このトピックの例では、組織アカウントは "Bob@<O365_domain>.onmicrosoft.com" です。それで、Authority は `<O365_domain>.onmicrosoft.com` になります。
     
-  ```
+ ```
   
 <add key="Authority" value="<O365_domain>.onmicrosoft.com" />
-  ```
+ ```
 
 5. **appSettings** セクションで、 **AppRedirectUrl** キーを追加し、その値を、ASP.NET アドインが認証コードを Azure AD から取得した後にユーザーのブラウザーがリダイレクトされるページに設定します。通常、これは、Azure AD への呼び出しが実行されたときにユーザーに表示されたページと同じページになります。このトピックの例では、以下のように SSL URL 値に "/Pages/Default.aspx" が付加された値が使用されます。(これは、ステージング用に変更するのとは別の値です。)
     
-  ```
+ ```
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
-  ```
+ ```
 
 6. **appSettings** セクションで、 **ResourceUrl** キーを追加し、その値を SAP Gateway for Microsoft のアプリケーション ID/URI に設定します (ASP.NET アプリケーションのアプリケーション ID/URI *ではありません*  )。この値は SAP Gateway for Microsoft 管理者から入手します。次に例を示します。
     
-  ```
+ ```
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
-  ```
+ ```
 
 
      `<appSettings>` セクションは、次のようになります。
     
 
 
-  ```
+ ```
   <appSettings>
   <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6" />
   <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=" />
@@ -246,7 +246,7 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
 </appSettings>
-  ```
+ ```
 
 7. web.config ファイルを保存して閉じます。
     
@@ -261,24 +261,24 @@ Azure AD の OAuth 2.0 によって使用される OAuth フローの詳細な�
   
 2. 以下の **using** ステートメントをファイルに追加します。
     
-  ```
+ ```
   
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Configuration;
 using System.Web.UI;
 
-  ```
+ ```
 
 3. アクセス キーワードを **public** から **internal** に変更し、 **static** キーワードをクラス宣言に追加します。
     
-  ```
+ ```
   
 internal static class AADAuthHelper
-  ```
+ ```
 
 4. 次のフィールドをクラスに追加します。これらのフィールドは、AAD からアクセス トークンを取得するために ASP.NET アプリケーションが使用する情報を格納します。
     
-  ```
+ ```
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"];     
@@ -290,11 +290,11 @@ private static readonly ClientCredential _clientCredential = new ClientCredentia
 private static readonly AuthenticationContext _authenticationContext = 
             new AuthenticationContext("https://login.windows.net/common/" + 
                                       ConfigurationManager.AppSettings["Authority"]);
-  ```
+ ```
 
 5. 次のプロパティをクラスに追加します。このプロパティは、URL を Azure AD ログイン画面に保持します。
     
-  ```
+ ```
   
 private static string AuthorizeUrl
 {
@@ -308,11 +308,11 @@ private static string AuthorizeUrl
     }
 }
 
-  ```
+ ```
 
 6. 次のプロパティをクラスに追加します。これらは、アクセス トークンおよびリフレッシュ トークンをキャッシュし、それらの有効性を確認します。
     
-  ```
+ ```
   
 public static Tuple<string, DateTimeOffset> AccessToken
 {
@@ -345,11 +345,11 @@ private static bool IsRefreshTokenValid
     get { return !string.IsNullOrEmpty(RefreshToken); }
 }
 
-  ```
+ ```
 
 7. 次のメソッドをクラスに追加します。これらは、認証コードの有効性を確認するため、また認証コードまたはリフレッシュ トークンのいずれかを使用してアクセス トークンを Azure AD から取得するために使用されます。
     
-  ```
+ ```
   
 private static bool IsAuthorizationCodeNotNull(string authCode)
 {
@@ -380,11 +380,11 @@ private static Tuple<string, DateTimeOffset> RenewAccessTokenUsingRefreshToken()
     return new Tuple<string, DateTimeOffset>(authResult.AccessToken, authResult.ExpiresOn);
 }
 
-  ```
+ ```
 
 8. 次のメソッドをクラスに追加します。これは、SAP Gateway for Microsoft を介して SAP データを取得する呼び出しを実行する前に、有効なアクセス トークンを取得するため、ASP.NET 分離コードから呼び出されます。
     
-  ```
+ ```
   
 internal static void EnsureValidAccessToken(Page page)
 {
@@ -417,7 +417,7 @@ internal static void EnsureValidAccessToken(Page page)
         page.Response.Redirect(AuthorizeUrl);
     }
 }
-  ```
+ ```
 
 
 > **ヒント**
@@ -435,7 +435,7 @@ internal static void EnsureValidAccessToken(Page page)
   
 2. 次のコードをクラスの本文に追加します。
     
-  ```
+ ```
   
 public string Price;
 public string Brand;
@@ -445,7 +445,7 @@ public string Engine;
 public int MaxPower;
 public string BodyStyle;
 public string Transmission;
-  ```
+ ```
 
 
 ### 分離コードを追加して、SAP Gateway for Microsoft を介して SAP からデータを取得する
@@ -453,44 +453,44 @@ public string Transmission;
 
 1. Default.aspx.cs ファイルを開き、次の **using** ステートメントを追加します。
     
-  ```
+ ```
   
 using System.Net;
 using Newtonsoft.Json.Linq;
-  ```
+ ```
 
 2. アドインがアクセスする SAP OData エンドポイントのベース URL を値として持つ **const** 宣言を Default クラスに追加します。次に例を示します。
     
-  ```
+ ```
   
 private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net:8081/perf/sap/opu/odata/sap/ZCAR_POC_SRV/";
-  ```
+ ```
 
 3. Office Developer Tools for Visual Studio により、 **Page_PreInit** メソッドおよび **Page_Load** メソッドが追加されています。 **Page_Load** メソッド内のコードをコメント アウトし、 **Page_Init** メソッド全体をコメント アウトします。このコードはこの例では使用されません。(SharePoint アドインが SharePoint にアクセスする場合に、このコードを復元します。「 [SharePoint へのアクセス許可を ASP.NET アプリケーションに追加する (オプション)](#SharePoint)」を参照してください。)
     
   
 4. 以下の行を **Page_Load** メソッドの上部に追加します。これにより、ASP.NET アプリケーションは SSL (HTTPS) を使用して SAP Gateway for Microsoft と通信するので、デバッグのプロセスが簡単になります。しかし、"localhost:port" サーバーは SAP Gateway for Microsoft の資格情報を信頼するようには構成されていません。このコード行がないと、Default.aspx が開く前に、無効な資格情報であることを警告するメッセージが表示されます。一部のブラウザーではクリックしてこのエラーに対処できますが、他のブラウザーでは Default.aspx をまったく開くことができません。
     
-  ```
+ ```
   ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, errors) => true;
-  ```
+ ```
 
 
     > **重要**
       > ASP.NET アプリケーションをステージングに展開する準備ができたら、この行を削除します。「 [アドインを変更して Azure および Office 365 にステージングする](#Stage)」を参照してください。 
 5. 次のコードを **Page_Load** メソッドに追加します。 `GetSAPData` メソッドに渡す文字列は、OData クエリです。
     
-  ```
+ ```
   if (!IsPostBack)
 {
     GetSAPData("DataCollection?$top=3");
 }
 
-  ```
+ ```
 
 6. 次のメソッドを Default クラスに追加します。このメソッドは、アクセス トークンのキャッシュに、Azure AD から取得した有効なアクセス トークンがあることを最初に確認します。それから、アクセス トークンを含む HTTP **GET** 要求を作成し、その要求を SAP OData エンドポイントに送信します。結果は JSON オブジェクトとして返され、これが .NET **List** オブジェクトに変換されます。アイテムの 3 つのプロパティが、 **DataListView** にバインドされた配列で使用されます。
     
-  ```
+ ```
   
 private void GetSAPData(string oDataQuery)
 {
@@ -513,7 +513,7 @@ private void GetSAPData(string oDataQuery)
     }
 }
 
-  ```
+ ```
 
 
 ### ユーザー インターフェイスを作成する
@@ -521,7 +521,7 @@ private void GetSAPData(string oDataQuery)
 
 1. Default.aspx ファイルを開き、次のマークアップをページの **form**に追加します。
     
-  ```
+ ```
   
 <div>
   <h3>Data from SAP via SAP Gateway for Microsoft</h3>
@@ -537,7 +537,7 @@ private void GetSAPData(string oDataQuery)
     </ItemTemplate>
   </asp:ListView>
 </div>
-  ```
+ ```
 
 2. オプションで、SharePoint  [クロム コントロール](use-the-client-chrome-control-in-sharepoint-add-ins.md)および [ホスト SharePoint Web サイトのスタイル シート](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)を使用して Web ページに SharePoint ページの "外観" を付与します。
     
@@ -592,21 +592,21 @@ SharePoint にアクセスするため CSOM を使用するか、REST API を使
   
 2. SharePoint アドインが SharePoint データにアクセスする場合、アドインが SharePoint で起動されるときに Default.aspx ページに POST される SharePoint コンテキスト トークンをキャッシュする必要があります。これにより、ブラウザーが Azure AD 認証の後にリダイレクトされても、SharePoint コンテキスト トークンが失われないようにすることができます。(このコンテキストをキャッシュする方法には、いくつかのオプションがあります。) Office Developer Tools for Visual Studio は大部分の処理を実行する SharePointContext.cs ファイルを ASP.NET プロジェクトに追加します。セッション キャッシュを使用するには、" `if (!IsPostBack)`" ブロック内の SAP Gateway for Microsoft を呼び出すコードの *前*  に以下のコードを追加するだけです。
     
-  ```
+ ```
   
 if (HttpContext.Current.Session["SharePointContext"] == null)
 {
      HttpContext.Current.Session["SharePointContext"]
         = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 3. SharePointContext.cs ファイルは、Office Developer Tools for Visual Studio がプロジェクトに追加したもう 1 つのファイル (TokenHelper.cs) を呼び出します。このファイルは、SharePoint のアクセス トークンを取得および使用するために必要な大部分のコードを提供します。ただし、有効期限が切れたアクセス トークンや有効期限の切れたリフレッシュ トークンを更新するコードは提供しません。また、トークンをキャッシュするコードも含まれていません。運用環境用の SharePoint アドインを作成するには、このようなコードを追加する必要があります。前述のステップのキャッシュ ロジックは、その一例です。また、アクセス トークンをキャッシュしたり、有効期限が切れるまで再使用したりするコードも含める必要があります。アクセス トークンの有効期限が切れたら、コードはリフレッシュ トークンを使用して新しいアクセス トークンを取得しなければなりません。
     
   
 4. CSOM または REST を使用してデータ呼び出しを SharePoint に追加します。以下の例は、Office Developer Tools for Visual Studio が **Page_Load** メソッドに追加する CSOM コードを変更したものです。この例では、コードが独立したメソッドになっており、キャッシュされたコンテキスト トークンの取得によって開始されます。
     
-  ```
+ ```
   
 private void GetSharePointTitle()
 {
@@ -618,14 +618,14 @@ private void GetSharePointTitle()
         SharePointTitle.Text = "SharePoint web site title is: " + clientContext.Web.Title;
     }
 }
-  ```
+ ```
 
 5. SharePoint データを表示するための UI 要素を追加します。以下は、前述のメソッドで参照される HTML コントロールを示しています。
     
-  ```
+ ```
   
 <h3>SharePoint title</h3><asp:Label ID="SharePointTitle" runat="server"></asp:Label><br />
-  ```
+ ```
 
 
 > **メモ**

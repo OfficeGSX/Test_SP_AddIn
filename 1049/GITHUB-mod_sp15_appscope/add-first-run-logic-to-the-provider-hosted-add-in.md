@@ -70,25 +70,25 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
   
 5. Добавьте указанные ниже операторы **using** в начало файла.
     
-  ```
+ ```
   
 using System.Web;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
-  ```
+ ```
 
 6. В начале класса  `SharePointComponentDeployer` добавьте два указанных ниже статических поля. Инициализация обеих полей будет выполняться в методе **Page_Load** начальной страницы надстройки. Вы добавите этот код на одном из следующих этапов. В первом поле будет храниться объект **SharePointContext**, необходимый для выполнения операций CRUD в SharePoint. Во втором поле  номер версии надстройки, установленной на хост-сайте. Изначально (когда обработчик установки регистрирует клиент) это значение будет отличаться от значения, используемого по умолчанию ( **0000.0000.0000.0000** ) и записанного в корпоративной таблице **Tenants** (Клиенты). Например, номер первой версии надстройки будет выглядеть следующим образом: **1.0.0.0**.
     
-  ```cs
+ ```cs
   
 internal static SharePointContext sPContext;
 internal static Version localVersion;
-  ```
+ ```
 
 7. Создайте указанное ниже статическое свойство, в котором будет храниться номер версии надстройки, которая в текущий момент зарегистрирована в корпоративной таблице **Tenants** (Клиенты). Для получения и задания этого значения оно использует два метода, которые уже имелись в файле.
     
-  ```cs
+ ```cs
   
 internal static Version RemoteTenantVersion
 {
@@ -101,7 +101,7 @@ internal static Version RemoteTenantVersion
         SetTenantVersion(value);
     }
 }
-  ```
+ ```
 
 8. Теперь создайте указанное ниже свойство  `IsDeployed`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -112,7 +112,7 @@ internal static Version RemoteTenantVersion
     
   
 
-  ```cs
+ ```cs
   
 public static bool IsDeployed
 {
@@ -124,11 +124,11 @@ public static bool IsDeployed
             return true; 
     }
 }
-  ```
+ ```
 
 9. Добавьте указанный ниже метод в класс  `SharePointComponentDeployer`. Обратите внимание, что последнее, что делает метод,  обновляет версию зарегистрированного клиента в базе данных предприятия ( **0000.0000.0000.0000** ), чтобы она соответствовала фактической версии надстройки на хост-сайте ( **1.0.0.0** ). Вы закончите этот метод на одном из следующих этапов.
     
-  ```cs
+ ```cs
   
 internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 {
@@ -136,7 +136,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
     RemoteTenantVersion = localVersion;
 }
-  ```
+ ```
 
 
 > **Примечание**
@@ -170,7 +170,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
     
   
 
-  ```cs
+ ```cs
   
 SharePointComponentDeployer.sPContext = spContext;
 SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
@@ -179,7 +179,7 @@ if (!SharePointComponentDeployer.IsDeployed)
 {
     SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
 }
-  ```
+ ```
 
 
 ## Программное развертывание списка SharePoint
@@ -191,10 +191,10 @@ if (!SharePointComponentDeployer.IsDeployed)
 
 1. В файле SharePointComponentDeployer.cs замените  `TODO4` указанной ниже строкой. Вы создадите этот метод на следующем этапе.
     
-  ```cs
+ ```cs
   
 CreateLocalEmployeesList();
-  ```
+ ```
 
 2. Добавьте указанный ниже метод в класс  `SharePointComponentDeployer`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -205,7 +205,7 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   private static void CreateLocalEmployeesList()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -228,7 +228,7 @@ CreateLocalEmployeesList();
         }
     }
 }
-  ```
+ ```
 
 3. Замените  `TODO5` указанным ниже кодом. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -242,23 +242,23 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   
 ListCreationInformation listInfo = new ListCreationInformation();
 listInfo.Title = "Local Employees";
 listInfo.TemplateType = (int)ListTemplateType.GenericList;
 listInfo.Url = "Lists/Local Employees";
 List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-  ```
+ ```
 
 4. Замените  `TODO6` указанным ниже кодом, который изменяет общедоступное имя поля (столбца) Title (Название) на Name (Имя). Это то, что вы делали на странице **List Settings** (Параметры списка), когда создавали список вручную.
     
-  ```cs
+ ```cs
   
 Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
 field.Title = "Name";
 field.Update();
-  ```
+ ```
 
 5. Кроме того, вы вручную создали поле с именем **Added to Corporate DB** (Добавлен в корпоративную базу данных). Чтобы сделать это программным способом, добавьте указанный ниже код вместо `TODO7`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -272,18 +272,18 @@ field.Update();
     
   
 
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          +"Type='Boolean'>"
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 6. Вспомним, что по умолчанию поле **Added to Corporate DB** (Добавлен в корпоративную базу данных) имеет значение **No** (Нет), то есть false, но после добавления сотрудника в базу данных предприятия настраиваемая кнопка ленты в надстройке присваивает полю значение **Yes** (Да). Эта система отлично работает только если у пользователей нет возможности изменять значение поля вручную. Чтобы у пользователей гарантированно не было такой возможности, сделайте поле невидимым в формах создания и редактирования элементов в списке **Local Employees** (Местные сотрудники). Мы сделаем это, добавив два дополнительных атрибута в первый параметр, как показано ниже.
     
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          + " Type='Boolean'"  
@@ -292,14 +292,14 @@ localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate 
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 
     Весь метод  `CreateLocalEmployeesList` должен иметь указанный ниже вид.
     
 
 
-  ```cs
+ ```cs
   
 private static void CreateLocalEmployeesList()
 {
@@ -334,7 +334,7 @@ private static void CreateLocalEmployeesList()
         }
     }
 }
-  ```
+ ```
 
 
 ## Временное удаление настраиваемой кнопки из проекта

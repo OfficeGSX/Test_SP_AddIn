@@ -108,12 +108,12 @@ ms.assetid: 08eb049f-eaf8-478d-9af6-9565e8bb24f2
     
   
 
-  ```
+ ```
   
 var notStartedItems;
 var calendarList;
 var scheduledItems;
-  ```
+ ```
 
 3. Когда Надстройка SharePoint запущена, SharePoint вызывает ее начальную страницу и добавляет в URL-адрес страницы несколько параметров запроса. Один из этих параметров   `SPHostUrl`, который представляет собой URL-адрес хост-сайта. Надстройке необходима эта информация, чтобы совершать вызовы к данным хост-сайта, поэтому в начале файла Add-in.js сразу же после объявления переменных для  `scheduledItems` добавьте указанную ниже строку. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -124,14 +124,14 @@ var scheduledItems;
     
   
 
-  ```
+ ```
   
 var hostWebURL = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
-  ```
+ ```
 
 4. Добавьте указанный ниже код в конец файла. Эту функцию можно использовать для чтения параметров запроса. 
     
-  ```
+ ```
   // Utility functions
 
 function getQueryStringParameter(paramToRetrieve) {
@@ -144,7 +144,7 @@ function getQueryStringParameter(paramToRetrieve) {
         }
      }
  }
-  ```
+ ```
 
 5. Добавьте указанную ниже функцию в файл Add-in.js перед разделом обратных вызовов при сбоях. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -155,7 +155,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```
+ ```
   
 function ensureOrientationScheduling() {
 
@@ -170,14 +170,14 @@ function ensureOrientationScheduling() {
     clientContext.executeQueryAsync(getScheduledOrientations, onGetNotStartedItemsFail);
     return false;
 }
-  ```
+ ```
 
 6. Добавьте указанную ниже функцию в файл Add-in.js сразу же после предыдущей функции. Обратите внимание, что она использует объект  `hostWebContext` для идентификации списка, к которому выполняется запрос.
     
     > **Примечание**
       > Обратите внимание, что в запрос CAML не добавляется никакой разметки запроса. Последствия отсутствия реального запроса в объекте запроса состоят в том, что будут получены  *все*  значения времени из списка. Если список слишком большой, то запрос к серверу может выполняться неприемлемо долго. В этом случае нам понадобится другой способ достижения цели. Тем не менее в этом примере с очень маленьким списком (списки календарей почти всегда маленькие) мы получаем весь список, поэтому можем выполнять итерации в списке в клиенте, что позволит нам свести к минимуму количество вызовов к серверу, то есть вызовов **executeQueryAsync**. 
 
-  ```
+ ```
   
 function getScheduledOrientations() {
 
@@ -190,7 +190,7 @@ function getScheduledOrientations() {
     clientContext.load(scheduledItems);
     clientContext.executeQueryAsync(scheduleAsNeeded, onGetScheduledItemsFail);
 }
-  ```
+ ```
 
 7. Добавьте указанную ниже функцию в файл. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -213,7 +213,7 @@ function getScheduledOrientations() {
     
   
 
-  ```
+ ```
   
 function scheduleAsNeeded() {
 
@@ -264,21 +264,21 @@ function scheduleAsNeeded() {
         clientContext.executeQueryAsync(onScheduleItemsSuccess, onScheduleItemsFail);
     }
 }
-  ```
+ ```
 
 8. Добавьте указанный ниже обработчик успешного выполнения, который вызывается при добавлении элементов, которых ранее не было в расписании, в календарь.
     
-  ```
+ ```
   
 function onScheduleItemsSuccess() {
     alert('There was one or more unscheduled orientations and they have been added to the '
               + 'Employee Orientation Schedule calendar.');
 }
-  ```
+ ```
 
 9. Добавьте указанные ниже функции обработки сбоев в раздел Failure callbacks файла.
     
-  ```
+ ```
   
 function onGetNotStartedItemsFail(sender, args) {
     alert('Unable to get the not-started items. Error:' 
@@ -294,18 +294,18 @@ function onScheduleItemsFail(sender, args) {
     alert('Unable to schedule items on host web calendar. Error:' 
         + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 10. Откройте файл default.aspx и найдите элемент **asp:Content** с идентификатором **PlaceHolderMain**.
     
   
 11. Добавьте указанную ниже разметку сразу же после кнопки  `purgeCompletedItems`.
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return ensureOrientationScheduling()"
   ID="ensureorientationschedulingbutton" Text="Ensure all items are on the Calendar" /></p>
-  ```
+ ```
 
 12. Перестройте проект в Visual Studio.
     
@@ -316,7 +316,7 @@ function onScheduleItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -334,7 +334,7 @@ function onScheduleItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## Указание необходимых надстройке разрешений на доступ к хост-сайту

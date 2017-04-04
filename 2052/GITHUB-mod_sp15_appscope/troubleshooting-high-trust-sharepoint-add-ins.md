@@ -32,16 +32,14 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 安装 Fiddler 之后，您也可以检查 SharePoint 的响应头，这些响应头将包含请求 GUID。此请求 GUID 是一个相关 ID，您可以在日志中查找此 ID 以查找与该请求关联的任何日志错误。
   
@@ -55,8 +53,7 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -67,8 +64,7 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 如果您使用 TokenHelper 文件和 Windows 标识，触发异常的代码将如下所示：
   
@@ -76,14 +72,12 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 对问题进行故障排除的第一步是使用 Visual Studio 调试程序确认访问令牌和 **ClientContext** 对象构建成功。如果成功，请研究以下可能性：
   
@@ -99,10 +93,10 @@ clientContext.ExecuteQuery();
   
 - 您的外接程序对您正在尝试访问的资源没有权限。打开 SharePoint Management Shell 并运行以下 Windows PowerShell cmdlet。变量  `$web` 为您尝试获取访问权限的 SharePoint 网站， `$appPrincipal` 为外接程序 ID。有关详细信息，请参阅 [Set-SPAppPrincipalPermission](http://technet.microsoft.com/zh-cn/library/jj219714%28v=office.15%29.aspx)。
     
-  ```
+ ```
   
 Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+ ```
 
 - 您的 Web 应用程序将接受匿名请求。这意味着访问令牌中没有真实的用户标识。请确保在 IIS 中已经对远程 Web 应用程序的根目录禁用了匿名访问。您也可以通过以下操作对其进行检查：调试远程 Web 应用程序并在 default.aspx.cs（或 .vb）文件中检查 **Request.LogonUserIdentity** 的值以确保它不是匿名用户。
     

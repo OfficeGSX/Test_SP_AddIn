@@ -135,8 +135,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -149,8 +148,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 次の表は、 **アクセス トークンに含める必要があるプロパティとそれに設定する値** に関するガイダンスを示しています。マネージ コードを使用している場合、SharePointContext.cs (or .vb) ファイルと TokenHelper.cs (or .vb) ファイルがトークンを作成します。例えば、コードで **SharePointContext.CreateUserClientContextForSPHost** メソッドに対して単一の呼び出しを行います。次に、アクセス トークンを構築する **TokenHelper** クラスのメソッドを呼び出し、アクセス トークンを **SharePointContext.CreateUserClientContextForSPHost** によって返される SharePoint クライアント コンテキスト オブジェクトによる SharePoint へのすべての呼び出しに含めます。
   
@@ -190,8 +188,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -203,8 +200,7 @@ SharePoint アドインを使用したユーザーのセッションがキャッ
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **メモ**

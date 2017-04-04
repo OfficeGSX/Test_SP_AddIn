@@ -238,7 +238,7 @@ Tras finalizar el proceso de registro, el explorador abre la página de instalac
   
 2. Elimine cualquier marca dentro de la etiqueta **<body>** del archivo Pages/Default.aspx de su aplicación web y, a continuación, agregue el HTML siguiente y los controles de ASP.NET dentro de **<body>**. En este ejemplo se usa el control  [UpdatePanel](https://msdn.microsoft.com/library/System.Web.UI.UpdatePanel.aspx) para habilitar la representación parcial de la página.
     
-  ```HTML
+ ```HTML
   
 <form id="form1" runat="server">
   <div>
@@ -281,22 +281,22 @@ Tras finalizar el proceso de registro, el explorador abre la página de instalac
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+ ```
 
 3. Agregue las siguientes declaraciones al archivo Default.aspx.cs de su aplicación web.
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+ ```
 
 4. En el archivo Default.aspx.cs de la aplicación web, agregue estas variables dentro de la clase  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) .
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
@@ -305,11 +305,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+ ```
 
 5. Agregue el método  `RetrieveWithCSOM` dentro de la clase [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) . Este método usa el CSOM de SharePoint para recuperar información sobre su sitio y mostrarlo en la página.
     
-  ```cs
+ ```cs
   
 // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
@@ -358,11 +358,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+ ```
 
 6. Agregue el método  `CSOM_Click` dentro de la clase [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) . Este método desencadena el evento que se produce cuando el usuario hace clic en el vínculo **Rellenar datos**.
     
-  ```cs
+ ```cs
   
 protected void CSOM_Click(object sender, EventArgs e)
 {
@@ -375,11 +375,11 @@ protected void CSOM_Click(object sender, EventArgs e)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+ ```
 
 7. Sustituya el método  `Page_Load` existente por este. El método `Page_Load` usa métodos del archivo TokenHelper.cs para recuperar el contexto del objeto `Request` y obtener un token de acceso desde Servicio de control de acceso (ACS) de Microsoft Azure.
     
-  ```cs
+ ```cs
   
 // The Page_load method fetches the context token and the access token.
 // The access token is used by all of the data retrieval methods.
@@ -407,11 +407,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+ ```
 
 8. El archivo Default.aspx.cs debe tener este aspecto cuando termine.
     
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -540,7 +540,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+ ```
 
 9. Use la tecla F5 para implementar y ejecutar el complemento. Si ve una ventana de **Alerta de seguridad** que le pide que confíe en el certificado autofirmado de Localhost, elija **Si**.
     

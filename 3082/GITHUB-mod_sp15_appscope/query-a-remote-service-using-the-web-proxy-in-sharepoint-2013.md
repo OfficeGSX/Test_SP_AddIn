@@ -163,7 +163,7 @@ En la figura 1 se ve la ventana del explorador con datos del servicio remoto en 
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -254,7 +254,7 @@ Categories from the Northwind database exposed as an OData service:
     }
 })();
 </script>
-  ```
+ ```
 
 
 ### (Opcional) Para modificar la página Default.aspx y que use el proxy web con el extremo de REST
@@ -287,7 +287,7 @@ Categories from the Northwind database exposed as an OData service:
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -393,7 +393,7 @@ Categories from the Northwind database exposed as an OData service:
 })();
 </script>
 
-  ```
+ ```
 
 
 ### Editar el archivo de manifiesto del complemento
@@ -404,12 +404,12 @@ Categories from the Northwind database exposed as an OData service:
   
 2. Copie la siguiente definición de **RemoteEndPoints** como un elemento secundario del nodo **App**.
     
-  ```XML
+ ```XML
   
 <RemoteEndpoints>
     <RemoteEndpoint Url=" http://services.odata.org" />
 </RemoteEndpoints>
-  ```
+ ```
 
 
     El elemento **RemoteEndpoint** se usa para especificar el dominio remoto. El proxy web valida que las solicitudes enviadas a dominios remotos se declaren en el manifiesto del complemento. Puede crear hasta 20 entradas en el elemento **RemoteEndpoints**. Solo se tiene en cuenta la parte de la entidad emisora:  `http://domain:port` y `http://domain:port/website` se consideran el mismo extremo. Puede emitir llamadas a muchos extremos diferentes dentro del mismo dominio con una sola definición **RemoteEndpoint**.
@@ -462,7 +462,7 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|La excepción no controlada **SP no está definida**. <br/> |Asegúrese de que puede obtener acceso al archivo SP.RequestExecutor.js en una ventana del explorador.  <br/> Si usa el servidor local como entorno de desarrollo, debe desactivar la comprobación de bucle invertido de IIS. Ejecute el siguiente comando desde un símbolo del sistema de Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **PRECAUCIóN**> No se recomienda deshabilitar la comprobación de bucle invertido de IIS en un entorno de producción.           |
+|La excepción no controlada **SP no está definida**. <br/> |Asegúrese de que puede obtener acceso al archivo SP.RequestExecutor.js en una ventana del explorador.  <br/> Si usa el servidor local como entorno de desarrollo, debe desactivar la comprobación de bucle invertido de IIS. Ejecute el siguiente comando desde un símbolo del sistema de Windows PowerShell.  <br/>```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **PRECAUCIóN**> No se recomienda deshabilitar la comprobación de bucle invertido de IIS en un entorno de producción.           |
 |El tamaño de la respuesta del extremo remoto supera el límite configurado.  <br/> |El tamaño de la respuesta de las solicitudes del proxy web no debe superar los 200 KB.  <br/> |
    
 

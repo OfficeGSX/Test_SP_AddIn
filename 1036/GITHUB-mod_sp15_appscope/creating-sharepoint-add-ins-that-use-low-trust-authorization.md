@@ -105,14 +105,12 @@ Vous pouvez désactiver l'exigence HTTPS lors du développement à l'aide des cm
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
-
-```
+```
 
 Pour réactiver l'exigence HTTPS ultérieurement, utilisez les cmdlets Windows PowerShell suivantes :
   
@@ -120,14 +118,12 @@ Pour réactiver l'exigence HTTPS ultérieurement, utilisez les cmdlets Windows P
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $false
 $serviceConfig.Update()
-
-```
+```
 
 
 ### Erreurs d'autorisation diverses liées au domaine et à SSL
@@ -180,14 +176,12 @@ La méthode DAV HTTP ne fonctionne pas avec OAuth. Si vous utilisez le modèle o
   
     
     
-
-```cs
+```cs
 
 File f = clientContext.Web.GetFileByServerRelativeUrl( url);
 ClientResult<Stream> r = f.OpenBinaryStream();
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## Dans cette section

@@ -123,7 +123,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. Сохраните и закройте файл.
     
@@ -283,7 +283,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
   
 10. Visual Studio создает следующий код XML в файле elements.xml веб-части надстройки (разрывы строк добавлены для ясности). Обратите внимание, что атрибут **Title** элемента **ClientWebPart** задан как "Заголовок базовой веб-части надстройки", а атрибут Description задан как "Описание базовой веб-части надстройки". Удалите слово "Заголовок" из первого атрибута, а второй замените наБазовая веб-часть надстройки.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### Установка домашней страницы хост-сайта в качестве начальной страницы надстройки
@@ -449,11 +449,9 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Вы можете загрузить  [пример кода веб-части надстройки](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16), где показывается, как использовать страницу SharePoint в качестве страницы содержимого.
   
@@ -472,10 +470,8 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 В примере выше значение **senderId** будет устанавливаться в строке запроса страницы автоматически кодом веб-части надстройки при отрисовке страницы. Странице будет достаточно прочитать значение **SenderId** в строке запроса и использовать его при запросе изменения размера. URL-адрес хост-сайта можно получить из строки запроса, добавив маркер **StandardTokens** или **HostUrl** в атрибут **Src** в определении веб-части надстройки. Вы можете скачать [Пример кода изменения размера веб-части](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88), чтобы увидеть динамическое изменение размера веб-части надстройки.
   
@@ -505,10 +501,8 @@ window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</messag
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
 Маркер **_editMode_** позволяет странице содержимого определять, находится ли веб-часть надстройки в режиме правки. Если да, то маркер **_editMode_** возвращает значение 1. В противном случае возвращается значение 0.
   

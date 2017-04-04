@@ -71,25 +71,25 @@ In this article you add code to the start page of the Chain Store SharePoint Add
   
 5. Add the following **using** statements to the top of the file.
     
-  ```
+ ```
   
 using System.Web;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
-  ```
+ ```
 
 6. At the top of the  `SharePointComponentDeployer` class, add the following two static fields. Both of these will be initialized in the **Page_Load** method of the add-in's start page. You add that code in a later step. The first field will hold the **SharePointContext** object that is needed to make CRUD operations on SharePoint. The second will hold the version number of the add-in that is installed on the host web. This value will initially be different from the default value ( **0000.0000.0000.0000** ) that is recorded in the corporate **Tenants** table when the installation handler registers the tenant. For example, the first version of the add-in will be **1.0.0.0**.
     
-  ```cs
+ ```cs
   
 internal static SharePointContext sPContext;
 internal static Version localVersion;
-  ```
+ ```
 
 7. Create the following static property to hold the version of the add-in that is currently recorded in the corporate **Tenants** table. It uses the two methods that were already in the file to get and set this value.
     
-  ```cs
+ ```cs
   
 internal static Version RemoteTenantVersion
 {
@@ -102,7 +102,7 @@ internal static Version RemoteTenantVersion
         SetTenantVersion(value);
     }
 }
-  ```
+ ```
 
 8. Now create the following  `IsDeployed` property. Note the following about this code:
     
@@ -113,7 +113,7 @@ internal static Version RemoteTenantVersion
     
   
 
-  ```cs
+ ```cs
   
 public static bool IsDeployed
 {
@@ -125,11 +125,11 @@ public static bool IsDeployed
             return true; 
     }
 }
-  ```
+ ```
 
 9. Add the following method to the  `SharePointComponentDeployer` class. Note that the last thing the method does is update the registered tenant version in the corporate database ( **0000.0000.0000.0000** ) to match the actual version of the add-in on the host web ( **1.0.0.0** ). You will complete this method in a later step.
     
-  ```cs
+ ```cs
   
 internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 {
@@ -137,7 +137,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
     RemoteTenantVersion = localVersion;
 }
-  ```
+ ```
 
 
 > **NOTE**
@@ -171,7 +171,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
     
   
 
-  ```cs
+ ```cs
   
 SharePointComponentDeployer.sPContext = spContext;
 SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
@@ -180,7 +180,7 @@ if (!SharePointComponentDeployer.IsDeployed)
 {
     SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
 }
-  ```
+ ```
 
 
 ## Programmatically deploy a SharePoint list
@@ -192,10 +192,10 @@ if (!SharePointComponentDeployer.IsDeployed)
 
 1. In the SharePointComponentDeployer.cs file, replace the  `TODO4` with the following line. You create this method in the next step.
     
-  ```cs
+ ```cs
   
 CreateLocalEmployeesList();
-  ```
+ ```
 
 2. Add the following method to the  `SharePointComponentDeployer` class. Note the following about this code:
     
@@ -206,7 +206,7 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   private static void CreateLocalEmployeesList()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -229,7 +229,7 @@ CreateLocalEmployeesList();
         }
     }
 }
-  ```
+ ```
 
 3. Replace  `TODO5` with the following code. Note the following about this code:
     
@@ -243,23 +243,23 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   
 ListCreationInformation listInfo = new ListCreationInformation();
 listInfo.Title = "Local Employees";
 listInfo.TemplateType = (int)ListTemplateType.GenericList;
 listInfo.Url = "Lists/Local Employees";
 List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-  ```
+ ```
 
 4. Replace  `TODO6` with the following code which changes the public name of the "Title" field (column) from "Title" to "Name". This is what you did on the **List Settings** page when you created the list manually.
     
-  ```cs
+ ```cs
   
 Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
 field.Title = "Name";
 field.Update();
-  ```
+ ```
 
 5. You also manually created a field named **Added to Corporate DB**. To do that programmatically add the following code in place of  `TODO7`. Note the following about this code:
     
@@ -273,18 +273,18 @@ field.Update();
     
   
 
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          +"Type='Boolean'>"
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 6. Recall that the **Added to Corporate DB** is **No** (that is, false) by default, but the custom ribbon button in the add-in sets it to **Yes** after it adds the employee to the corporate database. This system only works best if users cannot manually change the value of the field. To ensure that they don't, make the field invisible in the forms for creating and editing items on the **Local Employees** list. We do this by adding two more attributes to the first parameter, as shown in the following.
     
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          + " Type='Boolean'"  
@@ -293,14 +293,14 @@ localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate 
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 
     The entire  `CreateLocalEmployeesList` should now look like the following.
     
 
 
-  ```cs
+ ```cs
   
 private static void CreateLocalEmployeesList()
 {
@@ -335,7 +335,7 @@ private static void CreateLocalEmployeesList()
         }
     }
 }
-  ```
+ ```
 
 
 ## Temporarily remove the custom button from the project

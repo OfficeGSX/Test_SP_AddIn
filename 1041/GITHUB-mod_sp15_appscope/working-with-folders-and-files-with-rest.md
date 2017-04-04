@@ -21,16 +21,14 @@ URL がわかっている場合は、ドキュメント ライブラリ内のフ
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の XML は、XML コンテンツ タイプを要求したときに返されるフォルダー プロパティの例を示しています。
   
@@ -38,8 +36,7 @@ headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties>
@@ -48,8 +45,7 @@ headers:
 <d:ServerRelativeUrl>/Shared Documents</d:ServerRelativeUrl>
 <d:WelcomePage/>
 </m:properties>
-</content>
-```
+</content>```
 
 次の例は、フォルダーを **作成** する方法を示しています。
   
@@ -57,8 +53,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/folders
 method: POST
@@ -68,8 +63,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、 **MERGE** メソッドを使用してフォルダーを **更新** する方法を示しています。
   
@@ -77,8 +71,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -90,8 +83,7 @@ Headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、フォルダーを **削除** する方法を示しています。
   
@@ -99,8 +91,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -109,8 +100,7 @@ Headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## REST を使用してファイルを操作する
@@ -120,16 +110,14 @@ Headers:
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の例は、特定のファイルを **取得** する方法を示しています。
   
@@ -137,14 +125,12 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 URL がわかっている場合は、次の例のように、ファイルを **取得** することもできます。
   
@@ -152,14 +138,12 @@ URL がわかっている場合は、次の例のように、ファイルを **�
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 次の例は、ファイルを **作成** してフォルダーに追加する方法を示しています。
   
@@ -167,8 +151,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
 method: POST
@@ -176,8 +159,7 @@ body: "Contents of file"
 Headers: 
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、 **PUT** メソッドを使用してファイルを **更新** する方法を示しています。
   
@@ -192,8 +174,7 @@ Headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: POST
@@ -202,8 +183,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     X-HTTP-Method:"PUT"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 ファイルのメタデータを更新する場合は、リスト アイテムとしてファイルに到達するエンドポイントを作成する必要があります。この操作を行うことができるのは、各フォルダーがリストでもあり、各ファイルはリスト アイテムでもあるからです。 `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)` のようなエンドポイントを作成します。「 [REST を使用したリスト アイテムの操作](working-with-lists-and-list-items-with-rest.md)」に、リスト アイテムのメタデータを更新する方法が説明されています。
   
@@ -215,15 +195,13 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 次の例は、 **ファイルをチェックイン** する方法を示しています。
   
@@ -231,15 +209,13 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 次の例は、ファイルを **削除** する方法を示しています。
   
@@ -247,8 +223,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
 method: POST
@@ -257,8 +232,7 @@ headers:
      X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method:"DELETE"
-
-```
+```
 
 
 ## REST を使用して大きなファイルを操作する
@@ -275,8 +249,7 @@ headers:
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
 method: POST
@@ -285,8 +258,7 @@ headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次のコード サンプルは、この REST エンドポイントとクロスドメイン ライブラリを使用してファイルを作成する方法を示しています。
   
@@ -294,8 +266,7 @@ headers:
     
 
 
-
-```
+```
 
 function uploadFileBinary() {
 XDomainTestHelper.clearLog();
@@ -322,8 +293,7 @@ state: "Update"
 };
 ro.executeAsync(info);
 }
-
-```
+```
 
 
 ## REST を使用してリスト アイテムに添付されたファイルを操作する
@@ -333,16 +303,14 @@ ro.executeAsync(info);
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の例は、リスト アイテムに添付されているファイルを **取得** する方法を示しています。
   
@@ -350,16 +318,14 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の例は、リスト アイテムの添付ファイルを **作成** する方法を示しています。
   
@@ -367,8 +333,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
 method: POST
@@ -376,8 +341,7 @@ headers:
     Authorization: "Bearer " + accessToken
     body: "Contents of file."
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、 **PUT** メソッドを使用してリスト アイテムの添付ファイルを **更新** する方法を示しています。
   
@@ -392,8 +356,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: POST
@@ -402,8 +365,7 @@ headers:
     Authorization: "Bearer " + accessToken
     "X-HTTP-Method":"PUT"
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 
 ## その他の技術情報

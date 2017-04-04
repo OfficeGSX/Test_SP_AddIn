@@ -115,7 +115,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
 3. Дважды щелкните **Объявления** **>** **Elements.xml**. Вставьте следующие узлы XML как потомки элемента **ListInstance**.
     
-  ```
+ ```
   
 <Data>
     <Rows>
@@ -129,7 +129,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
         </Row>
     </Rows>
 </Data>
-  ```
+ ```
 
 
 ### Добавление новой страницы, которая использует междоменную библиотеку
@@ -168,7 +168,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
   
 
-  ```
+ ```
   
 <html>
     <head>
@@ -272,7 +272,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
         </script>
     </body>
 </html>
-  ```
+ ```
 
 
 ### Для создания и запуска решения
@@ -300,7 +300,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
 |:-----|:-----|
 |Сообщение об ошибке: "К сожалению, у нас возникли проблемы с доступом к сайту".  <br/> Также отображается кнопка для устранения ошибки, но она не решает проблему.  <br/> |Возможно, вы столкнулись с проблемой с зонами безопасности в Internet Explorer, см. статью  [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).  <br/> |
 |Сообщение об ошибке: требуемые функции не поддерживаются вашим браузером. Используйте IE 8 или более позднюю версию либо другой современный браузер. Метатег "X-UA-Compatible" должен быть равен "IE=8" или более высокому значению.  <br/> |Для междоменной библиотеки требуется режим документа в **IE8** или более поздней версии. В ряде случаев он по умолчанию задан как **IE7**. Можно использовать средства разработчика Internet Explorer, чтобы определить или изменить режим документа для страницы. Дополнительные сведения см. в разделе [Определение совместимости документов](http://msdn.microsoft.com/library/cc288325.aspx).  <br/> |
-|Сообщение об ошибке: "Тип не определен".  <br/> Кроме того, ваша надстройка использует объектную модель JavaScript (JSOM).  <br/> |JSOM использует метод **Type.registerNamespace** в библиотеке Microsoft Ajax для регистрации пространства имен **SP**. Используйте следующий код, чтобы добавить ссылку на библиотеку Microsoft Ajax на вашей странице: <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|Сообщение об ошибке: "Тип не определен".  <br/> Кроме того, ваша надстройка использует объектную модель JavaScript (JSOM).  <br/> |JSOM использует метод **Type.registerNamespace** в библиотеке Microsoft Ajax для регистрации пространства имен **SP**. Используйте следующий код, чтобы добавить ссылку на библиотеку Microsoft Ajax на вашей странице: <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## Дальнейшие действия
@@ -356,8 +356,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
 
 
-
-```
+```
 
 executor.executeAsync(
     {
@@ -370,8 +369,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 В следующем примере кода показано, как изменить сайт контекста с помощью JSOM:
   
@@ -379,8 +377,7 @@ executor.executeAsync(
     
 
 
-
-```
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -388,8 +385,7 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);
-```
+context.load(this.web);```
 
 По умолчанию у вашей надстройки есть разрешения для сайта надстройки, но не для хост-сайта. В следующем примере показан раздел манифеста, в котором объявляется запрос разрешений для чтения данных с хост-сайта:
   
@@ -397,15 +393,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 Создайте ресурс на сайте надстройки (например, пустую страницу или список), чтобы принудительно создать сайт надстройки, так как это необходимо для использования междоменной библиотеки.
   
@@ -438,15 +432,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 Чтобы заменить сайт контекста в коде, используйте конечную точку **AppContextSite** (REST) или объект (JSOM), как в разделе [Доступ к данным на хост-сайте](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb). Вот напоминание о конечной точке REST: /_api/SP.AppContextSite(@target)/web/title?@target='weburl', а также пример того, как создать экземпляр объекта в JSOM:  `appContextSite = new SP.AppContextSite(context, weburl);`.
   

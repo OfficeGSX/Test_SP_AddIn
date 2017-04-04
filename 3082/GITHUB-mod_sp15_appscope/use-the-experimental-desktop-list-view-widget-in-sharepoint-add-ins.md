@@ -182,7 +182,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -312,7 +312,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 > **NOTA**
@@ -327,14 +327,12 @@ En el siguiente ejemplo se muestra cómo pasar un objeto vacío al método de in
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### Para crear y ejecutar la solución
@@ -368,11 +366,9 @@ Quizás prefiera usar JavaScript en lugar de HTML para declarar el widget. Si es
   
     
     
+```HTML
 
-```HTML
-
-<div id="ListViewDiv"></div>
-```
+<div id="ListViewDiv"></div>```
 
 Use el siguiente código de JavaScript para crear una instancia de la vista de lista.
   
@@ -380,13 +376,11 @@ Use el siguiente código de JavaScript para crear una instancia de la vista de l
     
 
 
-
-```
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });
-```
+    });```
 
 Si quiere ver un ejemplo de cómo hacer las tareas, vaya a la página **JSSimple.html** en el ejemplo de código [Usar el widget experimental Vista de lista de escritorio en un complemento](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
   
@@ -405,8 +399,7 @@ Si usa código HTML para declarar el widget, puede usar la siguiente sintaxis pa
     
 
 
-
-```
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -414,8 +407,7 @@ Si usa código HTML para declarar el widget, puede usar la siguiente sintaxis pa
                             viewID: 'GUID'
                             }">
 </div> 
-
-```
+```
 
 Si quiere declarar el widget con JavaScript, use la siguiente sintaxis para especificar una vista.
   
@@ -423,15 +415,13 @@ Si quiere declarar el widget con JavaScript, use la siguiente sintaxis para espe
     
 
 
-
-```
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });
-```
+    });```
 
 
 ## Conclusión

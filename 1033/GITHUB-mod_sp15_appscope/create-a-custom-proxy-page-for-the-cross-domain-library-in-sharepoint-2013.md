@@ -85,12 +85,12 @@ To read data from the remote service, you must do the following:
   
 2. Replace the entire **AppPrincipal** element with the following.
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **NOTE**
@@ -120,7 +120,7 @@ To read data from the remote service, you must do the following:
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -192,7 +192,7 @@ To read data from the remote service, you must do the following:
 </html>
 
 
-  ```
+ ```
 
 
     > **IMPORTANT**
@@ -216,7 +216,7 @@ To read data from the remote service, you must do the following:
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -224,7 +224,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### To create a SharePoint webpage that uses the cross-domain library
@@ -247,7 +247,7 @@ Response.End();
   
 6. Copy the following code and paste it in the **PlaceHolderMain** content tag.
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -322,7 +322,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. In the preceding code that you pasted, find the line  `remotedomain = "<your_remote_add-in_domain>";`, and replace the placeholder  _<your_remote_add-in_domain>_ with the "localhost" URL that your web application uses when you are running the add-in with F5 in Visual Studio. To find this value, select the web application project in **Solution Explorer**. The **URL** property will be in the **Properties** pane. Use the entire value, including the protocol, the port, and the closing slash; for example "http://localhost:45072".
     

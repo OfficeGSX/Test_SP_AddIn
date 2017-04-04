@@ -154,8 +154,7 @@ El siguiente es un **ejemplo descodificado de un token de acceso de usuario+comp
     
 
 
-
-```
+```
 
 {
  "aud": "00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -165,8 +164,7 @@ El siguiente es un **ejemplo descodificado de un token de acceso de usuario+comp
  "nameid": "2303000085ff9abc",
  "actor": "964de6ad-6d28-4dc7-8e05-3acd8006e5c9@040f2415-e6e3-4480-96ce-26ef73275f73",
  "identityprovider": "urn:federation:microsoftonline"
-}
-```
+}```
 
 
 **Tabla 1: Notificaciones de tokens de acceso de usuario+complemento emitidos por ACS**
@@ -192,8 +190,7 @@ El siguiente es un **ejemplo decodificado de un token de acceso solo de compleme
     
 
 
-
-```
+```
 
 {
  "aud":"00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -205,8 +202,7 @@ El siguiente es un **ejemplo decodificado de un token de acceso solo de compleme
  "oid":"1d47ac31-498b-4988-8aac-85fc9bd2e1ce",
  "trustedfordelegation":"false",
  "identityprovider":"00000001-0000-0000-c000-000000000000@040f2415-e6e3-4480-96ce-26ef73275f73"
-}
-```
+}```
 
 
 **Tabla 2: Notificaciones de tokens de acceso solo de complemento emitidos por ACS**
@@ -258,13 +254,11 @@ Si usa código administrado, el código de muestra de algunas de estas tareas es
     
 
 
-
-```cs
+```cs
 
 SharePointContextToken contextToken =
     TokenHelper.ReadAndValidateContextToken(contextTokenString, 
-    Request.Url.Authority);
-```
+    Request.Url.Authority);```
 
 Para ver un ejemplo de cómo realizar algunas de estas tareas con PHP, consulte el código de ejemplo de  [SharePoint 2013 para realizar operaciones en la biblioteca de documentos de SharePoint desde un sitio PHP](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef).
   
@@ -368,11 +362,9 @@ A continuación se muestra la estructura de la dirección URL:
     
 
 
+```
 
-```
-
-https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>
-```
+https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>```
 
 El siguiente es un ejemplo de cómo crear la solicitud en ASP.NET usando el archivo TokenHelper:
   
@@ -380,10 +372,8 @@ El siguiente es un ejemplo de cómo crear la solicitud en ASP.NET usando el arch
     
 
 
-
-```
-Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));
-```
+```
+Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));```
 
 
 ### Ejemplo de un token de contexto
@@ -393,8 +383,7 @@ A continuación se muestra un ejemplo de token de contexto. El objeto Notación 
   
     
     
-
-```
+```
 {"typ":"JWT","alg":"HS256"}
 .
 {
@@ -413,8 +402,7 @@ xJnejSW3umatKM4fsfY1MClVCxrkXb2EQ8H/TmwaJc388YW063GEVUS/3BTSgSIRBKQUmXJuJ6BZY7WT
 6Vv7dVhQ1Dq5Y3fQ65e9LpJ580jCgzYYvpIFT+Wx5V+17mjY2T8wug04K2ts87Znsr+GfFCorf7NS/lj5HjoxRAQ2tva/8dwguSLwxcUwi/Q9MbpR0NNtlpwVazqi9O
 hJ4Df7gVhUDdJ0Dtc6aFCPbl5ZLDDRs42xK2", 
  "isbrowserhostedapp": "true"
-}
-```
+}```
 
 Las notificaciones **aud**, **iss**, **nbf** y **exp** son exactamente las mismas que en un token de acceso, tal y como se describió anteriormente. Las notificaciones **appctxsender**, **appctx**, **CacheKey**, **SecurityTokenServiceUri**, **refreshtoken** y **isbrowserhostedapp** se describen en la tabla siguiente.
   
@@ -492,12 +480,10 @@ Las notificaciones **nbf** y **exp** tienen el formato establecido por la [espec
   
     
     
-
-```cs
+```cs
 
 DateTime exp = new DateTime(1970,1,1).AddSeconds(jWTTimeStamp);
-
-```
+```
 
 
 ## Solucionar problemas de control de tokens

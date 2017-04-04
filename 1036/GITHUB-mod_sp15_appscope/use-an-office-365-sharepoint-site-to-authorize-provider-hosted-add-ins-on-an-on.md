@@ -113,15 +113,13 @@ Ouvrez SharePoint Management Shell en tant qu'administrateur et exécutez ce scr
     
 
 
-
-```
+```
 
 $certPrKPath = "c:\\location of your .pfx file"
 $certPassword = "password"
 $stsCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 $certPrKPath, $certPassword, 20
 Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -confirm:$false
-
-```
+```
 
 
 > **REMARQUE**
@@ -191,28 +189,28 @@ La fonction ci-dessous effectue toutes les actions nécessaires pour configurer 
   
 2. Ouvrez SharePoint Management Shell en tant qu'administrateur et exécutez l'applet de commande suivante pour vérifier que le module MySharePointFunctions est répertorié.
     
-  ```
+ ```
   
 Get-Module -listavailable
-  ```
+ ```
 
 3. Exécutez l'applet de commande suivante pour importer le module.
     
-  ```
+ ```
   Import-Module MySharePointFunctions
-  ```
+ ```
 
 4. Exécutez l'applet de commande suivante pour vérifier que la fonction Connect-SPFarmToAAD est répertoriée dans le cadre du module :
     
-  ```
+ ```
   Get-Command -module MySharePointFunctions
-  ```
+ ```
 
 5. Exécutez l'applet de commande suivante pour vérifier que la fonction Connect-SPFarmToAAD est chargée.
     
-  ```
+ ```
   ls function:\\ | where {$_.Name -eq "Connect-SPFarmToAAD"}
-  ```
+ ```
 
 6. Exécutez la fonction  `Connect-SPFarmToAAD`. Veillez à fournir les paramètres obligatoires et tous les paramètres facultatifs qui s'appliquent à votre environnement de développeur. Consultez la section suivante pour obtenir plus d'informations et des exemples.
     
@@ -233,7 +231,7 @@ Get-Module -listavailable
 | `-SharePointOnlineUrl` (obligatoire) <br/> |URL de votre site SharePoint Office 365 ( _https://yourcustomdomain_.sharepoint.com). Le domaine parent n'est  *pas*  onmicrosoft.com. <br/> |
 | `-SharePointWeb` (parfois obligatoire) <br/> |URL complète (protocole compris) de l'application web SharePoint sur site où vous exécutez les compléments hébergés par un fournisseur. Cette fonction ajoute une seule application web SharePoint de votre batterie de serveurs sur site à ACS. Si vous ne spécifiez pas de valeur, le script sélectionne la première application web de votre batterie de serveurs. Si vous utilisez une collection de sites de nom d'hôte (HNSC) pouvant être définie à l'aide d'un caractère générique (comme  _http://*.contoso.com_), vous pouvez utiliser cette chaîne en tant que valeur pour ce paramètre. Si l'application web possède un mappage des accès de substitution (AAM) pour la zone Internet, vous devez utiliser cette URL AAM pour ce paramètre. Si l'application web SharePoint n'est pas configurée pour HTTPS, vous devez utiliser HTTP en tant que protocole et  *vous devez utiliser le commutateur -AllowOverHttp (voir plus bas dans ce tableau).*  <br/> Si vous voulez exécuter des compléments hébergés par un fournisseur utilisant le service ACS sur plusieurs applications web dans votre batterie de serveurs, vous devez les ajouter à la collection de noms de principal de service. Le script Windows PowerShell qui suit la fonction  `Connect-SPFarmToAAD` ci-dessous vous indique comment ajouter toutes les applications web de votre batterie de serveurs à la collection de noms de principal de service. <br/> |
 | `-AllowOverHttp` (facultatif) <br/> |Utilisez ce commutateur si vous travaillez avec un environnement de développeur et que vous ne voulez pas utiliser SSL avec vos compléments. Vous devez utiliser ce commutateur si l'application web SharePoint n'est pas configurée pour HTTPS.  <br/> |
-| `-O365Credentials` (facultatif) <br/> |Le premier caractère est un « O » majuscule, et non un zéro. Si vous devez exécuter le script de manière répétée à des fins de débogage, ce commutateur vous permet d'éviter de devoir entrer manuellement votre nom et votre mot de passe O365 à chaque fois. Pour pouvoir utiliser ce paramètre, vous devez créer l'objet d'informations d'identification que vous allez lui affecter à l'aide de ces applets de commande :  <br/> ```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Utilisez  `$Credential` comme valeur du paramètre `-O365Credentials`.  <br/> |
+| `-O365Credentials` (facultatif) <br/> |Le premier caractère est un « O » majuscule, et non un zéro. Si vous devez exécuter le script de manière répétée à des fins de débogage, ce commutateur vous permet d'éviter de devoir entrer manuellement votre nom et votre mot de passe O365 à chaque fois. Pour pouvoir utiliser ce paramètre, vous devez créer l'objet d'informations d'identification que vous allez lui affecter à l'aide de ces applets de commande :  <br/>```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Utilisez  `$Credential` comme valeur du paramètre `-O365Credentials`.  <br/> |
 | `-Verbose` (facultatif) <br/> |Ce commutateur génère des commentaires plus détaillés pouvant vous aider si la fonction est inefficace et si vous devez l'exécuter à nouveau pour procéder au débogage.  <br/> |
 | `-RemoveExistingACS` (facultatif) <br/> |Utilisez ce commutateur si vous remplacez une connexion existante à Microsoft Azure Active Directory. Il supprime un proxy ACS existant si vous en avez déjà créé un sur votre batterie de serveurs.  <br/> |
 | `-RemoveExistingSTS` (facultatif) <br/> |Utilisez ce commutateur si vous remplacez une connexion existante à Microsoft Azure Active Directory. Il supprime un émetteur de jeton de sécurité approuvé existant restant d'une connexion antérieure à ACS.  <br/> |
@@ -244,8 +242,7 @@ Voici quelques exemples :
   
     
     
-
-```
+```
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com
 
@@ -254,15 +251,13 @@ Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineU
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp -RemoveExistingACS -RemoveExistingSTS -RemoveExistingSPOProxy -RemoveExistingAADCredentials
-
-```
+```
 
 
 ### Script de fonction Connect-SPFarmToAAD
 <a name="function"> </a>
 
-
-```
+```
 
 function Connect-SPFarmToAAD {
 param(
@@ -377,8 +372,7 @@ param(
     if (-not (Get-SPServiceApplicationProxy | ? DisplayName -EQ $SPO_MANAGEMENT_APPPROXY_NAME)) {
         $spoproxy = New-SPOnlineApplicationPrincipalManagementServiceApplicationProxy -Name $SPO_MANAGEMENT_APPPROXY_NAME -OnlineTenantUri $SharePointOnlineUrl -DefaultProxyGroup
     }  
-}
-```
+}```
 
 
 ### Configurer le complément et l'application web SharePoint pour l'Office Store
@@ -388,12 +382,10 @@ Il existe une étape de configuration facultative que les administrateurs de bat
   
     
     
-
-```
+```
 
 New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebServiceProxy" -ServiceEndpointUri "https://oauth.sellerdashboard.microsoft.com/ApplicationIdentityDataWebService.svc" -DefaultProxyGroup
-
-```
+```
 
 Une autre bonne pratique sur les applications web SharePoint de production consiste à activer la fonctionnalité **Compléments nécessitant des points de terminaison accessibles sur Internet** une fois que les étapes de configuration ci-dessus sont terminées. (Voir les instructions ci-dessous.) En réalité, cette fonctionnalité ne fait rien. Elle sert simplement d'indicateur qui signale à l'Office Store que les compléments hébergés par un fournisseur qui utilisent ACS peuvent être installés sur des sites web dans l'application web SharePoint.
   
@@ -405,11 +397,9 @@ Ce système peut avoir des conséquences sur le manifeste du complément de votr
     
 
 
+```
 
-```
-
-<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />
-```
+<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />```
 
 L'effet de la condition préalable est le suivant : lorsque les utilisateurs parcourent le magasin depuis une batterie de serveurs SharePoint sur site, si la fonctionnalité **Compléments nécessitant des points de terminaison accessibles sur Internet** de l'application web SharePoint parent n'est pas activée, votre complément sera grisé et non installable. Vous vous assurez ainsi que vous n'aurez pas de réclamations de clients ayant installé votre complément sur un site web SharePoint sur site et constaté qu'il ne fonctionnait pas.
   
@@ -421,10 +411,8 @@ Il y a deux façons d'activer la fonctionnalité. La première consiste à exéc
     
 
 
-
-```
-Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application
-```
+```
+Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application```
 
 La seconde façon d'activer la fonctionnalité consiste à effectuer les étapes suivantes dans l'Administration centrale :
   
@@ -458,8 +446,7 @@ Si vous avez d'autres applications web dans votre batterie de serveurs SharePoin
   
     
     
-
-```
+```
 $SPAppPrincipal = Get-MsolServicePrincipal -AppPrincipalId 00000003-0000-0ff1-ce00-000000000000
 $id = "00000003-0000-0ff1-ce00-000000000000/"
 
@@ -476,8 +463,7 @@ Get-SPWebApplication | ForEach-Object {
        Set-MsolServicePrincipal -AppPrincipalId $SPAppPrincipal.AppPrincipalId -ServicePrincipalNames $SPAppPrincipal.ServicePrincipalNames
     }
 }
-
-```
+```
 
 
 ## Étapes suivantes

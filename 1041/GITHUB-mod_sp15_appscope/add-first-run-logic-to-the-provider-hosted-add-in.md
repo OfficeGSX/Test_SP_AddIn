@@ -70,25 +70,25 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
   
 5. 次の **using** ステートメントをファイルの先頭に追加します。
     
-  ```
+ ```
   
 using System.Web;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
-  ```
+ ```
 
 6.  `SharePointComponentDeployer` クラスの先頭に、次の 2 つの静的フィールドを追加します。これらはいずれも、アドインの開始ページの **Page_Load** メソッドで初期化されます。そのコードは後で追加します。最初のフィールドは、SharePoint で CRUD 操作を実行するのに必要な **SharePointContext** オブジェクトを保持します。2 つ目は、ホスト Web にインストールされたアドインのバージョン番号を保持します。この値は最初に、インストール ハンドラーがテナントを登録するときに企業の **テナント** テーブルに記録される 既定値 ( **0000.0000.0000.0000** ) とは異なる値に設定します。たとえば、最初のバージョンのアドインは **1.0.0.0** です。
     
-  ```cs
+ ```cs
   
 internal static SharePointContext sPContext;
 internal static Version localVersion;
-  ```
+ ```
 
 7. 企業の **テナント** テーブルに現在記録されているアドインのバージョンを保持するために、次の静的プロパティを作成します。この値を取得および設定するために、既にファイルに入っている 2 つのメソッドを使用します。
     
-  ```cs
+ ```cs
   
 internal static Version RemoteTenantVersion
 {
@@ -101,7 +101,7 @@ internal static Version RemoteTenantVersion
         SetTenantVersion(value);
     }
 }
-  ```
+ ```
 
 8. 次に、以下の  `IsDeployed` プロパティを作成します。このコードについて、以下の点に注意してください。
     
@@ -112,7 +112,7 @@ internal static Version RemoteTenantVersion
     
   
 
-  ```cs
+ ```cs
   
 public static bool IsDeployed
 {
@@ -124,11 +124,11 @@ public static bool IsDeployed
             return true; 
     }
 }
-  ```
+ ```
 
 9. 次のメソッドを  `SharePointComponentDeployer` クラスに追加します。メソッドの最後の処理は、企業のデータベースに登録されたテナントのバージョン ( **0000.0000.0000.0000** ) がホスト Web のアドインの実際のバージョン ( **1.0.0.0** ) に一致するよう更新することです。このメソッドは、後の手順で完成させます。
     
-  ```cs
+ ```cs
   
 internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 {
@@ -136,7 +136,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
     RemoteTenantVersion = localVersion;
 }
-  ```
+ ```
 
 
 > **メモ**
@@ -170,7 +170,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
     
   
 
-  ```cs
+ ```cs
   
 SharePointComponentDeployer.sPContext = spContext;
 SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
@@ -179,7 +179,7 @@ if (!SharePointComponentDeployer.IsDeployed)
 {
     SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
 }
-  ```
+ ```
 
 
 ## SharePoint リストをプログラミングによって配置する
@@ -191,10 +191,10 @@ if (!SharePointComponentDeployer.IsDeployed)
 
 1. SharePointComponentDeployer.cs ファイルで、 `TODO4` を次の行で置き換えます。このメソッドは、次の手順で作成します。
     
-  ```cs
+ ```cs
   
 CreateLocalEmployeesList();
-  ```
+ ```
 
 2. 以下のメソッドを  `SharePointComponentDeployer` クラスに追加します。このコードについては以下の点に注目してください。
     
@@ -205,7 +205,7 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   private static void CreateLocalEmployeesList()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -228,7 +228,7 @@ CreateLocalEmployeesList();
         }
     }
 }
-  ```
+ ```
 
 3.  `TODO5` を次のコードに置き換えます。このコードについて、以下の点に注意してください。
     
@@ -242,23 +242,23 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   
 ListCreationInformation listInfo = new ListCreationInformation();
 listInfo.Title = "Local Employees";
 listInfo.TemplateType = (int)ListTemplateType.GenericList;
 listInfo.Url = "Lists/Local Employees";
 List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-  ```
+ ```
 
 4.  `TODO6` を、"Title" フィールド (列) のパブリック名を "Title" から "Name" に変更する次のコードで置き換えます。これは、リストを手動で作成したときに、 **リストの設定**ページで行ったことです。
     
-  ```cs
+ ```cs
   
 Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
 field.Title = "Name";
 field.Update();
-  ```
+ ```
 
 5. また、[ **会社の DB に追加済み**] という名前のフィールドを手動で作成しています。これをプログラムによって実行するには、 `TODO7` の代わりに次のコードを追加します。このコードについて、以下の点に注意してください。
     
@@ -272,18 +272,18 @@ field.Update();
     
   
 
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          +"Type='Boolean'>"
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 6. 既定では、[ **会社の DB に追加済み**] が [ **いいえ**] (false) ですが、アドインのカスタムのリボン ボタンは、従業員を企業のデータベースに追加した後で、[ **はい**] に設定します。このシステムは、ユーザーがフィールドの値を手動で変更できない場合にのみ最適に機能します。確実に機能しないようにするには、[ **ローカル従業員**] リストでアイテムを作成および編集するためのフォームでフィールドを非表示にします。これは、次に示すように、最初のパラメーターに属性をあと 2 つ追加することで行います。
     
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          + " Type='Boolean'"  
@@ -292,14 +292,14 @@ localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate 
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 
      `CreateLocalEmployeesList` 全体は、次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 private static void CreateLocalEmployeesList()
 {
@@ -334,7 +334,7 @@ private static void CreateLocalEmployeesList()
         }
     }
 }
-  ```
+ ```
 
 
 ## カスタム ボタンをプロジェクトから一時的に削除する

@@ -48,12 +48,12 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
   
 3. Au sein du même élément **<asp:Content>**, ajoutez l'élément **WebPartZone** suivant.
     
-  ```XML
+ ```XML
   
 <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly"
       ID="HomePage1" Title="loc:full" />
 
-  ```
+ ```
 
 4. Enregistrez et fermez le fichier.
     
@@ -66,7 +66,7 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
   
 7. Dans l'élément **File**, ajoutez un élément enfant **AllUsersWebPart** et définissez sa valeur **WebPartZoneID** sur l'ID de la zone WebPart que vous avez créée sur la page. Le contenu du fichier doit maintenant avoir l'aspect ci-dessous. Ce balisage indique à SharePoint d'insérer un élément **AllUsersWebPart** dans la zone WebPart nommée « HomePage1 ».
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -78,11 +78,11 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
   </Module>
 </Elements>
 
-  ```
+ ```
 
 8. Ajoutez un élément **CDATA** en tant qu'enfant de l'élément **AllUsersWebPart**, puis ajoutez un élément **webParts** en tant qu'enfant de l'élément **CDATA** comme indiqué dans le balisage suivant.
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -91,11 +91,11 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 9. Ajoutez le balisage **webPart** suivant en tant qu'enfant de l'élément **webParts**. Ce balisage ajoute un élément **XsltListViewWebPart** et indique à l'élément WebPart d'afficher la listeNew Employees in Seattle (Nouveaux employés à Seattle). Notez que la valeur de la propriété **ViewContentTypeId** est simplement « 0x », et non l'ID réel du type de contenuNewEmployee
     
-  ```
+ ```
   
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
@@ -115,7 +115,7 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
       </properties>
     </data>
   </webPart>
-  ```
+ ```
 
 
 ## Exécuter et tester le complément

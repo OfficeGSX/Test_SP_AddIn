@@ -151,8 +151,7 @@ La tabla siguiente contiene ejemplos típicos de direcciones URL de extremo REST
 |Recupera los metadatos de una sola lista  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |No es aplicable  <br/> |
 |Recupera los elementos de una lista  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |No es aplicable  <br/> |
 |Recupera una propiedad específica de un documento. (En este caso, el título del documento).  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |No es aplicable  <br/> |
-|Crea una lista  <br/> | `lists` <br/> |POST  <br/> |
-```
+|Crea una lista  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ La tabla siguiente contiene ejemplos típicos de direcciones URL de extremo REST
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|Agrega un elemento a una lista  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|Agrega un elemento a una lista  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

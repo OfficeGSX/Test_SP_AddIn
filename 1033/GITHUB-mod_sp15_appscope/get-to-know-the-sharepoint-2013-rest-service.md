@@ -152,8 +152,7 @@ The following table contains typical REST endpoint URL examples to get you start
 |Retrieves a single 'list's metadata  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |Not applicable  <br/> |
 |Retrieves items within a list  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |Not applicable  <br/> |
 |Retrieves a specific property of a document. (In this case, the document title.)  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |Not applicable  <br/> |
-|Creates a list  <br/> | `lists` <br/> |POST  <br/> |
-```
+|Creates a list  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -162,19 +161,16 @@ The following table contains typical REST endpoint URL examples to get you start
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|Adds an item to a list  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|Adds an item to a list  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

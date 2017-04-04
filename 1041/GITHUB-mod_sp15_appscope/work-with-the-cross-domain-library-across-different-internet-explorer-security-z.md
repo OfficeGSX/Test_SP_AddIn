@@ -110,8 +110,7 @@ SharePoint クロスドメイン ライブラリは非表示の **IFrame** と�
   
 
 
-
-```HTML
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -160,8 +159,7 @@ SharePoint クロスドメイン ライブラリは非表示の **IFrame** と�
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>
-```
+</html>```
 
 ユーザーがアドインの一部分にディープ リンクを設定できるようにする場合は、アプリ ホスト ページおよび **IFrame** のコンテンツを連携させることでディープ リンクを可能にすることができます。別の方法の 1 つとして、 **IFrame** のポスト メッセージ通信を使用し、リモート アドインのページごとに個別の URL を使用する方法があります。ページごとに個別の URL を使用するには、アドイン Web に個別のページを作成するか、1 ページで複数のクエリ文字列パラメーターを使用できます。
   

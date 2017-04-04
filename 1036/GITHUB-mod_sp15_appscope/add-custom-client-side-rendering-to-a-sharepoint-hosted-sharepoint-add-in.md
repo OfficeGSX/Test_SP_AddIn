@@ -71,43 +71,43 @@ Vous pouvez utiliser un code JavaScript court côté client pour personnaliser l
   
 3. Votre rendu personnalisé du champ doit se produire automatiquement, il faut donc ajouter une méthode anonyme au code JavaScript qui s'exécute automatiquement lorsque le fichier se charge avec le code suivant.
     
-  ```
+ ```
   
 (function () {
 
 })();
-  ```
+ ```
 
 4. Dans le corps de cette méthode (entre les caractères {}), ajoutez le code suivant afin de créer des objets JSON (JavaScript Object Notation) pour le contexte rendu prioritaire, les modèles de contexte et les modèles de champs.
     
-  ```
+ ```
   
 var customRenderingOverride = {};
 customRenderingOverride.Templates = {};
 customRenderingOverride.Templates.Fields = {
 
 }
-  ```
+ ```
 
 5. Dans le corps de l'objet de modèle  `Fields`, ajoutez le JSON suivant. Le nom de propriété  `OrientationStage` identifie le champ dont le rendu est personnalisé. La valeur de la propriété est un autre objet JSON. La propriété `View` identifie le contexte de page dans lequel le rendu personnalisé est appliqué. Dans ce cas, l'objet indique à SharePoint d'utiliser le rendu personnalisé sur les vues de liste. (Il existe d'autres options pour les formulaires de modification, de création et d'affichage.) La valeur de la propriété, `renderOrientationStage`, est le nom de la méthode de rendu personnalisé que vous créerez à une étape ultérieure.
     
-  ```
+ ```
   
 "OrientationStage": { "View": renderOrientationStage }
-  ```
+ ```
 
 6. La dernière chose que la méthode anonyme doit faire consiste à parler du rendu prioritaire au gestionnaire de modèles SharePoint. Ajoutez la ligne suivante à la fin du corps de la méthode.
     
-  ```
+ ```
   SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
-  ```
+ ```
 
 
     La méthode doit maintenant se présenter comme suit.
     
 
 
-  ```
+ ```
   (function () {
     var customRenderingOverride = {};
     customRenderingOverride.Templates = {};
@@ -117,11 +117,11 @@ customRenderingOverride.Templates.Fields = {
 
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
 })();
-  ```
+ ```
 
 7. Ajoutez la méthode suivante au fichier. Elle définit la couleur de la valeur de colonne **Étape d'orientation** en rouge lorsque la valeur est « Non commencée » et en vert lorsque la valeur est « Terminée ». (L'objet `ctx` est un objet de contexte client déclaré par le script prêt à l'emploi de SharePoint.)
     
-  ```
+ ```
   
 function renderOrientationStage(ctx) {
     var orientationStageValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
@@ -135,7 +135,7 @@ function renderOrientationStage(ctx) {
         return orientationStageValue;
     }
 }
-  ```
+ ```
 
 8. Dans l' **Explorateur de solutions**, développez **Colonnes de site**, puis **ÉtapeOrientation**. Ensuite, ouvrez le fichier elements.xml.
     
@@ -149,7 +149,7 @@ function renderOrientationStage(ctx) {
     
 
 
-  ```
+ ```
   
 <Field
        ID="{some_guid_here}"
@@ -162,16 +162,16 @@ function renderOrientationStage(ctx) {
        Group="Employee Orientation" 
        JSLink="~site/Scripts/OrientationStageRendering.js">
 <!-- child elements and end tag omitted -->
-  ```
+ ```
 
 10. Ouvrez la page Default.aspx et ajoutez le code suivant en tant que dernier enfant de l'élément **asp:Content** dont la valeur **ContentPlaceHolderID** est définie sur **PlaceHolderMain**. 
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';"
     Text="List View Page for New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Exécuter et tester le complément

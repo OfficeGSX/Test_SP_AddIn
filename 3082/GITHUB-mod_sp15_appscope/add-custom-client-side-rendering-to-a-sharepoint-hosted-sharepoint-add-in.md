@@ -71,43 +71,43 @@ Puede usar un pequeño JavaScript de cliente para personalizar la representació
   
 3. La representación personalizada del campo debería ocurrir automáticamente, así que agregue un método anónimo al JavaScript que se ejecuta automáticamente cuando se carga el archivo con el código siguiente.
     
-  ```
+ ```
   
 (function () {
 
 })();
-  ```
+ ```
 
 4. En el cuerpo de este método (entre los caracteres { }), agregue el siguiente código para crear objetos JSON (notación de objetos Javascript) para el contexto de reemplazo de representación, las plantillas en el contexto y las plantillas para los campos.
     
-  ```
+ ```
   
 var customRenderingOverride = {};
 customRenderingOverride.Templates = {};
 customRenderingOverride.Templates.Fields = {
 
 }
-  ```
+ ```
 
 5. En el cuerpo del objeto de plantilla  `Fields`, agregue el siguiente JSON. El nombre de propiedad  `OrientationStage` identifica el campo que tiene representación personalizada. El valor de la propiedad es otro objeto JSON. La propiedad `View` identifica el contexto de la página donde se aplica la representación personalizada. En este caso, el objeto está indicando a SharePoint que use la representación personalizada en vistas de lista. (Otras opciones podrían ser para los formularios de edición, nuevo y mostrar). El valor de la propiedad, `renderOrientationStage`, es el nombre del método de representación personalizada que se crea en un paso posterior.
     
-  ```
+ ```
   
 "OrientationStage": { "View": renderOrientationStage }
-  ```
+ ```
 
 6. Lo último que debe hacer el método anónimo es informar al administrador de plantillas de SharePoint sobre la invalidación de la representación. Agregue la siguiente línea al final del cuerpo del método.
     
-  ```
+ ```
   SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
-  ```
+ ```
 
 
     El método ahora debería ser similar al siguiente.
     
 
 
-  ```
+ ```
   (function () {
     var customRenderingOverride = {};
     customRenderingOverride.Templates = {};
@@ -117,11 +117,11 @@ customRenderingOverride.Templates.Fields = {
 
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
 })();
-  ```
+ ```
 
 7. Agregue el método siguiente al archivo. Establece el color del valor de la columna **Fase de orientación** en rojo cuando el valor es "No iniciado" y en verde cuando el valor es "Completado". (El objeto `ctx` es un objeto de contexto de cliente que se declara mediante el script de SharePoint que se incluye).
     
-  ```
+ ```
   
 function renderOrientationStage(ctx) {
     var orientationStageValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
@@ -135,7 +135,7 @@ function renderOrientationStage(ctx) {
         return orientationStageValue;
     }
 }
-  ```
+ ```
 
 8. En el **Explorador de soluciones**, expanda **Columnas de sitio** y **OrientationStage** y, a continuación, abra el archivo elements.xml.
     
@@ -149,7 +149,7 @@ function renderOrientationStage(ctx) {
     
 
 
-  ```
+ ```
   
 <Field
        ID="{some_guid_here}"
@@ -162,16 +162,16 @@ function renderOrientationStage(ctx) {
        Group="Employee Orientation" 
        JSLink="~site/Scripts/OrientationStageRendering.js">
 <!-- child elements and end tag omitted -->
-  ```
+ ```
 
 10. Abra la página Default.aspx y agregue el siguiente código como último elemento secundario del elemento **asp:Content** que tiene **ContentPlaceHolderID** establecido en **PlaceHolderMain**. 
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';"
     Text="List View Page for New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Ejecutar y probar el complemento

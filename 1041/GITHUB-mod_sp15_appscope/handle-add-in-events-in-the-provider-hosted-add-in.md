@@ -104,17 +104,17 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
   
   - ハンドラーの URL はアドイン マニフェストに登録されます。マニフェストのこの部分は、マニフェスト デザイナーでは表示されません。これを表示するには、AppManifest.xml ファイルを右クリックし、[ **コードの表示**] を選択します。次のような [ **プロパティ**] 要素の新しい子があります。このマークアップは、アドインのインストールに関連した独自の作業をすべて完了したときに **ProcessEvent** メソッドを呼び出すように SharePoint に通知します。カスタム ハンドラーは、インストールの最後の部分として実行されます。文字列 `~remoteAppUrl` はプレースホルダーであり、Office Developer Tools for Visual Studio によってサービス ホストの URL に置き換えられます。デバッグをしている場合は、これは Azure サービス バスの URL になります。運用環境に展開するためのパッケージを作成している場合は、これは運用環境の URL になります。
     
-  ```XML
+ ```XML
   
 <InstalledEventEndpoint>~remoteAppUrl/Services/AppEventReceiver.svc</InstalledEventEndpoint>
-  ```
+ ```
 
 3. AppEventReceiver.svc.cs ファイルを開きます。
     
   
 4. Office Developer Tools for Visual Studio により、 **ProcessEvent** メソッドのサンプル実装が作成されました。このメソッドのすべての実装は、 **SPRemoteEventResult** オブジェクトを初期化することによって開始され、そのオブジェクトを SharePoint に返すことによって終了します。このオブジェクトは、主に、カスタム処理ロジックが失敗したのでイベントをロールバックするかどうかを SharePoint に通知します。また、 **ClientContext** オブジェクトを作成する **using** ブロックも、これらのツールによってこのメソッドに含められている可能性があります。チェーン ストア アドイン内のカスタム ハンドラーは SharePoint にコールバックしないため、このブロックは削除してください。このメソッドは、次のようになります。
     
-  ```cs
+ ```cs
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
@@ -122,11 +122,11 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
 
     return result;
 }
-  ```
+ ```
 
 5. イベント レシーバーは、次の 3 つのアドイン イベントによって呼び出される可能性があるため、次の **switch** 構造を、 **ProcessEvent** メソッド内の `result` オブジェクトを作成する行と取得する行の間に追加します。イベント名には、"App" という文字列が含まれが、これは、アドインが以前「アプリ」と呼ばれていたためです。
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -144,7 +144,7 @@ switch (properties.EventType)
          
         break;
 }
-  ```
+ ```
 
 6. インストール ロジックは、SQL ストアド プロシージャを呼び出して、香港のストアをテナントとしてリモート Web アプリケーションに登録します。重要なこととして、この処理が失敗した場合、ハンドラーがアドインのインストールをロールバックするよう SharePoint に通知するようにする必要があるので、次の **try/catch** ブロックを `TODO2` の代わりに追加します。このコードについては、以下の点に注意してください。
     
@@ -155,7 +155,7 @@ switch (properties.EventType)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -167,32 +167,32 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 7. サンプルのテナントの識別子であるホスト Web の URL は、SharePoint が **SPRemoteEventProperties** パラメーターでレシーバーに渡す情報の一部です。 **ProcessEvent** メソッドの、 **SPRemoteEventResult** オブジェクトの初期化のすぐ下の行に次の行を追加します。
     
-  ```cs
+ ```cs
   
 string tenantName = properties.AppEventProperties.HostWebFullUrl.ToString();
-  ```
+ ```
 
 8. ここで、コードは **AppEventProperties.HostWebFullUrl** プロパティの多少変わった特徴を処理する必要があります。その他のほとんどのコンテキストでは、SharePoint にホスト Web URL の末尾に "/" の終了文字が含まれるため、サンプル コードのロジックはこの文字が記載されていることを想定しています。しかし、SharePoint では、ホスト Web がサイト コレクションのルート Web である場合にのみ、この文字が **HostWebFullUrl** 値の末尾に追加されます。当社の香港の Web サイトはサイト コレクション内のサブ Web であるため、この文字を追加して、同じ名前の文字列がサンプル全体で使用されるようにする必要があります。 `tenantName` オブジェクトの初期化の下に次のコードを追加します。
     
-  ```cs
+ ```cs
   if (!tenantName.EndsWith("/"))
 {
     tenantName += "/";
 }
-  ```
+ ```
 
 9. 次の **using** ステートメントをファイルの先頭に追加します。
     
-  ```
+ ```
   
 using System.Data.SqlClient;
 using System.Data;
 using ChainStoreWeb.Utilities;
-  ```
+ ```
 
 10. 以下のメソッドを  `AppEventReceiver` クラスに追加します。このシリーズの記事の目的は、SQL Server/Azure プログラミングではなく、SharePoint アドイン プログラミングについて学習することであるため、これについては詳しく説明しません。
     
@@ -200,7 +200,7 @@ using ChainStoreWeb.Utilities;
     
 
 
-  ```cs
+ ```cs
   
 private void CreateTenant(string tenantName)
 {
@@ -218,7 +218,7 @@ private void CreateTenant(string tenantName)
         cmd.ExecuteNonQuery();
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 ## アンインストール ハンドラーを作成する
@@ -245,7 +245,7 @@ private void CreateTenant(string tenantName)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -257,11 +257,11 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 3. 以下のメソッドを  `AppEventReceiver` クラスに追加します。
     
-  ```cs
+ ```cs
   
 private void DeleteTenant(string tenantName)
 {
@@ -279,7 +279,7 @@ private void DeleteTenant(string tenantName)
         cmd.ExecuteNonQuery();                
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 > **メモ**

@@ -211,12 +211,12 @@ ms.assetid: 1b992485-6efe-4ea4-a18c-221689b0b66f
   
 7. После создания проекта откройте файл **/Pages/Default.aspx** из корневой папки проекта. Помимо прочего, этот созданный файл загружает один или оба сценария, размещенные в SharePoint: sp.runtime.js и sp.js. Разметку для загрузки этих файлов можно найти в элементе управления **Content** в верхней части файла с идентификатором **PlaceHolderAdditionalPageHead**. Разметка зависит от используемой версии **Инструменты разработчика Microsoft Office для Visual Studio**. Согласно руководствам этой серии необходимо загрузить оба файла с обычными HTML-тегами **<script>**, а не с тегами **<SharePoint:ScriptLink>**. Убедитесь, что указанные ниже строки присутствуют в элементе управления **PlaceHolderAdditionalPageHead** *над*  строкой `<meta name="WebPartPageExpansion" content="full" />`.
     
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     Проверьте файл на наличие другой разметки, загружающей один или оба файла сценария и удалите ее. Сохраните и закройте файл.
@@ -312,21 +312,21 @@ ms.assetid: 1b992485-6efe-4ea4-a18c-221689b0b66f
     
 
 
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
-  ```
+ ```
 
 20. Не закрывая файл schema.xml, в элементе **View**, значение **BaseViewID** которого равно 1, кажите вместо существующего элемента **ViewFields** следующие исправления. (Используйте именно этот GUID для параметра **FieldRef** с именем `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
-  ```
+ ```
 
 21. Сохраните и закройте файл schema.xml.
     
@@ -336,7 +336,7 @@ ms.assetid: 1b992485-6efe-4ea4-a18c-221689b0b66f
   
 23. В этом файле заполните список начальными данными. Для этого добавьте следующую разметку элемента **Data** в качестве дочернего элемента **ListInstance**.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -354,7 +354,7 @@ ms.assetid: 1b992485-6efe-4ea4-a18c-221689b0b66f
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 24. Сохраните и закройте файл.
     
@@ -373,13 +373,13 @@ ms.assetid: 1b992485-6efe-4ea4-a18c-221689b0b66f
   
 29. Найдите элемент **Content** ASP.NET с идентификатором **PlaceHolderMain**.  *Замените*  его содержимое приведенными ниже исправлениями. ` _spPageContextInfo`  это объект JavaScript, который SharePoint автоматически добавляет на страницу. Его свойство `webAbsoluteUrl` возвращает URL-адрес сайта надстройки.
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server"
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Запуск надстройки и тестирование списка

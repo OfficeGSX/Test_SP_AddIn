@@ -182,7 +182,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -312,7 +312,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 > **Примечание**
@@ -327,14 +327,12 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### Создание и запуск решения
@@ -368,11 +366,9 @@ Office.Controls.Runtime.initialize({});
   
     
     
+```HTML
 
-```HTML
-
-<div id="ListViewDiv"></div>
-```
+<div id="ListViewDiv"></div>```
 
 Используйте следующий код JavaScript, чтобы создавать экземпляры представления списка.
   
@@ -380,13 +376,11 @@ Office.Controls.Runtime.initialize({});
     
 
 
-
-```
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });
-```
+    });```
 
 Пример выполнения задач см. на странице **JSSimple.html** в примере кода [Использование экспериментального мини-приложения "Представление списка на рабочем столе" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
   
@@ -405,8 +399,7 @@ new Office.Controls.ListView(
     
 
 
-
-```
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -414,8 +407,7 @@ new Office.Controls.ListView(
                             viewID: 'GUID'
                             }">
 </div> 
-
-```
+```
 
 Если вы объявляете виджет с использованием JavaScript, вы можете использовать следующий синтаксис для указания представления.
   
@@ -423,15 +415,13 @@ new Office.Controls.ListView(
     
 
 
-
-```
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });
-```
+    });```
 
 
 ## Заключение

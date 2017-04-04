@@ -148,13 +148,13 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
    .  .  .
 </appSettings>
-  ```
+ ```
 
 2. Geben Sie den Wert für den geheimen Add-In-Schlüssel als **ClientSecret**-Wert ein (der den temporären Wert ersetzt, den die Tools eingegeben haben).
     
@@ -162,13 +162,13 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
   <add key="ClientSecret" value="l0z/8TzWN0yQBzMBSEZtYts2Vt3Eo/oE3rfCdPaogKQ= " />
 </appSettings>
-  ```
+ ```
 
 3. Geben Sie im Visual Studio-Projekt in der Datei AppManifest.xml den Add-In-ID-Wert als **ClientId** *in Kleinbuchstaben*  ein.
     
@@ -179,19 +179,19 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
     
 
 
-  ```XML
+ ```XML
   
 <AppPrincipal>
   <RemoteWebApplication ClientId="a044e184-7de2-4d05-aacf-52118008c44e "/>
 </AppPrincipal>
-  ```
+ ```
 
 4. Die Office-Entwicklertools für Visual Studio verwenden das Token  `~remoteAppUrl` im **StartPage**-Element (z. B.  `<StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>`). Dieses Token löst sich in die URL der Remotekomponente auf, wenn Sie den **Veröffentlichungs**-Assistenten in Visual Studio verwenden. Wenn Sie den Assistenten nicht verwenden (oder wenn Sie ihn verwenden, die Remotekomponente jedoch in Azure veröffentlichen), müssen Sie das Token manuell durch den Wert **Add-In-Domäne** ersetzen, den Sie bei der Registrierung des Add-Ins verwendet haben. Verwenden Sie dabei *exakt*  denselben Wert, einschließlich Portnummer (falls vorhanden), es sei denn, dass Sie auch das HTTPS-Protokoll einschließen. Nachfolgend ist ein Beispiel hierfür aufgeführt.
     
-  ```XML
+ ```XML
   
 <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
-  ```
+ ```
 
 5. Ziehen Sie die Verwendung desselben Werts für das **Title**-Element in der AppManifest.xml-Datei in Betracht, den Sie für das Feld **Titel** in AppRegNew.aspx verwendet haben. Der Wert für das **Title**-Element ist der Name des Add-Ins, den Benutzer nach der Installation des Add-Ins sehen. Für Benutzer ist es möglicherweise verwirrend, wenn das Add-In im Zustimmungsdialogfeld einen anderen Namen hat als in der SharePoint-Benutzeroberfläche.
     
@@ -199,12 +199,12 @@ Bevor Sie das SharePoint-Add-In verpacken und seine Remotekomponenten bereitstel
     
 
 
-  ```XML
+ ```XML
   <Properties>
   <Title>Contoso photo printing app</Title>
   <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
 </Properties>
-  ```
+ ```
 
 
 ## Verwenden der Umleitungs-URL in einem Add-In, das spontan Berechtigungen anfordert

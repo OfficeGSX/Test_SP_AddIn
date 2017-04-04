@@ -131,7 +131,7 @@ ms.assetid: c050d056-8548-4496-a053-016779d723d9
   
 - Элемент проекта для удаленного приемника событий добавляется в проект Надстройка SharePoint. Файл Elements.xml для удаленного приемника событий ссылается на веб-службу в веб-приложении, а также на указанные удаленные события. В следующем примере показано, как файл Elements.xml обрабатывает добавление или удаление элемента списка.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ ms.assetid: c050d056-8548-4496-a053-016779d723d9
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 Чтобы изменить события, обрабатываемые приемником удаленных событий, откройте **Обозреватель решений**, затем окно **Свойства** для нужного приемника удаленных событий, разверните узел **События SharePoint** и задайте для нужных событий значения **True**.
   
@@ -298,8 +298,7 @@ ms.assetid: c050d056-8548-4496-a053-016779d723d9
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -308,8 +307,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 Однако реализация логики отката и логики проверки выполненных действий в веб-службе может замедлить работу обработчика. Логика установки и логика отката изменяют объекты, более или менее удаленные от веб-службы, например хост-сайт SharePoint или внутреннюю базу данных. Если код установки и отката поделен между разделами Try и Catch, то служба отправляет отдельные вызовы удаленным компонентам. Как правило, несколько таких вызовом описаны в каждом разделе. Обычно рекомендуется реализовать логику установки и отката в самом удаленном компоненте с помощью процедуры, которую можно вызвать из раздела Try обработчика. Процедура должна вернуть сообщение об успешном завершении или сбое. В последнем случае код из раздела Try вызывает раздел Catch (например, сообщив об исключении). Раздел Catch лишь уведомляет SharePoint. Назовем это стратегией делегирования обработчиков. Она проиллюстрирована следующим псевдокодом:
   
@@ -317,16 +315,14 @@ Catch
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 Процедура "Do X", которая выполняется в удаленной системе, будет содержать логику отката и логику проверки выполненных действий, как показано ниже.
   
@@ -334,8 +330,7 @@ Catch
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -347,8 +342,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 Например, если обработчик должен выполнить действие с базой данных SQL Server, вы можете установить на сервере SQL Server хранимую процедуру, которая использует блок  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) для реализации логики отката, с блоками [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) для реализации логики проверки выполненных действий.
   
@@ -399,8 +393,7 @@ Send
 
 |**Решения SharePoint**|**Надстройки SharePoint**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -417,11 +410,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -435,8 +426,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

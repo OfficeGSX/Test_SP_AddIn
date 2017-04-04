@@ -219,7 +219,7 @@ Dans le Complément SharePoint, ajoutez des contrôles à la page d'accueil par 
   
 2. Dans la section  `PlaceHolderMain`, ajoutez le code suivant sous le code HTML existant.
     
-  ```HTML
+ ```HTML
   
 <br />
 <div>
@@ -234,7 +234,7 @@ Dans le Complément SharePoint, ajoutez des contrôles à la page d'accueil par 
     <select id="selectlistbox" ></select><button id="deletelistbutton">Delete Selected List</button>
     </p>
 </div>
-  ```
+ ```
 
 
     HTML crée les contrôles suivants :
@@ -282,7 +282,7 @@ Dans cette procédure, vous allez ajouter du code JavaScript pour permettre aux 
     > **REMARQUE**
       > Des tildes illustrant des erreurs apparaîtront dans ce code. Ils disparaîtront dans les étapes ultérieures. 
 
-  ```
+ ```
   
 'use strict';
 
@@ -315,7 +315,7 @@ $(document).ready(function () {
         displayLists();
     });
 
-  ```
+ ```
 
 
     Dans l'étape suivante, vous allez ajouter des fonctions JavaScript pour les définitions. Chaque fonction dans le code est exécutée en appelant  `executeQueryAsync()` qui exécute la demande en attente de manière asynchrone sur le serveur au moyen du modèle objet côté client (CSOM) pour SharePoint. Lorsqu'une fonction est exécutée de manière asynchrone, l'exécution de votre script se poursuit sans attendre une réponse du serveur. Chaque appel de `executeQueryAsync()` comprend deux gestionnaires d'événements. Un gestionnaire répond si la fonction est exécutée avec succès ; l'autre répond en cas d'échec de la fonction. Le tableau qui suit décrit les principales fonctions.
@@ -331,7 +331,7 @@ $(document).ready(function () {
    
 3. Ajoutez le code suivant après la fonction  `onGetUserNameFail()` dans le fichier **App.js**.
     
-  ```
+ ```
   
 function getWebProperties() {
         // Get the number of lists in the current web.
@@ -416,7 +416,7 @@ function createlist() {
     function onDeleteListFail(sender, args) {
         alert('Failed to delete the list. ' + args.get_message());
     }
-  ```
+ ```
 
 
 ## Exécuter l'application
@@ -491,7 +491,7 @@ Avec la possibilité pour les utilisateurs de créer et de supprimer des listes,
   
 2. Sous l'élément  `selectlistbox`, ajoutez le code suivant.
     
-  ```XML
+ ```XML
   
 <p>
     Items
@@ -501,7 +501,7 @@ Avec la possibilité pour les utilisateurs de créer et de supprimer des listes,
     <p>
     <select id="selectitembox"></select> <button id="deleteitembutton">Delete Selected Item</button>
     </p>
-  ```
+ ```
 
 
     Ce code ajoute une zone d'entrée dans laquelle les utilisateurs peuvent spécifier le nom d'un élément, un bouton pour ajouter l'élément à la liste, ainsi qu'un bouton permettant de supprimer l'élément de la liste.
@@ -512,7 +512,7 @@ Avec la possibilité pour les utilisateurs de créer et de supprimer des listes,
   
 4. Dans la fonction  `$(document).ready()`, ajoutez les définitions des fonctions qui sont appelées lorsque l'utilisateur choisit les boutons **Créer un élément** et **Supprimer l'élément sélectionné**. Ajoutez également un gestionnaire d'événements jQuery pour la zone de liste **Listes** afin de garantir que les éléments de liste sont mis à jour lorsque vous sélectionnez une nouvelle liste.
     
-  ```
+ ```
   
 $("#createitembutton").click(function (event) {
             createitem();
@@ -530,7 +530,7 @@ $("#createitembutton").click(function (event) {
             getitems();
             event.preventDefault();
         });
-  ```
+ ```
 
 
     > **REMARQUE**
@@ -547,7 +547,7 @@ $("#createitembutton").click(function (event) {
    
 5. Ajoutez ce code au bas du fichier **App.js**, après la fonction  `onDeleteListFail()`.
     
-  ```
+ ```
   
 function createitem() {
     // Retrieve the list that the user chose, and add an item to it.
@@ -636,7 +636,7 @@ function onGetItemsFail(sender, args) {
     // The list items couldn't be retrieved - display an error message.
     alert('Failed to get items. Error: ' + args.get_message());
 }
-  ```
+ ```
 
 
 ## Exécuter le Complément SharePoint mis à jour

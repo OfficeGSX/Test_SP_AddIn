@@ -163,7 +163,7 @@ La figure 1 montre la fenêtre du navigateur avec les données du service à dis
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -254,7 +254,7 @@ Categories from the Northwind database exposed as an OData service:
     }
 })();
 </script>
-  ```
+ ```
 
 
 ### (Facultatif) Pour modifier la page Default.aspx et utiliser le proxy web à l'aide du point de terminaison REST
@@ -287,7 +287,7 @@ Categories from the Northwind database exposed as an OData service:
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -393,7 +393,7 @@ Categories from the Northwind database exposed as an OData service:
 })();
 </script>
 
-  ```
+ ```
 
 
 ### Pour modifier le fichier manifeste du complément
@@ -404,12 +404,12 @@ Categories from the Northwind database exposed as an OData service:
   
 2. Copiez la définition **RemoteEndPoints** suivante comme enfant du nœud **App**.
     
-  ```XML
+ ```XML
   
 <RemoteEndpoints>
     <RemoteEndpoint Url=" http://services.odata.org" />
 </RemoteEndpoints>
-  ```
+ ```
 
 
     L'élément **RemoteEndpoint** est utilisé pour spécifier le domaine à distance. Le proxy web s'assure que les demandes envoyées aux domaines à distance sont déclarées dans le manifeste du complément. Vous pouvez créer jusqu'à 20 entrées dans l'élément **RemoteEndpoints**. Seule la partie autorisée est prise en compte ;  `http://domain:port` et `http://domain:port/website` sont considérés comme étant le même point de terminaison. Vous pouvez envoyer des appels à différents points de terminaison dans un même domaine avec une seule définition **RemoteEndpoint**.
@@ -462,7 +462,7 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|Exception non gérée **SP n'est pas défini**. <br/> |Assurez-vous d'avoir accédé au fichier SP.RequestExecutor.js dans une fenêtre de navigateur.  <br/> Si vous utilisez votre serveur local comme environnement de développement, vous devez désactiver la vérification en boucle d'IIS (Internet Information Services). Exécutez la commande suivante à partir d'une invite de commandes Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **ATTENTION**> La désactivation de la vérification en boucle d'IIS n'est pas recommandée dans un environnement de production.           |
+|Exception non gérée **SP n'est pas défini**. <br/> |Assurez-vous d'avoir accédé au fichier SP.RequestExecutor.js dans une fenêtre de navigateur.  <br/> Si vous utilisez votre serveur local comme environnement de développement, vous devez désactiver la vérification en boucle d'IIS (Internet Information Services). Exécutez la commande suivante à partir d'une invite de commandes Windows PowerShell.  <br/>```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **ATTENTION**> La désactivation de la vérification en boucle d'IIS n'est pas recommandée dans un environnement de production.           |
 |La taille de la réponse du point de terminaison distant va au-delà de la limite configurée.  <br/> |La taille de la réponse des requêtes du proxy web ne doit pas dépasser 200 Ko.  <br/> |
    
 

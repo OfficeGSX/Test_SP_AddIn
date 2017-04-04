@@ -45,7 +45,7 @@ SharePoint アドインにカスタム列を含める方法について説明し
   
 4. 新しいサイト列の elements.xml ファイルで、以下の例に示す属性と値を持つよう **Field** 要素を編集します。ただし、Visual Studio が生成した値から **ID** 属性の *GUID を変更 **しないでください*** 。このため、 *コピーして貼り付けを使用するときは注意してください*  。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Division" 
@@ -56,14 +56,14 @@ SharePoint アドインにカスタム列を含める方法について説明し
        Type="Text" 
        Required ="FALSE">
 </Field>
-  ```
+ ```
 
 5. 別の [ **サイト列**] を OrientationStage という名前の同じフォルダーに追加します。
     
   
 6. 新しいサイト列に対する elements.xml ファイルで、次の例に示す属性と値が設定されるように **Field** 要素を編集します。ただし、 **ID** 属性の GUID は、Visual Studio が生成した値から変更しないでください。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="OrientationStage" 
@@ -74,11 +74,11 @@ SharePoint アドインにカスタム列を含める方法について説明し
        Type="Choice"
        Required ="TRUE">
 </Field>
-  ```
+ ```
 
 7. これは選択肢フィールドなので、選択可能な項目とユーザーが選択するときにドロップダウン リストに表示する順序を指定する必要があります。また、これは必須フィールドなので、既定値を指定してください。次の子マークアップを **Field** 要素に追加します。
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -95,7 +95,7 @@ SharePoint アドインにカスタム列を含める方法について説明し
       <MAPPING Value="5">Completed</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 8. すべてのファイルを保存します。
     

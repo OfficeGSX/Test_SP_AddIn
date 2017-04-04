@@ -129,7 +129,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
     > **Примечание**
       > Свойство JSLink не поддерживается в списках Survey или Events. Календарь SharePoint представляет собой список Events. 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### Создание настраиваемой логики обработки в файле JavaScript.
@@ -168,7 +168,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### Построение и запуск решения

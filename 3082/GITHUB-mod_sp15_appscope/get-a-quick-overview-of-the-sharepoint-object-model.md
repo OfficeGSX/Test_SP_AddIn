@@ -83,16 +83,14 @@ El código de SharePoint en un cliente comienza por recuperar un objeto de conte
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 Había un ejemplo de este patrón en el artículo anterior de esta serie, en el método  `GetLocalEmployeeName` que se muestra a continuación. Tenga en cuenta lo siguiente sobre este método:
   
@@ -107,8 +105,7 @@ Había un ejemplo de este patrón en el artículo anterior de esta serie, en el 
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -122,8 +119,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

@@ -195,7 +195,7 @@ To use the List View widget, you must do the following:
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -325,7 +325,7 @@ To use the List View widget, you must do the following:
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 > **NOTE**
@@ -340,14 +340,12 @@ The following example shows you how to pass an empty object to the initialize me
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### To build and run the solution
@@ -381,11 +379,9 @@ Depending on your preference, you might want to use the JavaScript instead of HT
   
     
     
+```HTML
 
-```HTML
-
-<div id="ListViewDiv"></div>
-```
+<div id="ListViewDiv"></div>```
 
 Use the following JavaScript code to instantiate the List View.
   
@@ -393,13 +389,11 @@ Use the following JavaScript code to instantiate the List View.
     
 
 
-
-```
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });
-```
+    });```
 
 For an example that shows how to perform the tasks, see the **JSSimple.html** page in the [Use the Desktop List View experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076) code sample.
   
@@ -418,8 +412,7 @@ If you're using HTML markup to declare the widget, you can use the following syn
     
 
 
-
-```
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -427,8 +420,7 @@ If you're using HTML markup to declare the widget, you can use the following syn
                             viewID: 'GUID'
                             }">
 </div> 
-
-```
+```
 
 If you're declaring the widget using JavaScript, use the following syntax to specify a view.
   
@@ -436,15 +428,13 @@ If you're declaring the widget using JavaScript, use the following syntax to spe
     
 
 
-
-```
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });
-```
+    });```
 
 
 ## Conclusion

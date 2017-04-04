@@ -92,8 +92,7 @@ SharePoint 2013 で使用可能な API セットの詳細については、「 [
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -149,8 +148,7 @@ SharePoint 2013 で使用可能な API セットの詳細については、「 [
         }
     }
 </script>
-
-```
+```
 
 SharePoint ホスト型アドインを作成する場合、HTML <script> タグを使用してオブジェクト モデルへの参照を追加できます。SharePoint によってホストされるアドインのアドイン Web を使用すると、JavaScript オブジェクト モデルを使用するために必要なファイルを相対パスで参照できるようになります。
   
@@ -172,8 +170,7 @@ SharePoint ホスト型アドインを作成する場合、HTML <script> タグ�
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -191,8 +188,7 @@ SharePoint ホスト型アドインを作成する場合、HTML <script> タグ�
 
     // Continue your program flow here.
 
-</script>
-```
+</script>```
 
 
 ## SharePoint Web サイトのタスク
@@ -209,8 +205,7 @@ JavaScript を使用して Web サイトを操作するには、最初に **Clie
   
     
     
-
-```
+```
 
 function retrieveWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -232,8 +227,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Web サイトの選択したプロパティのみを取得する
@@ -242,8 +236,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveWebSiteProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -265,8 +258,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 > **メモ**
@@ -282,8 +274,7 @@ Web サイトを変更するには、サイトのプロパティを設定し、 
   
     
     
-
-```
+```
 
 function updateWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -309,8 +300,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## SharePoint リストのタスク
@@ -327,8 +317,7 @@ Web サイトのすべてのリストを返すには、 **load(clientObject)** �
   
     
     
-
-```
+```
 
 function retrieveAllListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -357,8 +346,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### リストの特定のプロパティのみを表示する
@@ -367,8 +355,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -398,8 +385,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ### 取得したリストをコレクションに格納する
@@ -408,8 +394,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -437,8 +422,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### リストの取得にフィルターを適用する
@@ -447,8 +431,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveAllListsAllFields(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -490,8 +473,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ## リストの作成、更新、削除
@@ -508,8 +490,7 @@ JavaScript を使用してリスト オブジェクトを作成するには、 *
   
     
     
-
-```
+```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -536,8 +517,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 リストを作成した後でリストを更新する必要がある場合は、前の例に変更を加えた次の例に示すように、リスト プロパティを設定し、 **update()** 関数を呼び出してから **executeQueryAsync(succeededCallback, failedCallback)** を呼び出すことができます。
   
@@ -545,8 +525,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 .
 .
@@ -561,8 +540,7 @@ clientContext.load(oList);
 clientContext.executeQueryAsync(
     Function.createDelegate(this, this.onQuerySucceeded), 
     Function.createDelegate(this, this.onQueryFailed)
-);
-```
+);```
 
 
 ### リストにフィールドを追加する
@@ -571,8 +549,7 @@ clientContext.executeQueryAsync(
   
     
     
-
-```
+```
 
 function addFieldToList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -604,8 +581,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### リストを削除する
@@ -614,8 +590,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -639,8 +614,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## フォルダーの作成、更新、削除
@@ -657,8 +631,7 @@ JavaScript オブジェクト モデルを使用してフォルダーを操作�
   
     
     
-
-```
+```
 
 function createFolder(resultpanel) {
     var clientContext;
@@ -693,8 +666,7 @@ function createFolder(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### ドキュメント ライブラリのフォルダーを更新する
@@ -703,8 +675,7 @@ function createFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFolder(resultpanel) {
     var clientContext;
@@ -734,8 +705,7 @@ function updateFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### ドキュメント ライブラリのフォルダーを削除する
@@ -744,8 +714,7 @@ function updateFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFolder(resultpanel) {
     var clientContext;
@@ -776,8 +745,7 @@ function deleteFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## ファイルの作成、読み取り、更新、削除
@@ -801,8 +769,7 @@ JavaScript オブジェクト モデルを使用してファイルを操作で�
   
     
     
-
-```
+```
 
 function createFile(resultpanel) {
     var clientContext;
@@ -843,8 +810,7 @@ function createFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### ドキュメント ライブラリのファイルの読み取り
@@ -853,8 +819,7 @@ function createFile(resultpanel) {
   
     
     
-
-```
+```
 
 function readFile(resultpanel) {
     var clientContext;
@@ -885,8 +850,7 @@ function readFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[2];
     }
-}
-```
+}```
 
 
 ### ドキュメント ライブラリのファイルの更新
@@ -895,8 +859,7 @@ function readFile(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFile(resultpanel) {
     var clientContext;
@@ -939,8 +902,7 @@ function updateFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### ドキュメント ライブラリのファイルを削除する
@@ -949,8 +911,7 @@ function updateFile(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFile(resultpanel) {
     var clientContext;
@@ -983,8 +944,7 @@ function deleteFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## SharePoint リスト アイテムのタスク
@@ -1001,8 +961,7 @@ JavaScript を使用してリストからアイテムを返すには、 **getIte
   
     
     
-
-```
+```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1040,8 +999,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Include メソッドを使用して ListItem オブジェクトのプロパティにアクセスする
@@ -1057,8 +1015,7 @@ function onQueryFailed(sender, args) {
     
     
 
-
-```
+```
 
 function retrieveListItemsInclude(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1097,8 +1054,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 この例では **Include** を使用しているので、クエリを実行した後は指定したプロパティのみを使用できます。したがって、指定されているもの以外のプロパティにアクセスしようとすると、 **PropertyOrFieldNotInitializedException** を受け取ります。また、 **get_contentType**、 **get_parentList** など、関数を使用して親オブジェクトのプロパティにアクセスしようとしても、このエラーを受け取ります。
   
@@ -1126,8 +1082,7 @@ SharePoint Foundation 2010 内の JavaScript オブジェクト モデルの **l
   
     
     
-
-```
+```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1153,8 +1108,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### リスト アイテムを更新する
@@ -1163,8 +1117,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function updateListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1187,8 +1140,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### リスト アイテムを削除する
@@ -1197,8 +1149,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteListItem(siteUrl) {
     this.itemId = 2;
@@ -1220,8 +1171,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 たとえば、削除操作によって更新された新しいアイテム数を取得する必要がある場合は、update() メソッドへの呼び出しを含めて、リストを更新します。また、クエリを実行する前に、リスト オブジェクト自体、またはリスト オブジェクト上の **itemCount** プロパティのどちらかを読み込む必要があります。リスト アイテムの開始数と終了数の両方を取得する場合は、前の例に次の変更を加えて、2 つのクエリを実行し、アイテム数を 2 回返す必要があります。
   
@@ -1229,8 +1179,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 function deleteListItemDisplayCount(siteUrl) {
     this.clientContext = new SP.ClientContext(siteUrl);
@@ -1270,8 +1219,7 @@ function displayCount() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## ホスト Web のオブジェクトへのアクセス
@@ -1281,8 +1229,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
     // context: The ClientContext object provides access to
@@ -1319,8 +1266,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
     function errorHandler(data, errorCode, errorMessage) {
         alert("Could not complete cross-domain call: " + errorMessage);
     }
-}
-```
+}```
 
 前の例では、SharePoint 2013 のクロスドメイン ライブラリを使用してホスト Web にアクセスしています。詳細については、「 [クロスドメイン ライブラリを使用してアドインから SharePoint 2013 のデータにアクセスする](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)」を参照してください。
   

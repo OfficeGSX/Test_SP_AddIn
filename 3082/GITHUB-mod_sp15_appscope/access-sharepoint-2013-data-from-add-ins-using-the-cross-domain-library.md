@@ -115,7 +115,7 @@ La figura 2 muestra una página web con los datos en la web de complemento.
   
 3. Haga doble clic en **Anuncios** **>** **Elements.xml**. Pegue los siguientes nodos XML como elementos secundarios del elemento **ListInstance**.
     
-  ```
+ ```
   
 <Data>
     <Rows>
@@ -129,7 +129,7 @@ La figura 2 muestra una página web con los datos en la web de complemento.
         </Row>
     </Rows>
 </Data>
-  ```
+ ```
 
 
 ### Para agregar una nueva página que use la biblioteca entre dominios
@@ -168,7 +168,7 @@ La figura 2 muestra una página web con los datos en la web de complemento.
     
   
 
-  ```
+ ```
   
 <html>
     <head>
@@ -272,7 +272,7 @@ La figura 2 muestra una página web con los datos en la web de complemento.
         </script>
     </body>
 </html>
-  ```
+ ```
 
 
 ### Para crear y ejecutar la solución
@@ -300,7 +300,7 @@ Si prefiere ver ejemplos de código descargables, puede obtener este desde la ga
 |:-----|:-----|
 |Mensaje de error: Lo sentimos, pero hemos tenido algunos problemas para acceder a su sitio.  <br/> También hay un botón para solucionar el error, pero no corrige el problema.  <br/> |Puede que se haya topado con un problema conocido con zonas de seguridad en Internet Explorer. Vea  [Trabajar con la biblioteca entre dominios en diferentes zonas de seguridad de Internet Explorer en los complementos para SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).  <br/> |
 |Mensaje de error: Las funciones requeridas no son compatibles con el explorador. Asegúrese de que está usando IE8, una versión posterior u otro explorador moderno y de que la etiqueta meta "X-UA-Compatible" está definida en "IE=8" o posterior.  <br/> |La biblioteca entre dominios requiere un modo de documento de **IE8** o posterior. En algunos escenarios, el modo de documento está definido en **IE7** de forma predeterminada. Puede usar las herramientas de desarrollo de Internet Explorer para determinar y cambiar el modo de documento de la página. Para más información, consulte [Definir la compatibilidad de documentos](http://msdn.microsoft.com/library/cc288325.aspx).  <br/> |
-|Mensaje de error: 'Type' no está definido.  <br/> Además, el complemento usa el modelo de objetos de JavaScript (JSOM).  <br/> |El JSOM usa el método **Type.registerNamespace** en la biblioteca de Microsoft Ajax para registrar el espacio de nombres **SP**. Use el siguiente código para agregar una referencia a la biblioteca de Microsoft Ajax desde la página: <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|Mensaje de error: 'Type' no está definido.  <br/> Además, el complemento usa el modelo de objetos de JavaScript (JSOM).  <br/> |El JSOM usa el método **Type.registerNamespace** en la biblioteca de Microsoft Ajax para registrar el espacio de nombres **SP**. Use el siguiente código para agregar una referencia a la biblioteca de Microsoft Ajax desde la página: <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## Pasos siguientes
@@ -356,8 +356,7 @@ Puede cambiar el sitio de contexto mediante el extremo de **AppContextSite** (RE
     
 
 
-
-```
+```
 
 executor.executeAsync(
     {
@@ -370,8 +369,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 El siguiente ejemplo de código muestra cómo cambiar el sitio de contexto mediante JSOM:
   
@@ -379,8 +377,7 @@ El siguiente ejemplo de código muestra cómo cambiar el sitio de contexto media
     
 
 
-
-```
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -388,8 +385,7 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);
-```
+context.load(this.web);```
 
 De manera predeterminada, el complemento tiene permisos para la web de complemento, pero no para la web de host. El siguiente ejemplo muestra una sección de manifiesto que declara una solicitud de permiso para leer datos de la web de host:
   
@@ -397,15 +393,13 @@ De manera predeterminada, el complemento tiene permisos para la web de complemen
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 Asegúrese de que crea un recurso en la web de complemento (como una lista o página vacía) para forzar el aprovisionamiento de la web de complemento, lo cual es necesario para usar la biblioteca entre dominios.
   
@@ -438,15 +432,13 @@ El complemento también necesita permiso para acceder a datos del inquilino. El 
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 Para cambiar el sitio de contexto en el código, use el extremo de **AppContextSite** (REST) o el objeto (JSOM), del mismo modo que en la sección [Acceder a datos de web de host](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb). Este es un recordatorio del extremo de REST: /_api/SP.AppContextSite(@target)/web/title?@target='weburl'. Aquí tiene un ejemplo de cómo crear una instancia para el objecto en JSOM:  `appContextSite = new SP.AppContextSite(context, weburl);`.
   

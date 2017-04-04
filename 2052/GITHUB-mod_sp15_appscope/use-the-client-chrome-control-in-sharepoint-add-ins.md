@@ -186,7 +186,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 3. 您还可通过声明性方式使用部件版式控件。在以下代码示例中，HTML 标记无需使用 JavaScript 代码配置和初始化该控件也可声明该控件。以下标记执行下列任务：
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 
     SP.UI.Controls.js 库将自动呈现该控件，前提是它在 **div** 元素中发现 **data-ms-control="SP.UI.Controls.Navigation"** 属性。

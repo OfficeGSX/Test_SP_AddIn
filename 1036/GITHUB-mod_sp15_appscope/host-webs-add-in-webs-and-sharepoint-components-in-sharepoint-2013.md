@@ -196,10 +196,10 @@ Certains points à observer lors du déploiement de composants SharePoint dans u
   
   - Ajoutez un  [WebTemplate, élément (PropertiesDefinition, complexType) (manifeste SharePoint Add-in)](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) dans le manifeste du complément en tant qu'enfant de l'élément **Properties**. Définissez son attribut **Id** sur le GUID de la fonctionnalité de site web de complément et la valeur de l'attribut **Name** de l'élément [WebTemplate, élément (modèle Web)](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx). Le GUID doit être séparé par des tirets et encadré par des accolades « {} », et le GUID et le nom de modèle doivent être séparés par le caractère « # », comme le montre l'exemple suivant :
     
-  ```XML
+ ```XML
   
 <WebTemplate Id="{81dd4ae5-873b-4759-9838-4ad9c3dd2952}#NewSiteType" />
-  ```
+ ```
 
 
     > **REMARQUE**

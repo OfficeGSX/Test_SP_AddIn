@@ -92,8 +92,7 @@ L'exemple de code suivant effectue les tâches suivantes pour ajouter une réfé
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -149,8 +148,7 @@ L'exemple de code suivant effectue les tâches suivantes pour ajouter une réfé
         }
     }
 </script>
-
-```
+```
 
 Lorsque vous créez un complément hébergé par SharePoint, vous pouvez ajouter une référence au modèle objet au moyen de balises HTML <script>. Le site web de complément dans un complément hébergé par SharePoint vous permet d'utiliser des chemins relatifs pour faire référence aux fichiers requis pour l'emploi du modèle objet JavaScript.
   
@@ -172,8 +170,7 @@ L'exemple de code suivant effectue les tâches suivantes pour ajouter une réfé
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -191,8 +188,7 @@ L'exemple de code suivant effectue les tâches suivantes pour ajouter une réfé
 
     // Continue your program flow here.
 
-</script>
-```
+</script>```
 
 
 ## Tâches du site web SharePoint
@@ -209,8 +205,7 @@ Utilisez la propriété web de la classe **ClientContext** pour spécifier les p
   
     
     
-
-```
+```
 
 function retrieveWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -232,8 +227,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Récupérer uniquement les propriétés sélectionnées d'un site web
@@ -242,8 +236,7 @@ Pour réduire les transferts inutiles de données entre le client et le serveur,
   
     
     
-
-```
+```
 
 function retrieveWebSiteProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -265,8 +258,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 > **REMARQUE**
@@ -282,8 +274,7 @@ Pour modifier un site web, vous devez définir ses propriétés et appeler la m�
   
     
     
-
-```
+```
 
 function updateWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -309,8 +300,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Tâches de liste SharePoint
@@ -327,8 +317,7 @@ Pour retourner toutes les listes d'un site web, chargez la collection de listes 
   
     
     
-
-```
+```
 
 function retrieveAllListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -357,8 +346,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Récupérer uniquement les propriétés spécifiées des listes
@@ -367,8 +355,7 @@ L'exemple précédent retourne toutes les propriétés des listes d'un site web.
   
     
     
-
-```
+```
 
 function retrieveSpecificListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -398,8 +385,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ### Stocker des listes récupérées dans une collection
@@ -408,8 +394,7 @@ Comme le montre l'exemple qui suit, vous pouvez opter pour la méthode **loadQue
   
     
     
-
-```
+```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -437,8 +422,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Appliquer des filtres à la récupération de liste
@@ -447,8 +431,7 @@ Comme indiqué dans l'exemple suivant, vous pouvez imbriquer des instructions **
   
     
     
-
-```
+```
 
 function retrieveAllListsAllFields(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -490,8 +473,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ## Créer, mettre à jour et supprimer des listes
@@ -508,8 +490,7 @@ Pour créer un objet de liste au moyen de JavaScript, utilisez l'objet **ListCre
   
     
     
-
-```
+```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -536,8 +517,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 Si vous devez mettre la liste à jour après la création de la liste, vous pouvez définir les propriétés de la liste et appeler la fonction **update()** avant d'appeler **executeQueryAsync(succeededCallback, failedCallback)**, comme le montrent les modifications suivantes apportées à l'exemple précédent.
   
@@ -545,8 +525,7 @@ Si vous devez mettre la liste à jour après la création de la liste, vous pouv
     
 
 
-
-```
+```
 
 .
 .
@@ -561,8 +540,7 @@ clientContext.load(oList);
 clientContext.executeQueryAsync(
     Function.createDelegate(this, this.onQuerySucceeded), 
     Function.createDelegate(this, this.onQueryFailed)
-);
-```
+);```
 
 
 ### Ajouter un champ à une liste
@@ -571,8 +549,7 @@ Utilisez la fonction **add(field)** ou **addFieldAsXml(schemaXml, addToDefaultVi
   
     
     
-
-```
+```
 
 function addFieldToList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -604,8 +581,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Supprimer une liste
@@ -614,8 +590,7 @@ Pour supprimer une liste, appelez la fonction **deleteObject()** de l'objet list
   
     
     
-
-```
+```
 
 function deleteList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -639,8 +614,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Créer, mettre à jour et supprimer des dossiers
@@ -657,8 +631,7 @@ Pour créer un dossier, vous devez utiliser un objet **ListItemCreationInformati
   
     
     
-
-```
+```
 
 function createFolder(resultpanel) {
     var clientContext;
@@ -693,8 +666,7 @@ function createFolder(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Mettre à jour un dossier dans une bibliothèque de documents
@@ -703,8 +675,7 @@ Pour mettre à jour le nom d'un dossier, vous pouvez écrire dans la propriété
   
     
     
-
-```
+```
 
 function updateFolder(resultpanel) {
     var clientContext;
@@ -734,8 +705,7 @@ function updateFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Supprimer un dossier dans une bibliothèque de documents
@@ -744,8 +714,7 @@ Pour supprimer un dossier, appelez la fonction **deleteObject()** dans l'objet. 
   
     
     
-
-```
+```
 
 function deleteFolder(resultpanel) {
     var clientContext;
@@ -776,8 +745,7 @@ function deleteFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## Créer, lire, mettre à jour et supprimer des fichiers
@@ -801,8 +769,7 @@ Pour créer des fichiers, vous devez utiliser un objet **FileCreationInformation
   
     
     
-
-```
+```
 
 function createFile(resultpanel) {
     var clientContext;
@@ -843,8 +810,7 @@ function createFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Lire un fichier dans une bibliothèque de documents
@@ -853,8 +819,7 @@ Pour lire le contenu d'un fichier, vous devez exécuter une opération **GET** d
   
     
     
-
-```
+```
 
 function readFile(resultpanel) {
     var clientContext;
@@ -885,8 +850,7 @@ function readFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[2];
     }
-}
-```
+}```
 
 
 ### Mettre à jour un fichier dans une bibliothèque de documents
@@ -895,8 +859,7 @@ Pour mettre à jour le contenu d'un fichier, vous pouvez utiliser un objet **Fil
   
     
     
-
-```
+```
 
 function updateFile(resultpanel) {
     var clientContext;
@@ -939,8 +902,7 @@ function updateFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Supprimer un fichier dans une bibliothèque de documents
@@ -949,8 +911,7 @@ Pour supprimer un fichier, appelez la fonction **deleteObject()** dans l'objet. 
   
     
     
-
-```
+```
 
 function deleteFile(resultpanel) {
     var clientContext;
@@ -983,8 +944,7 @@ function deleteFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## Tâches d'éléments de liste SharePoint
@@ -1001,8 +961,7 @@ La fonction **getItems(query)** vous permet de définir une requête CAML (Colla
   
     
     
-
-```
+```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1040,8 +999,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Utiliser la méthode Include pour accéder aux propriétés des objets ListItem
@@ -1057,8 +1015,7 @@ Quatre propriétés des objets **ListItem** ne sont pas disponibles par défaut 
     
     
 
-
-```
+```
 
 function retrieveListItemsInclude(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1097,8 +1054,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 Étant donné que cet exemple utilise une méthode **Include**, seules les propriétés spécifiées sont disponibles après l'exécution de la requête. Par conséquent, vous recevez une exception **PropertyOrFieldNotInitializedException** si vous essayez d'accéder à d'autres propriétés que celles qui ont été spécifiées. En outre, vous recevez cette erreur si vous essayez d'utiliser des fonctions telles que **get_contentType** ou **get_parentList** pour accéder aux propriétés des objets contenants.
   
@@ -1126,8 +1082,7 @@ Pour créer des éléments de liste, vous devez créer un objet **ListItemCreati
   
     
     
-
-```
+```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1153,8 +1108,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Mettre à jour un élément de liste
@@ -1163,8 +1117,7 @@ Pour définir les propriétés de la plupart des éléments de liste, vous pouve
   
     
     
-
-```
+```
 
 function updateListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1187,8 +1140,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Supprimer un élément de liste
@@ -1197,8 +1149,7 @@ Pour supprimer un élément de liste, appelez la fonction **deleteObject()** sur
   
     
     
-
-```
+```
 
 function deleteListItem(siteUrl) {
     this.itemId = 2;
@@ -1220,8 +1171,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 Si vous voulez, par exemple, récupérer le nouveau nombre d'éléments résultant d'une opération de suppression, incluez un appel à la méthode update() pour actualiser la liste. De plus, vous devez charger soit l'objet de liste lui-même soit la propriété **itemCount** sur l'objet de liste avant d'exécuter la requête. Si vous souhaitez récupérer à la fois un nombre de début et un nombre de fin des éléments de liste, vous devez exécuter deux requêtes et retourner deux fois le nombre d'éléments, comme indiqué dans la modification suivante de l'exemple précédent.
   
@@ -1229,8 +1179,7 @@ Si vous voulez, par exemple, récupérer le nouveau nombre d'éléments résulta
     
 
 
-
-```
+```
 
 function deleteListItemDisplayCount(siteUrl) {
     this.clientContext = new SP.ClientContext(siteUrl);
@@ -1270,8 +1219,7 @@ function displayCount() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Objets Access sur le site web hôte
@@ -1281,8 +1229,7 @@ Lors du développement de votre complément, vous pouvez avoir besoin d'accéder
   
     
     
-
-```
+```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
     // context: The ClientContext object provides access to
@@ -1319,8 +1266,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
     function errorHandler(data, errorCode, errorMessage) {
         alert("Could not complete cross-domain call: " + errorMessage);
     }
-}
-```
+}```
 
 L'exemple qui précède se sert de la bibliothèque inter-domaines dans SharePoint 2013 pour accéder au site web hôte. Pour plus d'informations, voir  [Accéder à des données SharePoint 2013 à partir de compléments à l'aide de la bibliothèque inter-domaines](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
   

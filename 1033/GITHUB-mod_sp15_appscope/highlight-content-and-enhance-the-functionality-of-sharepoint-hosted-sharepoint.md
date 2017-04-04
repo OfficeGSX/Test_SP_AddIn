@@ -44,12 +44,10 @@ This example uses the  `SP.SOD.executeFunc` method to ensure that the script fil
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 The function that you pass to the  `SP.SOD.executeFunc` function contains the code that you want to run after the callout.js file loads. After you load those files, you use the `CalloutManager` object to create a `Callout` object for each page element that needs to have a callout control associated with it. The `CalloutManager` is a singleton that stores references to every `Callout` object on a page inside an associative array. The `Callout` object has only two required members: `ID` and `launchPoint`. The  `ID` member is the key that is mapped to the `Callout` object in the `CalloutManager`:  `CalloutManager["value of the callout's ID member"]`. The  `launchPoint` member is an HTML page element. You can, for example, create or get a `div` element on your page and pass it as a member of the `Callout` object. By default, the callout control appears whenever a user clicks the `launchPoint` element. This example shows you how to create the simplest possible callout control with only the two required members and a title string.
   
@@ -57,8 +55,7 @@ The function that you pass to the  `SP.SOD.executeFunc` function contains the co
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -66,8 +63,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 This particular callout pops up and displays a title at the top of the control whenever a user clicks on the page element. You use the optional members to customize the control's appearance, behavior, positioning, and actions in some very powerful ways. The callout control also has a set method that you can use to set a value for any parameter after you create an instance of the control.
   
@@ -75,11 +71,9 @@ This particular callout pops up and displays a title at the top of the control w
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 You can also set values for all of the callout members in a  `CalloutOptions` object and then pass that object to the `createNew` method.
   
@@ -87,15 +81,13 @@ You can also set values for all of the callout members in a  `CalloutOptions` ob
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## How to customize the appearance of the callout control
@@ -156,7 +148,7 @@ You can use these methods to customize the behavior of the callout control.
 
 |**Use this method**|**Purpose**|**Valid parameter values**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |Set values for members after you have constructed an instance of the control.  <br/> |A name/value pair that defines a value for any callout control member.  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |Set values for members after you have constructed an instance of the control.  <br/> |A name/value pair that defines a value for any callout control member.  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |Return a  `CalloutOrientation` object that indicates which way the callout control is pointing. This object has four Boolean members: `up`,  `down`,  `left`, and  `right`. While the control is open, two of these values will be **true** and two will be **false** ( `up` and `right`, for example).  <br/> |No parameters  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |Register a callback function that is called whenever the callout control changes to the state specified by the  `eventName` parameter. <br/> |The  `eventName` parameter must be one of these values: `opening`,  `open`,  `closing`,  `closed`. The  `callback` parameter must be a function that takes an instance of the callout control as its first parameter. <br/> |
 |open()  <br/> |Display the control. If the control is already open or opening, this method returns **false** and does nothing. <br/> |No parameters  <br/> |
@@ -173,8 +165,7 @@ You add actions after you've created an instance of the callout control. A callo
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -185,8 +176,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 You can also set values for all of the  `CalloutAction` members in a `CalloutActionOptions` object and pass that object to the `CalloutAction` constructor.
   
@@ -194,8 +184,7 @@ You can also set values for all of the  `CalloutAction` members in a `CalloutAct
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -206,8 +195,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 You can use these members to define the behavior of a callout action.
   
@@ -252,8 +240,7 @@ You can create as many menu entries as you want and add them to the callout acti
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -267,8 +254,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
 The  `CalloutActionMenuEntry` constructor takes three parameters. The first two parameters are required. The third is optional, but it can be helpful because it lets you display an icon with the text.
   
@@ -322,14 +308,12 @@ The  `calloutPositioningProxy` object contains methods and properties that you c
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 You would then pass that function as the value of the  `Callout` object's `positionAlgorithm` member. You can do that when you create the `Callout`, or later by setting the value.
   
@@ -337,12 +321,10 @@ You would then pass that function as the value of the  `Callout` object's `posit
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 You can always take a look at the default positioning logic by launching your browser's JavaScript console (the Internet Explorer F12 Developer Tools, for example).
   
@@ -350,11 +332,9 @@ You can always take a look at the default positioning logic by launching your br
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 You can use these methods in the  `CalloutPositioningProxy` object to write your own positioning logic.
   
@@ -391,8 +371,7 @@ This positioning algorithm makes the control go above or below the text. The  `i
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -408,8 +387,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 This positioning algorithm changes the default direction of the control to  `downAndRight` instead of `upAndRight`, but it uses the default algorithm if there are any collisions.
   
@@ -417,8 +395,7 @@ This positioning algorithm changes the default direction of the control to  `dow
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -430,8 +407,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## Additional resources

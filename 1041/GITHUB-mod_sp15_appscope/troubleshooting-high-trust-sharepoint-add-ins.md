@@ -32,16 +32,14 @@ Web アプリケーション サーバーに Fiddler をインストールした
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 Fiddler をインストールしたら、要求の GUID が含まれる SharePoint からの応答ヘッダーもチェックできます。この要求 GUID は関連付け ID であり、これをログ内で検索することで、その要求に関連するログ エラーがあれば見つけることができます。
   
@@ -55,8 +53,7 @@ Fiddler をインストールしたら、要求の GUID が含まれる SharePoi
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -67,8 +64,7 @@ Fiddler をインストールしたら、要求の GUID が含まれる SharePoi
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 TokenHelper ファイルと Windows ID を使用している場合は、例外をトリガーするコードは次のようになります。
   
@@ -76,14 +72,12 @@ TokenHelper ファイルと Windows ID を使用している場合は、例外�
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 この問題のトラブルシューティングを行うには、まず Visual Studio デバッガーを使用して、アクセス トークンと **ClientContext** オブジェクトが正常に構築されていることを確認します。正常に構築されている場合は、次の可能性を検討します。
   
@@ -98,11 +92,9 @@ clientContext.ExecuteQuery();
     
   
 - アクセスしようとしているリソースに対するアクセス許可を、アドインが持っていません。SharePoint 管理シェル を開き、次の Windows PowerShell コマンドレットを実行します。変数  `$web` はアクセスしようとしている SharePoint の Web サイト、 `$appPrincipal` はアドイン ID です。詳細については、「 [Set-SPAppPrincipalPermission](http://technet.microsoft.com/ja-jp/library/jj219714%28v=office.15%29.aspx)」を参照してください。
-    
-  ```
+    ```
   
-Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl```
 
 - ご使用の Web アプリケーションが匿名の要求を受け入れています。これは、アクセス トークンに実際のユーザー ID が含まれないことを意味します。IIS で、リモート Web アプリのルート ディレクトリに対して匿名アクセスが無効になっていることを確認します。これは、リモート Web アプリケーションをデバッグし、default.aspx.cs (または .vb) ファイルの **Request.LogonUserIdentity** 値を確認して、匿名ユーザーでないことを確認することでもチェックできます。
     

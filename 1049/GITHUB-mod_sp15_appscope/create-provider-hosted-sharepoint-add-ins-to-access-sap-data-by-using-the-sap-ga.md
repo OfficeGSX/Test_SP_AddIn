@@ -191,15 +191,15 @@ OAuth 2.0 в Azure AD позволяет приложениям получать
   
 2. В разделе  `<appSettings>` в Инструменты разработчика Office для Visual Studio добавлены элементы для **ClientID** и **ClientSecret**, которые использует Надстройка SharePoint. Они используется в системе авторизации Azure ACS, если приложение ASP.NET получает доступ к SharePoint. В нашем примере на них можно не обращать внимания, но не следует их удалять. Размещаемые у поставщика Надстройки SharePoint используют эти сведения, даже если надстройка не получает доступ к данным SharePoint. Их значения будут изменяться при каждом нажатии клавиши F5 в Visual Studio. Добавьте в раздел два следующих элемента. Приложение использует их для аутентификации в Azure AD. Помните, что в системах аутентификации и авторизации на основе OAuth приложения, как и пользователи, являются субъектами безопасности.
     
-  ```
+ ```
   
 <add key="ida:ClientID" value="" />
 <add key="ida:ClientKey" value="" />
-  ```
+ ```
 
 3. Вставьте ранее сохраненный код клиента из каталога Azure AD в качестве значения ключа **ida:ClientID**. В точности сохраните регистр и пунктуацию и убедитесь, что в начале и конце значения нет пробелов. В качестве ключа **ida:ClientKey** используйте *ключ*  из каталога. Как и в предыдущем случае, избегайте лишних пробелов и других изменений значения. Теперь раздел `<appSettings>` должен иметь примерно следующий вид (значением **ClientId** может быть код GUID или пустая строка):
     
-  ```
+ ```
   
 <appSettings>
   <add key="ClientId" value="" />
@@ -207,36 +207,36 @@ OAuth 2.0 в Azure AD позволяет приложениям получать
   <add key="ida:ClientID" value="4da99afe-08b5-4bce-bc66-5356482ec2df" />
   <add key="ida:ClientKey" value="URwh/oiPay/b5jJWYHgkVdoE/x7gq3zZdtcl/cG14ss=" />
 </appSettings>
-  ```
+ ```
 
 
     > **Примечание**
       > Azure AD распознает приложение по URL-адресу localhost, который использовался при регистрации. Код и ключ клиента связаны с этим удостоверением. Когда придет время подготовки приложения в Веб-сайт Azure, его нужно будет заново зарегистрировать с новым URL-адресом. 
 4. Не покидая раздел **appSettings**, добавьте ключ **Authority** и укажите в качестве его значения домен Office 365 ( *имя_домена*  .onmicrosoft.com) учетной записи организации. В нашем примере используется учетная запись Bob@<домен_O365>.onmicrosoft.com, поэтому ключ Authority имеет значение `<O365_domain>.onmicrosoft.com`. 
     
-  ```
+ ```
   
 <add key="Authority" value="<O365_domain>.onmicrosoft.com" />
-  ```
+ ```
 
 5. В разделе **appSettings** добавьте ключ **AppRedirectUrl** и задайте в качестве его значения адрес страницы, на который браузер пользователя должен перенаправляться после того, как надстройка ASP.NET получит код авторизации из Azure AD. Как правило, пользователь просматривает именно эту страницу во время отправки вызова к Azure AD. В нашем примере используется URL-адрес SSL с приставкой "/Pages/Default.aspx", как показано ниже. Это значение также нужно изменить при подготовке.
     
-  ```
+ ```
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
-  ```
+ ```
 
 6. Не покидая раздел **appSettings**, добавьте ключ **ResourceUrl** и задайте в качестве его значения URI кода приложения Шлюз SAP для Майкрософт, а *не*  URI кода приложения ASP.NET. Это значение можно узнать у администратора Шлюз SAP для Майкрософт. Ниже приведен пример.
     
-  ```
+ ```
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
-  ```
+ ```
 
 
     Теперь раздел  `<appSettings>` должен иметь примерно следующий вид:
     
 
 
-  ```
+ ```
   <appSettings>
   <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6" />
   <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=" />
@@ -246,7 +246,7 @@ OAuth 2.0 в Azure AD позволяет приложениям получать
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
 </appSettings>
-  ```
+ ```
 
 7. Сохраните и закройте файл web.config.
     
@@ -261,24 +261,24 @@ OAuth 2.0 в Azure AD позволяет приложениям получать
   
 2. Добавьте в файл следующие операторы **using**:
     
-  ```
+ ```
   
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Configuration;
 using System.Web.UI;
 
-  ```
+ ```
 
 3. Измените ключевое слово доступа с **public** на **internal** и добавьте ключевое слово **static** к объявлению класса.
     
-  ```
+ ```
   
 internal static class AADAuthHelper
-  ```
+ ```
 
 4. Добавьте к классу следующие поля. В них хранятся сведения, которые приложение ASP.NET использует для получения маркеров доступа из AAD.
     
-  ```
+ ```
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"];     
@@ -290,11 +290,11 @@ private static readonly ClientCredential _clientCredential = new ClientCredentia
 private static readonly AuthenticationContext _authenticationContext = 
             new AuthenticationContext("https://login.windows.net/common/" + 
                                       ConfigurationManager.AppSettings["Authority"]);
-  ```
+ ```
 
 5. Добавьте к классу следующее свойство. В нем хранится URL-адрес экрана входа Azure AD.
     
-  ```
+ ```
   
 private static string AuthorizeUrl
 {
@@ -308,11 +308,11 @@ private static string AuthorizeUrl
     }
 }
 
-  ```
+ ```
 
 6. Добавьте в класс следующие свойства. Они кэшируют маркеры доступа и обновления, а также проверяют, действительны ли они.
     
-  ```
+ ```
   
 public static Tuple<string, DateTimeOffset> AccessToken
 {
@@ -345,11 +345,11 @@ private static bool IsRefreshTokenValid
     get { return !string.IsNullOrEmpty(RefreshToken); }
 }
 
-  ```
+ ```
 
 7. Добавьте к классу следующие методы. Они используются для проверки кода аутентификации и получения маркера доступа из Azure AD с помощью кода авторизации или маркера обновления.
     
-  ```
+ ```
   
 private static bool IsAuthorizationCodeNotNull(string authCode)
 {
@@ -380,11 +380,11 @@ private static Tuple<string, DateTimeOffset> RenewAccessTokenUsingRefreshToken()
     return new Tuple<string, DateTimeOffset>(authResult.AccessToken, authResult.ExpiresOn);
 }
 
-  ```
+ ```
 
 8. Добавьте к классу следующий метод. Он вызывается из кода ASP.NET для получения маркера доступа перед отправкой запроса данных SAP через Шлюз SAP для Майкрософт.
     
-  ```
+ ```
   
 internal static void EnsureValidAccessToken(Page page)
 {
@@ -417,7 +417,7 @@ internal static void EnsureValidAccessToken(Page page)
         page.Response.Redirect(AuthorizeUrl);
     }
 }
-  ```
+ ```
 
 
 > **Совет**
@@ -435,7 +435,7 @@ internal static void EnsureValidAccessToken(Page page)
   
 2. Добавьте в тело класса следующий код:
     
-  ```
+ ```
   
 public string Price;
 public string Brand;
@@ -445,7 +445,7 @@ public string Engine;
 public int MaxPower;
 public string BodyStyle;
 public string Transmission;
-  ```
+ ```
 
 
 ### Добавление кода для получения данных из SAP через Шлюз SAP для Майкрософт
@@ -453,44 +453,44 @@ public string Transmission;
 
 1. Откройте файл Default.aspx.cs и добавьте следующие операторы **using**.
     
-  ```
+ ```
   
 using System.Net;
 using Newtonsoft.Json.Linq;
-  ```
+ ```
 
 2. Добавьте объявление **const** к классу Default, указав в качестве значения URL-адрес конечной точки OData SAP, которую будет использовать надстройку. Вот пример такого объявления:
     
-  ```
+ ```
   
 private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net:8081/perf/sap/opu/odata/sap/ZCAR_POC_SRV/";
-  ```
+ ```
 
 3. В Инструменты разработчика Office для Visual Studio добавлены методы **Page_PreInit** и **Page_Load**. Закомментируйте код метода **Page_Load** и весь метод **Page_Init**. Этот код не используется в данном примере. Если ваша Надстройка SharePoint будет использовать SharePoint, этот код нужно восстановить. См. раздел  [(Необязательно) Предоставление приложению ASP.NET доступа к SharePoint](#SharePoint).
     
   
 4. Добавьте следующую строку в начало метода **Page_Load**. Это упростит отладку, так как приложение ASP.NET взаимодействует с Шлюз SAP для Майкрософт с помощью SSL (HTTPS), но сервер localhost:port не доверяет сертификату Шлюз SAP для Майкрософт. Без этой строки кода перед открытием страницы Default.aspx появится предупреждение о недействительном сертификате. Некоторые браузеры позволяют пропустить эту ошибку, но в остальных открыть страницу Default.aspx может быть невозможно.
     
-  ```
+ ```
   ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, errors) => true;
-  ```
+ ```
 
 
     > **Важно!**
       > Удалите эту строку, когда вы будете готовы к развертыванию приложения ASP.NET для его подготовки. См. раздел  [Изменение и подготовка надстройки в Azure и Office 365](#Stage). 
 5. Добавьте следующий код в метод **Page_Load**. Строка, передаваемая методу  `GetSAPData`,  это запрос OData.
     
-  ```
+ ```
   if (!IsPostBack)
 {
     GetSAPData("DataCollection?$top=3");
 }
 
-  ```
+ ```
 
 6. Добавьте следующий метод к классу Default. Этот метод сначала обеспечивает наличие в кэше действительного маркера доступа, полученного из Azure AD, а затем создает HTTP-запрос **GET**, который включает маркер доступа и отправляет его конечной точке OData SAP. Возвращаемый результат является объектом JSON, преобразованным в объект .NET **List**. В массиве, связанном с **DataListView**, используются три свойства элементов.
     
-  ```
+ ```
   
 private void GetSAPData(string oDataQuery)
 {
@@ -513,7 +513,7 @@ private void GetSAPData(string oDataQuery)
     }
 }
 
-  ```
+ ```
 
 
 ### Создание пользовательского интерфейса
@@ -521,7 +521,7 @@ private void GetSAPData(string oDataQuery)
 
 1. Откройте файл Default.aspx и добавьте следующую разметку к объекту **form**:
     
-  ```
+ ```
   
 <div>
   <h3>Data from SAP via SAP Gateway for Microsoft</h3>
@@ -537,7 +537,7 @@ private void GetSAPData(string oDataQuery)
     </ItemTemplate>
   </asp:ListView>
 </div>
-  ```
+ ```
 
 2. При желании вы можете придать веб-странице внешний вид страницы SharePoint с помощью SharePoint  [элемента управления хрома](use-the-client-chrome-control-in-sharepoint-add-ins.md) и [таблицы стилей веб-сайта SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md).
     
@@ -592,21 +592,21 @@ private void GetSAPData(string oDataQuery)
   
 2. Если ваша Надстройка SharePoint будет обращаться к данным SharePoint, необходимо кэшировать маркер контекста SharePoint, отправленный POST-запросом на страницу Default.aspx при запуске приложения в SharePoint. Это позволит убедиться, что маркер контекста SharePoint не потеряется при перенаправлении браузера после аутентификации в Azure AD. (Кэшировать этот контекст можно несколькими способами.) Инструменты разработчика Office для Visual Studio добавляет файл SharePointContext.cs к проекту ASP.NET, который выполняет основную часть работы. Чтобы использовать кэш сеанса, добавьте следующий код в блок " `if (!IsPostBack)`"  *перед*  кодом, который вызывает Шлюз SAP для Майкрософт:
     
-  ```
+ ```
   
 if (HttpContext.Current.Session["SharePointContext"] == null)
 {
      HttpContext.Current.Session["SharePointContext"]
         = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 3. Файл SharePointContext.cs отправляет вызовы другому файлу, который Инструменты разработчика Office для Visual Studio добавляет к проекту: TokenHelper.cs. Этот файл содержит большую часть кода, необходимого для получения и использования маркеров доступа для SharePoint. Тем не менее, в нем отсутствует код для продления срока действия устаревшего маркера доступа или маркера обновления. Кроме того, в нем нет кода для кэширования маркеров. Если вы создаете профессиональную надстройку SharePoint, добавить этот код необходимо. Примером может служить логика кэширования из предыдущего этапа. Ваш код также должен кэшировать маркер доступа и продолжать использовать его до истечения срока действия. По истечении срока действия маркера код должен получить новый маркер доступа с помощью маркера обновления.
     
   
 4. Добавьте вызовы данных SharePoint с помощью CSOM или REST. Следующий пример является вариацией кода CSOM, который Инструменты разработчика Office для Visual Studio добавляет к методу **Page_Load**. В этом примере код был перемещен в отдельный метод и начинается с получения кэшированного маркера доступа.
     
-  ```
+ ```
   
 private void GetSharePointTitle()
 {
@@ -618,14 +618,14 @@ private void GetSharePointTitle()
         SharePointTitle.Text = "SharePoint web site title is: " + clientContext.Web.Title;
     }
 }
-  ```
+ ```
 
 5. Добавьте элементы пользовательского интерфейса для отображения данных SharePoint. Ниже показан элемент управления HTML, на который ссылается предыдущий метод:
     
-  ```
+ ```
   
 <h3>SharePoint title</h3><asp:Label ID="SharePointTitle" runat="server"></asp:Label><br />
-  ```
+ ```
 
 
 > **Примечание**

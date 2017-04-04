@@ -120,7 +120,7 @@ ms.assetid: 628c6103-52f9-4d85-9464-4a6862b36640
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -240,7 +240,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. В файле Home.aspx.cs замените все экземпляры  `SPHostUrl` на `SPAppWebUrl`.
     

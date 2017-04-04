@@ -50,30 +50,30 @@ ms.assetid: 91a20d79-318f-44ce-9877-3fa07d03aa09
   
 3. ファイルで 2 つの **asp:Content** 要素を探し、次の 3 番目の **asp:Content** マークアップをその間に追加します。
     
-  ```HTML
+ ```HTML
   
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
     Help
 </asp:Content> 
-  ```
+ ```
 
 4. ID が **PlaceholderAdditionalPageHead** の **asp:Content** 要素を探し、次のマークアップを追加します。
     
-  ```HTML
+ ```HTML
   
 <link rel="Stylesheet" type="text/css" href="../Content/App.css" />
-  ```
+ ```
 
 5. ID が **PlaceHolderMain** の **asp:Content** 要素を探し、子要素があれば削除します。
     
   
 6. 以下を同じ **asp:Content** 要素にコンテンツとして追加します。
     
-  ```HTML
+ ```HTML
   <H3>Having a problem with the add-in?</H3>
 <p> Call the help line for Fabrikam Add-ins:</p>
 <p>1-555-555-5555</p>
-  ```
+ ```
 
 7. ファイルを保存して閉じます。
     
@@ -83,12 +83,12 @@ ms.assetid: 91a20d79-318f-44ce-9877-3fa07d03aa09
   
 9. ID が **PlaceHolderMain** の **asp:Content** 要素を探し、最後に次のマークアップを追加します。
     
-  ```HTML
+ ```HTML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Pages/Help.aspx';"
     Text="Get help for the Employee Orientation add-in" /></p>
 
-  ```
+ ```
 
 10. ファイルを保存して閉じます。
     
@@ -103,10 +103,10 @@ ms.assetid: 91a20d79-318f-44ce-9877-3fa07d03aa09
 
 1. **ソリューション エクスプローラー**で、[ **コンテンツ**] フォルダーにある app.css ファイルを開き、次の行をファイルに追加します。
     
-  ```
+ ```
   
 p {color: green;}
-  ```
+ ```
 
 2. ファイルを保存して閉じます。
     

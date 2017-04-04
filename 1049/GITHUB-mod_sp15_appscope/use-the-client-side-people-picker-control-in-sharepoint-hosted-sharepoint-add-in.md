@@ -144,8 +144,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
     
 
 
-
-```HTML
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -167,8 +166,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>
-```
+</asp:Content>```
 
 
 > **Примечание**
@@ -183,8 +181,7 @@ ms.assetid: 383f265f-ed44-4d09-b2f6-366f13d52347
     
 
 
-
-```
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -255,8 +252,7 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}
-```
+}```
 
 
 ## Дополнительные ресурсы

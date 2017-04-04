@@ -104,17 +104,17 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
   
   - URL-адрес обработчика регистрируется в манифесте надстройки. Эта часть манифеста не отображается в конструкторе манифеста. Чтобы отобразить ее, щелкните правой кнопкой мыши файл AppManifest.xml и выберите пункт **Перейти к коду**. Здесь имеется новый дочерний элемент элемента **Свойства**, который выглядит, как показано ниже. Эта разметка сообщает SharePoint, что когда он закончит всю работу по установке надстройки, необходимо будет вызвать метод **ProcessEvent** этой службы. Настраиваемый обработчик  это последний компонент, запускаемый в процессе установки. Строка `~remoteAppUrl`  это заполнитель, который Инструменты разработчика Office для Visual Studio заменит URL-адресом узла службы. При отладке в качестве этого URL-адреса используется URL-адрес шины обслуживания Azure. Соответственно, при создании пакета для развертывания в рабочей среде используется URL-адрес рабочей среды.
     
-  ```XML
+ ```XML
   
 <InstalledEventEndpoint>~remoteAppUrl/Services/AppEventReceiver.svc</InstalledEventEndpoint>
-  ```
+ ```
 
 3. Откройте файл AppEventReceiver.svc.cs.
     
   
 4. Вы увидите, что Инструменты разработчика Office для Visual Studio создал пример реализации метода **ProcessEvent**. Все реализации этого метода начинаются с инициализации объекта **SPRemoteEventResult** и заканчиваются возвращением этого объекта в SharePoint. Помимо прочего, этот объект сообщает SharePoint, следует ли откатить событие из-за сбоя кода настраиваемого обработчика. Кроме того, возможно, что пакет средств включил в этот метод блок **using**, который создает объект **ClientContext**. Настраиваемый обработчик в надстройке Chain Store не будет делать обратный вызов в SharePoint, поэтому удалите этот блок. Теперь этот метод должен иметь указанный ниже вид.
     
-  ```cs
+ ```cs
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
@@ -122,11 +122,11 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
 
     return result;
 }
-  ```
+ ```
 
 5. Приемник событий можно вызвать с помощью любого из трех возможных событий надстройки, поэтому добавьте указанную ниже структуру **switch** в метод **ProcessEvent** между строками, в которых выполняется создание и возвращение объекта `result`. В именах событий имеется строка App (Приложение), так как ранее надстройки назывались приложениями.
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -144,7 +144,7 @@ switch (properties.EventType)
          
         break;
 }
-  ```
+ ```
 
 6. Для регистрации магазина в Гонконге в качестве клиента в удаленном веб-приложении наш код, выполняемый во время установки, должен вызывать хранимую процедуру SQL. Очень важно, чтобы при сбое процесса обработчик сообщил SharePoint, что необходимо откатить установку надстройки. Поэтому добавьте указанный ниже блок **try/catch** вместо `TODO2`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -155,7 +155,7 @@ switch (properties.EventType)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -167,32 +167,32 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 7. URL-адрес хост-сайта, представляющий собой дискриминатор клиента в примере, включается в сведения, которые SharePoint передает в приемник в параметре **SPRemoteEventProperties**. Добавьте указанную ниже строку в метод **ProcessEvent** сразу же после блока инициализации объекта **SPRemoteEventResult**.
     
-  ```cs
+ ```cs
   
 string tenantName = properties.AppEventProperties.HostWebFullUrl.ToString();
-  ```
+ ```
 
 8. Теперь в нашем коде придется учесть небольшую особенность свойства **AppEventProperties.HostWebFullUrl**. В большинстве других контекстов SharePoint добавляет закрывающий символ косой черты / в конец URL-адреса хост-сайта, поэтому в нашем примере кода предполагается, что этот символ присутствует. Но SharePoint добавляет этот символ в конец значения **HostWebFullUrl** тогда и только тогда, когда хост-сайт является сайтом верхнего уровня семейства веб-сайтов. Так как наш веб-сайт магазина в Гонконге представляет собой подсайт в семействе веб-сайтов, то нам потребуется добавить этот символ, чтобы во всем примере использовалось одно и то же имя клиента. Добавьте указанный ниже код сразу после блока инициализации объекта `tenantName`.
     
-  ```cs
+ ```cs
   if (!tenantName.EndsWith("/"))
 {
     tenantName += "/";
 }
-  ```
+ ```
 
 9. Добавьте указанные ниже операторы **using** в начало файла.
     
-  ```
+ ```
   
 using System.Data.SqlClient;
 using System.Data;
 using ChainStoreWeb.Utilities;
-  ```
+ ```
 
 10. Добавьте указанный ниже метод в класс  `AppEventReceiver`. Мы не будем подробно рассматривать его, так как цель этой серии статей  научить вас программированию надстроек SharePoint, а не программированию для SQL Server или Azure. 
     
@@ -200,7 +200,7 @@ using ChainStoreWeb.Utilities;
     
 
 
-  ```cs
+ ```cs
   
 private void CreateTenant(string tenantName)
 {
@@ -218,7 +218,7 @@ private void CreateTenant(string tenantName)
         cmd.ExecuteNonQuery();
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 ## Создание обработчика события удаления
@@ -245,7 +245,7 @@ private void CreateTenant(string tenantName)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -257,11 +257,11 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 3. Добавьте указанный ниже метод в класс  `AppEventReceiver`.
     
-  ```cs
+ ```cs
   
 private void DeleteTenant(string tenantName)
 {
@@ -279,7 +279,7 @@ private void DeleteTenant(string tenantName)
         cmd.ExecuteNonQuery();                
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 > **Примечание**

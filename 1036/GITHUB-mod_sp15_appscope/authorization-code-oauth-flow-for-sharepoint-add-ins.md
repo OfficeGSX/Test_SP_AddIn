@@ -82,8 +82,7 @@ Le complément d'impression de photos est inscrit et possède donc un ID client,
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
@@ -92,8 +91,7 @@ Le complément d'impression de photos est inscrit et possède donc un ID client,
 
   </appSettings>
 
-</configuration>
-```
+</configuration>```
 
 Voici les étapes du flux de code d'authentification.
   
@@ -136,14 +134,12 @@ Les alias d'étendue n'interviennent que dans le contexte d'utilisation de la pa
     
 
 
-
-```cs
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));
-```
+    "https://contoso.com/RedirectAccept.aspx "));```
 
 La valeur du paramètre  _scope_,  `Web.Read List.Write`, est un exemple de demande d'autorisation à l'aide des alias d'étendue. Le paramètre  _scope_ est un ensemble délimité par des espaces de demandes d'étendue d'autorisation et de droits.
   
@@ -202,15 +198,13 @@ L' **URI de redirection** utilisé par les compléments qui demandent des autori
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>
-```
+<configuration>```
 
 La valeur peut être récupérée à l'aide d'un appel à  `WebConfigurationManager.AppSettings.Get("RedirectUri")`.
   
@@ -249,8 +243,7 @@ Pour obtenir un exemple plus complexe de l'utilisation du jeton d'actualisation 
     
 
 
-
-```cs
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -273,8 +266,7 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-
-```
+```
 
 
 ## Obtenir un exemple de code-behind d'une page accédant à SharePoint
@@ -302,8 +294,7 @@ Le code-behind d'une page Default.aspx est présenté ci-dessous. Cette page pr�
 - La classe **TokenCache** indiquée dans ce code est définie ci-dessous.
     
   
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -354,8 +345,7 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}
-```
+}```
 
 Voici un exemple de code pour un module de cache de jeton appelé par l'exemple de code précédent. Il utilise les cookies en guise de cache. Il existe d'autres options de mise en cache. Pour en savoir plus, voir  [Gestion des jetons de sécurité dans les compléments SharePoint à faible niveau de fiabilité hébergés par le fournisseur](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).
   
@@ -363,8 +353,7 @@ Voici un exemple de code pour un module de cache de jeton appelé par l'exemple 
     
 
 
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -433,8 +422,7 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-
-```
+```
 
 
 ## Ressources supplémentaires

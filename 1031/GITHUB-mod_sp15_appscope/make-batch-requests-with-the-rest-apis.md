@@ -57,8 +57,7 @@ Das folgende Beispiel zeigt eine unformatierte HTTP-Anforderung, die zwei GET-Vo
   
     
     
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -80,8 +79,7 @@ Content-Transfer-Encoding: binary
 GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Information%20List')/items?$select=Title HTTP/1.1
 
 --batch_e3b6819b-13c3-43bb-85b2-24b14122fed1--
-
-```
+```
 
 Das folgende Beispiel zeigt den Textkörper einer unformatierten HTTP-Anforderung, die ein DELETE einer Liste und ein GET der SharePoint-Liste der Listen zusammenfasst.
   
@@ -89,8 +87,7 @@ Das folgende Beispiel zeigt den Textkörper einer unformatierten HTTP-Anforderun
     
 
 
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -116,8 +113,7 @@ Content-Transfer-Encoding: binary
 
 GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 
---batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--
-```
+--batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--```
 
 
 ## Links zu nützlichen Bibliotheken

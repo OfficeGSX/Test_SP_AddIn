@@ -90,7 +90,7 @@ SharePoint アドイン の SharePoint アドイン のインストール イベ
 
 
 
-  ```cs
+ ```cs
   
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
@@ -98,11 +98,11 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 
     return result;
 }
-  ```
+ ```
 
 7.  `result` 変数を宣言する行のすぐ下に、処理するイベントを特定する以下のスイッチ構造を追加します。
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -113,14 +113,14 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+ ```
 
 
     > **メモ**
       > **AppInstalled**、 **AppUpdated**、 **AppInstalling** の各イベント用のハンドラーがある場合、それらのイベントによりアドイン マニフェストに登録されている専用の URL が取得されます。そのため、それぞれでエンドポイントが異なる *可能性*  がありますが、この記事 (および Office Developer Tools for Visual Studio) ではエンドポイントはまったく同じであると想定しています。したがって、呼び出したイベントをコードによって判別する必要があります。
 8. 「 [アドイン イベント ハンドラーにロールバック ロジックと「既に実行」ロジックを含める](handle-events-in-sharepoint-add-ins.md#Rollback)」で説明されているように、インストール ロジックにエラーがあるときには、ほとんどの場合、アドイン インストールをキャンセルし、SharePoint がインストールで行った操作内容を SharePoint にロールバックさせ、ハンドラーが実行したことをロールバックする必要があります。それを行う 1 つの方法として、AppInstalled イベント用の **case** 内に以下のコードを追加します。
     
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppInstalled:
   try
@@ -135,7 +135,7 @@ case SPRemoteEventType.AppInstalled:
       // Rollback logic goes here.
   }
   break;
-  ```
+ ```
 
 
     > **メモ**
@@ -146,7 +146,7 @@ case SPRemoteEventType.AppInstalled:
     
 
 
-  ```cs
+ ```cs
   
 SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
@@ -175,11 +175,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+ ```
 
 10. リスト作成メソッドを、以下のコードを使用して **AppEventReceiver** クラスに **private** メソッドとして追加します。 `TokenHelper` クラスには、アドイン イベントのクライアント コンテキストを取得するために最適化されている特別なメソッドが含まれていることに注目してください。最後のパラメーターに **false** を渡すことにより、コンテキストがホスト Web 用であることが示されます。
     
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
@@ -195,11 +195,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     return errorMessage;
 }
 
-  ```
+ ```
 
 11. ロールバック ロジックは基本的には例外処理ロジックで、SharePoint CSOM (クライアント側オブジェクト モデル) に含まれている  [ExceptionHandlingScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.aspx) により、Web サービスは例外処理を SharePoint サーバーに委任できます (「 [[方法] 例外処理範囲を使用する](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx)」もご覧ください)。以下のコードを、前述のスニペットの **if** ブロックに追加します。
     
-  ```cs
+ ```cs
   
 ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext);
 
@@ -224,11 +224,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+ ```
 
 12. 前述のスニペットでは SharePoint に対する呼び出し ( **ExecuteQuery**) は 1 度だけですが、残念なことに 1 度にすべてを処理できません。例外スコープで参照するすべてのオブジェクトが最初にクライアントにロードされなければなりません。それで、以下のコードを **ExceptionHandlingScope** のコンストラクターの *上*  に追加します。
     
-  ```cs
+ ```cs
   
 ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
@@ -237,11 +237,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+ ```
 
 13. ホスト Web リストを作成するためのコードは  [StartTry](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartTry.aspx) ブロックに置きますが、このコードではまずリストがすでに追加されているかどうかをチェックする必要があります (「 [アドイン イベント ハンドラーにロールバック ロジックと「既に実行」ロジックを含める](handle-events-in-sharepoint-add-ins.md#Rollback)」をご覧ください)。 [ConditionalScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ConditionalScope.aspx) クラスを使用すると、If-then-else ロジックを SharePoint サーバーに委任できます (「 [[方法] 条件範囲を使用する](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx)」もご覧ください)。以下のコードを、 **StartTry** ブロック内に追加します。
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => foundList.ServerObjectIsNull.Value == true, true);
@@ -253,11 +253,11 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+ ```
 
 14.  [StartCatch](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartCatch.aspx) ブロックはリストの作成を元に戻しますが、リストが作成されたかどうかを最初にチェックする必要があります。リストの作成が終了する前に **StartTry** ブロックで例外がスローされる可能性があるためです。以下のコードを、 **StartCatch** ブロックに追加します。
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => createdList.ServerObjectIsNull.Value != true, true);
@@ -265,7 +265,7 @@ using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+ ```
 
 
     > **ヒント**
@@ -279,7 +279,7 @@ using (condScope.StartScope())
     
 
 
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
@@ -341,7 +341,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
     > **ヒント**
@@ -365,7 +365,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     
 
 
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppUninstalling:
 
@@ -384,7 +384,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+ ```
 
 3. リストをリサイクルするためのヘルパー メソッドを追加します。このコードの以下の点に注目してください。
     
@@ -398,7 +398,7 @@ break;
     
   
 
-  ```cs
+ ```cs
   
 private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
@@ -464,7 +464,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
 ### アドイン アンインストール レシーバーをデバッグしてテストするには

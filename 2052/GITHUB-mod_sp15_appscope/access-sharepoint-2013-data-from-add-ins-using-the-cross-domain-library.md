@@ -115,7 +115,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
   
 3. 双击"Announcements" **>** "Elements.xml"。粘贴以下 XML 节点作为 **ListInstance** 元素的子元素。
     
-  ```
+ ```
   
 <Data>
     <Rows>
@@ -129,7 +129,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
         </Row>
     </Rows>
 </Data>
-  ```
+ ```
 
 
 ### 添加使用跨域库的新页面
@@ -168,7 +168,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
   
 
-  ```
+ ```
   
 <html>
     <head>
@@ -272,7 +272,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
         </script>
     </body>
 </html>
-  ```
+ ```
 
 
 ### 生成并运行解决方案
@@ -300,7 +300,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
 |:-----|:-----|
 |错误消息：很抱歉，访问您的网站时出现问题。  <br/> 有一个按钮可以修复此错误，但无法纠正该问题。  <br/> |您可能在 Internet Explorer 中遇到安全区域的已知问题，请参阅 [跨 SharePoint 外接程序中的不同 Internet Explorer 安全区域使用跨域库](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md)。  <br/> |
 |错误消息：您的浏览器不支持所需功能。请确保您使用的是 IE 8 或更高版本或其他现代浏览器。请确保 ""X-UA-Compatible"" META 标记设置为 ""IE=8"" 或更高版本。  <br/> |跨域库需要 **IE8** 或更高版本的文档模式。在某些情况下，文档模式默认设置为 **IE7** 。您可以使用 Internet Explorer 开发人员工具来确定并更改页面的文档模式。有关详细信息，请参阅 [定义文档兼容性](http://msdn.microsoft.com/zh-cn/library/cc288325.aspx)。  <br/> |
-|错误消息："类型"未定义。  <br/> 此外，您的外接程序使用 JavaScript 对象模型 (JSOM)。  <br/> |JSOM 使用 Microsoft Ajax library 的 **Type.registerNamespace** 方法注册 **SP** 命名空间。使用以下代码将引用从页面添加到 Microsoft Ajax library。 <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|错误消息："类型"未定义。  <br/> 此外，您的外接程序使用 JavaScript 对象模型 (JSOM)。  <br/> |JSOM 使用 Microsoft Ajax library 的 **Type.registerNamespace** 方法注册 **SP** 命名空间。使用以下代码将引用从页面添加到 Microsoft Ajax library。 <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## 后续步骤
@@ -356,8 +356,7 @@ ms.assetid: bc37ff5c-1285-40af-98ae-01286696242d
     
 
 
-
-```
+```
 
 executor.executeAsync(
     {
@@ -370,8 +369,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 以下代码示例显示了如何使用 JSOM 更改上下文网站：
   
@@ -379,8 +377,7 @@ executor.executeAsync(
     
 
 
-
-```
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -388,8 +385,7 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);
-```
+context.load(this.web);```
 
 默认情况下，您的外接程序具有访问外接程序 Web 的权限，但不具有访问主机 Web 的权限。以下示例显示了声明读取主机 Web 数据的权限请求的清单部分：
   
@@ -397,15 +393,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 请确保在外接程序 Web 上创建一个资源（如空页面或列表）以设置外接程序 Web，这需要使用跨域库。
   
@@ -438,15 +432,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 若要在代码中切换上下文网站，请使用 **AppContextSite** 终结点 (REST) 或对象 (JSOM)，如 [访问主机 Web 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)部分。以下是 REST 终结点的提醒：/_api/SP.AppContextSite(@target)/web/title?@target='weburl'，以及如何实例化 JSOM 中的对象的示例： `appContextSite = new SP.AppContextSite(context, weburl);`。
   

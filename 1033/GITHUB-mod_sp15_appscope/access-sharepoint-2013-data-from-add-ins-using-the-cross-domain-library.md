@@ -122,7 +122,7 @@ Figure 2 shows a webpage that displays the data on the add-in web.
   
 3. Double click **Announcements** **>** **Elements.xml**. Paste the following XML nodes as children of the **ListInstance** element.
     
-  ```
+ ```
   
 <Data>
     <Rows>
@@ -136,7 +136,7 @@ Figure 2 shows a webpage that displays the data on the add-in web.
         </Row>
     </Rows>
 </Data>
-  ```
+ ```
 
 
 ### To add a new page that uses the cross-domain library
@@ -175,7 +175,7 @@ Figure 2 shows a webpage that displays the data on the add-in web.
     
   
 
-  ```
+ ```
   
 <html>
     <head>
@@ -279,7 +279,7 @@ Figure 2 shows a webpage that displays the data on the add-in web.
         </script>
     </body>
 </html>
-  ```
+ ```
 
 
 ### To build and run the solution
@@ -307,7 +307,7 @@ If you prefer downloadable code samples, you can get this one from code gallery.
 |:-----|:-----|
 |Error message: Sorry, we had some trouble accessing your site.  <br/> There is also a button to fix the error, but it doesn't correct the problem.  <br/> |You may have hit a known problem with security zones in Internet Explorer, see  [Work with the cross-domain library across different Internet Explorer security zones in SharePoint Add-ins](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).  <br/> |
 |Error message: The required functionalities are not supported by your browser. Please make sure you are using IE 8 or above, or other modern browser. Please make sure the 'X-UA-Compatible' meta tag is set to be 'IE=8' or above.  <br/> |The cross-domain library requires a document mode of **IE8** or above. In some scenarios, the document mode is set to **IE7** by default. You can use the Internet Explorer developer tools to determine and change the document mode of your page. For more information, see [Defining Document Compatibility](http://msdn.microsoft.com/library/cc288325.aspx).  <br/> |
-|Error message: 'Type' is undefined.  <br/> Additionally, your add-in uses the JavaScript Object Model (JSOM).  <br/> |The JSOM uses the **Type.registerNamespace** method in the Microsoft Ajax library to register the **SP** namespace. Use the following code to add a reference to the Microsoft Ajax library from your page: <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|Error message: 'Type' is undefined.  <br/> Additionally, your add-in uses the JavaScript Object Model (JSOM).  <br/> |The JSOM uses the **Type.registerNamespace** method in the Microsoft Ajax library to register the **SP** namespace. Use the following code to add a reference to the Microsoft Ajax library from your page: <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## Next steps
@@ -363,8 +363,7 @@ You can change the context site by using the **AppContextSite** endpoint (REST) 
     
 
 
-
-```
+```
 
 executor.executeAsync(
     {
@@ -377,8 +376,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 The following code example shows how to change the context site using JSOM:
   
@@ -386,8 +384,7 @@ The following code example shows how to change the context site using JSOM:
     
 
 
-
-```
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -395,8 +392,7 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);
-```
+context.load(this.web);```
 
 By default, your add-in has permissions to the add-in web, but not to the host web. The following example shows a manifest section that declares a permission request to read data from the host web:
   
@@ -404,15 +400,13 @@ By default, your add-in has permissions to the add-in web, but not to the host w
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 Make sure that you create a resource on the add-in web (like an empty page or list) to force the provisioning of the add-in web, which is required to use the cross-domain library.
   
@@ -445,15 +439,13 @@ Your add-in also needs permission to access data from the tenant. The following 
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 To switch the context site in your code, use the **AppContextSite** endpoint (REST) or object (JSOM), just like in the [Access data from the host web](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) section. Here is a reminder of the REST endpoint: /_api/SP.AppContextSite(@target)/web/title?@target='weburl', and an example on how to instantiate the object in JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
   

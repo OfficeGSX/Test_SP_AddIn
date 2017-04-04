@@ -57,18 +57,14 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
     
   
 - Ссылка на библиотеку jQuery в разметке страницы. Например:
-    
-```HTML
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
+    ```HTML
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
 
 - Следующие элементы управления в разметке страницы.
-    
-```HTML
+    ```HTML
 <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
+<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>```
 
 
 ## Пример кода 1. Отправка файлов в доменах SharePoint с помощью API REST и jQuery
@@ -84,8 +80,7 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -248,8 +243,7 @@ function getQueryStringParameter(paramToRetrieve) {
         var singleParam = params[i].split("=");
         if (singleParam[0] == paramToRetrieve) return singleParam[1];
     }
-}
-```
+}```
 
 
 ## Пример кода 2. Отправка файлов в одном домене с помощью API REST и jQuery
@@ -265,8 +259,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -401,8 +394,7 @@ function uploadFile() {
 // Display error messages. 
 function onError(error) {
     alert(error.responseText);
-}
-```
+}```
 
 
 ## Дополнительные ресурсы

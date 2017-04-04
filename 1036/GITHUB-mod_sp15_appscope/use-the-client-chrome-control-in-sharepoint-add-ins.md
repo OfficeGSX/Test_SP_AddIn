@@ -186,7 +186,7 @@ La Figure 1 présente une page web avec le contrôle Chrome.
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 3. Vous pouvez également utiliser le contrôle Chrome de façon déclarative. Dans l'exemple de code suivant, le code HTML déclare le contrôle sans utiliser de code JavaScript pour configurer et initialiser le contrôle. Le code effectue les tâches suivantes :
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 
     La bibliothèque SP.UI.Controls.js effectue automatiquement un rendu du contrôle si elle trouve l'attribut **data-ms-control="SP.UI.Controls.Navigation"** dans un élément **div**.

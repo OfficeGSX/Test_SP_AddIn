@@ -72,8 +72,7 @@ Le code C# suivant montre comment effectuer cette demande **GET** qui renvoie un
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -84,8 +83,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Cette demande est légèrement différente si vous écrivez votre complément en JavaScript à l'aide de la bibliothèque inter-domaines SharePoint 2013. Dans ce cas, il n'est pas nécessaire de fournir un jeton d'accès. Le code ci-après montre l'aspect de cette demande si vous utilisez la bibliothèque inter-domaines et si vous voulez recevoir la représentation OData des listes au format XML, et non JSON. (Étant donné que le format par défaut est Atom, vous n'avez pas besoin d'inclure d'en-tête **Accept**.) Pour plus d'informations sur l'utilisation de la bibliothèque inter-domaines, voir  [Accéder à des données SharePoint 2013 à partir de compléments à l'aide de la bibliothèque inter-domaines](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
   
@@ -93,8 +91,7 @@ Cette demande est légèrement différente si vous écrivez votre complément en
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -107,8 +104,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 Le code de l'exemple ci-après montre comment demander une représentation JSON de toutes les listes d'un site à l'aide de C#. Il suppose que vous disposez d'un jeton d'accès OAuth stocké dans la variable  `accessToken`.
   
@@ -116,16 +112,14 @@ Le code de l'exemple ci-après montre comment demander une représentation JSON 
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### Obtention des propriétés qui ne sont pas renvoyées avec la ressource
@@ -161,8 +155,7 @@ Lors de la création, de la mise à jour et de la suppression d'entités SharePo
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -171,8 +164,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Si vous utilisez le flux d'authentification et d'autorisation décrit dans  [Autorisation et authentification des compléments dans SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md), vous n'avez pas à inclure la valeur de chiffrement de demande dans vos demandes.
   
@@ -188,8 +180,7 @@ Si vous créez un Complément SharePoint hébergé par SharePoint, il n'est pas 
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -207,8 +198,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 L'exemple ci-dessous montre comment mettre à jour la liste créée dans l'exemple précédent. L'exemple change le titre de la liste, utilise JQuery et suppose que vous effectuez cette opération dans un complément hébergé sur SharePoint.
   
@@ -216,8 +206,7 @@ L'exemple ci-dessous montre comment mettre à jour la liste créée dans l'exemp
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -234,8 +223,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 La valeur de la clé **IF-MATCH** dans les en-têtes de la requête est l'emplacement où vous spécifiez la valeur **etag** d'une liste ou d'un élément de liste. Cette valeur spécifique s'applique uniquement aux listes et aux éléments de liste. Elle permet d'éviter des problèmes d'accès concurrentiel lors de la mise à jour de ces entités. L'exemple précédent utilise un astérisque (*) pour cette valeur. Vous pouvez utiliser cette valeur lorsqu'il n'y a aucun risque de rencontrer des problèmes d'accès concurrentiel. Sinon, vous devez récupérer la valeur **etag**, une liste ou un élément de liste en effectuant une requête **GET** qui récupère cette entité. Les en-têtes de réponse de la réponse HTTP obtenue transmettent l'etag comme valeur de la clé **ETag**. Cette valeur est également incluse dans les métadonnées de l'entité. L'exemple ci-après montre la balise ouvrante  `<entry>` du nœud XML qui contient les informations de liste. La propriété **m:etag** comporte la valeur **etag**.
   
@@ -243,14 +231,12 @@ La valeur de la clé **IF-MATCH** dans les en-têtes de la requête est l'emplac
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## Création d'un site à l'aide d'une requête REST
@@ -260,8 +246,7 @@ L'exemple suivant montre comment créer un site en JavaScript.
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -285,8 +270,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## Différences des requêtes REST en fonction de l'environnement
@@ -387,8 +371,7 @@ Les Compléments SharePoint peuvent obtenir l'URL du site web de complément et 
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -425,8 +408,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## Propriétés utilisées dans les requêtes REST

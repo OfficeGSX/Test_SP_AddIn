@@ -53,20 +53,20 @@ Pour plus de détails sur la façon de créer un gestionnaire d'événements de 
 
 1. Ouvrez le fichier AppEventReceiver.svc.cs et ajoutez une structure conditionnelle à la méthode  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) , laquelle vérifie si l'événement qui a appelé le gestionnaire est l'événement de mise à jour. Votre code de mise à jour est placé dans cette structure. S'il doit accéder à SharePoint, vous pouvez utiliser le modèle objet client (CSOM) du code managé SharePoint ou l'interface REST (Representational State Transfer). L'emplacement de la structure conditionnelle dans la méthode dépend de la façon dont vous avez structuré le reste du code dans la méthode. Généralement, celle-ci se compose de deux structures conditionnelles similaires qui testent les événements d'installation et de désinstallation de complément. Elle peut se trouver au sein d'une structure conditionnelle qui contrôle certaines propriétés ou sous-propriétés de l'objet [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) transmis à la méthode [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) pour les valeurs **null** ou incorrectes. Elle peut également se trouver dans un bloc **try**. L'exemple ci-dessous illustre la structure. L'élément  _properties_ est un objet [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) .
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. Pour utiliser le modèle CSOM dans le gestionnaire, ajoutez (dans le bloc conditionnel) un bloc **using** qui obtient un objet [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) en appelant la méthode **TokenHelper.CreateAppEventClientContext**. Indiquez **true** pour le deuxième paramètre pour accéder au service web de complément. Indiquez **false** pour accéder au site web hôte. Si vous avez besoin d'accéder aux deux, vous devrez utiliser deux objets de contexte client différents.
     
   
 3. Si le gestionnaire doit accéder à des composants qui ne sont pas des composants SharePoint, placez le code en dehors des blocs de contexte client. Votre code doit être structuré comme suit.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -81,11 +81,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. Pour utiliser l'interface REST, votre code utilise d'autres méthodes de la classe **TokenHelper** pour obtenir un jeton d'accès, qui est alors inclus dans les requêtes qu'il envoie à SharePoint. Pour plus d'informations, voir [Effectuer des opérations de base à l'aide de terminaux REST SharePoint 2013](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md). Votre code doit être structuré comme suit.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -102,15 +102,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. Pour accéder à SharePoint, votre code REST doit aussi connaître l'URL du site web hôte, du site web de complément ou des deux. Ces URL sont toutes les deux des sous-propriétés de l'objet  [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) transmis à la méthode [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) . Le code suivant montre comment les obtenir.
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 Lorsque vous mettez à jour un complément pour la deuxième fois (ou la troisième, etc.), vous devez parfois vous assurer que certains éléments de votre logique ne sont pas exécutés plusieurs fois sur la même instance de complément. La procédure suivante vous montre comment faire.
   
@@ -128,7 +128,7 @@ Lorsque vous mettez à jour un complément pour la deuxième fois (ou la troisi�
   
 3. Ajoutez votre nouvelle logique de mise à jour (pour la mise à jour de 2.0.0.0 vers 3.0.0.0) en dessous de cette structure, comme dans l'exemple ci-dessous.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -137,11 +137,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. Pour chaque mise à jour ultérieure, répétez ces étapes. Pour la mise à jour de 3.0.0.0 vers 4.0.0.0, votre code doit avoir la structure suivante.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -156,7 +156,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **IMPORTANTE**
@@ -196,8 +196,7 @@ Lors de la deuxième (ou de la troisième, etc.) mise à jour, votre logique de 
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -214,8 +213,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 Enfin, votre logique de gestion des erreurs doit affecter un message d'erreur et un statut d'annulation à l'objet  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) renvoyé par la méthode **ProcessEvent** à l'infrastructure de mise à jour de SharePoint 2013, comme dans l'exemple suivant. Dans ce code, l'élément _result_ est un objet **SPRemoteEventResult** qui a été déclaré plus tôt dans la méthode **ProcessEvent**.
   
@@ -223,8 +221,7 @@ Enfin, votre logique de gestion des erreurs doit affecter un message d'erreur et
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -233,8 +230,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **IMPORTANTE**

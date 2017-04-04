@@ -56,11 +56,9 @@ Visual Studio 2012 で **SharePoint 2013 用アドイン** プロジェクトを
     
 
 
+```
 
-```
-
-using Microsoft.SharePoint.Client;
-```
+using Microsoft.SharePoint.Client;```
 
 特に明記しない限り、これらの例は、ページのクラスに定義されるパラメーターなしメソッド内に記述するものとします。また、 `label1`、 `label2` などは、ページの [Label](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Label.aspx) オブジェクトの名前です。
   
@@ -88,8 +86,7 @@ SharePoint Web サイトのタイトルを取得します。
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the 
 // server running SharePoint. 
@@ -107,8 +104,7 @@ context.ExecuteQuery();
 // Now, the web's properties are available and we could display 
 // web properties, such as title. 
 label1.Text = web.Title;
-
-```
+```
 
 
 ### Web サイトの選択したプロパティのみを取得する
@@ -117,8 +113,7 @@ label1.Text = web.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -138,8 +133,7 @@ context.ExecuteQuery();
 // an exception because other properties are not available. 
 label1.Text = web.Title;
 label1.Text = web. Description;
-
-```
+```
 
 
 > **メモ**
@@ -155,8 +149,7 @@ label1.Text = web. Description;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -174,8 +167,7 @@ web.Update();
 
 // Execute the query to server.
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### 新しい SharePoint Web サイトを作成する
@@ -184,8 +176,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -201,8 +192,7 @@ context.Load(newWeb, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = newWeb.Title; 
-
-```
+```
 
 
 ## SharePoint リスト タスク
@@ -219,8 +209,7 @@ label1.Text = newWeb.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -242,8 +231,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 > **メモ**
@@ -252,8 +240,7 @@ foreach (List list in web.Lists)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -276,8 +263,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 ### SharePoint リストを作成および更新する
@@ -286,8 +272,7 @@ foreach (List list in web.Lists)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -304,8 +289,7 @@ list.Description = "New Description";
 
 list.Update(); 
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### SharePoint リストを削除する
@@ -314,8 +298,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -328,8 +311,7 @@ List list = web.Lists.GetByTitle("My List");
 list.DeleteObject(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### SharePoint リストにフィールドを追加する
@@ -345,8 +327,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -363,8 +344,7 @@ fldNumber.MinimumValue = 35;
 fldNumber.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## SharePoint リスト アイテム タスク
@@ -388,8 +368,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -411,8 +390,7 @@ foreach (ListItem listItem in items)
     // We have all the list item data. For example, Title. 
     label1.Text = label1.Text + ", " + listItem["Title"]; 
 } 
-
-```
+```
 
 
 ### 新しいリスト アイテムを作成する
@@ -421,8 +399,7 @@ foreach (ListItem listItem in items)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -442,8 +419,7 @@ newItem["Body"] = "Hello World!";
 newItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### リスト アイテムを更新する
@@ -452,8 +428,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -470,8 +445,7 @@ listItem["Body"] = "This is my new value!!";
 listItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### リスト アイテムを削除する
@@ -480,8 +454,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -495,8 +468,7 @@ ListItem listItem = announcementsList.GetItemById(2);
 listItem.DeleteObject(); 
 
 context.ExecuteQuery(); } 
-
-```
+```
 
 
 ## SharePoint フィールド タスク
@@ -513,8 +485,7 @@ context.ExecuteQuery(); }
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -530,8 +501,7 @@ foreach (SP.Field field in list.Fields)
 { 
     label1.Text = label1.Text + ", " + field.InternalName;
 } 
-
-```
+```
 
 
 ### リストから特定のフィールドを取得する
@@ -547,8 +517,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -562,8 +531,7 @@ context.ExecuteQuery();
 
 // Now, we can access the specific text field properties. 
 label1.Text = textField.MaxLength; 
-
-```
+```
 
 
 ## SharePoint ユーザー タスク
@@ -580,8 +548,7 @@ SharePoint .NET Framework CSOM を使用して、SharePoint ユーザー、グ�
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -602,8 +569,7 @@ userCreationInfo.Title = "Mr User";
 User newUser = membersGroup.Users.Add(userCreationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### SharePoint グループ内のすべてのユーザーを取得する
@@ -612,8 +578,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -631,8 +596,7 @@ foreach (User member in membersGroup.Users)
     // We have all the user info. For example, Title. 
     label1.Text = label1.Text + ", " + member.Title; 
 }  
-
-```
+```
 
 
 ### ロールを作成する
@@ -641,8 +605,7 @@ foreach (User member in membersGroup.Users)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -660,8 +623,7 @@ creationInfo.Order = 0;
 RoleDefinition rd = context.Web.RoleDefinitions.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### ロールにユーザーを追加する
@@ -670,8 +632,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -687,8 +648,7 @@ roleDefCollection.Add(readDef);
 RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## SharePoint .NET クライアント オブジェクト モデルを使用するための規則とベスト プラクティス
@@ -705,8 +665,7 @@ SharePoint .NET Framework CSOM では、SQL に似たプログラミング パ�
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -714,8 +673,7 @@ ClientContext context = new ClientContext("http://SiteUrl");
 
 Web web = context.Web; 
 label1.Text = web.Title;  
-
-```
+```
 
 このコードは失敗するのは、SharePoint .NET Framework CSOM コードが次の要件を満たしていないためです。
   
@@ -737,8 +695,7 @@ SharePoint .NET Framework CSOM では、メソッドの呼び出し時にクエ�
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -751,8 +708,7 @@ context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = web.Title;   
-
-```
+```
 
 違いは、以下の行の追加です。
   
@@ -760,13 +716,11 @@ label1.Text = web.Title;
     
 
 
-
-```
+```
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
-
-```
+```
 
 1 行目は、Web の **Title** プロパティ用のクエリを作成します。2 行目は、クエリを実行します。
   
@@ -779,8 +733,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -791,8 +744,7 @@ ListCreationInformation creationInfo = new ListCreationInformation();
 creationInfo.Description = web.Title; 
 creationInfo.Title = web.Title; 
 List newList = web.Lists.Add(creationInfo);  
-
-```
+```
 
 例外がスローされるのは、クエリの実行前は、プロパティを取得できないためです。SQL では、 `web.Title` の値を保持するためのローカル変数を宣言し、そのローカル変数を Web を作成するために使用します。クライアント ライブラリでは、ローカル変数は作成できません。次の例に示すように、機能を 2 つの独立したクエリに分割する必要があります。 [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 用の **using** ステートメントも追加する必要があります。さらに、 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 用の using ステートメントに対するエイリアスを追加して、そのクラスを明確に参照できるようにします。例: `using SP = Microsoft.SharePoint.Client;`
   
@@ -800,8 +752,7 @@ List newList = web.Lists.Add(creationInfo);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -819,8 +770,7 @@ creationInfo.Title = web.Title;
 SP.List newList = web.Lists.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 違いは、次の 3 行です。
   
@@ -828,15 +778,13 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 ...
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### クライアント オブジェクトを返すメソッドまたはプロパティを、同じクエリ内の別のメソッド呼び出しで使用する
@@ -859,14 +807,12 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 ClientContext context = new ClientContext("http://SiteUrl");
 Web web = context.Web; 
 SP.List list = web.Lists.GetByTitle("Announcements"); 
-
-```
+```
 
 このリストは、以下の手順で作成されることがわかっています。
   
@@ -893,8 +839,7 @@ SharePoint .NET Framework CSOM によってこの情報がサーバーに渡さ�
   
     
     
-
-```cs
+```cs
 
 static void Method1() 
 { 
@@ -916,8 +861,7 @@ static void Method2()
     context.Load(web, w => w.Description); 
     context.ExecuteQuery();  
 } 
-
-```
+```
 
 これらの効率は同じではありません。 **Method1** では、Web サイトのタイトルと説明を取得するためのコードはグループ化されています。 **Method2** では、Web サイトのタイトルと説明を取得するためのコードは、他のアクションによって分離されています。つまり、 **Method2** では、同じ Web オブジェクトに関して 2 つの独立したクエリがトリガーされ、同じ Web に対する 2 つの結果セットが存在することになります。クライアント ライブラリは一貫性のあるデータを返そうとするため、2 つ目の結果セットにはタイトルと説明の両方が含まれます。前のコードは、次のように考えることができます。
   
@@ -925,8 +869,7 @@ static void Method2()
     
 
 
-
-```
+```
 
 Method1:
 SELECT Title, Description FROM Webs WHERE ... 
@@ -936,8 +879,7 @@ Method2:
 SELECT Title FROM Webs WHERE … 
 SELECT Description FROM Lists WHERE … 
 SELECT Title, Description FROM Webs WHERE … 
-
-```
+```
 
 
 ### オブジェクトのどのプロパティを返すかを指定する
@@ -946,11 +888,9 @@ SharePoint サーバー オブジェクト モデルでは、 **SPWeb** オブ�
   
     
     
+```
 
-```
-
-SELECT * FROM Webs 
-```
+SELECT * FROM Webs ```
 
 クライアント ライブラリでは、 **Load<T>** も他のメソッドも、すべてのプロパティを返すことはないため、目的のプロパティを明示的に指定する必要があります。たとえば、次のコードでは、目的のプロパティの指定なしで、Web サイトのオブジェクトを取得しています。その後、2 つのプロパティを読み込もうとしていますが、そのうちの 1 つは **Load** によって自動的に返されるプロパティには含まれていません。このコードは例外をスローします。
   
@@ -958,8 +898,7 @@ SELECT * FROM Webs
     
 
 
-
-```cs
+```cs
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
 ClientContext context = new ClientContext("http://SiteUrl"); 
@@ -970,8 +909,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 このコードのコンパイルを成功させるには、コードを次のように更新します。このコードをコンパイルするには、 [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 用の **using** ステートメントを追加する必要があります。さらに、 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 名前空間用の **using** ステートメントに対するエイリアスを追加して、そのクラスを明確に参照できるようにします。例: `using SP = Microsoft.SharePoint.Client;`
   
@@ -979,8 +917,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -993,8 +930,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 
 ### データを読み込む前に条件範囲を使用して前提条件をテストする
@@ -1010,8 +946,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1036,8 +971,7 @@ if (scope.TestResult.Value)
 { 
     label1.Text = list.Title; 
 }  
-
-```
+```
 
 
 ### 例外処理範囲を使用して例外をキャッチする
@@ -1046,8 +980,7 @@ if (scope.TestResult.Value)
   
     
     
-
-```cs
+```cs
 
 
 // Starting with ClientContext, the constructor requires a URL to the 
@@ -1083,8 +1016,7 @@ using (scope.StartScope())
 } 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## その他の技術情報

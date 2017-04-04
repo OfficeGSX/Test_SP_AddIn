@@ -220,8 +220,7 @@ The following code shows how you use permission scopes and rights in the AppMani
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -242,8 +241,7 @@ The following code shows how you use permission scopes and rights in the AppMani
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 The following code shows an add-in that is asking for Read access to the web scope and Write access to the list scope.
   
@@ -251,8 +249,7 @@ The following code shows an add-in that is asking for Read access to the web sco
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -274,8 +271,7 @@ The following code shows an add-in that is asking for Read access to the web sco
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### Permission request scopes for other SharePoint features
@@ -425,13 +421,11 @@ The **BaseTemplateId** property is a child element, not an attribute of the **Ap
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **Table 7. Permission request scope with associated properties**

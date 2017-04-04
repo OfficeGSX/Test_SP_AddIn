@@ -335,20 +335,20 @@ Dans de nombreux compléments de gestion des informations professionnelles, vous
   
 3. Dans l'éditeur de code, ajoutez le code suivant à la méthode **Candidates_Validate**:
     
-  ```VB.net
+ ```VB.net
   
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
-  ```
+ ```
 
 
-  ```cs
+ ```cs
   
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
-  ```
+ ```
 
 
     La méthode **Validate** s'exécute lorsqu'un utilisateur essaie d'effectuer un enregistrement. Si l'utilisateur est un membre du groupe de sécurité Gestionnaires d'embauche, l'enregistrement est sauvegardé. Dans le cas contraire, un message d'erreur « Autorisation refusée » s'affiche, et l'enregistrement est effacé.

@@ -77,8 +77,7 @@ Before you run the code, replace the placeholder values with actual values. If y
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -203,8 +202,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
  **Example 2: jQuery AJAX requests**
   
@@ -212,8 +210,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
 
 
-
-```
+```
 
 // Change placeholder values before you run this code.
 var siteUrl = 'http://server/site';
@@ -303,8 +300,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
 
 ## Additional resources

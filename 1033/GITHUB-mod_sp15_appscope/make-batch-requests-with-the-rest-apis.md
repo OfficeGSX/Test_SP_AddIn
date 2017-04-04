@@ -58,8 +58,7 @@ The following is an example of a raw HTTP request that batches two GET operation
   
     
     
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -81,8 +80,7 @@ Content-Transfer-Encoding: binary
 GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Information%20List')/items?$select=Title HTTP/1.1
 
 --batch_e3b6819b-13c3-43bb-85b2-24b14122fed1--
-
-```
+```
 
 The following is an example of the body of a raw HTTP request that batches a DELETE of a list and a GET of the SharePoint list-of-lists.
   
@@ -90,8 +88,7 @@ The following is an example of the body of a raw HTTP request that batches a DEL
     
 
 
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -117,8 +114,7 @@ Content-Transfer-Encoding: binary
 
 GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 
---batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--
-```
+--batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--```
 
 
 ## Links to helpful libraries

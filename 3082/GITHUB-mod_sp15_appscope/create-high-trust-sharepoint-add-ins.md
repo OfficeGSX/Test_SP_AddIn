@@ -215,69 +215,69 @@ El script Windows PowerShell que cree en esta sección está diseñado para admi
 
 1. En un editor de texto o Windows PowerShell, inicie un archivo nuevo y agregue las siguientes líneas para crear un objeto de certificado:
     
-  ```
+ ```
   
 $publicCertPath = "C:\\Certs\\HighTrustSampleCert.cer"
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($publicCertPath)
 
-  ```
+ ```
 
 2. Agregue la siguiente línea para asegurarse de que SharePoint trata el certificado como entidad emisora raíz.
     
-  ```
+ ```
   
 New-SPTrustedRootAuthority -Name "HighTrustSampleCert" -Certificate $certificate
 
-  ```
+ ```
 
 3. Agregue la línea siguiente para obtener el identificador del territorio de autorización.
     
-  ```
+ ```
   
 $realm = Get-SPAuthenticationRealm
 
-  ```
+ ```
 
 4. La aplicación web remota usará un token de acceso para obtener acceso a los datos de SharePoint. El token de acceso lo debe emitir un emisor de token en que confía SharePoint. En una Complemento de SharePoint de elevada confianza, el certificado es el emisor de token. Agregue las líneas siguientes para crear un identificador de emisor en el formato que requiere SharePoint: ** _GUID_emisor_específico_@ _GUID_territorio_**.
     
-  ```
+ ```
   
 $specificIssuerId = "11111111-1111-1111-1111-111111111111"
 $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
 
-  ```
+ ```
 
 
     > **NOTA**
       > El valor  `$specificIssuerId` debe ser un GUID porque en un entorno de producción cada certificado debe tener un emisor único. Sin embargo, en este contexto, donde se usa el mismo certificado para depurar todos los complementos de elevada confianza, se puede codificar el valor. Si por cualquier motivo, usa un GUID diferente del usado aquí, * **asegúrese de que las letras del GUID estén en minúsculas*** . Actualmente, la infraestructura de SharePoint necesita minúsculas para los GUID de emisor del certificado.
 5. Agregue las siguientes líneas para registrar el certificado como emisor de tokens de confianza. El parámetro  `-Name` debe ser único, por lo que, en una configuración de producción, se suele usar un GUID como parte (o la totalidad) del nombre, pero en este contexto se puede usar un nombre descriptivo. El conmutador `-IsTrustBroker` es necesario para garantizar que puede usar el mismo certificado para todos los complementos de elevada confianza que desarrolle. El comando `iisreset` es necesario para que el emisor de token quede registrado inmediatamente. Sin este comando, es posible que deba esperar unas 24 horas para registrar el nuevo emisor.
     
-  ```
+ ```
   
 New-SPTrustedSecurityTokenIssuer -Name "High Trust Sample Cert" -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 iisreset 
 
-  ```
+ ```
 
 6. SharePoint 2013 no suele aceptar certificados autofirmados. Por lo tanto, al usar un certificado autofirmado para la depuración, agregue las siguientes líneas para desactivar el requisito normal de SharePoint de usar HTTPS cuando las aplicaciones web remotas llaman a SharePoint. En caso contrario, obtendrá un mensaje **403 (prohibido)** cuando la aplicación web remota llame a SharePoint mediante un certificado autofirmado. Se invertirá este paso en un procedimiento posterior. La desactivación del requisito de HTTPS implica que las solicitudes de la aplicación web remota a SharePoint no se cifran pero se sigue usando el certificado como emisor de confianza de tokens de acceso que es su propósito principal en Complementos de SharePoint de elevada confianza.
     
-  ```
+ ```
   
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
 
-  ```
+ ```
 
 7. Guarde el archivo con el nombre HighTrustConfig-ForDebugOnly.ps1.
     
   
 8. Abra el **Shell de administración de SharePoint** como administrador y ejecute el archivo con la siguiente línea.
     
-  ```
+ ```
   
 ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ## Cree una Complemento de SharePoint de elevada confianza.
@@ -446,9 +446,9 @@ Cuando haya obtenido el nuevo certificado, debe agregarle una contraseña, si a�
   
 3. Abra el **Shell de administración de SharePoint** como administrador y ejecute el archivo con la siguiente línea:
     
-  ```
+ ```
   ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ### Para volver a configurar la aplicación web remota

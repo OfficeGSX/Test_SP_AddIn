@@ -56,8 +56,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - При использовании Office 365 полученное имя для входа будет аналогично следующему:  `i:0#.f|membership|adam@contoso.com`.
@@ -110,14 +108,12 @@ ClientContext clientContext =
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
 Значение **Person.LoginName** предоставляет сведения для входа.
   
@@ -131,8 +127,7 @@ ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Micr
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 Затем с помощью API  [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) получите свойства пользователя, который использует эту надстройку.
   
@@ -152,15 +146,13 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 Код для работы
   
@@ -172,11 +164,11 @@ clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => 
   
 - Необходимо добавить в манифест надстройки следующий уровень разрешений для социальных компонентов:
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 API находятся в библиотеке Microsoft.SharePoint.Client.UserProfiles.dll.
   
@@ -188,16 +180,14 @@ API находятся в библиотеке Microsoft.SharePoint.Client.UserP
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## Дополнительные ресурсы

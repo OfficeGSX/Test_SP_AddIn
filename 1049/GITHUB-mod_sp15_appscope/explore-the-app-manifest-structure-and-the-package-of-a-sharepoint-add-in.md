@@ -87,8 +87,7 @@ ms.assetid: 7cd5850f-cbf3-48d2-bcb7-59b8f4ed0e63
 
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -113,8 +112,7 @@ ms.assetid: 7cd5850f-cbf3-48d2-bcb7-59b8f4ed0e63
     <RemoteWebApplication ClientId="1ee82b34-7c1b-471b-b27e-ff272accd564" />
   </AppPrincipal>
 </App>
-
-```
+```
 
 
 ### Маркеры URL-адресов в манифесте надстройки

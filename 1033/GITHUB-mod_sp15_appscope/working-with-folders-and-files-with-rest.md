@@ -28,16 +28,14 @@ You can retrieve a folder inside a document library when you know its URL. For e
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following XML shows an example of folder properties that are returned when you request the XML content type.
   
@@ -45,8 +43,7 @@ The following XML shows an example of folder properties that are returned when y
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties>
@@ -55,8 +52,7 @@ The following XML shows an example of folder properties that are returned when y
 <d:ServerRelativeUrl>/Shared Documents</d:ServerRelativeUrl>
 <d:WelcomePage/>
 </m:properties>
-</content>
-```
+</content>```
 
 The following example shows how to **create** a folder.
   
@@ -64,8 +60,7 @@ The following example shows how to **create** a folder.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/folders
 method: POST
@@ -75,8 +70,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **update** a folder by using the **MERGE** method.
   
@@ -84,8 +78,7 @@ The following example shows how to **update** a folder by using the **MERGE** me
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -97,8 +90,7 @@ Headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **delete** a folder.
   
@@ -106,8 +98,7 @@ The following example shows how to **delete** a folder.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -116,8 +107,7 @@ Headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Working with files by using REST
@@ -127,16 +117,14 @@ The following example shows how to **retrieve** all of the files in a folder.
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following example shows how to **retrieve** a specific file.
   
@@ -144,14 +132,12 @@ The following example shows how to **retrieve** a specific file.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 You can also **retrieve** a file when you know its URL, as in the following example.
   
@@ -159,14 +145,12 @@ You can also **retrieve** a file when you know its URL, as in the following exam
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 The following example shows how to **create** a file and add it to a folder.
   
@@ -174,8 +158,7 @@ The following example shows how to **create** a file and add it to a folder.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
 method: POST
@@ -183,8 +166,7 @@ body: "Contents of file"
 Headers: 
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **update** a file by using the **PUT** method.
   
@@ -199,8 +181,7 @@ The following example shows how to **update** a file by using the **PUT** method
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: POST
@@ -209,8 +190,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     X-HTTP-Method:"PUT"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 If you want to update a file's metadata, you'll have to construct an endpoint that reaches the file as a list item. You can do this because each folder is also a list, and each file is also a list item. Construct an endpoint that looks like this:  `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`.  [Working with lists and list items with REST](working-with-lists-and-list-items-with-rest.md) explains how to update a list item's metadata.
   
@@ -222,15 +202,13 @@ You may want to check out a file in order to make sure that no one changes it be
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 The following example shows you how to **check a file in**.
   
@@ -238,15 +216,13 @@ The following example shows you how to **check a file in**.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 The following example shows how to **delete** a file.
   
@@ -254,8 +230,7 @@ The following example shows how to **delete** a file.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
 method: POST
@@ -264,8 +239,7 @@ headers:
      X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method:"DELETE"
-
-```
+```
 
 
 ## Working with large files by using REST
@@ -282,8 +256,7 @@ When you need to upload a binary file that is larger than 1.5 megabytes (MB), th
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
 method: POST
@@ -292,8 +265,7 @@ headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following code sample shows how to create a file by using this REST endpoint and the cross-domain library.
   
@@ -301,8 +273,7 @@ The following code sample shows how to create a file by using this REST endpoint
     
 
 
-
-```
+```
 
 function uploadFileBinary() {
 XDomainTestHelper.clearLog();
@@ -329,8 +300,7 @@ state: "Update"
 };
 ro.executeAsync(info);
 }
-
-```
+```
 
 
 ## Working with files attached to list items by using REST
@@ -340,16 +310,14 @@ The following example shows how to **retrieve** all of the files that are attach
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following example shows how to **retrieve** a file that is attached to a list item.
   
@@ -357,16 +325,14 @@ The following example shows how to **retrieve** a file that is attached to a lis
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following example shows how to **create** a file attachment to a list item.
   
@@ -374,8 +340,7 @@ The following example shows how to **create** a file attachment to a list item.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
 method: POST
@@ -383,8 +348,7 @@ headers:
     Authorization: "Bearer " + accessToken
     body: "Contents of file."
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **update** a file attachment to a list item by using the **PUT** method.
   
@@ -399,8 +363,7 @@ The following example shows how to **update** a file attachment to a list item b
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: POST
@@ -409,8 +372,7 @@ headers:
     Authorization: "Bearer " + accessToken
     "X-HTTP-Method":"PUT"
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 
 ## Additional resources

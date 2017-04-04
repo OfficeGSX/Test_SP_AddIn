@@ -131,7 +131,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
   
 - 远程事件接收器的项目项会添加到 SharePoint 外接程序项目中。远程事件接收器的 Elements.xml 文件引用您指定的 Web 应用程序和远程事件中的 Web 服务。以下示例显示了一个处理列表项的添加或删除的 Elements.xml 文件。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 若要更改远程事件接收器处理的事件，请打开"解决方案资源管理器"，打开远程事件接收器的"属性"窗口，展开"SharePoint 事件"节点，然后仅将想要处理的事件设置为 **True**。
   
@@ -298,8 +298,7 @@ SharePoint 承载的 SharePoint 外接程序不支持事件处理，但您可以
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -308,8 +307,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 但是，在您的 Web 服务中实现回滚和"已完成"的逻辑可以降低该处理程序的执行速度。您的安装和回滚逻辑通常会对来自 Web 服务的某些远程内容进行更改，如 SharePoint 主机 Web 或后端数据库。如果您的安装和回滚代码分为"尝试"和"捕获"部分，那么该服务将单独调用远程组件，通常每个部分中会有几个此类调用。最佳做法通常是在某个可以从您的"尝试"部分的处理程序进行调用的过程中执行远程组件自身的安装和回滚逻辑。该过程应返回成功或失败的消息，如果它报告失败，"尝试"部分中的代码将调用"捕获"部分（意味着引发异常）。"捕获"部分所能执行的操作只是通知 SharePoint。我们将此称为处理程序委派策略。下面的伪代码说明了该策略：
   
@@ -317,16 +315,14 @@ Catch
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 在远程系统上执行的"执行 X"过程本身将包含回滚和"已完成"逻辑，如下所示。
   
@@ -334,8 +330,7 @@ Catch
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -347,8 +342,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 例如，如果您的处理程序需要对 SQL Server 数据库执行操作，您可以在使用  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) 块的 SQL Server 上安装一个存储的程序，以实现安装回滚逻辑。使用 [ELSE IF](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) 块来实现"已完成"逻辑。
   
@@ -399,8 +393,7 @@ SharePoint 加载项模型不提供将自定义服务器端代码存储在 Share
 
 |**SharePoint 解决方案**|**SharePoint 外接程序**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -417,11 +410,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -435,8 +426,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

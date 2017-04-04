@@ -134,32 +134,32 @@ In diesem Abschnitt fügen Sie ein Markup in das Add-In ein, das eine Schaltflä
   
 8. Öffnen Sie die CodeBehind-Datei **Pages/EmployeeAdder.aspx.cs**. Die Methode, die den Mitarbeiter zur Remotedatenbank hinzufügt,  `AddLocalEmployeeToCorpDB`, ist bereits vorhanden. Sie verwendet das Objekt **SharePointContext**, um die URL des Hostwebs abzurufen, das das Add-In als Mandantendiskriminator verwendet. Die Methode **Page_Load** muss also zuerst dieses Objekt initialisieren. Das Objekt wird erstellt und in der Sitzung zwischengespeichert, wenn die Startseite des Add-Ins geladen wird. Fügen Sie also den folgenden Code zur Methode **Page_Load** hinzu. (Das Objekt **SharePointContext** ist in der SharePointContext.cs-Datei definiert, die von den Office-Entwicklertools für Visual Studio generiert wird, wenn die Add-In-Projektmappe erstellt wird.)
     
-  ```cs
+ ```cs
   
 spContext = Session["SPContext"] as SharePointContext;
-  ```
+ ```
 
 9. Da die Methode  `AddLocalEmployeeToCorpDB` den Namen des Mitarbeiters als Parameter akzeptiert, fügen Sie die folgende Zeile zur Methode **Page_Load** hinzu. Sie erstellen die Methode `GetLocalEmployeeName` in einem späteren Schritt.
     
-  ```cs
+ ```cs
   // Read from SharePoint
 string employeeName = GetLocalEmployeeName();
-  ```
+ ```
 
 10. Fügen Sie unterhalb dieser Zeile den Anruf an die Methode  `AddLocalEmployeeToCorpDB` hinzu.
     
-  ```cs
+ ```cs
   
 // Write to remote database
 AddLocalEmployeeToCorpDB(employeeName);
-  ```
+ ```
 
 11. Fügen Sie eine **using**-Anweisung zur Datei für den Namespace  `Microsoft.SharePoint.Client` hinzu. (Die Office-Entwicklertools für Visual Studio enthielten die Microsoft.SharePoint.Client-Assembly im **ChainStoreWeb**-Projekt, als dieses erstellt wurde.)
     
   
 12. Fügen Sie jetzt die folgende Methode zur Klasse  `EmployeeAdder` hinzu. Das SharePoint-.NET-CSOM (clientseitiges Objektmodell) ist im Detail an anderer Stelle auf MSDN dokumentiert, und wir empfehlen Ihnen, dieses zu erkunen, wenn Sie mit dieser Artikelreihe fertig sind. Beachten Sie für diesen Artikel, dass die Klasse **ListItem** ein Element in einer SharePoint-Liste darstellt und der Wert eines Felds in dem Element mit der „Indexer"-Syntax referenziert werden kann. Beachten Sie außerdem, dass der Code auf das Feld als „Titel" verweist, obwohl Sie den Feldnamen in „Name" geändert haben. Der Grund hierfür ist, dass in Code auf Felder immer mit ihrem *internen*  Namen verwiesen wird, nicht mit ihrem Anzeigenamen. Der interne Name eines Felds wird festgelegt, wenn das Feld erstellt wird, und kann nicht geändert werden. Sie schließen `TODO1` in einem späteren Schritt ab.
     
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -170,36 +170,36 @@ private string GetLocalEmployeeName()
  
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 13. Unser Code benötigt die ID des Listenelements, bevor er dieses von SharePoint abrufen kann. Fügen Sie die folgende Deklaration zur Klasse  `EmployeeAdder` direkt unterhalb der Deklaration für das Objekt `spContext` hinzu.
     
-  ```cs
+ ```cs
   
 private int listItemID;
-  ```
+ ```
 
 14. Fügen Sie jetzt die folgende Methode zur Klasse  `EmployeeAdder` hinzu, um die Listenelement-ID aus dem Abfrageparameter abzurufen.
     
-  ```cs
+ ```cs
   private int GetListItemIDFromQueryParameter()
 {
     int result;
     Int32.TryParse(Request.QueryString["SPListItemId"], out result);
     return result;
 }
-  ```
+ ```
 
 15. Fügen Sie zum Initialisieren der Variable  `listItemID` die folgende Zeile zur Methode **Page_Load** direkt unterhalb der Zeile hinzu, die die Variable `spContext` initialisiert.
     
-  ```cs
+ ```cs
   
 listItemID = GetListItemIDFromQueryParameter();
-  ```
+ ```
 
 16. Ersetzen Sie in  `GetLocalEmployeeName` `TODO1` durch den folgenden Code. Behandeln sie den Code für den Moment einfach als schwarzes Feld, während wir uns darauf konzentrieren, dass die benutzerdefinierte Schaltfläche funktioniert. Sie erfahren mehr über diesen Code im nächsten Artikel dieser Reihe, in dem es um das clientseitige SharePoint-Objektmodell geht.
     
-  ```cs
+ ```cs
   using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
@@ -208,14 +208,14 @@ listItemID = GetListItemIDFromQueryParameter();
     clientContext.ExecuteQuery();
 }
 
-  ```
+ ```
 
 
     Die gesamte Methode sollte jetzt wie folgt aussehen.
     
 
 
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -230,23 +230,23 @@ private string GetLocalEmployeeName()
     }
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 17. Da die Seite EmployeeAdder nicht tatsächlich gerendert werden sollte, fügen Sie Folgendes als letzte Zeile in der Methode **Page_Load** hinzu. Damit wird der Browser zurück zur Listenansichtseite für die Liste **Lokale Mitarbeiter** gebracht.
     
-  ```cs
+ ```cs
   
 // Go back to the Local Employees page
 Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 
-  ```
+ ```
 
 
     Die gesamte **Page_Load**-Methode sollte jetzt wie folgt aussehen.
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -262,7 +262,7 @@ protected void Page_Load(object sender, EventArgs e)
     // Go back to the preceding page
     Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 }
-  ```
+ ```
 
 
 ## Anfordern der Berechtigung zum Lesen der Liste

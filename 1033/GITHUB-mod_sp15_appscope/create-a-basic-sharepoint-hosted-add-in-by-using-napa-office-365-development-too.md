@@ -214,7 +214,7 @@ In the SharePoint Add-in, add controls to the default home page for creating and
   
 2. In the  `PlaceHolderMain` section, add this code under the existing HTML
     
-  ```HTML
+ ```HTML
   
 <br />
 <div>
@@ -229,7 +229,7 @@ In the SharePoint Add-in, add controls to the default home page for creating and
     <select id="selectlistbox" ></select><button id="deletelistbutton">Delete Selected List</button>
     </p>
 </div>
-  ```
+ ```
 
 
     The HTML creates these controls.
@@ -277,7 +277,7 @@ In this procedure, you'll add some JavaScript code so that users can create and 
     > **NOTE**
       > Error squiggles will appear in this code. They'll disappear in later steps. 
 
-  ```
+ ```
   
 'use strict';
 
@@ -310,7 +310,7 @@ $(document).ready(function () {
         displayLists();
     });
 
-  ```
+ ```
 
 
     In the next step, you'll add JavaScript functions for the definitions. Each function in the code is executed by calling  `executeQueryAsync()`, which executes the current pending request asynchronously on the server by using the client-side object model (CSOM) for SharePoint. When a function executes asynchronously, your script continues to run without waiting for the server to respond. Each  `executeQueryAsync()` call includes two event handlers. One handler responds if the function runs successfully, and the other handler responds if the function fails. This table describes the main functions.
@@ -326,7 +326,7 @@ $(document).ready(function () {
    
 3. Add the following code after the  `onGetUserNameFail()` function in **App.js**.
     
-  ```
+ ```
   
 function getWebProperties() {
         // Get the number of lists in the current web.
@@ -411,7 +411,7 @@ function createlist() {
     function onDeleteListFail(sender, args) {
         alert('Failed to delete the list. ' + args.get_message());
     }
-  ```
+ ```
 
 
 ## Run it!
@@ -486,7 +486,7 @@ Now that users can create and delete lists, you can perform the following steps 
   
 2. Under the  `selectlistbox` element, add this code.
     
-  ```XML
+ ```XML
   
 <p>
     Items
@@ -496,7 +496,7 @@ Now that users can create and delete lists, you can perform the following steps 
     <p>
     <select id="selectitembox"></select> <button id="deleteitembutton">Delete Selected Item</button>
     </p>
-  ```
+ ```
 
 
     This code adds an input box where users can specify the name of an item, a button to add the item to the list, and a button to delete the item from the list.
@@ -507,7 +507,7 @@ Now that users can create and delete lists, you can perform the following steps 
   
 4. In the  `$(document).ready()` function, add definitions for functions that are called when the user chooses the **Create Item** and **Delete Selected Item** buttons. Also, add a jQuery event handler for the **Lists** list box to ensure the list items get updated when you select a new list.
     
-  ```
+ ```
   
 $("#createitembutton").click(function (event) {
             createitem();
@@ -525,7 +525,7 @@ $("#createitembutton").click(function (event) {
             getitems();
             event.preventDefault();
         });
-  ```
+ ```
 
 
     > **NOTE**
@@ -542,7 +542,7 @@ $("#createitembutton").click(function (event) {
    
 5. Add this code to bottom of **App.js**, after the  `onDeleteListFail()` function.
     
-  ```
+ ```
   
 function createitem() {
     // Retrieve the list that the user chose, and add an item to it.
@@ -631,7 +631,7 @@ function onGetItemsFail(sender, args) {
     // The list items couldn't be retrieved - display an error message.
     alert('Failed to get items. Error: ' + args.get_message());
 }
-  ```
+ ```
 
 
 ## Run the revised SharePoint Add-in!

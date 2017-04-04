@@ -148,13 +148,13 @@ SharePoint アドインをパッケージ化してリモート コンポーネ�
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
    .  .  .
 </appSettings>
-  ```
+ ```
 
 2. アドイン シークレットの値を **ClientSecret** 値として入力します (ツールによって入力された一時的な値を置き換えます)。
     
@@ -162,13 +162,13 @@ SharePoint アドインをパッケージ化してリモート コンポーネ�
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
   <add key="ClientSecret" value="l0z/8TzWN0yQBzMBSEZtYts2Vt3Eo/oE3rfCdPaogKQ= " />
 </appSettings>
-  ```
+ ```
 
 3. Visual Studio プロジェクトの AppManifest.xml ファイルに、アドイン ID 値を **ClientId** 値として *小文字で*  入力します。
     
@@ -179,19 +179,19 @@ SharePoint アドインをパッケージ化してリモート コンポーネ�
     
 
 
-  ```XML
+ ```XML
   
 <AppPrincipal>
   <RemoteWebApplication ClientId="a044e184-7de2-4d05-aacf-52118008c44e "/>
 </AppPrincipal>
-  ```
+ ```
 
 4. Office Developer Tools for Visual Studio は **StartPage** の要素でトークン `~remoteAppUrl` を使用します。( `<StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>` など。) このトークンは、Visual Studio の [ **発行**] ウィザードで使用する場合、リモート コンポーネントの URL に解決されます。ウィザードを使用しない場合 (または、ウィザードを使用しても、リモート コンポーネントを Azure に発行している場合) には、このトークンをアドインの登録時に使用した [ **アドイン ドメイン**] の値に手動で置き換える必要があります。これは、HTTPS プロトコルも含める以外は、ポート番号がある場合はそれも含めて、 *完全に*  同じ値でなければなりません。以下に例を示します。
     
-  ```XML
+ ```XML
   
 <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
-  ```
+ ```
 
 5. AppRegNew.aspx の [ **タイトル**] フィールドに使用したのと同じ値を、AppManifest.xml ファイルの **Title** 要素で使用することを検討します。 **Title** 要素の値は、アドインのインストール後に、ユーザーにアドインの名前として表示されます。同意ダイアログに表示される名前と、SharePoint の UI とで名前が異なると、アドインのユーザーが混乱する恐れがあります。
     
@@ -199,12 +199,12 @@ SharePoint アドインをパッケージ化してリモート コンポーネ�
     
 
 
-  ```XML
+ ```XML
   <Properties>
   <Title>Contoso photo printing app</Title>
   <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
 </Properties>
-  ```
+ ```
 
 
 ## 実行時にアクセス許可を求めるアドインでリダイレクト URL を使用する

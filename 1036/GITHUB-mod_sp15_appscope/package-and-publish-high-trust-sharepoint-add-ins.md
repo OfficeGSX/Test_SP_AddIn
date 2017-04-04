@@ -363,16 +363,14 @@ Un exemple est fourni ci-dessous. Notez qu'il n'y a pas de clé **ClientSecret**
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientID" value="c1c12d4c-4900-43c2-8b89-c05725e0ba30" />
   <add key="ClientSigningCertificateSerialNumber" value="556a1c9c5a5415994941abd0ef2f947b" />
   <add key="IssuerId" value="f94591d5-89e3-47cd-972d-f1895cc158c6" />
 </appSettings>
-
-```
+```
 
 
 ## Modifier le fichier TokenHelper
@@ -398,23 +396,23 @@ Le fichier TokenHelper.cs (ou .vb) généré par les Outils de développement Of
   
 2. À la place, ajoutez la ligne suivante :
     
-  ```
+ ```
   
 private static readonly string ClientSigningCertificateSerialNumber
     = WebConfigurationManager.AppSettings.Get("ClientSigningCertificateSerialNumber");
-  ```
+ ```
 
 3. Recherchez la ligne qui déclare le champ  `SigningCredentials`. Remplacez-la par la ligne suivante :
     
-  ```
+ ```
   
 private static readonly X509SigningCredentials SigningCredentials
     = GetSigningCredentials(GetCertificateFromStore());
-  ```
+ ```
 
 4. Accédez à la partie  `#region private methods` du fichier et ajoutez les deux méthodes suivantes :
     
-  ```
+ ```
   
 private static X509SigningCredentials GetSigningCredentials(X509Certificate2 cert)
 {
@@ -453,7 +451,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     return storedCert;
 }
-  ```
+ ```
 
 
 ## Utiliser les Assistants Visual Studio pour empaqueter votre application web distante et le Complément SharePoint en vue de la publication

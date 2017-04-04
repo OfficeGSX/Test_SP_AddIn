@@ -238,7 +238,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
   
 2. 在 Web 应用程序的 Pages/Default.aspx 文件的 **<body>** 标记中删除所有标记，然后在 **<body>** 中添加以下 HTML 和 ASP.NET 控件。本示例使用 [UpdatePanel](https://msdn.microsoft.com/library/System.Web.UI.UpdatePanel.aspx) 控件实现部分页面呈现。
     
-  ```HTML
+ ```HTML
   
 <form id="form1" runat="server">
   <div>
@@ -281,22 +281,22 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+ ```
 
 3. 将以下声明添加到 Web 应用程序的 Default.aspx.cs 文件中。
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+ ```
 
 4. 在 Web 应用程序的 Default.aspx.cs 文件中，将这些变量添加到  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) 类中。
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
@@ -305,11 +305,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+ ```
 
 5. 将  `RetrieveWithCSOM` 方法添加到 [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) 类中。此方法使用 SharePoint CSOM 检索有关您的网站的信息并在页面上显示该信息。
     
-  ```cs
+ ```cs
   
 // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
@@ -358,11 +358,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+ ```
 
 6. 将  `CSOM_Click` 方法添加到 [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) 类中。当用户单击"填充数据"链接时，此方法将触发事件。
     
-  ```cs
+ ```cs
   
 protected void CSOM_Click(object sender, EventArgs e)
 {
@@ -375,11 +375,11 @@ protected void CSOM_Click(object sender, EventArgs e)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+ ```
 
 7. 将现有  `Page_Load` 方法替换为此方法。 `Page_Load` 方法使用 TokenHelper.cs 文件中的方法从 `Request` 对象中检索上下文并从 Microsoft Azure 访问控制服务 (ACS) 获取访问令牌。
     
-  ```cs
+ ```cs
   
 // The Page_load method fetches the context token and the access token.
 // The access token is used by all of the data retrieval methods.
@@ -407,11 +407,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+ ```
 
 8. 完成后，Default.aspx.cs 文件将如下所示。
     
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -540,7 +540,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+ ```
 
 9. 使用 F5 键部署和运行您的加载项。如果您看到"安全警报"窗口，询问您是否要信任自签名的本地主机证书，请选择"是"。
     

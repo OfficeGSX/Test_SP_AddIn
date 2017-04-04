@@ -114,16 +114,16 @@ elements.xml ファイルで、 **CustomAction** 要素の **RegistrationId** �
 
 1. [ **ChainStore**] プロジェクトで、[ **AddEmployeeToCorpDB**] を展開してから、elements.xml ファイルを開き、 **CustomAction** 要素の **RegistrationId** の属性の値を 「100」 に変更します。これは、リスト型の ID です。Web サイトにこの型のリストのインスタンスがない場合でも、リスト *型*  はすべての SharePoint Web サイトに存在します。属性は、次のようになります。
     
-  ```XML
+ ```XML
   
 RegistrationId="100"
-  ```
+ ```
 
 2. ファイル SharePointComponentDeployer.cs で、以下の行を  `DeployChainStoreComponentsToHostWeb` メソッドの、 `CreateLocalEmployeesList` を呼び出す行のすぐ下に追加します。次の手順でこのメソッドを作成します。
     
-  ```cs
+ ```cs
   ChangeCustomActionRegistration();
-  ```
+ ```
 
 3. 以下のメソッドを  `SharePointComponentDeployer` クラスに追加します。このコードについては以下の点に注目してください。
     
@@ -135,7 +135,7 @@ RegistrationId="100"
     > **重要**
       > **次のコード内の  `action.Name` 値を変更して、elements.xml ファイル内の値と一致させる必要があります。** 名前の GUID の部分は異なります。名前の GUID と残りの部分の間には "." 文字があることに注意してください。行の例を次に示します。>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
-  ```cs
+ ```cs
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -161,7 +161,7 @@ RegistrationId="100"
           clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 4.  `TODO8` を以下のコードに置き換えます。
     
@@ -169,7 +169,7 @@ RegistrationId="100"
     
 
 
-  ```cs
+ ```cs
   
 var queryForList = from list in clientContext.Web.Lists
                    where list.Title == "Local Employees"
@@ -181,14 +181,14 @@ List employeeList = matchingLists.First();
 var listActions = employeeList.UserCustomActions;
 clientContext.Load(listActions);
 listActions.Clear();
-  ```
+ ```
 
 5.  `TODO9` を次の行に置き換えます。これにより、未定義のカスタム アクションが [ **ローカル従業員**] の一覧に追加されます。
     
-  ```cs
+ ```cs
   
 var listScopedEmployeeAction = listActions.Add();
-  ```
+ ```
 
 6.  `TODO10` を以下のコードに置き換えます。このコードについては以下の点に注目してください。
     
@@ -199,27 +199,27 @@ var listScopedEmployeeAction = listActions.Add();
     
   
 
-  ```cs
+ ```cs
   listScopedEmployeeAction.Title = webScopedEmployeeAction.Title;
 listScopedEmployeeAction.Location = webScopedEmployeeAction.Location;
 listScopedEmployeeAction.Sequence = webScopedEmployeeAction.Sequence;
 listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
 listScopedEmployeeAction.Update();
-  ```
+ ```
 
 7.  `TODO11` を次の行に置き換えます。これにより、記述して定義されている元のボタンが削除されます。この行がないと、リスト テンプレート「100」を使用する Web サイト上のすべてのリストにカスタム ボタンが存在することになります。このボタンの機能は [ **ローカル従業員**] リストと密接に関連しているため、このボタンが他のリストに存在していても意味がありません。また、この行がないと、ボタンは [ **ローカル従業員**] リストに * 2 つ*  表示されます。これは、そのリストでテンプレート「100」が使用されているためです。
     
-  ```cs
+ ```cs
   
 webScopedEmployeeAction.DeleteObject();
-  ```
+ ```
 
 
     メソッド全体は次のようになります (プレースホルダーの部分が GUID になっていることを除く)。
     
 
 
-  ```cs
+ ```cs
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = SPContext.CreateUserClientContextForSPHost())
@@ -256,7 +256,7 @@ webScopedEmployeeAction.DeleteObject();
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## ホスト Web のフル コントロールを要求する

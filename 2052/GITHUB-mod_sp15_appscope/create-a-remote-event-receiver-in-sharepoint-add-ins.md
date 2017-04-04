@@ -120,7 +120,7 @@ RER 必须是 SOAP Web 服务。接下来的示例将此实现为 Windows Commun
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -240,7 +240,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. 在 Home.aspx.cs 中，将  `SPHostUrl` 的所有实例更改为 `SPAppWebUrl`。
     

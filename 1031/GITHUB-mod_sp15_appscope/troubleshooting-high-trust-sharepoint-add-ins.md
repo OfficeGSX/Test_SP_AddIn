@@ -32,16 +32,14 @@ Nachdem Sie Fiddler auf dem Webanwendungsserver installiert haben, fügen Sie da
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 Nachdem Fiddler installiert wurde, können Sie außerdem die Antwortheader von SharePoint überprüfen, die eine Anforderungs-GUID enthalten. Diese Anforderungs-GUID ist eine Korrelations-ID, die Sie in den Protokollen suchen können, um dieser Anforderung zugeordnete Protokollfehler zu finden.
   
@@ -55,8 +53,7 @@ Ein **401 Unauthorized**-Fehler kann durch verschiedene Dinge verursacht werden,
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -67,8 +64,7 @@ Ein **401 Unauthorized**-Fehler kann durch verschiedene Dinge verursacht werden,
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 Wenn die TokenHelper-Datei und Windows-Identität verwenden, sieht der Code, der die Ausnahme auslöst, in etwa wie folgt aus:
   
@@ -76,14 +72,12 @@ Wenn die TokenHelper-Datei und Windows-Identität verwenden, sieht der Code, der
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 Der erste Schritt für die Behebung des Problems besteht darin, mit dem Visual Studio-Debugger zu überprüfen, ob das Zugriffstoken und das **ClientContext** erfolgreich aufgebaut sind. Falls ja, untersuchen Sie die folgenden Möglichkeiten:
   
@@ -98,11 +92,8 @@ Der erste Schritt für die Behebung des Problems besteht darin, mit dem Visual S
     
   
 - Ihr Add-In verfügt nicht über die Berechtigung für die Ressource, auf die Sie zugreifen möchten. Öffnen Sie die SharePoint-Verwaltungsshell, und führen Sie das folgende Windows PowerShell-Cmdlet aus. Die Variable  `$web` ist die SharePoint-Website, auf die Sie zugreifen möchten, und `$appPrincipal`) ist die Add-In-ID. Weitere Informationen finden Sie unter  [Set-SPAppPrincipalPermission](http://technet.microsoft.com/de-de/library/jj219714%28v=office.15%29.aspx).
-    
-  ```
-  
-Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+    ```
+Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl```
 
 - Ihre Webanwendung akzeptiert anonyme Anforderungen. Dies bedeutet, dass das Zugriffstoken keine echte Benutzeridentität enthält. Stellen Sie sicher, dass für das Stammverzeichnis Ihrer Remote-Webanwendung der anonyme Zugriff in IIS deaktiviert ist. Sie können dies auch überprüfen, indem Sie Ihre Remote-Webanwendung debuggen und den Wert von **Request.LogonUserIdentity** in der Datei default.aspx.cs (oder .vb) überprüfen, um sicherzustellen, dass es sich nicht um einen anonymen Benutzer handelt.
     

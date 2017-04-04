@@ -89,8 +89,7 @@ The photo-printing application is registered, so, it has a client id, client sec
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
@@ -99,8 +98,7 @@ The photo-printing application is registered, so, it has a client id, client sec
 
   </appSettings>
 
-</configuration>
-```
+</configuration>```
 
 The following are the steps in the Authentication Code Flow.
   
@@ -143,14 +141,12 @@ The scope aliases are used only in the context of using the OAuthAuthorize.aspx 
     
 
 
-
-```cs
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));
-```
+    "https://contoso.com/RedirectAccept.aspx "));```
 
 The  _scope_ parameter value, `Web.Read List.Write`, is an example of how you would request permissions using the scope aliases. The  _scope_ parameter is a space-delimited set of permission scope and right requests.
   
@@ -209,15 +205,13 @@ The **redirect URI** that is used by add-ins that request permission on the fly 
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>
-```
+<configuration>```
 
 The value can be retrieved with a call to  `WebConfigurationManager.AppSettings.Get("RedirectUri")`.
   
@@ -256,8 +250,7 @@ For a more complex example that uses the refresh token to get a new access token
     
 
 
-
-```cs
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -280,8 +273,7 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-
-```
+```
 
 
 ## Get sample code behind for a page that accesses SharePoint
@@ -309,8 +301,7 @@ The following is code behind for a Default.aspx page. This page assumes a scenar
 - The **TokenCache** class that is referred to in this code is defined below.
     
   
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -361,8 +352,7 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}
-```
+}```
 
 The following is a code example for a token cache module that the previous sample code calls. It uses cookies as the cache. There are other caching options. For more information, see  [Handle security tokens in provider-hosted low-trust SharePoint Add-ins](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).
   
@@ -370,8 +360,7 @@ The following is a code example for a token cache module that the previous sampl
     
 
 
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -440,8 +429,7 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-
-```
+```
 
 
 ## Additional resources

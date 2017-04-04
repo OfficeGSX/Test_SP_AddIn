@@ -131,7 +131,7 @@ Cuando trabaja en Visual Studio y agrega un RER a un proyecto de Complemento de 
   
 - Un elemento del proyecto para el receptor de eventos remotos se agrega al proyecto de la Complemento de SharePoint. El archivo Elements.xml para el receptor de eventos remotos hace referencia al servicio web en la aplicación web y a los eventos remotos que haya especificado. En el siguiente ejemplo se muestra un archivo Elements.xml que controla el agregado o la eliminación de un elemento de una lista.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ Cuando trabaja en Visual Studio y agrega un RER a un proyecto de Complemento de 
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 Para cambiar los eventos que controla el receptor de eventos remotos, abra el **Explorador de soluciones**, abra la ventana **Propiedades** para el receptor de eventos remotos, expanda el nodo **Eventos de SharePoint** y luego especifique solo los eventos que desea controlar para **True**.
   
@@ -298,8 +298,7 @@ Expresado en seudocódigo, el controlador normalmente debe tener una estructura 
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -308,8 +307,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 Sin embargo, la implementación de lógica de reversión y la lógica "de acciones realizadas" en el servicio web puede reducir la velocidad del controlador. Tanto la lógica de reversión como de instalación generalmente realizan cambios en algo más o menos remoto del servicio web, como la web de host de SharePoint o una base de datos de back-end. Si el código de instalación y reversión está dividido en las secciones Try y Catch, el servicio está realizando llamadas separadas a los componentes remotos, a menudo varias llamadas en cada sección. El procedimiento recomendado generalmente es implementar la lógica de instalación y reversión en el componente remoto mismo mediante un procedimiento al que puede llamarse desde el controlador en la sección Try. El procedimiento debe devolver un mensaje de correcto o error, y si informa de un error, el código de la sección Try invoca a la sección Catch (por ejemplo, arrojando una excepción). Lo único que hace la sección Catch es notificar a SharePoint. A esto lo denominaremos estrategia de delegación de controlador. El siguiente seudocódigo ilustra la estrategia:
   
@@ -317,16 +315,14 @@ Sin embargo, la implementación de lógica de reversión y la lógica "de accion
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 El procedimiento "Do X", que se ejecuta en el sistema remoto, contendría en sí mismo la lógica de reversión y la lógica "de acciones realizadas" de la siguiente manera.
   
@@ -334,8 +330,7 @@ El procedimiento "Do X", que se ejecuta en el sistema remoto, contendría en sí
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -347,8 +342,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 Por ejemplo, si el controlador debe realizar acciones en una base de datos de SQL Server, puede instalar un procedimiento almacenado en SQL Server que use un bloque  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) para implementar la lógica de instalación y reversión, o con bloques [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) para implementar la lógica "de acciones realizadas".
   
@@ -399,8 +393,7 @@ En SharePoint 2010, los receptores de eventos controlan eventos que tienen lugar
 
 |**Soluciones de SharePoint**|**Complementos de SharePoint**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -417,11 +410,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -435,8 +426,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

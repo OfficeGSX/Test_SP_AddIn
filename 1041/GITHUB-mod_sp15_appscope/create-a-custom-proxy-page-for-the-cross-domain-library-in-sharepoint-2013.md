@@ -78,12 +78,12 @@ SharePoint アドインを構築するときは、通常、さまざまなソー
   
 2. **AppPrincipal** 要素全体を次で置き換えます。
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **メモ**
@@ -113,7 +113,7 @@ SharePoint アドインを構築するときは、通常、さまざまなソー
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ SharePoint アドインを構築するときは、通常、さまざまなソー
 </html>
 
 
-  ```
+ ```
 
 
     > **重要**
@@ -209,7 +209,7 @@ SharePoint アドインを構築するときは、通常、さまざまなソー
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -217,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### クロスドメイン ライブラリを使用する SharePoint Web ページを作成するには
@@ -240,7 +240,7 @@ Response.End();
   
 6. 次のコードをコピーして **PlaceHolderMain** コンテンツ タグに貼り付けます。
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -315,7 +315,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. 先に貼り付けたコードで、 `remotedomain = "<your_remote_add-in_domain>";` という行を探して、プレースホルダー _<your_remote_add-in_domain>_ を、Visual Studio で F5 を押してアドインを実行するときに Web アプリケーションが使用する「localhost」の URL に置き換えます。この値を見つけるには、 **ソリューション エクスプローラー**で Web アプリケーション プロジェクトを選択します。 **URL** プロパティは [ **プロパティ**] ペインにあります。「http://localhost:45072」のように、プロトコル、ポート、終了のスラッシュを含む値全体を使用します。
     

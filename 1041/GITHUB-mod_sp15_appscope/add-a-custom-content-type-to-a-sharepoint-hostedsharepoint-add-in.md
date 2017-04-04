@@ -95,11 +95,11 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
   
 11. このファイルには、先ほど追加した 2 つの列に対する **FieldRef** 要素が既に存在します。既に存在する 2 つの要素と対になるように、2 つの組み込みの SharePoint 列に対する **FieldRef** 要素を追加します。以下は、これらの要素のマークアップです。 *これらは、固定された ID を持つ組み込みのフィールドの種類なので、ID 属性に対して同じ GUID を使用する必要があります。*  これらを、カスタムのサイト列に対する 2 つの **FieldRef** 要素よりも *上*  に追加します。
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
-  ```
+ ```
 
 
     これらのフィールドにカスタムの表示名 [ **Employee**] を設定しました。
@@ -152,12 +152,12 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
   
 24. 引き続き schema.xml ファイルで、 **BaseViewID** の値が "1" の **View** 要素で、子の **ViewFields** 要素を探し、次の 2 つの **FieldRef** 要素をその子として追加します。既にここに存在することがありますが、 **ID** 属性が欠けている可能性があります。その場合は、ID 属性を追加します。
     
-  ```
+ ```
   
 <FieldRef Name="Division" ID="{GUID from the Field element}" />
 <FieldRef Name="OrientationStage" ID="{GUID from the Field element}" />
 
-  ```
+ ```
 
 25. 2 つのプレースホルダーの **ID** 属性の値を、schema.xml ファイルのそれ以前の **NewEmployee** の **ContentType** 要素の該当する **Field** 要素の GUID で置き換えます。また、"{}" で囲むのを忘れないようにします。
     
@@ -165,14 +165,14 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
     
 
 
-  ```
+ ```
   
 <ViewFields>
    <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
    <FieldRef Name="Division" ID="{509d2d67-9a96-4596-9b3b-58449cdcc6ff}" />
    <FieldRef Name="OrientationStage" ID="{38a3b54c-acf3-4ddf-b748-55c7c28d4cc2}" />        
 </ViewFields>
-  ```
+ ```
 
 26. 引き続き schema.xml ファイルで、 **BaseViewID** の値が "0" の **View** 要素を探します。その中の **ViewFields** 要素を探します。
     
@@ -188,7 +188,7 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
   
 30. 2 つの **Field** 要素を最初の **Row** 要素に追加して、 **Row** 要素が次のようになるようにします。
     
-  ```
+ ```
   
 <Row>
   <Field Name="Title">Tom Higginbotham</Field>
@@ -196,7 +196,7 @@ SharePoint アドインにカスタム コンテンツ タイプを含める方�
   <Field Name="OrientationStage">Tour of building</Field>
 </Row>
    
-  ```
+ ```
 
 31. ファイルを保存して閉じます。
     

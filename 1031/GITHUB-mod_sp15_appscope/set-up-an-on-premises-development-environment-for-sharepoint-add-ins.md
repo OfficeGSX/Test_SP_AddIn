@@ -64,11 +64,11 @@ Je nach Ihren spezifischen Anforderungen und Ihrem Budget können Sie unter folg
   
 5. Wenn bei der Installation Fehler auftreten, überprüfen Sie die Protokolldatei. Sie finden die Protokolldatei, indem Sie ein Eingabeaufforderungsfenster öffnen und die folgenden Befehle an der Eingabeaufforderung eingeben. Beim Abschluss der Installation wird ebenfalls ein Link zur Protokolldatei angezeigt.
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. Wenn die Installation abgeschlossen ist, werden Sie aufgefordert, den Konfigurations-Assistenten für SharePoint-Produkte und -Technologien zu starten.
     
@@ -212,40 +212,40 @@ Führen Sie die Schritte im folgenden Verfahren aus, um eine isolierte Add-In-Do
 
 1. Stellen Sie sicher, dass der spadmin- und der sptimer-Dienst ausgeführt werden, indem Sie eine Eingabeaufforderung öffnen und die folgenden Befehle eingeben.
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. Erstellen Sie die isolierte Add-In-Domäne, indem Sie die SharePoint-Verwaltungsshell als Administrator ausführen und den folgenden Befehl eingeben. Ersetzen Sie  _contosoaddins.com_ durch Ihre Add-In-Domäne. Dies sollte *keine*  Unterdomäne der Host-SharePoint-Domäne sein. Dadurch würden die Sicherheitsvorteile isolierter Add-In-Domänen weitgehend zunichte gemacht. Lautet die Hostdomäne zum Beispiel „contoso.com", sollten Sie nicht „addins.contoso.com" als Add-In-Domäne verwenden.
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. Stellen Sie sicher, dass die Dienste SPSubscriptionSettingsService und AppManagementServiceInstance ausgeführt werden, indem Sie den folgenden Befehl in der SharePoint-Verwaltungsshell eingeben.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. Überprüfen Sie, ob die Dienste SPSubscriptionSettingsService und AppManagementServiceInstance ausgeführt werden, indem Sie den folgenden Befehl in der SharePoint-Verwaltungsshell eingeben. Die Ausgabe gibt an, ob jeder Dienst online ist.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. Sie müssen ein Konto angeben, unter dem die Dienstinstanzen SPSubscriptionService und AppManagementServiceInstance ausgeführt werden sollen. Dieses Konto muss ein SPManagedAccount sein. Sie können ein SPManagedAccount erstellen, indem Sie den folgenden Befehl in der SharePoint-Verwaltungsshell eingeben. (Sie werden zur Eingabe von Kontodomäne\\Benutzer und Kennwort aufgefordert.)
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. Geben Sie ein Konto, einen Anwendungspool und Datenbankeinstellungen für die Dienste SPSubscriptionService und AppManagementServiceInstance an, indem Sie den folgenden Code in der SharePoint-Verwaltungsshell eingeben. Wenn Sie im vorherigen Schritt ein SPManagedAccount erstellt haben, verwenden Sie diesen Kontonamen hier.
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. Geben Sie Ihr Add-In-Präfix an (siehe  [Hostwebs, Add-In-Webs und die isolierte Domäne](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)), indem Sie folgenden Code in die SharePoint-Verwaltungsshell eingeben.
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **Führen Sie die Schritte in der folgenden Prozedur nur durch, wenn Sie einen Proxyserver verwenden.** Nachdem Sie Ihre isolierte Add-In-Domäne erstellt haben, führen Sie die in der folgenden Prozedur beschriebenen Schritte durch, um die Domäne zu Ihrer Umgehungsliste im Internet Explorer hinzuzufügen. Dadurch wird sichergestellt, dass Sie zu dieser Domäne navigieren können, nachdem Sie ein in SharePoint gehostetes Add-In oder ein vom Anbieter gehostetes Add-In bereitgestellt haben, das ein Add-In-Web umfasst.
   

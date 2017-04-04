@@ -64,11 +64,11 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
   
 5. Если во время установки возникают какие-либо ошибки, просмотрите файл журнала. Чтобы найти его, откройте окно командной строки и введите следующую команду. Ссылка на файл журнала появляется также после завершения установки.
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. После завершения установки вам будет предложено запустить мастер настройки продуктов и технологий SharePoint.
     
@@ -212,40 +212,40 @@ dir /od *.log
 
 1. Убедитесь, что службы spadmin и sptimer запущены, открыв командную строку и введя следующие команды.
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. Создайте изолированный домен надстройки, запустив командную консоль SharePoint от имени администратора и выполнив следующую команду. Замените  _contosoaddins.com_ доменом вашей надстройки. Это *не*  должен быть поддомен ведущего домена SharePoint. В противном случае потеряется большинство преимуществ безопасности изолированных доменов надстроек. Например, если имя несущего домена contoso.com, не используйте addins.contoso.com в качестве домена надстроек.
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. Обеспечьте запуск служб SPSubscriptionSettingsService и AppManagementServiceInstance, введя в командной консоли SharePoint следующую команду.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. Убедитесь, что службы SPSubscriptionSettingsService и AppManagementServiceInstance работают, введя в командной консоли SharePoint следующую команду. Результат выполнения команды покажет, подключена ли каждая служба.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. Необходимо указать учетную запись, в которой будут выполняться экземпляры служб SPSubscriptionService и AppManagementServiceInstance. Это должна быть учетная запись SPManagedAccount. Чтобы создать учетную запись SPManagedAccount, введите в командной консоли SharePoint следующую команду (вам будет предложено указать имя пользователя и домен учетной записи, а также пароль).
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. Укажите параметры учетной записи, пула приложений и базы данных для служб SPSubscriptionService и AppManagementServiceInstance, введя следующий код в командной консоли SharePoint. Если в предыдущем действии была создана учетная запись SPManagedAccount, используйте здесь ее имя.
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. Укажите префикс надстройки (см.  [Хост-сайты, сайты надстройки и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)), введя в командной консоли SharePoint приведенный ниже код.
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **Выполните следующую процедуру, только если в вашей среде используется прокси-сервер.** После создания изолированного домена надстроек выполните действия, приведенные в следующей процедуре, чтобы добавить этот домен в список обхода в Internet Explorer. Это гарантирует, что вы сможете переходить к этому домену после развертывания надстройки, размещенной в SharePoint, или надстройки, размещенной у поставщика, которая содержит сайт надстройки.
   

@@ -104,7 +104,7 @@ SellerDashboard ソリューションには、8 つのプロジェクトが含�
     
 
 
-  ```cs
+ ```cs
   
 // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
@@ -145,7 +145,7 @@ SellerDashboard ソリューションには、8 つのプロジェクトが含�
                 return accessToken.Item1;
             }
   }
-  ```
+ ```
 
 - **BoxXDataService**
     
@@ -155,7 +155,7 @@ SellerDashboard ソリューションには、8 つのプロジェクトが含�
     
 
 
-  ```cs
+ ```cs
   
 [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
@@ -187,7 +187,7 @@ SellerDashboard ソリューションには、8 つのプロジェクトが含�
         {
             BoxXDataDeleter.DeleteInventoryItem(carInventoryItem.ID);
  }
-  ```
+ ```
 
 - **CarInventoryBoxXDataOperation**
     
@@ -331,7 +331,7 @@ LightSwitch は、2 つのデータ ソースの間のリレーションシッ�
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?> 
 - <edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
@@ -370,7 +370,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
 </edmx:DataServices>
 </edms:Edmx>               
 
-  ```
+ ```
 
 
     これは、テスト データベースであり、プロパティの種類と Null 許容値はシナリオに基づいています。ID は PropertyRef であり、OData CRUD 操作は ID に基づいています。StockNo プロパティは、データを SharePoint の画像ライブラリに格納されている車の写真と組み合わせるのに使用されます。
@@ -378,7 +378,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   
 -  *RIA サービスに対して定義されるデータ モデル* 
     
-  ```cs
+ ```cs
   
 public interface IInventoryItem
     	{
@@ -426,7 +426,7 @@ public interface IInventoryItem
         bool CopyFrom(IInventoryCollection other);
 }
 
-  ```
+ ```
 
 
     SAP データベース スキーマに含まれていないプロパティはすべて無視できます。たとえば、 **Images** プロパティはスケーラビリティを考慮するために追加されました。このデータ モデルは、実際の SAP データベースと SellerDashboard.Server データ ソースの間の中間層です。LightSwitch プロジェクトには、View および Server の 2 つのコンポーネントがあります。Server 側に外部データ ソースを追加するとき、LightSwitch は Server 側のデータ ソースに追加される抽象データ層を作成するうえで役立ちます。
@@ -547,8 +547,7 @@ ACS での OAuth のプロセスが完了すると、認証要求が Azure AD �
     
 
 
-
-```cs
+```cs
 
 protected override void Page_Load(object sender, EventArgs e)
 {
@@ -572,8 +571,7 @@ protected override void Page_Load(object sender, EventArgs e)
      }
 
      base.Page_Load(sender, e);
- }
-```
+ }```
 
 詳細については、コード サンプル内の SellerDashBoard.Server/SharePointLaunch.aspx.cs および AADAuthLib/AuthUtil.cs を参照してください。
   
@@ -596,8 +594,7 @@ SellerDashboard.Server には SharePointContext.cs ファイルおよび TokenHe
     
 
 
-
-```cs
+```cs
 
         public void CreateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -628,8 +625,7 @@ BoxXDataReader
 
                 dataCollection.CopyFrom(filteredCollection);
             }
-        }
-```
+        }```
 
  **BoxXDataUpdater**
   
@@ -637,8 +633,7 @@ BoxXDataReader
     
 
 
-
-```cs
+```cs
 
 public void UpdateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -666,8 +661,7 @@ BoxXDataDeleter
 
             // Delete existing entry request execute
             IODataResponseMessage responseMessage = requestMessage.GetResponse();
-        }
-```
+        }```
 
 
 ### SharePoint 画像ライブラリへの写真のアップロード
@@ -686,16 +680,14 @@ uploadForm に新しいフィールドが追加され、StockNo を写真のア�
     
 
 
-
-```
+```
 
 uploadForm = $(
              '<form id="uploadForm" method="POST" enctype="multipart/form-data" action="' + API_URL + '"  data-ajax="false" target="uploadTargetIFrame">' +
              '   <input name="fileInput" id="fileInput" type="file" size="30" data-theme="c" accept="image/*" multiple="true"/>' +
              '   <input type="hidden" name=' + screen.InventoryItem.StockNo + '>' +
              '</form>');
-
-```
+```
 
 画像の URL をキャッシュするためのロジックと画像のセットバック ロジックを追加します。
   
@@ -703,8 +695,7 @@ uploadForm = $(
     
 
 
-
-```
+```
 
 function completeUpload(uploadedFiles) {
             var fullImageUrl = uploadedFiles[0];
@@ -716,8 +707,7 @@ function completeUpload(uploadedFiles) {
             setCacheUrl(screen.InventoryItem.StockNo, fullImageUrl + "*#00#" + thumbnailUrl);
             setDetailsCarPicture(fullImageUrl);
             screen.closePopup();
-        }
-```
+        }```
 
  **PhotosController.cs の変更について:**
   
@@ -733,8 +723,7 @@ SharePoint ホストに対してアプリ専用のクライアント コンテ�
     
 
 
-
-```cs
+```cs
 
 private ClientContext AppWebContext
     {
@@ -747,8 +736,7 @@ private ClientContext AppWebContext
             return appWebContext;
         }
     }
-
-```
+```
 
  **PhotoListHelper.cs の変更について:**
   
@@ -760,8 +748,7 @@ private ClientContext AppWebContext
     
 
 
-
-```cs
+```cs
 
             // Delete the old picture item
             foreach (ListItem item in items)
@@ -796,8 +783,7 @@ private ClientContext AppWebContext
             }
 
 
-
-```
+```
 
 
 ### ユーザー エクスペリエンス
@@ -860,20 +846,20 @@ private ClientContext AppWebContext
   
 4. アドインをスタートアップ プロジェクトとして設定し、プロジェクトを実行します。ContosoMotorsCarInventoryWeb/Web.config ファイルに ClientID と ClientSecret の値が表示されます。コードは次のようになります。
     
-  ```XML
+ ```XML
   
 <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6"/>
 <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk="/>
-  ```
+ ```
 
 5. ContosoMotorsCarInventoryWeb/TokenHelper.cs の [ホストされるアドインの構成] で、ClientID と ClientSecret の値を上記の値に置き換えます。コードは次のようになります。
     
-  ```cs
+ ```cs
   
 private static readonly string ClientId = "06af1059-8916-4851-a271-2705e8cf53c6";
 private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=";
 
-  ```
+ ```
 
 
 ### Web アプリケーションを Azure AD に登録する
@@ -967,14 +953,14 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 
 1. SellerDashboardHTMLClient/UserCode.js を見つけて、次のコードのプレース ホルダーを検索します。
     
-  ```cs
+ ```cs
   
 sharePointUrl: "Replace with your SharePoint host site",
 // https://fake_domain.sharepoint.com/sites/Developer
 SharePointRootUrl: "Replace with your SharePoint root site"
  // https://fake_domain.sharepoint.com/ 
 
-  ```
+ ```
 
 
 1. sharePointUrl 値を SharePoint サイトに置き換えます。SharePoint サイトはアドインのインストール先であり、画像ライブラリもそこに含まれます。
@@ -985,7 +971,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
   
 2. SellerDashboard ソリューションで SellerDashboard.Server/Web.config を見つけ、次の構成のプレースホルダーを検索します。
     
-  ```XML
+ ```XML
   
 <add key="ClientSecret" value="MwMp1yxOyy8BGhfD5d9VvuqlRbhaqWESxVNLzgpYNHU=" />
 <add key="ClientId" value="ed138b32-c89d-4f22-b74d-7d9d5044b260" />
@@ -1006,7 +992,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
 <add key="Ida:DefaultID" value="1024" />
 <add key="Ida:DefaultStockNo" value="2048" />
 <add key="Ida:SPPicLib" value="Replace with you picture library name, for example ContosoMotorsPictureLibrary" />
-  ```
+ ```
 
 
 1. ClientId と ClientSecret の値を以前の手順で取得した値に置き換えます。
@@ -1041,7 +1027,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
     
 
 
-  ```XML
+ ```XML
   
 ZCAR_POC_SRV.ContosoMotors
 
@@ -1049,7 +1035,7 @@ ZCAR_POC_SRV.ContosoMotors
      <EntitySet sap:content-version="1" Name="ContosoMotorsCollection" sap:searchable="true" EntityType="ZCAR_POC_SRV.ContosoMotors"/>
 </EntityContainer>
 <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://contoso.cloudapp.net:8080/perf/sap/opu/odata/sap/ZCAR_POC_SRV.ContosoMotors"/>
-  ```
+ ```
 
 10. Ida:SPPicLib 値を、SharePoint ホスト サイトで作成した画像ライブラリ名に置き換えます。
     

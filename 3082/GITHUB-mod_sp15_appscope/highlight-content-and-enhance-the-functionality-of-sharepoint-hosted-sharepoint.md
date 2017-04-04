@@ -37,12 +37,10 @@ En este ejemplo se emplea el método  `SP.SOD.executeFunc` para garantizar que e
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 La función que se pasa a la función  `SP.SOD.executeFunc` contiene el código que hay que ejecutar después de que el archivo callout.js se cargue. Tras cargar estos archivos, se usa el objeto `CalloutManager` para crear un objeto `Callout` por cada elemento de la página que deba tener asociado un control de globo. `CalloutManager` es un singleton donde se almacenan las referencias a todos los objetos `Callout` que hay en una página dentro de una matriz asociativa. El objeto `Callout` tiene únicamente dos miembros necesarios: `ID` y `launchPoint`. El miembro  `ID` es la clave que se asigna al objeto `Callout` en `CalloutManager`:  `CalloutManager["value of the callout's ID member"]`, mientras que el miembro  `launchPoint` es un elemento de página HTML. Puede, por ejemplo, crear u obtener un elemento `div` en la página y pasarlo como miembro del objeto `Callout`. El control de globo se muestra de forma predeterminada cada vez que un usuario hace clic en el elemento  `launchPoint`. En este ejemplo se indica cómo crear el control de globo más básico posible con solo los dos miembros necesarios y una cadena de título.
   
@@ -50,8 +48,7 @@ La función que se pasa a la función  `SP.SOD.executeFunc` contiene el código 
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 Este globo en concreto aparece y muestra un título en la parte superior cada vez que un usuario hace clic en el elemento de página. Los miembros opcionales se usan para personalizar la apariencia, comportamiento, posicionamiento y acciones de dicho control mediante formas tremendamente eficaces. El control de globo cuenta además con un método definido que sirve para establecer un valor para cualquier parámetro después de crear una instancia del control.
   
@@ -68,11 +64,9 @@ Este globo en concreto aparece y muestra un título en la parte superior cada ve
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 También se pueden establecer valores para todos los miembros del globo en un objeto  `CalloutOptions` y, luego, pasar dicho objeto al método `createNew`.
   
@@ -80,15 +74,13 @@ También se pueden establecer valores para todos los miembros del globo en un ob
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## Cómo personalizar la apariencia de un control de globo
@@ -149,7 +141,7 @@ Se pueden usar los siguientes métodos para personalizar el comportamiento del c
 
 |**Usar este método**|**Propósito**|**Valores de parámetro válidos**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |Establecer los valores de los miembros después de haber creado una instancia del control.  <br/> |Un par nombre-valor que define un valor para cada miembro del control de globo.  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |Establecer los valores de los miembros después de haber creado una instancia del control.  <br/> |Un par nombre-valor que define un valor para cada miembro del control de globo.  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |Devuelve un objeto  `CalloutOrientation` que indica hacia dónde señala el control de globo. Este objeto tiene cuatro miembros booleanos: `up`,  `down`,  `left` y `right`. Mientras el control está abierto, dos de estos valores serán **true** y los otro dos, **false** ( `up` y `right`, por ejemplo).  <br/> |Sin parámetros  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |Registrar una función de devolución de llamada que se llame cada vez que el control de globo pasa al estado especificado por el parámetro  `eventName`.  <br/> |El parámetro  `eventName` debe ser uno de los siguientes valores: `opening`,  `open`,  `closing`,  `closed`. El parámetro  `callback` debe ser una función que tome como primer parámetro una instancia del control de globo. <br/> |
 |open()  <br/> |Mostrar el control. Si el control ya está abierto o abriéndose, este método devuelve **false** y no hace nada. <br/> |Sin parámetros  <br/> |
@@ -166,8 +158,7 @@ Las acciones se agregan después de crear una instancia del control de globo. Un
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Se pueden establecer valores también para todos los miembros  `CalloutAction` de un objeto `CalloutActionOptions` y pasar dicho objeto al constructor `CalloutAction`.
   
@@ -187,8 +177,7 @@ Se pueden establecer valores también para todos los miembros  `CalloutAction` d
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Se pueden usar los siguientes miembros para definir el comportamiento de una acción de globo.
   
@@ -245,8 +233,7 @@ Se pueden crear cuantas entradas de menú sean necesarias y agregarlas a la acci
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
 El constructor  `CalloutActionMenuEntry` toma tres parámetros: los dos primeros son obligatorios, mientras que el tercero es opcional, si bien resulta muy útil porque permite mostrar un icono junto con el texto.
   
@@ -315,14 +301,12 @@ El objeto  `calloutPositioningProxy` contiene métodos y propiedades que sirven 
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 Luego, habría que pasar esa función como el valor del miembro  `positionAlgorithm` del objeto `Callout`. Esto se puede realizar al crear  `Callout`, o bien configurando el valor posteriormente.
   
@@ -330,12 +314,10 @@ Luego, habría que pasar esa función como el valor del miembro  `positionAlgori
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 Siempre se puede echar un vistazo a la lógica de posicionamiento predeterminada, para lo que deberá abrir la consola JavaScript del explorador (por ejemplo, las Herramientas de desarrollo F12 de Internet Explorer).
   
@@ -343,11 +325,9 @@ Siempre se puede echar un vistazo a la lógica de posicionamiento predeterminada
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 Puede usar los siguientes métodos en el objeto  `CalloutPositioningProxy` para escribir su propia lógica de posicionamiento.
   
@@ -384,8 +364,7 @@ Este algoritmo de posicionamiento hace que el control se coloque encima o debajo
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 Este algoritmo de posicionamiento modifica la dirección predeterminada del control a  `downAndRight` en lugar de a `upAndRight`, pero usa el algoritmo predeterminado en caso de que haya alguna colisión.
   
@@ -410,8 +388,7 @@ Este algoritmo de posicionamiento modifica la dirección predeterminada del cont
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## Recursos adicionales

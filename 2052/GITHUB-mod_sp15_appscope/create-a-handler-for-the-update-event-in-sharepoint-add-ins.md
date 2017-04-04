@@ -53,20 +53,20 @@ ms.assetid: 0fa088c5-54c6-482c-84ed-51c4f77c4127
 
 1. 打开 AppEventReceiver.svc.cs 文件并向  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) 方法添加一个条件结构，该方法会测试调用处理程序的事件是否为更新事件。您的更新代码会进入此结构内部。如果您的代码需要访问 SharePoint，则可以使用 SharePoint 托管代码客户端对象模型 (CSOM) 或代表性状态传输 (REST) 接口。条件结构在方法中的位置取决于您在方法中结构化其他代码的方式。它通常是测试安装的外接程序和外接程序卸载事件的类似条件结构的对应项。它可能位于某个条件结构中（测试传递给 [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) 的 [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) 对象的某些属性或子属性是否为 **null** 值或其他无效值）。也可能包含在 **try** 块中。下面是此结构的一个示例。 _properties_ 对象是一个 [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) 对象。
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. 若要在处理程序中使用 CSOM，添加（在条件块内） **using** 块，该块会通过调用 **TokenHelper.CreateAppEventClientContext** 方法获取 [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) 对象。为第二个参数指定 **true**，以访问外接程序 Web。指定 **false** 以访问主机 Web。如果要同时访问两者，则需要两个不同的客户端上下文对象。
     
   
 3. 如果您的处理程序需要访问非 SharePoint 组件，则将该代码放到任何客户端上下文块之外。您的代码的结构应该与以下结构类似：
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -81,11 +81,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. 若要使用 REST 界面，您的代码会使用 **TokenHelper** 类中的其他方法获取访问令牌，之后，该令牌会包含在向 SharePoint 发出的请求中。有关详细信息，请参阅 [使用 SharePoint 2013 REST 终结点完成基本操作](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)。您的代码的结构应该与以下结构类似。
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -102,15 +102,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. 若要访问 SharePoint，您的 REST 代码还需要知道主机 Web 和/或外接程序 Web 的 URL。这些 URL 都是传递给 [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) 方法的 [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) 对象的子属性。以下代码显示如何获取它们。
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 第二次（或第三次等）更新外接程序时，可能需要确保某些更新逻辑不能在同一外接程序实例中运行多次。以下过程显示了如何操作。
   
@@ -128,7 +128,7 @@ Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
   
 3. 在此结构下方添加新的更新逻辑（针对从 2.0.0.0 到 3.0.0.0 的更新）。示例如下。
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -137,11 +137,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. 对于每次后续更新，重复上述步骤。对于从 3.0.0.0 到 4.0.0.0 的更新，您的代码应该具有以下结构。
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -156,7 +156,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **重要信息**
@@ -196,8 +196,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -214,8 +213,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 错误处理的最后一个操作是为 **ProcessEvent** 方法返回到 SharePoint 2013 更新基础架构的 [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 对象分配错误消息和取消状态。示例如下。在此代码中， _result_ 是之前已在 **ProcessEvent** 方法中声明的 **SPRemoteEventResult** 对象。
   
@@ -223,8 +221,7 @@ catch (Exception e)
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -233,8 +230,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **重要信息**

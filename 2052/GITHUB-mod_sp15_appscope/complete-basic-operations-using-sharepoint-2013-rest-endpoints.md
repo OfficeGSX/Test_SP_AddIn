@@ -72,8 +72,7 @@ SharePoint 2013 REST 服务中的终结点对应于 SharePoint 客户端对象�
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -84,8 +83,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 如果您使用 JavaScript 编写外接程序但使用 SharePoint 2013 跨域库，此请求看起来会有点不同。在这种情况下，您不需要提供访问令牌。以下代码演示如果您使用跨域库并要以 XML（而不是 JSON）格式接收列表的 OData 表示，此请求会是怎样的。（由于 Atom 是默认的响应格式，您无需包含 **Accept** 标头。）请参阅 [使用跨域库从外接程序访问 SharePoint 2013 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)，了解有关使用跨域库的详细信息。
   
@@ -93,8 +91,7 @@ HttpWebResponse endpointResponse =
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -107,8 +104,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 以下示例中的代码显示了如何使用 C# 请求网站中所有列表的 JSON 表示。它假定您有一个存储在  `accessToken` 变量中的 OAuth 访问令牌。
   
@@ -116,16 +112,14 @@ executor.executeAsync(
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### 获取没有返回资源的属性
@@ -161,8 +155,7 @@ http:// _<网站 url>_/_api/web/getfilebyserverrelativeurl('/ _<文件夹名称>
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -171,8 +164,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 如果您使用  [SharePoint 外接程序的授权和身份验证](authorization-and-authentication-of-sharepoint-add-ins.md)中所述的身份验证和授权流，则无需将请求摘要包含在请求中。
   
@@ -188,8 +180,7 @@ HttpWebResponse endpointResponse =
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -207,8 +198,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 以下示例演示如何更新在前面的示例中创建的列表。该示例更改列表的标题、使用 JQuery，并假定您在 SharePoint 托管的外接程序中执行此操作。
   
@@ -216,8 +206,7 @@ jQuery.ajax({
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -234,8 +223,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 在请求标头中的 **IF-MATCH** 键的值中，您指定列表或列表项的 **etag** 值。此特定值仅适用于列表和列表项，它旨在帮助您避免在更新这些实体时出现并发问题。前面的示例对此值使用星号 (*)，只要您没有任何理由担心并发问题，您就可以使用此值。否则，您应通过执行一个 **GET** 请求（用于检索实体）来获取列表或列表项的 **etag** 值。由此产生的 HTTP 响应的响应标头将作为 **ETag** 键的值传递。此值也包含在实体元数据中。以下示例显示了包含列表信息的 XML 节点的开始 `<entry>` 标记。 **m:etag** 属性包含 **etag** 值。
   
@@ -243,14 +231,12 @@ jQuery.ajax({
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## 使用 REST 创建网站
@@ -260,8 +246,7 @@ xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gm
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -285,8 +270,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## REST 请求如何因环境而异
@@ -387,8 +371,7 @@ SharePoint 外接程序可以从外接程序页面的查询字符串中获取外
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -425,8 +408,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## REST 请求中使用的属性

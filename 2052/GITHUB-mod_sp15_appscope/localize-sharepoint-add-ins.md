@@ -114,7 +114,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 3. 使用"说明"属性，以相同的方式调用列表说明的字符串资源  例如，$Resources: OrdersListInstance_Description。以下是使用列表实例的 Elements.xml 文件中本地化后的字符串的标记。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -126,7 +126,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
       Description="$Resources:OrdersListInstance_Description">
   </ListInstance>
 </Elements>
-  ```
+ ```
 
 
     下图显示了英语的本地化后的自定义列表。
@@ -157,7 +157,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 4. 在自定义列表的 **Schema.xml** 文件中，删除您之前复制的每个 **Field** 节点的 **DisplayName** 属性。以下是在列表定义的 **Elements.xml** 文件中使用本地化后的字符串的示例标记。
     
-  ```
+ ```
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -192,7 +192,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
         List="Lists/Order status"
         ShowField="Title" />
 </Elements>
-  ```
+ ```
 
 
 ### 为自定义页面创建 JavaScript 资源文件
@@ -211,7 +211,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 4. 对于您的每个自定义页面中的每个可本地化字符串，在文件中声明一个具有用于标识字符串的用途的名称的变量，并为其赋予适用于语言的值。下面是 Resources.en-US.js 文件的内容。
     
-  ```
+ ```
   
 var instructionstitle = "Instructions:";
 var step01 = "Go to any document library in the host web.";
@@ -224,7 +224,7 @@ var step06 = "Go to any SharePoint page in the host web and add the" +
 var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     " and <a href=\\"../Lists/Order status\\">Order status</a> custom lists.";
 
-  ```
+ ```
 
 5. 将文件的内容复制到剩余的每个 JavaScript 文件，然后保存所有文件。
     
@@ -241,10 +241,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 2. 确保在您的页面加载时只加载了一个本地化 JavaScript 文件，且该文件应适用于 SharePoint 外接程序 Web 的语言。为此，请将以下标记添加到具有  `PlaceholderAdditionalPageHead` 值的 `ContentPlaceholderId` 的页面中的 **asp:content** 元素。 *以下标记中没有占位符。如果出现占位符。请完全按照此标记在此处显示的形式输入它。* 
     
-  ```HTML
+ ```HTML
   
 <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
-  ```
+ ```
 
 
     此标记将加载您的其中一个 JavaScript 文件。它通过读取名为"language_value"的 SharePoint 资源确定要加载的语言。此资源将解析为前面的步骤中所述的  _LL_- _CC_ 形式的语言-区域性名称。具体而言，此资源将解析为外接程序 Web 的语言。
@@ -256,7 +256,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     > **提示**
       > "INVARIANT"这个词已添加到首个固定字符串。您不能在生产外接程序中如此操作，但在测试时，这是查看是否使用了固定语言字符串或是否加载了语言恰好是您固定语言的 Resources. _LL_- _CC_.js 文件的有效方法。 
 
-  ```HTML
+ ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
 <ol>
     <li id="step01">Go to any document library in the host web.</li>
@@ -287,7 +287,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     }
 </script>
 
-  ```
+ ```
 
 
     下图显示了当外接程序完成后页面的英文版本外观的预览。
@@ -350,10 +350,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
 1. 打开 AppManifest.xml 文件并将"Title"元素值替换为对合适的资源字符串的调用。例如，如果将字符串命名为 Addin_Title，则 **Title** 元素应类似于以下形式：
     
-  ```XML
+ ```XML
   
 <Title>$Resources:Addin_Title;</Title>
-  ```
+ ```
 
 
     > **警告**
@@ -375,8 +375,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     
 
 
-
-```cs
+```cs
 protected override void InitializeCulture()
 {
     if (Request.QueryString["SPLanguage"] != null)
@@ -394,8 +393,7 @@ protected override void InitializeCulture()
             CultureInfo(selectedLanguage);
     }
     base.InitializeCulture();
-}
-```
+}```
 
 
 ## 本地化远程 JavaScript 和 SharePoint chrome 控件
@@ -418,7 +416,7 @@ protected override void InitializeCulture()
 
 1. 部件版式控件可以运行后，请返回到设置部件版式选项的  `renderChrome` 方法。
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -441,11 +439,11 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 2. 正如注释中指出，至少有三个本地化的字符串。使用您在后面步骤中声明的变量名来替换这些字符串中的每一个。
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -468,47 +466,47 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 3. 将名为 ChromeStrings.js 的 JavaScript 文件添加到 Web 应用程序项目。应当在前面的步骤中声明这些变量，并用固定语言为每一个变量分配一个值。
     
-  ```
+ ```
   
 var chromeAppTitle = "My SharePoint add-in";
 var chromeAccountLinkName = "Account settings";
 var chromeContactUsLinkName = "Contact us";
 
-  ```
+ ```
 
 4. 对于您本地化外接程序所使用的语言，添加另一个名为 ChromeStrings. _LL-CC_.js 的 JavaScript 文件，其中， _LL-CC_ 是语言 ID。 *文件名中的基本体（此例中是"ChromeStrings"）必须与您用于固定语言文件的完全相同。*  将固定语言文件的内容复制到每个本地化文件中，并用翻译版本替换各值。
     
-  ```
+ ```
   
 var chromeAppTitle = "Mi aplicación SharePoint";
 var chromeAccountLinkName = "Preferencias";
 var chromeContactUsLinkName = "Contacto";
 
-  ```
+ ```
 
 5. 在调用 SP.UI.controls.js 的任何页面文件中，在其上方添加对 ChromeStrings.js 的调用。例如，如果将对 SP.UI.controls.js 的调用加载在名为 ChromeLoader.js 的中间文件中，此时页面上的标记应该类似于下面的示例。
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 6. 将 **ResourceUICultures** 属性添加到调用您字符串的 **ScriptReference** 元素。它的值是一个用逗号分隔您所支持的语言的列表。
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" ResourceUICultures="en-US,es-ES" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 
     **ResourceUICultures** 属性的效果就是使 ASP.NET 查找有 ChromeStrings. _LL-CC_.js 名称的文件（其中， _LL-CC_ 是页面语言）并加载它。如果没有找到这样的文件，将加载 ChromeStrings.js 文件。

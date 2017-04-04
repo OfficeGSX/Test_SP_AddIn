@@ -132,7 +132,7 @@ La Figure 1 illustre une page web SharePoint utilisant une feuille de style.
     
   
 
-  ```
+ ```
   
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StyleConsumer.aspx.cs" Inherits="StylesheetAppWeb.StyleConsumer" %>
 
@@ -225,7 +225,7 @@ La Figure 1 illustre une page web SharePoint utilisant une feuille de style.
 </body>
 </html>
 
-  ```
+ ```
 
 
     Dans certains cas, l'utilisateur doit être authentifié dans SharePoint avant que votre page ne puisse télécharger la feuille de style CSS et les images pour le style. Les balises de liens n'authentifient pas automatiquement un utilisateur qui n'est pas déjà connecté. Si possible, chargez une ressource de page du site web du complément vers votre page web pour forcer l'authentification de l'utilisateur avant la liaison avec le fichier CSS. Dans cet exemple, la page blank.html est chargée dans un IFrame invisible.

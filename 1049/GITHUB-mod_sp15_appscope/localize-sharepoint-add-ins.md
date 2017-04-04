@@ -114,7 +114,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 3. Используйте атрибут **Description** для вызова строкового ресурса описания списка таким же образом, например$Resources:OrdersListInstance_Description. Ниже приведена разметка, использующая локализованные строки в файле Elements.xml этого экземпляра списка.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -126,7 +126,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
       Description="$Resources:OrdersListInstance_Description">
   </ListInstance>
 </Elements>
-  ```
+ ```
 
 
     На следующем изображении приведен локализованный настраиваемый список на английском языке.
@@ -157,7 +157,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 4. В файле **Schema.xml** настраиваемого списка удалите атрибут **DisplayName** каждого ранее скопированного узла **Field**. Ниже приведен пример разметки, которая использует локализованные строки в файле **Elements.xml** определения списка.
     
-  ```
+ ```
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -192,7 +192,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
         List="Lists/Order status"
         ShowField="Title" />
 </Elements>
-  ```
+ ```
 
 
 ### Создание файлов ресурсов JavaScript для настраиваемых страниц
@@ -211,7 +211,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
   
 4. Для каждой локализуемой строки на каждой из настраиваемых страниц объявите в файле переменную с именем, которое идентифицирует цель строки, и назначьте ей значение, соответствующее языку. Ниже приведено содержимое файла Resources.en-US.js.
     
-  ```
+ ```
   
 var instructionstitle = "Instructions:";
 var step01 = "Go to any document library in the host web.";
@@ -224,7 +224,7 @@ var step06 = "Go to any SharePoint page in the host web and add the" +
 var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     " and <a href=\\"../Lists/Order status\\">Order status</a> custom lists.";
 
-  ```
+ ```
 
 5. Скопируйте содержимое этого файла во все остальные файлы JavaScript и сохраните эти файлы.
     
@@ -241,10 +241,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 2. Убедитесь, что при загрузке страницы загружается только один из локализованных файлов JavaScript, и что это тот файл, который соответствует языку сайта надстройки SharePoint. Для этого добавьте следующую разметку в элемент **asp:content** страницы, которая включает `ContentPlaceholderId` со значением `PlaceholderAdditionalPageHead`.  *В этой разметке нет заполнителей. Вводите разметку в точности, как указано здесь.* 
     
-  ```HTML
+ ```HTML
   
 <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
-  ```
+ ```
 
 
     Эта разметка загружает один из ваших файлов JavaScript. Она определяет, какой языковой файл следует загрузить, читая ресурс SharePoint с именем "language_value". Этот ресурс разрешается в имя языка и региональных параметров в шаблоне  _LL_- _CC_, описанном выше. В частности, он разрешается в язык сайта надстройки.
@@ -256,7 +256,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     > **Совет**
       > Слово "INVARIANT" добавлено в первую из инвариантных строк. Это действие не выполняется для рабочей надстройки, но с его помощью при тестировании можно быстро проверить, используются ли строки на инвариантном языке, а также загружен ли файл Resources. _LL_- _CC_.js для вашего инвариантного языка. 
 
-  ```HTML
+ ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
 <ol>
     <li id="step01">Go to any document library in the host web.</li>
@@ -287,7 +287,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     }
 </script>
 
-  ```
+ ```
 
 
     На рисунке ниже показано, как будет выглядеть английская версия страницы после создания надстройки. 
@@ -350,10 +350,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
 1. Откройте файл AppManifest.xml и замените значение элемента **Title** вызовом соответствующей строки ресурса. Например, если строка получила имяAddin_Title, элемент **Title** должен выглядеть следующим образом:
     
-  ```XML
+ ```XML
   
 <Title>$Resources:Addin_Title;</Title>
-  ```
+ ```
 
 
     > **Внимание!**
@@ -375,8 +375,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     
 
 
-
-```cs
+```cs
 protected override void InitializeCulture()
 {
     if (Request.QueryString["SPLanguage"] != null)
@@ -394,8 +393,7 @@ protected override void InitializeCulture()
             CultureInfo(selectedLanguage);
     }
     base.InitializeCulture();
-}
-```
+}```
 
 
 ## Локализация удаленного элемента управления хрома JavaScript и SharePoint
@@ -418,7 +416,7 @@ protected override void InitializeCulture()
 
 1. После того как элемент управления хрома заработает, вернитесь к методу  `renderChrome`, в котором заданы параметры этого элемента.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -441,11 +439,11 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 2. Как указывалось в примечаниях, имеется по крайней мере три локализуемых строки. Замените каждую из них именем переменной, которое будет объявлено позже.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -468,47 +466,47 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 3. Добавьте файл JavaScript с именем ChromeStrings.js в проект веб-приложения. В нем необходимо объявить переменные, использованные на предыдущем шаге, и назначить каждой из них значение на инвариантном языке.
     
-  ```
+ ```
   
 var chromeAppTitle = "My SharePoint add-in";
 var chromeAccountLinkName = "Account settings";
 var chromeContactUsLinkName = "Contact us";
 
-  ```
+ ```
 
 4. Для каждого языка, на который локализуется надстройка, добавьте еще один файл JavaScript с именем ChromeStrings. _LL-CC_.js, где  _LL-CC_  идентификатор языка. *Основа имени файла, в данном случае "ChromeStrings", должна совпадать с основой, использованной для файла инвариантного языка.*  Скопируйте содержимое файла инвариантного языка в каждый из локализованных файлов и замените значения на переведенные версии.
     
-  ```
+ ```
   
 var chromeAppTitle = "Mi aplicación SharePoint";
 var chromeAccountLinkName = "Preferencias";
 var chromeContactUsLinkName = "Contacto";
 
-  ```
+ ```
 
 5. В любом файле страницы, содержащем вызов скрипта SP.UI.controls.js, добавьте вызов файла ChromeStrings.js над этим скриптом. Например, если вызов скрипта SP.UI.controls.js загружается в промежуточный файл с именем ChromeLoader.js, разметка на странице на данном этапе должна выглядеть, как показано ниже.
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 6. Добавьте атрибут **ResourceUICultures** в элемент **ScriptReference**, вызывающий ваши строки. Его значением является список поддерживаемых языков с разделителями-запятыми.
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" ResourceUICultures="en-US,es-ES" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 
     Благодаря атрибуту **ResourceUICultures**ASP.NET будет выполнять поиск файла с именем ChromeStrings. _LL-CC_.js, где  _LL-CC_ является языком страницы, и загружать этот файл. Если он не найдет такого файла, будет загружен файл ChromeStrings.js.

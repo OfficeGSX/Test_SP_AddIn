@@ -64,11 +64,11 @@ SharePoint アドイン開発に特化した開発環境を SharePoint のオン
   
 5. インストール中にエラーが発生した場合は、ログ ファイルを確認します。ログ ファイルを見つけるには、コマンド プロンプト ウィンドウを開いて次のコマンドを入力します。インストールの完了時にはログ ファイルへのリンクも表示されます。
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. インストールが完了すると、SharePoint 製品とテクノロジ構成ウィザードを開始するかどうかを確認するメッセージが表示されます。
     
@@ -212,40 +212,40 @@ dir /od *.log
 
 1. コマンド プロンプトを開いて以下のコマンドを入力し、spadmin および sptimer サービスが実行されるようにします。
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. SharePoint 管理シェルを管理者として実行し、以下のコマンドを入力して分離アドイン ドメインを作成します。 _contosoaddins.com_ はご使用のアドイン ドメインに置き換えてください。ホスト SharePoint ドメインのサブドメインには *しない*  でください。サブドメインにすると、分離アドイン ドメインを使用するセキュリティ上の利点が大いに損なわれることになります。たとえば、ホスト ドメインが contoso.com の場合には、addins.contoso.com をアドイン ドメインとして使用しないでください。
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. SharePoint 管理シェルで以下のコマンドを入力して、SPSubscriptionSettingsService および AppManagementServiceInstance サービスが実行されるようにします。
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. SharePoint 管理シェルで以下のコマンドを入力して、SPSubscriptionSettingsService および AppManagementServiceInstance サービスが実行されていることを確認します。出力に、各サービスがオンラインであるかどうかが表示されます。
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. SPSubscriptionService および AppManagementServiceInstance のサービス インスタンスが実行されるアカウントを指定する必要があります。このアカウントは SPManagedAccount である必要があります。SharePoint 管理シェルで以下のコマンドを入力し、SPManagedAccount を作成します (アカウント (domain\\user) とパスワードを入力する必要があります)。
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. SharePoint 管理シェルで以下のコードを入力し、SPSubscriptionService および AppManagementServiceInstance サービスについてアカウント、アプリケーション プール、およびデータベースの設定を指定します。SPManagedAccount を前の手順で作成している場合は、そのアカウント名をここで使用します。
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. SharePoint 管理シェルで以下のコードを入力し、アドインのプリフィックスを指定します (「 [ホスト Web、アドイン Web、および分離ドメイン](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)」をご覧ください)。
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **プロキシ サーバーを使用している環境の場合のみ、以下の手順を実行してください。** 分離アドイン ドメインを作成したら、次の手順で Internet Explorer のバイパス一覧にそのドメインを追加します。この設定により、SharePoint ホスト型アドインの展開後、またはアドイン Web が含まれるプロバイダーでホストされるアドインの展開後、このドメインに移動することができるようになります。
   

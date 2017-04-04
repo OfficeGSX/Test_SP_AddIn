@@ -149,7 +149,7 @@ SharePoint でホストされていない Web ページも含め、任意の Web
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -241,7 +241,7 @@ Basic People Picker sample (HTML markup declaration):
 </body>
 </html>
 
-  ```
+ ```
 
 
 > **メモ**
@@ -256,14 +256,12 @@ Basic People Picker sample (HTML markup declaration):
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### ソリューションを構築して実行するには
@@ -298,11 +296,9 @@ Office.Controls.Runtime.initialize({});
   
     
     
+```HTML
 
-```HTML
-
-<div id="PeoplePickerDiv"></div>
-```
+<div id="PeoplePickerDiv"></div>```
 
 次の JavaScript コードを使用して、ユーザーの選択ウィンドウのウィジェットのインスタンスを作成します。
   
@@ -310,11 +306,9 @@ Office.Controls.Runtime.initialize({});
     
 
 
-
-```
+```
 new Office.Controls.PeoplePicker(
-    document.getElementById("PeoplePickerDiv"), {});
-```
+    document.getElementById("PeoplePickerDiv"), {});```
 
 作業の実行方法を示すコード サンプルについては、「 [ユーザーの選択ウィンドウの実験用ウィジェットをアドインで使用する](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85)」のコード サンプルの **JSSimple.html** ページを参照してください。
   
@@ -327,8 +321,7 @@ new Office.Controls.PeoplePicker(
   
     
     
-
-```HTML
+```HTML
 
 <div id="PeoplePickerDiv"
         data-office-control="Office.Controls.PeoplePicker"
@@ -337,8 +330,7 @@ new Office.Controls.PeoplePicker(
         "onChange" : handleChange,
         "placeholder" : "Check the count message, it changes when you add names..."
     }'>
-</div>
-```
+</div>```
 
 以下のコードは、JavaScript を使用してユーザーの選択ウィンドウのウィジェットを宣言する場合のオプションの指定方法を示しています。
   
@@ -346,8 +338,7 @@ new Office.Controls.PeoplePicker(
     
 
 
-
-```
+```
 
 new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {
@@ -357,8 +348,7 @@ new Office.Controls.PeoplePicker(
             document.getElementById("count").textContent = 
 ctrl.selectedItems.length.toString();
         }
-    });
-```
+    });```
 
  **onChange** イベント、 **onAdded** イベント、 **onRemoved** イベントのイベント ハンドラーを指定することもできます。上記のコードで onChange イベントのイベント ハンドラーが単一のパラメーター **ctrl** を受け取ることに注意してください。これはウィジェットを参照しています。
   
@@ -388,11 +378,9 @@ ctrl.selectedItems.length.toString();
     
 
 
+```
 
-```
-
-var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
-```
+var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;```
 
 ウィジェットのインスタンスを作成するときに参照を保存することもできます。
   
@@ -400,11 +388,9 @@ var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
     
 
 
-
-```
+```
 var pplPicker = new Office.Controls.PeoplePicker(
-                        document.getElementById("PeoplePickerDiv"), {});
-```
+                        document.getElementById("PeoplePickerDiv"), {});```
 
  **selectedItems** プロパティはユーザーまたはグループを表すオブジェクトの配列です。selectedItems 配列内のユーザーまたはグループは解決済みでも未解決でもかまいません。その点は **isResolved** プロパティで確認できます。次の例では、配列の要素 *i*  にアクセスして、ユーザーまたはグループの名前を使用する方法を示します。
   
@@ -412,12 +398,10 @@ var pplPicker = new Office.Controls.PeoplePicker(
     
 
 
-
-```
+```
 
 var principal = pplPicker.selectedItems[i];
-$("#msg").text(principal.text + " is selected in the control.");
-```
+$("#msg").text(principal.text + " is selected in the control.");```
 
 選択されたユーザーまたはグループをウィジェットから取得する方法の例については、「 [Office Web Widgets - Experimental デモ](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e)」のコード サンプルの **demo.html** ページを参照してください。
   

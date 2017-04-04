@@ -60,20 +60,20 @@ For more details about how to create a handler for the add-in event, see  [Handl
 
 1. Open the AppEventReceiver.svc.cs file and add a conditional structure to the  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) method that tests whether the event that invoked the handler is the updated event. Your updating code goes inside this structure. If your code needs to access SharePoint, you can use the SharePoint managed code client object model (CSOM) or Representational State Transfer (REST) interface. Where the conditional structure is located in the method depends on how you have structured the other code in the method. Typically, it is a peer of similar conditional structures that test for the add-in installed and add-in uninstalling events. It may be within a conditional structure that tests certain properties or subproperties of the [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) object that is passed to [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) for **null** values or other invalid values. It may also be within a **try** block. The following is an example of the structure. The _properties_ object is an [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) object.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. To use CSOM in the handler, add (within the conditional block) a **using** block that gets a [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) object by calling the **TokenHelper.CreateAppEventClientContext** method. Specify **true** for the second parameter to access the add-in web. Specify **false** to access the host web. If you need to access both, you will need two different client context objects.
     
   
 3. If your handler needs to access non-SharePoint components, put that code outside any client context blocks. Your code should be structured similarly to the following:
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -88,11 +88,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. To use the REST interface, your code uses other methods in the **TokenHelper** class to get an access token, which is then included in the requests it makes to SharePoint. For more information, see [Complete basic operations using SharePoint 2013 REST endpoints](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md). Your code should be structured similarly to the following.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -109,15 +109,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. To access SharePoint, your REST code also needs to know the URL of the host web or add-in web or both. These URLs are both subproperties of the  [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) object that is passed to the [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) method. The following code shows how to get them.
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 When you update an add-in for the second (or third, and so on) time, you may need to ensure that some update logic does not run multiple times on the same add-in instance. The following procedure shows you how.
   
@@ -135,7 +135,7 @@ When you update an add-in for the second (or third, and so on) time, you may nee
   
 3. Add your new update logic (for the update from 2.0.0.0 to 3.0.0.0) below this structure. The following is an example.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -144,11 +144,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. For each subsequent update, repeat these steps. For the update from 3.0.0.0 to 4.0.0.0, your code should have the following structure.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -163,7 +163,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **IMPORTANT**
@@ -203,8 +203,7 @@ On the second (or third, and so on) update, your exception handing logic has to 
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -221,8 +220,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 The last things your error handling should do is assign an error message and a cancel status to the  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) object that the **ProcessEvent** method returns to the SharePoint 2013 update infrastructure. The following is an example. In this code, _result_ is an **SPRemoteEventResult** object that has been declared earlier in the **ProcessEvent** method.
   
@@ -230,8 +228,7 @@ The last things your error handling should do is assign an error message and a c
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -240,8 +237,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **IMPORTANT**

@@ -27,8 +27,7 @@ La requête renvoie un XML **rowset** ADO qui contient des lignes renvoyant à c
 |**Exemple de requête** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**Exemple de corps POST** <br/> |
-|
-```XML
+|```XML
 
 { 'd' : {
   'query': { 
@@ -51,8 +50,7 @@ La requête renvoie un XML **rowset** ADO qui contient des lignes renvoyant à c
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-
-```
+```
 
 |
    

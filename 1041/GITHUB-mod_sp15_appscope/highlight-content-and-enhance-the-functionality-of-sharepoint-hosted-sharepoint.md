@@ -37,12 +37,10 @@ SharePoint の吹き出しコントロールを使用すると、柔軟な方法
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
  `SP.SOD.executeFunc` 関数に渡す関数には、callout.js ファイルの読み込み後に実行するコードを含めます。ファイルの読み込み後、 `CalloutManager` オブジェクトを使用して、吹き出しコントロールを関連付ける必要があるページ要素ごとに `Callout` オブジェクトを作成します。 `CalloutManager` は、ページ上の各 `Callout` オブジェクトへの参照を連想配列に格納するシングルトンです。 `Callout` オブジェクトの必須メンバーは `ID` と `launchPoint` の 2 つのみです。 `ID` メンバーは、 `CalloutManager`:  `CalloutManager["value of the callout's ID member"]` 内の `Callout` オブジェクトにマップされるキーです。 `launchPoint` メンバーは HTML ページの要素の 1 つです。たとえば、ページ上の `div` 要素を作成または取得し、 `Callout` オブジェクトのメンバーとして渡すことができます。既定では、吹き出しコントロールはユーザーが `launchPoint` 要素をクリックすると表示されます。次の例に、2 つの必須メンバーとタイトル文字列のみを使用して最も単純な吹き出しコントロールを作成する方法を示します。
   
@@ -50,8 +48,7 @@ SP.SOD.executeFunc("callout.js", "Callout", function () {
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 この吹き出しはユーザーがページ要素をクリックすると表示され、コントロールの上部にはタイトルが表示されます。オプションのメンバーを使用すると、コントロールの外観、動作、配置、およびアクションをさまざまな方法でカスタマイズできます。また、吹き出しコントロールには、コントロールのインスタンスの作成後にパラメーター値を設定するための set メソッドもあります。
   
@@ -68,11 +64,9 @@ var callout = CalloutManager.createNew({
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
  `CalloutOptions` オブジェクトのすべての Callout メンバーの値を設定した後で、そのオブジェクトを `createNew` メソッドに渡すこともできます。
   
@@ -80,15 +74,13 @@ callout.set({openOptions:{event: "hover"}});
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## 吹き出しコントロールの外観をカスタマイズする方法
@@ -149,7 +141,7 @@ var callout = CalloutManager.createNew(calloutOptions);
 
 |**使用するメソッド**|**用途**|**有効なパラメーター値**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |コントロールのインスタンスの作成後にメンバーの値を設定します。  <br/> |吹き出しコントロールのメンバーの値を定義する名前/値のペア。  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |コントロールのインスタンスの作成後にメンバーの値を設定します。  <br/> |吹き出しコントロールのメンバーの値を定義する名前/値のペア。  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |吹き出しコントロールが指す方向を示す  `CalloutOrientation` オブジェクトを返します。このオブジェクトには、 `up`、 `down`、 `left`、および  `right` の 4 つのブール値メンバーがあります。コントロールが開いている場合、そのうちの 2 つ (たとえば `up` と `right`) が **true** になり、2 つが **false** になります。 <br/> |パラメーターなし  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |吹き出しコントロールが  `eventName` パラメーターで指定された状態に変わったときに呼び出されるコールバック関数を登録します。 <br/> | `eventName` パラメーターには `opening`、 `open`、 `closing`、 `closed` のいずれかを指定する必要があります。 `callback` パラメーターには、吹き出しコントロールのインスタンスを 1 番目のパラメーターとして受け取る関数を指定する必要があります。 <br/> |
 |open()  <br/> |コントロールを表示します。コントロールが既に開いているか、開いている途中である場合、このメソッドは **false** を返し、何も処理を行いません。 <br/> |パラメーターなし  <br/> |
@@ -166,8 +158,7 @@ var callout = CalloutManager.createNew(calloutOptions);
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
  `CalloutActionOptions` オブジェクトのすべての `CalloutAction` メンバーの値を設定した後で、そのオブジェクトを `CalloutAction` コンストラクターに渡すこともできます。
   
@@ -187,8 +177,7 @@ var calloutAction = new CalloutAction({
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 次のメンバーを使用して、吹き出しアクションの動作を定義できます。
   
@@ -245,8 +233,7 @@ var calloutAction = new CalloutAction(calloutActionOptions);
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
  `CalloutActionMenuEntry` コンストラクターには 3 つのパラメーターを渡します。最初の 2 つのパラメーターは必須です。3 番目のパラメーターはオプションですが、テキストと共にアイコンを表示できるため、役立つ場合があります。
   
@@ -315,14 +301,12 @@ callout.addAction(calloutAction);
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 次に、この関数を  `Callout` オブジェクトの `positionAlgorithm` メンバーの値として渡します。これは `Callout` の作成時に行うことも、後から値を設定して行うこともできます。
   
@@ -330,12 +314,10 @@ function alwaysGoDownAndRight(calloutPositioningProxy)  {
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 既定の位置設定ロジックは、ブラウザーの JavaScript コンソール (たとえば Internet Explorer の F12 開発者ツール) を起動することでいつでも確認できます。
   
@@ -343,11 +325,9 @@ callout.set({positionAlgorithm: alwaysGoDownAndRight});
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
  `CalloutPositioningProxy` オブジェクトの次のメソッドを使用して、独自の位置設定ロジックを記述できます。
   
@@ -384,8 +364,7 @@ CalloutOptions.prototype.positionAlgorithm.toString()
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 次の位置設定アルゴリズムは、コントロールの既定の方向を  `upAndRight` から `downAndRight` に変更しますが、競合がない場合は既定のアルゴリズムを使用します。
   
@@ -410,8 +388,7 @@ callout.set({positionAlgorithm: examplePositionAlgorithm});
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## その他の技術情報

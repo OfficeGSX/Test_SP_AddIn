@@ -57,12 +57,12 @@ Obwohl von SharePoint gehostete SharePoint-Add-Ins keinen serverseitigen Code en
     
 
 
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     Durchsuchen Sie anschließend die Datei nach einem anderen Markup, das auch eine oder die andere dieser Dateien lädt, und entfernen Sie das redundante Markup. Speichern und schließen Sie die Datei.
@@ -94,14 +94,14 @@ Obwohl von SharePoint gehostete SharePoint-Add-Ins keinen serverseitigen Code en
     
   
 
-  ```
+ ```
   
 'use strict';
 
 var clientContext = SP.ClientContext.get_current(); 
 var employeeList = clientContext.get_web().get_lists().getByTitle('New Employees In Seattle'); 
 var completedItems; 
-  ```
+ ```
 
 5. Um Nachrichten zwischen dem Clientbrowser und dem SharePoint-Server zu minimieren, verwendet JSOM ein Batchverarbeitungssystem. Nur eine Funktion, **SP.ClientContext.executeQueryAsync**, sendet tatsächlich Nachrichten an den Server (und empfängt Antworten). Aufrufe an die JSOM-APIs, die zwischen Aufrufen von **executeQueryAsync** stattfinden, werden gebündelt und in einem Batch beim nächsten Mal an den Server gesendet, wenn **executeQueryAsync** aufgerufen wird. Allerdings ist es in der Regel nicht möglich, eine Methode eines JSOM-Objekts aufzurufen, es sei denn, das Objekt wurde in einem vorherigen Aufruf von **executeQueryAsync** zum Client gebracht. Das Skript ruft die Methode **SP.ListItem.deleteObject** jedes abgeschlossenen Elements in der Liste auf, muss **executeQueryAsync** also zweimal aufrufen, einmal, um eine Auflistung von abgeschlossenen Listenelementen abzurufen, und ein zweites Mal, um die Aufrufe von **deleteObject** in einem Batch zusammenzufassen und zur Ausführung an den Server zu senden.
     
@@ -109,7 +109,7 @@ var completedItems;
     
 
 
-  ```
+ ```
   
 function purgeCompletedItems() {
 
@@ -120,26 +120,26 @@ function purgeCompletedItems() {
          '</Eq></Where></Query></View>'); 
      completedItems = employeeList.getItems(camlQuery); 
 }
-  ```
+ ```
 
 6. Wenn diese Zeilen an den Server gesendet und dort ausgeführt werden, erstellen Sie eine Auflistung von Listenelementen, aber das Skript muss diese Auflistung zum Client bringen. Dies erfolgt durch einen Aufruf an die Funktion **SP.ClientContext.load**. Fügen Sie also die folgende Zeile am Ende der Methode zur Methode hinzu.
     
-  ```
+ ```
   
 clientContext.load(completedItems);
-  ```
+ ```
 
 7. Fügen Sie einen Aufruf von **executeQueryAsync** hinzu. Diese Methode hat zwei Parameter, die beide Rückruffunktionen sind. Die erste wird ausgeführt, wenn der Server erfolgreich alle Befehle im Batch ausführt. Die zweite wird ausgeführt, wenn auf dem Server aus irgendeinem Grund ein Fehler auftritt. Sie erstellen diese beiden Funktionen in späteren Schritten. Fügen Sie die folgende Zeile am Ende der Methode hinzu.
     
-  ```
+ ```
   clientContext.executeQueryAsync(deleteCompletedItems, onGetCompletedItemsFail);
-  ```
+ ```
 
 8. Schließlich fügen Sie die folgende Zeile am Ende der Methode hinzu. Durch Rückgabe von **false** an die ASP.NET-Schaltfläche, die die Funktion aufrufen wird, wird das Standardverhalten von ASP.NET-Schaltflächen abgebrochen, das im erneuten Laden der Seite besteht. Ein erneutes Laden der Seite würde ein erneutes Laden der Datei Add-in.js verursachen. Das würde wiederum das Objekt `clientContext` erneut initialisieren. Wenn dieses erneute Laden zwischen dem Zeitpunkt, an dem **executeQueryAsync** seine Anforderung sendet, und dem Zeitpunkt, an dem der SharePoint-Server die Antwort zurücksendet, abgeschlossen wird, ist das ursprüngliche `clientContext`-Objekt nicht mehr vorhanden, um die Antwort zu verarbeiten. Die Funktion würde angehalten werden, ohne dass die Erfolgs- oder Fehlerrückrufe ausgeführt wurden. (Das genaue Verhalten kann je nach Browser unterschiedlich sein.)
     
-  ```
+ ```
   return false;
-  ```
+ ```
 
 9. Fügen Sie der Datei die folgende Funktion,  `deleteCompletedItems`, hinzu. Diese Funktion wird ausgeführt, wenn die Funktion  `purgeCompletedItems` erfolgreich ist. Beachten Sie Folgendes zu diesem Code:
     
@@ -156,7 +156,7 @@ clientContext.load(completedItems);
     
   
 
-  ```
+ ```
   function deleteCompletedItems() {
 
     var itemArray = new Array();
@@ -174,21 +174,21 @@ clientContext.load(completedItems);
 
     clientContext.executeQueryAsync(onDeleteCompletedItemsSuccess, onDeleteCompletedItemsFail);
 }
-  ```
+ ```
 
 10. Fügen Sie die folgende Funktion,  `onDeleteCompletedItemsSuccess`, zur Datei hinzu. Dies ist die Funktion, die ausgeführt wird, wenn die abgeschlossenen Elemente erfolgreich gelöscht werden (oder keine abgeschlossenen Elemente in der Liste vorhanden sind). Die zweite Zeile,  `location.reload(true);`, bewirkt, dass die Seite vom Server neu geladen wird. Dies erfolgt aus Gründen der Einfachheit, da das Listenansicht-Webpart auf der Seite weiterhin abgeschlossene Elemente angezeigt, bis die Seite aktualisiert wird. (Die Datei Add-in.js wird ebenfalls neu geladen, was aber kein Problem verursacht, da dies nicht in einer Weise erfolgt, die eine laufende JavaScript-Funktion unterbricht.)
     
-  ```
+ ```
   
 function onDeleteCompletedItemsSuccess() {
     alert('Completed orientations have been deleted.');
     location.reload(true);
 }
-  ```
+ ```
 
 11. Fügen Sie die folgenden zwei Rückruf-bei-Fehler-Funktionen zu der Datei hinzu.
     
-  ```
+ ```
   
 // Failure callbacks
 
@@ -199,18 +199,18 @@ function onGetCompletedItemsFail(sender, args) {
 function onDeleteCompletedItemsFail(sender, args) {
     alert('Unable to delete completed items. Error:' + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 12. Öffnen Sie die Datei default.aspx, und suchen Sie nach dem **asp:Content**-Element mit der ID **PlaceHolderMain**.
     
   
 13. Fügen Sie das folgende Markup zwischen dem Element **WebPartPages:WebPartZone** und dem ersten der zwei **asp:Hyperlink**-Elemente hinzu. Beachten Sie, dass der Wert des **OnClientClick**-Handlers  `return purgeCompletedItems()` statt nur `purgeCompletedItems()` ist. Der von der Funktion zurückgegebene Wert `false` weist ASP.NET an, die Seite nicht erneut zu laden.
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return purgeCompletedItems()"
   ID="purgecompleteditemsbutton" Text="Purge Completed Items" /></p>
-  ```
+ ```
 
 14. Erstellen Sie das Projekt in Visual Studio neu.
     
@@ -221,7 +221,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -240,7 +240,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## Ausführen und Testen des Add-Ins

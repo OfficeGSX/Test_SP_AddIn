@@ -46,11 +46,11 @@ AppRegNew.aspx ページを使用して登録されている SharePoint アド�
 
 1. Windows PowerShell を開き、以下のコマンドレットを実行します。
     
-  ```
+ ```
   
 Connect-MsolService
 
-  ```
+ ```
 
 2. ログイン プロンプトで、AppRegNew.aspx でアドインが登録されている Office 365 テナンシーまたはファームのテナント管理者 (またはファーム管理者) の資格情報を入力します。
     
@@ -64,7 +64,7 @@ Connect-MsolService
     
   
 
-  ```
+ ```
   
 $applist = Get-MsolServicePrincipal -all  |Where-Object -FilterScript { ($_.DisplayName -notlike "*Microsoft*") -and ($_.DisplayName -notlike "autohost*") -and  ($_.ServicePrincipalNames -notlike "*localhost*") }
 
@@ -79,7 +79,7 @@ foreach ($appentry in $applist)
      Write-Host "$principalName;$principalId;$appentry.KeyId;$appentry.type;$date;$appentry.Usage"
 
 }  > c:\\temp\\appsec.txt
-  ```
+ ```
 
 4. C:\\temp\\appsec.txt ファイルを開いてレポートを表示します。いずれかのシークレットが期限切れ間近である場合は、次の手順のために Windows PowerShell ウィンドウを開いたままにします。
     
@@ -94,15 +94,15 @@ foreach ($appentry in $applist)
 
 1. 以下の行で、SharePoint アドインのクライアント ID をパラメーターとして使用し、クライアント ID 変数を作成します。
     
-  ```
+ ```
   
 $clientId = 'client id of the add-in'
 
-  ```
+ ```
 
 2. 以下の行で、新しいクライアント シークレットを生成します。
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -113,7 +113,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
 $newClientSecret
-  ```
+ ```
 
 3. 新しいクライアント シークレットが Windows PowerShell コンソールに表示されます。それをテキスト ファイルにコピーします。これは次の手順で使用します。
     
@@ -138,7 +138,7 @@ $newClientSecret
 
 1. Visual Studio で SharePoint アドイン プロジェクトを開き、Web アプリケーション プロジェクトの web.config ファイルを開きます。 **appSettings** セクションには、クライアント ID およびクライアント シークレットのキーがあります。以下にその例を示します。
     
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="your client id here" />
@@ -146,25 +146,25 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 
-  ```
+ ```
 
 2. 以下の例に示されているように、 **ClientSecret** キーの名前を "SecondaryClientSecret" に変更します。
     
-  ```XML
+ ```XML
   
 <add key="SecondaryClientSecret" value="your old secret here" />
-  ```
+ ```
 
 3. 新しい **ClientSecret** キーを追加し、新しいクライアント シークレットを指定します。マークアップは以下のようになるはずです。
     
-  ```XML
+ ```XML
   <appSettings>
   <add key="ClientId" value="your client id here" />
   <add key="ClientSecret" value="your new secret here" />
   <add key="SecondaryClientSecret" value="your old secret here" />
      ... other settings may be here ...
 </appSettings>
-  ```
+ ```
 
 4. 新しい TokenHelper ファイルに変更した場合は、プロジェクトを再構築します。
     
@@ -182,13 +182,13 @@ $newClientSecret
 
 1. SharePoint 2013 Windows PowerShell を使用して、以下のマークアップを持つテナント管理者ユーザーを使って MSOnline に接続します。
     
-  ```
+ ```
   
 import-module MSOnline
 $msolcred = get-credential
 connect-msolservice -credential $msolcred
 
-  ```
+ ```
 
 2. **ServicePrincipals** とキーを取得します。 **$keys** を印刷すると、3 つのレコードが返されます。 *KeyId1*  、 *KeyId2*  、 *KeyId3*  でそれぞれの **KeyId** を置換します。それぞれのキーの **EndDate** も表示されます。期限の切れたキーが表示されるか確認してください。
     
@@ -196,17 +196,17 @@ connect-msolservice -credential $msolcred
     
 
 
-  ```
+ ```
   
 $clientId = "27c5b286-62a6-45c7-beda-abbaea6eecf2"
 $keys = Get-MsolServicePrincipalCredential -AppPrincipalId $clientId
 Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -AppPrincipalId $clientId 
 
-  ```
+ ```
 
 3. この **clientID** のための新しい **ClientSecret** を作成します。上記の手順で設定されたものと同じ **clientId** を使用します。新しい **ClientSecret** は 3 年間有効です。
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -220,7 +220,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret   -StartDate $dtStart  -EndDate $dtEnd
 $newClientSecret
 
-  ```
+ ```
 
 4. **$newClientSecret** の出力をコピーしてください。
     

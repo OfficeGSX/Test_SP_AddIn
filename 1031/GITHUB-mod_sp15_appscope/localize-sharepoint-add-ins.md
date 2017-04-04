@@ -114,7 +114,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
   
 3. Verwenden Sie das Attribut **Beschreibung**, um auf die gleiche Weise die Zeichenfolgenressource der Listenbeschreibung aufzurufen - beispielsweise $Resources:OrdersListInstance_Description. Im Folgenden finden Sie das Markup, von dem die lokalisierten Zeichenfolgen aus der Datei "Elements.xml" der Listeninstanz verwendet werden:
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -126,7 +126,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
       Description="$Resources:OrdersListInstance_Description">
   </ListInstance>
 </Elements>
-  ```
+ ```
 
 
     Die folgende Abbildung zeigt die lokalisierte benutzerdefinierte Liste in englischer Sprache:
@@ -157,7 +157,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
   
 4. Entfernen Sie in der Datei **Schema.xml** Ihrer benutzerdefinierten Liste das Attribut **DisplayName** aus jedem Knoten vom Typ **Field**, den Sie zuvor kopiert haben. Im Anschluss finden Sie ein Beispiel-Markup, von dem lokalisierte Zeichenfolgen in der Datei **Elements.xml** der Listendefinition verwendet werden:
     
-  ```
+ ```
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -192,7 +192,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
         List="Lists/Order status"
         ShowField="Title" />
 </Elements>
-  ```
+ ```
 
 
 ### So erstellen Sie JavaScript-Ressourcendateien für benutzerdefinierte Seiten
@@ -211,7 +211,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
   
 4. Deklarieren Sie in der Datei für jede lokalisierbare Zeichenfolge der benutzerdefinierten Seiten eine Variable mit einem Namen, der den Zweck der Zeichenfolge angibt, und weisen Sie ihr einen für die Sprache geeigneten Wert zu. Im Anschluss finden Sie den Inhalt der Datei "Resources.en-US.js":
     
-  ```
+ ```
   
 var instructionstitle = "Instructions:";
 var step01 = "Go to any document library in the host web.";
@@ -224,7 +224,7 @@ var step06 = "Go to any SharePoint page in the host web and add the" +
 var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     " and <a href=\\"../Lists/Order status\\">Order status</a> custom lists.";
 
-  ```
+ ```
 
 5. Kopieren Sie den Inhalt der Datei jeweils in jede der übrigen JavaScript-Dateien, und speichern Sie dann alle Dateien.
     
@@ -241,10 +241,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 2. Stellen Sie sicher, dass beim Laden der Seite nur eine der lokalisierten JavaScript-Dateien geladen wird und dass es sich dabei um die Datei handelt, die für die Sprache des SharePoint-Add-In-Webs geeignet ist. Fügen Sie dazu dem Element **asp:content** mit einer `ContentPlaceholderId` mit dem Wert `PlaceholderAdditionalPageHead` das folgende Markup hinzu. *Dieses Markup enthält keine Platzhalter. Geben Sie das Markup genau wie hier angegeben ein.* 
     
-  ```HTML
+ ```HTML
   
 <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
-  ```
+ ```
 
 
     Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
@@ -256,7 +256,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     > **TIPP**
       > Das Wort "INVARIANT" wurde zur ersten invarianten Zeichenfolge hinzugefügt. In einem Produktions-Add-In wäre das nicht der Fall. Während Sie testen, ist das jedoch eine gute Möglichkeit, um sich einen Überblick darüber zu verschaffen, ob invariante Sprachzeichenfolgen verwendet werden oder die Datei "Resources. _LL_- _CC_.js" für die Sprache geladen wurde, die Ihre invariante Sprache darstellt. 
 
-  ```HTML
+ ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
 <ol>
     <li id="step01">Go to any document library in the host web.</li>
@@ -287,7 +287,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     }
 </script>
 
-  ```
+ ```
 
 
     Die folgende Abbildung bietet eine Vorschau, wie die englische Version der Seite nach Fertigstellung des Add-Ins aussieht. 
@@ -350,10 +350,10 @@ Die Methode zum Lokalisieren von Hostweb-Komponenten entspricht im Grunde der Me
 
 1. Öffnen Sie die Datei „AppManifest.xml", und ersetzen Sie den Wert des Elements **Title** durch einen Aufruf der entsprechenden Ressourcenzeichenfolge. Wenn Sie die Zeichenfolge beispielsweiseAddin_Title genannt haben, sollte das Element **Title** wie folgt aussehen:
     
-  ```XML
+ ```XML
   
 <Title>$Resources:Addin_Title;</Title>
-  ```
+ ```
 
 
     > **VORSICHT**
@@ -375,8 +375,7 @@ Wenn die Remotekomponenten im PHP-Format oder einem anderen Format eines anderen
     
 
 
-
-```cs
+```cs
 protected override void InitializeCulture()
 {
     if (Request.QueryString["SPLanguage"] != null)
@@ -394,8 +393,7 @@ protected override void InitializeCulture()
             CultureInfo(selectedLanguage);
     }
     base.InitializeCulture();
-}
-```
+}```
 
 
 ## Lokalisieren des Remote-JavaScript und des SharePoint-Chromsteuerelements
@@ -418,7 +416,7 @@ Wenn lokalisierbare Zeichenfolgenwerte im JavaScript Ihrer Webanwendung vorhande
 
 1. Nachdem das Chromsteuerelement funktioniert, müssen Sie die  `renderChrome`-Methode zurückgeben, in der Sie die Chromsteuerelementoptionen festgelegt haben.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -441,11 +439,11 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 2. Wie bereits in den Kommentaren erwähnt, sind mindestens drei lokalisierbare Zeichenfolgen vorhanden. Ersetzen Sie diese durch einen Variablennamen, den Sie in einem späteren Schritt deklarieren.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -468,47 +466,47 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 3. Fügen Sie eine JavaScript-Datei mit der Bezeichnung "ChromeStrings.js" zum Webanwendungsprojekt hinzu. Sie sollte die Variablen deklarieren, die Sie im vorherigen Schritt verwendet haben, und ihnen einen Wert in der invarianten Sprache zuweisen.
     
-  ```
+ ```
   
 var chromeAppTitle = "My SharePoint add-in";
 var chromeAccountLinkName = "Account settings";
 var chromeContactUsLinkName = "Contact us";
 
-  ```
+ ```
 
 4. Fügen Sie für jede Sprache, in die Sie das Add-In lokalisieren, eine weitere JavaScript-Datei mit der Bezeichnung "ChromeStrings. _LL-CC_.js" hinzu.  _LL-CC_ stellt dabei die Sprachen-ID dar. *Die Basis des Dateinamens, in diesem Fall "ChromeStrings", muss der Bezeichnung für die invariante Sprachdatei genau entsprechen.*  Kopieren Sie die Inhalte der invarianten Sprachdatei in jede der lokalisierten Dateien, und ersetzen Sie die Werte durch übersetzte Entsprechungen.
     
-  ```
+ ```
   
 var chromeAppTitle = "Mi aplicación SharePoint";
 var chromeAccountLinkName = "Preferencias";
 var chromeContactUsLinkName = "Contacto";
 
-  ```
+ ```
 
 5. In Seitendateien, in denen das Skript "SP.UI.controls.js" aufgerufen wird, müssen Sie einen Aufruf zur "ChromeStrings.js" darüber hinzufügen. Wenn beispielsweise der Aufruf zur "SP.UI.controls.js" in einer Zwischendatei mit der Bezeichnung "ChromeLoader.js" geladen wird, sollte das Markup auf der Seite nun Folgendem ähneln.
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 6. Fügen Sie ein **ResourceUICultures**-Attribut zum **ScriptReference**-Element hinzu, das die Zeichenfolgen aufruft. Der Wert besteht aus einer kommagetrennten Liste der Sprachen, die Sie unterstützen möchten.
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" ResourceUICultures="en-US,es-ES" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 
     Die Auswirkung des **ResourceUICultures**-Attributs besteht darin, das ASP.NET nach einer Datei mit der Bezeichnung ChromeStrings. _LL-CC_.js sucht,  _LL-CC_ bezeichnet dabei die Sprache der Seite, die geladen wird. Wenn die Datei nicht gefunden werden kann, wird die Datei "ChromeStrings.js" geladen.

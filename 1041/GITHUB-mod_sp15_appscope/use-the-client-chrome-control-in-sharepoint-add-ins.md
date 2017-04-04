@@ -186,7 +186,7 @@ SharePoint 2013 でクロム コントロールを使用すると、サーバー
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 3. クロム コントロールは、宣言する方法でも使用できます。次のコード サンプルの HTML マークアップでは、構成と初期化を行う JavaScript コードを使用しないでコントロールを宣言しています。このマークアップは、以下のタスクを実行します。
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 
     SP.UI.Controls.js ライブラリは、 **div** 要素の **data-ms-control="SP.UI.Controls.Navigation"** 属性を検出した場合は、自動的にコントロールをレンダリングします。

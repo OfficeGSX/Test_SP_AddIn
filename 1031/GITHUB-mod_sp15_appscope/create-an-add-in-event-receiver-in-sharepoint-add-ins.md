@@ -90,7 +90,7 @@ Wenn Sie das fortlaufende Beispiel in diesem Artikel durcharbeiten, verfügen Si
 
 
 
-  ```cs
+ ```cs
   
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
@@ -98,11 +98,11 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 
     return result;
 }
-  ```
+ ```
 
 7. Fügen Sie direkt unter der Zeile mit der Deklaration der  `result`-Variable die folgende Verzweigungsstruktur hinzu, um das behandelte Ereignis zu identifizieren. 
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -113,14 +113,14 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+ ```
 
 
     > **HINWEIS**
       > Falls Sie für die Ereignisse **AppInstalled**, **AppUpdated** und **AppInstalling** über Handler verfügen, wird für jedes eine eigene URL im Add-In-Manifest registriert. So *können*  Sie unterschiedliche Endpunkte dafür verwenden. Aber in diesem Artikel (und den Office-Entwicklertools für Visual Studio) wird angenommen, dass sie genau denselben Endpunkt haben. Deshalb muss der Code bestimmen, durch welches Ereignis er aufgerufen wurde.
 8. Wie unter  [Einbeziehen von Rollbacklogik und "Bereits erledigt"-Logik in Add-In-Ereignishandler](handle-events-in-sharepoint-add-ins.md#Rollback) erläutert wurde, möchten Sie bei einem Fehler in der Installationslogik fast immer, dass die Installation des Add-Ins abgebrochen wird und alle Installationsaktionen von SharePoint zurückgesetzt werden. Außerdem sollen die Aktionen Ihres Handlers zurückgesetzt werden. Eine Möglichkeit dazu besteht darin, folgenden Code in der **case**-Struktur für das AppInstalled-Ereignis hinzuzufügen.
     
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppInstalled:
   try
@@ -135,7 +135,7 @@ case SPRemoteEventType.AppInstalled:
       // Rollback logic goes here.
   }
   break;
-  ```
+ ```
 
 
     > **HINWEIS**
@@ -146,7 +146,7 @@ case SPRemoteEventType.AppInstalled:
     
 
 
-  ```cs
+ ```cs
   
 SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
@@ -175,11 +175,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+ ```
 
 10. Fügen Sie die Listenerstellungsmethode zur **AppEventReceiver**-Klasse als **private**-Methode mit folgendem Code hinzu. Beachten Sie, dass die  `TokenHelper`-Klasse eine besondere Methode aufweist, die für das Abrufen eines Clientkontexts für ein Add-In-Ereignis optimiert ist. Durch die Übergabe von **false** für den letzten Parameter wird sichergestellt, dass der Kontext für das Hostweb gilt.
     
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
@@ -195,11 +195,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     return errorMessage;
 }
 
-  ```
+ ```
 
 11. Rollbacklogik besteht im Wesentlichen aus Ausnahmebehandlungslogik, und das SharePoint-CSOM (clientseitige Objektmodell) hat einen  [ExceptionHandlingScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.aspx) , der es Ihrem Webdienst ermöglicht, die Ausnahmebehandlung an den SharePoint-Server zu delegieren. (Siehe auch [Gewusst wie: Verwenden des Ausnahmebehandlungsbereichs](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx).) Fügen Sie den folgenden Code im **if**-Block des vorhergehenden Codeausschnitts hinzu.
     
-  ```cs
+ ```cs
   
 ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext);
 
@@ -224,11 +224,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+ ```
 
 12. Es gibt nur einen Aufruf von SharePoint ( **ExecuteQuery**) im vorherigen Codeausschnitt, aber leider bleibt es nicht bei dem einen. Jedes Objekt, auf das in unserem Ausnahmebereich verwiesen wird, muss zuerst in den Client geladen werden. Fügen Sie also den folgenden Code  *über*  dem Konstruktor für den **ExceptionHandlingScope** hinzu.
     
-  ```cs
+ ```cs
   
 ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
@@ -237,11 +237,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+ ```
 
 13. Der Code zum Erstellen einer Hostwebliste gehört in den  [StartTry](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartTry.aspx) -Block, aber zuerst muss überprüft werden, ob die Liste bereits hinzugefügt wurde (wie unter [Einbeziehen von Rollbacklogik und "Bereits erledigt"-Logik in Add-In-Ereignishandler](handle-events-in-sharepoint-add-ins.md#Rollback) erläutert). If-then-else-Logik kann über die [ConditionalScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ConditionalScope.aspx) -Klasse an den SharePoint-Server delegiert werden. (Siehe auch [Gewusst wie: Verwenden des bedingten Bereichs](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx).) Fügen Sie den folgenden Code im **StartTry**-Block hinzu.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => foundList.ServerObjectIsNull.Value == true, true);
@@ -253,11 +253,11 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+ ```
 
 14. Der  [StartCatch](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartCatch.aspx) -Block sollte die Erstellung der Liste rückgängig machen, aber zuvor muss überprüft werden, ob die Liste erstellt wurde. Denn möglicherweise wurde eine Ausnahme im **StartTry**-Block ausgelöst, bevor die Erstellung der Liste abgeschlossen war. Fügen Sie den folgenden Code im **StartCatch**-Block hinzu.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => createdList.ServerObjectIsNull.Value != true, true);
@@ -265,7 +265,7 @@ using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+ ```
 
 
     > **TIPP**
@@ -279,7 +279,7 @@ using (condScope.StartScope())
     
 
 
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
@@ -341,7 +341,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
     > **TIPP**
@@ -365,7 +365,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     
 
 
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppUninstalling:
 
@@ -384,7 +384,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+ ```
 
 3. Fügen Sie die Hilfsmethode für die Wiederverwendung der Liste hinzu. Beachten Sie Folgendes zu diesem Code:
     
@@ -398,7 +398,7 @@ break;
     
   
 
-  ```cs
+ ```cs
   
 private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
@@ -464,7 +464,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
 ### So debuggen und testen Sie einen Ereignisempfänger für deinstallierende Add-Ins

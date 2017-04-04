@@ -113,15 +113,13 @@ ms.assetid: 2f65ba3f-b246-4064-b4fb-ad18399d387a
     
 
 
-
-```
+```
 
 $certPrKPath = "c:\\location of your .pfx file"
 $certPassword = "password"
 $stsCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 $certPrKPath, $certPassword, 20
 Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -confirm:$false
-
-```
+```
 
 
 > **Примечание**
@@ -191,28 +189,28 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
   
 2. Откройте Командная консоль SharePoint в качестве администратора и запустите следующий командлет, чтобы убедиться, что модуль MySharePointFunctions добавлен в список.
     
-  ```
+ ```
   
 Get-Module -listavailable
-  ```
+ ```
 
 3. Запустите следующий командлет, чтобы импортировать модуль.
     
-  ```
+ ```
   Import-Module MySharePointFunctions
-  ```
+ ```
 
 4. Запустите следующий командлет, чтобы убедиться, что функция Connect-SPFarmToAAD входит в модуль.
     
-  ```
+ ```
   Get-Command -module MySharePointFunctions
-  ```
+ ```
 
 5. Запустите следующий командлет, чтобы убедиться, что функция Connect-SPFarmToAAD загружена.
     
-  ```
+ ```
   ls function:\\ | where {$_.Name -eq "Connect-SPFarmToAAD"}
-  ```
+ ```
 
 6. Запустите функцию  `Connect-SPFarmToAAD`. Обязательно укажите необходимые параметры и все дополнительные параметры, которые применяются к вашей среде разработки. Подробности и примеры см. в следующем разделе.
     
@@ -233,7 +231,7 @@ Get-Module -listavailable
 | `-SharePointOnlineUrl` (обязательный) <br/> |URL-адрес вашего сайта Office 365 SharePoint ( _https://yourcustomdomain_.sharepoint.com). Обратите внимание, что onmicrosoft.com  *не*  является родительским доменом. <br/> |
 | `-SharePointWeb` (обязательный в некоторых случаях) <br/> |Полный URL-адрес (включая протокол) локального веб-приложения SharePoint, где вы будете запускать надстройки с размещением у поставщика. Эта функция добавляет только одно веб-приложение SharePoint из вашей локальной фермы в службу контроля доступа. Если вы не укажете для него значение, сценарий выберет первое веб-приложение на ферме. Если вы используете семейство веб-сайтов с именем узла, которое можно определить с помощью подстановочного знака (например,  _http://*.contoso.com_), эту строку можно использовать в качестве значения для этого параметра. Если в веб-приложении используется альтернативное сопоставление доступа для зоны Интернета, для этого параметра необходимо использовать его URL-адрес. Если веб-приложение SharePoint не настроено для протокола HTTPS, необходимо использовать протокол HTTP и  *параметр командной строки -AllowOverHttp (см. ниже в этой таблице).*  <br/> Если вы хотите запускать размещаемые у поставщика надстройки, использующие службу контроля доступа, на других веб-приложениях в вашей ферме, их необходимо добавить в коллекцию имен субъектов-служб. Сценарий Windows PowerShell, приведенный в этой статье ниже (после функции  `Connect-SPFarmToAAD`), показывает, как добавить все веб-приложения фермы в коллекцию имен субъектов-служб.  <br/> |
 | `-AllowOverHttp` (дополнительно) <br/> |Используйте этот параметр командной строки, если вы работаете со средой разработки и не хотите использовать SSL для своих надстроек. Его необходимо использовать, если веб-приложение SharePoint не настроено для протокола HTTPS.  <br/> |
-| `-O365Credentials` (дополнительно) <br/> |Первый символ  это прописная буква "O", а не ноль. Если вам придется много раз запускать этот сценарий для выполнения отладки, используйте этот параметр командной строки, чтобы каждый раз не вводить свое имя для O365 и пароль вручную. Прежде чем использовать этот параметр, необходимо создать объект учетных данных, который вы назначите ему с помощью следующих командлетов:  <br/> ```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Задайте для параметра  `-O365Credentials` значение `$Credential`.  <br/> |
+| `-O365Credentials` (дополнительно) <br/> |Первый символ  это прописная буква "O", а не ноль. Если вам придется много раз запускать этот сценарий для выполнения отладки, используйте этот параметр командной строки, чтобы каждый раз не вводить свое имя для O365 и пароль вручную. Прежде чем использовать этот параметр, необходимо создать объект учетных данных, который вы назначите ему с помощью следующих командлетов:  <br/>```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Задайте для параметра  `-O365Credentials` значение `$Credential`.  <br/> |
 | `-Verbose` (дополнительно) <br/> |Этот параметр командной строки создает более подробный отчет, который может быть полезен, если функция не работает и нужно повторно запустить ее для отладки.  <br/> |
 | `-RemoveExistingACS` (дополнительно) <br/> |Используйте этот параметр командной строки, если вы заменяете существующее подключение к Microsoft Azure Active Directory. Это приведет к замене существующего прокси-сервера службы контроля доступа, если он уже создан на вашей ферме.  <br/> |
 | `-RemoveExistingSTS` (дополнительно) <br/> |Используйте этот параметр командной строки, если вы заменяете существующее подключение к Microsoft Azure Active Directory. Он удалит существующего издателя маркеров безопасности, который остался от предыдущего подключения к службе контроля доступа.  <br/> |
@@ -244,8 +242,7 @@ Get-Module -listavailable
   
     
     
-
-```
+```
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com
 
@@ -254,15 +251,13 @@ Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineU
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp -RemoveExistingACS -RemoveExistingSTS -RemoveExistingSPOProxy -RemoveExistingAADCredentials
-
-```
+```
 
 
 ### Сценарий функции Connect-SPFarmToAAD
 <a name="function"> </a>
 
-
-```
+```
 
 function Connect-SPFarmToAAD {
 param(
@@ -377,8 +372,7 @@ param(
     if (-not (Get-SPServiceApplicationProxy | ? DisplayName -EQ $SPO_MANAGEMENT_APPPROXY_NAME)) {
         $spoproxy = New-SPOnlineApplicationPrincipalManagementServiceApplicationProxy -Name $SPO_MANAGEMENT_APPPROXY_NAME -OnlineTenantUri $SharePointOnlineUrl -DefaultProxyGroup
     }  
-}
-```
+}```
 
 
 ### Настройка надстройки и веб-приложения SharePoint для Магазин Office
@@ -388,12 +382,10 @@ param(
   
     
     
-
-```
+```
 
 New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebServiceProxy" -ServiceEndpointUri "https://oauth.sellerdashboard.microsoft.com/ApplicationIdentityDataWebService.svc" -DefaultProxyGroup
-
-```
+```
 
 Для готовых веб-приложений SharePoint рекомендуется активировать компонент **Надстройки, которым требуются подключенные к Интернету конечные точки** после выполнения действий, описанных выше (см. следующие инструкции). Этот компонент на самом деле ничего не делает. Он просто служит флажком, сообщающим Магазин Office, что размещенные у поставщика надстройки, использующие службу контроля доступа, можно устанавливать на веб-сайты в веб-приложении SharePoint.
   
@@ -405,11 +397,9 @@ New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebSer
     
 
 
+```
 
-```
-
-<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />
-```
+<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />```
 
 Влияние этого требования заключается в том, что когда пользователи просматривают магазин из локальной фермы SharePoint, ваша надстройка будет выделена серым и не будет доступна для установки, если для родительского веб-приложения SharePoint не включен компонент **Надстройки, которым требуются подключенные к Интернету конечные точки**. Это гарантирует, что вы не будете получать жалобы от пользователей, которые устанавливают вашу надстройку на локальный веб-сайт SharePoint и узнают, что она не работает.
   
@@ -421,10 +411,8 @@ New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebSer
     
 
 
-
-```
-Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application
-```
+```
+Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application```
 
 Чтобы запустить функцию, вы также можете выполнить следующие шаги в центре администрирования:
   
@@ -458,8 +446,7 @@ Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://do
   
     
     
-
-```
+```
 $SPAppPrincipal = Get-MsolServicePrincipal -AppPrincipalId 00000003-0000-0ff1-ce00-000000000000
 $id = "00000003-0000-0ff1-ce00-000000000000/"
 
@@ -476,8 +463,7 @@ Get-SPWebApplication | ForEach-Object {
        Set-MsolServicePrincipal -AppPrincipalId $SPAppPrincipal.AppPrincipalId -ServicePrincipalNames $SPAppPrincipal.ServicePrincipalNames
     }
 }
-
-```
+```
 
 
 ## Дальнейшие действия

@@ -79,8 +79,7 @@ The following C# code demonstrates how to make this **GET** request that returns
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -91,8 +90,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 This request would look a little different if you are writing your add-in in JavaScript but using the SharePoint 2013 cross-domain library. In this case, you don't need to provide an access token. The following code demonstrates how this request would look if you are using the cross-domain library and want to receive the OData representation of the lists as XML instead of JSON. (Because Atom is the default response format, you don't have to include an **Accept** header.) See [Access SharePoint 2013 data from add-ins using the cross-domain library](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md) for more information about using the cross-domain library.
   
@@ -100,8 +98,7 @@ This request would look a little different if you are writing your add-in in Jav
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -114,8 +111,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 The code in the following example shows you how to request a JSON representation of all of the lists in a site by using C#. It assumes that you have an OAuth access token that you are storing in the  `accessToken` variable.
   
@@ -123,16 +119,14 @@ The code in the following example shows you how to request a JSON representation
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### Getting properties that aren't returned with the resource
@@ -168,8 +162,7 @@ Another important consideration when creating, updating, and deleting SharePoint
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -178,8 +171,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 If you're using the authentication and authorization flow described in  [Authorization and authentication of SharePoint Add-ins](authorization-and-authentication-of-sharepoint-add-ins.md), you don't need to include the request digest in your requests.
   
@@ -195,8 +187,7 @@ If you're creating a SharePoint-hosted SharePoint Add-in, you don't have to make
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -214,8 +205,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 The following example shows how to update the list that is created in the previous example. The example changes the title of the list, uses JQuery, and assumes that you are doing this operation in a SharePoint-hosted add-in.
   
@@ -223,8 +213,7 @@ The following example shows how to update the list that is created in the previo
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -241,8 +230,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 The value of the **IF-MATCH** key in the request headers is where you specify the **etag** value of a list or list item. This particular value applies only to lists and list items, and it is intended to help you avoid concurrency problems when you update those entities. The previous example uses an asterisk (*) for this value, and you can use that value whenever you don't have any reason to worry about concurrency issues. Otherwise, you should obtain the **etag** value or a list or list item by performing a **GET** request that retrieves the entity. The response headers of the resulting HTTP response will pass the etag as the value of the **ETag** key. This value is also included in the entity metadata. The following example shows the opening `<entry>` tag for the XML node that contains the list information. The **m:etag** property contains the **etag** value.
   
@@ -250,14 +238,12 @@ The value of the **IF-MATCH** key in the request headers is where you specify th
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## Creating a site with REST
@@ -267,8 +253,7 @@ The following example shows how to create a site in JavaScript.
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -292,8 +277,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## How REST requests differ by environment
@@ -394,8 +378,7 @@ SharePoint Add-ins can get the add-in web URL and host web URL from the query st
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -432,8 +415,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## Properties used in REST requests

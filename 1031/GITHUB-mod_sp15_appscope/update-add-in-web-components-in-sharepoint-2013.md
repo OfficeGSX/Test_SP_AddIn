@@ -129,7 +129,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="2.0.0.0">
@@ -144,7 +144,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
 ### Hinzufügen von Komponenten zum Add-In
@@ -158,16 +158,16 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   
 3. Fügen Sie für jedes neue Elemente ein  [ElementManifest](http://msdn.microsoft.com/library/5a6a2865-5d31-45a2-a402-6da6e0f5567a%28Office.15%29.aspx)-Element als untergeordnetes Element der Elemente **ElementManifests** und **ApplyElementManifests** der Feature-XML-Datei hinzu (exakt dasselbe **ElementManifest**-Element an beiden Stellen). Das **Location**-Attribut des Elements sollte auf den relativen Pfad der elements.2.0.0.0.xml-Datei verweisen. Wenn Sie beispielsweise eine Liste namens MyCustomList hinzugefügt haben, würde das **ElementManifest**-Element wie folgt aussehen.
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="MyCustomList\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 4. Einige Arten von Komponenten fügen Dateien zu dem Projekt hinzu. Beispielsweise wird eine schema.xml-Datei erstellt, wenn Sie eine Liste hinzufügen, oder eine page-Datei, wenn Sie eine Seite hinzufügen. Fügen Sie für jede dieser Dateien ein  [ElementFile](http://msdn.microsoft.com/library/bd43638e-8f18-4a0d-b122-1c055f97aa71%28Office.15%29.aspx)-Element als untergeordnetes Element für das **ElementManifests**-Element hinzu. (Fügen Sie es nicht zum **ApplyElementManifests**-Element hinzu.) Das **Location**-Attribut sollte auf den relativen Pfad der Datei verweisen. Wenn Sie beispielsweise eine Liste hinzugefügt haben, würde das **ElementFile**-Element für die schema.xml-Datei wie folgt aussehen.
     
-  ```XML
+ ```XML
   <ElementFile Location="MyCustomList\\Schema.xml" />
-  ```
+ ```
 
 5. Wenn Sie ein anderes Element eines Typs hinzufügen, der bereits in der vorherigen Version des Add-Ins vorhanden war, fügen die Office-Entwicklertools für Visual Studio möglicherweise einen Verweis zu dem neuen Element zu einem vorhandenen Elementmanifest hinzu statt ein neues zu erstellen. Die Standardmethode zum Hinzufügen einer Seite zu einem Add-In-Web besteht beispielsweise darin, im **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten **Seiten** zu klicken und dann zu **Hinzufügen | Neues Element | Seite | Hinzufügen** zu navigieren. Die Office-Entwicklertools für Visual Studio fügen ein neues **File**-Element zum **Pages**-Modul in der vorhandenen Elementmanifestdatei hinzu (die normalerweise den Namen elements.xml hat) statt ein neues Elementmanifest zu erstellen. 
     
@@ -194,7 +194,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   
 6. Wenn Sie ein Feld zu einem Inhaltstyp im Feature hinzufügen, fügen Sie ein  [AddContentTypeField](http://msdn.microsoft.com/library/cb04a3ac-f41a-4ffe-aaa1-d4bf3fb6347d%28Office.15%29.aspx)-Element zum Abschnitt **VersionRange** hinzu. Achten Sie darauf, den Attributen **ContentTypeId** und **FieldId** die richtigen Werte zuzuweisen. Optional können Sie das Attribut **PushDown** verwenden, um festzulegen, ob ein neues Feld zu abgeleiteten Inhaltstypen hinzugefügt werden soll. Im Folgenden finden Sie ein Beispiel dafür.
     
-  ```XML
+ ```XML
   <VersionRange>
   <AddContentTypeField 
     ContentTypeId="0x0101000728167cd9c94899925ba69c4af6743e"
@@ -202,7 +202,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
     PushDown="TRUE" />
   <!-- Other child elements of VersionRange -->
 </VersionRange>
-  ```
+ ```
 
 
 ### So ändern Sie vorhandene Komponenten des Add-Ins
@@ -223,28 +223,28 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   
 4. Fügen Sie ein **ElementManifest**-Element zum Abschnitt **ApplyElementManifests** hinzu, in dem wie in diesem Beispiel auf die neue Manifestdatei verwiesen wird.
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 
     > **HINWEIS**
       >  Löschen Sie nicht das ursprüngliche Manifest. Die Feature-XML-Datei verwendet sowohl das alte als auch das neue Manifest.>  Kopieren Sie keine **ElementFile**-Elemente aus dem Abschnitt **ElementManifests** in den Abschnitt **ApplyElementManifests**, selbst wenn sich die Datei, auf die in **ElementFile** verwiesen wird, geändert hat.
 2. Öffnen Sie jede Elementmanifestdatei, auf die im Abschnitt **ApplyElementManifests** verwiesen wird, und stellen Sie sicher, dass alle [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx)-Elemente über ein **ReplaceContents**-Attribut verfügen und dies auf **TRUE** festgelegt ist. Nachfolgend ist ein Beispiel gezeigt. Die Office-Entwicklertools für Visual Studio haben dies möglicherweise bereits durchgeführt, aber Sie sollten es überprüfen, auch für die Elementemanifeste aus früheren Versionen des Add-Ins. Dies ist eine der Situationen, in denen es eine gute Vorgehensweise ist, eine vorhandene Elementmanifestdatei zu bearbeiten.
     
-  ```XML
+ ```XML
   <Module Name="Pages">
   <File Path="Pages\\Default.aspx" Url="Pages/Default.aspx" ReplaceContent="TRUE" />
 </Module>
-  ```
+ ```
 
 3. In Seiten können Webparts eingebettet werden, wie in  [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) erklärt. Wenn Sie eine Seite mit einem Webpart ändern (oder die Eigenschaften des Webparts ändern), ist ein zusätzlicher Schritt erforderlich: Sie müssen das folgende Markup zur Seite hinzufügen, um zu verhindern, dass die SharePoint eine zweite Kopie des Webparts auf der Seite hinzufügen. Das Markup sollte zum **asp:Content**-Element mit der ID  `PlaceHolderAdditionalPageHead` hinzugefügt werden. (Die Office-Entwicklertools für Visual Studio haben es möglicherweise beim ersten Erstellen der Seite bereits hinzugefügt, aber Sie sollten überprüfen, ob es vorhanden ist.)
     
-  ```XML
+ ```XML
   
 <meta name="WebPartPageExpansion" content="full" />
-  ```
+ ```
 
 
     > **HINWEIS**
@@ -259,12 +259,12 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
   
 3. Fügen Sie das folgende Markup zum **asp:Content**-Element hinzu, und ersetzen Sie dann  _{RelativePathToNewPageFile}_ durch den neuen Pfad und Dateinamen. Dieses Skript leitet den Browser zur neuen Seite um und enthält die Abfrageparameter. Es sorgt außerdem dafür, dass die alte Seite nicht im Browserverlauf angezeigt wird.
     
-  ```
+ ```
   <script type="text/javascript">
         var queryString = window.location.search.substring(1);
         window.location.replace("{RelativePathToNewPageFile}" + "?" + queryString);
 </script>
-  ```
+ ```
 
 4. Löschen Sie alle anderen **asp:Content**-Elemente auf der Seite.
     
@@ -282,8 +282,7 @@ Im Folgenden sehen Sie ein Beispiel für eine vollständige  _{FeatureName}_.Tem
   
     
     
-
-```XML
+```XML
 
 <Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="MyApp Feature1"
       Description="SharePoint Add-in Feature" Id="85d309a8-107e-4a7d-b3a2-51341d3b11ff" 
@@ -308,8 +307,7 @@ Im Folgenden sehen Sie ein Beispiel für eine vollständige  _{FeatureName}_.Tem
       </VersionRange>
   </UpgradeActions>
 </Feature>
-
-```
+```
 
 
 ### Anschließende Aktualisierungen des Add-In-Webs
@@ -336,7 +334,7 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
   
 4. Wechseln Sie zum vorherigen **VersionRange**-Element - demjenigen, das Sie bei der letzten Aktualisierung des Add-Ins hinzugefügt haben (von 1.0.0.0 auf 2.0.0.0 in unserem fortgesetzten Beispiel) - und fügen Sie ihm ein **EndVersion**-Attribut hinzu. Aktualisierungsaktionen im Bereich dieses **VersionRange**-Elements sollten auf alle Versionen des Add-Ins angewendet werden, auf die sie nicht schon angewendet wurden (Version 1.0.0.0), jedoch nicht auf Versionen, die bereits damit aktualisiert wurden (Version 2.0.0.0). Der Wert **EndVersion** ist ein *ausschließender*  Wert, Sie legen ihn also auf die niedrigste Version fest, auf die die Aktualisierungsaktionen *nicht*  angewendet werden sollen. In dem weitergeführten Beispiel setzen Sie ihn auf 2.0.0.0. Ihre Datei sollte nun wie folgt aussehen.
     
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="3.0.0.0">
@@ -352,14 +350,14 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     Befolgen Sie bei jeder Aktualisierung des Features denselben Ablauf. Fügen Sie ein neues **VersionRange**-Element für die neuesten Aktualisierungsaktionen hinzu. Fügen Sie dann ein **EndVersion**-Element zum  *vorherigen* **VersionRange**-Element hinzu, und legen Sie es auf die vorherige Versionsnummer fest. In dem weitergeführten Beispiel würde die Datei bei einer Aktualisierung von 3.0.0.0 auf 4.0.0.0 aussehen wie folgt.
     
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="4.0.0.0">
@@ -378,7 +376,7 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
     </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     Beachten Sie, dass das aktuellste **VersionRange**-Element kein **BeginVersion**- oder **EndVersion**-Attribut besitzt. Dies gewährleistet, dass die in diesem **VersionRange**-Element enthaltenen Aktualisierungsaktionen auf alle vorherigen Versionen des Features angewendet werden. Dies sollte der Fall sein, da in diesem **VersionRange**-Element auf alle aktuellen Änderungen verwiesen wird und keine davon bereits in einer Instanz des Features vorgenommen wurde.

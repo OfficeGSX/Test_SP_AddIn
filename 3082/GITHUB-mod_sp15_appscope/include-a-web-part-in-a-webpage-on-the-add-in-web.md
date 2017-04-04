@@ -35,14 +35,14 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
   
 3. Agregue **WebPartZone** al elemento **<asp:Content>** donde quiere que esté el elemento web con marcado como el siguiente. Por lo general, se lo agrega al **<asp:Content>** cuyo **ContentPlaceHolderId** es `PlaceHolderMain`. Lo siguiente es un ejemplo.
     
-  ```XML
+ ```XML
   
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
   <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" 
       ID="HomePage1" Title="loc:full" />
 </asp:Content>
 
-  ```
+ ```
 
 
     > **PRECAUCIóN**
@@ -52,7 +52,7 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
   
 5. En el elemento **File** para la página, agregue un elemento **AllUsersWebPart** secundario y establezca su **WebPartZoneID** con el valor de la zona de elementos web que creó en la página, tal como lo muestra este ejemplo:
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -64,11 +64,11 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
   </Module>
 </Elements>
 
-  ```
+ ```
 
 6. Agregue un elemento **CDATA** como un elemento secundario del **AllUsersWebPart**, luego agregue un elemento **webParts** como un elemento secundario de **CDATA**, tal como se muestra en este ejemplo. 
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -77,14 +77,14 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 7. Agregue el marcado de **webPart** como un elemento secundario del elemento **webParts**. A continuación, se muestra un ejemplo en el que se agrega un **XsltListViewWebPart**. Se asume que hay una lista personalizada denominada "Lista de prueba" como parte del mismo proyecto de complemento. Para obtener más información sobre cómo agregar una lista personalizada a una web de complemento, vea  [Crear un complemento hospedado por el proveedor que incluya un tipo de contenido y una lista de SharePoint personalizados](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
     > **NOTA**
       >  Tenga en cuenta que el elemento web no tiene una propiedad ID. Es un procedimiento recomendado incluir un identificador explícito para el elemento web solo en los dos casos en los que realmente es necesario:>  El elemento web se agrega a una página wiki de SharePoint.>  El elemento web es uno de dos o más elementos web que se conectarán.
 
-  ```
+ ```
   
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -106,7 +106,7 @@ Para conocer los requisitos previos, vea  [Empezar a crear complementos hospedad
     </data>
   </webPart>
 </webParts>
-  ```
+ ```
 
 8. Presione F5 para depurar el complemento. Debería ver el elemento web en la página.
     

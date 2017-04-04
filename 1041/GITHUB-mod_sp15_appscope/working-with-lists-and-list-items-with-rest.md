@@ -28,16 +28,14 @@ SharePoint 2013 REST インターフェイスでリストおよびリスト ア�
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 
 > **メモ**
@@ -52,16 +50,14 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の XML は、XML コンテンツ タイプを要求したときに返されるリスト プロパティの例を示しています。
   
@@ -69,8 +65,7 @@ Headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -112,8 +107,7 @@ Headers:
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>
-```
+  </content>```
 
 
 > **メモ**
@@ -130,8 +124,7 @@ Headers:
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -142,8 +135,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、 **MERGE** メソッドを使用してリストを **更新** する方法を示しています。
   
@@ -151,8 +143,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -164,8 +155,7 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、リストの **カスタム フィールド** を **作成** する方法を示しています。
   
@@ -173,8 +163,7 @@ Headers:
     
 
 
-
-```
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -183,8 +172,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、リストを **削除** する方法を示しています。
   
@@ -192,8 +180,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -202,8 +189,7 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-
-```
+```
 
 
 ## REST を使用してリスト アイテムを操作する
@@ -220,16 +206,14 @@ Headers:
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の例は、特定のリスト アイテムを **取得** する方法を示しています。
   
@@ -237,16 +221,14 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 次の XML は、XML コンテンツ タイプを要求したときに返されるリスト アイテム プロパティの例を示しています。
   
@@ -254,8 +236,7 @@ headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -272,8 +253,7 @@ headers:
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>
-```
+</content>```
 
 次の例は、リスト アイテムを **作成** する方法を示しています。
   
@@ -288,8 +268,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -299,8 +278,7 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、リスト アイテムを **更新** する方法を示しています。
   
@@ -315,8 +293,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -328,8 +305,7 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 次の例は、リスト アイテムを **削除** する方法を示しています。
   
@@ -337,8 +313,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -347,8 +322,7 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## ETag 値を使用してドキュメントとリスト項目のバージョンを確認する

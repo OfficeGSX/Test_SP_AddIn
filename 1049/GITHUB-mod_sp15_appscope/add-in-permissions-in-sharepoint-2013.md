@@ -219,8 +219,7 @@ SharePoint поддерживает четыре различных област
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ SharePoint поддерживает четыре различных област
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 В следующем фрагменте кода надстройка запрашивает разрешение на чтение для области сайта и разрешение на запись для области списка.
   
@@ -250,8 +248,7 @@ SharePoint поддерживает четыре различных област
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ SharePoint поддерживает четыре различных област
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### Области запроса разрешений для других компонентов SharePoint
@@ -424,13 +420,11 @@ SharePoint поддерживает четыре различных област
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **Таблица 7. Область запроса разрешений со связанными свойствами**

@@ -148,13 +148,13 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
    .  .  .
 </appSettings>
-  ```
+ ```
 
 2. Escriba el valor del secreto de complemento como valor de **ClientSecret** (reemplazando el valor temporal que las herramientas especificaron).
     
@@ -162,13 +162,13 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
   <add key="ClientSecret" value="l0z/8TzWN0yQBzMBSEZtYts2Vt3Eo/oE3rfCdPaogKQ= " />
 </appSettings>
-  ```
+ ```
 
 3. En el archivo AppManifest.xml del proyecto de Visual Studio, escriba el valor del identificador de complemento como valor de **ClientId**,  *con minúsculas*  .
     
@@ -179,19 +179,19 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
     
 
 
-  ```XML
+ ```XML
   
 <AppPrincipal>
   <RemoteWebApplication ClientId="a044e184-7de2-4d05-aacf-52118008c44e "/>
 </AppPrincipal>
-  ```
+ ```
 
 4. Office Developer Tools para Visual Studio usa el token  `~remoteAppUrl` en el elemento **StartPage**. (Por ejemplo,  `<StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>`). Este token se resuelve en la dirección URL del componente remoto si usa el asistente **Publicador** de Visual Studio. Si no usa el asistente (o si lo usa pero está publicando el componente remoto en Azure), tiene que reemplazar manualmente el token por el valor del **Dominio del complemento** que usó al registrar el complemento. Debe ser *exactamente*  el mismo valor, incluido el número de puerto, si lo hubiera; la excepción es que se incluye también el protocolo HTTPS. A continuación se muestra un ejemplo.
     
-  ```XML
+ ```XML
   
 <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
-  ```
+ ```
 
 5. Considere la posibilidad de usar para el elemento **Title** que hay en el archivo AppManifest.xml el mismo valor que usó para el campo **Título** en AppRegNew.aspx. El valor del elemento **Title** es el nombre del complemento que los usuarios ven cuando se este instala. Podría resultar confuso para los usuarios que el complemento tenga un nombre diferente en el cuadro de diálogo de consentimiento y en la interfaz de usuario de SharePoint.
     
@@ -199,12 +199,12 @@ Antes de empaquetar el Complemento de SharePoint y antes de implementar sus comp
     
 
 
-  ```XML
+ ```XML
   <Properties>
   <Title>Contoso photo printing app</Title>
   <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
 </Properties>
-  ```
+ ```
 
 
 ## Uso de la dirección URL de redireccionamiento en un complemento que pide permisos sobre la marcha

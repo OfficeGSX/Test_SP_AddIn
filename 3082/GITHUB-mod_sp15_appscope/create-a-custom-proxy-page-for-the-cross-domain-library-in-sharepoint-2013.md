@@ -78,12 +78,12 @@ Para leer datos del servicio remoto, debe ejecutar las operaciones siguientes:
   
 2. Sustituya todo el elemento **AppPrincipal** con lo siguiente.
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **NOTA**
@@ -113,7 +113,7 @@ Para leer datos del servicio remoto, debe ejecutar las operaciones siguientes:
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ Para leer datos del servicio remoto, debe ejecutar las operaciones siguientes:
 </html>
 
 
-  ```
+ ```
 
 
     > **IMPORTANTE**
@@ -209,7 +209,7 @@ Para leer datos del servicio remoto, debe ejecutar las operaciones siguientes:
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -217,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### Para crear una página web de SharePoint que use la biblioteca entre dominios
@@ -240,7 +240,7 @@ Response.End();
   
 6. Copie el código siguiente y péguelo en la etiqueta de contenido **PlaceHolderMain**. 
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -315,7 +315,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. En el código que pegó anteriormente, busque la línea  `remotedomain = "<your_remote_add-in_domain>";` y sustituya el marcador de posición _<your_remote_add-in_domain>_ por la dirección URL "localhost" que su aplicación web usa cuando se ejecuta el complemento con F5 en Visual Studio. Para encontrar su valor, elija el proyecto de aplicación web en el **Explorador de soluciones**. La propiedad **URL** estará en el panel **Propiedades**. Use el valor completo, incluido el protocolo, el puerto y la barra de cierre. Por ejemplo, "http://localhost:45072".
     

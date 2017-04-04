@@ -131,7 +131,7 @@ Lorsque vous travaillez dans Visual Studio et que vous ajoutez un RER à un proj
   
 - Un élément de projet pour le récepteur d'événements distants est ajouté au projet de Complément SharePoint. Le fichier Elements.xml pour le récepteur d'événements distants référence le service web dans l'application web et les événements distants que vous avez spécifiés. L'exemple suivant présente un fichier Elements.xml qui gère l'ajout ou la suppression d'un élément de liste :
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ Lorsque vous travaillez dans Visual Studio et que vous ajoutez un RER à un proj
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 Pour modifier les événements gérés par le récepteur d'événements, ouvrez l' **Explorateur de solutions**, ouvrez la fenêtre **Propriétés** pour le récepteur d'événements distants, développez le nœud **Événements SharePoint**, puis attribuez la valeur **True** uniquement aux événements que vous souhaitez gérer.
   
@@ -298,8 +298,7 @@ Exprimé en pseudo-code, votre gestionnaire doit généralement être structuré
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -308,8 +307,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 Toutefois, l'implémentation de votre logique de restauration et « Déjà terminé » dans votre service web peut ralentir le gestionnaire. Vos logiques d'installation et de restauration apportent généralement des modifications à un élément plus ou moins distant du service web, comme le site web hôte SharePoint ou une base de données principale. Si votre code d'installation et de restauration est réparti entre les sections Try et Catch, le service effectue des appels séparés aux composants distants, souvent plusieurs appels de ce type dans chaque section. En règle générale, il est recommandé d'implémenter la logique d'installation et de restauration sur le composant distant dans une procédure qui peut être appelée à partir de votre gestionnaire dans la section Try. La procédure doit renvoyer un message de réussite ou d'échec et, si elle indique un échec, le code de la section Try appelle la section Catch (par exemple, en générant une exception). La seule chose que la section Catch effectue consiste à informer SharePoint. Nous l'appelons la stratégie de délégation de gestionnaire. Le pseudo-code suivant illustre la stratégie :
   
@@ -317,16 +315,14 @@ Toutefois, l'implémentation de votre logique de restauration et « Déjà termi
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 La procédure « Faire X », qui s'exécute sur le système distant, contient la logique de restauration et « Déjà terminé » suivante :
   
@@ -334,8 +330,7 @@ La procédure « Faire X », qui s'exécute sur le système distant, contient la
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -347,8 +342,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 Par exemple, si votre gestionnaire doit effectuer une action sur une base de données SQL Server, vous pouvez installer une procédure stockée sur l'instance SQL Server qui utilise un bloc  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) pour implémenter une logique d'installation/de restauration, et les blocs [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) pour implémenter une logique « Déjà terminé ».
   
@@ -399,8 +393,7 @@ Dans SharePoint 2010, les récepteurs d'événements gèrent les événements qu
 
 |**Solutions SharePoint**|**Compléments SharePoint**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -417,11 +410,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -435,8 +426,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

@@ -148,13 +148,13 @@ ms.assetid: be41a5dc-2af9-4fd9-bf4e-ad6dfa849524
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
    .  .  .
 </appSettings>
-  ```
+ ```
 
 2. В качестве значения **ClientSecret** введите секрет надстройки (заменив временное значение, введенное средством).
     
@@ -162,13 +162,13 @@ ms.assetid: be41a5dc-2af9-4fd9-bf4e-ad6dfa849524
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
   <add key="ClientSecret" value="l0z/8TzWN0yQBzMBSEZtYts2Vt3Eo/oE3rfCdPaogKQ= " />
 </appSettings>
-  ```
+ ```
 
 3. В файле AppManifest.xml проекта Visual Studio введите значение идентификатора надстройки в качестве значения **ClientId**,  *используя строчные буквы*  .
     
@@ -179,19 +179,19 @@ ms.assetid: be41a5dc-2af9-4fd9-bf4e-ad6dfa849524
     
 
 
-  ```XML
+ ```XML
   
 <AppPrincipal>
   <RemoteWebApplication ClientId="a044e184-7de2-4d05-aacf-52118008c44e "/>
 </AppPrincipal>
-  ```
+ ```
 
 4. Инструменты разработчика Office для Visual Studio используют маркер  `~remoteAppUrl` в элементе **StartPage**. (Например,  `<StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>`.) Если вы используете мастер **публикации** в Visual Studio, то этот маркер разрешается в URL-адрес удаленного компонента. Если вы не используете мастер (или если вы все-таки используете его, но публикуете удаленные компоненты в Azure), вам придется вручную заменить маркер значением **домена надстройки**, которое вы использовали при регистрации этой надстройки. Это должно быть  *точно такое же*  значение, включающее помимо протокола HTTPS номер порта (если он имеется). Ниже указан пример такого значения.
     
-  ```XML
+ ```XML
   
 <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
-  ```
+ ```
 
 5. Для элемента **Title** в файле AppManifest.xml рекомендуется использовать то же значение, которое вы указывали в поле **Название** на странице AppRegNew.aspx. Значение элемента **Title** представляет собой имя надстройки, которое отображается для пользователей после ее установки. Если в диалоговом окне согласия надстройка будет иметь имя, отличающееся от ее имени в пользовательском интерфейсе SharePoint, это может ввести пользователя в заблуждение.
     
@@ -199,12 +199,12 @@ ms.assetid: be41a5dc-2af9-4fd9-bf4e-ad6dfa849524
     
 
 
-  ```XML
+ ```XML
   <Properties>
   <Title>Contoso photo printing app</Title>
   <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
 </Properties>
-  ```
+ ```
 
 
 ## Использование URL-адреса перенаправления в надстройке, запрашивающей разрешения динамически

@@ -83,16 +83,14 @@ CSOM 使用批处理系统。托管代码块将转换为 XML 并在单个 HTTP �
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 本系列的前一篇文章中有此模式的示例，如下面所示的  `GetLocalEmployeeName` 方法。对于此方法，请注意以下事项。
   
@@ -107,8 +105,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -122,8 +119,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

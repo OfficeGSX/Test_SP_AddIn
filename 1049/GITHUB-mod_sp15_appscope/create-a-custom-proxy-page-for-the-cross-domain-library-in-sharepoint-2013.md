@@ -78,12 +78,12 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   
 2. Замените весь элемент **AppPrincipal** на следующий фрагмент.
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **Примечание**
@@ -113,7 +113,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
 </html>
 
 
-  ```
+ ```
 
 
     > **Важно!**
@@ -209,7 +209,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -217,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### Создание веб-страницы SharePoint, которая использует междоменную библиотеку
@@ -240,7 +240,7 @@ Response.End();
   
 6. Скопируйте следующую разметку и вставьте ее в тег контента **PlaceHolderMain**. 
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -315,7 +315,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. В ранее вставленном вами фрагменте кода найдите строку  `remotedomain = "<your_remote_add-in_domain>";` и замените заполнитель _<your_remote_add-in_domain>_ на URL-адрес localhost, который ваше веб-приложение использует, когда вы запускаете надстройку клавишей F5 в Visual Studio. Для этого выберите проект веб-приложения в **обозревателе решений**. Свойство **URL-адрес** находится в области **Свойства**. Используйте значение целиком, включая протокол, порт и закрывающий символ косой черты, например "http://localhost:45072".
     

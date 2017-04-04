@@ -126,7 +126,7 @@ When you are working in Visual Studio, and you add a RER to a SharePoint Add-in 
   
 - A project item for the remote event receiver is added to the SharePoint Add-in project. The Elements.xml file for the remote event receiver references the web service in the web application and the remote events that you specified. The following example shows an Elements.xml file that handles the addition or deletion of a list item.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -145,7 +145,7 @@ When you are working in Visual Studio, and you add a RER to a SharePoint Add-in 
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 To change the events that the remote event receiver handles, open **Solution Explorer**, open the **Properties** window for the remote event receiver, expand the **SharePoint Events** node, and then set only the events that you want to handle to **True**.
   
@@ -293,8 +293,7 @@ Expressed in pseudo-code, your handler should usually be structured something li
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -303,8 +302,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 However, implementing your rollback and "already done" logic in your web service can slow down the handler. Both your installation and rollback logic usually make changes to something more-or-less remote from the web service, such as the SharePoint host web or a back end database. If your installation and rollback code is split between the Try and Catch sections, then the service is making separate calls to the remote components, often several such calls in each section. The best practice is usually to implement the installation and rollback logic on the remote component itself in a procedure that can be called from your handler in your Try section. The procedure should return a success or failure message, and if it reports failure, code in your Try section invokes the Catch section (by, say, throwing an exception). The only thing the Catch section does is notify SharePoint. We'll call this the handler delegation strategy. The following pseudo-code illustrates the strategy:
   
@@ -312,16 +310,14 @@ However, implementing your rollback and "already done" logic in your web service
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 The "Do X" procedure, that executes on the remote system, would itself contain the rollback and "already done" logic like the following.
   
@@ -329,8 +325,7 @@ The "Do X" procedure, that executes on the remote system, would itself contain t
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -342,8 +337,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 For example, if your handler needs to take action on an SQL Server database, you can install a stored procedure on the SQL Server that uses a  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) block to implement installation-rollback logic. with [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) blocks to implement "already done" logic.
   
@@ -394,8 +388,7 @@ In SharePoint 2010, event receivers handle events that occur on SharePoint lists
 
 |**SharePoint solutions**|**SharePoint Add-ins**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -412,11 +405,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -430,8 +421,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

@@ -135,8 +135,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -149,8 +148,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 下表说明了 **您的代码应该将哪些属性包含在访问令牌中，以及应该为这些属性设置什么值** 。如果您使用托管代码，SharePointContext.cs（或 .vb）和 TokenHelper.cs（或 .vb）文件将为您创建令牌。例如，您的令牌向 **SharePointContext.CreateUserClientContextForSPHost** 方法发出单个调用。该方法又反过来调用 **TokenHelper** 类中的方法，这些方法可构建 **SharePointContext.CreateUserClientContextForSPHost** 返回的 SharePoint 客户端上下文对象发出的每个 SharePoint 调用中包含的访问令牌。
   
@@ -190,8 +188,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -203,8 +200,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **注释**

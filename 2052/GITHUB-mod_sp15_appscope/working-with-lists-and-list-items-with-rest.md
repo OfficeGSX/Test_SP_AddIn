@@ -28,16 +28,14 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 
 > **注释**
@@ -52,16 +50,14 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下 XML 显示了当您请求 XML 内容类型时返回的列表属性的示例。
   
@@ -69,8 +65,7 @@ Headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -112,8 +107,7 @@ Headers:
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>
-```
+  </content>```
 
 
 > **注释**
@@ -130,8 +124,7 @@ Headers:
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -142,8 +135,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何使用 **MERGE** 方法 **更新** 列表。
   
@@ -151,8 +143,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -164,8 +155,7 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何为列表 **创建** **自定义字段** 。
   
@@ -173,8 +163,7 @@ Headers:
     
 
 
-
-```
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -183,8 +172,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何 **删除** 列表。
   
@@ -192,8 +180,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -202,8 +189,7 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-
-```
+```
 
 
 ## 通过 REST 使用列表项
@@ -220,16 +206,14 @@ Headers:
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下示例显示如何"检索"特定列表项。
   
@@ -237,16 +221,14 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下 XML 显示当您请求 XML 内容类型时返回的列表项属性的示例。
   
@@ -254,8 +236,7 @@ headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -272,8 +253,7 @@ headers:
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>
-```
+</content>```
 
 以下示例显示如何"创建"列表项。
   
@@ -288,8 +268,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -299,8 +278,7 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例显示如何"更新"列表项。
   
@@ -315,8 +293,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -328,8 +305,7 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例显示如何"删除"列表项。
   
@@ -337,8 +313,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -347,8 +322,7 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## 使用 ETag 值确定文档和列表项的版本控制

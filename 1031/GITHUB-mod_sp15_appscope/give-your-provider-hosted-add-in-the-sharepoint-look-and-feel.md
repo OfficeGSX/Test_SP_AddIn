@@ -148,7 +148,7 @@ In einigen Szenarien sollen Ihre Remoteseiten ihr eigenes Branding haben, aber i
   
 2. Im Abschnitt **head** sehen Sie ein Skript, das eine Reihe von JavaScript-Bibliotheken lädt. Fügen Sie das folgende zusätzliche Skript darunter hinzu. Dieses Skript lädt die Datei SP.UI.Controls.js, die sich auf jeder SharePoint-Website im Ordner /_layouts/15/ befindet. Diese Datei lädt unter anderem die SharePoint-CSS-Bibliothek.
     
-  ```
+ ```
   
 <script type="text/javascript">
     var hostweburl;
@@ -183,11 +183,11 @@ In einigen Szenarien sollen Ihre Remoteseiten ihr eigenes Branding haben, aber i
         }
     }
 </script>
-  ```
+ ```
 
 3. Fügen Sie am Anfang des Textabschnitts der Seite das folgende Markup hinzu. Dadurch wird die obere Leiste von SharePoint, die als Chromsteuerelement bezeichnet wird, auf der Seite eingefügt. Die Details dieses Markups werden klarer, wenn das überarbeitete Add-In später in diesem Artikel getestet wird. (Die Zeichenfolge „App" wird in einigen der Eigenschaftennamen angezeigt, da Add-Ins zuvor als „Apps" bezeichnet wurden.)
     
-  ```
+ ```
   
 <!-- Chrome control placeholder. Options are declared inline.  -->
 <div 
@@ -210,15 +210,15 @@ In einigen Szenarien sollen Ihre Remoteseiten ihr eigenes Branding haben, aber i
             ]
          }'>
 </div>
-  ```
+ ```
 
 4. Die **H1**-Header und der Hyperlink im Textteil der Seite verwenden automatisch Formate, die in der CSS-Bibliothek von SharePoint gespeichert sind, und müssen deshalb nicht geändert werden. Zum Illustieren der Verwendungsweise von SharePoint-Formaten legen Sie die Spaltenüberschriften in den drei **GridView**-Steuerelementen auf das Share-Point-Format „Großbuchstaben" fest, indem Sie das Attribut **HeaderStyle-CssClass** zu jedem der Steuerelemente hinzufügen und den Wert auf `ms-uppercase` festlegen. Im Folgenden sehen Sie ein Beispiel. Nehmen Sie dieselbe Änderung an allen drei **GridView**-Steuerelementen vor.
     
-  ```XML
+ ```XML
   
 <asp:GridView ID="ordersGridView" runat="server" CellPadding="5" GridLines="None"
 HeaderStyle-CssClass="ms-uppercase" />
-  ```
+ ```
 
 5. Das Chromsteuerelement verwendet das Add-In-Symbol, deshalb wird eine zweite Kopie der Symboldatei auf dem Remotewebserver benötigt. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei AppIcon.png im Projekt **ChainStore**, und wählen Sie **Kopieren** aus.
     
@@ -235,13 +235,13 @@ HeaderStyle-CssClass="ms-uppercase" />
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
     spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 9. Es gibt vier ASP.NET-Dateien, die die SharePoint-UI benötigen: 
     
@@ -265,36 +265,36 @@ protected void Page_Load(object sender, EventArgs e)
     
 
 
-  ```XML
+ ```XML
   
 <link type="text/css" rel="stylesheet"
 href="<%= spContext.SPHostUrl.ToString() + "_layouts/15/defaultcss.ashx" %>" />
-  ```
+ ```
 
 10. Dieser und der nächste Schritt wurden für die Seite „Auftragsformular" und „Konto" bereits durchgeführt, sie gelten also nur für die Seiten „Kontakt" und „Hilfe". Um das  `spContext`-Objekt auf jede der Seiten einzufügen, öffnen Sie die *.aspx-CodeBehind-Dateien für die drei aspx-Seiten. Fügen Sie in jeder den folgenden Member zur Klasse **Page** hinzu.
     
-  ```cs
+ ```cs
   
 protected SharePointContext spContext;
-  ```
+ ```
 
 11. Ersetzen Sie die Methode **Page_Load** durch die folgende Version. Das Objekt wird aus dem Sitzungscache abgerufen. Es wurde zwischengespeichert, als es erstmals von der Methode **Page_Load** der Startseite des Add-Ins erstellt wurde.
     
-  ```cs
+ ```cs
   protected void Page_Load(object sender, EventArgs e)
 {
     spContext = Session["SPContext"] as SharePointContext;
 }
-  ```
+ ```
 
 12. Öffnen Sie die Seite OrderForm.aspx. Ersetzen Sie oben im Element **Label** das Element **<b>** auf dem Ausdruck **Bestellung aufgeben** durch Span-Tags, die auf die `ms-accentText`-CSS-Klasse verweisen. Das gesamte **Label**-Steuerelement sollte wie folgt aussehen, wenn Sie fertig sind.
     
-  ```XML
+ ```XML
   
 <asp:Label ID="lblOrderPrompt" runat="server"
          Text="Enter a supplier, product, and quantity; and then press <span class='ms-accentText'>Place Order</span>.">
 </asp:Label>
-  ```
+ ```
 
 
 ## Ausführen des Add-Ins und Testen der neuen SharePoint-UI

@@ -21,16 +21,14 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下 XML 显示了当您请求 XML 内容类型时返回的文件夹属性的示例。
   
@@ -38,8 +36,7 @@ headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties>
@@ -48,8 +45,7 @@ headers:
 <d:ServerRelativeUrl>/Shared Documents</d:ServerRelativeUrl>
 <d:WelcomePage/>
 </m:properties>
-</content>
-```
+</content>```
 
 以下示例演示如何 **创建** 文件夹。
   
@@ -57,8 +53,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/folders
 method: POST
@@ -68,8 +63,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何使用 **MERGE** 方法 **更新** 文件夹。
   
@@ -77,8 +71,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -90,8 +83,7 @@ Headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何 **删除** 文件夹。
   
@@ -99,8 +91,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -109,8 +100,7 @@ Headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## 通过 REST 使用文件
@@ -120,16 +110,14 @@ Headers:
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下示例演示如何 **检索** 特定文件。
   
@@ -137,14 +125,12 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 您还可以 **检索** 已知其 URL 的文件，如以下示例所示。
   
@@ -152,14 +138,12 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 以下示例演示如何 **创建** 文件并将其添加到文件夹中。
   
@@ -167,8 +151,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
 method: POST
@@ -176,8 +159,7 @@ body: "Contents of file"
 Headers: 
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何使用 **PUT** 方法 **更新** 文件。
   
@@ -192,8 +174,7 @@ Headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: POST
@@ -202,8 +183,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     X-HTTP-Method:"PUT"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 如果要更新文件的元数据，则需要构建到达文件的终结点作为列表项。可以执行此操作的原因在于每个文件夹也是一个列表，并且每个文件也是一个列表项。构建如下终结点：  `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`。 [使用 REST 处理列表和列表项](working-with-lists-and-list-items-with-rest.md)说明了如何更新列表项的元数据。
   
@@ -215,15 +195,13 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 以下示例演示如何 **签入文件** 。
   
@@ -231,15 +209,13 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 以下示例演示如何 **删除** 文件。
   
@@ -247,8 +223,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
 method: POST
@@ -257,8 +232,7 @@ headers:
      X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method:"DELETE"
-
-```
+```
 
 
 ## 使用 REST 处理大文件
@@ -275,8 +249,7 @@ headers:
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
 method: POST
@@ -285,8 +258,7 @@ headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下代码示例演示如何使用此 REST 端点和跨域库创建文件。
   
@@ -294,8 +266,7 @@ headers:
     
 
 
-
-```
+```
 
 function uploadFileBinary() {
 XDomainTestHelper.clearLog();
@@ -322,8 +293,7 @@ state: "Update"
 };
 ro.executeAsync(info);
 }
-
-```
+```
 
 
 ## 使用 REST 处理附加到列表项的文件
@@ -333,16 +303,14 @@ ro.executeAsync(info);
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下示例演示如何 **检索** 附加到列表项的文件。
   
@@ -350,16 +318,14 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 以下示例演示如何 **创建** 列表项的文件附件。
   
@@ -367,8 +333,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
 method: POST
@@ -376,8 +341,7 @@ headers:
     Authorization: "Bearer " + accessToken
     body: "Contents of file."
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 以下示例演示如何使用 **PUT** 方法 **更新** 列表项的文件附件。
   
@@ -392,8 +356,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: POST
@@ -402,8 +365,7 @@ headers:
     Authorization: "Bearer " + accessToken
     "X-HTTP-Method":"PUT"
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 
 ## 其他资源

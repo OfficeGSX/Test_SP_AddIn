@@ -56,11 +56,9 @@ ms.assetid: 5a69c9e3-73bf-4ed5-bc19-182056bdb394
     
 
 
+```
 
-```
-
-using Microsoft.SharePoint.Client;
-```
+using Microsoft.SharePoint.Client;```
 
 Если не указано иное, предполагается, что каждый из этих примеров содержится в методе без параметров, определенном в классе страницы. Кроме того,  `label1`,  `label2` и так далее  это имена объектов [Label](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Label.aspx) на странице.
   
@@ -88,8 +86,7 @@ using Microsoft.SharePoint.Client;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the 
 // server running SharePoint. 
@@ -107,8 +104,7 @@ context.ExecuteQuery();
 // Now, the web's properties are available and we could display 
 // web properties, such as title. 
 label1.Text = web.Title;
-
-```
+```
 
 
 ### Получение определенных свойств веб-сайта
@@ -117,8 +113,7 @@ label1.Text = web.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -138,8 +133,7 @@ context.ExecuteQuery();
 // an exception because other properties are not available. 
 label1.Text = web.Title;
 label1.Text = web. Description;
-
-```
+```
 
 
 > **Примечание**
@@ -155,8 +149,7 @@ label1.Text = web. Description;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -174,8 +167,7 @@ web.Update();
 
 // Execute the query to server.
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Создание веб-сайта SharePoint
@@ -184,8 +176,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -201,8 +192,7 @@ context.Load(newWeb, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = newWeb.Title; 
-
-```
+```
 
 
 ## Задачи, связанные со списками SharePoint
@@ -219,8 +209,7 @@ label1.Text = newWeb.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -242,8 +231,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 > **Примечание**
@@ -252,8 +240,7 @@ foreach (List list in web.Lists)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -276,8 +263,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 ### Создание и обновление списка SharePoint
@@ -286,8 +272,7 @@ foreach (List list in web.Lists)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -304,8 +289,7 @@ list.Description = "New Description";
 
 list.Update(); 
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Удаление списка SharePoint
@@ -314,8 +298,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -328,8 +311,7 @@ List list = web.Lists.GetByTitle("My List");
 list.DeleteObject(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Добавление поля в список SharePoint
@@ -345,8 +327,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -363,8 +344,7 @@ fldNumber.MinimumValue = 35;
 fldNumber.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Задачи, связанные с элементами списков SharePoint
@@ -388,8 +368,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -411,8 +390,7 @@ foreach (ListItem listItem in items)
     // We have all the list item data. For example, Title. 
     label1.Text = label1.Text + ", " + listItem["Title"]; 
 } 
-
-```
+```
 
 
 ### Создание элемента списка
@@ -421,8 +399,7 @@ foreach (ListItem listItem in items)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -442,8 +419,7 @@ newItem["Body"] = "Hello World!";
 newItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Обновление элемента списка
@@ -452,8 +428,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -470,8 +445,7 @@ listItem["Body"] = "This is my new value!!";
 listItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Удаление элемента списка
@@ -480,8 +454,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -495,8 +468,7 @@ ListItem listItem = announcementsList.GetItemById(2);
 listItem.DeleteObject(); 
 
 context.ExecuteQuery(); } 
-
-```
+```
 
 
 ## Задачи, связанные с полями SharePoint
@@ -513,8 +485,7 @@ context.ExecuteQuery(); }
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -530,8 +501,7 @@ foreach (SP.Field field in list.Fields)
 { 
     label1.Text = label1.Text + ", " + field.InternalName;
 } 
-
-```
+```
 
 
 ### Получение определенного поля из списка
@@ -547,8 +517,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -562,8 +531,7 @@ context.ExecuteQuery();
 
 // Now, we can access the specific text field properties. 
 label1.Text = textField.MaxLength; 
-
-```
+```
 
 
 ## Задачи, связанные с пользователями SharePoint
@@ -580,8 +548,7 @@ label1.Text = textField.MaxLength;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -602,8 +569,7 @@ userCreationInfo.Title = "Mr User";
 User newUser = membersGroup.Users.Add(userCreationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Получение всех пользователей из группы SharePoint
@@ -612,8 +578,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -631,8 +596,7 @@ foreach (User member in membersGroup.Users)
     // We have all the user info. For example, Title. 
     label1.Text = label1.Text + ", " + member.Title; 
 }  
-
-```
+```
 
 
 ### Создание роли
@@ -641,8 +605,7 @@ foreach (User member in membersGroup.Users)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -660,8 +623,7 @@ creationInfo.Order = 0;
 RoleDefinition rd = context.Web.RoleDefinitions.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Добавление пользователя к роли
@@ -670,8 +632,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -687,8 +648,7 @@ roleDefCollection.Add(readDef);
 RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Правила и рекомендации по клиентской объектной модели .NET в SharePoint
@@ -705,8 +665,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -714,8 +673,7 @@ ClientContext context = new ClientContext("http://SiteUrl");
 
 Web web = context.Web; 
 label1.Text = web.Title;  
-
-```
+```
 
 Сбой произойдет по той причине, что в коде CSOM .NET Framework в SharePoint необходимо выполнить следующие действия:
   
@@ -737,8 +695,7 @@ label1.Text = web.Title;
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -751,8 +708,7 @@ context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = web.Title;   
-
-```
+```
 
 Отличие в том, что добавлены следующие строки.
   
@@ -760,13 +716,11 @@ label1.Text = web.Title;
     
 
 
-
-```
+```
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
-
-```
+```
 
 В первой строке создается запрос для свойства **Title** сайта. Во второй строке выполняется запрос.
   
@@ -779,8 +733,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -791,8 +744,7 @@ ListCreationInformation creationInfo = new ListCreationInformation();
 creationInfo.Description = web.Title; 
 creationInfo.Title = web.Title; 
 List newList = web.Lists.Add(creationInfo);  
-
-```
+```
 
 Исключение создается по той причине, что свойство недоступно, пока запрос не будет выполнен. В SQL можно объявить локальную переменную для хранения значения  `web.Title` и использовать ее для создания сайта. В клиентской библиотеке создать локальную переменную нельзя. Вам придется реализовать эту функцию в двух отдельных запросах, как показано в следующем примере. Вам также потребуется добавить инструкцию **using** для пространства имен [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Кроме того, добавьте псевдоним в инструкцию using для пространства имен [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) , чтобы получить возможность ссылаться на его классы однозначно. Пример: `using SP = Microsoft.SharePoint.Client;`.
   
@@ -800,8 +752,7 @@ List newList = web.Lists.Add(creationInfo);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -819,8 +770,7 @@ creationInfo.Title = web.Title;
 SP.List newList = web.Lists.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 Отличие заключается в следующих трех строках.
   
@@ -828,15 +778,13 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 ...
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Использование методов или свойств, возвращающих клиентские объекты, в вызове другого метода в том же запросе
@@ -859,14 +807,12 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 ClientContext context = new ClientContext("http://SiteUrl");
 Web web = context.Web; 
 SP.List list = web.Lists.GetByTitle("Announcements"); 
-
-```
+```
 
 Мы знаем, что список создается следующим образом.
   
@@ -893,8 +839,7 @@ SP.List list = web.Lists.GetByTitle("Announcements");
   
     
     
-
-```cs
+```cs
 
 static void Method1() 
 { 
@@ -916,8 +861,7 @@ static void Method2()
     context.Load(web, w => w.Description); 
     context.ExecuteQuery();  
 } 
-
-```
+```
 
 Эти способы различаются по эффективности. В методе **Method1** код для извлечения названия и описания веб-сайта сгруппирован вместе. В методе **Method2** он разделен другими действиями. Это означает, что метод **Method2** вызывает два отдельных запроса к одному и тому же объекту сайта, и для него будет получено два набора результатов. Поскольку клиентская библиотека стремится возвращать согласованные данные, второй набор результатов будет включать как название, так и описание. Предыдущий код можно представить следующим образом.
   
@@ -925,8 +869,7 @@ static void Method2()
     
 
 
-
-```
+```
 
 Method1:
 SELECT Title, Description FROM Webs WHERE ... 
@@ -936,8 +879,7 @@ Method2:
 SELECT Title FROM Webs WHERE … 
 SELECT Description FROM Lists WHERE … 
 SELECT Title, Description FROM Webs WHERE … 
-
-```
+```
 
 
 ### Указание свойств объектов, которые необходимо вернуть
@@ -946,11 +888,9 @@ SELECT Title, Description FROM Webs WHERE …
   
     
     
+```
 
-```
-
-SELECT * FROM Webs 
-```
+SELECT * FROM Webs ```
 
 В клиентской библиотеке ни метод **Load<T>**, ни какой-либо другой метод не возвращает всех свойств, поэтому необходимо явным образом указать требуемые данные. Например, следующий код получает объект веб-сайта, но возвращаемые свойства не указаны. Далее он пытается прочесть два свойства, однако одно из них не относится с свойствам, которые возвращаются методом **Load** автоматически. Создается исключение.
   
@@ -958,8 +898,7 @@ SELECT * FROM Webs
     
 
 
-
-```cs
+```cs
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
 ClientContext context = new ClientContext("http://SiteUrl"); 
@@ -970,8 +909,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 Чтобы успешно скомпилировать код, обновите его следующим образом. Для компиляции кода необходимо добавить инструкцию **using** для пространства имен [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Кроме того, добавьте псевдоним в инструкцию **using** для пространства имен [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) , чтобы получить возможность ссылаться на его классы однозначно. Пример: `using SP = Microsoft.SharePoint.Client;`.
   
@@ -979,8 +917,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -993,8 +930,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 
 ### Использование условной области для проверки предварительных условий перед загрузкой данных
@@ -1010,8 +946,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1036,8 +971,7 @@ if (scope.TestResult.Value)
 { 
     label1.Text = list.Title; 
 }  
-
-```
+```
 
 
 ### Использование области обработки исключений для перехвата исключений
@@ -1046,8 +980,7 @@ if (scope.TestResult.Value)
   
     
     
-
-```cs
+```cs
 
 
 // Starting with ClientContext, the constructor requires a URL to the 
@@ -1083,8 +1016,7 @@ using (scope.StartScope())
 } 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Дополнительные ресурсы

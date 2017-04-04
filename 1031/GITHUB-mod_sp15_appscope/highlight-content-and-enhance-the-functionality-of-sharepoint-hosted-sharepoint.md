@@ -37,12 +37,10 @@ In diesem Beispiel wird mithilfe der Methode  `SP.SOD.executeFunc` sichergestell
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 Die Funktion, die Sie an die Funktion  `SP.SOD.executeFunc` übergeben, enthält den Code, der ausgeführt werden soll, nachdem die Datei "callout.js" geladen wurde. Nach dem Laden dieser Dateien wird mithilfe des Objekts `CalloutManager` für jedes Seitenelement, dem ein Popupsteuerelement zugeordnet sein soll, ein Objekt vom Typ `Callout` erstellt. Bei `CalloutManager` handelt es sich um einen Singleton, mit dem Verweise auf sämtliche Objekte vom Typ `Callout` auf einer Seite innerhalb eines assoziativen Arrays gespeichert werden. Das Objekt `Callout` besitzt zwei erforderliche Elemente: `ID` und `launchPoint`. Das Element  `ID` ist der Schlüssel, der dem Objekt `Callout` in `CalloutManager` zugeordnet ist: `CalloutManager["value of the callout's ID member"]`. Das Element  `launchPoint` ist ein HTML-Seitenelement. Sie können beispielsweise ein Element vom Typ `div` auf Ihrer Seite erstellen oder abrufen und es als Element des Objekts `Callout` übergeben. Standardmäßig erscheint das Popupsteuerelement, wenn ein Benutzer auf das Element `launchPoint` klickt. Das folgende Beispiel zeigt, wie Sie das einfachste aller Popupsteuerelemente mit lediglich den beiden erforderlichen Elementen und einer Titelzeichenfolge erstellen:
   
@@ -50,8 +48,7 @@ Die Funktion, die Sie an die Funktion  `SP.SOD.executeFunc` übergeben, enthält
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 Dieses Popup wird mit einem Titel am oberen Rand des Steuerelements angezeigt, wenn ein Benutzer auf das Seitenelement klickt. Mithilfe der optionalen Elemente lassen sich Aspekte wie Darstellung, Verhalten, Position und Aktionen des Steuerelements auf vielfältige Weise und überaus wirkungsvoll anpassen. Das Popupsteuerelement verfügt auch über eine set-Methode, mit der Sie nach Erstellung einer Instanz des Steuerelements einen Wert für einen beliebigen Parameter festlegen können.
   
@@ -68,11 +64,9 @@ Dieses Popup wird mit einem Titel am oberen Rand des Steuerelements angezeigt, w
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 Sie können auch Werte für alle Popupelemente in einem Objekt vom Typ  `CalloutOptions` festlegen und das Objekt anschließend an die Methode `createNew` übergeben.
   
@@ -80,15 +74,13 @@ Sie können auch Werte für alle Popupelemente in einem Objekt vom Typ  `Callout
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## So wird's gemacht: Anpassen der Darstellung des Popupsteuerelements
@@ -149,7 +141,7 @@ Die folgenden Methoden dienen zum Anpassen des Verhaltens des Popupsteuerelement
 
 |**Methode**|**Zweck**|**Gültige Parameterwerte**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |Dient zum Festlegen von Werten für Elemente, nachdem eine Instanz des Steuerelements erstellt wurde.  <br/> |Ein Name-Wert-Paar zum Definieren eines Werts für ein beliebiges Element des Popupsteuerelements.  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |Dient zum Festlegen von Werten für Elemente, nachdem eine Instanz des Steuerelements erstellt wurde.  <br/> |Ein Name-Wert-Paar zum Definieren eines Werts für ein beliebiges Element des Popupsteuerelements.  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |Gibt ein Objekt vom Typ  `CalloutOrientation` zurück, das angibt, in welche Richtung das Popupsteuerelement zeigt. Dieses Objekt besitzt vier boolesche Elemente: `up`,  `down`,  `left` und `right`. Wenn das Steuerelement geöffnet ist, sind zwei dieser Werte **true** und zwei **false** (beispielsweise `up` und `right`).  <br/> |Keine Parameter  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |Dient zum Registrieren einer Rückruffunktion, die aufgerufen wird, wenn das Popupsteuerelement in den Zustand wechselt, der mithilfe des Parameters  `eventName` angegeben wurde. <br/> |Der Parameter  `eventName` muss einen der folgenden Werte besitzen: `opening`,  `open`,  `closing`,  `closed`. Beim Parameter  `callback` muss es sich um eine Funktion handeln, die eine Instanz des Popupsteuerelements als ersten Parameter verwendet. <br/> |
 |open()  <br/> |Dient zum Anzeigen des Steuerelements. Ist das Steuerelement bereits geöffnet, oder wird es gerade geöffnet, gibt diese Methode nur **false** zurück. <br/> |Keine Parameter  <br/> |
@@ -166,8 +158,7 @@ Aktionen werden nach Erstellung einer Instanz des Popupsteuerelements hinzugefü
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Sie können auch Werte für alle Elemente vom Typ  `CalloutAction` in einem Objekt vom Typ `CalloutActionOptions` festlegen und dieses Objekt an den Konstruktor `CalloutAction` übergeben:
   
@@ -187,8 +177,7 @@ Sie können auch Werte für alle Elemente vom Typ  `CalloutAction` in einem Obje
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Die folgenden Elemente dienen zum Definieren des Verhaltens einer Popupaktion:
   
@@ -245,8 +233,7 @@ Sie können beliebig viele Menüeinträge erstellen und der Popupaktion hinzufü
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
 Der Konstruktor  `CalloutActionMenuEntry` akzeptiert drei Parameter. Die ersten beiden Parameter sind erforderlich. Der dritte ist optional, kann jedoch hilfreich sein, da Sie damit ein Symbol mit dem Text anzeigen können.
   
@@ -315,14 +301,12 @@ Das Objekt  `calloutPositioningProxy` enthält Methoden und Eigenschaften zum Ü
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 Die Funktion wird dann als Wert des Elements  `positionAlgorithm` des Objekts `Callout` übergeben. Dieser Schritt kann beim Erstellen des Objekts `Callout` oder später durch Festlegen des Werts ausgeführt werden.
   
@@ -330,12 +314,10 @@ Die Funktion wird dann als Wert des Elements  `positionAlgorithm` des Objekts `C
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 Sie können sich jederzeit die standardmäßige Positionierungslogik ansehen, indem Sie die JavaScript-Konsole Ihres Browsers starten (beispielsweise die F12-Entwicklertools von Internet Explorer).
   
@@ -343,11 +325,9 @@ Sie können sich jederzeit die standardmäßige Positionierungslogik ansehen, in
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 Die folgenden Methoden im Objekt  `CalloutPositioningProxy` dienen zum Erstellen einer eigenen Positionierungslogik:
   
@@ -384,8 +364,7 @@ Der Positionierungsalgorithmus sorgt dafür, dass das Steuerelement ober- oder u
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 Der folgende Positionierungsalgorithmus ändert die Standardrichtung des Steuerelements von  `upAndRight` in `downAndRight`, greift im Falle von Kollisionen aber auf den Standardalgorithmus zurück:
   
@@ -410,8 +388,7 @@ Der folgende Positionierungsalgorithmus ändert die Standardrichtung des Steuere
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## Zusätzliche Ressourcen

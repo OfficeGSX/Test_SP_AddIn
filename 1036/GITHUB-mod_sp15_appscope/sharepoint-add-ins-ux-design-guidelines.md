@@ -116,13 +116,13 @@ Si vous ne créez pas de pages ASPX hébergées par SharePoint, tout en souhaita
     
   - Pointez sur la bibliothèque située à la racine du dossier de dispositions, comme illustré dans l'exemple suivant.
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - Copiez cette bibliothèque dans votre propre site Web, et référencez-la à partir de celui-ci.
     
@@ -130,14 +130,14 @@ Si vous ne créez pas de pages ASPX hébergées par SharePoint, tout en souhaita
       > Si vous optez pour cette méthode, votre complément ne bénéficiera pas des mises à jour du contrôle. 
 2. Ajoutez l'élément DOM de l'espace réservé dans lequel le contrôle sera affiché, tel qu'illustré dans cet exemple.
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. Instanciez le contrôle.
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -148,14 +148,14 @@ Si vous ne créez pas de pages ASPX hébergées par SharePoint, tout en souhaita
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. (Facultatif) Si vous ne souhaitez pas de zone de titre dans votre page, vous pouvez supprimer cette zone en exécutant le code JavaScript suivant.
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 Le contrôle de chrome fournit en option deux icônes de complément, l'une sur la barre de navigation supérieure et l'autre sur la zone de titre. La taille de l'icône de complément située sur la barre de navigation supérieure est de 24 x 24 pixels (px), et l'icône située dans la zone de titre a la même taille que les icônes du site SharePoint (64 px max. en hauteur par 180 px max. en longueur). Nous vous conseillons d'utiliser une image PNG testée sur des arrière-plans noirs, blancs, gris, brillants et atténués, car les utilisateurs et les administrateurs peuvent modifier le thème du site. Pour plus d'informations sur l'utilisation du contrôle de chrome, reportez-vous à  [Utiliser le contrôle de chrome client dans les compléments pour SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
   
@@ -190,18 +190,18 @@ Pour obtenir les styles CSS du Web hôte, vous devez référencer le fichier CSS
   
 2. Si vous êtes dans le site web de complément, vous pouvez utiliser les contrôles **CssRegistration** et **CssLink** pour référencer le fichier CSS en ajoutant le code suivant sur votre page maître ou votre page ASPX :
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. Vous pouvez utiliser un élément de <lien> pour référencer le fichier CSS en créant une URL à partir de l'URL du Web hôte, comme illustré dans cet exemple.
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     Si vous utilisez cette approche, vous devez ࠵exécuter JavaScript dans la page afin d'obtenir l'URL du Web hôte à partir de la chaîne de requête. Vous pouvez ensuite insérer l'URL du Web hôte dans l'élément de **link** avant d'écrire cet élément dans le DOM de la page.
@@ -511,11 +511,9 @@ Comme la page doit fonctionner dans un **iframe**sur plusieurs domaines, vous de
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Comme vous ne pouvez pas vérifier les domaines pour lesquels vos pages sont insérées dans un iframe, les pages que vous hébergez dans des composants de complément sont vulnérables à une attaque de sécurité de type « clickjacking » (détournement de clic). Dans ce type d'attaques, les pages peuvent se trouver dans un iframe sur une page malveillante, et les utilisateurs peuvent être invités par ruse à choisir des boutons afin d'effectuer des actions dont ils n'ont pas conscience. Gardez cela à l'esprit, lorsque vous concevez votre page. De même, assurez-vous de n'exposer aucune fonctionnalité dans la page du composant qui présenterait un risque s'il était exposé dans une page malveillante.
   
@@ -531,10 +529,8 @@ Si votre composant affiche un contenu dynamique, il est conseillé de demander u
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 Dans l'exemple ci-dessus, la valeur de **senderId** est définie automatiquement sur la chaîne de requête de la page par le code du composant de complément lorsque cette page est affichée. Votre page doit simplement lire la valeur **SenderId** à partir de la chaîne de requête et l'utiliser lors d'une demande de redimensionnement. Vous pouvez récupérer l'URL du site web hôte à partir de la chaîne de requête en ajoutant le jeton **StandardTokens** ou **HostUrl** à l'attribut **Src** dans la définition du composant de complément.
   
@@ -546,8 +542,7 @@ Si vous souhaitez spécifier un composant pour le site web hôte, vous devez ind
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -599,8 +594,7 @@ Si vous souhaitez spécifier un composant pour le site web hôte, vous devez ind
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
 Dans votre élément **ClientWebPart**, vous pourrez spécifier ce qui suit :
   
@@ -690,13 +684,11 @@ Normalement, lorsqu'un utilisateur choisit une action personnalisée, celle-ci l
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
 Les attributs **HostWebDialogHeight** et **HostWebDialogWidth** sont facultatifs. Si ces attributs ne sont pas spécifiés, la taille par défaut des boîtes de dialogue de SharePoint sera utilisée. Cependant, vous devez généralement spécifier la taille de votre boîte de dialogue afin qu'elle s'affiche correctement et n'utilise pas les barres de défilement lorsqu'elle apparaît à l'utilisateur.
   
@@ -708,12 +700,10 @@ La boîte de dialogue comporte toujours un bouton **Fermer** dans son chrome. Vo
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
 La boîte de dialogue se ferme, et elle actualise ou non la page sous-jacente suivant que vous utilisez **CloseCustomActionDialogRefresh** ou **CloseCustomActionDialogNoRefresh**.
   

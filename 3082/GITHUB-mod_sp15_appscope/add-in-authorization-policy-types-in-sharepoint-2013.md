@@ -65,13 +65,11 @@ Para poder realizar llamadas de solo complemento a SharePoint, el complemento de
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **NOTA**
@@ -92,8 +90,7 @@ La diferencia entre una llamada de solo complemento a SharePoint y una llamada d
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -119,8 +116,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **NOTA**

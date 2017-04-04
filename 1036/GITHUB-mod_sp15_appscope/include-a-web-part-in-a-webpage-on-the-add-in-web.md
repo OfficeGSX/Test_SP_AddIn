@@ -35,14 +35,14 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
   
 3. Ajoutez **WebPartZone** à l'élément **<asp:Content>** dans lequel vous voulez insérer le composant WebPart, en utilisant un balisage semblable au suivant. Généralement, vous devez l'ajouter à l'élément **<asp:Content>** dont la valeur **ContentPlaceHolderId** est `PlaceHolderMain`. Voici un exemple.
     
-  ```XML
+ ```XML
   
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
   <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" 
       ID="HomePage1" Title="loc:full" />
 </asp:Content>
 
-  ```
+ ```
 
 
     > **ATTENTION**
@@ -52,7 +52,7 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
   
 5. Dans l'élément **File** de la page, ajoutez un élément **AllUsersWebPart** enfant et définissez la propriété **WebPartZoneID** sur la valeur de la zone de composants WebPart que vous avez créée sur la page comme indiqué dans cet exemple.
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -64,11 +64,11 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
   </Module>
 </Elements>
 
-  ```
+ ```
 
 6. Ajoutez un élément **CDATA** en tant qu'enfant de l'élément **AllUsersWebPart**, puis ajoutez un élément **webParts** en tant qu'enfant de l'élément **CDATA** comme indiqué dans cet exemple.
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -77,14 +77,14 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 7. Ajoutez une balise **webPart** en tant qu'enfant de l'élément **webParts**. L'exemple de code suivant permet d'ajouter un élément **XsltListViewWebPart**. Dans cet exemple, nous partons du principe qu'une liste personnalisée appelée « Test List » fait partie du même projet. Pour plus d'informations sur la façon d'ajouter une liste personnalisée à un site web de complément, voir  [Créer un complément hébergé par un fournisseur comportant un type personnalisé de liste et de contenu SharePoint](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
     > **REMARQUE**
       >  Notez que le composant WebPart ne possède pas une propriété ID. Il est recommandé d'inclure un ID explicite pour le composant WebPart seulement dans les deux cas où il est vraiment nécessaire :>  Le composant WebPart est ajouté à une page wiki SharePoint.>  Le composant WebPart est l'un des deux composants WebPart minimum qui seront connectés.
 
-  ```
+ ```
   
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -106,7 +106,7 @@ Pour la configuration requise, reportez-vous à  [Commencer à créer des compl�
     </data>
   </webPart>
 </webParts>
-  ```
+ ```
 
 8. Appuyez sur F5 pour déboguer le complément. Vous devez voir le composant WebPart sur la page.
     

@@ -196,10 +196,10 @@ A continuación se detallan algunas advertencias e información sobre la impleme
   
   - Agregar un  [Elemento WebTemplate (PropertiesDefinition complexType) (Add in SharePoint manifiesto)](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) al manifiesto de complemento como elemento secundario del elemento **Properties** y establecer su atributo **Id** en el GUID de la característica del sitio web de complemento y el valor del atributo **Name** del [Elemento WebTemplate (Plantilla web)](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx). Tenga en cuenta que es preciso que el GUID lleve guiones y esté entre llaves "{}", además el GUID y el nombre de plantilla deben estar separados con el carácter "#". A continuación, se ofrece un ejemplo:
     
-  ```XML
+ ```XML
   
 <WebTemplate Id="{81dd4ae5-873b-4759-9838-4ad9c3dd2952}#NewSiteType" />
-  ```
+ ```
 
 
     > **NOTA**

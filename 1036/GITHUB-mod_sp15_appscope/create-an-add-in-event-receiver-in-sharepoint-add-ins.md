@@ -90,7 +90,7 @@ Si vous continuez à travailler sur l'exemple de cet article, vous disposerez d'
 
 
 
-  ```cs
+ ```cs
   
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
@@ -98,11 +98,11 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 
     return result;
 }
-  ```
+ ```
 
 7. Juste au-dessous de la ligne déclarant la variable  `result`, ajoutez la structure de basculement suivante pour identifier l'événement géré. 
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -113,14 +113,14 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+ ```
 
 
     > **REMARQUE**
       > Si vous disposez de gestionnaires pour les événements **AppInstalled**, **AppUpdated** et **AppInstalling**, ceux-ci auront chacun leur propre URL enregistrée dans le manifeste du complément. Vous  *pouvez*  donc avoir différents points de terminaison pour eux. Toutefois, cet article (tout comme les Outils de développement Office pour Visual Studio) part du principe qu'ils possèdent exactement le même point de terminaison. C'est pourquoi le code doit déterminer quel événement l'a appelé.
 8. Comme expliqué  [Inclure une logique de restauration et une logique « Déjà terminé » dans vos gestionnaires d'événements de complément](handle-events-in-sharepoint-add-ins.md#Rollback), si votre logique d'installation rencontre un problème, vous souhaitez dans la plupart des cas annuler l'installation du complément et faire en sorte que SharePoint revienne sur les étapes effectuées pendant cette installation. Vous voulez également annuler les actions de votre gestionnaire. Une méthode permettant d'atteindre ces objectifs consiste à ajouter le code suivant dans le **case** pour l'événement AppInstalled.
     
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppInstalled:
   try
@@ -135,7 +135,7 @@ case SPRemoteEventType.AppInstalled:
       // Rollback logic goes here.
   }
   break;
-  ```
+ ```
 
 
     > **REMARQUE**
@@ -146,7 +146,7 @@ case SPRemoteEventType.AppInstalled:
     
 
 
-  ```cs
+ ```cs
   
 SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
@@ -175,11 +175,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+ ```
 
 10. Ajoutez la méthode de création de la liste à la classe **AppEventReceiver** en tant que méthode **private** avec le code suivant. Notez que la classe `TokenHelper` dispose d'une méthode spéciale, optimisée afin d'obtenir un contexte client pour un événement de complément. La transmission de la valeur **false** pour le dernier paramètre garantit que le contexte est celui du site web hôte.
     
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
@@ -195,11 +195,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     return errorMessage;
 }
 
-  ```
+ ```
 
 11. La logique de restauration est essentiellement une logique de gestion des exceptions et le modèle CSOM SharePoint (modèle objet client) dispose d'un élément  [ExceptionHandlingScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.aspx) qui permet à votre service web de déléguer la gestion des exceptions au serveur SharePoint. (Consultez également la rubrique [Procédure : Utiliser l'étendue de gestion des exceptions](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx).) Ajoutez le code suivant au bloc **if** dans l'extrait de code précédent.
     
-  ```cs
+ ```cs
   
 ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext);
 
@@ -224,11 +224,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+ ```
 
 12. L'extrait de code ci-dessus contient seulement un appel à SharePoint ( **ExecuteQuery**), mais nous ne pouvons malheureusement pas nous en contenter. Chaque objet référencé dans notre étendue des exceptions doit d'abord être chargé vers le client. Ajoutez le code suivant  *au-dessus*  du constructeur pour **ExceptionHandlingScope**.
     
-  ```cs
+ ```cs
   
 ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
@@ -237,11 +237,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+ ```
 
 13. Le code permettant de créer une liste web hôte ira dans le bloc  [StartTry](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartTry.aspx) , mais le code doit d'abord vérifier si la liste a déjà été ajoutée (tel qu'expliqué dans la rubrique [Inclure une logique de restauration et une logique « Déjà terminé » dans vos gestionnaires d'événements de complément](handle-events-in-sharepoint-add-ins.md#Rollback)). Vous pouvez déléguer la logique if-then-else au serveur SharePoint à l'aide de la classe  [ConditionalScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ConditionalScope.aspx) . (Voir également [Procédure : Utilisation de l'étendue conditionnelle](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx).) Ajoutez le code suivant dans le bloc **StartTry**.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => foundList.ServerObjectIsNull.Value == true, true);
@@ -253,11 +253,11 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+ ```
 
 14. Le bloc  [StartCatch](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartCatch.aspx) doit annuler la création de la liste, mais il doit d'abord vérifier que la liste a été créée. En effet, une exception pourrait avoir été déclenchée dans le bloc **StartTry** avant la fin de la création de la liste. Ajoutez le code suivant au bloc **StartCatch**.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => createdList.ServerObjectIsNull.Value != true, true);
@@ -265,7 +265,7 @@ using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+ ```
 
 
     > **CONSEIL**
@@ -279,7 +279,7 @@ using (condScope.StartScope())
     
 
 
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
@@ -341,7 +341,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
     > **CONSEIL**
@@ -365,7 +365,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     
 
 
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppUninstalling:
 
@@ -384,7 +384,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+ ```
 
 3. Ajoutez la méthode d'assistance pour le recyclage de la liste. Notez les points suivants concernant ce code :
     
@@ -398,7 +398,7 @@ break;
     
   
 
-  ```cs
+ ```cs
   
 private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
@@ -464,7 +464,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
 ### Pour déboguer et tester un récepteur d'événements de désinstallation de complément

@@ -32,16 +32,14 @@ Une fois Fiddler installé sur le serveur de l'application web, ajoutez le balis
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 Une fois Fiddler installé, vous pouvez également vérifier les en-têtes de réponse de SharePoint qui comprennent un GUID de requête. Ce GUID de requête est un ID de corrélation que vous pouvez rechercher dans les fichiers journaux pour trouver des erreurs associées à cette requête en particulier.
   
@@ -55,8 +53,7 @@ Plusieurs éléments peuvent générer une erreur **401 Unauthorized** lorsqu'un
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -67,8 +64,7 @@ Plusieurs éléments peuvent générer une erreur **401 Unauthorized** lorsqu'un
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 Si vous utilisez le fichier TokenHelper et l'identité Windows, le code qui déclenche l'exception ressemble à ce qui suit :
   
@@ -76,14 +72,12 @@ Si vous utilisez le fichier TokenHelper et l'identité Windows, le code qui déc
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 La première chose à faire pour résoudre ce problème est d'utiliser le débogueur Visual Studio pour vérifier que le jeton d'accès et l'objet **ClientContext** sont construits correctement. Si c'est le cas, étudiez les pistes suivantes :
   
@@ -98,11 +92,8 @@ La première chose à faire pour résoudre ce problème est d'utiliser le débog
     
   
 - Votre complément ne dispose pas d'autorisation sur la ressource à laquelle vous essayez d'accéder. Ouvrez l'SharePoint Management Shell et exécutez la cmdlet Windows PowerShell suivante. La variable  `$web` est le site web SharePoint auquel vous essayez d'accéder et `$appPrincipal` est l'ID du complément. Pour en savoir plus, voir [Set-SPAppPrincipalPermission](http://technet.microsoft.com/fr-fr/library/jj219714%28v=office.15%29.aspx).
-    
-  ```
-  
-Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+    ```
+Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl```
 
 - Votre application web accepte les demandes anonymes. Cela signifie que le jeton d'accès ne contient pas d'identité utilisateur réelle. Vérifiez que l'accès anonyme est désactivé pour le répertoire racine de votre application web distante dans IIS. Vous pouvez également vérifier ce point en déboguant votre application web distante et en vérifiant la valeur de **Request.LogonUserIdentity** dans le fichier default.aspx.cs (ou .vb) afin de vous assurer qu'il ne s'agit pas d'un utilisateur anonyme.
     

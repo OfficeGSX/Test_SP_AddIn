@@ -35,14 +35,14 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
   
 3. Fügen Sie dem **<asp:Content>**-Element, das das Webpart mit Markup wie dem folgenden enthalten soll, **WebPartZone** hinzu. Normalerweise fügen Sie es dem **<asp:Content>**-Element hinzu, dessen **ContentPlaceHolderId** `PlaceHolderMain` ist. Im Folgenden finden Sie ein Beispiel.
     
-  ```XML
+ ```XML
   
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
   <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" 
       ID="HomePage1" Title="loc:full" />
 </asp:Content>
 
-  ```
+ ```
 
 
     > **VORSICHT**
@@ -52,7 +52,7 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
   
 5. Fügen Sie im **File**-Element für die Seite ein untergeordnetes **AllUsersWebPart**-Element hinzu, und legen Sie seine **WebPartZoneID** auf den Wert der Webpartzone fest, die Sie auf der Seite erstellt haben, wie im folgenden Beispiel gezeigt.
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -64,11 +64,11 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
   </Module>
 </Elements>
 
-  ```
+ ```
 
 6. Fügen Sie ein **CDATA**-Element als untergeordnetes Element von **AllUsersWebPart** hinzu, und fügen Sie dann ein **webParts**-Element als untergeordnetes Element von **CDATA** hinzu, wie im folgenden Beispiel gezeigt.
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -77,14 +77,14 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 7. Fügen Sie **webPart**-Markup als untergeordnetes Element des **webParts**-Elements hinzu. Im folgenden Beispiel wird ein **XsltListViewWebPart** hinzugefügt. Es setzt voraus, dass eine benutzerdefinierte Liste "Test List" Teil desselben Add-In-Projekts ist. Weitere Informationen zum Hinzufügen einer benutzerdefinierten Liste zu einem Add-In-Web finden Sie unter [Gewusst wie: Erstellen eines von einem Anbieter gehosteten Add-Ins, das eine benutzerdefinierte SharePoint-Liste und einen benutzerdefinierten Inhaltstyp enthält](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
     > **HINWEIS**
       >  Beachten Sie, dass das Webpart keine ID-Eigenschaft hat. Es ist eine bewährte Methode, eine explizite ID für das Webpart nur in den zwei Fällen hinzufügen, in denen es unbedingt erforderlich ist:>  Das Webpart wird zu einer SharePoint-Wiki-Seite hinzugefügt.>  Das Webpart ist eins von zwei oder mehr Webparts, die verbunden werden.
 
-  ```
+ ```
   
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -106,7 +106,7 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
     </data>
   </webPart>
 </webParts>
-  ```
+ ```
 
 8. Drücken Sie F5, um das Add-In zu debuggen. Das Webpart sollte auf der Seite angezeigt werden.
     

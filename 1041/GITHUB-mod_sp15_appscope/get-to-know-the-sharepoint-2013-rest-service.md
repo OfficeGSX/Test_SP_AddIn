@@ -151,8 +151,7 @@ SharePoint 2013 REST サービスのエンドポイントは、SharePoint クラ
 |単一の 'リスト' メタデータを取得  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |適用できません  <br/> |
 |リスト内のアイテムを取得  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |適用できません  <br/> |
 |ドキュメントの特定のプロパティを取得 (この場合はドキュメント タイトル)  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |適用できません  <br/> |
-|リストの作成  <br/> | `lists` <br/> |POST  <br/> |
-```
+|リストの作成  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ SharePoint 2013 REST サービスのエンドポイントは、SharePoint クラ
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|リストへのアイテムの追加  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|リストへのアイテムの追加  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

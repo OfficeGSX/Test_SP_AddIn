@@ -219,8 +219,7 @@ Office ストア アプリでは、Read、Write、および、Manage 権限の�
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ Office ストア アプリでは、Read、Write、および、Manage 権限の�
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 次のコードは、Web 範囲への Read アクセス許可と、リスト範囲への Write アクセス許可を求めるアドインを示しています。
   
@@ -250,8 +248,7 @@ Office ストア アプリでは、Read、Write、および、Manage 権限の�
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ Office ストア アプリでは、Read、Write、および、Manage 権限の�
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### SharePoint の他の機能に対するアクセス許可要求の範囲
@@ -424,13 +420,11 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **表 7. 関連するプロパティがあるアクセス許可範囲**

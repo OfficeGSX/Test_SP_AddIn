@@ -127,7 +127,7 @@ To follow along with this article and enter the code yourself, download the samp
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -247,7 +247,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. In Home.aspx.cs, change all instances of  `SPHostUrl` to `SPAppWebUrl`.
     

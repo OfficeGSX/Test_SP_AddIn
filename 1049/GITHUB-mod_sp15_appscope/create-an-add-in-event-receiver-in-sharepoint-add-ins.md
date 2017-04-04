@@ -90,7 +90,7 @@ ms.assetid: f40c910f-12a2-4caa-8e91-c7a61ae540db
 
 
 
-  ```cs
+ ```cs
   
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
@@ -98,11 +98,11 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 
     return result;
 }
-  ```
+ ```
 
 7. Сразу под строкой, которая объявляет переменную  `result`, добавьте следующую серию операторов, чтобы определить, какое событие обрабатывается. 
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -113,14 +113,14 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+ ```
 
 
     > **Примечание**
       > События **AppInstalled**, **AppUpdated** и **AppInstalling**, если для них есть обработчики, зарегистрируют свои URL-адреса в манифесте надстройки. Таким образом, для них  *можно*  использовать разные конечные точки, но в данной статье (и Инструменты разработчика Office для Visual Studio) предполагается, что они используют одну и ту же конечную точку, поэтому код должен определить, какое событие его вызвало.
 8. Как объясняется в разделе  [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins.md#Rollback), если в логике установки происходит сбой, почти всегда следует отменять установку, среда SharePoint должна отменить действия, выполненные для установки, а вам нужно отменить все действия, выполненные обработчиком. Для этого можно добавить следующий код в оператор **case** для события AppInstalled.
     
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppInstalled:
   try
@@ -135,7 +135,7 @@ case SPRemoteEventType.AppInstalled:
       // Rollback logic goes here.
   }
   break;
-  ```
+ ```
 
 
     > **Примечание**
@@ -146,7 +146,7 @@ case SPRemoteEventType.AppInstalled:
     
 
 
-  ```cs
+ ```cs
   
 SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
@@ -175,11 +175,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+ ```
 
 10. Добавьте метод создания списка в класс **AppEventReceiver** как метод **private** со следующим кодом. Обратите внимание, что класс `TokenHelper` содержит специальный метод, оптимизированный для получения контекста клиента для события надстройки. Значение **false** для последнего параметра указывает, что контекст предназначен для хост-сайта.
     
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
@@ -195,11 +195,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     return errorMessage;
 }
 
-  ```
+ ```
 
 11. Логика отката, по сути, является логикой обработки исключений, а SharePoint CSOM (клиентская объектная модель) включает область  [ExceptionHandlingScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.aspx) , которая позволяет веб-службе делегировать обработку исключений серверу SharePoint (см. также [Использование области обработки исключений](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx)). Добавьте следующий код в блок **if** из предыдущего фрагмента.
     
-  ```cs
+ ```cs
   
 ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext);
 
@@ -224,11 +224,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+ ```
 
 12. В предыдущем фрагменте указан только один вызов SharePoint ( **ExecuteQuery**), но его недостаточно. Каждый объект, на который будет ссылаться область исключений, необходимо сначала загрузить в клиент. Для этого добавьте следующий код  *перед*  конструктором **ExceptionHandlingScope**.
     
-  ```cs
+ ```cs
   
 ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
@@ -237,11 +237,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+ ```
 
 13. Код для создания списка хост-сайтов добавляется в блок  [StartTry](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartTry.aspx) , для начала код должен проверить, был ли уже добавлен этот список (как описывается в разделе [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins.md#Rollback)). Логику If-Then-Else можно делегировать серверу SharePoint с помощью класса  [ConditionalScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ConditionalScope.aspx) (см. также [Использование условной области](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx)). Добавьте следующий код в блок **StartTry**.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => foundList.ServerObjectIsNull.Value == true, true);
@@ -253,11 +253,11 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+ ```
 
 14. Блок  [StartCatch](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartCatch.aspx) должен отменить создание списка, но для начала он должен проверить, создан ли список, так как исключение могло быть вызвано в блоке **StartTry** до того, как создание списка было завершено. Добавьте следующий код в блок **StartCatch**.
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => createdList.ServerObjectIsNull.Value != true, true);
@@ -265,7 +265,7 @@ using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+ ```
 
 
     > **Совет**
@@ -279,7 +279,7 @@ using (condScope.StartScope())
     
 
 
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
@@ -341,7 +341,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
     > **Совет**
@@ -365,7 +365,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     
 
 
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppUninstalling:
 
@@ -384,7 +384,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+ ```
 
 3. Добавьте вспомогательный метод для перемещения списка в корзину. Обратите внимание на следующие особенности кода:
     
@@ -398,7 +398,7 @@ break;
     
   
 
-  ```cs
+ ```cs
   
 private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
@@ -464,7 +464,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
 ### Отладка и тестирование приемника событий удаления надстройки

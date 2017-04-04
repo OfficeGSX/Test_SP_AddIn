@@ -135,8 +135,7 @@ El encabezado tiene dos propiedades. "typ" es el tipo de token. El código de la
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -149,8 +148,7 @@ El encabezado tiene dos propiedades. "typ" es el tipo de token. El código de la
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 La tabla siguiente proporciona orientación sobre las **propiedades que su código debe incluir en el token de acceso y qué valores establecer para ellas**. Si usa código administrado, los archivos SharePointContext.cs (o .vb) y TokenHelper.cs (o .vb) crean los tokens automáticamente. Por ejemplo, su código realiza una sola llamada al método **SharePointContext.CreateUserClientContextForSPHost**. A su vez, este llama a los métodos de la clase **TokenHelper** que construyen el token de acceso que después se incluye en todas las llamadas que se realizan a SharePoint mediante el objeto de contexto de cliente de SharePoint que **SharePointContext.CreateUserClientContextForSPHost** devuelve.
   
@@ -190,8 +188,7 @@ En la tabla 2 se describen las notificaciones que su código debe incluir en el 
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -203,8 +200,7 @@ En la tabla 2 se describen las notificaciones que su código debe incluir en el 
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **NOTA**

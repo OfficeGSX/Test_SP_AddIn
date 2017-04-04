@@ -56,8 +56,7 @@ Die einfachste Möglichkeit, die Identität des aktuellen Benutzers einer Websit
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - Wenn Sie mit Office 365 arbeiten, erhalten Sie einen Anmeldenamen, der so ähnlich aussieht wie  `i:0#.f|membership|adam@contoso.com`.
@@ -110,14 +108,12 @@ Im folgenden Beispielcode wird gezeigt, wie Sie die Anmeldeinformationen des Ben
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
 Der **Person.LoginName**-Wert enthält die Anmeldeinformationen
   
@@ -131,8 +127,7 @@ Wenn Sie die Identität und die Eigenschaften des Benutzers abrufen möchten, k�
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 Verwenden Sie dann die  [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) -API, um die Eigenschaften des Benutzers abzurufen, der das Add-In verwendet.
   
@@ -152,15 +146,13 @@ Verwenden Sie dann die  [UserProfilesPeopleManager](https://msdn.microsoft.com/l
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 Voraussetzungen für die fehlerfreie Ausführung des Codes:
   
@@ -172,11 +164,11 @@ Voraussetzungen für die fehlerfreie Ausführung des Codes:
   
 - Sie müssen dem Add-In-Manifest den folgenden Berechtigungsbereich für soziale Funktionen hinzufügen:
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 Die APIs befinden sich in der Datei **Microsoft.SharePoint.Client.UserProfiles.dll**.
   
@@ -188,16 +180,14 @@ Es folgt ein weiterer Codeausschnitt, der zeigt, wie auf den Benutzerprofilspeic
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## Zusätzliche Ressourcen

@@ -27,8 +27,7 @@ La solicitud devuelve el XML **rowset** de ADO, que incluye las filas correspond
 |**Ejemplo de solicitud** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**Ejemplo de cuerpo de POST** <br/> |
-|
-```XML
+|```XML
 
 { 'd' : {
   'query': { 
@@ -51,8 +50,7 @@ La solicitud devuelve el XML **rowset** de ADO, que incluye las filas correspond
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-
-```
+```
 
 |
    

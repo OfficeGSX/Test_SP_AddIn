@@ -335,20 +335,20 @@ En muchos complementos empresariales, necesitará restringir el acceso a determi
   
 3. En el Editor de código, agregue el siguiente código al método **Candidates_Validate**:
     
-  ```VB.net
+ ```VB.net
   
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
-  ```
+ ```
 
 
-  ```cs
+ ```cs
   
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
-  ```
+ ```
 
 
     El método **Validate** se ejecuta cuando un usuario intenta guardar un registro. Si el usuario es un miembro del grupo de seguridad Administradores de contratación, se guarda el registro; de lo contrario, aparece un mensaje de error "Permiso denegado" y se descarta el registro.

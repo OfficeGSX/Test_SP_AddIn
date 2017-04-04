@@ -133,7 +133,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 2. В файле elements.xml для нового столбца сайта отредактируйте элемент **Field** так, чтобы он имел атрибуты и значения, приведенные в следующем примере, однако не меняйте GUID атрибута **ID**, оставив сгенерированное для него значение Visual Studio 2012. Не забудьте поставить фигурные скобки "{}".
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Actor" 
@@ -143,14 +143,14 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The person cast, perhaps tentatively, in the role" 
        Type="Text" 
 />
-  ```
+ ```
 
 3. Добавьте другой **Столбец сайта**в проект под именем CastingStatus.
     
   
 4. В файле elements.xml нового столбца сайта отредактируйте элемент **Field**, так, чтобы он содержал атрибуты и значения, приведенные в следующем примере, однако не меняйте GUID атрибута **ID**, оставив сгенерированное для него значениеVisual Studio 2012.
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="CastingStatus" 
@@ -160,11 +160,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The current casting status of the role" 
        Type="Choice">
 </Field>
-  ```
+ ```
 
 5. Так как это поле является полем выбора (Choice), необходимо указать возможные варианты, порядок их отображения в выпадающем списке перед пользователем, который должен сделать выбор, и вариант по умолчанию. Добавьте следующую дочернюю маркировку к элементу **Field**
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -181,7 +181,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
       <MAPPING Value="5">Committed to Role</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 
 ### Создание пользовательского типа контента
@@ -221,11 +221,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 9. Для двух добавленных вами столбцов в файле уже существуют элементы **FieldRef**. Добавьте элементы **FieldRef** для двух встроенных столбцов SharePoint 2013 в качестве аналогов для уже имеющихся двух других. Маркировкой элементов является следующая. *Вы должны использовать те же самые GUID для атрибута ID, так как они являются встроенными типами полей с фиксированными ID.*  Добавьте эти *поверх*  имеющихся двух элементов **FieldRef** для настраиваемых столбцов сайтов.
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
-  ```
+ ```
 
 
     Обратите внимание, что мы присвоили данным полям пользовательское отображаемое имя: **Герой** в значении героя пьесы или фильма.
@@ -306,26 +306,26 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 19. Находясь в файле schema.xml, в элементе **View**, чье значение BaseViewID равно 0, замените существующий элемент **ViewFields** следующей разметкой. (Используйте именно этот GUID для **FieldRef** под именем `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
   <FieldRef Name="Actor" ID="{GUID from the site column elements.xml}" />
   <FieldRef Name="CastingStatus" ID="{GUID from the site column elements.xml}" />
 </ViewFields>
-  ```
+ ```
 
 20. Замените два отсутствующих значения атрибута ID идентификаторами GUID в соответствующих файлах site column elements.xml. Помните о фигурных скобках "{}". 
     
   
 21. Находясь в файле schema.xml, в элементе **View**, чье значение BaseViewID равно"1", замените существующий элемент **ViewFields** следующей разметкой. (Используйте именно этот GUID для **FieldRef** под именем `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 </ViewFields>
-  ```
+ ```
 
 22. Скопируйте два элемента **FieldRef** для `Actor` и `CastingStatus`, которые вы добавили в предшествующий вид, в этот элемент **ViewFields** в качестве одноуровневых элементов `LinkTitle` **FieldRef**.
     
@@ -338,7 +338,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 25. Заполните список какими-либо начальными данными, добавив следующую разметку в качестве дочерних объектов (потомков) элемента **ListInstance**.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -369,7 +369,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 2. В **обозревателе решений** выберите **Возможность1** для открытия конструктора возможностей. В конструкторе установите в качестве заголовка **Заголовок**Компоненты данных театра и кино, а в качестве элемента **Описание** Столбцы сайтов, типы контента и экземпляры списков применительно к данным о театре и кино. Сохраните файл и закройте конструктор.
     
@@ -390,7 +390,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     
 1. Откройте файл Default.aspx и замените элемент body в файле указанной ниже разметкой. Эта разметка добавляет кнопку **Get the Cas** (Получить состав актеров), при выборе которой выполняется чтение списка **Characters in Hamlet** (Действующие лица в "Гамлете"), находящегося на сайте надстройки, и отображение данных кнопки в элементе управления [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) , который появляется только после нажатия кнопки.
     
-  ```HTML
+ ```HTML
   
 <body >
     <form id="form1" runat="server">
@@ -406,11 +406,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     <asp:GridView ID="GridView1" runat="server" Caption="The Cast" ></asp:GridView>
     </form>
 </body>
-  ```
+ ```
 
 2. Откройте файл Default.aspx.cs и добавьте в него следующие операторы **using**.
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
@@ -421,7 +421,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.SharePoint.Samples;
-  ```
+ ```
 
 
     Последний из этих операторов относится к области имен, указанной в файле TokenHelper.cs.
@@ -429,16 +429,16 @@ using Microsoft.SharePoint.Samples;
   
 3. Добавьте следующие поля в класс **Default**.
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
-  ```
+ ```
 
 4. Замените метод **Page_Load** следующим кодом, который использует класс **TokenHelper** для получения токенов из безопасного сервера токенов, совместимого с OAuth. Тогда токен доступа сохраняется в свойстве [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) кнопки для дальнейшего вызова обработчиком события по щелчку кнопки.
     
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -458,11 +458,11 @@ protected void Page_Load(object sender, EventArgs e)
         Button1.CommandArgument = accessToken;
     }
 }
-  ```
+ ```
 
 5. Добавьте к классу **Default** следующий обработчик событий. Действие обработчика начинается с вызова маркера доступа, который был сохранен в свойстве [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) кнопки.
     
-  ```cs
+ ```cs
   
 protected void Button1_Click(object sender, EventArgs e)
 {
@@ -470,29 +470,29 @@ protected void Button1_Click(object sender, EventArgs e)
     // in the button's command argument.
     string accessToken = ((Button)sender).CommandArgument;
 }
-  ```
+ ```
 
 6. Обработчику требуется заново получить измененный URL-адрес сайта надстройки при обратной передаче, поэтому добавьте указанный ниже код.
     
-  ```cs
+ ```cs
   
 if (IsPostBack)
 {
     sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
 }
-  ```
+ ```
 
 7. Для получения данных списка добавьте следующую строку, в которой используется одна из конечных точек SharePoint 2013 REST/OData. В данном примере код считывает список **Characters in Hamlet** (Действующие лица в "Гамлете"), развернутый на сайте надстройки. Благодаря API для этой службы можно легко, с помощью одной строки кода, выбрать список и указать три поля, которые возвратит список. Обратите внимание, что в URL-адресе OData необходимо использовать внутренние имена полей (столбцов), а не отображаемые имена, поэтому код использует `Title`,  `Actor` и `CastingStatus`, а не  `Character`,  `Actor/Actress` и `Casting Status.` Подробные сведения о веб-службе REST/OData см. в разделе [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests.md).
     
-  ```cs
+ ```cs
   
 // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
-  ```
+ ```
 
 8. Добавьте следующий код, использующий классы  [HttpWebRequest](https://msdn.microsoft.com/library/System.Net.HttpWebRequest.aspx) и [HttpWebResponse](https://msdn.microsoft.com/library/System.Net.HttpWebResponse.aspx) поля имени [System.Net](https://msdn.microsoft.com/library/System.Net.aspx) для создания объектов запроса и ответа HTTP.
     
-  ```cs
+ ```cs
   
 // HTTP Request and Response construction section
 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + oDataUrl);
@@ -501,11 +501,11 @@ request.Accept = "application/atom+xml";
 request.ContentType = "application/atom+xml;type=entry";
 request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-  ```
+ ```
 
 9. Для выполнения синтаксического анализа XML-ответа в формате ATOM добавьте следующий код. Он использует классы области имен  [System.Xml.Linq](https://msdn.microsoft.com/library/System.Xml.Linq.aspx) для синтаксического анализа возвращенных данных и создания [List<T>](http://msdn2.microsoft.com/RU-RU/library/6sh2ey19) элементов из списка SharePoint. (Вы также могли бы использовать классы области имен [System.Xml](https://msdn.microsoft.com/library/System.Xml.aspx) .) Обратите внимание, что в XML-файле, возвращаемом SharePoint, дочерние элементы элемента **entry** содержат метаданные об элементе списка. Фактические данные строк элемента списка SharePoint размещаются двумя уровнями ниже в элементе **properties**. По этой причине для отфильтровывания верхних уровней дважды используется метод расширения  [Elements<T>](http://msdn2.microsoft.com/RU-RU/library/bb348465)
     
-  ```cs
+ ```cs
   
 // Response markup parsing section
 XDocument oDataXML = XDocument.Load(response.GetResponseStream(), LoadOptions.None);
@@ -517,27 +517,27 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .Elements(atom + "content")
                          .Elements(m + "properties")
                          .ToList();
-  ```
+ ```
 
 10. Для создания коллекции анонимного типа  [IEnumerable<T>](http://msdn2.microsoft.com/RU-RU/library/9eekhta0), имеющей только нужные вам свойства, добавьте следующий запрос LINQ. Обратите внимание, что, хотя код должен ссылаться на поле заголовка элемента по его внутреннему имени  `Title`, имя свойства в анонимном типе, которому присваивается значение, может быть  `Character`. Одно из следствий этого  появление на странице, после привязки коллекции к элементу управления "сетка", более подходящего имени **Герой**.
     
-  ```cs
+ ```cs
   
 var entryFieldValues = from entry in entries
                        select new { Character=entry.Element(d + "Title").Value, 
                                     Actor=entry.Element(d + "Actor").Value, 
                                     CastingStatus=entry.Element(d + "CastingStatus").Value };
 
-  ```
+ ```
 
 11. Завершите настройку обработчика следующим кодом, привязывающим данные к элементу контроля  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) на странице. Заголовкам столбцов в сетке по умолчанию присваиваются имена свойств анонимного типа: `Character`,  `Actor` и `CastingStatus`. Элемент управления  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) имеет свойства, позволяющие управлять именем и форматировать заголовки колонок, поэтому вы можете сделать так, чтобы имена **Actor/Actress** (Актер/актриса) и **Casting Status** (Статус кастинга) совпадали с заголовками колонок в SharePoint. Чтобы избежать сложностей, эти методы здесь не описываются. (Вы можете также использовать элемент управления [DataGrid](https://msdn.microsoft.com/library/System.Web.UI.WebControls.DataGrid.aspx) .)
     
-  ```cs
+ ```cs
   
 GridView1.DataSource = entryFieldValues;
 GridView1.DataBind();
 
-  ```
+ ```
 
 12. Сохраните все файлы.
     

@@ -70,7 +70,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
     
   
 
-  ```cs
+ ```cs
   
 private static void CreateExpectedShipmentsList()
  {
@@ -121,14 +121,14 @@ private static void CreateExpectedShipmentsList()
         }
      }
  }
-  ```
+ ```
 
 2.  Dans la méthode `DeployChainStoreComponentsToHostWeb`, ajoutez la ligne suivante, juste au-dessus de la ligne  `RemoteTenantVersion = localTenantVersion`.
     
-  ```
+ ```
   
 CreateExpectedShipmentsList();
-  ```
+ ```
 
 
 ## Création du récepteur d'événement d'élément de liste
@@ -171,7 +171,7 @@ CreateExpectedShipmentsList();
     
   
 
-  ```cs
+ ```cs
   using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
@@ -206,11 +206,11 @@ namespace ChainStoreWeb.Services
         }
     }
 }
-  ```
+ ```
 
 5.  Ajoutez le code suivant à la méthode `ProcessOneWayEvent`. Notez que l'événement **ItemUpdated** est le seul événement géré par cet exemple, c'est pourquoi nous aurions pu utiliser une structure **if** simple au lieu d'une structure **switch**. Toutefois, les récepteurs d'événements gèrent généralement plusieurs événements, nous souhaitons donc vous présenter le modèle que vous allez utiliser le plus souvent dans vos gestionnaires d'événements en tant que développeur de complément SharePoint.
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -220,11 +220,11 @@ switch (properties.EventType)
                     
         break;
 }  
-  ```
+ ```
 
 6.  Remplacez `TODO12` par le code suivant. Ici encore, nous utilisons une structure **switch** alors qu'une structure **if** simple suffirait, car nous souhaitons que vous voyiez le modèle courant dans les récepteurs d'événements SharePoint.
     
-  ```cs
+ ```cs
   
 switch (properties.ItemEventProperties.ListTitle)
 {
@@ -234,7 +234,7 @@ switch (properties.ItemEventProperties.ListTitle)
 
         break;
 }
-  ```
+ ```
 
 7.  Le code qui répond à l'arrivée d'une livraison doit générer deux opérations :
     
@@ -249,21 +249,21 @@ switch (properties.ItemEventProperties.ListTitle)
     
 
 
-  ```cs
+ ```cs
   
 bool updateComplete = TryUpdateInventory(properties);
 if (updateComplete)
 {
     RecordInventoryUpdateLocally(properties);
 }
-  ```
+ ```
 
 
      La méthode `ProcessOneWayEvent` doit désormais se présenter de la façon suivante :
     
 
 
-  ```cs
+ ```cs
   
 public void ProcessOneWayEvent(SPRemoteEventProperties properties)
 {
@@ -284,11 +284,11 @@ public void ProcessOneWayEvent(SPRemoteEventProperties properties)
             break;
     }          
 }
-  ```
+ ```
 
 8.  Ajoutez la méthode suivante à la classe `RemoteEventReceiver1`.
     
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -300,7 +300,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
 
     return successFlag;
 }
-  ```
+ ```
 
 9.  Il existe cinq colonnes sur la liste **Livraisons attendues**, mais le gestionnaire ne doit pas réagir à tous les types de mises à jour apportées à un élément. Par exemple, si un utilisateur corrige l'orthographe du nom d'un fournisseur, l'événement d'élément mis à jour est déclenché, mais le gestionnaire ne doit rien faire. Il doit intervenir uniquement lorsque le champ **Arrivé** vient d'être défini sur **Oui**. 
     
@@ -310,7 +310,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     
 
 
-  ```cs
+ ```cs
   
 var arrived = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Arrived"]);
 var addedToInventory = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Added_x0020_to_x0020_Inventory"]);
@@ -322,7 +322,7 @@ if (arrived &amp;&amp; !addedToInventory)
 
     successFlag = true;
 }
-  ```
+ ```
 
 10.  Remplacez l'élément `TODO15` par le code suivant. Il s'agit essentiellement de programmation SQL et ASP.NET, c'est pourquoi nous n'allons pas en parler dans le détail, mais notez les points suivants :
     
@@ -336,7 +336,7 @@ if (arrived &amp;&amp; !addedToInventory)
     
   
 
-  ```cs
+ ```cs
   
 using (SqlConnection conn = SQLAzureUtilities.GetActiveSqlConnection())
 using (SqlCommand cmd = conn.CreateCommand())
@@ -352,14 +352,14 @@ using (SqlCommand cmd = conn.CreateCommand())
     quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
     cmd.ExecuteNonQuery();
 }
-  ```
+ ```
 
 
      Nous n'avons pas encore terminé de créer la méthode `TryUpdateInventory`, mais à ce stade elle doit se présenter comme suit.
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -388,7 +388,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }  
     return successFlag;
 }
-  ```
+ ```
 
 11.  Lorsque la méthode `TryUpdateInventory` renvoie **true**, notre gestionnaire appelle une méthode (pas encore écrite) qui met à jour le même élément dans la liste **Livraisons attendues** en définissant le champ **Ajouté à l'inventaire** sur **Oui**. Il s'agit en soi d'un événement d'élément mis à jour, c'est pourquoi le gestionnaire est appelé à nouveau. (Le fait que le champ **Ajouté à l'inventaire** soit désormais défini sur **Oui** empêche le gestionnaire d'ajouter la même livraison à l'inventaire une deuxième fois, mais il est tout de même appelé.)
     
@@ -405,13 +405,13 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
   
 12.  Ajoutez le bloc **catch** suivant juste en dessous du bloc **try**.
     
-  ```cs
+ ```cs
   
 catch (KeyNotFoundException)
 {
     successFlag = false;
 }
-  ```
+ ```
 
 
     > **REMARQUE**
@@ -421,7 +421,7 @@ catch (KeyNotFoundException)
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -457,11 +457,11 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }
     return successFlag;
 }
-  ```
+ ```
 
 13.  Ajoutez la méthode suivante à la classe `RemoteEventReceiver1`. À présent, ce modèle de code ressemble à celui des articles précédents de cette série. Toutefois, il convient de noter une différence. Le code obtient l'objet **ClientContext** en appelant la méthode **TokenHelper.CreateRemoteEventReceiverClientContext** au lieu de la méthode **SharePointContext.CreateUserClientContextForSPHost**, que nous avons utilisée dans le code pour appeler SharePoint à partir de pages, telles que la page EmployeeAdder. La principale raison d'utiliser différentes méthodes pour obtenir un objet **ClientContext** réside dans le fait que SharePoint transmet les informations nécessaires pour créer ces objets différemment aux récepteurs d'événements et aux pages. Pour les récepteurs d'événements, il transmet un objet **SPRemoteEventProperties**, mais pour les pages, il transmet un champ spécifique, appelé jeton de contexte, dans le corps de la demande qui lance la page de complément.
     
-  ```cs
+ ```cs
   
 private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 {
@@ -474,7 +474,7 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 14.  Enregistrez et fermez le fichier de code de récepteur.
     
@@ -489,14 +489,14 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 
 1.  Ouvrez le fichier SharePointContentDeployer.cs et ajoutez la ligne suivante à la méthode `DeployChainStoreComponentsToHostWeb`, juste en dessous de la ligne qui crée la liste **Livraisons attendues**. Nous allons ajouter cette méthode à l'étape suivante. Notez que nous transmettons à la méthode l'objet **HttpRequest** qui a été transmis à la méthode `DeployChainStoreComponentsToHostWeb` par la page d'accueil du complément.
     
-  ```cs
+ ```cs
   
 RegisterExpectedShipmentsEventHandler(request);
-  ```
+ ```
 
 2.  Ajoutez la méthode suivante à la classe `SharePointComponentDeployer`. 
     
-  ```cs
+ ```cs
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())    
@@ -514,11 +514,11 @@ RegisterExpectedShipmentsEventHandler(request);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 3.  Remplacez l'élément `TODO16` par les lignes suivantes. Notez qu'il existe une classe ***CreationInformation** non activable pour les récepteurs d'événements, comme pour les listes et les éléments de liste.
     
-  ```cs
+ ```cs
   
 EventReceiverDefinitionCreationInformation receiver = new EventReceiverDefinitionCreationInformation();
 receiver.ReceiverName = "ExpectedShipmentsItemUpdated";
@@ -528,7 +528,7 @@ receiver.EventType = EventReceiverType.ItemUpdated;
 
 expectedShipmentsList.EventReceivers.Add(receiver);
 
-  ```
+ ```
 
 4.  Maintenant, vous devez indiquer l'URL du récepteur d'événements à SharePoint. Dans l'environnement de production, elle appartiendra au même domaine que les pages distantes, avec le chemin d'accès /Services/RemoteEventReceiver1.svc. Étant donné que le gestionnaire est inscrit dans la logique de première exécution à partir de la page d'accueil du complément, le domaine se trouve dans l'en-tête hôte de l'objet **HttpRequest** pour la demande qui a appelé la page. Notre code a transmis cet objet à partir de la page à la méthode `DeployChainStoreComponentsToHostWeb`, qui l'a à son tour transmis à la méthode  `RegisterExpectedShipmentsEventHandler`. Par conséquent, nous pouvons définir les URL du récepteur à l'aide du code suivant.
     
@@ -538,7 +538,7 @@ expectedShipmentsList.EventReceivers.Add(receiver);
     
 
 
-  ```cs
+ ```cs
   
 #if DEBUG
                     receiver.ReceiverUrl = WebConfigurationManager.AppSettings["RERdebuggingServiceBusUrl"].ToString();
@@ -546,14 +546,14 @@ expectedShipmentsList.EventReceivers.Add(receiver);
                     receiver.ReceiverUrl = "https://" + request.Headers["Host"] + "/Services/RemoteEventReceiver1.svc"; 
 #endif
 
-  ```
+ ```
 
 
      L'ensemble de la méthode `RegisterExpectedShipmentsEventHandler` doit désormais se présenter de la façon suivante.
     
 
 
-  ```cs
+ ```cs
   
 private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {    
@@ -580,14 +580,14 @@ private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 5.  Ajoutez l'instruction **using** suivante en haut du fichier.
     
-  ```cs
+ ```cs
   
 using System.Web.Configuration;
-  ```
+ ```
 
 6.  Pour vous assurer que l'élément `DEBUG` est True si et seulement si le complément est en cours de débogage, suivez la sous-procédure ci-dessous :
     
@@ -618,9 +618,9 @@ using System.Web.Configuration;
   
 7.  Ouvrez le fichier web.config et ajoutez le balisage suivant comme enfant de l'élément **appSettings**. Nous obtiendrons la valeur du paramètre dans la section suivante.
     
-  ```XML
+ ```XML
   <add key="RERdebuggingServiceBusUrl" value="" />
-  ```
+ ```
 
 
 ## Obtention de l'URL du récepteur pour le débogage
@@ -635,9 +635,9 @@ using System.Web.Configuration;
   
 2.  Ajoutez la ligne suivante en tant que toute première ligne de la méthode **ProcessEvent**.
     
-  ```cs
+ ```cs
   string debugEndpoint = System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri.ToString(); 
-  ```
+ ```
 
 3.  Ajoutez un point d'arrêt sur la ligne suivant la méthode.
     

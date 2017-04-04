@@ -233,7 +233,7 @@ After you finish the signup process, your browser opens the Office 365 installat
   
 2. Delete any markup inside the **<body>** tag of the Pages/Default.aspx file of your web application, and then add the following HTML and ASP.NET controls inside the **<body>**. This sample uses the  [UpdatePanel](https://msdn.microsoft.com/library/System.Web.UI.UpdatePanel.aspx) control to enable partial page rendering.
     
-  ```HTML
+ ```HTML
   
 <form id="form1" runat="server">
   <div>
@@ -276,22 +276,22 @@ After you finish the signup process, your browser opens the Office 365 installat
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+ ```
 
 3. Add the following declarations to the Default.aspx.cs file of your web application.
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+ ```
 
 4. In the Default.aspx.cs file of your web application, add these variables inside the  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) class.
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
@@ -300,11 +300,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+ ```
 
 5. Add the  `RetrieveWithCSOM` method inside the [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) class. This method uses the SharePoint CSOM to retrieve information about your site and display it on the page.
     
-  ```cs
+ ```cs
   
 // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
@@ -353,11 +353,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+ ```
 
 6. Add the  `CSOM_Click` method inside the [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) class. This method triggers the event that occurs when the user clicks the **Populate Data** link.
     
-  ```cs
+ ```cs
   
 protected void CSOM_Click(object sender, EventArgs e)
 {
@@ -370,11 +370,11 @@ protected void CSOM_Click(object sender, EventArgs e)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+ ```
 
 7. Replace the existing  `Page_Load` method with this one. The `Page_Load` method uses methods in the TokenHelper.cs file to retrieve the context from the `Request` object and get an access token from Microsoft Azure Access Control Service (ACS).
     
-  ```cs
+ ```cs
   
 // The Page_load method fetches the context token and the access token.
 // The access token is used by all of the data retrieval methods.
@@ -402,11 +402,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+ ```
 
 8. The Default.aspx.cs file should look like this when you're done.
     
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -535,7 +535,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+ ```
 
 9. Use the F5 key to deploy and run your add-in. If you see a **Security Alert** window that asks you to trust the self-signed Localhost certificate, choose **Yes**.
     

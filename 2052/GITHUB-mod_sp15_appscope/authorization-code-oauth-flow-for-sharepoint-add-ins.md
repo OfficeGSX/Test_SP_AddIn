@@ -82,8 +82,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
@@ -92,8 +91,7 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 
   </appSettings>
 
-</configuration>
-```
+</configuration>```
 
 以下是身份验证代码流中的步骤。
   
@@ -136,14 +134,12 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
     
 
 
-
-```cs
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));
-```
+    "https://contoso.com/RedirectAccept.aspx "));```
 
  _scope_ 参数值 `Web.Read List.Write` 是您将如何使用范围别名请求权限的示例。 _scope_ 参数是权限范围和权限请求的空格分隔集。
   
@@ -202,15 +198,13 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>
-```
+<configuration>```
 
 可以通过调用  `WebConfigurationManager.AppSettings.Get("RedirectUri")` 来检索值。
   
@@ -249,8 +243,7 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
 
 
-
-```cs
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -273,8 +266,7 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-
-```
+```
 
 
 ## 获取访问 SharePoint 的页面的后台示例代码
@@ -302,8 +294,7 @@ public partial class RedirectAccept : System.Web.UI.Page
 - 此代码中引用的 **TokenCache** 类定义如下。
     
   
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -354,8 +345,7 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}
-```
+}```
 
 下面是前一个示例代码调用的令牌缓存模块的代码示例。提供其他缓存选项。有关详细信息，请参阅 [在提供程序托管的低信任 SharePoint 外接程序中处理安全令牌](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md)。
   
@@ -363,8 +353,7 @@ namespace DynamicAppPermissionRequest
     
 
 
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -433,8 +422,7 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-
-```
+```
 
 
 ## 其他资源

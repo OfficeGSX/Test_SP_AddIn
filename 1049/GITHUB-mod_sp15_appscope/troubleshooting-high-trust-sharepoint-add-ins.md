@@ -32,16 +32,14 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 Установив Fiddler, вы можете проверить заголовки ответов от SharePoint, включая GUID запроса. Данный GUID запроса  идентификатор корреляции, с помощью которого можно находить в журналах ошибки, связанные с этим запросом.
   
@@ -55,8 +53,7 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -67,8 +64,7 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 Если вы используете файл TokenHelper и удостоверение Windows, код активации исключения имеет следующий вид:
   
@@ -76,14 +72,12 @@ ms.assetid: f464c89e-f318-4051-8589-07cc6b34241f
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 Чтобы устранить неполадку, в первую очередь необходимо с помощью отладчика Visual Studio проверить, успешно ли созданы маркер доступа и объект **ClientContext**. Если это так, необходимо проверить следующие возможности:
   
@@ -98,11 +92,8 @@ clientContext.ExecuteQuery();
     
   
 - У вашей надстройки отсутствует разрешение на ресурсы, к которым вы собираетесь получить доступ. Откройте Командная консоль SharePoint и запустите следующий командлет Windows PowerShell. Переменная  `$web` представляет веб-сайт SharePoint, к которому вы пытаетесь получить доступ, а `$appPrincipal`  идентификатор надстройки. Дополнительные сведения см. в статье [Set-SPAppPrincipalPermission](http://technet.microsoft.com/ru-ru/library/jj219714%28v=office.15%29.aspx).
-    
-  ```
-  
-Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+    ```
+Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl```
 
 - Ваше веб-приложение принимает анонимные запросы. Это значит, что в маркере доступа отсутствует действующее удостоверение пользователя. Проверьте, отключен ли анонимный доступ в IIS для корневого каталога вашего удаленного веб-приложения. Это также можно проверить, выполнив отладку удаленного веб-приложения и проверив значение **Request.LogonUserIdentity** файла default.aspx (с расширением CS или VB), чтобы убедиться, что пользователь не анонимный.
     

@@ -363,16 +363,14 @@ web.config ファイルを編集し、 `appSettings` ノードの以下のキー
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientID" value="c1c12d4c-4900-43c2-8b89-c05725e0ba30" />
   <add key="ClientSigningCertificateSerialNumber" value="556a1c9c5a5415994941abd0ef2f947b" />
   <add key="IssuerId" value="f94591d5-89e3-47cd-972d-f1895cc158c6" />
 </appSettings>
-
-```
+```
 
 
 ## TokenHelper ファイルの修正
@@ -398,23 +396,23 @@ Office Developer Tools for Visual Studio によって生成される TokenHelper
   
 2. それらがあった場所に、以下の行を追加します。
     
-  ```
+ ```
   
 private static readonly string ClientSigningCertificateSerialNumber
     = WebConfigurationManager.AppSettings.Get("ClientSigningCertificateSerialNumber");
-  ```
+ ```
 
 3.  `SigningCredentials` フィールドを宣言している行を見つけます。それを、以下の行に置き換えます。
     
-  ```
+ ```
   
 private static readonly X509SigningCredentials SigningCredentials
     = GetSigningCredentials(GetCertificateFromStore());
-  ```
+ ```
 
 4. ファイルの  `#region private methods` の部分に移動し、以下の 2 つのメソッドを追加します。
     
-  ```
+ ```
   
 private static X509SigningCredentials GetSigningCredentials(X509Certificate2 cert)
 {
@@ -453,7 +451,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     return storedCert;
 }
-  ```
+ ```
 
 
 ## Visual Studio のウィザードを使用して、リモート Web アプリケーションと SharePoint アドイン の発行用パッケージを作成する

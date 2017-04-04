@@ -112,14 +112,12 @@ You can turn off the HTTPS requirement during development using the following Wi
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
-
-```
+```
 
 To turn the HTTPS requirement back on later, use the following Windows PowerShell cmdlets.
   
@@ -127,14 +125,12 @@ To turn the HTTPS requirement back on later, use the following Windows PowerShel
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $false
 $serviceConfig.Update()
-
-```
+```
 
 
 ### Miscellaneous SSL and domain-related authorization errors
@@ -187,14 +183,12 @@ HTTP DAV does not work with OAuth. If you are using the SharePoint client object
   
     
     
-
-```cs
+```cs
 
 File f = clientContext.Web.GetFileByServerRelativeUrl( url);
 ClientResult<Stream> r = f.OpenBinaryStream();
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## In this section

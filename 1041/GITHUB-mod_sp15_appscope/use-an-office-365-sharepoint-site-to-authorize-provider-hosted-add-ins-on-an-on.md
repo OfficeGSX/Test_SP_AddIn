@@ -113,15 +113,13 @@ SharePoint 2013 の社内インストールの既定のセキュリティ トー
     
 
 
-
-```
+```
 
 $certPrKPath = "c:\\location of your .pfx file"
 $certPassword = "password"
 $stsCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 $certPrKPath, $certPassword, 20
 Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -confirm:$false
-
-```
+```
 
 
 > **メモ**
@@ -191,28 +189,28 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
   
 2. 管理者として SharePoint 管理シェルを開き、次のコマンドレットを実行して MySharePointFunctions モジュールが表示されることを確認します。
     
-  ```
+ ```
   
 Get-Module -listavailable
-  ```
+ ```
 
 3. 次のコマンドレットを実行してモジュールをインポートします。
     
-  ```
+ ```
   Import-Module MySharePointFunctions
-  ```
+ ```
 
 4. 次のコマンドレットを実行して、モジュールの一部として Connect-SPFarmToAAD 関数が表示されることを確認します。
     
-  ```
+ ```
   Get-Command -module MySharePointFunctions
-  ```
+ ```
 
 5. 次のコマンドレットを実行して、Connect-SPFarmToAAD 関数が読み込まれることを確認します。
     
-  ```
+ ```
   ls function:\\ | where {$_.Name -eq "Connect-SPFarmToAAD"}
-  ```
+ ```
 
 6.  `Connect-SPFarmToAAD` 関数を実行します。必ず、開発者環境に適用される必須のパラメーターと省略可能なパラメーターを指定します。詳細と例については、次のセクションを参照してください。
     
@@ -233,7 +231,7 @@ Get-Module -listavailable
 | `-SharePointOnlineUrl` (必須) <br/> |Office 365 SharePoint サイトの URL ( _https://yourcustomdomain_.sharepoint.com)。親ドメインは onmicrosoft.com では *ありません*  。 <br/> |
 | `-SharePointWeb` (必須の場合あり) <br/> |プロバイダーでホストされるアドインを実行する社内 SharePoint Web アプリケーションの完全な URL (プロトコルを含む)。この関数は、社内ファームから ACS に 1 つの SharePoint Web アプリケーションのみを追加します。この値を指定しない場合、スクリプトはファームの最初の Web アプリケーションを選択します。ワイルドカード ( _http://*.contoso.com_ など) で定義できるホスト名サイト コレクション (HNSC) を使用している場合は、その文字列をこのパラメーターの値として使用できます。Web アプリケーションにインターネット ゾーンの代替アクセス マッピング (AAM) がある場合、その AAM の URL をこのパラメーターに使用する必要があります。SharePoint Web アプリケーションが HTTPS 対応で構成されていない場合、HTTP をプロトコルとして使用し、 *-AllowOverHttp スイッチを使用する必要があります (この表の下部を参照)*  。 <br/> ACS を使用する、プロバイダーでホストされるアドインをファームのより多くの Web アプリケーションで実行する場合、それらのアドインをサービス プリンシパル名コレクションに追加する必要があります。以下の Windows PowerShell スクリプトの  `Connect-SPFarmToAAD` 関数に続く部分に、ファームのすべての Web アプリケーションをプリンシパル名コレクションに追加する方法を示します。 <br/> |
 | `-AllowOverHttp` (省略可能) <br/> |開発環境で作業していて、アドインに SSL を使用しない場合は、このスイッチを使用します。SharePoint Web アプリケーションが HTTPS 対応で構成されていない場合は、このスイッチを使用する必要があります。  <br/> |
-| `-O365Credentials` (省略可能) <br/> |最初の文字はゼロではなく大文字の "O" です。デバッグ目的でスクリプトを繰り返し実行している場合は、このスイッチを使用すると、O365 の名前とパスワードを毎回手動で入力しなくても済みます。このパラメーターを使用する前に、次のコマンドレットを使用して、パラメーターに渡す資格情報オブジェクトを作成する必要があります。  <br/> ```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord``` `-O365Credentials` パラメーターの値として `$Credential` を使用します。 <br/> |
+| `-O365Credentials` (省略可能) <br/> |最初の文字はゼロではなく大文字の "O" です。デバッグ目的でスクリプトを繰り返し実行している場合は、このスイッチを使用すると、O365 の名前とパスワードを毎回手動で入力しなくても済みます。このパラメーターを使用する前に、次のコマンドレットを使用して、パラメーターに渡す資格情報オブジェクトを作成する必要があります。  <br/>```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord``` `-O365Credentials` パラメーターの値として `$Credential` を使用します。 <br/> |
 | `-Verbose` (省略可能) <br/> |このスイッチは、関数が動作せず、デバッグのために再実行する必要がある場合に役立つ、より詳細なフィードバックを生成します。  <br/> |
 | `-RemoveExistingACS` (省略可能) <br/> |Microsoft Azure Active Directory への既存の接続を置き換える場合に、このスイッチを使用します。ファームで既に作成していた場合、既存の ACS プロキシは削除されます。  <br/> |
 | `-RemoveExistingSTS` (省略可能) <br/> |Microsoft Azure Active Directory への既存の接続を置き換える場合は、このスイッチを使用します。ACS への以前の接続で残った、既存の信頼済みのセキュリティ トークン発行元が削除されます。  <br/> |
@@ -244,8 +242,7 @@ Get-Module -listavailable
   
     
     
-
-```
+```
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com
 
@@ -254,15 +251,13 @@ Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineU
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp -RemoveExistingACS -RemoveExistingSTS -RemoveExistingSPOProxy -RemoveExistingAADCredentials
-
-```
+```
 
 
 ### Connect-SPFarmToAAD 関数スクリプト
 <a name="function"> </a>
 
-
-```
+```
 
 function Connect-SPFarmToAAD {
 param(
@@ -377,8 +372,7 @@ param(
     if (-not (Get-SPServiceApplicationProxy | ? DisplayName -EQ $SPO_MANAGEMENT_APPPROXY_NAME)) {
         $spoproxy = New-SPOnlineApplicationPrincipalManagementServiceApplicationProxy -Name $SPO_MANAGEMENT_APPPROXY_NAME -OnlineTenantUri $SharePointOnlineUrl -DefaultProxyGroup
     }  
-}
-```
+}```
 
 
 ### アドインおよび SharePoint Web アプリケーションを Office ストア 用に構成する
@@ -388,12 +382,10 @@ param(
   
     
     
-
-```
+```
 
 New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebServiceProxy" -ServiceEndpointUri "https://oauth.sellerdashboard.microsoft.com/ApplicationIdentityDataWebService.svc" -DefaultProxyGroup
-
-```
+```
 
 本番用の SharePoint Web アプリケーションでは、上記の構成手順の完了後に、[ **アクセスできるインターネット接続エンドポイントが必要なアドイン**] 機能をアクティブ化することも推奨されます (下記の指示を参照)。この機能では、実際には何も行われません。単に Office ストアに対し、ACS を使用するプロバイダー向けのホスト型アドインを SharePoint Web アプリケーションで Web サイトにインストールできることを知らせるフラグとしての役割を果たします。
   
@@ -405,11 +397,9 @@ New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebSer
     
 
 
+```
 
-```
-
-<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />
-```
+<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />```
 
 この前提条件により、ユーザーが社内の SharePoint ファームからストアをブラウズした際、親 SharePoint Web アプリケーションで [ **アクセスできるインターネット接続エンドポイントが必要なアドイン**] 機能が有効になっていない場合、アドインは淡色表示になり、インストールできなくなります。これにより、社内の SharePoint Web サイトにインストールしたアドインが機能しないことが判明した顧客からクレームが来なくなります。
   
@@ -421,10 +411,8 @@ New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebSer
     
 
 
-
-```
-Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application
-```
+```
+Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application```
 
 この機能を有効にするもう 1 つの方法は、中央管理で次の手順を実行することです。
   
@@ -458,8 +446,7 @@ SharePoint ファームに追加の Web アプリケーションがあり、そ�
   
     
     
-
-```
+```
 $SPAppPrincipal = Get-MsolServicePrincipal -AppPrincipalId 00000003-0000-0ff1-ce00-000000000000
 $id = "00000003-0000-0ff1-ce00-000000000000/"
 
@@ -476,8 +463,7 @@ Get-SPWebApplication | ForEach-Object {
        Set-MsolServicePrincipal -AppPrincipalId $SPAppPrincipal.AppPrincipalId -ServicePrincipalNames $SPAppPrincipal.ServicePrincipalNames
     }
 }
-
-```
+```
 
 
 ## 次の手順

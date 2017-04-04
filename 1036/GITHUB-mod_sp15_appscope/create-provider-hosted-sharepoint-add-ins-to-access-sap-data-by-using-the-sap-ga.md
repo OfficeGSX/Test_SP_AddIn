@@ -191,15 +191,15 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
   
 2. Dans la section  `<appSettings>`, les Outils de développement Office pour Visual Studio ont ajouté des éléments pour **ClientID** et **ClientSecret** pour le Complément SharePoint. (Ils sont utilisés dans le système d'autorisation Azure ACS si l'application ASP.NET accède à SharePoint. Vous pouvez les ignorer pour l'exemple de cet article, mais ne les supprimez pas. Ils sont nécessaires pour les Compléments SharePoint hébergés par un fournisseur, même si le complément n'accède pas aux données SharePoint. Leurs valeurs changent à chaque fois que vous appuyez sur la touche F5 dans Visual Studio.) Ajoutez les deux éléments suivants à la section. Ils sont utilisés par l'application pour s'authentifier auprès d'Azure AD. (N'oubliez pas que les applications et les utilisateurs sont des principaux de sécurité dans les systèmes d'authentification et d'autorisation basés sur OAuth.)
     
-  ```
+ ```
   
 <add key="ida:ClientID" value="" />
 <add key="ida:ClientKey" value="" />
-  ```
+ ```
 
 3. Utilisez l'ID client que vous avez enregistré depuis votre répertoire Azure AD lors de la procédure précédente comme la valeur de la clé **ida:ClientID**. Conservez les majuscules, les minuscules et la ponctuation exactement comme vous les avez copiées et veillez à ne pas inclure d'espace au début ou à la fin de la valeur. Pour la clé **ida:ClientKey**, utilisez la  *clé*  que vous avez enregistrée depuis le répertoire. Encore une fois, veillez à ne pas introduire d'espace et à ne pas modifier la valeur. La section `<appSettings>` devrait maintenant ressembler à ce qui suit. (Il est possible que la valeur **ClientId** affiche un GUID ou une chaîne vide.)
     
-  ```
+ ```
   
 <appSettings>
   <add key="ClientId" value="" />
@@ -207,36 +207,36 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
   <add key="ida:ClientID" value="4da99afe-08b5-4bce-bc66-5356482ec2df" />
   <add key="ida:ClientKey" value="URwh/oiPay/b5jJWYHgkVdoE/x7gq3zZdtcl/cG14ss=" />
 </appSettings>
-  ```
+ ```
 
 
     > **REMARQUE**
       > Votre application est reconnue par Azure AD grâce à l'URL « localhost » que vous avez utilisée pour l'inscrire. L'ID client et la clé client sont associés à cette identité. Lorsque vous êtes prêt à préparer votre application sur un Site web Azure, inscrivez-la à nouveau avec une autre URL. 
 4. Toujours dans la section **appSettings**, ajoutez une clé **Authority** et définissez sa valeur sur le domaine Office 365 ( *domaine*  .onmicrosoft.com) de votre compte d'entreprise. Dans l'exemple de cet article, le compte d'entreprise est Bob@<domaine_O365>.onmicrosoft.com, l'autorité est donc `<O365_domain>.onmicrosoft.com`. 
     
-  ```
+ ```
   
 <add key="Authority" value="<O365_domain>.onmicrosoft.com" />
-  ```
+ ```
 
 5. Toujours dans la section **appSettings**, ajoutez une clé **AppRedirectUrl** et définissez sa valeur sur la page vers laquelle le navigateur de l'utilisateur doit être redirigé après que le complément ASP.NET a obtenu un code d'autorisation de la part d'Azure AD. Il s'agit habituellement de la page sur laquelle l'utilisateur se trouvait lorsque l'appel à Azure AD a été effectué. Dans l'exemple de cet article, utilisez la valeur de l'URL SSL en ajoutant « /Pages/Default.aspx » à la fin, comme indiqué ci-dessous. (Ceci est une autre valeur que vous changerez pour la préparation.)
     
-  ```
+ ```
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
-  ```
+ ```
 
 6. Toujours dans la section **appSettings**, ajoutez une clé **ResourceUrl** et définissez sa valeur sur l'URI ID d'application de la Passerelle SAP pour Microsoft (et *non*  sur l'URI ID d'application de votre application ASP.NET). Cette valeur peut vous être fournie par l'administrateur de la Passerelle SAP pour Microsoft. Voici un exemple.
     
-  ```
+ ```
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
-  ```
+ ```
 
 
     La section  `<appSettings>` devrait maintenant ressembler à ceci :
     
 
 
-  ```
+ ```
   <appSettings>
   <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6" />
   <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=" />
@@ -246,7 +246,7 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
 </appSettings>
-  ```
+ ```
 
 7. Enregistrez et fermez le fichier web.config.
     
@@ -261,24 +261,24 @@ Pour obtenir une description détaillée et un diagramme du flux OAuth utilisé 
   
 2. Ajoutez les instructions **using** suivantes au fichier.
     
-  ```
+ ```
   
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Configuration;
 using System.Web.UI;
 
-  ```
+ ```
 
 3. Modifiez le mot clé d'accès en le passant de **public** à **internal** et ajoutez le mot clé **static** à la déclaration de classe.
     
-  ```
+ ```
   
 internal static class AADAuthHelper
-  ```
+ ```
 
 4. Ajoutez les champs ci-dessous à la classe. Ces champs stockent des informations que votre application ASP.NET utilise pour obtenir des jetons d'accès auprès d'AAD.
     
-  ```
+ ```
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"];     
@@ -290,11 +290,11 @@ private static readonly ClientCredential _clientCredential = new ClientCredentia
 private static readonly AuthenticationContext _authenticationContext = 
             new AuthenticationContext("https://login.windows.net/common/" + 
                                       ConfigurationManager.AppSettings["Authority"]);
-  ```
+ ```
 
 5. Ajoutez la propriété ci-dessous à la classe. Cette propriété contient l'URL de l'écran de connexion d'Azure AD.
     
-  ```
+ ```
   
 private static string AuthorizeUrl
 {
@@ -308,11 +308,11 @@ private static string AuthorizeUrl
     }
 }
 
-  ```
+ ```
 
 6. Ajoutez les propriétés ci-dessous à la classe. Celles-ci mettent en cache les jetons d'accès et d'actualisation et vérifient leur validité.
     
-  ```
+ ```
   
 public static Tuple<string, DateTimeOffset> AccessToken
 {
@@ -345,11 +345,11 @@ private static bool IsRefreshTokenValid
     get { return !string.IsNullOrEmpty(RefreshToken); }
 }
 
-  ```
+ ```
 
 7. Ajoutez les méthodes ci-dessous à la classe. Ces méthodes sont utilisées pour vérifier la validité du code d'autorisation et pour obtenir un jeton d'accès auprès d'Azure AD en utilisant soit un code d'authentification, soit un jeton d'actualisation.
     
-  ```
+ ```
   
 private static bool IsAuthorizationCodeNotNull(string authCode)
 {
@@ -380,11 +380,11 @@ private static Tuple<string, DateTimeOffset> RenewAccessTokenUsingRefreshToken()
     return new Tuple<string, DateTimeOffset>(authResult.AccessToken, authResult.ExpiresOn);
 }
 
-  ```
+ ```
 
 8. Ajoutez la méthode ci-dessous à la classe. Elle est appelée par le code-behind ASP.NET pour obtenir un jeton d'accès valide avant d'effectuer un appel pour obtenir les données SAP via la Passerelle SAP pour Microsoft.
     
-  ```
+ ```
   
 internal static void EnsureValidAccessToken(Page page)
 {
@@ -417,7 +417,7 @@ internal static void EnsureValidAccessToken(Page page)
         page.Response.Redirect(AuthorizeUrl);
     }
 }
-  ```
+ ```
 
 
 > **CONSEIL**
@@ -435,7 +435,7 @@ internal static void EnsureValidAccessToken(Page page)
   
 2. Ajoutez le code suivant dans le corps de la classe :
     
-  ```
+ ```
   
 public string Price;
 public string Brand;
@@ -445,7 +445,7 @@ public string Engine;
 public int MaxPower;
 public string BodyStyle;
 public string Transmission;
-  ```
+ ```
 
 
 ### Ajout de code-behind pour obtenir des données de la part de SAP via la Passerelle SAP pour Microsoft
@@ -453,44 +453,44 @@ public string Transmission;
 
 1. Ouvrez le fichier Default.aspx.cs, puis ajoutez-y les instructions **using** ci-dessous.
     
-  ```
+ ```
   
 using System.Net;
 using Newtonsoft.Json.Linq;
-  ```
+ ```
 
 2. Ajoutez une déclaration **const** à la classe Default dont la valeur est l'URL de base du point de terminaison OData SAP à laquelle le complément accédera. En voici un exemple :
     
-  ```
+ ```
   
 private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net:8081/perf/sap/opu/odata/sap/ZCAR_POC_SRV/";
-  ```
+ ```
 
 3. Les Outils de développement Office pour Visual Studio ont ajouté une méthode **Page_PreInit** et une méthode **Page_Load**. Commentez le code qui se trouve à l'intérieur de la méthode **Page_Load**, puis commentez l'ensemble de la méthode **Page_Init**. Ce code n'est pas utilisé dans l'exemple actuel. (Si votre Complément SharePoint doit accéder à SharePoint, restaurez ce code. Voir la rubrique  [Ajout de l'accès à SharePoint à l'application ASP.NET (facultatif)](#SharePoint).)
     
   
 4. Ajoutez la ligne suivante au début de la méthode **Page_Load**. Cela facilitera le processus de débogage, car votre application ASP.NET communique avec la Passerelle SAP pour Microsoft à l'aide du protocole SSL (HTTPS), mais votre serveur « localhost:port » n'est pas configuré pour approuver le certificat de la Passerelle SAP pour Microsoft. Sans cette ligne de code, vous obtiendrez un avertissement vous informant que le certificat est invalide avant l'ouverture de la page Default.aspx. Certains navigateurs vous permettent de cliquer après cette erreur, mais certains ne vous laisseront pas ouvrir la page Default.aspx.
     
-  ```
+ ```
   ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, errors) => true;
-  ```
+ ```
 
 
     > **IMPORTANTE**
       > Supprimez cette ligne lorsque vous êtes prêt à déployer l'application ASP.NET en phase de préparation. Voir la section  [Modification du complément et préparation de celui-ci sur Azure et Office 365](#Stage). 
 5. Ajoutez le code suivant à la méthode **Page_Load**. La chaîne que vous transmettez à la méthode  `GetSAPData` est une requête OData.
     
-  ```
+ ```
   if (!IsPostBack)
 {
     GetSAPData("DataCollection?$top=3");
 }
 
-  ```
+ ```
 
 6. Ajoutez la méthode suivante à la classe Default. Cette méthode vérifie d'abord que la mise en cache du jeton d'accès possède un jeton d'accès valide qui a été obtenu à partir d'Azure AD. Il crée ensuite une demande HTTP **GET** dans laquelle le jeton d'accès est inclus puis l'envoie au point de terminaison OData SAP. Le résultat est renvoyé comme un objet JSON qui est converti en un objet de **List**.NET. Trois propriétés des éléments sont utilisées dans un tableau qui est lié à la **DataListView**.
     
-  ```
+ ```
   
 private void GetSAPData(string oDataQuery)
 {
@@ -513,7 +513,7 @@ private void GetSAPData(string oDataQuery)
     }
 }
 
-  ```
+ ```
 
 
 ### Création de l'interface utilisateur
@@ -521,7 +521,7 @@ private void GetSAPData(string oDataQuery)
 
 1. Ouvrez le fichier Default.aspx et ajoutez le balisage suivant à l'élément **form** de la page :
     
-  ```
+ ```
   
 <div>
   <h3>Data from SAP via SAP Gateway for Microsoft</h3>
@@ -537,7 +537,7 @@ private void GetSAPData(string oDataQuery)
     </ItemTemplate>
   </asp:ListView>
 </div>
-  ```
+ ```
 
 2. Vous pouvez éventuellement donner à la page web l'« apparence » d'une page SharePoint à l'aide du  [contrôle Chrome](use-the-client-chrome-control-in-sharepoint-add-ins.md)SharePoint et de la  [feuille de style de site web hôte SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md).
     
@@ -592,21 +592,21 @@ Quoi qu'il en soit, que vous utilisiez le modèle CSOM ou les API REST pour acc�
   
 2. Si votre Complément SharePoint doit accéder aux données SharePoint, vous devez mettre en cache le jeton de contexte SharePoint qui est envoyé via une requête POST à la page Default.aspx lorsque le complément est lancé dans SharePoint. Il s'agit de s'assurer que le jeton de contexte SharePoint ne se perd pas lorsque le navigateur est redirigé après l'authentification Azure AD. (Il existe plusieurs façons de mettre en cache ce jeton de contexte.) Les Outils de développement Office pour Visual Studio ajoutent un fichier SharePointContext.cs au projet ASP.NET qui fait l'essentiel du travail. Pour utiliser le cache de sessions, il vous suffit d'ajouter le code suivant à l'intérieur du bloc «  `if (!IsPostBack)` » *avant*  le code qui appelle la Passerelle SAP pour Microsoft :
     
-  ```
+ ```
   
 if (HttpContext.Current.Session["SharePointContext"] == null)
 {
      HttpContext.Current.Session["SharePointContext"]
         = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 3. Le fichier SharePointContext.cs appelle un autre fichier que les Outils de développement Office pour Visual Studio ont ajouté au projet : TokenHelper.cs. Ce fichier fournit la plupart du code nécessaire pour obtenir et utiliser les jetons d'accès à SharePoint. Cependant, il ne fournit aucun code pour renouveler un jeton d'accès ou d'actualisation expiré. Il ne contient pas non plus de code de mise en cache de jeton. Pour obtenir un Complément SharePoint de qualité de production, vous devez ajouter ce code. La logique de mise en cache de l'étape précédente est un exemple. Votre code devrait également mettre en cache le jeton d'accès et le réutiliser jusqu'à son expiration. Lorsque le jeton d'accès expire, votre code doit utiliser le jeton d'actualisation pour obtenir un nouveau jeton d'accès.
     
   
 4. Ajoutez les appels de données à SharePoint à l'aide du modèle CSOM ou de REST. L'exemple suivant est une modification du code CSOM que les Outils de développement Office pour Visual Studio ajoutent à la méthode **Page_Load**. Dans cet exemple, le code a été déplacé dans une méthode distincte et commence par récupérer le jeton de contexte mis en cache.
     
-  ```
+ ```
   
 private void GetSharePointTitle()
 {
@@ -618,14 +618,14 @@ private void GetSharePointTitle()
         SharePointTitle.Text = "SharePoint web site title is: " + clientContext.Web.Title;
     }
 }
-  ```
+ ```
 
 5. Ajoutez des éléments de l'interface utilisateur pour afficher les données SharePoint. L'encadré suivant montre le contrôle HTML auquel il est fait référence dans la méthode précédente :
     
-  ```
+ ```
   
 <h3>SharePoint title</h3><asp:Label ID="SharePointTitle" runat="server"></asp:Label><br />
-  ```
+ ```
 
 
 > **REMARQUE**

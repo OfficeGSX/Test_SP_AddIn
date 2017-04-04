@@ -105,14 +105,12 @@ OAuth では SharePoint が HTTPS を実行する必要があります (サー�
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
-
-```
+```
 
 後で HTTPS 要件をオンに戻すには、次の Windows PowerShell コマンドレットを使用します。
   
@@ -120,14 +118,12 @@ $serviceConfig.Update()
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $false
 $serviceConfig.Update()
-
-```
+```
 
 
 ### その他の SSL およびドメイン関連の承認エラー
@@ -180,14 +176,12 @@ HTTP DAV は OAuth では動作しません。SharePoint のクライアント �
   
     
     
-
-```cs
+```cs
 
 File f = clientContext.Web.GetFileByServerRelativeUrl( url);
 ClientResult<Stream> r = f.OpenBinaryStream();
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## このセクションの内容

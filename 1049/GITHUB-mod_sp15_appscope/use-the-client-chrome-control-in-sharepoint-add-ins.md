@@ -186,7 +186,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 3. Элемент управления хрома также можно использовать декларативным способом. В следующем примере кода в разметке HTML элемент управления объявляется без использования кода JavaScript для его настройки и инициализации. Эта разметка выполняет следующие задачи:
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 
     Библиотека SP.UI.Controls.js автоматически отображает элемент управления, если обнаруживает атрибут **data-ms-control="SP.UI.Controls.Navigation"** в элементе **div**.

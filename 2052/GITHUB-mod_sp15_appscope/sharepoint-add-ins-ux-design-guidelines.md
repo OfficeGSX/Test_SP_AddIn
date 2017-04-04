@@ -116,13 +116,13 @@ ms.assetid: a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45
     
   - 指向布局文件夹根目录中的库，如以下示例中所示。
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - 将库复制到您自己的网站，并从其中引用库。
     
@@ -130,14 +130,14 @@ ms.assetid: a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45
       > 如果您选择此替代方法，则您的外接程序将不会从控制更新中受益。 
 2. 添加将在其中呈现控件的占位符 DOM 元素，如此示例中所示。
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. 实例化此控件。
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -148,14 +148,14 @@ ms.assetid: a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. （可选）如果不希望页面上有标题区域，则可以运行以下 JavaScript 代码删除此区域。
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 部件版式控制提供了两个可选的外接程序图标：一个在顶部导航栏上，一个在标题区域中。顶部导航栏上的外接程序图标为 24 x 24 像素 (px)，标题区域中的图标与 SharePoint 网站图标大小相同  最大为 64 像素高 x 180 像素长。建议您使用在白色、黑色、灰色、明亮和静音的背景中测试过的 PNG 图像，因为用户和管理员可能会更改网站主题。有关使用部件版式控制的详细信息，请参阅 [在 SharePoint 外接程序中使用客户端部件版式控制](use-the-client-chrome-control-in-sharepoint-add-ins.md)。
   
@@ -190,18 +190,18 @@ nav.setBottomHeaderVisible(false);
   
 2. 如果您在外接程序 Web 内，则通过将以下代码放在母版页或 ASPX 页面上，您可以使用 **CssRegistration** 和 **CssLink** 控件引用 CSS 文件：
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. 通过生成一个 URL 以离开主机 Web 的 URL，您可以使用 <link> 元素引用 CSS 文件，如此示例中所示。
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     如果使用此方法，则必须在页面中运行 JavaScript，以使主机 Web 的 URL 避开查询字符串。然后，在将 **link** 元素写入到页面的 DOM 之前，可以将主机 Web 的 URL 插入到该元素中。
@@ -511,11 +511,9 @@ SharePoint 允许外接程序扩展现有 UI 的某些部分，这样，您就�
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 因为无法强行规定用 Iframe 将页面嵌入到哪些域中，所以在外接程序部件中托管的页面很容易受到点击劫持安全攻击。在点击劫持攻击中，页面可能位于恶意页面上的 iframe 中，并且可能会引诱用户选择按钮以执行他们不了解的操作。设计页面时，应该注意这一点，如果恶意页面中显示了将具有危险性的部件，则应确保不要在页面中对该部件公开任何功能。
   
@@ -531,10 +529,8 @@ SharePoint 允许外接程序扩展现有 UI 的某些部分，这样，您就�
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 在以上示例中，呈现页面时，外接程序部件代码将对页面的查询字符串自动设置 **senderId** 值。在请求调整大小时，您的页面只需从查询字符串中读取 **SenderId** 值并使用该值即可。您可以通过将 **StandardTokens** 或 **HostUrl** 令牌追加到外接程序部件定义中的 **Src** 属性来检索查询字符串的主机 Web URL。
   
@@ -546,8 +542,7 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -599,8 +594,7 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
 在您的 **ClientWebPart** 元素中，您将指定以下各项：
   
@@ -690,13 +684,11 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
  **HostWebDialogHeight** 属性和 **HostWebDialogWidth** 属性是可选属性。如果未指定这些属性，则将使用 SharePoint 中对话框的默认大小。但是，通常，您应该指定对话框的大小，以在向用户显示对话框时，对话框看上去正常并且不使用滚动条。
   
@@ -708,12 +700,10 @@ HostWebDialogWidth="500"
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
 根据您使用的是 **CloseCustomActionDialogRefresh** 还是 **CloseCustomActionDialogNoRefresh**，对话框将会关闭，并且会刷新其背后的页面，或者不会刷新。
   

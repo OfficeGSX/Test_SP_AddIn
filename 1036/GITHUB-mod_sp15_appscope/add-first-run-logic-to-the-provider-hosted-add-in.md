@@ -70,25 +70,25 @@ ms.assetid: 649c06b9-3612-439a-acb3-041e5f5f01f3
   
 5.  Ajoutez l'instruction **using** suivante en haut du fichier.
     
-  ```
+ ```
   
 using System.Web;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
-  ```
+ ```
 
 6.  En haut de la classe `SharePointComponentDeployer`, ajoutez les deux champs statiques suivants. Ces deux champs sont initialisés dans la méthode **Page_Load** de la page d'accueil du complément. Vous ajouterez ce code à une étape ultérieure. Le premier champ doit contenir l'objet **SharePointContext** qui est nécessaire pour effectuer des opérations CRUD sur SharePoint. Le deuxième doit contenir le numéro de version du complément installé sur le site web hôte. Cette valeur sera initialement différente de la valeur par défaut ( **0000.0000.0000.0000** ) qui est enregistrée dans la table **Clients** d'entreprise lorsque le gestionnaire d'installation enregistre le client. Par exemple, la première version du complément sera **1.0.0.0**.
     
-  ```cs
+ ```cs
   
 internal static SharePointContext sPContext;
 internal static Version localVersion;
-  ```
+ ```
 
 7.  Créez la propriété statique suivante pour conserver la version du complément actuellement enregistrée dans la table **Clients** de l'entreprise. Elle utilise les deux méthodes qui étaient déjà dans le fichier pour obtenir et définir cette valeur.
     
-  ```cs
+ ```cs
   
 internal static Version RemoteTenantVersion
 {
@@ -101,7 +101,7 @@ internal static Version RemoteTenantVersion
         SetTenantVersion(value);
     }
 }
-  ```
+ ```
 
 8.  Maintenant, créez la propriété `IsDeployed` suivante. Notez ce qui suit à propos de ce code :
     
@@ -112,7 +112,7 @@ internal static Version RemoteTenantVersion
     
   
 
-  ```cs
+ ```cs
   
 public static bool IsDeployed
 {
@@ -124,11 +124,11 @@ public static bool IsDeployed
             return true; 
     }
 }
-  ```
+ ```
 
 9.  Ajoutez la méthode suivante à la classe `SharePointComponentDeployer`. Notez que la dernière action de la méthode consiste à mettre à jour la version du client enregistrée dans la base de données d'entreprise ( **0000.0000.0000.0000** ) afin qu'elle corresponde à la version réelle du complément sur le site web hôte ( **1.0.0.0** ). Vous terminerez cette méthode à une étape ultérieure.
     
-  ```cs
+ ```cs
   
 internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 {
@@ -136,7 +136,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
     RemoteTenantVersion = localVersion;
 }
-  ```
+ ```
 
 
 > **REMARQUE**
@@ -170,7 +170,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
     
   
 
-  ```cs
+ ```cs
   
 SharePointComponentDeployer.sPContext = spContext;
 SharePointComponentDeployer.localVersion = new Version(Request.QueryString["SPAddInVersion"]);
@@ -179,7 +179,7 @@ if (!SharePointComponentDeployer.IsDeployed)
 {
     SharePointComponentDeployer.DeployChainStoreComponentsToHostWeb(Request);
 }
-  ```
+ ```
 
 
 ## Déploiement par programmation d'une liste SharePoint
@@ -191,10 +191,10 @@ if (!SharePointComponentDeployer.IsDeployed)
 
 1.  Dans le fichier SharePointComponentDeployer.cs, remplacez l'élément `TODO4` par la ligne suivante. Vous créerez cette méthode à l'étape suivante.
     
-  ```cs
+ ```cs
   
 CreateLocalEmployeesList();
-  ```
+ ```
 
 2.  Ajoutez la méthode suivante à la classe `SharePointComponentDeployer`. Notez les points suivants concernant ce code.
     
@@ -205,7 +205,7 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   private static void CreateLocalEmployeesList()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -228,7 +228,7 @@ CreateLocalEmployeesList();
         }
     }
 }
-  ```
+ ```
 
 3.  Remplacez l'élément `TODO5` par le code suivant. Notez ce qui suit à propos de ce code :
     
@@ -242,23 +242,23 @@ CreateLocalEmployeesList();
     
   
 
-  ```cs
+ ```cs
   
 ListCreationInformation listInfo = new ListCreationInformation();
 listInfo.Title = "Local Employees";
 listInfo.TemplateType = (int)ListTemplateType.GenericList;
 listInfo.Url = "Lists/Local Employees";
 List localEmployeesList = clientContext.Web.Lists.Add(listInfo);
-  ```
+ ```
 
 4.  Remplacez `TODO6` par le code suivant qui modifie le nom public du champ « Titre » (colonne) de « Titre » en « Nom ». Voici ce que vous avez fait sur la page **Paramètres de liste** lorsque vous avez créé la liste manuellement.
     
-  ```cs
+ ```cs
   
 Field field = localEmployeesList.Fields.GetByInternalNameOrTitle("Title");
 field.Title = "Name";
 field.Update();
-  ```
+ ```
 
 5.  Vous avez également créé manuellement un champ intitulé **Ajouté à la base de données d'entreprise**. Pour réaliser cette opération par programmation, ajoutez le code suivant à la place de l'élément  `TODO7`. Notez ce qui suit à propos de ce code :
     
@@ -272,18 +272,18 @@ field.Update();
     
   
 
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          +"Type='Boolean'>"
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 6.  Souvenez-vous que le champ **Ajouté à la base de données d'entreprise** est défini par défaut sur **Non** (ce qui correspond à False), mais que le bouton de ruban personnalisé du complément le définit sur **Oui** une fois que l'employé est ajouté à la base de données d'entreprise. Ce système fonctionne mieux uniquement si les utilisateurs ne peuvent modifier manuellement la valeur du champ. Pour veiller à ce qu'ils ne puissent pas le faire, masquez le champ des formulaires de création et de modification des éléments dans la liste **Employés locaux**. Pour ce faire, ajoutez deux attributs supplémentaires au premier paramètre, comme illustré dans ce qui suit.
     
-  ```cs
+ ```cs
   
 localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate DB'"
                                          + " Type='Boolean'"  
@@ -292,14 +292,14 @@ localEmployeesList.Fields.AddFieldAsXml("<Field DisplayName='Added to Corporate 
                                          + "<Default>FALSE</Default></Field>",
                                          true,
                                          AddFieldOptions.DefaultValue);
-  ```
+ ```
 
 
      L'ensemble de l'élément `CreateLocalEmployeesList` doit désormais se présenter comme suit.
     
 
 
-  ```cs
+ ```cs
   
 private static void CreateLocalEmployeesList()
 {
@@ -334,7 +334,7 @@ private static void CreateLocalEmployeesList()
         }
     }
 }
-  ```
+ ```
 
 
 ## Suppression temporaire du bouton personnalisé du projet

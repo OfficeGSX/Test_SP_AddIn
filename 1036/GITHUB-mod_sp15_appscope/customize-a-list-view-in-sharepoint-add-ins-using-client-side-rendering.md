@@ -129,7 +129,7 @@ La figure 1 montre un affichage rendu côté client d'une liste d'annonces.
     > **REMARQUE**
       > La propriété JSLink n'est pas prise en charge sur les listes d'enquêtes ou d'événements. Un calendrier SharePoint est une liste d'événements. 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ La figure 1 montre un affichage rendu côté client d'une liste d'annonces.
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### Fournir une logique de rendu personnalisée dans un fichier JavaScript
@@ -168,7 +168,7 @@ La figure 1 montre un affichage rendu côté client d'une liste d'annonces.
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### Pour créer et exécuter la solution

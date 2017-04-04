@@ -78,12 +78,12 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
   
 2. Ersetzen Sie das gesamte **AppPrincipal**-Element durch Folgendes.
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **HINWEIS**
@@ -113,7 +113,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
 </html>
 
 
-  ```
+ ```
 
 
     > **WICHTIG**
@@ -204,7 +204,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -212,7 +212,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### So erstellen Sie eine SharePoint-Webseite, die die domänenübergreifende Bibliothek verwendet
@@ -235,7 +235,7 @@ Response.End();
   
 6. Kopieren Sie den folgenden Code, und fügen Sie ihn in das **PlaceHolderMain**-Inhaltstag ein. 
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -310,7 +310,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. Suchen Sie im vorstehenden, von Ihnen eingefügten Code nach der Zeile  `remotedomain = "<your_remote_add-in_domain>";`, und ersetzen Sie den Platzhalter  _<your_remote_add-in_domain>_ durch die Localhost-URL, die Ihre Webanwendung verwendet, wenn Sie das Add-In mit F5 in Visual Studio ausführen. Sie finden diesen Wert, indem Sie das Webanwendungsprojekt im **Projektmappen-Explorer** auswählen. Die Eigenschaft **URL** befindet sich im Bereich **Eigenschaften**. Verwenden Sie den gesamten Wert, einschließlich Protokoll, Port und schließendem Schrägstrich, z. B. http://localhost:45072.
     

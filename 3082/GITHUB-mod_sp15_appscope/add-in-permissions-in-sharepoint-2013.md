@@ -219,8 +219,7 @@ El siguiente código muestra cómo usar derechos y ámbitos de permisos en el ar
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ El siguiente código muestra cómo usar derechos y ámbitos de permisos en el ar
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 El siguiente código muestra un complemento que solicita acceso Read en el ámbito de la web y acceso Write en el ámbito de la lista.
   
@@ -250,8 +248,7 @@ El siguiente código muestra un complemento que solicita acceso Read en el ámbi
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ El siguiente código muestra un complemento que solicita acceso Read en el ámbi
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### Ámbitos de solicitud de permisos para otras características de SharePoint
@@ -424,13 +420,11 @@ La propiedad **BaseTemplateId** es un elemento secundario, no un atributo del el
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **Tabla 7. Ámbito de solicitud de permisos con propiedades asociadas**

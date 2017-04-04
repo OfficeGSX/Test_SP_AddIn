@@ -133,7 +133,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 2. 在新网站栏的 elements.xml 文件中，编辑 **Field** 元素，使其具有以下示例中显示的属性和值，只是您不应从 Visual Studio 2008 为其生成的值更改 **ID** 属性的 GUID。别忘了大括号"{}"。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Actor" 
@@ -143,14 +143,14 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The person cast, perhaps tentatively, in the role" 
        Type="Text" 
 />
-  ```
+ ```
 
 3. 将另一个"网站栏"添加到名为 CastingStatus 的项目。
     
   
 4. 在新网站栏的 elements.xml 文件中，编辑 **Field** 元素，使其具有以下示例中显示的属性和值，只是您不应从 Visual Studio 2008 为其生成的值更改 **ID** 属性的 GUID。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="CastingStatus" 
@@ -160,11 +160,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The current casting status of the role" 
        Type="Choice">
 </Field>
-  ```
+ ```
 
 5. 因为这是选择字段，您必须指定可能的选项、用户在进行选择时它们应在下拉列表中出现的顺序以及默认选项。将以下子标记添加到 **Field** 元素。
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -181,7 +181,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
       <MAPPING Value="5">Committed to Role</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 
 ### 创建自定义内容类型
@@ -221,11 +221,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 9. 文件中已有针对您添加的两个栏的 **FieldRef** 元素。为两个内置的 SharePoint 2013 栏添加 **FieldRef** 元素作为已存在的两个项的对应项。以下是这些元素的标记。 *您必须为 ID 属性使用相同的 GUID，因为这些是具有固定 ID 的内置字段类型。*  为自定义网站栏在这两个 **FieldRef** 元素 *上*  添加它们。
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
-  ```
+ ```
 
 
     请注意，我们将这些字段指定了自定义显示名称："Character"，即表示戏剧或电影中的角色。
@@ -306,26 +306,26 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 19. 仍在 schema.xml 文件中，在 **View** 元素（其 BaseViewID 值为"0"）中，将现有的 **ViewFields** 元素替换为以下标记。（对名为 **FieldRef** 的 `LinkTitle` 准确使用此 GUID。）
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
   <FieldRef Name="Actor" ID="{GUID from the site column elements.xml}" />
   <FieldRef Name="CastingStatus" ID="{GUID from the site column elements.xml}" />
 </ViewFields>
-  ```
+ ```
 
 20. 将这两个缺少的 ID 属性值替换为在各自网站栏 elements.xml 文件中的 GUID。别忘了框架大括号"{}"。
     
   
 21. 仍在 schema.xml 文件中，在 **View** 元素（其 BaseViewID 值为"1"）中，将现有的 **ViewFields** 元素替换为以下标记。（对名为 **FieldRef** 的 `LinkTitle` 准确使用此 GUID。）
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 </ViewFields>
-  ```
+ ```
 
 22. 将您添加到上一视图的  `Actor` 和 `CastingStatus` 的两个 **FieldRef** 元素复制到此 **ViewFields** 元素作为 `LinkTitle` **FieldRef** 的同辈。
     
@@ -338,7 +338,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 25. 通过添加以下标记作为 **ListInstance** 元素的子项，用一些初始数据填充列表。
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -369,7 +369,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 2. 在"解决方案资源管理器"中，选择"Feature1"以打开功能设计器。在设计器中，将"标题"设置为 Theater and Movie Data Components 并将"说明"设置为Site columns, content types, and list instances for data about theater and movies.。保存文件，然后关闭设计器。
     
@@ -390,7 +390,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     
 1. 打开 Default.aspx 文件，并使用以下标记替换文件的正文元素。标记会添加一个"获得演员表"按钮，当选择此按钮时，会读取外接程序 Web 中的"哈姆雷特中的角色"列表并在  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) 控件（仅当按下该按钮后，才会出现此控件）中显示其数据。
     
-  ```HTML
+ ```HTML
   
 <body >
     <form id="form1" runat="server">
@@ -406,11 +406,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     <asp:GridView ID="GridView1" runat="server" Caption="The Cast" ></asp:GridView>
     </form>
 </body>
-  ```
+ ```
 
 2. 打开 Default.aspx.cs 文件，并向其中添加以下 **using** 语句。
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
@@ -421,7 +421,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.SharePoint.Samples;
-  ```
+ ```
 
 
     其中最后一个语句引用在 TokenHelper.cs 文件中声明的命名空间。
@@ -429,16 +429,16 @@ using Microsoft.SharePoint.Samples;
   
 3. 将下列字段添加到 **Default** 类。
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
-  ```
+ ```
 
 4. 将 **Page_Load** 方法替换为下列代码，这些代码使用 **TokenHelper** 类从符合 OAuth 的安全令牌服务器获取令牌。然后，访问令牌存储在按钮的 [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) 属性中，供该按钮的单击事件处理程序以后检索。
     
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -458,11 +458,11 @@ protected void Page_Load(object sender, EventArgs e)
         Button1.CommandArgument = accessToken;
     }
 }
-  ```
+ ```
 
 5. 将以下事件处理程序添加到 **Default** 类。该处理程序首先检索存储在该按钮的 [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) 属性中的访问令牌。
     
-  ```cs
+ ```cs
   
 protected void Button1_Click(object sender, EventArgs e)
 {
@@ -470,29 +470,29 @@ protected void Button1_Click(object sender, EventArgs e)
     // in the button's command argument.
     string accessToken = ((Button)sender).CommandArgument;
 }
-  ```
+ ```
 
 6. 该处理程序需要重新获取关于回发的经过修改的外接程序 Web URL，因此添加以下代码。
     
-  ```cs
+ ```cs
   
 if (IsPostBack)
 {
     sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
 }
-  ```
+ ```
 
 7. 添加以下行（它使用 SharePoint 2013 REST/OData 终结点之一）来获取列表数据。在此示例中，代码读取部署到外接程序 Web 的"哈姆雷特中的角色"列表。通过此服务的 API，只需一行代码即可轻松选择列表并指定从列表返回三个字段。请注意，在 OData URL 中，您必须使用字段（栏）的内部名称而不是显示名称，因此代码使用  `Title`、 `Actor` 和 `CastingStatus`，而不是  `Character`、 `Actor/Actress` 和 `Casting Status.`。有关 REST/OData Web 服务的详细信息，请参阅 [在 SharePoint REST 请求中使用 OData 查询操作](use-odata-query-operations-in-sharepoint-rest-requests.md)。
     
-  ```cs
+ ```cs
   
 // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
-  ```
+ ```
 
 8. 添加以下代码，它们使用  [System.Net](https://msdn.microsoft.com/library/System.Net.aspx) 命名空间的 [HttpWebRequest](https://msdn.microsoft.com/library/System.Net.HttpWebRequest.aspx) 和 [HttpWebResponse](https://msdn.microsoft.com/library/System.Net.HttpWebResponse.aspx) 类来构建 HTTP 请求和响应对象。
     
-  ```cs
+ ```cs
   
 // HTTP Request and Response construction section
 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + oDataUrl);
@@ -501,11 +501,11 @@ request.Accept = "application/atom+xml";
 request.ContentType = "application/atom+xml;type=entry";
 request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-  ```
+ ```
 
 9. 添加以下代码以解析 ATOM 格式化的响应 XML。它使用  [System.Xml.Linq](https://msdn.microsoft.com/library/System.Xml.Linq.aspx) 命名空间的类解析返回的数据并构建来自 SharePoint 列表中的项的 [List<T>](http://msdn2.microsoft.com/ZH-CN/library/6sh2ey19)。（您也可以使用  [System.Xml](https://msdn.microsoft.com/library/System.Xml.aspx) 命名空间的类。）请注意，在 SharePoint 返回的 XML 中， **entry** 元素的子元素保留有关列表项的元数据。SharePoint 列表项的实际行数据在 **properties** 元素中向下嵌套两个层。因此，使用两次 [Elements<T>](http://msdn2.microsoft.com/ZH-CN/library/bb348465) 扩展方法来筛选掉更高的级别。
     
-  ```cs
+ ```cs
   
 // Response markup parsing section
 XDocument oDataXML = XDocument.Load(response.GetResponseStream(), LoadOptions.None);
@@ -517,27 +517,27 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .Elements(atom + "content")
                          .Elements(m + "properties")
                          .ToList();
-  ```
+ ```
 
 10. 添加以下 LINQ 查询以构建仅包含您需要的属性（而没有其他属性）的匿名类型的  [IEnumerable<T>](http://msdn2.microsoft.com/ZH-CN/library/9eekhta0) 集合。请注意，尽管代码必须通过项的内部名称 `Title` 引用项的标题字段，仍可以将匿名类型中的属性名称（对其分配值）命名为 `Character`。其结果之一是当集合绑定到一个网格控件时，网页上显示更适当的名称"角色"。
     
-  ```cs
+ ```cs
   
 var entryFieldValues = from entry in entries
                        select new { Character=entry.Element(d + "Title").Value, 
                                     Actor=entry.Element(d + "Actor").Value, 
                                     CastingStatus=entry.Element(d + "CastingStatus").Value };
 
-  ```
+ ```
 
 11. 处理程序的最后使用以下代码以将数据绑定到网页上的  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) 控件。网格中的列标题默认为匿名类型的属性名称： `Character`、 `Actor` 及 `CastingStatus`。您可以使用  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) 控件的属性来控制列标题的名称和格式，所以您可以让"Actor/Actress"和"Casting Status"匹配 SharePoint 中的列标题。为简单起见，这里不介绍这些技术。（您也可以使用 [DataGrid](https://msdn.microsoft.com/library/System.Web.UI.WebControls.DataGrid.aspx) 控件。）
     
-  ```cs
+ ```cs
   
 GridView1.DataSource = entryFieldValues;
 GridView1.DataBind();
 
-  ```
+ ```
 
 12. 保存所有文件。
     

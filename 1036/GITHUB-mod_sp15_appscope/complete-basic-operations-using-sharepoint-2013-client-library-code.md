@@ -56,11 +56,9 @@ Tous ces exemples partent du principe que le code se trouve dans un fichier code
     
 
 
+```
 
-```
-
-using Microsoft.SharePoint.Client;
-```
+using Microsoft.SharePoint.Client;```
 
 Sauf mention contraire, vous pouvez partir de l'hypothèse que chacun de ces exemples se trouve dans une méthode sans paramètre qui est définie dans la classe de la page. En outre,  `label1`,  `label2`, et ainsi de suite, sont les noms des objets  [Label](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Label.aspx) sur la page.
   
@@ -88,8 +86,7 @@ Récupérez le titre d'un site web SharePoint.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the 
 // server running SharePoint. 
@@ -107,8 +104,7 @@ context.ExecuteQuery();
 // Now, the web's properties are available and we could display 
 // web properties, such as title. 
 label1.Text = web.Title;
-
-```
+```
 
 
 ### Récupérer uniquement les propriétés sélectionnées d'un site web
@@ -117,8 +113,7 @@ Parfois, le client n'est intéressé que par quelques propriétés d'un objet. L
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -138,8 +133,7 @@ context.ExecuteQuery();
 // an exception because other properties are not available. 
 label1.Text = web.Title;
 label1.Text = web. Description;
-
-```
+```
 
 
 > **REMARQUE**
@@ -155,8 +149,7 @@ L'exemple ci-dessous montre comment accéder en écriture aux propriétés du si
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -174,8 +167,7 @@ web.Update();
 
 // Execute the query to server.
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Créer un nouveau site web SharePoint
@@ -184,8 +176,7 @@ L'exemple suivant illustre la création d'un nouveau site SharePoint en tant que
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -201,8 +192,7 @@ context.Load(newWeb, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = newWeb.Title; 
-
-```
+```
 
 
 ## Tâches de liste SharePoint
@@ -219,8 +209,7 @@ L'exemple ci-dessous récupère toutes les listes SharePoint d'un site web Share
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -242,8 +231,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 > **REMARQUE**
@@ -252,8 +240,7 @@ foreach (List list in web.Lists)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -276,8 +263,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 ### Créer et mettre à jour une liste SharePoint
@@ -286,8 +272,7 @@ Cet exemple crée une liste SharePoint et la met à jour au moyen de la classe  
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -304,8 +289,7 @@ list.Description = "New Description";
 
 list.Update(); 
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Supprimer une liste SharePoint
@@ -314,8 +298,7 @@ Cet exemple supprime une liste SharePoint.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -328,8 +311,7 @@ List list = web.Lists.GetByTitle("My List");
 list.DeleteObject(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Ajouter un champ à une liste SharePoint
@@ -345,8 +327,7 @@ L'exemple suivant ajoute un champ à une liste SharePoint. Ajoutez un alias à l
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -363,8 +344,7 @@ fldNumber.MinimumValue = 35;
 fldNumber.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Tâches d'éléments de liste SharePoint
@@ -388,8 +368,7 @@ L'exemple suivant récupère les éléments d'une liste SharePoint. Vous devrez 
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -411,8 +390,7 @@ foreach (ListItem listItem in items)
     // We have all the list item data. For example, Title. 
     label1.Text = label1.Text + ", " + listItem["Title"]; 
 } 
-
-```
+```
 
 
 ### Créer un nouvel élément de liste
@@ -421,8 +399,7 @@ Cet exemple crée un nouvel élément de liste SharePoint au moyen de la classe 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -442,8 +419,7 @@ newItem["Body"] = "Hello World!";
 newItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Mettre à jour un élément de liste
@@ -452,8 +428,7 @@ Cet exemple met à jour un élément de liste SharePoint.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -470,8 +445,7 @@ listItem["Body"] = "This is my new value!!";
 listItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Supprimer un élément de liste
@@ -480,8 +454,7 @@ Cet exemple supprime un élément de liste SharePoint.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -495,8 +468,7 @@ ListItem listItem = announcementsList.GetItemById(2);
 listItem.DeleteObject(); 
 
 context.ExecuteQuery(); } 
-
-```
+```
 
 
 ## Tâches de champ SharePoint
@@ -513,8 +485,7 @@ L'exemple suivant récupère tous les champs d'une liste SharePoint. Vous aurez 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -530,8 +501,7 @@ foreach (SP.Field field in list.Fields)
 { 
     label1.Text = label1.Text + ", " + field.InternalName;
 } 
-
-```
+```
 
 
 ### Récupérer un champ spécifique dans la liste
@@ -547,8 +517,7 @@ Si vous voulez récupérer des informations relatives à un champ spécifique, u
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -562,8 +531,7 @@ context.ExecuteQuery();
 
 // Now, we can access the specific text field properties. 
 label1.Text = textField.MaxLength; 
-
-```
+```
 
 
 ## Tâches d'utilisateur SharePoint
@@ -580,8 +548,7 @@ Cet exemple ajoute un utilisateur et des informations relatives à celui-ci dans
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -602,8 +569,7 @@ userCreationInfo.Title = "Mr User";
 User newUser = membersGroup.Users.Add(userCreationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Récupérer tous les utilisateurs d'un groupe SharePoint
@@ -612,8 +578,7 @@ Cet exemple récupère les informations relatives à tous les utilisateurs dans 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -631,8 +596,7 @@ foreach (User member in membersGroup.Users)
     // We have all the user info. For example, Title. 
     label1.Text = label1.Text + ", " + member.Title; 
 }  
-
-```
+```
 
 
 ### Créer un rôle
@@ -641,8 +605,7 @@ Cet exemple crée un rôle disposant d'autorisations de création et de gestion 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -660,8 +623,7 @@ creationInfo.Order = 0;
 RoleDefinition rd = context.Web.RoleDefinitions.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Ajouter un utilisateur à un rôle
@@ -670,8 +632,7 @@ Cet exemple ajoute un utilisateur à un rôle.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -687,8 +648,7 @@ roleDefCollection.Add(readDef);
 RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Règles et pratiques recommandées pour l'utilisation du modèle objet client SharePoint .NET
@@ -705,8 +665,7 @@ Le modèle objet client SharePoint .NET Framework vous oblige à utiliser un mod
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -714,8 +673,7 @@ ClientContext context = new ClientContext("http://SiteUrl");
 
 Web web = context.Web; 
 label1.Text = web.Title;  
-
-```
+```
 
 Ce code échoue parce que le code du modèle objet client SharePoint .NET Framework doit :
   
@@ -737,8 +695,7 @@ Dans le modèle objet client SharePoint .NET Framework, lorsque vous appelez une
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -751,8 +708,7 @@ context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = web.Title;   
-
-```
+```
 
 Les différences résident au niveau de l'ajout des lignes suivantes :
   
@@ -760,13 +716,11 @@ Les différences résident au niveau de l'ajout des lignes suivantes :
     
 
 
-
-```
+```
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
-
-```
+```
 
 La première ligne crée une requête pour la propriété **Title** du site web. La deuxième ligne exécute la requête.
   
@@ -779,8 +733,7 @@ Lorsqu'un objet de valeur est renvoyé à partir d'une méthode ou d'une propri�
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -791,8 +744,7 @@ ListCreationInformation creationInfo = new ListCreationInformation();
 creationInfo.Description = web.Title; 
 creationInfo.Title = web.Title; 
 List newList = web.Lists.Add(creationInfo);  
-
-```
+```
 
 Une exception est générée parce que la propriété n'est pas disponible avant d'avoir exécuté la requête. Dans SQL, vous déclareriez une variable locale pour contenir la valeur de  `web.Title` et utiliseriez la variable locale pour la création d'un site web. Dans la bibliothèque cliente, vous ne pouvez pas créer une variable locale. Vous devez fractionner les fonctionnalités en deux requêtes séparées comme illustré dans l'exemple suivant. Il vous faudra également ajouter une instruction **using** pour [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Ajoutez également un alias à l'instruction using pour l'espace de noms [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) de façon à pouvoir faire référence à ses classes de façon non ambiguë. Par exemple, `using SP = Microsoft.SharePoint.Client;`.
   
@@ -800,8 +752,7 @@ Une exception est générée parce que la propriété n'est pas disponible avant
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -819,8 +770,7 @@ creationInfo.Title = web.Title;
 SP.List newList = web.Lists.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 La différence réside dans les trois lignes suivantes :
   
@@ -828,15 +778,13 @@ La différence réside dans les trois lignes suivantes :
     
 
 
-
-```cs
+```cs
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 ...
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Utilisation de méthodes ou de propriétés renvoyant les objets clients dans un autre appel de méthode au sein de la même requête
@@ -859,14 +807,12 @@ L'équivalent de l'objet valeur est l'objet client. Si l'objet serveur correspon
     
 
 
-
-```cs
+```cs
 
 ClientContext context = new ClientContext("http://SiteUrl");
 Web web = context.Web; 
 SP.List list = web.Lists.GetByTitle("Announcements"); 
-
-```
+```
 
 Nous savons que la liste est créée de la façon suivante :
   
@@ -893,8 +839,7 @@ Lors de la lecture de plusieurs fragments de données à partir du même objet, 
   
     
     
-
-```cs
+```cs
 
 static void Method1() 
 { 
@@ -916,8 +861,7 @@ static void Method2()
     context.Load(web, w => w.Description); 
     context.ExecuteQuery();  
 } 
-
-```
+```
 
 Ces méthodes ne présentent pas la même efficacité. Dans **Method1**, le code permettant d'extraire le titre et la description du site web est regroupé. Dans **Method2**, le code permettant d'extraire le titre et la description du site web est séparé par d'autres actions. Cela signifie que **Method2** déclenchera deux requêtes séparées sur le même objet de site web et qu'il y aura deux jeux de résultats pour le même site web. Étant donné que la bibliothèque cliente essaye de renvoyer des données cohérentes, le second jeu de résultats inclura à la fois le titre et la description. Le code précédent pourrait être représenté comme suit.
   
@@ -925,8 +869,7 @@ Ces méthodes ne présentent pas la même efficacité. Dans **Method1**, le code
     
 
 
-
-```
+```
 
 Method1:
 SELECT Title, Description FROM Webs WHERE ... 
@@ -936,8 +879,7 @@ Method2:
 SELECT Title FROM Webs WHERE … 
 SELECT Description FROM Lists WHERE … 
 SELECT Title, Description FROM Webs WHERE … 
-
-```
+```
 
 
 ### Spécifier les propriétés des objets que vous voulez renvoyer
@@ -946,11 +888,9 @@ Dans le modèle objet serveur SharePoint, si vous obtenez un objet **SPWeb**, vo
   
     
     
+```
 
-```
-
-SELECT * FROM Webs 
-```
+SELECT * FROM Webs ```
 
 Dans la bibliothèque cliente, ni **Load<T>**, ni aucune autre méthode ne renvoie toutes les propriétés, de sorte que vous devez explicitement spécifier ce que vous voulez. Par exemple, le code suivant récupère l'objet de site web sans spécifier les propriétés à renvoyer. Il essaye ensuite de lire deux propriétés et l'une d'elles ne figure pas parmi les propriétés qui sont automatiquement renvoyées par **Load**. Ce code génère une exception.
   
@@ -958,8 +898,7 @@ Dans la bibliothèque cliente, ni **Load<T>**, ni aucune autre méthode ne renvo
     
 
 
-
-```cs
+```cs
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
 ClientContext context = new ClientContext("http://SiteUrl"); 
@@ -970,8 +909,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 Pour que le code soit compilé correctement, mettez-le à jour comme ci-dessous. Pour compiler ce code, vous devez ajouter une instruction **using** pour [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . En outre, ajoutez un alias à l'instruction **using** pour l'espace de noms [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) de façon à pouvoir faire référence à ses classes de façon non ambiguë. Par exemple, `using SP = Microsoft.SharePoint.Client;`.
   
@@ -979,8 +917,7 @@ Pour que le code soit compilé correctement, mettez-le à jour comme ci-dessous.
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -993,8 +930,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 
 ### Utilisez l'étendue conditionnelle pour tester la présence de conditions préalables avant de charger des données
@@ -1010,8 +946,7 @@ Pour exécuter du code de façon conditionnelle, définissez une étendue condit
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1036,8 +971,7 @@ if (scope.TestResult.Value)
 { 
     label1.Text = list.Title; 
 }  
-
-```
+```
 
 
 ### Utiliser une étendue de gestion des exceptions pour intercepter des exceptions
@@ -1046,8 +980,7 @@ Cet exemple illustre la création et l'utilisation d'une étendue de gestion des
   
     
     
-
-```cs
+```cs
 
 
 // Starting with ClientContext, the constructor requires a URL to the 
@@ -1083,8 +1016,7 @@ using (scope.StartScope())
 } 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Ressources supplémentaires

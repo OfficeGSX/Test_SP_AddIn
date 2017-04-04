@@ -219,8 +219,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 以下代码演示要求 Web 范围的读取访问权限和列表范围的写入访问权限的外接程序。
   
@@ -250,8 +248,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### 其他 SharePoint 功能的权限请求范围
@@ -424,13 +420,11 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **表 7. 包含关联属性的权限请求范围**

@@ -46,11 +46,11 @@ Stellen Sie vor Beginn Folgendes sicher:
 
 1. Öffnen Sie Windows PowerShell und führen Sie folgendes Cmdlet aus:
     
-  ```
+ ```
   
 Connect-MsolService
 
-  ```
+ ```
 
 2. Geben Sie bei der Anmeldeaufforderung die Mandantenadministrator-Anmeldeinformationen (oder Farmadministrator) für die Office 365-Mandantschaft oder die Farm ein, auf der das Add-In mit der AppRegNew.aspx-Seite registriert wurde.
     
@@ -64,7 +64,7 @@ Connect-MsolService
     
   
 
-  ```
+ ```
   
 $applist = Get-MsolServicePrincipal -all  |Where-Object -FilterScript { ($_.DisplayName -notlike "*Microsoft*") -and ($_.DisplayName -notlike "autohost*") -and  ($_.ServicePrincipalNames -notlike "*localhost*") }
 
@@ -79,7 +79,7 @@ foreach ($appentry in $applist)
      Write-Host "$principalName;$principalId;$appentry.KeyId;$appentry.type;$date;$appentry.Usage"
 
 }  > c:\\temp\\appsec.txt
-  ```
+ ```
 
 4. Öffnen Sie die Datei C:\\temp\\appsec.txt, um den Bericht anzuzeigen. Lassen Sie das Windows PowerShell-Fenster für die nächste Prozedur geöffnet, wenn sich das Ablaufdatum für einen der geheimen Schlüssel nähert.
     
@@ -94,15 +94,15 @@ foreach ($appentry in $applist)
 
 1. Erstellen Sie eine Client-ID-Variable mit folgender Zeile, und verwenden Sie dafür die Client-ID des SharePoint-Add-Ins als Parameter.
     
-  ```
+ ```
   
 $clientId = 'client id of the add-in'
 
-  ```
+ ```
 
 2. Generieren Sie mit den folgenden Zeilen einen neuen geheimen Clientschlüssel:
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -113,7 +113,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
 $newClientSecret
-  ```
+ ```
 
 3. Der neue geheime Clientschlüssel wird in der Windows PowerShell -Konsole angezeigt. Kopieren Sie ihn in eine Textdatei. Sie benötigen ihn in der nächsten Prozedur.
     
@@ -138,7 +138,7 @@ $newClientSecret
 
 1. Öffnen Sie das SharePoint-Add-In-Projekt in Visual Studio, und öffnen Sie die Datei web.config für das Webanwendungsprojekt. Im Abschnitt **appSettings** finden Sie Schlüssel für die Client-ID und den geheimen Clientschlüssel. Beispiel:
     
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="your client id here" />
@@ -146,25 +146,25 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 
-  ```
+ ```
 
 2. Ändern Sie den Namen des **ClientSecret**-Schlüssels in "SecondaryClientSecret" wie im folgenden Beispiel:
     
-  ```XML
+ ```XML
   
 <add key="SecondaryClientSecret" value="your old secret here" />
-  ```
+ ```
 
 3. Fügen Sie einen neuen **ClientSecret**-Schlüssel hinzu und übergeben Sie den neuen geheimen Clientschlüssel. Ihr Markup sollte wie folgt aussehen:
     
-  ```XML
+ ```XML
   <appSettings>
   <add key="ClientId" value="your client id here" />
   <add key="ClientSecret" value="your new secret here" />
   <add key="SecondaryClientSecret" value="your old secret here" />
      ... other settings may be here ...
 </appSettings>
-  ```
+ ```
 
 4. Wenn Sie zu einer neuen "TokenHelper"-Datei gewechselt haben, müssen Sie das Projekt neu erstellen.
     
@@ -182,13 +182,13 @@ Für abgelaufene Clientschlüssel müssen Sie zunächst alle abgelaufenen Schlü
 
 1. Stellen Sie eine Verbindung mit dem Mandanten-Admininistratorbenutzer mit dem unten aufgeführten Markup mithilfe von SharePoint 2013 Windows PowerShell her.
     
-  ```
+ ```
   
 import-module MSOnline
 $msolcred = get-credential
 connect-msolservice -credential $msolcred
 
-  ```
+ ```
 
 2. Abrufen von **ServicePrincipals** und Schlüsseln. Durch das Drucken von **$keys** werden drei Datensätze zurückgegeben. Ersetzen Sie die einzelnen **KeyId** unter *KeyId1*  , *KeyId2*  und *KeyId3*  . Außerdem wird Ihnen das **EndDate** der einzelnen Schlüssel angezeigt. Vergewissern Sie sich, dass dort Ihre Schlüssel angezeigt werden.
     
@@ -196,17 +196,17 @@ connect-msolservice -credential $msolcred
     
 
 
-  ```
+ ```
   
 $clientId = "27c5b286-62a6-45c7-beda-abbaea6eecf2"
 $keys = Get-MsolServicePrincipalCredential -AppPrincipalId $clientId
 Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -AppPrincipalId $clientId 
 
-  ```
+ ```
 
 3. Generieren eines neuen **ClientSecret** für diese **ClientID**. Es verwendet die gleichen **ClientId**,wie in dem vorstehenden Schritt eingerichtet. Der neue **ClientSecret** ist für 3 Jahre gültig.
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -220,7 +220,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret   -StartDate $dtStart  -EndDate $dtEnd
 $newClientSecret
 
-  ```
+ ```
 
 4. Kopieren Sie die Ausgabe des **$newClientSecret**.
     

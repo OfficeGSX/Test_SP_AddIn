@@ -123,7 +123,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. Guarde y cierre el archivo.
     
@@ -283,7 +283,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
   
 10. Visual Studio genera el siguiente código XML en el archivo elements.xml del elemento de complemento (se añaden saltos de línea por claridad). Fíjese en que el atributo **Title** del elemento **ClientWebPart** está establecido en "Basic add-in part Title", y que la descripción está establecida en "Basic add-in part Description". Borre la palabra "Title" en el primero y sustituya el segundo conUn elemento de complemento básico.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### Establecer como página de inicio del complemento la página de inicio de la web de host
@@ -449,11 +449,9 @@ Si la página hospedada en la web de complemento no es susceptible de recibir at
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Puede descargar un  [ejemplo de código de elemento de complemento](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16) que muestra cómo usar una página de SharePoint como la página de contenido.
   
@@ -472,10 +470,8 @@ Puede usar mensajes POST de su página web de contenidos para especificar el tam
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 En el ejemplo anterior, el valor de **senderId** se va a establecer en la cadena de consultas de la página automáticamente por parte del código del elemento del complemento cuando se represente la página. Bastará con que la página lea el valor de **SenderId** en la cadena de consultas y lo use cuando se solicite cambiar el tamaño. Puede recuperar la dirección URL de la web de host de la cadena de consultas anexando los tokens de **StandardTokens** o **HostUrl** al atributo **Src** en la definición del elemento del complemento. Puede descargar el [ejemplo de código para cambiar el tamaño de elementos de complemento](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88) para ver un elemento de complemento que cambia de tamaño dinámicamente.
   
@@ -505,10 +501,8 @@ Para usar el token **_editMode_**, agregue un parámetro de cadena de consulta a
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
 El token **_editMode_** permite a la página de contenido determinar si el elemento de complemento está en el modo de edición, en cuyo caso el token **_editMode_** se resuelve en 1 y, de lo contrario, el token se resuelve en 0.
   

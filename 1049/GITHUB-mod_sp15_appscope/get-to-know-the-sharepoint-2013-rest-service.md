@@ -151,8 +151,7 @@ List.GetByTitle(listname)
 |Извлечение метаданных единственного списка  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |Неприменимо  <br/> |
 |Извлечение элементов в списке  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |Неприменимо  <br/> |
 |Извлечение определенного свойства документа (в данном случае  название документа).  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |Неприменимо  <br/> |
-|Создать список  <br/> | `lists` <br/> |POST  <br/> |
-```
+|Создать список  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ List.GetByTitle(listname)
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|Добавление элемента в список  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|Добавление элемента в список  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

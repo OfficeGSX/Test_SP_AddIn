@@ -87,7 +87,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     > **WICHTIG**
       > Die Token „ItemURL" und „ItemID" werden nur übergeben, wenn ein Element ausgewählt ist. In einer SharePoint-Add-In mit Produktionsqualität muss Ihr Code Situationen, in denen kein Element ausgewählt ist, verarbeiten können. In diesem Beispiel warnt der Code den Benutzer, dass kein Element ausgewählt wurde. 
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +125,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 ### So fügen Sie dem SharePoint-Add-In-Projekt eine benutzerdefinierte Menüelementaktion hinzu
@@ -156,7 +156,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements 
@@ -180,7 +180,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
   </CustomAction>
 </Elements>
 
-  ```
+ ```
 
 5. Fügen Sie die folgenden Abfrageparameter zum Ende des Attributs **Url** des Elements **UrlAction** hinzu:
     
@@ -224,7 +224,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
    
 4. Visual Studio generiert das folgende Markup in der Datei "elements.xml" des Features für die benutzerdefinierte Menübandaktion:
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -259,7 +259,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
   </CustomAction>
 </Elements> 
 
-  ```
+ ```
 
 5. Fügen Sie die folgenden Abfrageparameter zum Ende des Attributs **CommandAction** des Elements **CommandUIHandler** hinzu:
     

@@ -186,7 +186,7 @@ La Figura 1 ilustra una página web remota con el control cromo.
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 3. Puede usar el control cromo de forma declarativa. En el siguiente ejemplo de código, el marcado HTML declara el control sin usar código de JavaScript para configurar e inicializar el control. El siguiente marcado de código efectúa las siguientes tareas:
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```HTML
+ ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
-  ```
+ ```
 
 
     La biblioteca de SP.UI.Controls.js representa de forma automática el control si encuentra el atributo **data-ms-control="SP.UI.Controls.Navigation"** en un elemento **div**.

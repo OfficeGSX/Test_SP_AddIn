@@ -45,7 +45,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
   
 4. Dans le fichier elements.xml de la nouvelle colonne de site, modifiez l'élément **Field** pour qu'il possède les attributs et les valeurs de l'exemple suivant. Toutefois, *ne modifiez **pas** le GUID*  de l'attribut **ID**; conservez la valeur que Visual Studio a généré pour celui-ci. * Utilisez donc le copier-coller avec précaution*  .
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Division" 
@@ -56,14 +56,14 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
        Type="Text" 
        Required ="FALSE">
 </Field>
-  ```
+ ```
 
 5. Ajoutez une autre **colonne de site** au même dossier et nommez-laOrientationStage (Étape d'orientation).
     
   
 6. Dans le fichier elements.xml de la nouvelle colonne de site, modifiez l'élément **Field** pour qu'il possède les attributs et valeurs de l'exemple suivant. Vous ne devez toutefois pas changer le GUID de l'attribut **ID**; conservez la valeur Visual Studio générée pour celui-ci.
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="OrientationStage" 
@@ -74,11 +74,11 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
        Type="Choice"
        Required ="TRUE">
 </Field>
-  ```
+ ```
 
 7. Comme il s'agit d'un champ de choix, vous devez spécifier les choix possibles et l'ordre dans lequel ils doivent apparaître dans la liste déroulante lorsqu'un utilisateur effectue une sélection. Comme il s'agit d'un champ obligatoire, indiquez également une valeur par défaut. Ajoutez le balisage enfant suivant à l'élément **Field**.
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -95,7 +95,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
       <MAPPING Value="5">Completed</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 8. Enregistrez tous les fichiers.
     

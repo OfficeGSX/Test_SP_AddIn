@@ -110,8 +110,7 @@ apphost 页所需的代码十分简单。apphost 页的主要部分是 **SPAppIF
   
 
 
-
-```HTML
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -160,8 +159,7 @@ apphost 页所需的代码十分简单。apphost 页的主要部分是 **SPAppIF
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>
-```
+</html>```
 
 如果您希望您的用户将链接深入您的外接程序的各个部分，则您的 apphost 页和 **IFrame** 的内容可进行协作以使这成为可能。一种替代方式是在远程外接程序的每页中使用 **IFrame** 公告消息通信和单独的 URL。若要每页具有单独的 URL，您可在外接程序 Web 中创建单独的页或在一个页上使用查询字符串参数。
   

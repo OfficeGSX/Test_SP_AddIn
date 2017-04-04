@@ -120,7 +120,7 @@ Um diesem Artikel zu folgen und den Code selbst einzugeben, laden Sie das Beispi
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -240,7 +240,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. Ändern Sie in **Home.aspx.cs** alle Instanzen von `SPHostUrl` in `SPAppWebUrl`.
     

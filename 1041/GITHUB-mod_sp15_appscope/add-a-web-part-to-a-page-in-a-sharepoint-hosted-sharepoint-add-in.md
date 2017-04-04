@@ -48,12 +48,12 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
   
 3. 同じ **<asp:Content>** 要素の内部で、次の **WebPartZone** を追加します。
     
-  ```XML
+ ```XML
   
 <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly"
       ID="HomePage1" Title="loc:full" />
 
-  ```
+ ```
 
 4. ファイルを保存して閉じます。
     
@@ -66,7 +66,7 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
   
 7. **File** 要素で、子 **AllUsersWebPart** 要素を追加して、 **WebPartZoneID** をページで作成した Web パーツ領域の ID に設定します。ファイルのコンテンツは、次のようになります。このマークアップは、SharePoint に **AllUsersWebPart** を "HomePage1" という名前の Web パーツ領域に挿入するよう指示します。
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -78,11 +78,11 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
   </Module>
 </Elements>
 
-  ```
+ ```
 
 8. 次のマークアップに示すように、 **CDATA** 要素を **AllUsersWebPart** の子として追加し、次に **webParts** 要素を **CDATA** の子として追加します。
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -91,11 +91,11 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 9. 次の **webPart** マークアップを **webParts** 要素の子として追加します。このマークアップは **XsltListViewWebPart** を追加し、Web パーツに [シアトルの新入社員] リスト] リストを表示するよう指示します。 **ViewContentTypeId** プロパティ値は "0x" であり、NewEmployee コンテンツ タイプの実際の ID ではないことに注意してください。
     
-  ```
+ ```
   
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
@@ -115,7 +115,7 @@ SharePoint アドイン内のページに Web パーツを含める方法につ�
       </properties>
     </data>
   </webPart>
-  ```
+ ```
 
 
 ## アドインを実行してテストする

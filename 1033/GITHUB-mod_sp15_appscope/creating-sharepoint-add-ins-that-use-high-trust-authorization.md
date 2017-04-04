@@ -83,11 +83,9 @@ As a practical matter, SharePoint farm administrators determine which type of to
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 To create a non-broker token issuer, the  `-IsTrustBroker` switch is not used. There is one other difference. The value of the `-RegisteredIssuerName` parameter is always in the form of two GUIDs separated by the "@" character; _GUID_@ _GUID_. The GUID on the right side is always the ID of the authentication realm of the SharePoint farm (or site subscription). The GUID on the left side is always a specific ID for a token issuer. It is a random GUID when a  *trust broker*  token issuer is being created. But when a non-broker token issuer is being created, the specific issuer GUID must be the same GUID that is used as the client ID of the SharePoint Add-in. This parameter provides a name for the issuer. It also tells SharePoint which SharePoint Add-in is the only one for which the certificate can issue tokens. The following is a partial example:
   
@@ -95,11 +93,9 @@ To create a non-broker token issuer, the  `-IsTrustBroker` switch is not used. T
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 Typically, the  `New-SPTrustedSecurityTokenIssuer` cmdlet is used in a script that performs other tasks to configure SharePoint for high-trust add-ins. For more information about such scripts and complete examples of the `New-SPTrustedSecurityTokenIssuer` cmdlet, see [High-trust configuration scripts for SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -150,8 +146,7 @@ Each certificate in the chain is added to SharePoint's list of trusted root auth
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -161,8 +156,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 The root and intermediate certificates should be added only once on a SharePoint farm. Typically, the web application's certificate is added in a separate script that does other configuration too, such as the call to  `New-SPTrustedSecurityTokenIssuer`. For examples, see  [High-trust configuration scripts for SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -190,8 +184,7 @@ Following is an example of an **appSettings** section for a high-trust SharePoin
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -199,8 +192,7 @@ Following is an example of an **appSettings** section for a high-trust SharePoin
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **SECURITY NOTE**

@@ -151,8 +151,7 @@ SharePoint 2013 REST 服务中的端点对应于 SharePoint 客户端对象模�
 |检索单个列表的元数据  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |不适用  <br/> |
 |检索列表中的项目  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |不适用  <br/> |
 |检索文档的特定属性。（在此示例中，为文档标题。）  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |不适用  <br/> |
-|创建列表  <br/> | `lists` <br/> |POST  <br/> |
-```
+|创建列表  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ SharePoint 2013 REST 服务中的端点对应于 SharePoint 客户端对象模�
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|向列表添加项  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|向列表添加项  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

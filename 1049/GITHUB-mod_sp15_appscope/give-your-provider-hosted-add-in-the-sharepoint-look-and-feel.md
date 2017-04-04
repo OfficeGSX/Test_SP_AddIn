@@ -148,7 +148,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 2. В разделе **head** отобразится сценарий, который загружает пару библиотек JavaScript. Сразу же после него вставьте указанный ниже сценарий. Он загружает файл SP.UI.Controls.js, который имеется на всех веб-сайтах SharePoint в папке /_layouts/15/. Помимо прочего, этот файл загружает библиотеку CSS SharePoint.
     
-  ```
+ ```
   
 <script type="text/javascript">
     var hostweburl;
@@ -183,11 +183,11 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
         }
     }
 </script>
-  ```
+ ```
 
 3. В верхней части раздела body страницы добавьте указанную ниже разметку. Это позволит добавить на страницу верхнюю панель SharePoint, называемую элемент управления хрома. Подробности этой разметки станут более понятными, когда далее в этой статье мы протестируем измененную надстройку. (Так как ранее надстройки назывались приложениями, в некоторых именах свойств отображается слово app.)
     
-  ```
+ ```
   
 <!-- Chrome control placeholder. Options are declared inline.  -->
 <div 
@@ -210,15 +210,15 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
             ]
          }'>
 </div>
-  ```
+ ```
 
 4. Заголовки **H1** и ссылка в разделе body страницы автоматически будут использовать стили, определенные в библиотеке CSS SharePoint, поэтому не нужно их изменять. Для иллюстрации того, как использовать стили SharePoint, задайте для заголовков столбцов в трех элементах управления **GridView** стиль SharePoint "Прописные буквы", добавив атрибут **HeaderStyle-CssClass** к каждому элементу управления и присвоив ему значение `ms-uppercase`. Ниже приведен пример такого кода. Внесите такие же изменения во все три элемента управления **GridView**.
     
-  ```XML
+ ```XML
   
 <asp:GridView ID="ordersGridView" runat="server" CellPadding="5" GridLines="None"
 HeaderStyle-CssClass="ms-uppercase" />
-  ```
+ ```
 
 5. Элемент управления хрома использует значок надстройки, поэтому нам необходима вторая копия файла значка на удаленном веб-сервере. В **обозревателе решений** щелкните правой кнопкой мыши файл AppIcon.png в проекте **ChainStore** и выберите пункт **Копировать**. 
     
@@ -235,13 +235,13 @@ HeaderStyle-CssClass="ms-uppercase" />
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
     spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 9. Для пользовательского интерфейса SharePoint необходимы четыре других указанных ниже файла ASP.NET. 
     
@@ -265,36 +265,36 @@ protected void Page_Load(object sender, EventArgs e)
     
 
 
-  ```XML
+ ```XML
   
 <link type="text/css" rel="stylesheet"
 href="<%= spContext.SPHostUrl.ToString() + "_layouts/15/defaultcss.ashx" %>" />
-  ```
+ ```
 
 10. Это и следующее за ним действия уже выполнены для страниц Order Form (Форма заказа) и Account (Учетная запись), поэтому необходимо выполнить их только для страниц Contact (Контакт) и Help (Справка). Чтобы получить объект  `spContext` для каждой страницы, откройте ASPX.CS-файлы кода программной части для трех ASPX-страниц. В каждом из них добавьте указанный ниже член в класс **Page**.
     
-  ```cs
+ ```cs
   
 protected SharePointContext spContext;
-  ```
+ ```
 
 11. Замените метод **Page_Load** указанной ниже версией. Объект извлекается из кэша сеанса. Он был помещен в кэш, когда был создан методом **Page_Load** начальной страницы надстройки.
     
-  ```cs
+ ```cs
   protected void Page_Load(object sender, EventArgs e)
 {
     spContext = Session["SPContext"] as SharePointContext;
 }
-  ```
+ ```
 
 12. Откройте страницу OrderForm.aspx. В верхнем элементе **Label** замените элемент **<b>** в фразе **Place Order** (Разместить заказ) на теги span, ссылающиеся на класс CSS `ms-accentText`. После этого весь элемент управления **Label** должен иметь указанный ниже вид.
     
-  ```XML
+ ```XML
   
 <asp:Label ID="lblOrderPrompt" runat="server"
          Text="Enter a supplier, product, and quantity; and then press <span class='ms-accentText'>Place Order</span>.">
 </asp:Label>
-  ```
+ ```
 
 
 ## Запуск надстройки и тестирование нового пользовательского интерфейса SharePoint

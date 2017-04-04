@@ -151,8 +151,7 @@ Die folgende Tabelle enthält Beispiele für typische REST-Endpunkt-URLs, um Ihn
 |Ruft die Metadaten einer einzelnen Liste ab  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |Nicht zutreffend  <br/> |
 |Ruft Elemente in einer Liste ab  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |Nicht zutreffend  <br/> |
 |Ruft eine bestimmte Eigenschaft eines Dokuments ab. (In diesem Fall den Dokumenttitel.)  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |Nicht zutreffend  <br/> |
-|Erstellt eine Liste  <br/> | `lists` <br/> |POST  <br/> |
-```
+|Erstellt eine Liste  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ Die folgende Tabelle enthält Beispiele für typische REST-Endpunkt-URLs, um Ihn
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|Fügt einer Liste ein Element hinzu  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|Fügt einer Liste ein Element hinzu  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

@@ -154,8 +154,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Benutzer-und-Add-In-T
     
 
 
-
-```
+```
 
 {
  "aud": "00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -165,8 +164,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Benutzer-und-Add-In-T
  "nameid": "2303000085ff9abc",
  "actor": "964de6ad-6d28-4dc7-8e05-3acd8006e5c9@040f2415-e6e3-4480-96ce-26ef73275f73",
  "identityprovider": "urn:federation:microsoftonline"
-}
-```
+}```
 
 
 **Tabelle 1: Von ACS ausgestellte Benutzer-und-Add-In-Tokenansprüche**
@@ -192,8 +190,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Nur-Add-In-Zugriffsto
     
 
 
-
-```
+```
 
 {
  "aud":"00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -205,8 +202,7 @@ Im Folgenden sehen Sie ein decodiertes **Beispiel für ein Nur-Add-In-Zugriffsto
  "oid":"1d47ac31-498b-4988-8aac-85fc9bd2e1ce",
  "trustedfordelegation":"false",
  "identityprovider":"00000001-0000-0000-c000-000000000000@040f2415-e6e3-4480-96ce-26ef73275f73"
-}
-```
+}```
 
 
 **Tabelle 2: Von ACS ausgestellte Nur-Add-In-Tokenansprüche**
@@ -258,13 +254,11 @@ Wenn Sie verwalteten Code verwenden, befindet sich Beispielcode für einige dies
     
 
 
-
-```cs
+```cs
 
 SharePointContextToken contextToken =
     TokenHelper.ReadAndValidateContextToken(contextTokenString, 
-    Request.Url.Authority);
-```
+    Request.Url.Authority);```
 
 Ein Beispiel, wie Sie einige dieser Aufgaben mit PHP erledigen können, finden im Beispiel  [SharePoint 2013: Durchführen von Vorgängen in der SharePoint-Dokumentbibliothek von einer PHP-Website](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef).
   
@@ -368,11 +362,9 @@ Im Folgenden ist die Struktur der URL dargestellt:
     
 
 
+```
 
-```
-
-https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>
-```
+https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>```
 
 Im Folgenden finden Sie ein Beispiel für die Durchführung der Anforderung in ASP.NET, bei der die TokenHelper-Datei verwendet wird:
   
@@ -380,10 +372,8 @@ Im Folgenden finden Sie ein Beispiel für die Durchführung der Anforderung in A
     
 
 
-
-```
-Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));
-```
+```
+Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));```
 
 
 ### Beispiel für ein Kontexttoken
@@ -393,8 +383,7 @@ Im Folgenden sehen Sie ein Beispiel für ein Kontexttoken. Das kleine JavaScript
   
     
     
-
-```
+```
 {"typ":"JWT","alg":"HS256"}
 .
 {
@@ -413,8 +402,7 @@ xJnejSW3umatKM4fsfY1MClVCxrkXb2EQ8H/TmwaJc388YW063GEVUS/3BTSgSIRBKQUmXJuJ6BZY7WT
 6Vv7dVhQ1Dq5Y3fQ65e9LpJ580jCgzYYvpIFT+Wx5V+17mjY2T8wug04K2ts87Znsr+GfFCorf7NS/lj5HjoxRAQ2tva/8dwguSLwxcUwi/Q9MbpR0NNtlpwVazqi9O
 hJ4Df7gVhUDdJ0Dtc6aFCPbl5ZLDDRs42xK2", 
  "isbrowserhostedapp": "true"
-}
-```
+}```
 
 Die Ansprüche **aud**, **iss**, **nbf** und **exp** sind exakt dieselben wie ein einem Zugriffstoken und weiter oben erläutert. Die Ansprüche **appctxsender**, **appctx**, **CacheKey**, **SecurityTokenServiceUri**, **refreshtoken** und **isbrowserhostedapp** werden in der folgenden Tabelle beschrieben.
   
@@ -492,12 +480,10 @@ Die Ansprüche **nbf** und **exp** haben das durch die [JWT-Spezifikation](http:
   
     
     
-
-```cs
+```cs
 
 DateTime exp = new DateTime(1970,1,1).AddSeconds(jWTTimeStamp);
-
-```
+```
 
 
 ## Problembehandlung bei der Tokenhandhabung

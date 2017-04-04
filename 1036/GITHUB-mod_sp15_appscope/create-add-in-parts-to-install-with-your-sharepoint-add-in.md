@@ -123,7 +123,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. Enregistrez et fermez le fichier.
     
@@ -283,7 +283,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
   
 10. Visual Studio génère le code XML suivant pour le fichier elements.xml du composant de complément (retours à la ligne ajoutés pour plus de clarté). Notez que l'attribut **Title** de l'élément **ClientWebPart** est défini sur « Basic add-in part Title » (Titre de composant de complément de base) et que la description indique « Basic add-in part Description » (Description du composant de complément de base). Supprimez le mot « Title » du premier et remplacez le deuxième parA basic add-in part (Un composant de complément de base).
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### Définir la page de démarrage du complément sur la page d'accueil du site web hôte
@@ -449,11 +449,9 @@ Si la page hébergée sur le site web de complément n'est pas susceptible de fa
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Vous pouvez télécharger un  [exemple de code de composant de complément](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16) qui montre comment utiliser une page SharePoint en tant que page de contenu.
   
@@ -472,10 +470,8 @@ Vous pouvez utiliser des messages POST de votre page web de contenu pour spécif
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 Dans l'exemple ci-dessus, la valeur de **senderId** est définie automatiquement sur la chaîne de requête de la page par le code du composant du complément lorsque cette page est affichée. Votre page devra simplement lire la valeur de **SenderId** à partir de la chaîne de requête et l'utiliser lors d'une demande de redimensionnement. Vous pouvez récupérer l'URL du site web hôte à partir de la chaîne de requête en ajoutant les jetons **StandardTokens** ou **HostUrl** à l'attribut **Src** dans la définition de votre composant de complément. Vous pouvez télécharger l' [exemple de code des composants du complément de redimensionnement](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88) pour voir un composant de complément redimensionné de manière dynamique.
   
@@ -505,10 +501,8 @@ Pour utiliser le jeton **_editMode_**, ajoutez un paramètre de chaîne de requ�
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
 Le jeton **_editMode_** permet à votre page de contenu de déterminer si le composant de complément est en mode d'édition. Si tel est le cas, le jeton **_editMode_** est résolu en 1 ; sinon, il est résolu en 0.
   

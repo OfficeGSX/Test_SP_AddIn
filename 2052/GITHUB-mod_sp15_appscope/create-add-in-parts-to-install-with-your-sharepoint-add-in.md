@@ -123,7 +123,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. 保存并关闭该文件。
     
@@ -283,7 +283,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
   
 10. Visual Studio 在外接程序部件的 elements.xml 文件中生成以下 XML 代码（为了清楚可见，添加了换行符）。请注意， **ClientWebPart** 元素的 **Title** 特性设置为"Basic add-in part Title"，说明设置为"Basic add-in part Description"。从第一个特性中删除"Title"一词，并将第二个特性替换为A basic add-in part。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### 将外接程序起始页设置为托管 Web 主页
@@ -449,11 +449,9 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 您可以下载展示如何将 SharePoint 页作为内容页的  [外接程序部件代码示例](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16)。
   
@@ -472,10 +470,8 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 在以上示例中，呈现页面时，外接程序部件代码将对页面的查询字符串自动设置 **senderId** 值。在请求调整大小时，您的页面只需从查询字符串中读取 **SenderId** 值并使用该值即可。您可以通过将 **StandardTokens** 或 **HostUrl** 令牌追加到外接程序部件定义中的 **Src** 属性来检索查询字符串的主机 Web URL。您可以下载 [调整外接程序部件大小的代码示例](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88)，以查看动态调整大小的外接程序部件。
   
@@ -505,10 +501,8 @@ window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</messag
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
  **_editMode_** 标记让内容页可以判断外接程序部件是否处于编辑模式。如果外接程序部件处于编辑模式， **_editMode_** 标记将解析为 1；否则解析为 0。
   

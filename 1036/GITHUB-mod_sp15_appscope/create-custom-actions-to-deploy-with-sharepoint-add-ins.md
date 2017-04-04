@@ -87,7 +87,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     > **IMPORTANTE**
       > Les jetons ItemURL et ItemID sont uniquement transmis lorsqu'un élément est sélectionné. Dans un Complément SharePoint de qualité production, votre code doit gérer les situations dans lesquelles aucun élément n'est sélectionné. Dans cet exemple, le code avertit l'utilisateur qu'aucun élément n'a été sélectionné. 
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +125,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 ### Pour ajouter une action personnalisée associée à un élément de menu au projet de Complément SharePoint
@@ -156,7 +156,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements 
@@ -180,7 +180,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
   </CustomAction>
 </Elements>
 
-  ```
+ ```
 
 5. Ajoutez les paramètres de requête suivants à la fin de l'attribut **Url** de l'élément **UrlAction**:
     
@@ -224,7 +224,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
    
 4. Visual Studio génère le balisage suivant dans le fichier elements.xml file de la fonction d'action personnalisée de ruban :
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -259,7 +259,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
   </CustomAction>
 </Elements> 
 
-  ```
+ ```
 
 5. Ajoutez les paramètres de requête suivants à la fin de l'attribut **CommandAction** de l'élément **CommandUIHandler**:
     

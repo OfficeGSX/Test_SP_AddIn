@@ -45,7 +45,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
   
 4. En el archivo elements.xml de la nueva columna de sitio, edite el elemento **Field** para que tenga los atributos y valores que se muestra en el ejemplo siguiente, salvo por que *no **debería** cambiar el GUID*  para el atributo **ID** respecto al valor que Visual Studio generó para él, *por lo que debe tener cuidado si está utilizando copiar y pegar*  .
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Division" 
@@ -56,14 +56,14 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
        Type="Text" 
        Required ="FALSE">
 </Field>
-  ```
+ ```
 
 5. Agregue otra **Columna de sitio** en la misma carpeta y llámelaOrientationStage.
     
   
 6. En el archivo elements.xml de la nueva columna de sitio, edite el elemento **Field** para que tenga los atributos y valores que se muestran en el ejemplo siguiente, salvo por que no debe cambiar el GUID para el atributo **ID** respecto al valor que Visual Studio generó para él.
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="OrientationStage" 
@@ -74,11 +74,11 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
        Type="Choice"
        Required ="TRUE">
 </Field>
-  ```
+ ```
 
 7. Puesto que es un campo de opción, debe especificar las posibles opciones y el orden en que deben aparecer en la lista desplegable cuando un usuario realiza una elección. Y, dado que es un campo obligatorio, debe especificar un valor predeterminado. Agregue el siguiente código de marcado secundario al elemento **Field**.
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -95,7 +95,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
       <MAPPING Value="5">Completed</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 8. Guardar todos los archivos.
     

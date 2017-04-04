@@ -62,12 +62,10 @@ SharePoint 跨域库包含在文件 SP.RequestExecutor.js 中，该文件位于�
     
   
 - 在 SharePoint 托管的外接程序中，您可以将外接程序主体类型保留设置为默认值，即 **Internal**。然后将 **Internal** 元素的 **AllowedRemoteHostUrl** 属性设置为远程 Web 应用程序的 URL，如以下示例中所示。
-    
-```
+    ```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>
-```
+</AppPrincipal>```
 
 
 > **注释**

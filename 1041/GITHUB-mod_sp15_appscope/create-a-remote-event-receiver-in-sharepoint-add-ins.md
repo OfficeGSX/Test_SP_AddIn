@@ -120,7 +120,7 @@ RER は SOAP Web サービスにする必要があります。継続して用い
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -240,7 +240,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. Home.aspx.cs で、 `SPHostUrl` のすべてのインスタンスを `SPAppWebUrl` に変更します。
     

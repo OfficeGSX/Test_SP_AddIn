@@ -335,20 +335,20 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
   
 3. В редакторе кода добавьте в метод **Candidates_Validate** следующий код:
     
-  ```VB.net
+ ```VB.net
   
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
-  ```
+ ```
 
 
-  ```cs
+ ```cs
   
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
-  ```
+ ```
 
 
     Метод **Validate** запускается, когда пользователь пытается сохранить запись. Если пользователь входит в группу безопасности "Менеджер по найму", запись сохраняется, в противном случае отображается ошибка "В разрешении отказано" и запись отклоняется.

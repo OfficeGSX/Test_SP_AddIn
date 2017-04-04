@@ -62,12 +62,10 @@ Pour SharePoint, la bibliothèque inter-domaine est chargée sur une page de l'a
     
   
 - Dans un complément hébergé sur SharePoint, vous pouvez conserver la valeur par défaut du type de principal de complément, à savoir **Internal**. Définissez ensuite l'attribut **AllowedRemoteHostUrl** de l'élément **Internal** sur l'URL de l'application web à distance, comme dans l'exemple suivant.
-    
-```
+    ```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>
-```
+</AppPrincipal>```
 
 
 > **REMARQUE**

@@ -53,20 +53,20 @@ SharePoint アドインの更新イベント用のハンドラーを作成して
 
 1. AppEventReceiver.svc.cs ファイルを開き、ハンドラーを呼び出したイベントが更新イベントかどうかをテストする条件構造を  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) メソッドに追加します。更新コードをこの構造の内部に追加します。コードで SharePoint にアクセスする必要がある場合は、SharePoint マネージ コード クライアント オブジェクト モデル (CSOM) または Representational State Transfer (REST) インターフェイスを使用できます。メソッド内での条件構造の場所は、メソッドの他のコードがどのように構造化されているかにより異なります。通常は、アドインのインストール イベントとアンインストール イベントをテストするのと似た条件構造になります。 [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) に渡される [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) オブジェクトの特定のプロパティまたはサブプロパティで **null** 値または他の無効な値をテストする条件構造の内部になる場合があります。また、 **try** ブロックの中になることもあります。構造の例を次に示します。 _properties_ オブジェクトは [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) オブジェクトです。
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. ハンドラー内で CSOM を使用するには、 **TokenHelper.CreateAppEventClientContext** メソッドを呼び出して [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) オブジェクトを取得する **using** ブロックを (条件ブロックの中に) 追加します。アドイン Web にアクセスするには、2 番目のパラメーターに **true** を指定します。ホスト Web にアクセスするには、 **false** を指定します。両方にアクセスする必要がある場合は、2 つの異なるクライアント コンテキスト オブジェクトが必要です。
     
   
 3. ハンドラーで SharePoint 以外のコンポーネントにアクセスする必要がある場合は、そのコードをクライアント コンテキスト ブロックの外側に配置します。コードは次のような構造になります。
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -81,11 +81,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. REST インターフェイスを使用するには、コードで **TokenHelper** クラスの他のメソッドを使用してアクセス トークンを取得します。その後、SharePoint に対して行う要求にこのトークンを組み込みます。詳細については、「 [SharePoint 2013 REST エンドポイントを使用して基本的な操作を完了する](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)」を参照してください。コードは次のような構造になります。
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -102,15 +102,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. SharePoint にアクセスするには、REST コードでホスト Web かアドイン Web またはその両方の URL もわかっている必要があります。これらの URL はどちらも、 [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) メソッドに渡される [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) オブジェクトのサブプロパティです。次のコードではその取得方法を示します。
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 アドインの 2 回目 (または 3 回目以降) の更新を行う場合、一部の更新ロジックが同じアドイン インスタンスに対して複数回実行されないようにすることが必要な場合があります。以下の手順ではその方法を示します。
   
@@ -128,7 +128,7 @@ Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
   
 3. 新しい更新ロジック (2.0.0.0 から 3.0.0.0 への更新用) を、この構造に追加します。次に例を示します。
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -137,11 +137,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. 以降の更新ごとに、上記の手順を繰り返します。3.0.0.0 から 4.0.0.0 への更新の場合、コードは次のような構造になります。
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -156,7 +156,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **重要**
@@ -196,8 +196,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -214,8 +213,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 エラー処理では、最後に **ProcessEvent** メソッドが SharePoint 2013 の更新インフラストラクチャに返す [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) オブジェクトに、エラー メッセージとキャンセル ステータスを割り当てることが必要です。次に例を示します。このコードでは、 _result_ は、 **ProcessEvent** メソッドの最初で宣言されている **SPRemoteEventResult** オブジェクトです。
   
@@ -223,8 +221,7 @@ catch (Exception e)
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -233,8 +230,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **重要**

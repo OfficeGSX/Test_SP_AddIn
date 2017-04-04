@@ -83,16 +83,14 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
  Vous avez vu un exemple de ce modèle dans l'article précédent de cette série, dans la méthode `GetLocalEmployeeName` présentée ci-dessous. Notez les points suivants concernant cette méthode :
   
@@ -107,8 +105,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -122,8 +119,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

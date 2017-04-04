@@ -57,18 +57,14 @@ Para usar los ejemplos de este artículo, precisará lo siguiente:
     
   
 - Una referencia a la biblioteca de jQuery en el marcado de su página. Por ejemplo:
-    
-```HTML
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
+    ```HTML
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
 
 - Los siguientes controles en el marcado de su página.
-    
-```HTML
+    ```HTML
 <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
+<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>```
 
 
 ## Ejemplo de código 1: subir un archivo entre dominios de SharePoint mediante la API de REST y jQuery
@@ -84,8 +80,7 @@ Debe cumplir con  [estos requisitos](upload-a-file-by-using-the-rest-api-and-jqu
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -248,8 +243,7 @@ function getQueryStringParameter(paramToRetrieve) {
         var singleParam = params[i].split("=");
         if (singleParam[0] == paramToRetrieve) return singleParam[1];
     }
-}
-```
+}```
 
 
 ## Ejemplo de código 2: subir un archivo en el mismo dominio mediante la API de REST y jQuery
@@ -265,8 +259,7 @@ Debe cumplir  [estos requisitos](upload-a-file-by-using-the-rest-api-and-jquery.
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -401,8 +394,7 @@ function uploadFile() {
 // Display error messages. 
 function onError(error) {
     alert(error.responseText);
-}
-```
+}```
 
 
 ## Recursos adicionales

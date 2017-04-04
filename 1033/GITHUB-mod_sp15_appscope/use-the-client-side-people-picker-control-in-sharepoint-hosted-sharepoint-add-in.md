@@ -151,8 +151,7 @@ The first example shows the page markup for the **PlaceHolderMain** **asp:Conten
     
 
 
-
-```HTML
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -174,8 +173,7 @@ The first example shows the page markup for the **PlaceHolderMain** **asp:Conten
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>
-```
+</asp:Content>```
 
 
 > **NOTE**
@@ -190,8 +188,7 @@ The following example shows the script from the App.js file. This script initial
     
 
 
-
-```
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -262,8 +259,7 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}
-```
+}```
 
 
 ## Additional resources

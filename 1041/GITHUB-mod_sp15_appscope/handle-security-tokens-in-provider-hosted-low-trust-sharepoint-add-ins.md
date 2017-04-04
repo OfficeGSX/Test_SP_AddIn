@@ -154,8 +154,7 @@ SharePoint アドインでは、リモート Web アプリケーションと同�
     
 
 
-
-```
+```
 
 {
  "aud": "00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -165,8 +164,7 @@ SharePoint アドインでは、リモート Web アプリケーションと同�
  "nameid": "2303000085ff9abc",
  "actor": "964de6ad-6d28-4dc7-8e05-3acd8006e5c9@040f2415-e6e3-4480-96ce-26ef73275f73",
  "identityprovider": "urn:federation:microsoftonline"
-}
-```
+}```
 
 
 **表 1: ACS から発行されるユーザー + アドイン呼び出しのアクセス トークンのクレーム**
@@ -192,8 +190,7 @@ SharePoint アドインでは、リモート Web アプリケーションと同�
     
 
 
-
-```
+```
 
 {
  "aud":"00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -205,8 +202,7 @@ SharePoint アドインでは、リモート Web アプリケーションと同�
  "oid":"1d47ac31-498b-4988-8aac-85fc9bd2e1ce",
  "trustedfordelegation":"false",
  "identityprovider":"00000001-0000-0000-c000-000000000000@040f2415-e6e3-4480-96ce-26ef73275f73"
-}
-```
+}```
 
 
 **表 2: ACS から発行されるアドインのみの呼び出しのアクセス トークンのクレーム**
@@ -258,13 +254,11 @@ SharePoint アドインでは、リモート Web アプリケーションと同�
     
 
 
-
-```cs
+```cs
 
 SharePointContextToken contextToken =
     TokenHelper.ReadAndValidateContextToken(contextTokenString, 
-    Request.Url.Authority);
-```
+    Request.Url.Authority);```
 
 これらのタスクのいくつかを PHP で実行する方法に関する例については、サンプル「 [SharePoint 2013: PHP サイトから SharePoint ドキュメント ライブラリ上で操作を実行する](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef)」をご覧ください。
   
@@ -368,11 +362,9 @@ URL の構成は次のとおりです。
     
 
 
+```
 
-```
-
-https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>
-```
+https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>```
 
 次に示すのは、TokenHelper ファイルを使用する ASP.NET での要求の例です。
   
@@ -380,10 +372,8 @@ https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_G
     
 
 
-
-```
-Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));
-```
+```
+Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));```
 
 
 ### コンテキスト トークンの実例
@@ -393,8 +383,7 @@ Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server
   
     
     
-
-```
+```
 {"typ":"JWT","alg":"HS256"}
 .
 {
@@ -413,8 +402,7 @@ xJnejSW3umatKM4fsfY1MClVCxrkXb2EQ8H/TmwaJc388YW063GEVUS/3BTSgSIRBKQUmXJuJ6BZY7WT
 6Vv7dVhQ1Dq5Y3fQ65e9LpJ580jCgzYYvpIFT+Wx5V+17mjY2T8wug04K2ts87Znsr+GfFCorf7NS/lj5HjoxRAQ2tva/8dwguSLwxcUwi/Q9MbpR0NNtlpwVazqi9O
 hJ4Df7gVhUDdJ0Dtc6aFCPbl5ZLDDRs42xK2", 
  "isbrowserhostedapp": "true"
-}
-```
+}```
 
  **aud** 、 **iss** 、 **nbf** 、および **exp** クレームは、前述のアクセス トークンの場合とまったく同じです。 **appctxsender** 、 **appctx** 、 **CacheKey** 、 **SecurityTokenServiceUri** 、 **refreshtoken** 、および **isbrowserhostedapp** クレームについては、次の表で説明します。
   
@@ -492,12 +480,10 @@ hJ4Df7gVhUDdJ0Dtc6aFCPbl5ZLDDRs42xK2",
   
     
     
-
-```cs
+```cs
 
 DateTime exp = new DateTime(1970,1,1).AddSeconds(jWTTimeStamp);
-
-```
+```
 
 
 ## トークン処理のトラブルシューティング

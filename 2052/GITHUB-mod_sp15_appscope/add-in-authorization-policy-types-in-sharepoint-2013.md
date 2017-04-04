@@ -65,13 +65,11 @@ SharePoint 提供了三种类型的授权策略：
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **注释**
@@ -92,8 +90,7 @@ SharePoint 提供了三种类型的授权策略：
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -119,8 +116,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **注释**

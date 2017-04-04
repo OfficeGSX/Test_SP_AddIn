@@ -129,7 +129,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
     > **注释**
       > 调查列表或事件列表不支持 JSLink 属性。SharePoint 日历是事件列表。 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### 在 JavaScript 文件中提供自定义程序逻辑
@@ -168,7 +168,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### 生成并运行解决方案

@@ -196,10 +196,10 @@ SharePoint 外接程序将部署到新创建的网站，此网站具有如下所
   
   - 将  [WebTemplate 元素 (PropertiesDefinition 复杂类型) (SharePoint 接清单)](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx)作为 **Properties** 元素的子项添加到外接程序清单中，并将其 **Id** 属性设置为外接程序 Web 功能的 GUID 以及 [WebTemplate 元素（Web 模板）](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx)的 **Name** 属性的值。请注意，GUID 必须用连字符相连并且必须用花括号 "{}" 括住，GUID 和模板名称用 "#" 字符隔开。以下是示例：
     
-  ```XML
+ ```XML
   
 <WebTemplate Id="{81dd4ae5-873b-4759-9838-4ad9c3dd2952}#NewSiteType" />
-  ```
+ ```
 
 
     > **注释**

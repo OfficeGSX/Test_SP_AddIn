@@ -82,8 +82,7 @@ Antes de ejecutar el código, reemplace los valores de marcador de posición por
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -208,8 +207,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
  **Ejemplo 2: solicitudes jQuery AJAX**
   
@@ -217,8 +215,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
 
 
-
-```
+```
 
 // Change placeholder values before you run this code.
 var siteUrl = 'http://server/site';
@@ -308,8 +305,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
 
 ## Recursos adicionales

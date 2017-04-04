@@ -95,11 +95,11 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
   
 11. Ya hay elementos **FieldRef** en el archivo para las dos columnas que agregó. Agregue elementos **FieldRef** para dos columnas SharePoint integradas, como pares de las dos ya presentes. Lo siguiente es el código de marcado para los elementos. *Debe usar las mismas GUID para el Id. atributo, porque son tipos de campo integrados con Id. fijo.*  Agregue esto *por encima*  de los dos elementos **FieldRef** para las columnas de sitio personalizadas.
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
-  ```
+ ```
 
 
     Fíjese en que hemos dado a estos campos un nombre para mostrar personalizado: **Employee**.
@@ -152,12 +152,12 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
   
 24. Todavía en el archivo schema.xml, en el elemento **View** cuyo valor de **BaseViewID** es "1", busque el elemento secundario **ViewFields** y agregue los dos siguientes elementos **FieldRef** como secundarios. Es posible que ya existan, aunque faltándoles un atributo **ID**. Si es así, agregue el atributo Id.
     
-  ```
+ ```
   
 <FieldRef Name="Division" ID="{GUID from the Field element}" />
 <FieldRef Name="OrientationStage" ID="{GUID from the Field element}" />
 
-  ```
+ ```
 
 25. Sustituya los dos valores de atributo de marcador de posición **ID** por los GUID de los elementos **Field** correspondientes al elemento **ContentType** para **NewEmployee** anterior en el archivo schema.xml. No olvide los corchetes "{}".
     
@@ -165,14 +165,14 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
     
 
 
-  ```
+ ```
   
 <ViewFields>
    <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
    <FieldRef Name="Division" ID="{509d2d67-9a96-4596-9b3b-58449cdcc6ff}" />
    <FieldRef Name="OrientationStage" ID="{38a3b54c-acf3-4ddf-b748-55c7c28d4cc2}" />        
 </ViewFields>
-  ```
+ ```
 
 26. Todavía en el archivo schema.xml, busque el elemento **View** cuyo valor valor de **BaseViewID** sea "0". Busque el elemento **ViewFields** que contiene.
     
@@ -188,7 +188,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
   
 30. Agregue dos elementos **Field** al primer elemento **Row**, de modo que el elemento **Row** tenga un aspecto así.
     
-  ```
+ ```
   
 <Row>
   <Field Name="Title">Tom Higginbotham</Field>
@@ -196,7 +196,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
   <Field Name="OrientationStage">Tour of building</Field>
 </Row>
    
-  ```
+ ```
 
 31. Guarde y cierre el archivo.
     

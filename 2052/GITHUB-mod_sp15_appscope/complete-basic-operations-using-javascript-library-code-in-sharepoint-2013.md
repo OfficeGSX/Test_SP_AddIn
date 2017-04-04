@@ -92,8 +92,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -149,8 +148,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
         }
     }
 </script>
-
-```
+```
 
 在创建 SharePoint 托管的加载项时，您可以使用 HTML <script> 标记添加对此对象模型的引用。SharePoint 托管的加载项中的加载项 Web 允许您使用相对路径来引用使用 JavaScript 对象模型所需的文件。
   
@@ -172,8 +170,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -191,8 +188,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
     // Continue your program flow here.
 
-</script>
-```
+</script>```
 
 
 ## SharePoint 网站任务
@@ -209,8 +205,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
     
     
-
-```
+```
 
 function retrieveWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -232,8 +227,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 仅检索网站的选定属性
@@ -242,8 +236,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveWebSiteProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -265,8 +258,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 > **注释**
@@ -282,8 +274,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function updateWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -309,8 +300,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## SharePoint 列表任务
@@ -327,8 +317,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveAllListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -357,8 +346,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 只检索列表的指定属性
@@ -367,8 +355,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -398,8 +385,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ### 在集合中存储检索到的列表
@@ -408,8 +394,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -437,8 +422,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 向列表检索应用筛选器
@@ -447,8 +431,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveAllListsAllFields(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -490,8 +473,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ## 创建、更新和删除列表
@@ -508,8 +490,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -536,8 +517,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 如果在创建列表后需要更新该列表，可以在调用 **executeQueryAsync(succeededCallback, failedCallback)** 之前设置列表属性并调用 **update()** 函数，下面显示对上一示例所做的修改。
   
@@ -545,8 +525,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 .
 .
@@ -561,8 +540,7 @@ clientContext.load(oList);
 clientContext.executeQueryAsync(
     Function.createDelegate(this, this.onQuerySucceeded), 
     Function.createDelegate(this, this.onQueryFailed)
-);
-```
+);```
 
 
 ### 向列表中添加字段
@@ -571,8 +549,7 @@ clientContext.executeQueryAsync(
   
     
     
-
-```
+```
 
 function addFieldToList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -604,8 +581,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 删除列表
@@ -614,8 +590,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -639,8 +614,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## 创建、更新和删除文件夹
@@ -657,8 +631,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function createFolder(resultpanel) {
     var clientContext;
@@ -693,8 +666,7 @@ function createFolder(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### 在文档库中更新文件夹
@@ -703,8 +675,7 @@ function createFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFolder(resultpanel) {
     var clientContext;
@@ -734,8 +705,7 @@ function updateFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### 从文档库中删除文件夹
@@ -744,8 +714,7 @@ function updateFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFolder(resultpanel) {
     var clientContext;
@@ -776,8 +745,7 @@ function deleteFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## 创建、读取、更新和删除文件
@@ -801,8 +769,7 @@ function deleteFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function createFile(resultpanel) {
     var clientContext;
@@ -843,8 +810,7 @@ function createFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### 在文档库中读取文件
@@ -853,8 +819,7 @@ function createFile(resultpanel) {
   
     
     
-
-```
+```
 
 function readFile(resultpanel) {
     var clientContext;
@@ -885,8 +850,7 @@ function readFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[2];
     }
-}
-```
+}```
 
 
 ### 在文档库中更新文件
@@ -895,8 +859,7 @@ function readFile(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFile(resultpanel) {
     var clientContext;
@@ -939,8 +902,7 @@ function updateFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### 从文档库中删除文件
@@ -949,8 +911,7 @@ function updateFile(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFile(resultpanel) {
     var clientContext;
@@ -983,8 +944,7 @@ function deleteFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## SharePoint 列表项任务
@@ -1001,8 +961,7 @@ function deleteFile(resultpanel) {
   
     
     
-
-```
+```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1040,8 +999,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 使用 Include 方法访问 ListItem 对象的属性
@@ -1057,8 +1015,7 @@ function onQueryFailed(sender, args) {
     
     
 
-
-```
+```
 
 function retrieveListItemsInclude(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1097,8 +1054,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 因为该示例使用 **Include**，所以在执行查询后，只有指定的属性可用。因此，如果您尝试访问其他未指定的属性，将会收到 **PropertyOrFieldNotInitializedException**。此外，如果您尝试使用 **get_contentType** 或 **get_parentList** 等函数访问包含对象的属性，也会收到该错误。
   
@@ -1126,8 +1082,7 @@ SharePoint Foundation 2010 中 JavaScript 对象模型的 **loadQuery(clientObje
   
     
     
-
-```
+```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1153,8 +1108,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 更新列表项
@@ -1163,8 +1117,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function updateListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1187,8 +1140,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### 删除列表项
@@ -1197,8 +1149,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteListItem(siteUrl) {
     this.itemId = 2;
@@ -1220,8 +1171,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 例如，若要检索执行删除操作而产生的新项计数，请包含对 update() 方法的调用以刷新列表。此外，还必须先加载列表对象本身或列表对象的 **itemCount** 属性，然后才能执行查询。若要检索列表项的开始计数和结束计数，则必须执行两次查询并返回项计数两次，下面显示对上一示例所做的修改。
   
@@ -1229,8 +1179,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 function deleteListItemDisplayCount(siteUrl) {
     this.clientContext = new SP.ClientContext(siteUrl);
@@ -1270,8 +1219,7 @@ function displayCount() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## 访问主机 Web 中的对象
@@ -1281,8 +1229,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
     // context: The ClientContext object provides access to
@@ -1319,8 +1266,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
     function errorHandler(data, errorCode, errorMessage) {
         alert("Could not complete cross-domain call: " + errorMessage);
     }
-}
-```
+}```
 
 前面的示例使用 SharePoint 2013 中的跨域库来访问主机 Web。有关详细信息，请参阅 [使用跨域库从外接程序访问 SharePoint 2013 数据](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)。
   

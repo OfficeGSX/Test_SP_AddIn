@@ -52,11 +52,11 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
   
 2. 次の行を、 `AddLocalEmployeeToCorpDB` 呼び出しと **Response.Redirect** 呼び出しの間にある **Page_Load** メソッドに追加します。次の手順で、 `SetLocalEmployeeSyncStatus` メソッドを作成します。
     
-  ```cs
+ ```cs
   
 // Write to SharePoint
 SetLocalEmployeeSyncStatus();
-  ```
+ ```
 
 3. 以下の新しいメソッドを  `EmployeeAdder` クラスに追加します。このコードについては以下の点に注目してください。
     
@@ -70,7 +70,7 @@ SetLocalEmployeeSyncStatus();
     
   
 
-  ```cs
+ ```cs
   
 private void SetLocalEmployeeSyncStatus()
 {
@@ -83,7 +83,7 @@ private void SetLocalEmployeeSyncStatus()
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## ホスト Web リストに書き込むためのアクセス許可の要求
@@ -213,10 +213,10 @@ private void SetLocalEmployeeSyncStatus()
   
 3.  `btnCreateOrder_Click` メソッドで、次の行を `CreateOrder` への呼び出しのすぐ下に追加します。次の手順では、CreateExpectedShipment メソッドを作成します。
     
-  ```cs
+ ```cs
   
 CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
-  ```
+ ```
 
 4. 以下のメソッドを  `OrderForm` クラスに追加します。このコードについては以下の点に注目してください。
     
@@ -230,7 +230,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
     
   
 
-  ```
+ ```
   private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
 {
     using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -245,7 +245,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## 削除されたコンポーネントのチェック
@@ -276,8 +276,7 @@ SharePoint リストのリスト所有者権限を持つユーザーは、だれ
     
 
 
-
-```cs
+```cs
 
 var query = from list in clientContext.Web.Lists
              where list.Title == "Expected Shipments" 
@@ -289,8 +288,7 @@ if (matchingLists.Count() != 0)
     List expectedShipmentsList = matchingLists.Single(); 
     // Do something with the list. 
 }
-clientContext.ExecuteQuery(); 
-```
+clientContext.ExecuteQuery(); ```
 
 前のコードには、 **ConditionalScope** クラスの複雑化を回避できるメリットがあり、このシリーズの記事ではどこでもこのコードをそのまま使用します。ただし、デメリットもあります。このコードでは **if** ステートメントで確認する値を取得するためだけに、 **ExecuteQuery** を追加で呼び出す必要があります。このテクニックを `CreateExpectedShipment` で使用してリストの存在を確認する場合、メソッドは **ExecuteQuery** を 2回呼び出し、それぞれがリモート Web サーバーから SharePoint への HTTP 要求を行います。これらの要求は CSOM メソッドで最も時間がかかる部分であるため、通常は最小限にすることをお勧めします。
   

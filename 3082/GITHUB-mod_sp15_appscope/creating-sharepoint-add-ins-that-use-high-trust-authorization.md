@@ -82,11 +82,9 @@ A efectos prácticos, los administradores de la granja de SharePoint determinan 
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 Para crear un emisor de tokens que no sea agente, no se usa el modificador  `-IsTrustBroker`. Hay otra diferencia. El valor del parámetro  `-RegisteredIssuerName` siempre tiene la forma de dos GUID separados por el carácter "@"; _GUID_@ _GUID_. El GUID de la derecha siempre es el Id. del área de autenticación de la granja de SharePoint (o de la suscripción de sitio). El GUID de la izquierda es siempre un Id. específico de un emisor de tokens. Es un GUID aleatorio cuando se está creando un emisor de tokens de  *agente de confianza*  . Pero cuando se crea un emisor de tokens que no es de agente, el GUID del emisor específico debe ser el mismo GUID que se usa como Id. de cliente de la Complemento de SharePoint. Este parámetro no solo proporciona un nombre para el emisor, sino que le indica a SharePoint que Complemento de SharePoint es la única para la que el certificado puede emitir tokens. El siguiente es un ejemplo parcial:
   
@@ -94,11 +92,9 @@ Para crear un emisor de tokens que no sea agente, no se usa el modificador  `-Is
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 Normalmente, el cmdlet  `New-SPTrustedSecurityTokenIssuer` se usa en un script que hace otras tareas, como configurar SharePoint para complementos de elevada confianza. Para más información sobre estos scripts y ejemplos completos del cmdlet `New-SPTrustedSecurityTokenIssuer`, vea  [Scripts de configuración de elevada confianza para SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -149,8 +145,7 @@ Todos los certificados de la cadena se agregan a la lista de SharePoint de entid
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -160,8 +155,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 Los certificados intermedios y raíz deben agregarse solo una vez en una granja de SharePoint. Normalmente, se agrega el certificado de la aplicación web en un script independiente que hace otras tareas de configuración, como la llamada a  `New-SPTrustedSecurityTokenIssuer`. Puede ver ejemplos en  [Scripts de configuración de elevada confianza para SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -189,8 +183,7 @@ A continuación, verá un ejemplo de una sección **appSettings** para una Compl
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -198,8 +191,7 @@ A continuación, verá un ejemplo de una sección **appSettings** para una Compl
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **NOTA DE SEGURIDAD**

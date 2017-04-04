@@ -133,7 +133,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 2. 新しいサイト列に対する elements.xml ファイルで、次の例に示す属性と値が設定されるように **Field** 要素を編集します。ただし、 **ID** 属性の GUID は、Visual Studio 2012 が生成した値から変更しないでください。また、"{}" で囲むのを忘れないようにします。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Actor" 
@@ -143,14 +143,14 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The person cast, perhaps tentatively, in the role" 
        Type="Text" 
 />
-  ```
+ ```
 
 3. さらにもう 1 つ [ **サイト列**] を、CastingStatus という名前のプロジェクトに追加します。
     
   
 4. 新しいサイト列に対する elements.xml ファイルで、次の例に示す属性と値が設定されるように **Field** 要素を編集します。ただし、 **ID** 属性の GUID は、Visual Studio 2012 が生成した値から変更しないでください。
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="CastingStatus" 
@@ -160,11 +160,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
        Description="The current casting status of the role" 
        Type="Choice">
 </Field>
-  ```
+ ```
 
 5. これは選択肢フィールドなので、選択可能な項目、ユーザーが選択するときにドロップダウン リストに表示する順序、および既定の選択肢を指定する必要があります。次の子マークアップを **Field** 要素に追加します。
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -181,7 +181,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
       <MAPPING Value="5">Committed to Role</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 
 ### カスタムのコンテンツ タイプを作成するには
@@ -221,11 +221,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 9. このファイルには、先ほど追加した 2 つの列に対する **FieldRef** 要素がすでに存在します。すでに存在する 2 つの要素と対になるように、2 つの組み込みの SharePoint 2013 列に対する **FieldRef** 要素を追加します。以下は、これらの要素のマークアップです。これらは、固定された ID を持つ組み込みのフィールドの種類なので、ID 属性に対して同じ GUID を使用する必要があります。これらを、カスタムのサイト列に対する 2 つの **FieldRef** 要素よりも上に追加します。
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
-  ```
+ ```
 
 
     これらのフィールドにはカスタムの表示名として **Character** を指定してあることに注意してください。これは、演劇または映画の登場人物を意味しています。
@@ -306,26 +306,26 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 19. 引き続き schema.xml ファイルで、BaseViewID の値が "0" である **View** 要素を探し、既存の **ViewFields** 要素を次のマークアップで置き換えます ( `LinkTitle` という名前の **FieldRef** に対してこの GUID を正確に使用します)。
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
   <FieldRef Name="Actor" ID="{GUID from the site column elements.xml}" />
   <FieldRef Name="CastingStatus" ID="{GUID from the site column elements.xml}" />
 </ViewFields>
-  ```
+ ```
 
 20. 未指定の 2 つの ID 属性値を、それぞれのサイト列の elements.xml ファイルでの GUID で置き換えます。また、"{}" で囲むのを忘れないようにします。
     
   
 21. 引き続き schema.xml ファイルで、BaseViewID の値が "1" である **View** 要素を探し、既存の **ViewFields** 要素を次のマークアップで置き換えます ( `LinkTitle` という名前の **FieldRef** に対してこの GUID を正確に使用します)。
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 </ViewFields>
-  ```
+ ```
 
 22. 前のビューに追加した  `Actor` と `CastingStatus` に対する 2 つの **FieldRef** 要素を、 `LinkTitle` の **FieldRef** の兄弟として、この **ViewFields** 要素にコピーします。
     
@@ -338,7 +338,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
   
 25. **ListInstance** 要素の子として次のマークアップを追加し、ある程度の初期データをリストに入力します。
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -369,7 +369,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 2. **ソリューション エクスプローラー**で、 **Feature1** をクリックし、フィーチャー デザイナーを開きます。デザイナーで、[ **タイトル**] を "Theater and Movie Data Components" と設定し、[ **説明**] を "劇場と映画に関するデータに対するサイト列、コンテンツ タイプ、およびリスト インスタンス" と設定します。ファイルを保存し、デザイナーを閉じます。
     
@@ -390,7 +390,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     
 1. Default.aspx ファイルを開き、ファイルの body 要素を次のマークアップで置き換えます。このマークアップにより、[ **Get the Cast**] ボタンが追加されます。このボタンをクリックすると、アドイン Web にある [ **Characters in Hamlet**] リストが読み取られて、そのデータが、ボタンのクリック後にだけ表示される  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) コントロールに表示されます。
     
-  ```HTML
+ ```HTML
   
 <body >
     <form id="form1" runat="server">
@@ -406,11 +406,11 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
     <asp:GridView ID="GridView1" runat="server" Caption="The Cast" ></asp:GridView>
     </form>
 </body>
-  ```
+ ```
 
 2. Default.aspx.cs ファイルを開き、次の **using** ステートメントをファイルに追加します。
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
@@ -421,7 +421,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.SharePoint.Samples;
-  ```
+ ```
 
 
     これらのステートメントの最後の部分は、TokenHelper.cs ファイルで宣言された名前空間を参照します。
@@ -429,16 +429,16 @@ using Microsoft.SharePoint.Samples;
   
 3. 次のフィールドを **Default** クラスに追加します。
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
-  ```
+ ```
 
 4. **Page_Load** メソッドを次のコードで置き換えます。このコードは、 **TokenHelper** クラスを使用して、OAuth 準拠のセキュリティで保護されたトークン サーバーからトークンを取得します。このアクセス トークンは、ボタンのクリック イベント ハンドラーが後で取得できるように、ボタンの [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) プロパティに格納されます。
     
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -458,11 +458,11 @@ protected void Page_Load(object sender, EventArgs e)
         Button1.CommandArgument = accessToken;
     }
 }
-  ```
+ ```
 
 5. 次のイベント ハンドラーを **Default** クラスに追加します。このハンドラーは、まず、ボタンの [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) プロパティに格納されたアクセス トークンを取得することから開始します。
     
-  ```cs
+ ```cs
   
 protected void Button1_Click(object sender, EventArgs e)
 {
@@ -470,29 +470,29 @@ protected void Button1_Click(object sender, EventArgs e)
     // in the button's command argument.
     string accessToken = ((Button)sender).CommandArgument;
 }
-  ```
+ ```
 
 6. このハンドラーは、変更されたアドイン Web の URL をポストバック時に再取得する必要があるので、次のコードを追加します。
     
-  ```cs
+ ```cs
   
 if (IsPostBack)
 {
     sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
 }
-  ```
+ ```
 
 7. 次の行を追加します。これは、いずれかの SharePoint 2013 REST/OData エンドポイントを使用してリスト データを取得します。この例では、このコードはアドイン Web に配置された [ **Characters in Hamlet**] リストを読み取ります。このサービスの API によって、1 行のコードで、リストを選択し、リストの 3 つのフィールドを指定して返すのが容易になります。OData URL には表示名ではなくフィールド (列) の内部名を使用する必要があるので、このコードでは、 `Character`、 `Actor/Actress`、および  `Casting Status.` ではなく、 `Title`、 `Actor`、および  `CastingStatus` を使用します。REST/OData Web サービスの詳細については、「 [SharePoint REST 要求で OData クエリ操作を使用する](use-odata-query-operations-in-sharepoint-rest-requests.md)」を参照してください。
     
-  ```cs
+ ```cs
   
 // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
-  ```
+ ```
 
 8. 次のコードを追加します。このコードでは、 [System.Net](https://msdn.microsoft.com/library/System.Net.aspx) 名前空間の [HttpWebRequest](https://msdn.microsoft.com/library/System.Net.HttpWebRequest.aspx) クラスと [HttpWebResponse](https://msdn.microsoft.com/library/System.Net.HttpWebResponse.aspx) クラスを使用して、HTTP 要求オブジェクトと応答オブジェクトを作成します。
     
-  ```cs
+ ```cs
   
 // HTTP Request and Response construction section
 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + oDataUrl);
@@ -501,11 +501,11 @@ request.Accept = "application/atom+xml";
 request.ContentType = "application/atom+xml;type=entry";
 request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-  ```
+ ```
 
 9. ATOM 形式の応答 XML を解析するために、次のコードを追加します。このコードは、 [System.Xml.Linq](https://msdn.microsoft.com/library/System.Xml.Linq.aspx) 名前空間のクラスを使用して、返されたデータを解析し、SharePoint リストのアイテムの [List<T>](http://msdn2.microsoft.com/JA-JP/library/6sh2ey19) を作成します ( [System.Xml](https://msdn.microsoft.com/library/System.Xml.aspx) 名前空間のクラスも使用できます)。SharePoint が返す XML では、 **entry** 要素の子要素にリスト アイテムに関するメタデータが保持されていることに注意してください。SharePoint リスト アイテムの実際の未加工データは、2 階層下の **properties** 要素に入れ子になっています。このため、 [Elements<T>](http://msdn2.microsoft.com/JA-JP/library/bb348465) 拡張メソッドが 2 回使用されて、上位レベルがフィルターで除外されます。
     
-  ```cs
+ ```cs
   
 // Response markup parsing section
 XDocument oDataXML = XDocument.Load(response.GetResponseStream(), LoadOptions.None);
@@ -517,27 +517,27 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .Elements(atom + "content")
                          .Elements(m + "properties")
                          .ToList();
-  ```
+ ```
 
 10. 次の LINQ クエリを追加します。このクエリでは、必要なプロパティだけが設定された匿名型の  [IEnumerable<T>](http://msdn2.microsoft.com/JA-JP/library/9eekhta0) コレクションが作成されます。このコードは、内部名である `Title` によってアイテムのタイトル フィールドを参照する必要がありますが、その値が割り当てられる匿名型でのプロパティ名には `Character` という名前を使用できます。その効果の 1 つとして、コレクションがグリッド コントロールにバインドされるときに、より適切な名前である [ **Character**] がページに表示されます。
     
-  ```cs
+ ```cs
   
 var entryFieldValues = from entry in entries
                        select new { Character=entry.Element(d + "Title").Value, 
                                     Actor=entry.Element(d + "Actor").Value, 
                                     CastingStatus=entry.Element(d + "CastingStatus").Value };
 
-  ```
+ ```
 
 11. ページの  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) コントロールにデータをバインドする次のコードを使用して、ハンドラーを完成させます。グリッドの列のヘッダーは、既定では、匿名型のプロパティ名である `Character`、 `Actor`、および  `CastingStatus` に設定されます。 [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) コントロールには、名前と形式設定列のヘッダーを制御できるプロパティがあるので、[ **Actor/Actress**] と [ **Casting Status**] を SharePoint での列のヘッダーと一致させることができます。簡単にするために、これらの方法はここでは説明しません ( [DataGrid](https://msdn.microsoft.com/library/System.Web.UI.WebControls.DataGrid.aspx) コントロールも使用できます)。
     
-  ```cs
+ ```cs
   
 GridView1.DataSource = entryFieldValues;
 GridView1.DataBind();
 
-  ```
+ ```
 
 12. すべてのファイルを保存します。
     

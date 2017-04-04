@@ -148,7 +148,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 2. **head** セクションに、いくつかの JavaScript ライブラリを読み込むスクリプトがあります。その下に次のような別のスクリプトを追加します。このスクリプトは、各 SharePoint Web サイトの /_layouts/15/ フォルダーにある SP.UI.Controls.js ファイルを読み込みます。このファイルは特に SharePoint CSS ライブラリを読み込みます。
     
-  ```
+ ```
   
 <script type="text/javascript">
     var hostweburl;
@@ -183,11 +183,11 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
         }
     }
 </script>
-  ```
+ ```
 
 3. ページの本文セクションの上部に、次のマークアップを追加します。クロム コントロールと呼ばれる SharePoint トップ バーがページ上に挿入されます。この記事の後半で、改訂したアドインをテストするときに、このマークアップの詳細が分かります (使用するアドインは "アプリ" と呼ばれるので、一部のプロパティ名には "アプリ" という文字列が表示されます)。
     
-  ```
+ ```
   
 <!-- Chrome control placeholder. Options are declared inline.  -->
 <div 
@@ -210,15 +210,15 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
             ]
          }'>
 </div>
-  ```
+ ```
 
 4. **H1** ヘッダーとページの本文のハイパーリンクには、SharePoint の CSS ライブラリで定義されているスタイルが自動的に使用されるので、変更は不要です。SharePoint スタイルの使用方法を図示するには、3 つの **GridView** コントロールの列見出しを SharePoint の "すべて大文字" スタイルに設定します。この設定を行うには、 **HeaderStyle-CssClass** 属性を各コントロールに追加して、値を " `ms-uppercase`" に設定します。以下に例を示します。同様の変更を 3 つの **GridView** コントロールすべてに行います。
     
-  ```XML
+ ```XML
   
 <asp:GridView ID="ordersGridView" runat="server" CellPadding="5" GridLines="None"
 HeaderStyle-CssClass="ms-uppercase" />
-  ```
+ ```
 
 5. クロム コントロールではアドインのアイコンが使用されるので、リモート Web サーバー上にアイコン ファイルの 2 つ目のコピーが必要です。 **ソリューション エクスプローラー**で、 **ChainStore** プロジェクト内の AppIcon.png ファイルを右クリックし、 **[コピー]** を選択します。
     
@@ -235,13 +235,13 @@ HeaderStyle-CssClass="ms-uppercase" />
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
     spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 9. 次の 4 つの ASP.NET ファイルにも SharePoint UI が必要です。 
     
@@ -265,36 +265,36 @@ protected void Page_Load(object sender, EventArgs e)
     
 
 
-  ```XML
+ ```XML
   
 <link type="text/css" rel="stylesheet"
 href="<%= spContext.SPHostUrl.ToString() + "_layouts/15/defaultcss.ashx" %>" />
-  ```
+ ```
 
 10. このステップと次のステップは、[注文フォーム] ページと [アカウント] ページでは既に完了しているので、[連絡先] ページと [ヘルプ] ページだけに適用されます。各ページ上に  `spContext` オブジェクトを取得するには、3 つの aspx ページの *. aspx.cs 分離コード ファイルを開きます。それぞれのファイルで、次のメンバーを **Page** クラスに追加します。
     
-  ```cs
+ ```cs
   
 protected SharePointContext spContext;
-  ```
+ ```
 
 11. **Page_Load** メソッドを次のバージョンに置き換えます。オブジェクトはセッション キャッシュから取得されます。これは、初めて作成されたときにアドインのスタート ページの **Page_Load** メソッドによりキャッシュされたものです。
     
-  ```cs
+ ```cs
   protected void Page_Load(object sender, EventArgs e)
 {
     spContext = Session["SPContext"] as SharePointContext;
 }
-  ```
+ ```
 
 12. OrderForm.aspx ページを開きます。上部の **Label** 要素で、 **[注文]** 句の **<b>** 要素を、 `ms-accentText` CSS クラスを参照する span タグに置き換えます。作業が完了したら、 **Label** コントロール全体は次のようになるはずです。
     
-  ```XML
+ ```XML
   
 <asp:Label ID="lblOrderPrompt" runat="server"
          Text="Enter a supplier, product, and quantity; and then press <span class='ms-accentText'>Place Order</span>.">
 </asp:Label>
-  ```
+ ```
 
 
 ## アドインを実行して新しい SharePoint UI をテストする

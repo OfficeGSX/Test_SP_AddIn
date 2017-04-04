@@ -116,13 +116,13 @@ SharePoint にホストされる ASPX ページは作成しないが、使用す
     
   - 次の例に示すように、レイアウト フォルダーのルートでライブラリをポイントします。
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - ライブラリを自分の Web サイトにコピーして、そこから参照します。
     
@@ -130,14 +130,14 @@ SharePoint にホストされる ASPX ページは作成しないが、使用す
       > この方法を選択した場合には、アドインはコントロールの更新のメリットを受けられません。 
 2. 次の例に示すように、コントロールをレンダリングする場所にプレースホルダーの DOM 要素を追加します。
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. コントロールをインスタンス化します。
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -148,14 +148,14 @@ SharePoint にホストされる ASPX ページは作成しないが、使用す
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. (オプション) ページにタイトル領域が不要な場合は、次の JavaScript コードを実行して削除できます。
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 クロムは 2 つのオプションのアドイン アイコンを提供します。1 つはトップ ナビゲーション バーに、もう 1 つはタイトル領域に表示されます。トップ ナビゲーション バーのアドイン アイコンは 24 x 24 ピクセル (px)、タイトル領域のアイコンは SharePoint サイトのアイコンと同じ大きさで、高さが最大 64 px、幅が最大 180 px です。ユーザーと管理者がサイトのテーマを変更できるため、背景が白、黒、灰色、鮮やかな色、くすんだ色でテストした PNG 画像を使用することをお勧めします。クロム コントロールの使用方法については、「 [SharePoint アドインのクライアント クロム コントロールを使用する](use-the-client-chrome-control-in-sharepoint-add-ins.md)」を参照してください。
   
@@ -190,18 +190,18 @@ nav.setBottomHeaderVisible(false);
   
 2. アドイン Web の内部では、次のコードをマスター ページまたは ASPX ページに追加することで **CssRegistration** および **CssLink** コントロールを使用して CSS ファイルを参照できます。
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. 次の例に示すように、<link> 要素を使い、ホスト Web からの URL を作成して CSS ファイルを参照できます。
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     この方法を使用する場合、ページ内で JavaScript を実行してホスト Web の URL をクエリ文字列から取り出す必要があります。その後で、ページの DOM に要素を追加する前に、ホスト Web の URL を **link** 要素に挿入します。
@@ -511,11 +511,9 @@ SharePoint では、アドインによって既存の UI のいくつかを拡�
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 ページがどのドメインの iframe に表示されるかは制限できないため、アドイン パーツにホストされるページはクリックジャッキング セキュリティ攻撃を受ける危険性があります。クリックジャッキング攻撃では、作成したページが悪意のあるページの iframe に表示され、ユーザーは気付かないうちにボタンをクリックしてアクションを行う可能性があります。ページをデザインするときはこのことに注意して、悪意のあるページに表示されると危険な機能をパーツ内のページで公開しないようにします。
   
@@ -531,10 +529,8 @@ SharePoint では、アドインによって既存の UI のいくつかを拡�
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 上の例で、 **senderId** の値は、ページがレンダリングされるときにアドイン パーツのコードによって自動的にページのクエリ文字列に設定されます。ページでは、クエリ文字列から **SenderId** の値を読み取って、それをサイズ変更要求のときに使用することだけが必要です。アドインのパーツ定義の **Src** 属性に **StandardTokens** トークンまたは **HostUrl** トークンを付加することによって、クエリ文字列からホスト Web URL を取得することができます。
   
@@ -546,8 +542,7 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -599,8 +594,7 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
  **ClientWebPart** 要素では次を指定できます。
   
@@ -690,13 +684,11 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
  **HostWebDialogHeight** 属性と **HostWebDialogWidth** 属性はオプションです。これらの属性が指定されなかった場合は、SharePoint のダイアログ ボックスの既定のサイズが使われます。しかし、一般的にはユーザーに表示されるときにスクロール バーを使わずに適切に表示されるように、ダイアログ ボックスのサイズを指定する必要があります。
   
@@ -708,12 +700,10 @@ HostWebDialogWidth="500"
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
  **CloseCustomActionDialogRefresh** と **CloseCustomActionDialogNoRefresh** のどちらを使用するかに応じて、ダイアログ ボックスが閉じた後でその背後のページが更新されるかどうかが決まります。
   

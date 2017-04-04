@@ -115,7 +115,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
   
 3. [ **お知らせ**] **>** [ **Elements.xml**] をダブルクリックします。次の XML ノードを **ListInstance** 要素の子として貼り付けます。
     
-  ```
+ ```
   
 <Data>
     <Rows>
@@ -129,7 +129,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
         </Row>
     </Rows>
 </Data>
-  ```
+ ```
 
 
 ### クロスドメイン ライブラリを使用する新しいページを追加するには
@@ -168,7 +168,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
     
   
 
-  ```
+ ```
   
 <html>
     <head>
@@ -272,7 +272,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
         </script>
     </body>
 </html>
-  ```
+ ```
 
 
 ### ソリューションを構築して実行するには
@@ -300,7 +300,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
 |:-----|:-----|
 |エラー メッセージ: 申し訳ございません。サイトへのアクセス中に問題が発生しました。  <br/> エラーを修正するボタンもありますが、問題は解決されません。  <br/> |Internet Explorer のセキュリティ ゾーンに関する既知の問題がヒットする可能性があります。「 [SharePoint アドインで Internet Explorer の異なるセキュリティ ゾーンを横断してクロスドメイン ライブラリを操作する](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md)」をご覧ください。  <br/> |
 |エラー メッセージ: 必要な機能がお使いのブラウザーでサポートされていません。IE 8 以上または他の最新ブラウザーを使用していることを確認してください。'X-UA-Compatible' メタ タグが 'IE=8' 以上に設定されていることを確認してください。  <br/> |クロスドメイン ライブラリには **IE8** 以上のドキュメント モードが必要です。シナリオによっては、ドキュメント モードが既定で **IE7** に設定されている場合があります。Internet Explorer 開発者ツールを使用して、ページのドキュメント モードを決定および変更できます。詳細については、「 [ドキュメント互換性の定義](http://msdn.microsoft.com/library/cc288325.aspx)」を参照してください。  <br/> |
-|エラー メッセージ: 'Type' は定義されていません。  <br/> さらに、アドインで JavaScript Object Model (JSOM) を使用しています。  <br/> |JSOM は Microsoft Ajax ライブラリの **Type.registerNamespace** メソッドを使用して **SP** 名前空間を登録します。次のコードを使用して、お使いのページから Microsoft Ajax ライブラリにリファレンスを追加してください。 <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|エラー メッセージ: 'Type' は定義されていません。  <br/> さらに、アドインで JavaScript Object Model (JSOM) を使用しています。  <br/> |JSOM は Microsoft Ajax ライブラリの **Type.registerNamespace** メソッドを使用して **SP** 名前空間を登録します。次のコードを使用して、お使いのページから Microsoft Ajax ライブラリにリファレンスを追加してください。 <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## 次の手順
@@ -356,8 +356,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
     
 
 
-
-```
+```
 
 executor.executeAsync(
     {
@@ -370,8 +369,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 次のコード例で、JSOM を使用してコンテキスト サイトを変更する方法を示します。
   
@@ -379,8 +377,7 @@ executor.executeAsync(
     
 
 
-
-```
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -388,8 +385,7 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);
-```
+context.load(this.web);```
 
 既定では、アドインにはアクセス許可が付与されますが、ホスト Web にはアクセス許可が付与されません。次の例は、ホスト Web からデータを読み取るためのアクセス許可要求を宣言するマニフェスト セクションを示しています。
   
@@ -397,15 +393,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 必ずアドイン Web で (空白のページまたはリストのような) リソースを作成して、クロスドメイン ライブラリを使用するために必要な、アドイン Web のプロビジョニングを行います。
   
@@ -438,15 +432,13 @@ context.load(this.web);
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 コードでコンテキスト サイトを切り替えるには、「 [ホスト Web からのデータ アクセス](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb)」セクションと同様に、 **AppContextSite** エンドポイント (REST) またはオブジェクト (JSOM) を使用します。REST エンドポイントとは、/_api/SP.AppContextSite(@target)/web/title?@target='weburl' で、JSOM でオブジェクトをインスタンス化する方法の例は次のとおりです: `appContextSite = new SP.AppContextSite(context, weburl);`。
   

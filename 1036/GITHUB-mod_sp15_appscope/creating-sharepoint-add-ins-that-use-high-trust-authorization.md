@@ -82,11 +82,9 @@ En pratique, les administrateurs de batterie de serveurs SharePoint déterminent
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 Pour créer un émetteur de jeton non broker, le commutateur  `-IsTrustBroker` n'est pas utilisé. Il existe une autre différence. La valeur du paramètre `-RegisteredIssuerName` se présente toujours sous la forme de deux GUID séparés par le caractère « @ » : _GUID_@ _GUID_. Le GUID du côté droit est toujours l'ID du domaine d'authentification de la batterie de serveurs SharePoint (ou d'abonnement au site). Le GUID du côté gauche est toujours un ID propre à un émetteur de jeton. Il s'agit d'un GUID aléatoire lors de la création d'un émetteur de jeton de type  *service Broker de sécurité*  . Cependant, lorsqu'un émetteur de jeton non broker est créé, le GUID de l'émetteur spécifique doit être le même que celui utilisé en tant qu'ID de client du Complément SharePoint. Ce paramètre fournit un nom pour l'émetteur. Il indique également à SharePoint le seul Complément SharePoint pour lequel le certificat peut émettre des jetons. Ce qui suit est un exemple partiel :
   
@@ -94,11 +92,9 @@ Pour créer un émetteur de jeton non broker, le commutateur  `-IsTrustBroker` n
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 Généralement, l'applet de commande  `New-SPTrustedSecurityTokenIssuer` est utilisée dans un script qui effectue d'autres tâches pour configurer les compléments SharePoint à haut niveau de fiabilité. Pour plus d'informations sur ces scripts et des exemples complets de l'applet de commande `New-SPTrustedSecurityTokenIssuer`, voir  [Scripts de configuration à haut niveau de fiabilité pour SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -149,8 +145,7 @@ Chaque certificat de la chaîne est ajouté à la liste des autorités racines a
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -160,8 +155,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 Les certificats racines et intermédiaires ne doivent être ajoutés qu'une seule fois sur une batterie de serveurs SharePoint. En règle générale, le certificat de l'application web est ajouté dans un script séparé qui procède également à d'autres configurations, comme l'appel de  `New-SPTrustedSecurityTokenIssuer`. Pour des exemples, voir  [Scripts de configuration à haut niveau de fiabilité pour SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -189,8 +183,7 @@ Voici un exemple de section **appSettings** pour un Complément SharePoint à ha
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -198,8 +191,7 @@ Voici un exemple de section **appSettings** pour un Complément SharePoint à ha
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **REMARQUE DE SéCURITé**

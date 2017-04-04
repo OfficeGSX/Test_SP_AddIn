@@ -240,8 +240,7 @@ Después, pase el tipo complejo en el cuerpo de la solicitud, que aquí toma el 
     
 
 
-
-```
+```
 
 { "d" : {
    "results": {
@@ -256,8 +255,7 @@ Después, pase el tipo complejo en el cuerpo de la solicitud, que aquí toma el 
    }
 } 
 }
-
-```
+```
 
 
 ### Usar alias de parámetros en llamadas de servicio REST

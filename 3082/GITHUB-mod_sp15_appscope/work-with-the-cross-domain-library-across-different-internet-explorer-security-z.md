@@ -110,8 +110,7 @@ El siguiente marcado es una página apphost de ejemplo. El marcado realiza las s
   
 
 
-
-```HTML
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -160,8 +159,7 @@ El siguiente marcado es una página apphost de ejemplo. El marcado realiza las s
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>
-```
+</html>```
 
 Si desea que los usuarios tengan un gran vínculo con partes de su complemento, la página apphost y el contenido del **IFrame** pueden colaborar para hacerlo posible. Una alternativa es usar una comunicación posterior al mensaje de **IFrame** y direcciones URL individual por página en el complemento remoto. Para tener direcciones URL individuales por página, puede crear páginas individuales en el complemento web o usar parámetros de cadena de consulta en una página.
   

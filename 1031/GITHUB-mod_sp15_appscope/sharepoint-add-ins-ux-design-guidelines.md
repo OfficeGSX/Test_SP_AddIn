@@ -116,13 +116,13 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
     
   - Verweisen Sie im Stamm des Layouts-Ordners auf die Bibliothek, wie im folgenden Beispiel dargestellt.
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - Kopieren Sie die Bibliothek auf Ihre eigene Website und verweisen Sie dort auf sie.
     
@@ -130,14 +130,14 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
       > Wenn Sie sich für diese Alternative entscheiden, kann Ihr Add-In keine Aktualisierungen des Steuerelements nutzen 
 2. Fügen Sie das DOM-Platzhalterelement an der Position ein, an der das Steuerelement gerendert werden soll, wie in diesem Beispiel dargestellt.
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. Instanziieren Sie das Steuerelement.
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -148,14 +148,14 @@ Wenn Sie keine in SharePoint gehosteten ASPX-Seiten erstellen, Ihr Add-In sich j
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. (Optional) Wenn Sie keinen Titelbereich auf Ihrer Seite möchten, können Sie ihn entfernen, indem Sie den folgenden JavaScript-Code ausführen.
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 Das Chromsteuerelement bietet zwei optionale Add-In-Symbole: Eines in der oberen Navigationsleiste und eines im Titelbereich. Das Add-In-Symbol in der oberen Navigationsleiste umfasst 24 x 24 Pixel (px), das Symbol im Titelbereich hat die gleiche Größe wie SharePoint-Website-Symbole - max. 64 px auf 180 px. Es wird empfohlen, ein auf einem weißen, schwarzen, grauen, hellen und gedeckten Hintergrund getestetes PNG-Bild zu verwenden, da Benutzer und Administratoren das Websitedesign ändern können. Weitere Informationen über die Verwendung des Chromsteuerelements finden Sie unter  [Verwenden des Client-Chromsteuerelements in Add-Ins für SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
   
@@ -190,18 +190,18 @@ Um die CSS-Formatvorlagen von der Hostwebsite abzurufen, müssen Sie auf ihre CS
   
 2. Wenn Sie sich innerhalb der Add-In-Website befinden, können Sie die Steuerelemente **CssRegistration** und **CssLink** verwenden, um auf die CSS-Datei zu verweisen, indem Sie den folgenden Code entweder auf der Masterseite oder der ASPX-Seite einfügen:
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. Sie können ein <link>-Element verwenden, um auf die CSS-Datei zu verweisen, indem Sie eine URL aus der URL der Hostwebsite erstellen, wie in diesem Beispiel dargestellt.
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     Wenn Sie diese Vorgehensweise verwenden, müssen Sie JavaScript auf der Seite ausführen, um die URL der Hostwebsite aus der Abfragezeichenfolge abzurufen. Dann können Sie die URL der Hostwebsite in das **link**-Element einfügen, bevor Sie das Element in das DOM der Seite schreiben.
@@ -511,11 +511,9 @@ Da die Seite in einem **iframe**-Element über verschiedene Domänen hinweg einw
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Da Sie nicht erzwingen können, in welche Domänen Ihre Seiten per iFrame gelangen, sind die von Ihnen in Add-In-Parts gehosteten Seiten anfällig für Sicherheitsangriffe durch Clickjacking, Seiten können sich in einem iFrame auf einer schädlichen Seite befinden, und Benutzer könnten dazu verleitet werden, auf Schaltflächen zu klicken und Aktionen durchzuführen, derer sie sich nicht bewusst sind. Wenn Sie Ihre Seite planen, sollten Sie dies berücksichtigen und sicherstellen, dass Sie auf der Seite für das Part keine Funktion exponieren, die gefährlich wäre, wenn sie auf einer schädlichen Seite angezeigt wird.
   
@@ -531,10 +529,8 @@ Wenn Ihr Part dynamischen Inhalt anzeigt, empfiehlt es sich, eine Größenanpass
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 Im obigen Beispiel wird der **senderId**-Wert in der Abfragezeichenfolge der Seite automatisch durch den Add-In-Webpart-Code festgelegt, wenn die Seite gerendert wird. Ihre Seite liest dann einfach den **SenderId**-Wert aus der Abfragezeichenfolge und verwendet ihn beim Anfordern einer Größenanpassung. Sie können die Hostweb-URL aus der Abfragezeichenfolge abrufen, indem Sie in der Definition des Add-In-Webparts die Token **StandardTokens** oder **HostUrl** an das **Src** -Attribut anfügen.
   
@@ -546,8 +542,7 @@ Um ein Part für die Hostwebsite anzugeben, müssen Sie ein Client-Webpart in de
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -599,8 +594,7 @@ Um ein Part für die Hostwebsite anzugeben, müssen Sie ein Client-Webpart in de
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
 In Ihrem **ClientWebPart**-Element können Sie Folgendes angeben:
   
@@ -690,13 +684,11 @@ Normalerweise wird ein Benutzer bei Auswahl einer benutzerdefinierten Aktion zu 
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
 Das Attribut **HostWebDialogHeight** und das Attribut **HostWebDialogWidth** sind optional. Wenn die Attribute nicht angegeben werden, wird die Standardgröße für ein Dialogfeld in SharePoint verwendet. Sie sollten jedoch generell die Größe Ihres Dialogfelds angeben, damit es passend aussieht und nicht mit Bildlaufleisten für den Benutzerangezeigt wird.
   
@@ -708,12 +700,10 @@ Das Dialogfeld enthält immer eine Schaltfläche **Schließen** im Dialogfeld-Ch
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
 Je nachdem, ob Sie **CloseCustomActionDialogRefresh** oder **CloseCustomActionDialogNoRefresh** verwenden, wird das Dialogfeld geschlossen und aktualisiert die zugehörige Seite oder nicht.
   

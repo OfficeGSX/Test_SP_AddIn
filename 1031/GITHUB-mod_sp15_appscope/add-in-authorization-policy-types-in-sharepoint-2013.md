@@ -65,13 +65,11 @@ Um Nur-Add-In-Aufrufe an SharePoint ausführen zu können, muss Ihr Add-In die B
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **HINWEIS**
@@ -92,8 +90,7 @@ Der Unterschied zwischen einem Nur-Add-In-Aufruf an SharePoint und einem Benutze
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -119,8 +116,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **HINWEIS**

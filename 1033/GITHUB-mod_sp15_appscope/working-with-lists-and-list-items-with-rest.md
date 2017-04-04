@@ -35,16 +35,14 @@ The following example shows how to **retrieve** a specific list if you know its 
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 
 > **NOTE**
@@ -59,16 +57,14 @@ The following example shows how to **retrieve** a specific list if you know its 
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following XML shows an example of the list properties that are returned when you request the XML content type.
   
@@ -76,8 +72,7 @@ The following XML shows an example of the list properties that are returned when
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -119,8 +114,7 @@ The following XML shows an example of the list properties that are returned when
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>
-```
+  </content>```
 
 
 > **NOTE**
@@ -137,8 +131,7 @@ The following example shows how to **create** a list.
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -149,8 +142,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **update** a list by using the **MERGE** method.
   
@@ -158,8 +150,7 @@ The following example shows how to **update** a list by using the **MERGE** meth
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -171,8 +162,7 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **create** a **custom field** for a list.
   
@@ -180,8 +170,7 @@ The following example shows how to **create** a **custom field** for a list.
     
 
 
-
-```
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -190,8 +179,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **delete** a list.
   
@@ -199,8 +187,7 @@ The following example shows how to **delete** a list.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -209,8 +196,7 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-
-```
+```
 
 
 ## Working with list items by using REST
@@ -227,16 +213,14 @@ The following example shows how to **retrieve** all of a list's items.
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following example shows how to **retrieve** a specific list item.
   
@@ -244,16 +228,14 @@ The following example shows how to **retrieve** a specific list item.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 The following XML shows an example of the list item properties that are returned when you request the XML content type.
   
@@ -261,8 +243,7 @@ The following XML shows an example of the list item properties that are returned
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -279,8 +260,7 @@ The following XML shows an example of the list item properties that are returned
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>
-```
+</content>```
 
 The following example shows how to **create** a list item.
   
@@ -295,8 +275,7 @@ The following example shows how to **create** a list item.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -306,8 +285,7 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **update** a list item.
   
@@ -322,8 +300,7 @@ The following example shows how to **update** a list item.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -335,8 +312,7 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 The following example shows how to **delete** a list item.
   
@@ -344,8 +320,7 @@ The following example shows how to **delete** a list item.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -354,8 +329,7 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Using ETag values to determine document and list item versioning

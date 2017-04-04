@@ -132,7 +132,7 @@ ms.assetid: 25d84ac5-d2b3-40c7-962d-1408aacf14ed
     
   
 
-  ```
+ ```
   
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StyleConsumer.aspx.cs" Inherits="StylesheetAppWeb.StyleConsumer" %>
 
@@ -225,7 +225,7 @@ ms.assetid: 25d84ac5-d2b3-40c7-962d-1408aacf14ed
 </body>
 </html>
 
-  ```
+ ```
 
 
     在某些情况下，必须向 SharePoint 验证用户身份，然后您的页面才能下载样式的 CSS 和图像。链接标记不会自动对尚未登录的用户进行身份验证。请考虑从外接程序 Web 将页资源加载到您的网页中，以在链接到 CSS 文件之前强制验证用户身份。在此示例中，将 blank.html 页加载到不可见的 IFrame 中。

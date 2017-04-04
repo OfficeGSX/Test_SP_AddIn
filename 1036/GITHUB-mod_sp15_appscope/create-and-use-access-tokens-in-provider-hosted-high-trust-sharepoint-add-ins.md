@@ -135,8 +135,7 @@ L'en-tête a deux propriétés. La propriété « typ » est le type de jeton. L
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -149,8 +148,7 @@ L'en-tête a deux propriétés. La propriété « typ » est le type de jeton. L
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 Le tableau suivant fournit quelques indications sur les **propriétés que votre code doit inclure dans le jeton d'accès et les valeurs à définir**. Si vous utilisez du code managé, les fichiers SharePointContext.cs (ou .vb) et TokenHelper.cs (ou .vb) créent les jetons à votre place. Par exemple, imaginez que votre code n'effectue qu'un seul appel à la méthode **SharePointContext.CreateUserClientContextForSPHost**. Celle-ci appelle à son tour des méthodes dans la classe **TokenHelper** qui créent le jeton d'accès qui est ensuite intégré à tous les appels à SharePoint par l'objet de contexte client SharePoint qui est renvoyé par la méthode **SharePointContext.CreateUserClientContextForSPHost**.
   
@@ -190,8 +188,7 @@ Le tableau 2 décrit les revendications que votre code doit intégrer dans le co
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -203,8 +200,7 @@ Le tableau 2 décrit les revendications que votre code doit intégrer dans le co
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **REMARQUE**

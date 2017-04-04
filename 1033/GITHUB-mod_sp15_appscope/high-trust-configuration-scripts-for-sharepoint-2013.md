@@ -78,14 +78,12 @@ For example, in the common scenario where the web application's certificate is i
     
 
 
-
-```
+```
 
 ./AddSPRootAuthority.ps1 -CertPath "\\\\CertStorage\\RootCA.cer" -CertName "Contoso Root CA"
 
 ./AddSPRootAuthority.ps1 -CertPath "C:\\RegionalCerts\\NorthRegion.cer" -CertName "North Region Intermediate CA"
-
-```
+```
 
 If all of certificates of the customer's high-trust SharePoint Add-ins come from the same chain of certificates, as would typically be the case, then this script is never used again.
   
@@ -104,8 +102,7 @@ The following is the code for the script. Simply paste it into any text editor o
 
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertName = $(throw "Usage: AddSPRootAuthority.ps1 -CertPath <full path to .cer file> -CertName <name of certificate>"),
@@ -117,8 +114,7 @@ $ErrorActionPreference = "Stop"
 # Make the certificate a trusted root authority in SharePoint
 $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($CertPath)
 New-SPTrustedRootAuthority -Name $CertName -Certificate $cert
-
-```
+```
 
 
 ## HighTrustConfig-ForSharedCertificate.ps1
@@ -161,8 +157,7 @@ Start a new file in a text editor, or the PowerShell editor, and copy the follow
     
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertPath = $(throw "Usage: HighTrustConfig-ForSharedCertificate.ps1 -CertPath <full path to .cer file> -CertName <name of certificate> [-TokenIssuerFriendlyName <friendly name>]"),
@@ -207,8 +202,7 @@ else
 New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 
 # Output the specific issuer ID to a file in the same folder as this script. The file should be given to the developer of the high-trust SharePoint Add-in.
-$specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
-```
+$specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"```
 
 
 > **TIP**
@@ -259,8 +253,7 @@ Start a new file in a text editor, or the PowerShell editor, and copy the follow
     
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertPath = $(throw "Usage: HighTrustConfig-ForSingleApp.ps1 -CertPath <full path to .cer file> -CertName <name of certificate> [-SPAppClientID <client ID of SharePoint add-in>] [-TokenIssuerFriendlyName <friendly name>]"),
@@ -304,8 +297,7 @@ else
 
 # Register the token issuer
 New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier
-
-```
+```
 
 
 > **TIP**
@@ -322,13 +314,11 @@ A site subscription, sometimes called a tenancy, is a subset of the site collect
   
     
     
-
-```
+```
 
 $Web = Get-SPWeb $WebURL
 $sc = Get-SPServiceContext -Site $Web.Site
-$realm = Get-SPAuthenticationRealm -ServiceContext $sc
-```
+$realm = Get-SPAuthenticationRealm -ServiceContext $sc```
 
 To complete the modification of the script, add an additional required parameter  `$WebURL` to the param list at the top of the file, like this:
   
@@ -336,14 +326,12 @@ To complete the modification of the script, add an additional required parameter
     
 
 
-
-```
+```
 
 param (
     # other parameters omitted 
     [Parameter()][String] $WebURL
-)
-```
+)```
 
 Be sure to add a comma after the parameter that precedes the new one. And expand the "Usage" example on the top line to take into account the new parameter with something like this:  `-WebURL <full URL where SP add-in will be installed>`.
   
@@ -355,8 +343,7 @@ To make the SharePoint Add-in trusted on every site subscription, get a referenc
     
 
 
-
-```
+```
 
 $Farm = Get-SPFarm
 foreach ($ss in $Farm.SiteSubscriptions)
@@ -367,7 +354,6 @@ foreach ($ss in $Farm.SiteSubscriptions)
     # All of the lines from the draft script below the call to 
     # Get-SPAuthenticationRealm are inserted here inside the loop.
 }
-# end of script
-```
+# end of script```
 
 

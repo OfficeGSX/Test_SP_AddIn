@@ -117,13 +117,13 @@ If you're not building SharePoint-hosted ASPX pages, but you still want your add
     
   - Point to the library at the root of the layouts folder, as shown in the following example.
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - Copy the library to your own website, and reference it from there.
     
@@ -131,14 +131,14 @@ If you're not building SharePoint-hosted ASPX pages, but you still want your add
       > If you opt for this alternative your add-in will not benefit from updates to the control. 
 2. Add the placeholder DOM element where the control will be rendered, as shown in this example.
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. Instantiate the control.
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -149,14 +149,14 @@ If you're not building SharePoint-hosted ASPX pages, but you still want your add
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. (Optional) If you don't want to have the title area on your page, you can remove it by running the following JavaScript code.
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 The chrome control provides for two optional add-in icons: one on the top navigation bar and one in the title area. The add-in icon on the top navigation bar is 24 x 24 pixels (px), and the icon in the title area is the same size as SharePoint site icons—up to 64 px high by up to 180 px long. We recommend you use a PNG image that you have tested on white, black, gray, bright, and muted backgrounds because users and admins can change the site theme. For more information about using the chrome control, see  [Use the client chrome control in SharePoint Add-ins](use-the-client-chrome-control-in-sharepoint-add-ins.md).
   
@@ -191,18 +191,18 @@ To get the CSS styles from the host web, you have to reference its CSS file. You
   
 2. If you're inside the add-in web, you can use the **CssRegistration** and **CssLink** controls to reference the CSS file by putting the following code on either your master page or ASPX page:
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. You can use a <link> element to reference the CSS file by building a URL off of the host web's URL, as shown in this example.
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     If you use this approach, you have to run JavaScript in the page to get the host web's URL off the query string. Then you can insert the host web's URL into the **link** element before you write the element to the page's DOM.
@@ -512,11 +512,9 @@ The page has to work nicely in an **iframe** across different domains, so you'll
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Because you cannot enforce which domains your pages are iframed into, the pages you host in add-in parts are vulnerable to a clickjacking security attack. In clickjacking attacks, pages can be in an iframe on a malicious page, and users could be tricked into choosing buttons to take actions they're not aware of. When designing your page, you should be aware of this and make sure you're not exposing any functionality in the page for the part that would be dangerous if surfaced in a malicious page.
   
@@ -532,10 +530,8 @@ If your part displays dynamic content, it's a good idea to request a resize to r
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 In the example above, the **senderId** value will be set on the query string of the page automatically by the add-in part code when the page is rendered. Your page would just need to read the **SenderId** value off of the query string and use it when requesting a resize. You can retrieve the host web URL from the query string by appending the **StandardTokens** or **HostUrl** tokens to the **Src** attribute in your add-in part definition.
   
@@ -547,8 +543,7 @@ To specify a part for the host web, you must specify a client Web Part in the fe
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -600,8 +595,7 @@ To specify a part for the host web, you must specify a client Web Part in the fe
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
 In your **ClientWebPart** element, you'll want to specify the following things:
   
@@ -691,13 +685,11 @@ Normally when a user chooses a custom action, it will navigate them to the URL y
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
 The **HostWebDialogHeight** attribute and the **HostWebDialogWidth** attribute are optional. If the attributes are not specified, the default size for a dialog box in SharePoint will be used. In general, though, you should specify the size of your dialog box so that it looks right and doesn't use scrollbars when it is displayed to the user.
   
@@ -709,12 +701,10 @@ The dialog box always includes a **Close** button in the dialog box chrome. You 
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
 Depending on whether you use **CloseCustomActionDialogRefresh** or **CloseCustomActionDialogNoRefresh**, the dialog box closes, and it either refreshes the page behind it or it does not.
   

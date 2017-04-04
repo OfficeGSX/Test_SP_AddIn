@@ -163,7 +163,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -254,7 +254,7 @@ Categories from the Northwind database exposed as an OData service:
     }
 })();
 </script>
-  ```
+ ```
 
 
 ### (オプション) REST エンドポイントを使用して、Web プロキシを使用するように Default.aspx ページを変更するには
@@ -287,7 +287,7 @@ Categories from the Northwind database exposed as an OData service:
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -393,7 +393,7 @@ Categories from the Northwind database exposed as an OData service:
 })();
 </script>
 
-  ```
+ ```
 
 
 ### アドイン マニフェスト ファイルを編集するには
@@ -404,12 +404,12 @@ Categories from the Northwind database exposed as an OData service:
   
 2. 以下の **RemoteEndPoints** 定義を **App** ノードの子としてコピーします。
     
-  ```XML
+ ```XML
   
 <RemoteEndpoints>
     <RemoteEndpoint Url=" http://services.odata.org" />
 </RemoteEndpoints>
-  ```
+ ```
 
 
     **RemoteEndpoint** 要素は、リモート ドメインを指定するために使用されます。Web プロキシによって、リモート ドメインに対して発行された要求がアドイン マニフェストで宣言されていることが検証されます。 **RemoteEndpoints** 要素では、最大 20 のエントリを作成できます。権限に関する部分のみが考慮されます。 `http://domain:port` と `http://domain:port/website` は同じエンドポイントと見なされます。1 つの **RemoteEndpoint** 定義だけで、同じドメイン内のさまざまなエンドポイントに対し呼び出しを発行できます。
@@ -462,7 +462,7 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|未処理の例外 " **SP は未定義です。** " <br/> |ブラウザー ウィンドウで SP.RequestExecutor.js ファイルにアクセスできることを確認してください。  <br/> ローカル サーバーを開発環境として使用している場合は、IIS のループバック チェックを無効にする必要があります。Windows PowerShell コマンド プロンプトから以下のコマンドを実行してください。  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **注意**> 運用環境では、IIS のループバック チェックを無効にすることはお勧めしません。           |
+|未処理の例外 " **SP は未定義です。** " <br/> |ブラウザー ウィンドウで SP.RequestExecutor.js ファイルにアクセスできることを確認してください。  <br/> ローカル サーバーを開発環境として使用している場合は、IIS のループバック チェックを無効にする必要があります。Windows PowerShell コマンド プロンプトから以下のコマンドを実行してください。  <br/>```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **注意**> 運用環境では、IIS のループバック チェックを無効にすることはお勧めしません。           |
 |リモート エンドポイントからの応答のサイズが、構成された制限を超えています。  <br/> |Web プロキシ要求の応答のサイズは 200 KB 未満でなければなりません。  <br/> |
    
 

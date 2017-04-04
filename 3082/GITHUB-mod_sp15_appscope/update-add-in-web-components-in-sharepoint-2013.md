@@ -129,7 +129,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
 
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="2.0.0.0">
@@ -144,7 +144,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
 ### Para agregar componentes al complemento
@@ -158,16 +158,16 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   
 3. Para cada nuevo manifiesto de elemento, agregue un elemento  [ElementManifest](http://msdn.microsoft.com/library/5a6a2865-5d31-45a2-a402-6da6e0f5567a%28Office.15%29.aspx) como elemento secundario a los elementos **ElementManifests** y **ApplyElementManifests** del xml de característica. (Exactamente el mismo elemento **ElementManifest** en ambos lugares). El atributo **Location** del elemento debe apuntar a la ruta de acceso relativa del archivo elements.2.0.0.0.xml. Por ejemplo, si agregó una lista denominada MyCustomList, el elemento **ElementManifest** tendría el siguiente aspecto.
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="MyCustomList\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 4. Algunos tipos de componentes agregan archivos al proyecto. Por ejemplo, cuando agrega una lista se crea un archivo schema.xml; y cuando agrega una página, se crea un archivo de páginas. Para cada archivo, agregue un elemento  [ElementFile](http://msdn.microsoft.com/library/bd43638e-8f18-4a0d-b122-1c055f97aa71%28Office.15%29.aspx) como elemento secundario al elemento **ElementManifests**. (No lo agregue al elemento **ApplyElementManifests**). El atributo **Location** debe apuntar a la ruta de acceso relativa del archivo. Por ejemplo, si agregó una lista, el elemento **ElementFile** para el archivo schema.xml tendría el siguiente aspecto.
     
-  ```XML
+ ```XML
   <ElementFile Location="MyCustomList\\Schema.xml" />
-  ```
+ ```
 
 5. Cuando agrega otro elemento de un tipo que ya se encontraba en la versión anterior del complemento, las Office Developer Tools para Visual Studio pueden agregar una referencia al nuevo elemento en un manifiesto de elementos existente en lugar de crear uno nuevo. Por ejemplo, la forma estándar de agregar una página a una web del complemento es hacer clic con el botón secundario en el nodo **Páginas** en el **Explorador de soluciones** y después navegar a **Agregar | Nuevo elemento | Página | Agregar**. Las Office Developer Tools para Visual Studio agregarán un nuevo elemento **File** al módulo **Pages** en el archivo de manifiesto de elementos existente (por lo general denominado elements.xml) en vez de crear un nuevo manifiesto de elemento.
     
@@ -194,7 +194,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   
 6. Si agrega un campo a un tipo de contenido en la característica, agregue un elemento  [AddContentTypeField](http://msdn.microsoft.com/library/cb04a3ac-f41a-4ffe-aaa1-d4bf3fb6347d%28Office.15%29.aspx) a la sección **VersionRange**. Asegúrese de asignar los valores correctos a los atributos **ContentTypeId** y **FieldId**. Opcionalmente, use el atributo **PushDown** para especificar si se debería agregar el nuevo campo a cualquier tipo de contenido derivado. A continuación se muestra un ejemplo.
     
-  ```XML
+ ```XML
   <VersionRange>
   <AddContentTypeField 
     ContentTypeId="0x0101000728167cd9c94899925ba69c4af6743e"
@@ -202,7 +202,7 @@ Use los siguientes pasos para actualizar la característica de la web del comple
     PushDown="TRUE" />
   <!-- Other child elements of VersionRange -->
 </VersionRange>
-  ```
+ ```
 
 
 ### Para modificar los componentes existentes del complemento
@@ -223,28 +223,28 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   
 4. Agregue un elemento **ElementManifest** a la sección **ApplyElementManifests** que haga referencia al nuevo archivo de manifiesto tal como se muestra en este ejemplo.
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 
     > **NOTA**
       >  No elimine el manifiesto original. El XML de característica usa tanto el nuevo como el antiguo.>  No copie ningún elemento **ElementFile** de la sección **ElementManifests** a la sección **ApplyElementManifests** incluso si se ha modificado el archivo al que se hace referencia en **ElementFile**. 
 2. Abra todos los archivos de manifiesto de elemento a los que se hace referencia en la sección **ApplyElementManifests** y asegúrese de que todos los elementos [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) tengan un atributo **ReplaceContents** y se establezcan en **TRUE**. A continuación se muestra un ejemplo. Es posible que las Office Developer Tools para Visual Studio ya lo hayan hecho, pero debe comprobarlo. Realice esta acción incluso para los manifiestos de elementos de las versiones anteriores del complemento. Este es uno de los pocos métodos en los que es una buena práctica editar un archivo de manifiesto de elemento existente.
     
-  ```XML
+ ```XML
   <Module Name="Pages">
   <File Path="Pages\\Default.aspx" Url="Pages/Default.aspx" ReplaceContent="TRUE" />
 </Module>
-  ```
+ ```
 
 3. Las páginas pueden tener elementos web insertados en ellas, tal como se explica en  [Incluir un elemento web en una página web de aplicación](include-a-web-part-in-a-webpage-on-the-add-in-web.md). Si cambia una página que tiene un elemento web en ella (o cambia las propiedades del elemento web), hay un paso adicional: tiene que agregar el siguiente marcado a la página para impedir que SharePoint agregue una segunda copia del elemento web en la página. El marcado debe agregarse al elemento **asp:Content** con el identificador `PlaceHolderAdditionalPageHead`. (Es posible que las Office Developer Tools para Visual Studio ya lo hayan agregado cuando se creó la página, pero debe comprobar que esté ahí).
     
-  ```XML
+ ```XML
   
 <meta name="WebPartPageExpansion" content="full" />
-  ```
+ ```
 
 
     > **NOTA**
@@ -259,12 +259,12 @@ Use los siguientes pasos para actualizar la característica de la web del comple
   
 3. Agregue el siguiente marcado al elemento **asp:Content** y, a continuación, reemplace _{RelativePathToNewPageFile}_ con la nueva ruta de acceso y nombre de archivo. Este script redireccionará el explorador a la nueva página e incluirá los parámetros de consulta. También mantendrá la página anterior fuera del historial del explorador.
     
-  ```
+ ```
   <script type="text/javascript">
         var queryString = window.location.search.substring(1);
         window.location.replace("{RelativePathToNewPageFile}" + "?" + queryString);
 </script>
-  ```
+ ```
 
 4. Elimine los demás elementos **asp:Content** de la página.
     
@@ -282,8 +282,7 @@ A continuación, se muestra un ejemplo de un archivo  _{FeatureName}_.Template.x
   
     
     
-
-```XML
+```XML
 
 <Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="MyApp Feature1"
       Description="SharePoint Add-in Feature" Id="85d309a8-107e-4a7d-b3a2-51341d3b11ff" 
@@ -308,8 +307,7 @@ A continuación, se muestra un ejemplo de un archivo  _{FeatureName}_.Template.x
       </VersionRange>
   </UpgradeActions>
 </Feature>
-
-```
+```
 
 
 ### Actualizaciones subsiguientes de la web del complemento
@@ -336,7 +334,7 @@ Cuando actualiza una Complemento de SharePoint por segunda (tercera, etc.) vez, 
   
 4. Vaya al elemento **VersionRange** anterior, el que agregó la última vez que actualizó el complemento (de la versión 1.0.0.0 a la 2.0.0.0 en el ejemplo continuado), y agréguele un atributo **EndVersion**. Queremos que las acciones de actualización en este elemento **VersionRange** se apliquen a cualquier versión el complemento a la que aún no se hayan aplicado (versión 1.0.0.0), pero no queremos que se vuelvan a aplicar a las versiones a las que ya se hayan aplicado (versión 2.0.0.0). El valor de **EndVersion** es *exclusivo*  , así que deberá establecerlo en la versión inferior a la que *no*  desea que se apliquen las acciones de actualización. En el ejemplo continuado, se establece en 2.0.0.0. Su archivo ahora debería tener el siguiente aspecto.
     
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="3.0.0.0">
@@ -352,14 +350,14 @@ Cuando actualiza una Complemento de SharePoint por segunda (tercera, etc.) vez, 
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     Cada vez que actualice la característica, siga el mismo patrón. Agregue un nuevo elemento **VersionRange** para las acciones de actualización más recientes. A continuación, agregue un elemento **EndVersion** al elemento **VersionRange** *anterior*  y establézcalo en el número de versión anterior. En el ejemplo continuado, el archivo tendría el siguiente aspecto para una actualización de la versión 3.0.0.0 a la 4.0.0.0.
     
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="4.0.0.0">
@@ -378,7 +376,7 @@ Cuando actualiza una Complemento de SharePoint por segunda (tercera, etc.) vez, 
     </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     Observe que el elemento **VersionRange** más reciente no tiene ningún atributo **BeginVersion** ni **EndVersion**. Esto asegura que las acciones de actualización que van dentro de este elemento **VersionRange** se aplicarán a todas las versiones anteriores de la característica, que es lo deseable ya que todos los cambios aparecen referenciados en este **VersionRange**, y ninguno de ellos se ha producido aún para ninguna instancia de la característica.

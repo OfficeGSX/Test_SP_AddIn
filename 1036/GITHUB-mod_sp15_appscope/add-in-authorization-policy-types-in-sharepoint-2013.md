@@ -65,13 +65,11 @@ Pour pouvoir effectuer des appels de complément uniquement à SharePoint, le co
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **REMARQUE**
@@ -92,8 +90,7 @@ La différence entre un appel de complément uniquement à SharePoint et un appe
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -119,8 +116,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **REMARQUE**

@@ -215,69 +215,69 @@ Das Windows PowerShell-Skript, das Sie in diesem Abschnitt erstellen, soll die V
 
 1. Beginnen Sie in einem Text-Editor oder Windows PowerShell-Editor eine neue Datei, und fügen Sie die folgenden Zeilen hinzu, um ein Zertifikatsobjekt zu erstellen:
     
-  ```
+ ```
   
 $publicCertPath = "C:\\Certs\\HighTrustSampleCert.cer"
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($publicCertPath)
 
-  ```
+ ```
 
 2. Fügen Sie die folgende Zeile hinzu, um sicherzustellen, dass SharePoint das Zertifikat als Stammzertifizierungsstelle behandelt.
     
-  ```
+ ```
   
 New-SPTrustedRootAuthority -Name "HighTrustSampleCert" -Certificate $certificate
 
-  ```
+ ```
 
 3. Fügen Sie die folgende Zeile hinzu, um die ID des Autorisierungsbereichs abzurufen.
     
-  ```
+ ```
   
 $realm = Get-SPAuthenticationRealm
 
-  ```
+ ```
 
 4. Ihre Remotewebanwendung verwendet ein Zugriffstoken, um Zugriff auf SharePoint-Daten zu erhalten. Das Zugriffstoken muss durch einen Tokenherausgeber ausgegeben werden, dem SharePoint vertraut. In einer besonders vertrauenswürdigen SharePoint-Add-In ist der Tokenherausgeber das Zertifikat. Fügen Sie die folgenden Zeilen hinzu, um eine Aussteller-ID in dem von SharePoint geforderten Format zu erstellen: ** _specific_issuer_GUID_@ _realm_GUID_**.
     
-  ```
+ ```
   
 $specificIssuerId = "11111111-1111-1111-1111-111111111111"
 $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
 
-  ```
+ ```
 
 
     > **HINWEIS**
       > Der  `$specificIssuerId`-Wert muss eine GUID sein, da in einer Produktionsumgebung jedes Zertifikat einen eindeutigen Aussteller aufweisen muss. Allerdings können Sie in diesem Zusammenhang, in dem Sie dasselbe Zertifikat verwenden, um alle Ihre besonders vertrauenswürden Apps zu debuggen, den Wert hart codieren. Wenn Sie aus irgendeinem Grund eine andere GUID als die hier verwendete nutzen,  * **müssen Sie sicherstellen, dass alle Buchstaben in der GUID in Kleinschreibung angegeben sind*** . Die SharePoint-Infrastruktur erfordert derzeit Kleinschreibung für Zertifikataussteller-GUIDs.
 5. Fügen Sie die folgenden Zeilen hinzu, um das Zertifikat als vertrauenswürdigen Tokenherausgeber zu registrieren. Der  `-Name`-Parameter muss eindeutig sein. Daher ist es in einer Produktionskonfiguration üblich, eine GUID teilweise (oder vollständig) als Namen zu verwenden. Sie können in diesem Zusammenhang jedoch auch einen Anzeigenamen verwenden. Mit dem  `-IsTrustBroker`-Switch wird sichergestellt, dass Sie dasselbe Zertifikat für alle besonders vertrauenswürdigen Apps, die Sie entwickeln, verwenden können. Der Befehl  `iisreset` ist erforderlich, damit Ihr Tokenherausgeber sofort registriert ist. Andernfalls müssen Sie möglicherweise bis zu 24 Stunden warten, bis der neue Aussteller registriert ist.
     
-  ```
+ ```
   
 New-SPTrustedSecurityTokenIssuer -Name "High Trust Sample Cert" -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 iisreset 
 
-  ```
+ ```
 
 6. In SharePoint 2013 werden normalerweise keine selbstsignierten Zertifikate akzeptiert. Wenn Sie also ein selbstsigniertes Zertifikat für das Debuggen verwenden, fügen Sie die folgenden Zeilen hinzu, um die normalen SharePoint-Anforderungen zur Verwendung von HTTPS zu deaktivieren, sobald Remotewebanwendungen in SharePoint aufgerufen werden. Andernfalls erhalten Sie eine Meldung vom Typ **403 (forbidden)**, wenn die Remotewebanwendung SharePoint mithilfe eines selbstsignierten Zertifikats aufruft. Sie können diesen Schritt in einem späteren Vorgang rückgängig machen. Wenn Sie die HTTPS-Anforderung deaktivieren, werden Anfragen von der Remotewebanwendung an SharePoint nicht verschlüsselt. Das Zertifikat kann jedoch immer noch als vertrauenswürdiger Aussteller von Zugrifftoken verwendet werden, und dies ist die Hauptaufgabe der besonders vertrauenswürdigen SharePoint-Add-Ins.
     
-  ```
+ ```
   
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
 
-  ```
+ ```
 
 7. Speichern Sie die Datei mit dem Namen **HighTrustConfig-ForDebugOnly.ps1**.
     
   
 8. Öffnen Sie die **SharePoint-Verwaltungsshell** als Administrator, und führen Sie die Datei mit der folgenden Zeile aus:
     
-  ```
+ ```
   
 ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ## Erstellen einer besonders vertrauenswürdigen SharePoint-Add-In
@@ -446,9 +446,9 @@ Wenn Sie das neue Zertifikat abgerufen haben, müssen Sie - sofern Sie dies noch
   
 3. Öffnen Sie die **SharePoint-Verwaltungsshell** als Administrator, und führen Sie die Datei mit der folgenden Zeile aus:
     
-  ```
+ ```
   ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ### So konfigurieren Sie die Remotewebanwendung neu

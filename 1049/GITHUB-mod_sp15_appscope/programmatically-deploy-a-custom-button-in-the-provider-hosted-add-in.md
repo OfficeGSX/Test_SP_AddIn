@@ -114,16 +114,16 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 
 1. В проекте **ChainStore** разверните **AddEmployeeToCorpDB**, откройте файл elements.xml, а затем измените значение атрибута **RegistrationId** элемента **CustomAction** на число 100. Это идентификатор типа списка. Даже если на веб-сайте нет экземпляров списка этого типа, они имеются на всех веб-сайтах SharePoint. Теперь атрибут должен иметь указанный ниже вид.
     
-  ```XML
+ ```XML
   
 RegistrationId="100"
-  ```
+ ```
 
 2. В файле SharePointComponentDeployer.cs добавьте указанную ниже строку в метод  `DeployChainStoreComponentsToHostWeb` сразу же после строки, в которой вызывается метод `CreateLocalEmployeesList`. Вы создадите этот метод на следующем этапе.
     
-  ```cs
+ ```cs
   ChangeCustomActionRegistration();
-  ```
+ ```
 
 3. Добавьте указанный ниже метод в класс  `SharePointComponentDeployer`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -135,7 +135,7 @@ RegistrationId="100"
     > **Важно!**
       > **Вам необходимо изменить значение  `action.Name` в коде ниже, чтобы оно совпадало со значением в файле elements.xml.** Часть GUID имени будет другой. Обратите внимание, что между GUID и остальной частью имени имеется символ точки. Ниже приведен пример строки.>  `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
-  ```cs
+ ```cs
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -161,7 +161,7 @@ RegistrationId="100"
           clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 4. Замените  `TODO8` указанным ниже кодом.
     
@@ -169,7 +169,7 @@ RegistrationId="100"
     
 
 
-  ```cs
+ ```cs
   
 var queryForList = from list in clientContext.Web.Lists
                    where list.Title == "Local Employees"
@@ -181,14 +181,14 @@ List employeeList = matchingLists.First();
 var listActions = employeeList.UserCustomActions;
 clientContext.Load(listActions);
 listActions.Clear();
-  ```
+ ```
 
 5. Замените  `TODO9` указанной ниже строкой, которая добавляет неопределенное дополнительное действие в список **Local Employees** (Местные сотрудники).
     
-  ```cs
+ ```cs
   
 var listScopedEmployeeAction = listActions.Add();
-  ```
+ ```
 
 6. Замените  `TODO10` указанным ниже кодом. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -199,27 +199,27 @@ var listScopedEmployeeAction = listActions.Add();
     
   
 
-  ```cs
+ ```cs
   listScopedEmployeeAction.Title = webScopedEmployeeAction.Title;
 listScopedEmployeeAction.Location = webScopedEmployeeAction.Location;
 listScopedEmployeeAction.Sequence = webScopedEmployeeAction.Sequence;
 listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
 listScopedEmployeeAction.Update();
-  ```
+ ```
 
 7. Замените  `TODO11` указанной ниже строкой, в которой выполняется удаление исходной описательным способом определенной кнопки. Если бы у нас не было этой строки, то на каждом списке на веб-сайте, для которого используется шаблон списка 100, была бы настраиваемая кнопка. Так как функциональность кнопки тесно связана со списком **Local Employees** (Местные сотрудники), то нет никакого смысла размещать эту кнопку в других списках. Кроме того, без этой строки кнопка будет *дважды*  размещена в списке **Local Employees** (Местные сотрудники), так как для этого списка используется шаблон 100.
     
-  ```cs
+ ```cs
   
 webScopedEmployeeAction.DeleteObject();
-  ```
+ ```
 
 
     Теперь весь метод должен иметь указанный ниже вид (за исключением того, что заполнитель необходимо заменить на GUID).
     
 
 
-  ```cs
+ ```cs
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = SPContext.CreateUserClientContextForSPHost())
@@ -256,7 +256,7 @@ webScopedEmployeeAction.DeleteObject();
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## Запрос полного контроля над хост-сайтом

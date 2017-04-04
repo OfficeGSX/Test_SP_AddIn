@@ -46,11 +46,11 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
 
 1. Откройте Windows PowerShell и запустите следующий командлет:
     
-  ```
+ ```
   
 Connect-MsolService
 
-  ```
+ ```
 
 2. При появлении запроса введите учетные данные администратора клиента или администратора фермы для области клиента Office 365 или фермы, где надстройка зарегистрирована с использованием AppRegNew.aspx.
     
@@ -64,7 +64,7 @@ Connect-MsolService
     
   
 
-  ```
+ ```
   
 $applist = Get-MsolServicePrincipal -all  |Where-Object -FilterScript { ($_.DisplayName -notlike "*Microsoft*") -and ($_.DisplayName -notlike "autohost*") -and  ($_.ServicePrincipalNames -notlike "*localhost*") }
 
@@ -79,7 +79,7 @@ foreach ($appentry in $applist)
      Write-Host "$principalName;$principalId;$appentry.KeyId;$appentry.type;$date;$appentry.Usage"
 
 }  > c:\\temp\\appsec.txt
-  ```
+ ```
 
 4. Откройте файл C:\\temp\\appsec.txt, чтобы просмотреть отчет. Не закрывайте окно Windows PowerShell для выполнения следующей процедуры, если скоро истекает срок действия какого-либо секрета.
     
@@ -94,15 +94,15 @@ foreach ($appentry in $applist)
 
 1. Создайте переменную ИД клиента со следующем строкой, используя ИД клиента, которое имеет Надстройка SharePoint, в качестве параметра.
     
-  ```
+ ```
   
 $clientId = 'client id of the add-in'
 
-  ```
+ ```
 
 2. Создайте новый секрет клиента со следующими строками:
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -113,7 +113,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
 $newClientSecret
-  ```
+ ```
 
 3. Новый секрет клиента появится в консоли Windows PowerShell. Скопируйте его в текстовый файл, он будет нужен для следующей процедуры.
     
@@ -138,7 +138,7 @@ $newClientSecret
 
 1. Откройте проект для решения Надстройка SharePoint в Visual Studio и откройте файл web.config для проекта веб-приложения. В разделе **appSettings** находятся ключи для ИД клиента и секрет клиента. Ниже приведен пример.
     
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="your client id here" />
@@ -146,25 +146,25 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 
-  ```
+ ```
 
 2. Измените имя ключа **ClientSecret** на "SecondaryClientSecret", как показано в следующем примере.
     
-  ```XML
+ ```XML
   
 <add key="SecondaryClientSecret" value="your old secret here" />
-  ```
+ ```
 
 3. Добавьте новый ключ **ClientSecret** и включите в него новый секрет клиента. Результат должен выглядеть следующим образом:
     
-  ```XML
+ ```XML
   <appSettings>
   <add key="ClientId" value="your client id here" />
   <add key="ClientSecret" value="your new secret here" />
   <add key="SecondaryClientSecret" value="your old secret here" />
      ... other settings may be here ...
 </appSettings>
-  ```
+ ```
 
 4. Если вы использовали новый файл TokenHelper, перестройте проект.
     
@@ -182,13 +182,13 @@ $newClientSecret
 
 1. Подключитесь к Microsoft Office Online, используя права администратора клиента, приведенный ниже код и Windows PowerShell для SharePoint 2013.
     
-  ```
+ ```
   
 import-module MSOnline
 $msolcred = get-credential
 connect-msolservice -credential $msolcred
 
-  ```
+ ```
 
 2. Получите **ServicePrincipals** и ключи. При печатании **$keys** возвращаются три записи. Замените каждое значение **KeyId**  *KeyId1*  , *KeyId2*  и *KeyId3*  . Вы увидите значение **EndDate** для каждого ключа. Убедитесь, что просроченный ключ там отображается.
     
@@ -196,17 +196,17 @@ connect-msolservice -credential $msolcred
     
 
 
-  ```
+ ```
   
 $clientId = "27c5b286-62a6-45c7-beda-abbaea6eecf2"
 $keys = Get-MsolServicePrincipalCredential -AppPrincipalId $clientId
 Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -AppPrincipalId $clientId 
 
-  ```
+ ```
 
 3. Создайте новое значение **ClientSecret** для этого **clientID**. Оно использует то же значение **clientId**, которое указано выше. Новое значение **ClientSecret** действительно в течение 3 лет.
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -220,7 +220,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret   -StartDate $dtStart  -EndDate $dtEnd
 $newClientSecret
 
-  ```
+ ```
 
 4. Скопируйте выходные данные **$newClientSecret**.
     

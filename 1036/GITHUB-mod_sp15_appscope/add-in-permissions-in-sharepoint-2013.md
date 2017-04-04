@@ -219,8 +219,7 @@ Le code suivant illustre la façon d'utiliser les étendues d'autorisation et le
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ Le code suivant illustre la façon d'utiliser les étendues d'autorisation et le
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 Le code suivant illustre un complément demandant l'accès Lecture à l'étendue du site web et l'accès Lecture à l'étendue de liste.
   
@@ -250,8 +248,7 @@ Le code suivant illustre un complément demandant l'accès Lecture à l'étendue
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ Le code suivant illustre un complément demandant l'accès Lecture à l'étendue
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### Étendues de demande d'autorisation pour les autres fonctionnalités SharePoint
@@ -424,13 +420,11 @@ La propriété **BaseTemplateId** est un élément enfant, et non un attribut de
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **Tableau 7. Étendue de demande d'autorisation avec les propriétés associées**

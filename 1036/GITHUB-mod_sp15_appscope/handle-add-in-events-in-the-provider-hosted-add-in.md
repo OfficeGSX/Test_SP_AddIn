@@ -104,17 +104,17 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
   
   -  L'URL du gestionnaire est enregistrée dans le manifeste du complément. Cette partie du manifeste n'est pas visible dans le concepteur de manifeste. Pour le voir, cliquez avec le bouton droit sur le fichier AppManifest.xml et sélectionnez **Afficher le code**. L'élément **Propriétés** comporte un nouvel enfant qui se présente comme suit. Ce code indique à SharePoint d'appeler la méthode **ProcessEvent** de ce service une fois que le complément est installé. Le gestionnaire personnalisé est le dernier élément qui s'exécute dans le cadre de l'installation. La chaîne `~remoteAppUrl` est un espace réservé que les Outils de développement Office pour Visual Studio remplacent par l'URL d'hôte de service. Lors du débogage, il s'agit d'une URL du bus des services Azure. Lorsque vous créez le package pour le déploiement en production, il s'agit de l'URL de production.
     
-  ```XML
+ ```XML
   
 <InstalledEventEndpoint>~remoteAppUrl/Services/AppEventReceiver.svc</InstalledEventEndpoint>
-  ```
+ ```
 
 3.  Ouvrez le fichier AppEventReceiver.svc.cs.
     
   
 4.  Vous pouvez voir que les Outils de développement Office pour Visual Studio ont créé un exemple d'implémentation de la méthode **ProcessEvent**. Toutes les implémentations de cette méthode commencent par l'initialisation d'un objet **SPRemoteEventResult** et se terminent par le renvoi de cet objet à SharePoint. Entre autres choses, cet objet indique à SharePoint s'il doit ou non restaurer l'événement, car la logique de gestion personnalisée a échoué. Les outils peuvent également inclure un bloc **using** dans cette méthode qui crée un objet **ClientContext**. Le gestionnaire personnalisé du complément Chain Store n'est pas amené à rappeler SharePoint, donc supprimez ce bloc. La méthode doit maintenant se présenter comme suit.
     
-  ```cs
+ ```cs
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
@@ -122,11 +122,11 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
 
     return result;
 }
-  ```
+ ```
 
 5.  Le récepteur d'événements peut être appelé par l'un des trois événements de complément possibles. Ajoutez la structure **switch** suivante à la méthode **ProcessEvent** entre les lignes qui créent et renvoient l'objet `result`. Les noms des événements disposent d'une chaîne « App », car auparavant les compléments étaient appelés des « applications », ou « apps ».
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -144,7 +144,7 @@ switch (properties.EventType)
          
         break;
 }
-  ```
+ ```
 
 6.  Notre logique d'installation appelle une procédure stockée SQL pour enregistrer le magasin de Hong Kong en tant que client dans l'application web distante. En cas d'échec de ce processus, il est très important que les signaux de gestionnaire SharePoint restaurent l'installation du complément. De ce fait, ajoutez les blocs **try/catch** suivants à la place de l'élément `TODO2`. Notez ce qui suit à propos de ce code :
     
@@ -155,7 +155,7 @@ switch (properties.EventType)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -167,32 +167,32 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 7.  L'URL du site web hôte, qui correspond au discriminant client de l'exemple, fait partie des informations que SharePoint transmet au récepteur dans le paramètre **SPRemoteEventProperties**. Ajoutez la ligne suivante à la méthode **ProcessEvent** sur la ligne juste en dessous de l'initialisation de l'objet **SPRemoteEventResult**.
     
-  ```cs
+ ```cs
   
 string tenantName = properties.AppEventProperties.HostWebFullUrl.ToString();
-  ```
+ ```
 
 8.  À présent, notre code doit faire face à un aspect particulier de la propriété **AppEventProperties.HostWebFullUrl**. Dans la plupart des autres contextes, SharePoint comprend un caractère « / » à la fin de l'URL du site web hôte, c'est pourquoi la logique de notre exemple de code considère que c'est également le cas ici. Cependant, SharePoint ajoute ce caractère à la fin de la valeur **HostWebFullUrl** si et seulement si le site web hôte est le site web racine d'une collection de sites. Étant donné que notre site de Hong Kong est un sous-site web dans la collection de sites, nous devons ajouter ce caractère pour s'assurer que la même chaîne de nom de client est utilisée tout au long de l'exemple. Ajoutez le code suivant en dessous de l'initialisation de l'objet `tenantName`.
     
-  ```cs
+ ```cs
   if (!tenantName.EndsWith("/"))
 {
     tenantName += "/";
 }
-  ```
+ ```
 
 9.  Ajoutez l'instruction **using** suivante en haut du fichier.
     
-  ```
+ ```
   
 using System.Data.SqlClient;
 using System.Data;
 using ChainStoreWeb.Utilities;
-  ```
+ ```
 
 10.  Ajoutez la méthode suivante à la classe `AppEventReceiver`. Nous n'aborderons pas ce sujet dans le détail, car l'objectif de cette série d'articles consiste à enseigner la programmation de compléments SharePoint, et non la programmation SQL Server/Azure. 
     
@@ -200,7 +200,7 @@ using ChainStoreWeb.Utilities;
     
 
 
-  ```cs
+ ```cs
   
 private void CreateTenant(string tenantName)
 {
@@ -218,7 +218,7 @@ private void CreateTenant(string tenantName)
         cmd.ExecuteNonQuery();
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 ## Création du gestionnaire de désinstallation
@@ -245,7 +245,7 @@ private void CreateTenant(string tenantName)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -257,11 +257,11 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 3.  Ajoutez la méthode suivante à la classe `AppEventReceiver`.
     
-  ```cs
+ ```cs
   
 private void DeleteTenant(string tenantName)
 {
@@ -279,7 +279,7 @@ private void DeleteTenant(string tenantName)
         cmd.ExecuteNonQuery();                
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 > **REMARQUE**

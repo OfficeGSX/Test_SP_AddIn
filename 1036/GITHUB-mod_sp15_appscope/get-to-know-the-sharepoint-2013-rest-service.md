@@ -151,8 +151,7 @@ Le tableau suivant contient des exemples d'URL de point de terminaison REST clas
 |Récupère les métadonnées d'une seule liste  <br/> | `lists/getbytitle('listname')` <br/> |GET  <br/> |Non applicable  <br/> |
 |Récupère les éléments d'une liste  <br/> | `lists/getbytitle('listname')/items` <br/> |GET  <br/> |Non applicable  <br/> |
 |Récupère une propriété spécifique d'un document (dans ce cas, le titre du document)  <br/> | `lists/getbytitle('listname')?select=Title` <br/> |GET  <br/> |Non applicable  <br/> |
-|Crée une liste  <br/> | `lists` <br/> |POST  <br/> |
-```
+|Crée une liste  <br/> | `lists` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.List},
@@ -161,19 +160,16 @@ Le tableau suivant contient des exemples d'URL de point de terminaison REST clas
   'ContentTypesEnabled': true,
   'Description': 'My list description ',
   'Title': 'RestTest '
-}
-```
+}```
 
 |
-|Ajoute un élément à une liste  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |
-```
+|Ajoute un élément à une liste  <br/> | `lists/getbytitle('listname')/items` <br/> |POST  <br/> |```
 
 {
   '_metadata':{'type':SP.listname ListItem},
   'Title': 'MyItem'
 }
-
-```
+```
 
 |
    

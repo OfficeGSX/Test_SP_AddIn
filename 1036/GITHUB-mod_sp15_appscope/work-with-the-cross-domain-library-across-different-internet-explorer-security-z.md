@@ -110,8 +110,7 @@ Le code suivant est un exemple de page apphost simple. Le code effectue les tâc
   
 
 
-
-```HTML
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -160,8 +159,7 @@ Le code suivant est un exemple de page apphost simple. Le code effectue les tâc
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>
-```
+</html>```
 
 Si vous voulez que vos utilisateurs créent des liens profonds vers des parties de votre complément, votre page apphost et le contenu de l' **IFrame** peuvent collaborer pour que cela soit possible. Une autre possibilité consiste à utiliser une communication via PostMessage **IFrame** et des URL individuelles par page dans le complément distant. Pour avoir des URL individuelles par page, vous pouvez créer des pages individuelles dans le site web de complément ou utiliser des paramètres de chaîne de requête sur une page.
   

@@ -50,30 +50,30 @@ En este artículo agregará una página de ayuda al Complemento de SharePoint Or
   
 3. Busque los dos elementos **asp:Content** en el archivo y agregue el siguiente y tercer marcado - **asp:Content** entre ellos.
     
-  ```HTML
+ ```HTML
   
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
     Help
 </asp:Content> 
-  ```
+ ```
 
 4. Busque el elemento **asp:Content** con el Id. de **PlaceholderAdditionalPageHead** y agréguele el siguiente código de marcado.
     
-  ```HTML
+ ```HTML
   
 <link rel="Stylesheet" type="text/css" href="../Content/App.css" />
-  ```
+ ```
 
 5. Busque el elemento **asp:Content** con el Id. de **PlaceHolderMain** y elimine cualquier elemento secundario que contenga.
     
   
 6. Agregue lo siguiente como contenido al mismo elemento **asp:Content**.
     
-  ```HTML
+ ```HTML
   <H3>Having a problem with the add-in?</H3>
 <p> Call the help line for Fabrikam Add-ins:</p>
 <p>1-555-555-5555</p>
-  ```
+ ```
 
 7. Guarde y cierre el archivo.
     
@@ -83,12 +83,12 @@ En este artículo agregará una página de ayuda al Complemento de SharePoint Or
   
 9. Busque el elemento **asp:Content** con el Id. de **PlaceHolderMain** y agregue al final el siguiente código de marcado.
     
-  ```HTML
+ ```HTML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Pages/Help.aspx';"
     Text="Get help for the Employee Orientation add-in" /></p>
 
-  ```
+ ```
 
 10. Guarde y cierre el archivo.
     
@@ -103,10 +103,10 @@ En este artículo agregará una página de ayuda al Complemento de SharePoint Or
 
 1. En el **Explorador de soluciones**, abra el archivo app.css de la carpeta **Contents** y agréguele la siguiente línea.
     
-  ```
+ ```
   
 p {color: green;}
-  ```
+ ```
 
 2. Guarde y cierre el archivo.
     

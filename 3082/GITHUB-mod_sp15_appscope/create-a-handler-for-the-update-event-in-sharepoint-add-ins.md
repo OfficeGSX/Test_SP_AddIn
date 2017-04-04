@@ -53,20 +53,20 @@ Para obtener más detalles sobre cómo crear un controlador para el evento de co
 
 1. Abra el archivo AppEventReceiver.svc.cs y agregue una estructura condicional al método  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) que prueba si el evento que invocó al controlador es el evento actualizado. El código de actualización va dentro de esta estructura. Si el código necesita acceder a SharePoint, puede usar el modelo de objetos de cliente de código administrado de SharePoint (CSOM) o la interfaz de transferencia de estado representacional (REST). El lugar en el que se ubique la estructura condicional en el método dependerá de cómo haya estructurado el resto de código en el método. Normalmente, es un par de estructuras condicionales similares que prueban los eventos del complemento instalado y los eventos de desinstalación de complementos. Puede estar dentro de una estructura condicional que prueba determinadas propiedades o subpropiedades del objeto [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) que se pasa a [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) en busca de valores **null** u otros valores no válidos. También puede estar dentro de un bloque **try**. A continuación se muestra un ejemplo de la estructura. El objeto  _properties_ es un objeto [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) .
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. Para usar CSOM en el controlador, agregue (dentro del bloque condicional) un bloque **using** que obtiene un objeto [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) mediante llamando al método **TokenHelper.CreateAppEventClientContext**. Especifique **true** para el segundo parámetro para poder acceder a la web del complemento. Especifique **false** para acceder a la web de host. Si necesita acceder a ambas, necesitará dos objetos diferentes de contexto de cliente.
     
   
 3. Si el controlador necesita tener acceso a componentes que no son de SharePoint, ponga ese código fuera de cualquier bloque de contexto de cliente. El código debería tener una estructura similar a esta:
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -81,11 +81,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. Para usar la interfaz REST, el código usa otros métodos en la clase **TokenHelper** para obtener un token de acceso que, a continuación, se incluye en las solicitudes que realiza a SharePoint. Para más información, consulte [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md). El código debería tener una estructura similar a la siguiente.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -102,15 +102,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. Para acceder a SharePoint, el código REST también necesita conocer la dirección URL de la web de host o de la web de complemento, o de ambas. Estas direcciones URL son subpropiedades del objeto  [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) que se pasa al método [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) . El siguiente código muestra cómo obtenerlas.
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 Al actualizar un complemento por segunda (o tercera, etc.) vez, es posible que deba asegurarse de que determinada lógica de actualización no se ejecute varias veces en la misma instancia del complemento. El siguiente procedimiento le muestra cómo.
   
@@ -128,7 +128,7 @@ Al actualizar un complemento por segunda (o tercera, etc.) vez, es posible que d
   
 3. Agregue la nueva lógica de actualización (para la actualización de la versión 2.0.0.0 a la 3.0.0.0) debajo de dicha estructura. A continuación se muestra un ejemplo.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -137,11 +137,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. Para cada subsiguiente actualización, repita estos pasos. Para la actualización de la versión 3.0.0.0 a la 4.0.0.0, el código debería tener la siguiente estructura.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -156,7 +156,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **IMPORTANTE**
@@ -196,8 +196,7 @@ En la segunda (o tercera, etc.) actualización, la lógica de control de excepci
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -214,8 +213,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 Las últimas cosas que el control de errores debería hacer es asignar un mensaje de error y un estado de cancelación al objeto  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) que devuelve el método **ProcessEvent** a la infraestructura de actualización de SharePoint 2013. A continuación se muestra un ejemplo. En este código, _result_ es un objeto **SPRemoteEventResult** que se declaró con anterioridad en el método **ProcessEvent**.
   
@@ -223,8 +221,7 @@ Las últimas cosas que el control de errores debería hacer es asignar un mensaj
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -233,8 +230,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **IMPORTANTE**

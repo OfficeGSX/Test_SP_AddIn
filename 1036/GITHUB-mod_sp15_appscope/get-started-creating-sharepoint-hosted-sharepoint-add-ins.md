@@ -211,12 +211,12 @@ Une fois que vous avez terminé le processus d'inscription, votre navigateur ouv
   
 7. Une fois que le projet est créé, ouvrez le fichier **/Pages/Default.aspx** depuis la racine du projet. Entre autres, ce fichier généré charge un des deux ou les deux scripts hébergés sur SharePoint : sp.runtime.js et sp.js. Le balisage pour le chargement de ces fichiers se trouve dans le contrôle **Content** situé en haut du fichier ayant l'ID **PlaceHolderAdditionalPageHead**. Le balisage varie selon la version des **Outils de développement Microsoft Office pour Visual Studio** que vous utilisez. Cette série de didacticiels exige que les deux fichiers soient chargés avec des balises **<script>** ordinaires dans le code HTML, et non des balises **<SharePoint:ScriptLink>**. Vérifiez que les lignes suivantes sont dans le contrôle **PlaceHolderAdditionalPageHead**,  *juste au-dessus*  de la ligne `<meta name="WebPartPageExpansion" content="full" />` :
     
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     Recherchez tout autre balisage dans le fichier, qui charge également l'un ou l'autre de ces fichiers, puis supprimez le balisage redondant. Enregistrez et fermez le fichier.
@@ -312,21 +312,21 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
     
 
 
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
-  ```
+ ```
 
 20. Toujours dans le fichier schema.xml, dans l'élément **View** dont la valeur **BaseViewID** est « 1 », remplacez l'élément **ViewFields** existant par le balisage ci-après. (Utilisez précisément ce GUID pour le **FieldRef** nommé `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
-  ```
+ ```
 
 21. Enregistrez le fichier schema.xml, puis fermez-le.
     
@@ -336,7 +336,7 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
   
 23. Dans ce fichier, remplissez la liste avec des données initiales. Pour cela, ajoutez le balisage d'élément **Data** suivant en tant qu'élément enfant de l'élément **ListInstance**.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -354,7 +354,7 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 24. Enregistrez et fermez le fichier.
     
@@ -373,13 +373,13 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
   
 29. Recherchez l'élément **Content** ASP.NET avec l'ID **PlaceHolderMain**.  *Remplacez*  son contenu par le balisage ci-après. L'élément ` _spPageContextInfo` est un objet JavaScript que SharePoint inclut automatiquement dans la page. Sa propriété `webAbsoluteUrl` renvoie l'URL du web du complément.
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server"
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Exécuter le complément et tester la liste

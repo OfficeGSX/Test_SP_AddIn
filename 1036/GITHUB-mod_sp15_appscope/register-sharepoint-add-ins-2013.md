@@ -148,13 +148,13 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
    .  .  .
 </appSettings>
-  ```
+ ```
 
 2. Entrez la valeur de la clé secrète du complément pour la valeur de **ClientSecret** (elle remplace la valeur temporaire entrée par les outils).
     
@@ -162,13 +162,13 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
     
 
 
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="a044e184-7de2-4d05-aacf-52118008c44e " />
   <add key="ClientSecret" value="l0z/8TzWN0yQBzMBSEZtYts2Vt3Eo/oE3rfCdPaogKQ= " />
 </appSettings>
-  ```
+ ```
 
 3. Dans le fichier AppManifest.xml de votre projet Visual Studio, entrez la valeur de l'ID du complément pour la valeur de **ClientId**,  *en minuscules*  .
     
@@ -179,19 +179,19 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
     
 
 
-  ```XML
+ ```XML
   
 <AppPrincipal>
   <RemoteWebApplication ClientId="a044e184-7de2-4d05-aacf-52118008c44e "/>
 </AppPrincipal>
-  ```
+ ```
 
 4. Les Outils de développement Office pour Visual Studio utilisent le jeton  `~remoteAppUrl` dans l'élément **StartPage**. (Par exemple :  `<StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>`). Ce jeton résout l'URL du composant distant si vous utilisez l'Assistant **Publication** dans Visual Studio. Si vous n'utilisez pas l'Assistant (ou si vous l'utilisez, mais publiez le composant distant dans Azure), vous devez remplacer manuellement le jeton par la valeur **Domaine de complément** que vous avez utilisée lors de l'inscription du complément. Il doit s'agir *exactement*  de la même valeur, y compris le numéro de port, le cas échéant, sauf que vous y incluez également le protocole HTTPS. Vous trouverez un exemple ci-dessous.
     
-  ```XML
+ ```XML
   
 <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
-  ```
+ ```
 
 5. Vous pouvez utiliser la même valeur pour l'élément **Title** dans le fichier AppManifest.xml que celle que vous avez utilisée pour le champ **Titre** dans AppRegNew.aspx. La valeur de l'élément **Title** est le nom du complément que les utilisateurs peuvent voir sur le complément après son installation. Le fait que le complément porte un nom différent dans la boîte de dialogue de consentement et dans l'interface utilisateur SharePoint peut perturber les utilisateurs.
     
@@ -199,12 +199,12 @@ Avant d'inclure le Complément SharePoint dans un package et de déployer ses co
     
 
 
-  ```XML
+ ```XML
   <Properties>
   <Title>Contoso photo printing app</Title>
   <StartPage>https://www.contoso.com/Pages/Default.aspx?{StandardTokens}</StartPage>
 </Properties>
-  ```
+ ```
 
 
 ## Utilisation de l'URL de redirection dans un complément qui demande des autorisations à la volée

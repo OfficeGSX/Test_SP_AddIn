@@ -84,16 +84,14 @@ SharePoint-Code auf einem Client beginnt mit dem Abrufen eines Clientkontextobje
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 Im vorherigen Artikel dieser Reihe war ein Beispiel dieses Musters in der unten gezeigten Methode  `GetLocalEmployeeName` dargestellt. Beachten Sie Folgendes zu dieser Methode:
   
@@ -108,8 +106,7 @@ Im vorherigen Artikel dieser Reihe war ein Beispiel dieses Musters in der unten 
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -123,8 +120,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

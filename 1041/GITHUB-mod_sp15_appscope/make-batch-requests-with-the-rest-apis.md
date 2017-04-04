@@ -57,8 +57,7 @@ SharePoint REST/OData API に対して  `$batch` クエリ オプションを使
   
     
     
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -80,8 +79,7 @@ Content-Transfer-Encoding: binary
 GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Information%20List')/items?$select=Title HTTP/1.1
 
 --batch_e3b6819b-13c3-43bb-85b2-24b14122fed1--
-
-```
+```
 
 リストの DELETE と SharePoint リストのリストの GET をバッチ処理する未加工 HTTP 要求の本文の例を次に示します。
   
@@ -89,8 +87,7 @@ GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Informatio
     
 
 
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -116,8 +113,7 @@ Content-Transfer-Encoding: binary
 
 GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 
---batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--
-```
+--batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--```
 
 
 ## 役立つライブラリへのリンク

@@ -56,11 +56,9 @@ ms.assetid: 5a69c9e3-73bf-4ed5-bc19-182056bdb394
     
 
 
+```
 
-```
-
-using Microsoft.SharePoint.Client;
-```
+using Microsoft.SharePoint.Client;```
 
 除了指定的内容之外，您可假定这些示例中的每一个示例均位于在页面的类中定义的无参数方法中。此外， `label1`、 `label2` 等为页面上 [Label](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Label.aspx) 对象的名称。
   
@@ -88,8 +86,7 @@ using Microsoft.SharePoint.Client;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the 
 // server running SharePoint. 
@@ -107,8 +104,7 @@ context.ExecuteQuery();
 // Now, the web's properties are available and we could display 
 // web properties, such as title. 
 label1.Text = web.Title;
-
-```
+```
 
 
 ### 仅检索网站的选定属性
@@ -117,8 +113,7 @@ label1.Text = web.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -138,8 +133,7 @@ context.ExecuteQuery();
 // an exception because other properties are not available. 
 label1.Text = web.Title;
 label1.Text = web. Description;
-
-```
+```
 
 
 > **注释**
@@ -155,8 +149,7 @@ label1.Text = web. Description;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -174,8 +167,7 @@ web.Update();
 
 // Execute the query to server.
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### 创建新的 SharePoint 网站
@@ -184,8 +176,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -201,8 +192,7 @@ context.Load(newWeb, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = newWeb.Title; 
-
-```
+```
 
 
 ## SharePoint 列表任务
@@ -219,8 +209,7 @@ label1.Text = newWeb.Title;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -242,8 +231,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 > **注释**
@@ -252,8 +240,7 @@ foreach (List list in web.Lists)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -276,8 +263,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 ### 创建和更新 SharePoint 列表
@@ -286,8 +272,7 @@ foreach (List list in web.Lists)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -304,8 +289,7 @@ list.Description = "New Description";
 
 list.Update(); 
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### 删除 SharePoint 列表
@@ -314,8 +298,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -328,8 +311,7 @@ List list = web.Lists.GetByTitle("My List");
 list.DeleteObject(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### 向 SharePoint 列表添加域
@@ -345,8 +327,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -363,8 +344,7 @@ fldNumber.MinimumValue = 35;
 fldNumber.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## SharePoint 列表项任务
@@ -388,8 +368,7 @@ context.ExecuteQuery();
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -411,8 +390,7 @@ foreach (ListItem listItem in items)
     // We have all the list item data. For example, Title. 
     label1.Text = label1.Text + ", " + listItem["Title"]; 
 } 
-
-```
+```
 
 
 ### 创建新的列表项
@@ -421,8 +399,7 @@ foreach (ListItem listItem in items)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -442,8 +419,7 @@ newItem["Body"] = "Hello World!";
 newItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### 更新列表项
@@ -452,8 +428,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -470,8 +445,7 @@ listItem["Body"] = "This is my new value!!";
 listItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### 删除列表项
@@ -480,8 +454,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -495,8 +468,7 @@ ListItem listItem = announcementsList.GetItemById(2);
 listItem.DeleteObject(); 
 
 context.ExecuteQuery(); } 
-
-```
+```
 
 
 ## SharePoint 域任务
@@ -513,8 +485,7 @@ context.ExecuteQuery(); }
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -530,8 +501,7 @@ foreach (SP.Field field in list.Fields)
 { 
     label1.Text = label1.Text + ", " + field.InternalName;
 } 
-
-```
+```
 
 
 ### 从列表中检索特定字段
@@ -547,8 +517,7 @@ foreach (SP.Field field in list.Fields)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -562,8 +531,7 @@ context.ExecuteQuery();
 
 // Now, we can access the specific text field properties. 
 label1.Text = textField.MaxLength; 
-
-```
+```
 
 
 ## SharePoint 用户任务
@@ -580,8 +548,7 @@ label1.Text = textField.MaxLength;
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -602,8 +569,7 @@ userCreationInfo.Title = "Mr User";
 User newUser = membersGroup.Users.Add(userCreationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### 检索 SharePoint 组中的所有用户
@@ -612,8 +578,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -631,8 +596,7 @@ foreach (User member in membersGroup.Users)
     // We have all the user info. For example, Title. 
     label1.Text = label1.Text + ", " + member.Title; 
 }  
-
-```
+```
 
 
 ### 创建角色
@@ -641,8 +605,7 @@ foreach (User member in membersGroup.Users)
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -660,8 +623,7 @@ creationInfo.Order = 0;
 RoleDefinition rd = context.Web.RoleDefinitions.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### 向角色添加用户
@@ -670,8 +632,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -687,8 +648,7 @@ roleDefCollection.Add(readDef);
 RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## 使用 SharePoint .NET 客户端对象模型的规则和最佳实践
@@ -705,8 +665,7 @@ SharePoint .NET Framework CSOM 要求您使用类似 SQL 的编程模式：声�
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -714,8 +673,7 @@ ClientContext context = new ClientContext("http://SiteUrl");
 
 Web web = context.Web; 
 label1.Text = web.Title;  
-
-```
+```
 
 此代码失败，因为 SharePoint .NET Framework CSOM 代码必须：
   
@@ -737,8 +695,7 @@ label1.Text = web.Title;
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -751,8 +708,7 @@ context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = web.Title;   
-
-```
+```
 
 区别是以下这额外的两行：
   
@@ -760,13 +716,11 @@ label1.Text = web.Title;
     
 
 
-
-```
+```
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
-
-```
+```
 
 第一行创建对 Web 的 **Title** 属性的查询。第二行执行此查询。
   
@@ -779,8 +733,7 @@ context.ExecuteQuery();
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -791,8 +744,7 @@ ListCreationInformation creationInfo = new ListCreationInformation();
 creationInfo.Description = web.Title; 
 creationInfo.Title = web.Title; 
 List newList = web.Lists.Add(creationInfo);  
-
-```
+```
 
 由于属性在执行查询之前不可用，因此将引发异常。在 SQL 中，将声明本地变量以包含  `web.Title` 的值并使用本地变量进行 Web 创建。在客户端库中，不能创建本地变量。您必须将功能拆分为下面示例中显示的两个单独的查询。您将需要为 [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 添加 **using** 语句。此外，为 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 命名空间的 using 语句添加别名，以便您可清楚地引用其类。例如， `using SP = Microsoft.SharePoint.Client;`。
   
@@ -800,8 +752,7 @@ List newList = web.Lists.Add(creationInfo);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -819,8 +770,7 @@ creationInfo.Title = web.Title;
 SP.List newList = web.Lists.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 区别为下列三行：
   
@@ -828,15 +778,13 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 ...
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### 在同一个查询的其他方法调用中使用返回客户端对象的方法或属性
@@ -859,14 +807,12 @@ context.ExecuteQuery();
     
 
 
-
-```cs
+```cs
 
 ClientContext context = new ClientContext("http://SiteUrl");
 Web web = context.Web; 
 SP.List list = web.Lists.GetByTitle("Announcements"); 
-
-```
+```
 
 我们知道列表是通过下列方式创建的：
   
@@ -893,8 +839,7 @@ SP.List list = web.Lists.GetByTitle("Announcements");
   
     
     
-
-```cs
+```cs
 
 static void Method1() 
 { 
@@ -916,8 +861,7 @@ static void Method2()
     context.Load(web, w => w.Description); 
     context.ExecuteQuery();  
 } 
-
-```
+```
 
 效果不同。在 **Method1** 中，检索 Web 标题和说明的代码将分组在一起。在 **Method2** 中，检索 Web 标题和说明的代码将通过其他操作分开。这意味着， **Method2** 将触发对同一 Web 对象的两个不同的查询，并且同一 Web 将有两个结果集。由于客户端库尝试返回一致性数据，因此第二个结果集将包含标题和说明。您可将之前的代码视为以下代码。
   
@@ -925,8 +869,7 @@ static void Method2()
     
 
 
-
-```
+```
 
 Method1:
 SELECT Title, Description FROM Webs WHERE ... 
@@ -936,8 +879,7 @@ Method2:
 SELECT Title FROM Webs WHERE … 
 SELECT Description FROM Lists WHERE … 
 SELECT Title, Description FROM Webs WHERE … 
-
-```
+```
 
 
 ### 指定要返回的对象的属性
@@ -946,11 +888,9 @@ SELECT Title, Description FROM Webs WHERE …
   
     
     
+```
 
-```
-
-SELECT * FROM Webs 
-```
+SELECT * FROM Webs ```
 
 在客户端库中， **Load<T>** 或任何其他方法都不会返回所有属性，因此您必须显式指定所需内容。例如，以下代码无需指定要返回的属性，将检索网站对象。之后它将尝试读取两个属性，其中一个属性不是 **Load** 自动返回的属性中的属性。此代码将引发异常。
   
@@ -958,8 +898,7 @@ SELECT * FROM Webs
     
 
 
-
-```cs
+```cs
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
 ClientContext context = new ClientContext("http://SiteUrl"); 
@@ -970,8 +909,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 若要成功获取要编译的代码，请将其更新为以下内容。若要编译此代码，需要为  [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) 添加 **using** 语句。此外，为 [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) 命名空间的 **using** 语句添加别名，以便您可清楚地引用其类。例如， `using SP = Microsoft.SharePoint.Client;`。
   
@@ -979,8 +917,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -993,8 +930,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 
 ### 使用条件范围在加载数据前测试先决条件
@@ -1010,8 +946,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1036,8 +971,7 @@ if (scope.TestResult.Value)
 { 
     label1.Text = list.Title; 
 }  
-
-```
+```
 
 
 ### 使用异常处理范围捕获异常
@@ -1046,8 +980,7 @@ if (scope.TestResult.Value)
   
     
     
-
-```cs
+```cs
 
 
 // Starting with ClientContext, the constructor requires a URL to the 
@@ -1083,8 +1016,7 @@ using (scope.StartScope())
 } 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## 其他资源

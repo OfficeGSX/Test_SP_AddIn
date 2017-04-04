@@ -105,17 +105,17 @@ Debugging of event receivers requires the use of the Azure Service Bus. Follow t
   
   - The handler URL is registered in the add-in manifest. This part of the manifest is not visible in the manifest designer. To see it, right-click the AppManifest.xml file and select **View Code**. There is a new child of the **Properties** element that looks like the following. This markup tells SharePoint to call the **ProcessEvent** method of this service when it has finished doing all of its own work related to installing the add-in. The custom handler is the last thing that runs as part of the installation. The string `~remoteAppUrl` is a placeholder that the Office Developer Tools for Visual Studio will replace with the service host URL. When you are debugging, it is an Azure Service Bus URL. When you create the package for deployment to production, it is the production URL.
     
-  ```XML
+ ```XML
   
 <InstalledEventEndpoint>~remoteAppUrl/Services/AppEventReceiver.svc</InstalledEventEndpoint>
-  ```
+ ```
 
 3. Open the AppEventReceiver.svc.cs file.
     
   
 4. You'll see that the Office Developer Tools for Visual Studio have created a sample implementation of the **ProcessEvent** method. All implementations of this method begin by initializing a **SPRemoteEventResult** object and they all end by returning that object to SharePoint. Among other things, this object tells SharePoint whether or not it should roll back the event because the custom handling logic has failed. The tools may also have included a **using** block in this method that creates a **ClientContext** object. The custom handler in the Chain Store add-in isn't going to call back into SharePoint, so delete this block. The method should now look like the following.
     
-  ```cs
+ ```cs
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
@@ -123,11 +123,11 @@ Debugging of event receivers requires the use of the Azure Service Bus. Follow t
 
     return result;
 }
-  ```
+ ```
 
 5. The event receiver could be called by any of three possible add-in events, so add the following **switch** structure to the **ProcessEvent** method in between the lines that create and return the `result` object. The event names have the string "App" in them because add-ins used to be called "apps".
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -145,7 +145,7 @@ switch (properties.EventType)
          
         break;
 }
-  ```
+ ```
 
 6. Our installation logic is going to call an SQL stored procedure to register the Hong Kong store as a tenant in the remote web application. It is very important that, if this process fails, the handler signals SharePoint to roll back the installation of the add-in, so add the following **try/catch** blocks in place of `TODO2`. Note the following about this code:
     
@@ -156,7 +156,7 @@ switch (properties.EventType)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -168,32 +168,32 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 7. The host web URL, which is the sample's tenant discriminator, is part of the information that SharePoint passes to the receiver in the **SPRemoteEventProperties** parameter. Add the following line to the **ProcessEvent** method on line that is just below the initialization of the **SPRemoteEventResult** object.
     
-  ```cs
+ ```cs
   
 string tenantName = properties.AppEventProperties.HostWebFullUrl.ToString();
-  ```
+ ```
 
 8. Now our code has to deal with a little quirk of the **AppEventProperties.HostWebFullUrl** property. In most other contexts, SharePoint includes a closing "/" character at the end of the host web URL, so the logic of our sample code assumes that this character is present. But SharePoint adds this character at the end of the **HostWebFullUrl** value if, and only if, the host web is the root web of a site collection. Since our Hong Kong website is a subweb in the site collection, we need to add this character to ensure that the same tenant name string is used throughout the sample. Add the following code below the initialization of the `tenantName` object.
     
-  ```cs
+ ```cs
   if (!tenantName.EndsWith("/"))
 {
     tenantName += "/";
 }
-  ```
+ ```
 
 9. Add the following **using** statements to the top of the file.
     
-  ```
+ ```
   
 using System.Data.SqlClient;
 using System.Data;
 using ChainStoreWeb.Utilities;
-  ```
+ ```
 
 10. Add the following method to the  `AppEventReceiver` class. We don't discuss this in detail because the purpose of this series of articles is to teach SharePoint Add-in programming, not SQL Server/Azure programming.
     
@@ -201,7 +201,7 @@ using ChainStoreWeb.Utilities;
     
 
 
-  ```cs
+ ```cs
   
 private void CreateTenant(string tenantName)
 {
@@ -219,7 +219,7 @@ private void CreateTenant(string tenantName)
         cmd.ExecuteNonQuery();
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 ## Create the uninstallation handler
@@ -246,7 +246,7 @@ The uninstallation event does not run, as you might expect, when a user removes 
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -258,11 +258,11 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 3. Add the following method to the  `AppEventReceiver` class.
     
-  ```cs
+ ```cs
   
 private void DeleteTenant(string tenantName)
 {
@@ -280,7 +280,7 @@ private void DeleteTenant(string tenantName)
         cmd.ExecuteNonQuery();                
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 > **NOTE**

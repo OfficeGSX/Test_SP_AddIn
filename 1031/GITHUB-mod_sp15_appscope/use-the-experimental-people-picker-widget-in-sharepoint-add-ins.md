@@ -149,7 +149,7 @@ Um das Personenauswahl-Widget zu verwenden, müssen Sie folgende Schritte ausfü
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -241,7 +241,7 @@ Basic People Picker sample (HTML markup declaration):
 </body>
 </html>
 
-  ```
+ ```
 
 
 > **HINWEIS**
@@ -256,14 +256,12 @@ Das folgende Beispiel zeigt, wie Sie ein leeres Objekt übergeben, um die Method
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### So erstellen Sie die Lösung und führen sie aus
@@ -298,11 +296,9 @@ Möglicherweise verwenden Sie zum Deklarieren des Widgets anstatt HTML lieber da
   
     
     
+```HTML
 
-```HTML
-
-<div id="PeoplePickerDiv"></div>
-```
+<div id="PeoplePickerDiv"></div>```
 
 Verwenden Sie den folgenden JavaScript-Code, um die Personenauswahl zu instanziieren.
   
@@ -310,11 +306,9 @@ Verwenden Sie den folgenden JavaScript-Code, um die Personenauswahl zu instanzii
     
 
 
-
-```
+```
 new Office.Controls.PeoplePicker(
-    document.getElementById("PeoplePickerDiv"), {});
-```
+    document.getElementById("PeoplePickerDiv"), {});```
 
 Ein Codebeispiel, das zeigt, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Personenauswahl-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
   
@@ -327,8 +321,7 @@ ie können mithilfe des Attributs **data-office-options** in der Widget-Deklarat
   
     
     
-
-```HTML
+```HTML
 
 <div id="PeoplePickerDiv"
         data-office-control="Office.Controls.PeoplePicker"
@@ -337,8 +330,7 @@ ie können mithilfe des Attributs **data-office-options** in der Widget-Deklarat
         "onChange" : handleChange,
         "placeholder" : "Check the count message, it changes when you add names..."
     }'>
-</div>
-```
+</div>```
 
 Der folgende Code zeigt, wie Sie Optionen festlegen, wenn Sie das Personenauswahl-Widget mit JavaScript deklarieren.
   
@@ -346,8 +338,7 @@ Der folgende Code zeigt, wie Sie Optionen festlegen, wenn Sie das Personenauswah
     
 
 
-
-```
+```
 
 new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {
@@ -357,8 +348,7 @@ new Office.Controls.PeoplePicker(
             document.getElementById("count").textContent = 
 ctrl.selectedItems.length.toString();
         }
-    });
-```
+    });```
 
 Sie können auch Ereignishandler für die Ereignisse **onChange**, **onAdded** und **onRemoved** festlegen. Beachten Sie im obigen Code, dass der Ereignishandler für das onChange-Ereignis einen einzelnen **ctrl** -Parameter erhält, der einen Verweis auf das Widget darstellt.
   
@@ -388,11 +378,9 @@ ie können mithilfe der folgenden Syntax einen Verweis auf das Widget abrufen.
     
 
 
+```
 
-```
-
-var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
-```
+var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;```
 
 Sie können auch einen Verweis speichern, wenn Sie das Widget instanziieren.
   
@@ -400,11 +388,9 @@ Sie können auch einen Verweis speichern, wenn Sie das Widget instanziieren.
     
 
 
-
-```
+```
 var pplPicker = new Office.Controls.PeoplePicker(
-                        document.getElementById("PeoplePickerDiv"), {});
-```
+                        document.getElementById("PeoplePickerDiv"), {});```
 
 ie Eigenschaft **selectedItems** ist ein Array von Objekten, die Personen oder Gruppen darstellen. Personen oder Gruppen im selectedItems-Array können aufgelöst oder unaufgelöst sein, was Sie in der Eigenschaft **isResolved** überprüfen können. Im folgenden Beispiel wird gezeigt, wie Sie das Element *i*  im Array aufrufen und den Namen der Person oder Gruppe verwenden.
   
@@ -412,12 +398,10 @@ ie Eigenschaft **selectedItems** ist ein Array von Objekten, die Personen oder G
     
 
 
-
-```
+```
 
 var principal = pplPicker.selectedItems[i];
-$("#msg").text(principal.text + " is selected in the control.");
-```
+$("#msg").text(principal.text + " is selected in the control.");```
 
 Ein Beispiel dafür, wie Sie die ausgewählten Personen oder Gruppen im Widget abrufen, finden Sie auf der Seite **demo.html** des Codebeispiels [Office Web Widgets - Experimentelle Demo](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
   

@@ -1193,7 +1193,7 @@ ms.assetid: 8dec09e6-e197-4f68-bcc2-ca41105c5d61
   
 4. В редакторе кода добавьте в метод **Insured_render** следующий код:
     
-  ```
+ ```
   
 // Create the checkbox and add it to the DOM.
     var checkbox = $("<input type='checkbox'/>")
@@ -1217,7 +1217,7 @@ ms.assetid: 8dec09e6-e197-4f68-bcc2-ca41105c5d61
             checkbox[0].checked = newValue;
         }
     });
-  ```
+ ```
 
 
     При подготовке к прорисовке экрана этот код создаст элемент управления **Флажок**. Вам также понадобится добавить код, чтобы установить начальное значение.
@@ -1234,11 +1234,11 @@ ms.assetid: 8dec09e6-e197-4f68-bcc2-ca41105c5d61
   
 8. В редакторе кода добавьте в метод **created** следующий код:
     
-  ```
+ ```
   
 entity.Insured = new Boolean();
     entity.Insured = 'true';
-  ```
+ ```
 
 
     При создании экрана этот код задает в качестве начального значения для элемента управления установленное состояние (true).
@@ -1264,7 +1264,7 @@ entity.Insured = new Boolean();
   
 3. В редакторе кода добавьте следующий код в метод **Просмотреть_созданные_происшествия**:
     
-  ```
+ ```
   
 screen.getPatients().then(function (results) {
         var queryCount = results.count;
@@ -1272,7 +1272,7 @@ screen.getPatients().then(function (results) {
             screen.findContentItem("Patients").isVisible = false;
         }
     });
-  ```
+ ```
 
 
     Этот код запускает запрос **GetPatients**, чтобы получить количество **Patients**. Если результат равен нулю, метод **findContentItem** устанавливает для свойства **isVisible** вкладки **Пострадавшие** значение false, скрывая его.

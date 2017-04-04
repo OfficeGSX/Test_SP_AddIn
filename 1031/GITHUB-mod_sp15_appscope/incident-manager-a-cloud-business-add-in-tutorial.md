@@ -1193,7 +1193,7 @@ Die Contoso-Feuerwehr ist sehr zufrieden mit den zusätzlichen Funktionen in dem
   
 4. Fügen Sie im Code-Editor folgenden Code zur **Insured_render**-Methode hinzu:
     
-  ```
+ ```
   
 // Create the checkbox and add it to the DOM.
     var checkbox = $("<input type='checkbox'/>")
@@ -1217,7 +1217,7 @@ Die Contoso-Feuerwehr ist sehr zufrieden mit den zusätzlichen Funktionen in dem
             checkbox[0].checked = newValue;
         }
     });
-  ```
+ ```
 
 
     Durch diesen Code wird beim Rendern des Bildschirms ein **CheckBox**-Steuerelement erstellt. Sie müssen außerdem Code hinzufügen, um einen Anfangswert festzulegen.
@@ -1234,11 +1234,11 @@ Die Contoso-Feuerwehr ist sehr zufrieden mit den zusätzlichen Funktionen in dem
   
 8. Fügen Sie im Code-Editor folgenden Code zur **created**-Methode hinzu:
     
-  ```
+ ```
   
 entity.Insured = new Boolean();
     entity.Insured = 'true';
-  ```
+ ```
 
 
     Dieser Code legt beim Erstellen des Bildschirms den Anfangswert des zu überprüfenden (true) Steuerelements fest.
@@ -1264,7 +1264,7 @@ entity.Insured = new Boolean();
   
 3. Fügen Sie im Code-Editor folgenden Code zur **ViewIncidents_created**-Methode hinzu:
     
-  ```
+ ```
   
 screen.getPatients().then(function (results) {
         var queryCount = results.count;
@@ -1272,7 +1272,7 @@ screen.getPatients().then(function (results) {
             screen.findContentItem("Patients").isVisible = false;
         }
     });
-  ```
+ ```
 
 
     Dieser Code führt die **GetPatients**-Abfrage durch, um die Anzahl der **Patients** abzurufen. Lautet das Ergebnis Null, dann setzt die **findContentItem**-Methode die **isVisible**-Eigenschaft der **Patienten**-Registerkarte auf false, sodass sie ausgeblendet wird.

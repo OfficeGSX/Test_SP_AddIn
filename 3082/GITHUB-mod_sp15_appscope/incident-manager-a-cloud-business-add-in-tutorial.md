@@ -1193,7 +1193,7 @@ El Departamento de bomberos de Contoso está muy satisfecho con las adiciones al
   
 4. En el Editor de código, agregue el siguiente código al método **Insured_render**
     
-  ```
+ ```
   
 // Create the checkbox and add it to the DOM.
     var checkbox = $("<input type='checkbox'/>")
@@ -1217,7 +1217,7 @@ El Departamento de bomberos de Contoso está muy satisfecho con las adiciones al
             checkbox[0].checked = newValue;
         }
     });
-  ```
+ ```
 
 
     Este código crea un control **Casilla** cuando se representa la pantalla. También necesitará agregar código para establecer un valor inicial.
@@ -1234,11 +1234,11 @@ El Departamento de bomberos de Contoso está muy satisfecho con las adiciones al
   
 8. En el Editor de código, agregue el siguiente código al método **created**:
     
-  ```
+ ```
   
 entity.Insured = new Boolean();
     entity.Insured = 'true';
-  ```
+ ```
 
 
     Este código establece el valor inicial del control como activado (verdadero) cuando se crea la pantalla.
@@ -1264,7 +1264,7 @@ entity.Insured = new Boolean();
   
 3. En el Editor de código, agregue el siguiente código al método **ViewIncidents_created**:
     
-  ```
+ ```
   
 screen.getPatients().then(function (results) {
         var queryCount = results.count;
@@ -1272,7 +1272,7 @@ screen.getPatients().then(function (results) {
             screen.findContentItem("Patients").isVisible = false;
         }
     });
-  ```
+ ```
 
 
     Este código ejecuta la consulta **GetPatients** para obtener un recuento de **Patients**. Si el resultado es cero, el método **findContentItem** establece la propiedad **isVisible** de la pestaña **Pacientes** como falsa, y luego la oculta.

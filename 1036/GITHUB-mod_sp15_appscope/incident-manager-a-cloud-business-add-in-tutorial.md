@@ -1193,7 +1193,7 @@ Le service incendie Contoso est satisfait de l'ajout du complément Gestionnaire
   
 4. Dans l'éditeur de code, ajoutez le code suivant à la méthode **Insured_render**.
     
-  ```
+ ```
   
 // Create the checkbox and add it to the DOM.
     var checkbox = $("<input type='checkbox'/>")
@@ -1217,7 +1217,7 @@ Le service incendie Contoso est satisfait de l'ajout du complément Gestionnaire
             checkbox[0].checked = newValue;
         }
     });
-  ```
+ ```
 
 
     Ce code crée un contrôle **Case à cocher** lorsque l'écran est affiché. Vous devez également ajouter du code pour définir une valeur initiale.
@@ -1234,11 +1234,11 @@ Le service incendie Contoso est satisfait de l'ajout du complément Gestionnaire
   
 8. Dans l'éditeur de code, ajoutez le code suivant à la méthode **created**.
     
-  ```
+ ```
   
 entity.Insured = new Boolean();
     entity.Insured = 'true';
-  ```
+ ```
 
 
     Ce code définit la valeur initiale de la commande à cocher (true) une fois l'écran créé.
@@ -1264,7 +1264,7 @@ entity.Insured = new Boolean();
   
 3. Dans l'éditeur de code, ajoutez le code suivant à la méthode **ViewIncidents_created**:
     
-  ```
+ ```
   
 screen.getPatients().then(function (results) {
         var queryCount = results.count;
@@ -1272,7 +1272,7 @@ screen.getPatients().then(function (results) {
             screen.findContentItem("Patients").isVisible = false;
         }
     });
-  ```
+ ```
 
 
     Ce code exécute la requête **GetPatients** qui permet d'obtenir un nombre de **Patients**. Si le résultat est zéro, la méthode **findContentItem** définit la propriété **isVisible** de l'onglet **Patients** sur false et le masque.

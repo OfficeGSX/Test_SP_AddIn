@@ -56,8 +56,7 @@ ms.assetid: 9d7805e5-5ea8-4309-ba6a-d629281535af
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - 如果使用的是 Office 365，您获取的登录名将类似于  `i:0#.f|membership|adam@contoso.com`。
@@ -110,14 +108,12 @@ ClientContext clientContext =
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
  **Person.LoginName** 值提供了登录信息。
   
@@ -131,8 +127,7 @@ ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Micr
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 然后，使用  [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) API 获取使用外接程序的用户的属性。
   
@@ -152,15 +146,13 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 若要让代码正常运行：
   
@@ -172,11 +164,11 @@ clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => 
   
 - 必须在外接程序清单中为社会功能添加以下权限范围：
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 API 位于 Microsoft.SharePoint.Client.UserProfiles.dll 中。
   
@@ -188,16 +180,14 @@ API 位于 Microsoft.SharePoint.Client.UserProfiles.dll 中。
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## 其他资源

@@ -87,7 +87,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     > **重要**
       > 選択されたアイテムがあるときには、ItemURL トークンと ItemID トークンのみ受け渡しされます。運用環境用の SharePoint アドイン では、アイテムが選択されていない状況については、コードで適切に処理する必要があります。この例では、アイテムが選択されていないことをユーザーに通知します。 
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +125,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 ### SharePoint アドイン プロジェクトにカスタム アクションのメニュー アイテムを追加する
@@ -156,7 +156,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements 
@@ -180,7 +180,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
   </CustomAction>
 </Elements>
 
-  ```
+ ```
 
 5. 次のクエリ パラメーターを **UrlAction** 要素の **Url** 属性の最後に追加します。
     
@@ -224,7 +224,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
    
 4. Visual Studio によって、リボンのカスタム アクション フィーチャーの elements.xml ファイルに次のマークアップが生成されます。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -259,7 +259,7 @@ SharePoint アドイン を作成する場合、カスタム アクションを�
   </CustomAction>
 </Elements> 
 
-  ```
+ ```
 
 5. 次のクエリ パラメーターを **CommandAction** 要素の **CommandUIHandler** 属性の最後に追加します。
     

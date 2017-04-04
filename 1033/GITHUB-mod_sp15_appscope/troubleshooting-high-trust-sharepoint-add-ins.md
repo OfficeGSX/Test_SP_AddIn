@@ -33,16 +33,14 @@ After you have installed Fiddler on the web application server, add the followin
 
 
 
-
-```XML
+```XML
 
 <system.net>
   <defaultProxy>
     <proxy usesystemdefault="False" bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" />
   </defaultProxy>
 </system.net>
-
-```
+```
 
 After you have Fiddler installed, you can also check the response headers from SharePoint, which will include a request GUID. This request GUID is a correlation ID you can look up in the logs to find any log errors associated with that request.
   
@@ -56,8 +54,7 @@ Several things can cause a **401 Unauthorized** error when the high-trust add-in
   
     
     
-
-```cs
+```cs
 
 [WebException: The remote server returned an error: (401) Unauthorized.]
    System.Net.HttpWebRequest.GetResponse() +8515936
@@ -68,8 +65,7 @@ Several things can cause a **401 Unauthorized** error when the high-trust add-in
    Microsoft.SharePoint.Client.ClientContext.ExecuteQuery() +666
    S2STestWeb.Default.Page_Load(Object sender, EventArgs e) in c:\\MyFiles\\HightrustTest\\HightrustTestWeb\\Default.aspx.cs:28
    System.Web.UI.Control.LoadRecursive() +71
-   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178
-```
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3178```
 
 If you are using the TokenHelper file and Windows identity, the code that triggers the exception looks like the following:
   
@@ -77,14 +73,12 @@ If you are using the TokenHelper file and Windows identity, the code that trigge
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext =
     TokenHelper.GetS2SClientContextWithWindowsIdentity(sharepointUrl, Request.LogonUserIdentity); 
 clientContext.Load(clientContext.Web);
-clientContext.ExecuteQuery();
-```
+clientContext.ExecuteQuery();```
 
 Your first step in troubleshooting the issue is to use the Visual Studio debugger to verify that the access token and the **ClientContext** object are constructed successfully. If they are, investigate the following possibilities:
   
@@ -100,10 +94,10 @@ Your first step in troubleshooting the issue is to use the Visual Studio debugge
   
 - Your add-in does not have permission to the resource you are trying to access. Open the SharePoint Management Shell and run that the following Windows PowerShell cmdlet. The variable  `$web` is the SharePoint website you are trying to get access to and `$appPrincipal`) is the add-in ID. For more information, see  [Set-SPAppPrincipalPermission](http://technet.microsoft.com/en-us/library/jj219714%28v=office.15%29.aspx).
     
-  ```
+ ```
   
 Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+ ```
 
 - Your web application is accepting anonymous requests. This means there is not a real user identity in the access token. Ensure that anonymous access has been disabled in IIS for the root directory of your remote web application. You can also check this by debugging your remote web application, and checking the value of **Request.LogonUserIdentity** in the default.aspx.cs (or .vb) file to ensure that it's not an anonymous user.
     

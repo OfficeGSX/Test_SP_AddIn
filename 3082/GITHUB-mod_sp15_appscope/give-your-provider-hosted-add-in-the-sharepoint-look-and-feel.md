@@ -148,7 +148,7 @@ En algunos escenarios, necesita que sus páginas remotas tengan su propia marca,
   
 2. En la sección **head**, verá un script que carga un par de bibliotecas JavaScript. Agregue el siguiente script adicional debajo. Este script carga el archivo SP.UI.Controls.js que se encuentra en cada sitio web de SharePoint en la carpeta /_layouts/15/. Entre otras cosas, este archivo carga la biblioteca CSS de SharePoint.
     
-  ```
+ ```
   
 <script type="text/javascript">
     var hostweburl;
@@ -183,11 +183,11 @@ En algunos escenarios, necesita que sus páginas remotas tengan su propia marca,
         }
     }
 </script>
-  ```
+ ```
 
 3. En la parte superior de la sección del cuerpo de la página, agregue el marcado siguiente. Se insertará la barra superior de SharePoint, denominada control de cromo, en la página. Los detalles de este marcado serán más claros cuando probemos el complemento revisado más adelante en este artículo. (La cadena "app" aparece en algunos de los nombres de propiedad porque los complementos se solían llamar "apps").
     
-  ```
+ ```
   
 <!-- Chrome control placeholder. Options are declared inline.  -->
 <div 
@@ -210,15 +210,15 @@ En algunos escenarios, necesita que sus páginas remotas tengan su propia marca,
             ]
          }'>
 </div>
-  ```
+ ```
 
 4. Los encabezados **H1** y el hipervínculo que hay en el cuerpo de la página usarán automáticamente estilos definidos en la biblioteca CSS de SharePoint. Por lo tanto, no es necesario cambiarlos. Para ilustrar cómo puede usar los estilos de SharePoint, establezca los encabezados de columna en los tres controles **GridView** para el estilo "todas mayúsculas" de SharePoint agregando el atributo **HeaderStyle-CssClass** a cada uno de los controles y estableciendo su valor en " `ms-uppercase`". A continuación se muestra un ejemplo. Realice el mismo cambio en los tres controles **GridView**.
     
-  ```XML
+ ```XML
   
 <asp:GridView ID="ordersGridView" runat="server" CellPadding="5" GridLines="None"
 HeaderStyle-CssClass="ms-uppercase" />
-  ```
+ ```
 
 5. El control de cromo usa el icono del complemento, por lo que tenemos una segunda copia del archivo de icono en el servidor web remoto. En el **Explorador de soluciones**, haga clic en el archivo AppIcon.png del proyecto **ChainStore** y elija **Copiar**. 
     
@@ -235,13 +235,13 @@ HeaderStyle-CssClass="ms-uppercase" />
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
     spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 9. Hay otros cuatro archivos ASP.NET que necesitan la interfaz de usuario de SharePoint: 
     
@@ -265,36 +265,36 @@ protected void Page_Load(object sender, EventArgs e)
     
 
 
-  ```XML
+ ```XML
   
 <link type="text/css" rel="stylesheet"
 href="<%= spContext.SPHostUrl.ToString() + "_layouts/15/defaultcss.ashx" %>" />
-  ```
+ ```
 
 10. Este paso y el siguiente ya se realizaron para la página Formulario de pedido y la página Cuenta, por lo que solo se aplican a las páginas Contacto y Ayuda. Para obtener el objeto  `spContext` en cada una de las páginas, abra los archivos de código subyacente *. aspx.cs de las tres páginas aspx. En cada uno de ellos, agregue el siguiente miembro a la clase **Page**.
     
-  ```cs
+ ```cs
   
 protected SharePointContext spContext;
-  ```
+ ```
 
 11. Reemplace el método **Page_Load** por la siguiente versión. Se obtiene el objeto de la memoria caché de la sesión. Se almacenó en la memoria caché cuando se creó inicialmente con el método **Page_Load** de la página de inicio del complemento.
     
-  ```cs
+ ```cs
   protected void Page_Load(object sender, EventArgs e)
 {
     spContext = Session["SPContext"] as SharePointContext;
 }
-  ```
+ ```
 
 12. Abra la página OrderForm.aspx. En el elemento superior **Label**, reemplace el elemento **<b>** en la frase **Realizar pedido** por etiquetas span que hagan referencia a la clase CSS `ms-accentText`. Todo el control **Label** debería ser similar al siguiente cuando termine.
     
-  ```XML
+ ```XML
   
 <asp:Label ID="lblOrderPrompt" runat="server"
          Text="Enter a supplier, product, and quantity; and then press <span class='ms-accentText'>Place Order</span>.">
 </asp:Label>
-  ```
+ ```
 
 
 ## Ejecutar el complemento y probar la nueva interfaz de usuario de SharePoint

@@ -46,11 +46,11 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
 
 1. 打开 Windows PowerShell 并运行以下 cmdlet：
     
-  ```
+ ```
   
 Connect-MsolService
 
-  ```
+ ```
 
 2. 在登录提示符处，输入使用 AppRegNew.aspx 注册外接程序的 Office 365 租赁或场的租户管理员（或场管理员）凭据。
     
@@ -64,7 +64,7 @@ Connect-MsolService
     
   
 
-  ```
+ ```
   
 $applist = Get-MsolServicePrincipal -all  |Where-Object -FilterScript { ($_.DisplayName -notlike "*Microsoft*") -and ($_.DisplayName -notlike "autohost*") -and  ($_.ServicePrincipalNames -notlike "*localhost*") }
 
@@ -79,7 +79,7 @@ foreach ($appentry in $applist)
      Write-Host "$principalName;$principalId;$appentry.KeyId;$appentry.type;$date;$appentry.Usage"
 
 }  > c:\\temp\\appsec.txt
-  ```
+ ```
 
 4. 打开文件 C:\\temp\\appsec.txt 以查看报告。将 Windows PowerShell 窗口保留打开状态，以执行下一过程，如果任何密钥即将到期。
     
@@ -94,15 +94,15 @@ foreach ($appentry in $applist)
 
 1. 使用以下命令行创建一个客户端 ID，并将 SharePoint 外接程序的客户端 ID 用作参数。
     
-  ```
+ ```
   
 $clientId = 'client id of the add-in'
 
-  ```
+ ```
 
 2. 使用以下命令行生成新的客户端密码：
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -113,7 +113,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
 $newClientSecret
-  ```
+ ```
 
 3. 新的客户端密码将出现在 Windows PowerShell 控制台上。将其复制到一个文本文件中。在下一个步骤中使用。
     
@@ -138,7 +138,7 @@ $newClientSecret
 
 1. 在 Visual Studio 中打开 SharePoint 外接程序项目，并打开该 Web 应用程序项目的 web.config 文件。在 **appSettings** 部分中，有一些针对客户端 ID 和客户端密码的密钥。下面是一个示例：
     
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="your client id here" />
@@ -146,25 +146,25 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 
-  ```
+ ```
 
 2. 将 **ClientSecret** 密钥的名称改为"SecondaryClientSecret"，示例如下：
     
-  ```XML
+ ```XML
   
 <add key="SecondaryClientSecret" value="your old secret here" />
-  ```
+ ```
 
 3. 添加新的 **ClientSecret** 密钥，并提供新的客户端密码。现在您的标记应如下所示：
     
-  ```XML
+ ```XML
   <appSettings>
   <add key="ClientId" value="your client id here" />
   <add key="ClientSecret" value="your new secret here" />
   <add key="SecondaryClientSecret" value="your old secret here" />
      ... other settings may be here ...
 </appSettings>
-  ```
+ ```
 
 4. 如果您已经更改为新的 TokenHelper 文件，请重新生成项目。
     
@@ -182,13 +182,13 @@ $newClientSecret
 
 1. 通过具有以下使用 SharePoint 2013 Windows PowerShell 标记的租户管理员用户连接到 MSOnline。
     
-  ```
+ ```
   
 import-module MSOnline
 $msolcred = get-credential
 connect-msolservice -credential $msolcred
 
-  ```
+ ```
 
 2. 获取 **ServicePrincipals** 和密钥。打印 **$keys** 返回三个记录。替换 *KeyId1*  、 *KeyId2*  和 *KeyId3*  中的每个 **KeyId** 。您还将看到每个密钥的 **EndDate** 。确认您的过期密钥是否出现。
     
@@ -196,17 +196,17 @@ connect-msolservice -credential $msolcred
     
 
 
-  ```
+ ```
   
 $clientId = "27c5b286-62a6-45c7-beda-abbaea6eecf2"
 $keys = Get-MsolServicePrincipalCredential -AppPrincipalId $clientId
 Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -AppPrincipalId $clientId 
 
-  ```
+ ```
 
 3. 生成此 **clientID** 的新 **ClientSecret** 。它使用在上述步骤中设置的相同 **clientId** 。新的 **ClientSecret** 的有效期为 3 年。
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -220,7 +220,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret   -StartDate $dtStart  -EndDate $dtEnd
 $newClientSecret
 
-  ```
+ ```
 
 4. 复制 **$newClientSecret** 的输出。
     

@@ -71,43 +71,43 @@ Sie können etwas clientseitiges JavaScript verwenden, um das Rendering von Webp
   
 3. Ihr benutzerdefiniertes Rendern des Felds sollte automatisch erfolgen. Fügen Sie daher eine anonyme Methode zum JavaScript hinzu, die automatisch ausgeführt wird, wenn die Datei mit dem folgenden Code geladen wird.
     
-  ```
+ ```
   
 (function () {
 
 })();
-  ```
+ ```
 
 4. Fügen Sie im Textkörper dieser Methode (zwischen den {}-Zeichen) den folgenden Code zum Erstellen von JSON-Objekten (Javascript Object Notation) für den Renderingüberschreibungskontext, die Vorlagen in dem Kontext und die Vorlagen für die Felder hinzu.
     
-  ```
+ ```
   
 var customRenderingOverride = {};
 customRenderingOverride.Templates = {};
 customRenderingOverride.Templates.Fields = {
 
 }
-  ```
+ ```
 
 5. Fügen Sie im Textkörper des  `Fields`-Vorlagenobjekts das folgende JSON-Objekt ein. Der Name der Eigenschaft  `OrientationStage` identifiziert das Feld, mit dem das Rendering angepasst wurde. Der Wert der Eigenschaft ist ein weiteres JSON-Objekt. Die Eigenschaft `View` gibt den Seitenkontext an, in dem das benutzerdefinierte Rendering angewendet wird. In diesem Fall teilt das Objekt SharePoint mit, das benutzerdefinierte Rendering auf Listenansichten zu verwenden. (Weitere Optionen sind die Formulare zum Bearbeiten, für neue Element und zum Anzeigen.) Der Wert der Eigenschaft `renderOrientationStage` ist der Name der benutzerdefiniertes Renderingmethode, die Sie in einem späteren Schritt erstellen.
     
-  ```
+ ```
   
 "OrientationStage": { "View": renderOrientationStage }
-  ```
+ ```
 
 6. Die letzte Aktion, die die anonyme Methode durchführen muss, besteht darin, den Vorlagen-Manager von SharePoint die Renderingüberschreibung zu informieren. Fügen Sie die folgende Zeile am Ende des Hauptteils der Methode hinzu.
     
-  ```
+ ```
   SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
-  ```
+ ```
 
 
     Die Methode sollte jetzt wie folgt aussehen.
     
 
 
-  ```
+ ```
   (function () {
     var customRenderingOverride = {};
     customRenderingOverride.Templates = {};
@@ -117,11 +117,11 @@ customRenderingOverride.Templates.Fields = {
 
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
 })();
-  ```
+ ```
 
 7. Fügen Sie die folgende Methode zur Datei hinzu. Sie legt die Farbe des Spaltenwerts **Einführungsphase** auf Rot fest, wenn der Wert „Nicht gestartet" ist, und auf Grün, wenn der Wert „Abgeschlossen" ist. (Das `ctx`-Objekt ist ein Clientkontextobjekt, das vom SharePoint-Skript im Lieferumfang deklariert wird.)
     
-  ```
+ ```
   
 function renderOrientationStage(ctx) {
     var orientationStageValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
@@ -135,7 +135,7 @@ function renderOrientationStage(ctx) {
         return orientationStageValue;
     }
 }
-  ```
+ ```
 
 8. Erweitern Sie im **Projektmappen-Explorer** **Websitespalten** und dann **Einführungsphase**, und öffnen Sie dann die Datei elements.xml.
     
@@ -149,7 +149,7 @@ function renderOrientationStage(ctx) {
     
 
 
-  ```
+ ```
   
 <Field
        ID="{some_guid_here}"
@@ -162,16 +162,16 @@ function renderOrientationStage(ctx) {
        Group="Employee Orientation" 
        JSLink="~site/Scripts/OrientationStageRendering.js">
 <!-- child elements and end tag omitted -->
-  ```
+ ```
 
 10. Öffnen Sie die Seite Default.aspx, und fügen Sie den folgenden Code als letztes untergeordnetes Element des **asp:Content**-Elements hinzu, dessen **ContentPlaceHolderID** auf **PlaceHolderMain** festgelegt ist.
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';"
     Text="List View Page for New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Ausführen und Testen des Add-Ins

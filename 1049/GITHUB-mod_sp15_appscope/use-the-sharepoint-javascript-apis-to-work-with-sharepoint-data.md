@@ -57,12 +57,12 @@ ms.assetid: 5c8767c2-317f-4bdb-8f4f-885d06da7feb
     
 
 
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     Проверьте файл на наличие другой разметки, загружающей один или оба файла сценария и удалите ее. Сохраните и закройте файл.
@@ -94,14 +94,14 @@ ms.assetid: 5c8767c2-317f-4bdb-8f4f-885d06da7feb
     
   
 
-  ```
+ ```
   
 'use strict';
 
 var clientContext = SP.ClientContext.get_current(); 
 var employeeList = clientContext.get_web().get_lists().getByTitle('New Employees In Seattle'); 
 var completedItems; 
-  ```
+ ```
 
 5. Чтобы свести к минимуму обмен сообщениями между браузером клиента и сервером SharePoint, JSOM использует систему пакетной обработки. Только одна функция ( **SP.ClientContext.executeQueryAsync**) реально отправляет сообщения на сервер (и принимает ответы). Вызовы к API JSOM, поступающие между вызовами **executeQueryAsync**, объединяются в пакеты, которые затем отправляются на сервер при следующем вызове **executeQueryAsync**. В общем случае невозможно вызвать метод объекта JSOM, если только объект не был доставлен на клиент во время предыдущего вызова **executeQueryAsync**. Предполагается, что ваш сценарий будет вызывать метод **SP.ListItem.deleteObject** каждого завершенного элемента в списке, поэтому ему необходимо выполнить два вызова **executeQueryAsync**: один  для получения коллекции завершенных элементов списка, а второй  для объединения вызовов **deleteObject** в пакет и отправки их на сервер для выполнения.
     
@@ -109,7 +109,7 @@ var completedItems;
     
 
 
-  ```
+ ```
   
 function purgeCompletedItems() {
 
@@ -120,26 +120,26 @@ function purgeCompletedItems() {
          '</Eq></Where></Query></View>'); 
      completedItems = employeeList.getItems(camlQuery); 
 }
-  ```
+ ```
 
 6. Когда эти строки будут отправлены на сервер и выполнены там, они создадут коллекцию элементов списка, но сценарий должен доставить эту коллекцию на клиент. Для этого необходимо вызвать функцию **SP.ClientContext.load**, поэтому добавьте указанную ниже строку в конец метода.
     
-  ```
+ ```
   
 clientContext.load(completedItems);
-  ```
+ ```
 
 7. Добавьте вызов **executeQueryAsync**. У этого метода два параметра и оба они представляют собой функции обратного вызова. Первый метод запускается, если сервер успешно выполняет все команды в пакете. Второй  если по какой-либо причине на серверу не удается выполнить необходимые операции. Вы создадите эти две функции на одном из следующих этапов. Добавьте указанную ниже строку в конец метода.
     
-  ```
+ ```
   clientContext.executeQueryAsync(deleteCompletedItems, onGetCompletedItemsFail);
-  ```
+ ```
 
 8. Теперь добавьте указанную ниже строку в конец метода. Возвращая значение **false** в кнопку ASP.NET, которая будет вызывать эту функцию, мы отменим поведение кнопок ASP.NET, используемое по умолчанию, то есть перезагрузку страницы. Перезагрузка страницы приведет перезагрузке файла Add-in.js. Это, в свою очередь, повлечет за собой инициализацию объекта `clientContext`. Если такая перезагрузка будет выполнена в период между моментом, когда **executeQueryAsync** отправляет свой запрос, и моментом, когда SharePoint отправляет обратно отклик, то больше не будет исходного объекта `clientContext` для обработки отклика. Функция остановит свою работу, при этом не будет выполнено никакого обратного вызова: ни об успешном выполнении, ни о сбое. (Конкретное поведение может отличаться в зависимости от используемого браузера.)
     
-  ```
+ ```
   return false;
-  ```
+ ```
 
 9. Добавьте указанную ниже функцию ( `deleteCompletedItems`) в файл. Эта функция запускается при успешном выполнении функции  `purgeCompletedItems`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -156,7 +156,7 @@ clientContext.load(completedItems);
     
   
 
-  ```
+ ```
   function deleteCompletedItems() {
 
     var itemArray = new Array();
@@ -174,21 +174,21 @@ clientContext.load(completedItems);
 
     clientContext.executeQueryAsync(onDeleteCompletedItemsSuccess, onDeleteCompletedItemsFail);
 }
-  ```
+ ```
 
 10. Добавьте указанную ниже функцию ( `onDeleteCompletedItemsSuccess`) в файл. Эта функция запускается при успешном удалении завершенных элементов (или если в списке нет завершенных элементов). Во второй строке ( `location.reload(true);`) выполняется повторная загрузка страницы с сервера. Это необходимо, так как веб-часть представления списка на странице будет по-прежнему отображать завершенные элементы, пока страница не будет обновлена. (Файл Add-in.js тоже будет повторно загружен, но это не приводит к проблеме, так как в результате этой операции не будет прерываться работа текущей функции JavaScript.)
     
-  ```
+ ```
   
 function onDeleteCompletedItemsSuccess() {
     alert('Completed orientations have been deleted.');
     location.reload(true);
 }
-  ```
+ ```
 
 11. Добавьте две указанные ниже функции обратного вызова в случае сбоя в файл.
     
-  ```
+ ```
   
 // Failure callbacks
 
@@ -199,18 +199,18 @@ function onGetCompletedItemsFail(sender, args) {
 function onDeleteCompletedItemsFail(sender, args) {
     alert('Unable to delete completed items. Error:' + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 12. Откройте файл default.aspx и найдите элемент **asp:Content** с идентификатором **PlaceHolderMain**.
     
   
 13. Добавьте указанную ниже разметку между элементом **WebPartPages:WebPartZone** и первым из двух элементов **asp:Hyperlink**. Обратите внимание, что обработчик **OnClientClick** имеет значение `return purgeCompletedItems()`, а не просто  `purgeCompletedItems()`. Возвращаемое из функции значение  `false` сообщает ASP.NET, что не нужно перезагружать страницу.
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return purgeCompletedItems()"
   ID="purgecompleteditemsbutton" Text="Purge Completed Items" /></p>
-  ```
+ ```
 
 14. Перестройте проект в Visual Studio.
     
@@ -221,7 +221,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -240,7 +240,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## Запуск и тестирование надстройки

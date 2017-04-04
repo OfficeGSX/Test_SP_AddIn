@@ -240,8 +240,7 @@ Ensuite, transmettez le type complexe dans le corps de la requête, ici au forma
     
 
 
-
-```
+```
 
 { "d" : {
    "results": {
@@ -256,8 +255,7 @@ Ensuite, transmettez le type complexe dans le corps de la requête, ici au forma
    }
 } 
 }
-
-```
+```
 
 
 ### Utilisation d'alias de paramètre dans les appels de service REST

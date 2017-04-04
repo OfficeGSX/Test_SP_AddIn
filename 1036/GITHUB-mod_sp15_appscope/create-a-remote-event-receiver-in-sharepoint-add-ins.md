@@ -120,7 +120,7 @@ Pour suivre cet article et entrer le code vous-même, téléchargez l'exemple  [
 
 
 
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -240,7 +240,7 @@ namespace BasicDataOperationsWeb.Services
         }
     }
 }
-  ```
+ ```
 
 3. Dans le fichier Home.aspx.cs, remplacez toutes les instances de  `SPHostUrl` par `SPAppWebUrl`.
     

@@ -129,7 +129,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
     > **HINWEIS**
       > The JSLink property is not supported on Survey or Events lists. A SharePoint calendar is an Events list. 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### So stellen Sie eine benutzerdefinierte Renderinglogik in einer JavaScript-Datei bereit
@@ -168,7 +168,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### So erstellen Sie die Lösung und führen Sie sie aus

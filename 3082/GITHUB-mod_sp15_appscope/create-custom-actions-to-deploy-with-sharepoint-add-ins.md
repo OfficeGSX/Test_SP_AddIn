@@ -87,7 +87,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     > **IMPORTANTE**
       > Los tokens ItemURL y ItemID solo se pasan cuando hay un elemento seleccionado. En una Complemento de SharePoint con calidad de producción, el código debe manejar situaciones en que no haya elementos seleccionados. En este ejemplo, el código alerta al usuario de que no se ha seleccionado ningún elemento. 
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +125,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 ### Para agregar una acción personalizada de elemento de menú al proyecto Complemento de SharePoint
@@ -156,7 +156,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements 
@@ -180,7 +180,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
   </CustomAction>
 </Elements>
 
-  ```
+ ```
 
 5. Agregue los siguientes parámetros de consulta al final del atributo **Url** del elemento **UrlAction**: 
     
@@ -224,7 +224,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
    
 4. Visual Studio genera el siguiente marcado en el archivo elements.xml de la característica de la acción personalizada de cinta:
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -259,7 +259,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
   </CustomAction>
 </Elements> 
 
-  ```
+ ```
 
 5. Agregue los siguientes parámetros de consulta al final del atributo **CommandAction** del elemento **CommandUIHandler**: 
     

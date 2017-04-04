@@ -211,12 +211,12 @@ Office 365 プランを取得する方法は 3 つあります。
   
 7. プロジェクトを作成したら、プロジェクトのルートからファイル **/Pages/Default.aspx** を開きます。特に、この生成されたファイルは、SharePoint でホストされている 2 つのスクリプトである、sp.runtime.js と sp.js のいずれか、または両方を読み込みます。これらのファイルを読み込むマークアップは、ファイルの先頭付近に位置する、 **PlaceHolderAdditionalPageHead** という ID の **Content** コントロールにあります。マークアップは、使用している **Microsoft Office Developer Tools for Visual Studio** のバージョンによって異なります。この一連のチュートリアルでは、両方のファイルを読み込むことが必要であり、それらのファイルを **<SharePoint:ScriptLink>** タグではなく、通常の HTML **<script>** タグで読み込むことが必要です。 **PlaceHolderAdditionalPageHead** コントロールの中の行 `<meta name="WebPartPageExpansion" content="full" />` の *すぐ上*  に、次の行があることをご確認ください。
     
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     次いで、2 ファイルのどちらかを読み込むマークアップが他にもないかファイルを検索し、重複するマークアップを削除します。ファイルを保存して閉じます。
@@ -312,21 +312,21 @@ Office 365 プランを取得する方法は 3 つあります。
     
 
 
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
-  ```
+ ```
 
 20. 引き続き schema.xml ファイルで、 **BaseViewID** 値が "1" の **View** 要素で、既存の **ViewFields** 要素を次のマークアップで置換します ( `LinkTitle` という名前の **FieldRef** にこの GUID を正確にそのまま使用してください)。
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
-  ```
+ ```
 
 21. schema.xml ファイルを保存して閉じます。
     
@@ -336,7 +336,7 @@ Office 365 プランを取得する方法は 3 つあります。
   
 23. このファイルでは、いくらかの初期データをリストに取り込みます。これを行うには、以下の **Data** 要素マークアップを **ListInstance** 要素の子要素として追加します。.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -354,7 +354,7 @@ Office 365 プランを取得する方法は 3 つあります。
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 24. ファイルを保存して閉じます。
     
@@ -373,13 +373,13 @@ Office 365 プランを取得する方法は 3 つあります。
   
 29. ID が **PlaceHolderMain** の ASP.NET **Content** 要素を検索します。そのコンテンツを次のマークアップに *置き換えます*  。 ` _spPageContextInfo` は、SharePoint が自動的にページに組み込む JavaScript オブジェクトです。その `webAbsoluteUrl` プロパティによって、アドイン Web の URL が返されます。
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server"
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## アドインの実行とリストのテスト

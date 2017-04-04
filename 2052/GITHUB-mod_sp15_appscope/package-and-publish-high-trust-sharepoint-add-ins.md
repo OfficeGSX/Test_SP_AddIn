@@ -363,16 +363,14 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientID" value="c1c12d4c-4900-43c2-8b89-c05725e0ba30" />
   <add key="ClientSigningCertificateSerialNumber" value="556a1c9c5a5415994941abd0ef2f947b" />
   <add key="IssuerId" value="f94591d5-89e3-47cd-972d-f1895cc158c6" />
 </appSettings>
-
-```
+```
 
 
 ## 修改 TokenHelper 文件
@@ -398,23 +396,23 @@ Visual Studio Office 开发人员工具 生成的 TokenHelper.cs（或 .vb）文
   
 2. 在对应的位置添加以下行：
     
-  ```
+ ```
   
 private static readonly string ClientSigningCertificateSerialNumber
     = WebConfigurationManager.AppSettings.Get("ClientSigningCertificateSerialNumber");
-  ```
+ ```
 
 3. 找到声明  `SigningCredentials` 字段的行。将其替换为以下行：
     
-  ```
+ ```
   
 private static readonly X509SigningCredentials SigningCredentials
     = GetSigningCredentials(GetCertificateFromStore());
-  ```
+ ```
 
 4. 转到文件的  `#region private methods` 部分，添加以下两个方法：
     
-  ```
+ ```
   
 private static X509SigningCredentials GetSigningCredentials(X509Certificate2 cert)
 {
@@ -453,7 +451,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     return storedCert;
 }
-  ```
+ ```
 
 
 ## 使用 Visual Studio 向导打包远程 Web 应用程序和 SharePoint 外接程序以便于发布

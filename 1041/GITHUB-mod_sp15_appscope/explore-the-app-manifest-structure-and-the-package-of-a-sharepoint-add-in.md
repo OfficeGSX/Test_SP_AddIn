@@ -87,8 +87,7 @@ SharePoint アドインパッケージは、".app" 拡張子を持つファイ�
 
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -113,8 +112,7 @@ SharePoint アドインパッケージは、".app" 拡張子を持つファイ�
     <RemoteWebApplication ClientId="1ee82b34-7c1b-471b-b27e-ff272accd564" />
   </AppPrincipal>
 </App>
-
-```
+```
 
 
 ### アドイン マニフェスト内の URL トークン

@@ -65,13 +65,11 @@ ms.assetid: 124879c7-a746-4c10-96a7-da76ad5327f0
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **Примечание**
@@ -92,8 +90,7 @@ ms.assetid: 124879c7-a746-4c10-96a7-da76ad5327f0
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -119,8 +116,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **Примечание**

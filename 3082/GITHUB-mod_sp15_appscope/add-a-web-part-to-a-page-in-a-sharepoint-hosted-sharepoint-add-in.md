@@ -48,12 +48,12 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
   
 3. Dentro del mismo elemento **<asp:Content>**, agregue lo siguiente: **WebPartZone**. 
     
-  ```XML
+ ```XML
   
 <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly"
       ID="HomePage1" Title="loc:full" />
 
-  ```
+ ```
 
 4. Guarde y cierre el archivo.
     
@@ -66,7 +66,7 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
   
 7. En el elemento **File**, agregue un elemento secundario **AllUsersWebPart** y establezca como su **WebPartZoneID** el Id. de la zona de elemento web que ha creado en la página. Ahora, el contenido del archivo debería tener un aspecto así. Este marcado indica a SharePoint que inserte un **AllUsersWebPart** en la zona de elemento web denominada "HomePage1".
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -78,11 +78,11 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
   </Module>
 </Elements>
 
-  ```
+ ```
 
 8. Agregue un elemento **CDATA** como elemento secundario del **AllUsersWebPart** y luego agregue un elemento **webParts** como elemento secundario del **CDATA**, como se muestra en el siguiente código de marcado. 
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -91,11 +91,11 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 9. Agregue el siguiente código de marcado **webPart** como elemento secundario del elemento **webParts**. Este código de marcado agrega un **XsltListViewWebPart** e indica al elemento web que busque la listaNuevos empleados de Seattle. Fíjese en que el valor de la propiedad **ViewContentTypeId** es simplemente "0x", no el identificador real del tipo de contenidoNewEmployee. 
     
-  ```
+ ```
   
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
@@ -115,7 +115,7 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
       </properties>
     </data>
   </webPart>
-  ```
+ ```
 
 
 ## Ejecutar y probar el complemento

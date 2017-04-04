@@ -123,7 +123,7 @@ SharePoint 2013でアドイン パーツを作成する方法について説明�
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ SharePoint 2013でアドイン パーツを作成する方法について説明�
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. ファイルを保存して閉じます。
     
@@ -283,7 +283,7 @@ SharePoint 2013でアドイン パーツを作成する方法について説明�
   
 10. Visual Studio は、アドイン パーツの elements.xml ファイルに次の XML コードを生成します (わかりやすくするために改行を追加しています)。 **ClientWebPart** 要素の **Title** 属性が "Basic add-in part Title" に設定され、説明が "Basic add-in part Description" に設定されます。1 つ目から "Title" という単語を削除し、2 つ目をA basic add-in part で置き換えます。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ SharePoint 2013でアドイン パーツを作成する方法について説明�
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### ホスト Web のホーム ページにアドインのスタート ページを設定します。
@@ -449,11 +449,9 @@ SharePoint 2013でアドイン パーツを作成する方法について説明�
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 SharePoint ページをコンテンツ ページとして使用する方法を示す [アドイン パーツ コード サンプル](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16)をダウンロードできます。
   
@@ -472,10 +470,8 @@ SharePoint ページをコンテンツ ページとして使用する方法を�
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 上の例で、 **senderId** の値は、ページがレンダリングされるときにアドイン パーツのコードによって自動的にページのクエリ文字列に設定されます。ページでは、クエリ文字列から **SenderId** の値を読み取って、それをサイズ変更要求のときに使用することだけが必要です。 **StandardTokens** または **HostUrl** トークンをアドイン パーツ定義の **Src** 属性に追加して、クエリ文字列からホスト Web URL を取得できます。動的にサイズを変更するアドイン パーツを表示する [アドイン パーツ コード サンプル](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88)をダウンロードできます。
   
@@ -505,10 +501,8 @@ SharePoint アドインで **defaultcss.ashx** ファイルを参照する方法
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
  **_editMode_** トークンによって、コンテンツ ページではアドイン パーツが編集モードであるかどうかを判定できます。アドイン パーツが編集モードである場合、 **_editMode_** トークンは 1 に解決されます。それ以外の場合、トークンは 0 に解決されます。
   

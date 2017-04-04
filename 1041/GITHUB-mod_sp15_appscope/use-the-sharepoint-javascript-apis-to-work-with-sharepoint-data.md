@@ -57,12 +57,12 @@ SharePoint ホスト型 SharePoint アドイン は、サーバー側コード�
     
 
 
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     次いで、2 ファイルのどちらかを読み込むマークアップが他にもないかファイルを検索し、重複するマークアップを削除します。ファイルを保存して閉じます。
@@ -94,14 +94,14 @@ SharePoint ホスト型 SharePoint アドイン は、サーバー側コード�
     
   
 
-  ```
+ ```
   
 'use strict';
 
 var clientContext = SP.ClientContext.get_current(); 
 var employeeList = clientContext.get_web().get_lists().getByTitle('New Employees In Seattle'); 
 var completedItems; 
-  ```
+ ```
 
 5. クライアント ブラウザーと SharePoint サーバーの間のメッセージを最小化するために、JSOM はバッチ処理システムを使用します。実際にサーバーにメッセージを送信 (および返信を受信) する関数は **SP.ClientContext.executeQueryAsync** の 1 つだけです。 **executeQueryAsync** の呼び出しの間に発生する JSOM API への呼び出しはまとめられ、次に **executeQueryAsync** が呼び出されたときに、バッチでサーバーに送信されます。ただし、オブジェクトが以前の **executeQueryAsync** の呼び出しでクライアントに渡されていないと、通常は JSOM オブジェクトのメソッドを呼び出すことができません。スクリプトはリスト上の完了した各アイテムの **SP.ListItem.deleteObject** メソッドを呼び出すので、 **executeQueryAsync** の呼び出しを 2 回行う必要があります。1 つ目は完了したリスト アイテムのコレクションを取得し、2 つ目は **deleteObject** の呼び出しをバッチ処理して、実行のためにサーバーに送信します。
     
@@ -109,7 +109,7 @@ var completedItems;
     
 
 
-  ```
+ ```
   
 function purgeCompletedItems() {
 
@@ -120,26 +120,26 @@ function purgeCompletedItems() {
          '</Eq></Where></Query></View>'); 
      completedItems = employeeList.getItems(camlQuery); 
 }
-  ```
+ ```
 
 6. これらの行がサーバーに送信され、そこで実行される場合、リスト アイテムのコレクションを作成しますが、スクリプトはそのコレクションをクライアントに渡す必要があります。これは、 **SP.ClientContext.load** 関数への呼び出しを使用して実行されるため、次の行をメソッドの終わりに追加します。
     
-  ```
+ ```
   
 clientContext.load(completedItems);
-  ```
+ ```
 
 7. **executeQueryAsync** の呼び出しを追加します。このメソッドには 2 つのパラメーターがあり、どちらもコールバック関数です。1 つ目は、サーバーがバッチですべてのコマンドを正常に実行する場合に動作します。2 つ目は、サーバーが何らかの理由で失敗した場合に動作します。これらの 2 つの関数は、後の手順で作成します。次の行をメソッドの終わりに追加します。
     
-  ```
+ ```
   clientContext.executeQueryAsync(deleteCompletedItems, onGetCompletedItemsFail);
-  ```
+ ```
 
 8. 最後に、次の行をメソッドの終わりに追加します。関数を呼び出す ASP.NET ボタンに **false** を返すことにより、ASP.NET ボタンの既定の動作をキャンセルし、これによりページがリロードされます。ページをリロードすると、Add-in.js ファイルのリロードも実行されます。次にこれが `clientContext` オブジェクトを再初期化します。このリロードが、 **executeQueryAsync** が要求を送信するタイミングと、SharePoint サーバーが応答を返すタイミングの間で完了した場合、元の `clientContext` オブジェクトは応答を処理するために存在していません。関数は、成功または失敗のいずれのコールバックも実行されず停止します (正確な動作は、ブラウザーに応じて異なります)。
     
-  ```
+ ```
   return false;
-  ```
+ ```
 
 9. 次の関数  `deleteCompletedItems` をファイル追加します。これは、 `purgeCompletedItems` 関数が成功している場合に動作する関数です。このコードについて、以下の点に注意してください。
     
@@ -156,7 +156,7 @@ clientContext.load(completedItems);
     
   
 
-  ```
+ ```
   function deleteCompletedItems() {
 
     var itemArray = new Array();
@@ -174,21 +174,21 @@ clientContext.load(completedItems);
 
     clientContext.executeQueryAsync(onDeleteCompletedItemsSuccess, onDeleteCompletedItemsFail);
 }
-  ```
+ ```
 
 10. 次の関数  `onDeleteCompletedItemsSuccess` をファイルに追加します。これは、完了したアイテムが正常に削除された場合 (またはリストに完了したアイテムがない場合) に動作する関数です。2 行目の `location.reload(true);` は、ページをサーバーからリロードします。これは、ページのリスト ビュー Web パーツが、ページの更新まで引き続き完了したアイテムを表示するので便利です。(Add-in.js ファイルもリロードされますが、これは実行継続中の JavaScript 関数を中断する方法で動作するわけではないため、問題が発生しません。
     
-  ```
+ ```
   
 function onDeleteCompletedItemsSuccess() {
     alert('Completed orientations have been deleted.');
     location.reload(true);
 }
-  ```
+ ```
 
 11. 次の 2 つの callback-on-failure 関数をファイルに追加します。
     
-  ```
+ ```
   
 // Failure callbacks
 
@@ -199,18 +199,18 @@ function onGetCompletedItemsFail(sender, args) {
 function onDeleteCompletedItemsFail(sender, args) {
     alert('Unable to delete completed items. Error:' + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 12. default.aspx ファイルを開き、ID **PlaceHolderMain** を持つ **asp:Content** 要素を検索します。
     
   
 13. **WebPartPages:WebPartZone** 要素と最初の 2 つの **asp:Hyperlink** 要素の間に次のマークアップを追加します。 **OnClientClick** ハンドラーの値は、 `purgeCompletedItems()` ではなく `return purgeCompletedItems()` です。関数から返される `false` は、ページをリロードしないよう ASP.NET に通知します。
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return purgeCompletedItems()"
   ID="purgecompleteditemsbutton" Text="Purge Completed Items" /></p>
-  ```
+ ```
 
 14. プロジェクトを Visual Studio で再構築します。
     
@@ -221,7 +221,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -240,7 +240,7 @@ function onDeleteCompletedItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## アドインを実行してテストする

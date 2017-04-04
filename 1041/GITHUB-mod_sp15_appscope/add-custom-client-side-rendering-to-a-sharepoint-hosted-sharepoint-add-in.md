@@ -71,43 +71,43 @@ SharePoint アドイン ページ でコントロールのレンダリングと�
   
 3. フィールドのカスタム レンダリングが自動的に行われる必要があるため、次のコードを使用して、ファイルが読み込まれるときに自動的に実行される匿名メソッドを JavaScript に追加します。
     
-  ```
+ ```
   
 (function () {
 
 })();
-  ```
+ ```
 
 4. このメソッドの本文 ({ } 文字の間) で、次のコードを追加し、レンダリング上書きコンテキストの JSON (Javascript Object Notation) オブジェクト、コンテキストのテンプレート、フィールドのテンプレートを作成します。
     
-  ```
+ ```
   
 var customRenderingOverride = {};
 customRenderingOverride.Templates = {};
 customRenderingOverride.Templates.Fields = {
 
 }
-  ```
+ ```
 
 5.  `Fields` テンプレート オブジェクトの本文で、次の JSON を追加します。プロパティ名 `OrientationStage` は、カスタマイズされたレンダリングを持つフィールドを識別します。プロパティの値は、別の JSON オブジェクトです。 `View` プロパティは、カスタム レンダリングが適用されるページのコンテキストを特定します。この場合、オブジェクトはリスト ビューでカスタマイズされたレンダリングを使用するよう SharePoint に通知します。(その他のオプションは、編集、新規作成、表示フォーム用です)。プロパティの値 `renderOrientationStage` は、後の手順で作成するカスタム レンダリング メソッドの名前です。
     
-  ```
+ ```
   
 "OrientationStage": { "View": renderOrientationStage }
-  ```
+ ```
 
 6. 匿名メソッドが実行すべき最後の処理は、SharePoint のテンプレート マネージャーへのレンダリングの上書きについての通知です。次の行をメソッドの本文の終わりに追加します。
     
-  ```
+ ```
   SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
-  ```
+ ```
 
 
     メソッドは、次のようになります。
     
 
 
-  ```
+ ```
   (function () {
     var customRenderingOverride = {};
     customRenderingOverride.Templates = {};
@@ -117,11 +117,11 @@ customRenderingOverride.Templates.Fields = {
 
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
 })();
-  ```
+ ```
 
 7. 次のメソッドをファイルに追加します。 [ **オリエンテーション ステージ**] 列の色を、値が「未開始」の場合は赤、値が[完了] の場合は緑に設定します。( `ctx` オブジェクトは、組み込みの SharePoint スクリプトで宣言されるクライアントのコンテキスト オブジェクトです。)
     
-  ```
+ ```
   
 function renderOrientationStage(ctx) {
     var orientationStageValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
@@ -135,7 +135,7 @@ function renderOrientationStage(ctx) {
         return orientationStageValue;
     }
 }
-  ```
+ ```
 
 8. **ソリューション エクスプローラー**で、[ **サイト列**]、次に [ **オリエンテーション ステージ**] を展開し、elements.xml ファイルを開きます。
     
@@ -149,7 +149,7 @@ function renderOrientationStage(ctx) {
     
 
 
-  ```
+ ```
   
 <Field
        ID="{some_guid_here}"
@@ -162,16 +162,16 @@ function renderOrientationStage(ctx) {
        Group="Employee Orientation" 
        JSLink="~site/Scripts/OrientationStageRendering.js">
 <!-- child elements and end tag omitted -->
-  ```
+ ```
 
 10. Default.aspx ページを開き、 **ContentPlaceHolderID** が **PlaceHolderMain** に設定されている **asp:Content** 要素の最後の子として次のコードを追加します。
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';"
     Text="List View Page for New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## アドインを実行してテストする

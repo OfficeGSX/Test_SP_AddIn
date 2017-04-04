@@ -64,11 +64,11 @@ En fonction de vos exigences et de votre budget, vous pouvez choisir une des opt
   
 5. Si une erreur se produit au cours de l'installation, vérifiez le fichier journal. Pour trouver le fichier journal, ouvrez une fenêtre de Ligne de commande, puis tapez les commandes suivantes dans l'invite de commande. Un lien vers le fichier journal s'affiche aussi quand l'installation est terminée.
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. Une fois l'installation terminée, vous êtes invité à démarrer l'Assistant Configuration des produits et des technologies SharePoint.
     
@@ -212,40 +212,40 @@ Effectuez les étapes de la procédure suivante afin de créer un domaine de com
 
 1. Assurez-vous que les services spadmin et sptimer fonctionnent en ouvrant une invite de commande et en tapant les commandes suivantes.
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. Créez votre domaine de complément isolé en exécutant l'environnement SharePoint Management Shell en tant qu'administrateur et en saisissant la commande suivante. Remplacez  _contosoaddins.com_ par votre domaine de complément. Il ne doit *pas*  s'agir d'un sous-domaine du domaine SharePoint hôte. Cela réduit grandement les avantages en matière de sécurité de l'isolement des domaines de complément. Par exemple, si le domaine hôte est contoso.com, n'utilisez pas addins.contoso.com comme domaine de complément.
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. Assurez-vous que les services SPSubscriptionSettingsService et AppManagementServiceInstance fonctionnent en tapant la commande suivante dans le SharePoint Management Shell.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. Assurez-vous que les services SPSubscriptionSettingsService et AppManagementServiceInstance fonctionnent en tapant la commande suivante dans le SharePoint Management Shell. La sortie va indiquer quel service est en ligne.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. Vous devez indiquer un compte où les instances de service SPSubscriptionService et AppManagementServiceInstance vont fonctionner. Ce compte doit être un compte un SPManagedAccount. Vous pouvez créer un SPManagedAccount en tapant la commande suivante dans le SharePoint Management Shell. Vous devrez indiquer le compte de domaine\\utilisateur et mot de passe.
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. Spécifiez un compte, le pool d'applications et les paramètres de la base de données pour les services SPSubscriptionService et AppManagementServiceInstance en tapant le code suivant dans le SharePoint Management Shell. Si vous avez créé un SPManagedAccount à l'étape précédente, utilisez ce nom de compte.
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. Spécifiez votre préfixe de complément (voir  [Sites web hôtes, sites web de compléments et domaine isolé](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)) en tapant le code suivant dans le SharePoint Management Shell.
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **Effectuez seulement la procédure suivante si votre environnement utilise un serveur proxy.** Une fois le domaine de complément isolé créé, suivez les étapes de la procédure suivante afin d'ajouter un domaine à votre liste de contournement dans Internet Explorer. Cela garantit votre accès à ce domaine une fois que vous avez déployé un complément hébergé sur un serveur SharePoint ou un complément hébergé sur un fournisseur qui inclut un web de complément.
   

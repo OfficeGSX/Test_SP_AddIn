@@ -219,7 +219,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
   
 2.  `PlaceHolderMain` セクションで、既存の HTML の下に次のコードを追加します。
     
-  ```HTML
+ ```HTML
   
 <br />
 <div>
@@ -234,7 +234,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
     <select id="selectlistbox" ></select><button id="deletelistbutton">Delete Selected List</button>
     </p>
 </div>
-  ```
+ ```
 
 
     この HTML によって以下のコントロールが作成されます。
@@ -282,7 +282,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
     > **メモ**
       > このコードではエラーの波線が表示されます。波線は後の手順で消えます。 
 
-  ```
+ ```
   
 'use strict';
 
@@ -315,7 +315,7 @@ $(document).ready(function () {
         displayLists();
     });
 
-  ```
+ ```
 
 
     次の手順では、定義した JavaScript 関数を追加します。コード内の各関数は  `executeQueryAsync()` を呼び出して実行されます。この呼び出しは SharePoint のクライアント側オブジェクトモデル (CSOM) を使用して、現在保留中の要求をサーバー上で非同期に実行します。関数が非同期に実行されると、スクリプトはサーバーからの応答を待たずに処理を続行します。 `executeQueryAsync()` の個々の呼び出しには 2 つのイベント ハンドラーが含まれています。1 つのハンドラーは関数が正常に実行された場合に応答し、もう 1 つのハンドラーは関数が失敗した場合に応答します。次の表に主要な関数を示します。
@@ -331,7 +331,7 @@ $(document).ready(function () {
    
 3. [ **App.js**] の  `onGetUserNameFail()` 関数の後に次のコードを追加します。
     
-  ```
+ ```
   
 function getWebProperties() {
         // Get the number of lists in the current web.
@@ -416,7 +416,7 @@ function createlist() {
     function onDeleteListFail(sender, args) {
         alert('Failed to delete the list. ' + args.get_message());
     }
-  ```
+ ```
 
 
 ## 実行する
@@ -491,7 +491,7 @@ function createlist() {
   
 2.  `selectlistbox` 要素の下に、次のコードを追加します。
     
-  ```XML
+ ```XML
   
 <p>
     Items
@@ -501,7 +501,7 @@ function createlist() {
     <p>
     <select id="selectitembox"></select> <button id="deleteitembutton">Delete Selected Item</button>
     </p>
-  ```
+ ```
 
 
     このコードは、ユーザーがアイテムの名前を指定するための入力ボックス、リストにアイテムを追加するためのボタン、およびリストからアイテムを削除するためのボタンを追加します。
@@ -512,7 +512,7 @@ function createlist() {
   
 4.  `$(document).ready()` 関数で、ユーザーが [ **アイテムの作成**] ボタンと [ **選択したアイテムの削除**] ボタンを選択したときに呼び出される関数の定義を追加します。また、[ **リスト**] リスト ボックスの jQuery イベント ハンドラーを追加し、新しいリストを選択したときにリスト アイテムが更新されるようにします。
     
-  ```
+ ```
   
 $("#createitembutton").click(function (event) {
             createitem();
@@ -530,7 +530,7 @@ $("#createitembutton").click(function (event) {
             getitems();
             event.preventDefault();
         });
-  ```
+ ```
 
 
     > **メモ**
@@ -547,7 +547,7 @@ $("#createitembutton").click(function (event) {
    
 5. [ **App.js**] の末尾 ( `onDeleteListFail()` 関数の後) にこのコードを追加します。
     
-  ```
+ ```
   
 function createitem() {
     // Retrieve the list that the user chose, and add an item to it.
@@ -636,7 +636,7 @@ function onGetItemsFail(sender, args) {
     // The list items couldn't be retrieved - display an error message.
     alert('Failed to get items. Error: ' + args.get_message());
 }
-  ```
+ ```
 
 
 ## 修正した SharePoint アドインを実行する

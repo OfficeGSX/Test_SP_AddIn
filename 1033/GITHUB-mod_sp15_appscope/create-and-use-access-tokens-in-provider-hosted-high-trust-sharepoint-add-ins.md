@@ -142,8 +142,7 @@ The header has two properties. The "typ" is the type of token. Code in the remot
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -156,8 +155,7 @@ The header has two properties. The "typ" is the type of token. Code in the remot
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 The following table provides some guidance for what **properties your code should include in the access token and what values to set for them**. If you are using managed code, the SharePointContext.cs (or .vb) and TokenHelper.cs (or .vb) files create the tokens for you. For example, you code makes a single call to the **SharePointContext.CreateUserClientContextForSPHost** method. It, in turn, calls methods in the **TokenHelper** class that construct the access token which is then included in every call made to SharePoint by the SharePoint client context object that is returned by **SharePointContext.CreateUserClientContextForSPHost**.
   
@@ -197,8 +195,7 @@ Table 2 describes the claims your code must include in the body of the token and
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -210,8 +207,7 @@ Table 2 describes the claims your code must include in the body of the token and
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **NOTE**

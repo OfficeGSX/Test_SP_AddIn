@@ -133,7 +133,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
   
 2. Dans le fichier elements.xml de la nouvelle colonne de site, modifiez l'élément **Field** pour qu'il possède les attributs et valeurs de l'exemple suivant. Vous ne devez toutefois pas changer le GUID de l'attribut **ID**; conservez la valeur Visual Studio 2012 générée pour celui-ci. N'oubliez pas d'utiliser des accolades « {} ».
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="Actor" 
@@ -143,14 +143,14 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
        Description="The person cast, perhaps tentatively, in the role" 
        Type="Text" 
 />
-  ```
+ ```
 
 3. Ajoutez une autre **Colonne de site** appeléeCastingStatus (ÉtatCasting) au projet.
     
   
 4. Dans le fichier elements.xml de la nouvelle colonne de site, modifiez l'élément **Field** pour qu'il possède les attributs et valeurs de l'exemple suivant. Vous ne devez toutefois pas changer le GUID de l'attribut **ID**; conservez la valeur Visual Studio 2012 générée pour celui-ci.
     
-  ```
+ ```
   
 <Field ID="{generated GUID}"
        Name="CastingStatus" 
@@ -160,11 +160,11 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
        Description="The current casting status of the role" 
        Type="Choice">
 </Field>
-  ```
+ ```
 
 5. Comme il s'agit d'un champ de choix, vous devez spécifier les choix possibles, l'ordre dans lequel ils doivent apparaître dans la liste déroulante lorsqu'un utilisateur effectue une sélection et le choix par défaut. Ajoutez le balisage enfant suivant à l'élément **Field**.
     
-  ```
+ ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -181,7 +181,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
       <MAPPING Value="5">Committed to Role</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
-  ```
+ ```
 
 
 ### Pour créer le type de contenu personnalisé
@@ -221,11 +221,11 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
   
 9. Des éléments **FieldRef** existent déjà dans le fichier pour les deux colonnes que vous avez ajoutées. Ajoutez des éléments **FieldRef** pour deux colonnes SharePoint 2013 intégrées comme paires des deux qui figurent déjà dans le fichier. Le code suivant correspond au balisage pour les éléments. *Vous devez utiliser ces mêmes GUID pour l'attribut d'ID, car ce sont des types de champs intégrés avec des ID fixes.*  Ajoutez-les *au-dessus*  des deux éléments **FieldRef** pour les colonnes de site personnalisées.
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
-  ```
+ ```
 
 
     Notez que le nom d'affichage personnalisé suivant a été donné à ces champs : **Character** (Personnage).
@@ -306,26 +306,26 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
   
 19. Dans le fichier schema.xml, dans l'élément **View** dont la valeur BaseViewID est définie sur 0, remplacez l'élément **ViewFields** existant par le balisage ci-après. (Utilisez précisément ce GUID pour le **FieldRef** appelé `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
   <FieldRef Name="Actor" ID="{GUID from the site column elements.xml}" />
   <FieldRef Name="CastingStatus" ID="{GUID from the site column elements.xml}" />
 </ViewFields>
-  ```
+ ```
 
 20. Remplacez les deux valeurs d'attribut d'ID manquantes par les GUID dans les fichiers elements.xml des colonnes de site respectives. N'oubliez pas d'utiliser des accolades « {} ».
     
   
 21. Dans le fichier schema.xml, dans l'élément **View** dont la valeur BaseViewID est définie sur 1, remplacez l'élément **ViewFields** existant par le code ci-dessous. (Utilisez précisément ce GUID pour le **FieldRef** appelé `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 </ViewFields>
-  ```
+ ```
 
 22. Copiez les deux éléments **FieldRef** pour `Actor` et `CastingStatus` que vous avez ajoutés à l'affichage précédent de cet élément **ViewFields** comme frères de `LinkTitle` **FieldRef**.
     
@@ -338,7 +338,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
   
 25. Remplissez la liste avec quelques données initiales en ajoutant le balisage ci-après comme enfant de l'élément **ListInstance**.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -369,7 +369,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 2. Dans l' **Explorateur de solutions**, sélectionnez **Fonctionnalité1** pour ouvrir le concepteur de fonctionnalité. Dans le concepteur, définissez le **Titre** surTheater and Movie Data Components (Composants de données Théâtre et Cinéma) et la **Description** surSite columns, content types, and list instances for data about theater and movies. (Colonnes de site, types de contenu et instances de liste pour les données sur le théâtre et les films). Enregistrez le fichier, puis fermez le concepteur.
     
@@ -390,7 +390,7 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
     
 1. Ouvrez le fichier Default.aspx et remplacez l'élément body du fichier par le balisage ci-après. Il ajoute un bouton **Get the Cast** (Obtenir le casting) qui, lorsque vous cliquez dessus, lit la liste **Characters in Hamlet** (Personnages d'Hamlet) qui figure sur le site web de complément, puis présente les données dans un contrôle [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) qui s'affiche que lorsque vous appuyez sur le bouton.
     
-  ```HTML
+ ```HTML
   
 <body >
     <form id="form1" runat="server">
@@ -406,11 +406,11 @@ Dans les procédures de cette section, vous créez un Complément SharePoint qui
     <asp:GridView ID="GridView1" runat="server" Caption="The Cast" ></asp:GridView>
     </form>
 </body>
-  ```
+ ```
 
 2. Ouvrez le fichier Default.aspx.cs, puis ajoutez-y les instructions **using** ci-dessous.
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
@@ -421,7 +421,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.SharePoint.Samples;
-  ```
+ ```
 
 
     La dernière de ces instructions fait référence à l'espace de noms déclaré dans le fichier TokenHelper.cs.
@@ -429,16 +429,16 @@ using Microsoft.SharePoint.Samples;
   
 3. Ajoutez les champs ci-dessous à la classe **Default**.
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
-  ```
+ ```
 
 4. Remplacez la méthode **Page_Load** par le code suivant qui utilise la classe **TokenHelper** pour obtenir des jetons du serveur de jetons sécurisés compatibles OAuth. Le jeton d'accès est ensuite stocké dans la propriété [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) du bouton pour une récupération ultérieure par le gestionnaire d'événements Click du bouton.
     
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -458,11 +458,11 @@ protected void Page_Load(object sender, EventArgs e)
         Button1.CommandArgument = accessToken;
     }
 }
-  ```
+ ```
 
 5. Ajoutez le gestionnaire d'événements ci-dessous à la classe **Default**. Le gestionnaire commence à récupérer le jeton d'accès qui a été stocké dans la propriété  [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) du bouton.
     
-  ```cs
+ ```cs
   
 protected void Button1_Click(object sender, EventArgs e)
 {
@@ -470,29 +470,29 @@ protected void Button1_Click(object sender, EventArgs e)
     // in the button's command argument.
     string accessToken = ((Button)sender).CommandArgument;
 }
-  ```
+ ```
 
 6. Comme le gestionnaire doit obtenir de nouveau l'URL du site web de complément au moment des publications (postback), ajoutez le code ci-après.
     
-  ```cs
+ ```cs
   
 if (IsPostBack)
 {
     sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
 }
-  ```
+ ```
 
 7. Ajoutez la ligne ci-dessous qui utilise les points de terminaison REST/OData SharePoint 2013 pour obtenir les données de liste. Dans cet exemple, le code lit la liste **Personnages d'Hamlet** qui est déployée sur le site web de complément. Les API de ce service permettent, à l'aide d'une seule ligne de code, de sélectionner facilement une liste et de spécifier trois champs à renvoyer de la liste. Dans l'URL d'OData, notez que vous devez utiliser les noms internes des champs (colonnes) plutôt que les noms d'affichage. Le code utilise donc `Title`,  `Actor` et `CastingStatus` à la place de `Character`,  `Actor/Actress` et `Casting Status.`. Pour plus d'informations sur le service web REST/OData, voir  [Utiliser les opérations de requête OData dans les demandes REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md).
     
-  ```cs
+ ```cs
   
 // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
-  ```
+ ```
 
 8. Ajoutez le code ci-dessous qui utilise les classes  [HttpWebRequest](https://msdn.microsoft.com/library/System.Net.HttpWebRequest.aspx) et [HttpWebResponse](https://msdn.microsoft.com/library/System.Net.HttpWebResponse.aspx) de l'espace de noms [System.Net](https://msdn.microsoft.com/library/System.Net.aspx) pour construire les objets de requête et réponse HTTP.
     
-  ```cs
+ ```cs
   
 // HTTP Request and Response construction section
 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + oDataUrl);
@@ -501,11 +501,11 @@ request.Accept = "application/atom+xml";
 request.ContentType = "application/atom+xml;type=entry";
 request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-  ```
+ ```
 
 9. Ajoutez le code ci-dessous pour analyser le code XML de réponse au format ATOM. Il utilise les classes de l'espace de noms  [System.Xml.Linq](https://msdn.microsoft.com/library/System.Xml.Linq.aspx) pour analyser les données renvoyées et construire un [List<T>](http://msdn2.microsoft.com/FR-FR/library/6sh2ey19) des éléments à partir de la liste SharePoint. (Vous pouvez également utiliser les classes de l'espace de noms [System.Xml](https://msdn.microsoft.com/library/System.Xml.aspx) .) Dans le code XML renvoyé par SharePoint, notez que les éléments enfants de l'élément **entry** contiennent des métadonnées sur l'élément de liste. Les données de ligne actuelles d'un élément de liste SharePoint sont imbriquées deux couches plus bas dans l'élément **properties**. Pour cette raison, la méthode d'extension  [Elements<T>](http://msdn2.microsoft.com/FR-FR/library/bb348465) est utilisée deux fois pour filtrer les niveaux supérieurs.
     
-  ```cs
+ ```cs
   
 // Response markup parsing section
 XDocument oDataXML = XDocument.Load(response.GetResponseStream(), LoadOptions.None);
@@ -517,27 +517,27 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .Elements(atom + "content")
                          .Elements(m + "properties")
                          .ToList();
-  ```
+ ```
 
 10. Ajoutez la requête LINQ ci-dessous pour construire une collection  [IEnumerable<T>](http://msdn2.microsoft.com/FR-FR/library/9eekhta0) d'un type anonyme possédant les propriétés dont vous avez uniquement besoin. Bien que le code doive faire référence au champ de titre de l'élément par son nom interne `Title`, le nom de la propriété du type anonyme, à laquelle la propriété est affectée, peut être nommé  `Character`. Ainsi, lorsque la collection est liée à un contrôle de grille, le nom plus approprié **Character** (Caractère) apparaît dans la page.
     
-  ```cs
+ ```cs
   
 var entryFieldValues = from entry in entries
                        select new { Character=entry.Element(d + "Title").Value, 
                                     Actor=entry.Element(d + "Actor").Value, 
                                     CastingStatus=entry.Element(d + "CastingStatus").Value };
 
-  ```
+ ```
 
 11. Terminez le gestionnaire avec le code ci-dessous pour lier les données à un contrôle  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) de la page. Les en-têtes de colonne de la grille ont par défaut les noms des propriétés du type anonyme : `Character`,  `Actor` et `CastingStatus`. Le contrôle  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) possède des propriétés qui permettent de contrôler le nom et la mise en forme des en-têtes de colonne. Vous pouvez donc avoir **Actor/Actress** (Acteur/actrice) et **Casting Status** (État du casting) pour correspondre aux en-têtes de colonne dans SharePoint. Pour des raisons de simplicité, ces techniques ne sont pas décrites dans cet article. (Vous pouvez également utiliser un contrôle [DataGrid](https://msdn.microsoft.com/library/System.Web.UI.WebControls.DataGrid.aspx) .)
     
-  ```cs
+ ```cs
   
 GridView1.DataSource = entryFieldValues;
 GridView1.DataBind();
 
-  ```
+ ```
 
 12. Enregistrez tous les fichiers.
     

@@ -82,11 +82,9 @@ Siew Moi Khor，Microsoft Corporation
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 要创建非代理令牌签发者，请勿使用  `-IsTrustBroker` 开关。没有其他区别。 `-RegisteredIssuerName` 参数的值始终为"@"字符分开的两个 GUID 形式，即 _GUID_@ _GUID_。右侧的 GUID 始终为 SharePoint 场的身份验证领域（或站点订阅）的 ID。左侧的 GUID 始终为令牌签发者的特定 ID。创建为 *信任代理*  的令牌签发者时，这是一个随机 GUID。但当创建非代理令牌签发者时，特定签发者 GUID 必须为用作 SharePoint 外接程序 客户端 ID 的同一 GUID。此参数不仅为签发者提供了一个名称，还会告知 SharePoint 哪个 SharePoint 外接程序是证书可以向其签发令牌的唯一应用程序。下面是一个部分示例：
   
@@ -94,11 +92,9 @@ New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_tok
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 通常， `New-SPTrustedSecurityTokenIssuer` cmdlet 用于执行其他任务以便为高信任外接程序配置 SharePoint 的脚本中。有关此类脚本和 `New-SPTrustedSecurityTokenIssuer` cmdlet 的完整示例的详细信息，请参阅 [SharePoint 2013 的高信任配置脚本](high-trust-configuration-scripts-for-sharepoint-2013.md)。
   
@@ -149,8 +145,7 @@ New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --o
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -160,8 +155,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 根证书和中间证书在 SharePoint 场上仅添加一次。通常，Web 应用程序的证书会添加到执行其他配置的单独脚本中，例如调用  `New-SPTrustedSecurityTokenIssuer`。有关示例，请参阅  [SharePoint 2013 的高信任配置脚本](high-trust-configuration-scripts-for-sharepoint-2013.md)。
   
@@ -189,8 +183,7 @@ SharePoint 外接程序的远程 Web 应用程序组件已在 IIS 中绑定到�
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -198,8 +191,7 @@ SharePoint 外接程序的远程 Web 应用程序组件已在 IIS 中绑定到�
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **安全注释**

@@ -72,8 +72,7 @@ ms.assetid: e3000415-50a0-426e-b304-b7de18f2f7d9
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -84,8 +83,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Этот запрос будет выглядеть немного по-другому, если вы создаете надстройку в JavaScript, но с использованием междоменной библиотеки SharePoint 2013. В этом случае предоставлять маркер доступа не нужно. Следующий код демонстрирует, как бы выглядел этот запрос, если бы вы использовали междоменную библиотеку и хотели бы получить представление списков OData в формате XML, а не JSON. (Так как формат ответа по умолчанию  это Atom, необязательно добавлять заголовок **Accept**.) Дополнительные сведения об использовании междоменной библиотеки см. в статье  [Обращение к данным SharePoint 2013 из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
   
@@ -93,8 +91,7 @@ HttpWebResponse endpointResponse =
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -107,8 +104,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 В следующем примере показано, как запросить представление JSON всех списков сайта, используя C#. Предполагается, что у вас есть маркер доступа OAuth, который вы храните в переменной  `accessToken`.
   
@@ -116,16 +112,14 @@ executor.executeAsync(
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### Получение свойств, которые не возвращены с ресурсом
@@ -161,8 +155,7 @@ http:// _<URL-адрес сайта>_/_api/web/getfilebyserverrelativeurl('/ _<�
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -171,8 +164,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 Если вы используете поток аутентификации и авторизации, описанный в статье  [Авторизация и проверка подлинности для надстроек в SharePoint 2013](authorization-and-authentication-of-sharepoint-add-ins.md), нет необходимости включать в свои запросы дайджест запроса.
   
@@ -188,8 +180,7 @@ HttpWebResponse endpointResponse =
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -207,8 +198,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 В следующем примере показано, как обновить список, созданный в предыдущем примере. В примере меняется название списка, используется JQuery и предполагается, что вы выполняете эту операцию в надстройке, размещенной в SharePoint.
   
@@ -216,8 +206,7 @@ jQuery.ajax({
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -234,8 +223,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 В значении **IF-MATCH** в заголовках запроса вы указываете значение **etag** списка или элемента списка. Данное значение применяется только для списков и элементов списков, и оно помогает избежать проблем одновременной обработки при обновлении этих объектов. В предыдущем примере для данного значения используется звездочка (*). Вы можете использовать это значение, если у вас нет никаких причин беспокоиться о проблеме одновременной обработки. В противном случае необходимо получить значение **etag** или список или элемент списка, выполнив запрос **GET**, который извлекает объект. Заголовки полученного HTTP-запроса передают etag в качестве значения ключа **ETag**. Это значение также включено в метаданные объекта. В следующем примере показан открывающий тег  `<entry>` для XML сайта, который содержит данные списка. Свойство **m:etag** содержит значение **etag**.
   
@@ -243,14 +231,12 @@ jQuery.ajax({
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## Создание сайта с помощью REST
@@ -260,8 +246,7 @@ xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gm
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -285,8 +270,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## Отличия запросов REST в разных средах
@@ -387,8 +371,7 @@ jQuery.ajax({
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -425,8 +408,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## Свойства, используемые в запросах REST

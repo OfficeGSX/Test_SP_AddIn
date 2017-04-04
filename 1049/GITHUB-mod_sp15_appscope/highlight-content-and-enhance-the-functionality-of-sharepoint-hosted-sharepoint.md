@@ -37,12 +37,10 @@ ms.assetid: bfa367bb-d2f5-4e3f-bf48-61b77f150f7d
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 Функция, которую вы передаете в функцию  `SP.SOD.executeFunc`, содержит код, который вы хотите выполнить после загрузки файла callout.js. Когда эти файлы загрузятся, используйте объект  `CalloutManager`, чтобы создать объект  `Callout` для каждого элемента страницы, которому требуется иметь сопоставленный с ним элемент управления выносками. `CalloutManager`  это одноэлементный объект, хранящий ссылки на каждый объект `Callout` на странице внутри массива ассоциативных элементов. Объект `Callout` имеет всего два обязательных члена: `ID` и `launchPoint`. Член  `ID`  это ключ, сопоставленный с объектом `Callout` в `CalloutManager`:  `CalloutManager["value of the callout's ID member"]`. Член  `launchPoint`  это элемент HTML-страницы. Вы можете, например, создать или получить элемент `div` на своей странице и передать его в качестве члена объекта `Callout`. По умолчанию элемент управления выносками отображается при щелчке пользователем элемента  `launchPoint`. В этом примере показано, как создать простейший элемент управления выносками всего с одним из обязательных членов и строкой заголовка.
   
@@ -50,8 +48,7 @@ SP.SOD.executeFunc("callout.js", "Callout", function () {
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 Данная конкретная выноска отображает заголовок в верхней части элемента управления, когда пользователь щелкает элемент страницы. Используйте необязательные члены для удобной и эффективной настройки внешнего вида, режима работы, положения и действий элемента управления. Элемент управления выносками имеет метод set, с помощью которого вы можете задать значение для любого параметра после создания экземпляра элемента управления.
   
@@ -68,11 +64,9 @@ var callout = CalloutManager.createNew({
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 Вы также можете задавать значения для всех членов выноски в объекте  `CalloutOptions` и затем передать этот объект в метод `createNew`.
   
@@ -80,15 +74,13 @@ callout.set({openOptions:{event: "hover"}});
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## Настройка внешнего вида элемента управления выносками
@@ -149,7 +141,7 @@ var callout = CalloutManager.createNew(calloutOptions);
 
 |**Используйте этот метод.**|**Назначение**|**Допустимые значения параметра**|
 |:-----|:-----|:-----|
-|set({член:значение})  <br/> |Задание значений для членов после создания экземпляра элемента управления  <br/> |Пара имя-значение, которая определяет значение любого члена элемента управления выносками  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({член:значение})  <br/> |Задание значений для членов после создания экземпляра элемента управления  <br/> |Пара имя-значение, которая определяет значение любого члена элемента управления выносками  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |Возвращение объекта  `CalloutOrientation`, который указывает, в какую сторону направлен элемент управления. Этот объект имеет четыре логических члена:  `up`,  `down`,  `left` и `right`. Пока элемент управления открыт, два из этих значений будут равны **true**, а другие два  **false** (например, `up` и `right`).  <br/> |Нет параметров  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |Регистрация функции обратного вызова, которая вызывается при изменении состояния элемента управления на значение, указанное параметром  `eventName` <br/> |Параметр  `eventName` должен иметь одно из следующих значений: `opening`,  `open`,  `closing`,  `closed`. Параметр  `callback` должен быть функцией, которая принимает экземпляр элемента управления выносками в качестве своего первого параметра. <br/> |
 |open()  <br/> |Отображение элемента управления. Если элемент управления уже открыт или находится в процессе открытия, этот метод возвращает значение **false** и не выполняется никаких действий. <br/> |Нет параметров  <br/> |
@@ -166,8 +158,7 @@ var callout = CalloutManager.createNew(calloutOptions);
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Вы также можете задавать значения для всех членов  `CalloutAction` в объекте `CalloutActionOptions` и затем передать этот объект в конструктор `CalloutAction`.
   
@@ -187,8 +177,7 @@ var calloutAction = new CalloutAction({
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Вы можете использовать эти члены для задания режима работы действия выноски.
   
@@ -245,8 +233,7 @@ var calloutAction = new CalloutAction(calloutActionOptions);
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
 Конструктор  `CalloutActionMenuEntry` принимает три параметра. Первые два из них являются обязательными. Третий необязателен, но может оказаться полезным, так как позволяет отобразить значок рядом с текстом.
   
@@ -315,14 +301,12 @@ callout.addAction(calloutAction);
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 Затем вы передаете эту функцию в качестве значения члена  `positionAlgorithm` объекта `Callout`. Вы можете сделать это при создании  `Callout` или позднее, просто задав это значение.
   
@@ -330,12 +314,10 @@ function alwaysGoDownAndRight(calloutPositioningProxy)  {
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 Вы всегда можете взглянуть на логическую схему размещения по умолчанию, запустив консоль JavaScript браузера (например, инструменты разработчика по F12 в Internet Explorer).
   
@@ -343,11 +325,9 @@ callout.set({positionAlgorithm: alwaysGoDownAndRight});
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 Вы можете использовать эти методы в объекте  `CalloutPositioningProxy` для написания собственной логической схемы размещения.
   
@@ -384,8 +364,7 @@ CalloutOptions.prototype.positionAlgorithm.toString()
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 Этот алгоритм размещения изменяет направление по умолчанию для элемента управления с  `upAndRight` на `downAndRight`, однако при наличии столкновений он использует стандартный алгоритм.
   
@@ -410,8 +388,7 @@ callout.set({positionAlgorithm: examplePositionAlgorithm});
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## Дополнительные ресурсы

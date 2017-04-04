@@ -53,11 +53,11 @@ Our add-in has a custom ribbon button that adds an employee from the Hong Kong s
   
 2. Add the following line to the **Page_Load** methodbetween the call of `AddLocalEmployeeToCorpDB` and the call of **Response.Redirect**. You will create the  `SetLocalEmployeeSyncStatus` method in the next step.
     
-  ```cs
+ ```cs
   
 // Write to SharePoint
 SetLocalEmployeeSyncStatus();
-  ```
+ ```
 
 3. Add the following new method to the  `EmployeeAdder` class. Note the following about this code:
     
@@ -71,7 +71,7 @@ SetLocalEmployeeSyncStatus();
     
   
 
-  ```cs
+ ```cs
   
 private void SetLocalEmployeeSyncStatus()
 {
@@ -84,7 +84,7 @@ private void SetLocalEmployeeSyncStatus()
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## Request permission to write to the host web list
@@ -214,10 +214,10 @@ Now you add a function to the add-in that creates an item in the **Expected Ship
   
 3. In the  `btnCreateOrder_Click` method, add the following line just below the call to `CreateOrder`. You'll create the CreateExpectedShipment method in the next step.
     
-  ```cs
+ ```cs
   
 CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
-  ```
+ ```
 
 4. Add the following method to the  `OrderForm` class. Note the following about this code:
     
@@ -231,7 +231,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
     
   
 
-  ```
+ ```
   private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
 {
     using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -246,7 +246,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## Checking for deleted components
@@ -277,8 +277,7 @@ There is an alternative way to check for the existence of a list: instead of usi
     
 
 
-
-```cs
+```cs
 
 var query = from list in clientContext.Web.Lists
              where list.Title == "Expected Shipments" 
@@ -290,8 +289,7 @@ if (matchingLists.Count() != 0)
     List expectedShipmentsList = matchingLists.Single(); 
     // Do something with the list. 
 }
-clientContext.ExecuteQuery(); 
-```
+clientContext.ExecuteQuery(); ```
 
 The preceding code has the advantage of allowing you to avoid the complications of the **ConditionalScope** class, and we use exactly this code elsewhere in this series of articles. But there is a disadvantage too: this code requires an extra call of **ExecuteQuery** solely to get the value you want to check in the **if** statement. If we use this technique in the `CreateExpectedShipment` to check for the existence of the list, then that method will have two calls of **ExecuteQuery** each of which makes an HTTP request from the remote web server to SharePoint. These requests are the most time-consuming part of any CSOM method, so it is generally a good practice to minimize them.
   

@@ -56,8 +56,7 @@ La manière la plus facile de récupérer l'identité de l'utilisateur actuel du
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - Si vous utilisez Office 365, le nom de connexion que vous recevez est similaire à  `i:0#.f|membership|adam@contoso.com`.
@@ -110,14 +108,12 @@ Voici un exemple de code pour vous montrer comment obtenir les informations de c
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
 La valeur **Person.LoginName** indique les informations de connexion.
   
@@ -131,8 +127,7 @@ Si vous souhaitez récupérer l'identité et les propriétés utilisateur, vous 
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 Ensuite, utilisez l'API  [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) pour recevoir les propriétés de l'utilisateur qui utilise le complément.
   
@@ -152,15 +146,13 @@ Ensuite, utilisez l'API  [UserProfilesPeopleManager](https://msdn.microsoft.com/
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 Pour que le code fonctionne :
   
@@ -172,11 +164,11 @@ Pour que le code fonctionne :
   
 - Vous devez ajouter l'étendue d'autorisation pour les fonctionnalités de mise en réseau dans le manifeste de complément :
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 Les API se trouvent dans Microsoft.SharePoint.Client.UserProfiles.dll.
   
@@ -188,16 +180,14 @@ Voici un autre exemple d'extrait de code indiquant comment accéder au magasin d
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## Ressources supplémentaires

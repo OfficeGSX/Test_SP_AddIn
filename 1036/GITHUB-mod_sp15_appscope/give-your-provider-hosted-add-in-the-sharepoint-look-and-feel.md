@@ -148,7 +148,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 2.  Dans la section **head**, vous verrez un script qui charge quelques bibliothèques JavaScript. En dessous de celui-ci, ajoutez le script supplémentaire suivant. Ce script charge le fichier SP.UI.Controls.js se trouvant sur chaque site web SharePoint dans le dossier /_layouts/15/. Ce fichier charge, entre autres, la bibliothèque SharePoint CSS.
     
-  ```
+ ```
   
 <script type="text/javascript">
     var hostweburl;
@@ -183,11 +183,11 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
         }
     }
 </script>
-  ```
+ ```
 
 3.  En haut de la section du corps de la page, ajoutez le balisage suivant. Il permet d'insérer la barre supérieure SharePoint, appeléecontrôle Chrome, dans la page. Les détails de ce balisage seront plus clairs lors du test de ce complément révisé plus loin dans cet article. (La chaîne « app » apparaît dans plusieurs noms de propriétés, car auparavant, les compléments étaient appelés applications, ou « apps ».)
     
-  ```
+ ```
   
 <!-- Chrome control placeholder. Options are declared inline.  -->
 <div 
@@ -210,15 +210,15 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
             ]
          }'>
 </div>
-  ```
+ ```
 
 4.  Les en-têtes **H1** et le lien hypertexte du corps de la page utilisent automatiquement les styles définis dans la bibliothèque CSS de SharePoint, il n'est donc pas nécessaire de les modifier. Pour illustrer la façon dont vous pouvez utiliser les styles SharePoint, définissez les en-têtes de colonne des trois contrôles **GridView** sur le style « Tout en majuscules » SharePoint en ajoutant l'attribut **HeaderStyle-CssClass** à chaque contrôle et en définissant sa valeur sur « `ms-uppercase` ». Le code suivant est un exemple. Apportez la même modification aux trois contrôles **GridView**.
     
-  ```XML
+ ```XML
   
 <asp:GridView ID="ordersGridView" runat="server" CellPadding="5" GridLines="None"
 HeaderStyle-CssClass="ms-uppercase" />
-  ```
+ ```
 
 5.  Le contrôle chrome utilise l'icône du complément, donc nous avons besoin d'une deuxième copie du fichier d'icône sur le serveur web distant. Dans l' **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier AppIcon.png dans le projet **ChainStore** et choisissez **Copier**. 
     
@@ -235,13 +235,13 @@ HeaderStyle-CssClass="ms-uppercase" />
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
     spContext = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 9.  Quatre autres fichiers ASP.NET nécessitent l'interface utilisateur de SharePoint :
     
@@ -265,36 +265,36 @@ protected void Page_Load(object sender, EventArgs e)
     
 
 
-  ```XML
+ ```XML
   
 <link type="text/css" rel="stylesheet"
 href="<%= spContext.SPHostUrl.ToString() + "_layouts/15/defaultcss.ashx" %>" />
-  ```
+ ```
 
 10.  Cette étape et la suivante ont déjà été effectuées pour les pages Bon de commande et Compte, elles s'appliquent donc uniquement aux pages Contact et Aide. Pour obtenir l'objet `spContext` sur ces deux pages, ouvrez les fichiers code-behind *.aspx.cs pour les trois pages .aspx. Dans chacune d'elles, ajoutez le membre suivant à la classe **Page**.
     
-  ```cs
+ ```cs
   
 protected SharePointContext spContext;
-  ```
+ ```
 
 11.  Remplacez la méthode **Page_Load** par la version suivante. L'objet est récupéré à partir du cache de session. Il a été mis en cache à cet endroit lors de sa première création par la méthode **Page_Load** de la page d'accueil du complément.
     
-  ```cs
+ ```cs
   protected void Page_Load(object sender, EventArgs e)
 {
     spContext = Session["SPContext"] as SharePointContext;
 }
-  ```
+ ```
 
 12.  Ouvrez la page OrderForm.aspx. Dans l'élément **Label** supérieur, remplacez l'élément **<b>** de l'expression **Passer une commande** par les balises de mise en forme qui référencent la classe CSS `ms-accentText`. L'ensemble du contrôle **Label** doit ressembler à ce qui suit lorsque vous avez terminé.
     
-  ```XML
+ ```XML
   
 <asp:Label ID="lblOrderPrompt" runat="server"
          Text="Enter a supplier, product, and quantity; and then press <span class='ms-accentText'>Place Order</span>.">
 </asp:Label>
-  ```
+ ```
 
 
 ## Exécution du complément et test de la nouvelle interface utilisateur SharePoint

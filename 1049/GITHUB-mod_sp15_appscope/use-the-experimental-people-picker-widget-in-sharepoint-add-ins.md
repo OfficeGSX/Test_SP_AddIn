@@ -149,7 +149,7 @@ ms.assetid: edc60550-67d2-4230-8e27-06a328c0d1f1
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -241,7 +241,7 @@ Basic People Picker sample (HTML markup declaration):
 </body>
 </html>
 
-  ```
+ ```
 
 
 > **Примечание**
@@ -256,14 +256,12 @@ Basic People Picker sample (HTML markup declaration):
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### Создание и запуск решения
@@ -298,11 +296,9 @@ Office.Controls.Runtime.initialize({});
   
     
     
+```HTML
 
-```HTML
-
-<div id="PeoplePickerDiv"></div>
-```
+<div id="PeoplePickerDiv"></div>```
 
 Используйте следующий код JavaScript для создания экземпляра мини-приложения "Выбор людей".
   
@@ -310,11 +306,9 @@ Office.Controls.Runtime.initialize({});
     
 
 
-
-```
+```
 new Office.Controls.PeoplePicker(
-    document.getElementById("PeoplePickerDiv"), {});
-```
+    document.getElementById("PeoplePickerDiv"), {});```
 
 Пример кода, который показывает, как выполнять эти действия, размещен на странице **JSSimple.html** в разделе [Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
   
@@ -327,8 +321,7 @@ new Office.Controls.PeoplePicker(
   
     
     
-
-```HTML
+```HTML
 
 <div id="PeoplePickerDiv"
         data-office-control="Office.Controls.PeoplePicker"
@@ -337,8 +330,7 @@ new Office.Controls.PeoplePicker(
         "onChange" : handleChange,
         "placeholder" : "Check the count message, it changes when you add names..."
     }'>
-</div>
-```
+</div>```
 
 Следующий код демонстрирует способ задания параметров при объявлении мини-приложения "Выбор людей" с помощью JavaScript.
   
@@ -346,8 +338,7 @@ new Office.Controls.PeoplePicker(
     
 
 
-
-```
+```
 
 new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {
@@ -357,8 +348,7 @@ new Office.Controls.PeoplePicker(
             document.getElementById("count").textContent = 
 ctrl.selectedItems.length.toString();
         }
-    });
-```
+    });```
 
 Кроме того, можно указать обработчики для таких событий, как **onChange**, **onAdded** и **onRemoved**. Обратите внимание, что в приведенном коде обработчик события onChange принимает единственный параметр **ctrl**, который является ссылкой на мини-приложение.
   
@@ -388,11 +378,9 @@ ctrl.selectedItems.length.toString();
     
 
 
+```
 
-```
-
-var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
-```
+var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;```
 
 Кроме того, ссылку можно сохранить при создании экземпляра мини-приложения.
   
@@ -400,11 +388,9 @@ var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
     
 
 
-
-```
+```
 var pplPicker = new Office.Controls.PeoplePicker(
-                        document.getElementById("PeoplePickerDiv"), {});
-```
+                        document.getElementById("PeoplePickerDiv"), {});```
 
 Свойство **selectedItems** является массивом объектов, которые представляют собой людей или группы. Люди или группы в массиве selectedItems могут быть разрешенными или неразрешенными. Это можно проверить с помощью свойства **isResolved**. Следующий пример показывает, как получить доступ к элементу *i*  в массиве и использовать имя человека или группы.
   
@@ -412,12 +398,10 @@ var pplPicker = new Office.Controls.PeoplePicker(
     
 
 
-
-```
+```
 
 var principal = pplPicker.selectedItems[i];
-$("#msg").text(principal.text + " is selected in the control.");
-```
+$("#msg").text(principal.text + " is selected in the control.");```
 
 Пример способа загрузки выбранных людей или групп из мини-приложения приведен на странице **demo.html** в разделе [Веб-виджеты Office  экспериментальная демо-версия](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
   

@@ -57,12 +57,10 @@ Of course, the remote components of the SharePoint Add-in still have to have aut
     
   
 - In a SharePoint-hosted add-in, you can leave the add-in principal type set to its default, which is **Internal**. Then set the **AllowedRemoteHostUrl** attribute of the **Internal** element to the URL of the remote web application, as in the following example.
-    
-```
+    ```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>
-```
+</AppPrincipal>```
 
 
 > **NOTE**

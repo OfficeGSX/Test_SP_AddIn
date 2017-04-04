@@ -82,8 +82,7 @@ Napa（仅 SharePoint Online）
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -208,8 +207,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
  **示例 2：jQuery AJAX 请求**
   
@@ -217,8 +215,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
 
 
-
-```
+```
 
 // Change placeholder values before you run this code.
 var siteUrl = 'http://server/site';
@@ -308,8 +305,7 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}
-```
+}```
 
 
 ## 其他资源

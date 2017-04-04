@@ -363,16 +363,14 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientID" value="c1c12d4c-4900-43c2-8b89-c05725e0ba30" />
   <add key="ClientSigningCertificateSerialNumber" value="556a1c9c5a5415994941abd0ef2f947b" />
   <add key="IssuerId" value="f94591d5-89e3-47cd-972d-f1895cc158c6" />
 </appSettings>
-
-```
+```
 
 
 ## Изменение файла TokenHelper
@@ -398,23 +396,23 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
   
 2. На их месте добавьте следующую строку:
     
-  ```
+ ```
   
 private static readonly string ClientSigningCertificateSerialNumber
     = WebConfigurationManager.AppSettings.Get("ClientSigningCertificateSerialNumber");
-  ```
+ ```
 
 3. Найдите строку, в которой объявляется поле  `SigningCredentials`. Замените ее следующей строкой:
     
-  ```
+ ```
   
 private static readonly X509SigningCredentials SigningCredentials
     = GetSigningCredentials(GetCertificateFromStore());
-  ```
+ ```
 
 4. В файле перейдите к части  `#region private methods` и добавьте два следующих метода:
     
-  ```
+ ```
   
 private static X509SigningCredentials GetSigningCredentials(X509Certificate2 cert)
 {
@@ -453,7 +451,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     return storedCert;
 }
-  ```
+ ```
 
 
 ## Использование мастера Visual Studio для упаковки удаленного веб-приложения и Надстройка SharePoint для публикации

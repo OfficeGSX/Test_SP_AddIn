@@ -95,11 +95,11 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
   
 11. Des éléments **FieldRef** existent déjà dans le fichier pour les deux colonnes que vous avez ajoutées. Ajoutez des éléments **FieldRef** pour deux colonnes SharePoint intégrées comme paires des deux qui figurent déjà dans le fichier. Le code suivant correspond au balisage pour les éléments. *Vous devez utiliser ces mêmes GUID pour l'attribut d'ID, car ce sont des types de champs intégrés avec des ID fixes.*  Ajoutez-les *au-dessus*  des deux éléments **FieldRef** pour les colonnes de site personnalisées.
     
-  ```
+ ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
-  ```
+ ```
 
 
     Notez que nous avons attribué à ces champs un nom d'affichage personnalisé : **Employee** (Employé).
@@ -152,12 +152,12 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
   
 24. Toujours dans le fichier schema.xml, dans l'élément **View** dont la valeur de **BaseViewID** est « 1 », recherchez l'élément **ViewFields** enfant, puis ajoutez-lui les deux éléments **FieldRef** en tant qu'enfants. Il se peut qu'ils soient déjà présents, mais qu'ils ne possèdent pas l'attribut **ID**. Dans ce cas, ajoutez l'attribut ID.
     
-  ```
+ ```
   
 <FieldRef Name="Division" ID="{GUID from the Field element}" />
 <FieldRef Name="OrientationStage" ID="{GUID from the Field element}" />
 
-  ```
+ ```
 
 25. Remplacez les deux valeurs de l'attribut d'espace réservé **ID** par les GUID des éléments **Field** correspondants de l'élément **ContentType** (Type de contenu) pour **NewEmployee** (Nouvel employé) figurant plus haut dans le fichier schema.xml. N'oubliez pas les accolades « {} ».
     
@@ -165,14 +165,14 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
     
 
 
-  ```
+ ```
   
 <ViewFields>
    <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
    <FieldRef Name="Division" ID="{509d2d67-9a96-4596-9b3b-58449cdcc6ff}" />
    <FieldRef Name="OrientationStage" ID="{38a3b54c-acf3-4ddf-b748-55c7c28d4cc2}" />        
 </ViewFields>
-  ```
+ ```
 
 26. Toujours dans le fichier schema.xml, recherchez l'élément **View** dont la valeur **BaseViewID** est de « 0 ». Recherchez l'élément **ViewFields** qu'il contient.
     
@@ -188,7 +188,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
   
 30. Ajoutez deux éléments **Field** au premier élément **Row**, de telle sorte que l'élément **Row** présente l'aspect suivant.
     
-  ```
+ ```
   
 <Row>
   <Field Name="Title">Tom Higginbotham</Field>
@@ -196,7 +196,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
   <Field Name="OrientationStage">Tour of building</Field>
 </Row>
    
-  ```
+ ```
 
 31. Enregistrez et fermez le fichier.
     

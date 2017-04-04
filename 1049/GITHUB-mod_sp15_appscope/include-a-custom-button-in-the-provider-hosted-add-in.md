@@ -134,32 +134,32 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
   
 8. Откройте файл с кодом программной части **Pages/EmployeeAdder.aspx.cs**. В нем уже есть метод, который добавляет сотрудника в удаленную базу данных ( `AddLocalEmployeeToCorpDB`). Он использует объект **SharePointContext** для получения URL-адреса хост-сайта, который надстройка использует в качестве своего дискриминатора клиента. Таким образом, первое, что должен сделать метод **Page_Load**,  инициализировать этот объект. Объект создается и помещается в кэш в сеансе, когда загружается начальная страница надстройки, поэтому добавьте указанный ниже код в метод **Page_Load**. (Объект **SharePointContext** определен в файле SharePointContext.cs, который Инструменты разработчика Office для Visual Studio создает при создании решения надстройки.)
     
-  ```cs
+ ```cs
   
 spContext = Session["SPContext"] as SharePointContext;
-  ```
+ ```
 
 9. Метод  `AddLocalEmployeeToCorpDB` использует имя сотрудника в качестве параметра, поэтому добавьте указанную ниже строку в метод **Page_Load**. Вы создадите метод  `GetLocalEmployeeName` на одном из следующих этапов.
     
-  ```cs
+ ```cs
   // Read from SharePoint
 string employeeName = GetLocalEmployeeName();
-  ```
+ ```
 
 10. После этой строки добавьте вызов метода  `AddLocalEmployeeToCorpDB`.
     
-  ```cs
+ ```cs
   
 // Write to remote database
 AddLocalEmployeeToCorpDB(employeeName);
-  ```
+ ```
 
 11. Добавьте в файл оператор **using** для пространства имен `Microsoft.SharePoint.Client`. (При создании проекта **ChainStoreWeb**Инструменты разработчика Office для Visual Studio включил в него сборку Microsoft.SharePoint.Client.)
     
   
 12. Теперь добавьте указанный ниже метод в класс  `EmployeeAdder`. Клиентская объектная модель (CSOM) .NET для SharePoint подробно задокументирована на MSDN и мы рекомендуем вам изучить ее, когда вы закончите работу с этой серией статей. Для целей данной статьи обратите внимание, что класс **ListItem** представляет элемент в списке SharePoint и что на значение поля в элементе можно сослаться с помощью синтаксиса "индексатора". Кроме того, учтите, что код ссылается на поле, используя имя Title (Название) даже если вы изменили его на Name (Имя). Это происходит из-за того, что в коде необходимо ссылаться на поля, используя их *внутренние*  , а не отображаемые имена. Внутреннее имя поля указывается при создании поля и его не удастся изменить. Вы выполните `TODO1` на одном из следующих этапов.
     
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -170,36 +170,36 @@ private string GetLocalEmployeeName()
  
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 13. Чтобы наш код смог получить элемент списка из SharePoint, ему потребуется идентификатор этого элемента. Добавьте указанное ниже объявление в класс  `EmployeeAdder` сразу же после объявления для объекта `spContext`.
     
-  ```cs
+ ```cs
   
 private int listItemID;
-  ```
+ ```
 
 14. Теперь добавьте указанный ниже метод в класс  `EmployeeAdder`, чтобы получить идентификатор элемента списка из параметра запроса.
     
-  ```cs
+ ```cs
   private int GetListItemIDFromQueryParameter()
 {
     int result;
     Int32.TryParse(Request.QueryString["SPListItemId"], out result);
     return result;
 }
-  ```
+ ```
 
 15. Чтобы инициализировать переменную  `listItemID`, добавьте указанную ниже строку в метод **Page_Load** сразу же за строкой, в которой выполняется инициализация переменной `spContext`.
     
-  ```cs
+ ```cs
   
 listItemID = GetListItemIDFromQueryParameter();
-  ```
+ ```
 
 16. В  `GetLocalEmployeeName` замените `TODO1` указанным ниже кодом. На данный момент относитесь к этому коду как к "черному ящику", потому что сейчас нас интересует то, как заставить работать настраиваемую кнопку. Мы более подробно рассмотрим этот код в следующей статье серии, которая будет целиком посвящена клиентской объектной модели SharePoint.
     
-  ```cs
+ ```cs
   using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
@@ -208,14 +208,14 @@ listItemID = GetListItemIDFromQueryParameter();
     clientContext.ExecuteQuery();
 }
 
-  ```
+ ```
 
 
     Теперь весь метод должен выглядеть, как указано ниже.
     
 
 
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -230,23 +230,23 @@ private string GetLocalEmployeeName()
     }
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 17. Страница EmployeeAdder не должна отрисовываться, поэтому добавьте указанный ниже код в метод **Page_Load** в качестве последней строки. Она будет перенаправлять браузер обратно на страницу представления списка для списка **Local Employees** (Местные сотрудники).
     
-  ```cs
+ ```cs
   
 // Go back to the Local Employees page
 Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 
-  ```
+ ```
 
 
     Теперь весь метод **Page_Load** должен выглядеть, как указано ниже.
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -262,7 +262,7 @@ protected void Page_Load(object sender, EventArgs e)
     // Go back to the preceding page
     Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 }
-  ```
+ ```
 
 
 ## Запрос разрешения на чтение списка хост-сайта

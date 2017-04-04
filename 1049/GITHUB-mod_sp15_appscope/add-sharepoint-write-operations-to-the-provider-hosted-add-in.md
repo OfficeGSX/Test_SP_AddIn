@@ -52,11 +52,11 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
   
 2. Добавьте указанную ниже строку в метод **Page_Load**между вызовами метода `AddLocalEmployeeToCorpDB` и метода **Response.Redirect**. Вы создадите метод  `SetLocalEmployeeSyncStatus` на следующем этапе.
     
-  ```cs
+ ```cs
   
 // Write to SharePoint
 SetLocalEmployeeSyncStatus();
-  ```
+ ```
 
 3. Добавьте указанный ниже новый метод в класс  `EmployeeAdder`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -70,7 +70,7 @@ SetLocalEmployeeSyncStatus();
     
   
 
-  ```cs
+ ```cs
   
 private void SetLocalEmployeeSyncStatus()
 {
@@ -83,7 +83,7 @@ private void SetLocalEmployeeSyncStatus()
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## Запрос разрешения на запись в список хост-сайта
@@ -213,10 +213,10 @@ private void SetLocalEmployeeSyncStatus()
   
 3. В методе  `btnCreateOrder_Click` добавьте указанную ниже строку сразу же после вызова `CreateOrder`. Вы создадите метод CreateExpectedShipment на следующем этапе.
     
-  ```cs
+ ```cs
   
 CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
-  ```
+ ```
 
 4. Добавьте указанный ниже метод в класс  `OrderForm`. Обратите внимание на указанные ниже особенности этого кода.
     
@@ -230,7 +230,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
     
   
 
-  ```
+ ```
   private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
 {
     using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -245,7 +245,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 
 ## Проверка на наличие удаленных компонентов
@@ -276,8 +276,7 @@ CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
     
 
 
-
-```cs
+```cs
 
 var query = from list in clientContext.Web.Lists
              where list.Title == "Expected Shipments" 
@@ -289,8 +288,7 @@ if (matchingLists.Count() != 0)
     List expectedShipmentsList = matchingLists.Single(); 
     // Do something with the list. 
 }
-clientContext.ExecuteQuery(); 
-```
+clientContext.ExecuteQuery(); ```
 
 Предыдущий код имеет одно преимущество: он позволяет вам не усложнять класс **ConditionalScope**. Мы будем использовать этот код во всех статьях этой серии. Но есть и недостаток: для этого кода необходим дополнительный вызов **ExecuteQuery** только для того чтобы получить значение, которое вы хотите проверить в операторе **if**. Если мы используем этот способ в методе  `CreateExpectedShipment`, чтобы проверить, существует ли список, то этот метод получит два вызова **ExecuteQuery**, каждый из которых делает HTTP-запрос с удаленного веб-сервера в SharePoint. Эти запросы потребляют большую часть времени в любом методе CSOM, поэтому рекомендуется свести их использование к минимуму.
   

@@ -87,7 +87,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     > **Важно!**
       > Маркеры ItemURL и ItemID передаются, только если выбран элемент. В надстройке для SharePoint для рабочей среды код должен надлежащим образом обрабатывать ситуации, когда элемент не выбран. В этом примере код предупреждает пользователя о том, что элемент не выбран. 
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -125,7 +125,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     </script>
 </body>
 </html>
-  ```
+ ```
 
 
 ### Добавление настраиваемого действия элемента меню в проект надстройки для SharePoint
@@ -156,7 +156,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements 
@@ -180,7 +180,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
   </CustomAction>
 </Elements>
 
-  ```
+ ```
 
 5. Добавьте следующие параметры запроса в конец атрибута **Url** элемента **UrlAction**: 
     
@@ -224,7 +224,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
    
 4. Visual Studio создает следующую разметку в файле elements.xml дополнительного действия ленты.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -259,7 +259,7 @@ ms.assetid: bbd11f94-1798-453e-bbb0-e5eb0df8dc75
   </CustomAction>
 </Elements> 
 
-  ```
+ ```
 
 5. Добавьте следующие параметры запроса в конец атрибута **CommandAction** элемента **CommandUIHandler**: 
     

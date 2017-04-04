@@ -71,14 +71,12 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
     
 
 
-
-```
+```
 
 ./AddSPRootAuthority.ps1 -CertPath "\\\\CertStorage\\RootCA.cer" -CertName "Contoso Root CA"
 
 ./AddSPRootAuthority.ps1 -CertPath "C:\\RegionalCerts\\NorthRegion.cer" -CertName "North Region Intermediate CA"
-
-```
+```
 
 顧客の高信頼 SharePoint アドインがすべて同じ証明書チェーンからのものである標準的なケースの場合、このスクリプトをもう一度使用することはありません。
   
@@ -97,8 +95,7 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
 
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertName = $(throw "Usage: AddSPRootAuthority.ps1 -CertPath <full path to .cer file> -CertName <name of certificate>"),
@@ -110,8 +107,7 @@ $ErrorActionPreference = "Stop"
 # Make the certificate a trusted root authority in SharePoint
 $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($CertPath)
 New-SPTrustedRootAuthority -Name $CertName -Certificate $cert
-
-```
+```
 
 
 ## HighTrustConfig-ForSharedCertificate.ps1
@@ -154,8 +150,7 @@ New-SPTrustedRootAuthority -Name $CertName -Certificate $cert
     
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertPath = $(throw "Usage: HighTrustConfig-ForSharedCertificate.ps1 -CertPath <full path to .cer file> -CertName <name of certificate> [-TokenIssuerFriendlyName <friendly name>]"),
@@ -200,8 +195,7 @@ else
 New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 
 # Output the specific issuer ID to a file in the same folder as this script. The file should be given to the developer of the high-trust SharePoint Add-in.
-$specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
-```
+$specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"```
 
 
 > **ヒント**
@@ -252,8 +246,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
     
 
 
-
-```
+```
 
 param(
     [Parameter(Mandatory)][String] $CertPath = $(throw "Usage: HighTrustConfig-ForSingleApp.ps1 -CertPath <full path to .cer file> -CertName <name of certificate> [-SPAppClientID <client ID of SharePoint add-in>] [-TokenIssuerFriendlyName <friendly name>]"),
@@ -297,8 +290,7 @@ else
 
 # Register the token issuer
 New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier
-
-```
+```
 
 
 > **ヒント**
@@ -315,13 +307,11 @@ New-SPTrustedSecurityTokenIssuer -Name $tokenIssuerName -Certificate $certificat
   
     
     
-
-```
+```
 
 $Web = Get-SPWeb $WebURL
 $sc = Get-SPServiceContext -Site $Web.Site
-$realm = Get-SPAuthenticationRealm -ServiceContext $sc
-```
+$realm = Get-SPAuthenticationRealm -ServiceContext $sc```
 
 スクリプトの変更を完了するには、追加の必須パラメーター  `$WebURL` を、次のようにファイルの一番上にあるパラメーター リストに追加します。
   
@@ -329,14 +319,12 @@ $realm = Get-SPAuthenticationRealm -ServiceContext $sc
     
 
 
-
-```
+```
 
 param (
     # other parameters omitted 
     [Parameter()][String] $WebURL
-)
-```
+)```
 
 新しいパラメーターに先行するパラメーターの後に、必ずコンマを追加してください。また、一番上の行の「Usage」の例を次のように拡張して、新しいパラメーターを考慮に入れてください。 `-WebURL <full URL where SP add-in will be installed>`
   
@@ -348,8 +336,7 @@ SharePoint アドインがすべてのサイト サブスクリプションで�
     
 
 
-
-```
+```
 
 $Farm = Get-SPFarm
 foreach ($ss in $Farm.SiteSubscriptions)
@@ -360,7 +347,6 @@ foreach ($ss in $Farm.SiteSubscriptions)
     # All of the lines from the draft script below the call to 
     # Get-SPAuthenticationRealm are inserted here inside the loop.
 }
-# end of script
-```
+# end of script```
 
 

@@ -71,43 +71,43 @@ ms.assetid: 6e0e530a-7d8b-48ab-8d0c-a878ddbf5be1
   
 3. Настраиваемая отрисовка поля должна выполняться автоматически, поэтому добавьте в JavaScript анонимный метод, который будет автоматически запускаться при загрузке файла с указанным ниже кодом.
     
-  ```
+ ```
   
 (function () {
 
 })();
-  ```
+ ```
 
 4. В тексте этого метода (т. е. между символами { и }) добавьте указанный ниже код, чтобы создать объекты JSON (нотации объектов Javascript) для отрисовки контекста переопределения, шаблонов в контексте и шаблонов для полей.
     
-  ```
+ ```
   
 var customRenderingOverride = {};
 customRenderingOverride.Templates = {};
 customRenderingOverride.Templates.Fields = {
 
 }
-  ```
+ ```
 
 5. В тексте объекта шаблона  `Fields` добавьте указанный ниже JSON. Имя свойства `OrientationStage` идентифицирует поле, настроившее отрисовку. Значением свойства является другой объект JSON. Свойство `View` идентифицирует контекст страницы, в котором применяется настраиваемая отрисовка. В данном случае объект сообщает SharePoint, что необходимо использовать настраиваемую отрисовку представлений списков. (Другие параметры будут использоваться для форм изменения, создания и отображения.) Значение свойства ( `renderOrientationStage`)  это имя метода настраиваемой отрисовки, который вы создадите на одном из следующих этапов.
     
-  ```
+ ```
   
 "OrientationStage": { "View": renderOrientationStage }
-  ```
+ ```
 
 6. Последнее, что должен сделать анонимный метод,  сообщить диспетчеру шаблонов SharePoint о переопределении отрисовки. Добавьте указанную ниже строку в конец раздела body метода.
     
-  ```
+ ```
   SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
-  ```
+ ```
 
 
     Теперь этот метод должен выглядеть указанным ниже образом.
     
 
 
-  ```
+ ```
   (function () {
     var customRenderingOverride = {};
     customRenderingOverride.Templates = {};
@@ -117,11 +117,11 @@ customRenderingOverride.Templates.Fields = {
 
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(customRenderingOverride);
 })();
-  ```
+ ```
 
 7. Добавьте указанный ниже метод в файл. Он задает для значения столбца **Orientation Stage** (Этап вводного обучения) красный цвет, когда оно равно Not Started (Не начат), и зеленый, когда значение равно Completed (Завершен). (Объект `ctx`  это объект контекста клиента, объявленный во встроенном сценарии SharePoint.)
     
-  ```
+ ```
   
 function renderOrientationStage(ctx) {
     var orientationStageValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
@@ -135,7 +135,7 @@ function renderOrientationStage(ctx) {
         return orientationStageValue;
     }
 }
-  ```
+ ```
 
 8. В **обозревателе решений** разверните **Столбцы сайта**, а затем  **OrientationStage**. После этого откройте файл elements.xml.
     
@@ -149,7 +149,7 @@ function renderOrientationStage(ctx) {
     
 
 
-  ```
+ ```
   
 <Field
        ID="{some_guid_here}"
@@ -162,16 +162,16 @@ function renderOrientationStage(ctx) {
        Group="Employee Orientation" 
        JSLink="~site/Scripts/OrientationStageRendering.js">
 <!-- child elements and end tag omitted -->
-  ```
+ ```
 
 10. Откройте страницу Default.aspx и добавьте указанный ниже код в качестве последнего дочернего элемента для элемента **asp:Content**, у которого **ContentPlaceHolderID** имеет значение **PlaceHolderMain**. 
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';"
     Text="List View Page for New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Запуск и тестирование надстройки

@@ -27,8 +27,7 @@ ms.assetid: 7f85a4ec-594d-4eee-9c1a-7a5ad232e088
 |**Пример запроса** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**Пример текста POST** <br/> |
-|
-```XML
+|```XML
 
 { 'd' : {
   'query': { 
@@ -51,8 +50,7 @@ ms.assetid: 7f85a4ec-594d-4eee-9c1a-7a5ad232e088
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-
-```
+```
 
 |
    

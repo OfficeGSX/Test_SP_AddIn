@@ -35,14 +35,14 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   
 3. Добавьте **WebPartZone** в элемент **<asp:Content>**, где будет размещена веб-часть со следующей разметкой. Обычно добавляют в **<asp:Content>** (в этом случае для **ContentPlaceHolderId** используется `PlaceHolderMain`). Ниже приведен пример.
     
-  ```XML
+ ```XML
   
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
   <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" 
       ID="HomePage1" Title="loc:full" />
 </asp:Content>
 
-  ```
+ ```
 
 
     > **Внимание!**
@@ -52,7 +52,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   
 5. В элементе **File** для страницы добавьте дочерний элемент **AllUsersWebPart** и задайте его атрибуту **WebPartZoneID** значение зоны веб-частей, созданной на странице. Ниже приведен пример.
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -64,11 +64,11 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   </Module>
 </Elements>
 
-  ```
+ ```
 
 6. Добавьте элемент **CDATA** в качестве дочернего для элемента **AllUsersWebPart**. Затем добавьте элемент **webParts** в качестве дочернего для элемента **CDATA**. Ниже приведен пример. 
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -77,14 +77,14 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 7. Добавьте разметку **webPart** как дочерний объект элемента **webParts**. Ниже приведен пример добавления **XsltListViewWebPart**. Предполагается, что настраиваемый список с именем Test List  это часть того же проекта надстройки. Подробнее о добавлении настраиваемого списка в веб-надстройку см. в разделе  [Создание надстроек с размещением у поставщика, которые включают в себя пользовательский список SharePoint и тип контента](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md). 
     
     > **Примечание**
       >  Обратите внимание, что веб-часть не имеет свойства идентификатора. Рекомендуем включать явный идентификатор веб-части только в двух случаях, когда это действительно необходимо:>  Эта веб-часть добавляется на вики-страницу SharePoint.>  Эта веб-часть  одна из двух или более веб-частей, которые будут подключены.
 
-  ```
+ ```
   
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -106,7 +106,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
     </data>
   </webPart>
 </webParts>
-  ```
+ ```
 
 8. Нажмите клавишу F5 для отладки надстройки. Веб-часть должна отобразиться на странице.
     

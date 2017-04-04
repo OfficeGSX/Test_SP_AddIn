@@ -105,7 +105,7 @@ Este estudio incluye todos los componentes necesarios para interactuar con la pu
     
 
 
-  ```cs
+ ```cs
   
 // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
@@ -146,7 +146,7 @@ Este estudio incluye todos los componentes necesarios para interactuar con la pu
                 return accessToken.Item1;
             }
   }
-  ```
+ ```
 
 - **BoxXDataService**
     
@@ -156,7 +156,7 @@ Este estudio incluye todos los componentes necesarios para interactuar con la pu
     
 
 
-  ```cs
+ ```cs
   
 [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
@@ -188,7 +188,7 @@ Este estudio incluye todos los componentes necesarios para interactuar con la pu
         {
             BoxXDataDeleter.DeleteInventoryItem(carInventoryItem.ID);
  }
-  ```
+ ```
 
 - **CarInventoryBoxXDataOperation**
     
@@ -332,7 +332,7 @@ LightSwitch admite el mashup de datos al agregar una relación entre los dos or�
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?> 
 - <edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
@@ -371,7 +371,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
 </edmx:DataServices>
 </edms:Edmx>               
 
-  ```
+ ```
 
 
     Es nuestra base de datos de prueba, y el valor de propiedad que admite valores NULL y tipo de propiedad se basa en el escenario. El identificador es PropertyRef y la operación CRUD OData se basa en el identificador. Se usa la propiedad StockNo para mezclar datos con la imagen del automóvil que se almacena en la biblioteca de imágenes de SharePoint.
@@ -379,7 +379,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   
 -  *Modelo de datos definido para el servicio de RIA* 
     
-  ```cs
+ ```cs
   
 public interface IInventoryItem
     	{
@@ -427,7 +427,7 @@ public interface IInventoryItem
         bool CopyFrom(IInventoryCollection other);
 }
 
-  ```
+ ```
 
 
     Toda propiedad que no se incluye en el esquema de base de datos de SAP se puede ignorar. Por ejemplo, la propiedad **Imágenes** se agregó aquí por motivos de escalabilidad. Este modelo de datos es una capa intermedia entre la base de datos de SAP real y el origen de datos SellerDashboard.Server. El proyecto LightSwitch tiene dos componentes: la vista y el servidor. Al agregar un origen de datos externo en el servidor, LightSwitch le ayuda a crear una capa de datos abstractos que se agrega al origen de datos en el servidor.
@@ -548,8 +548,7 @@ Una vez completado el proceso de OAuth con ACS, se envía la solicitud de autent
     
 
 
-
-```cs
+```cs
 
 protected override void Page_Load(object sender, EventArgs e)
 {
@@ -573,8 +572,7 @@ protected override void Page_Load(object sender, EventArgs e)
      }
 
      base.Page_Load(sender, e);
- }
-```
+ }```
 
 Para obtener más información, consulte SellerDashBoard.Server/SharePointLaunch.aspx.cs y AADAuthLib/AuthUtil.cs en el ejemplo de código.
   
@@ -597,8 +595,7 @@ Los fragmentos de código siguientes muestran la lógica de código principal de
     
 
 
-
-```cs
+```cs
 
         public void CreateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -629,8 +626,7 @@ BoxXDataReader
 
                 dataCollection.CopyFrom(filteredCollection);
             }
-        }
-```
+        }```
 
  **BoxXDataUpdater**
   
@@ -638,8 +634,7 @@ BoxXDataReader
     
 
 
-
-```cs
+```cs
 
 public void UpdateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -667,8 +662,7 @@ BoxXDataDeleter
 
             // Delete existing entry request execute
             IODataResponseMessage responseMessage = requestMessage.GetResponse();
-        }
-```
+        }```
 
 
 ### Cargar fotos a la biblioteca de imágenes de SharePoint
@@ -687,16 +681,14 @@ Se agrega un nuevo campo para el uploadForm, que se usa para transmitir el Stock
     
 
 
-
-```
+```
 
 uploadForm = $(
              '<form id="uploadForm" method="POST" enctype="multipart/form-data" action="' + API_URL + '"  data-ajax="false" target="uploadTargetIFrame">' +
              '   <input name="fileInput" id="fileInput" type="file" size="30" data-theme="c" accept="image/*" multiple="true"/>' +
              '   <input type="hidden" name=' + screen.InventoryItem.StockNo + '>' +
              '</form>');
-
-```
+```
 
 Agregar la lógica para almacenar en memoria caché la dirección URL de la imagen y la lógica de restablecimiento de la imagen.
   
@@ -704,8 +696,7 @@ Agregar la lógica para almacenar en memoria caché la dirección URL de la imag
     
 
 
-
-```
+```
 
 function completeUpload(uploadedFiles) {
             var fullImageUrl = uploadedFiles[0];
@@ -717,8 +708,7 @@ function completeUpload(uploadedFiles) {
             setCacheUrl(screen.InventoryItem.StockNo, fullImageUrl + "*#00#" + thumbnailUrl);
             setDetailsCarPicture(fullImageUrl);
             screen.closePopup();
-        }
-```
+        }```
 
  **Para los cambios de PhotosController.cs:**
   
@@ -734,8 +724,7 @@ Haga esto porque ContosoMotorsPictureLibrary no pertenece al complemento SellerD
     
 
 
-
-```cs
+```cs
 
 private ClientContext AppWebContext
     {
@@ -748,8 +737,7 @@ private ClientContext AppWebContext
             return appWebContext;
         }
     }
-
-```
+```
 
  **Para los cambios de PhotoListHelper.cs:**
   
@@ -761,8 +749,7 @@ Agregue la lógica de actualización de la imagen, que eliminará el elemento de
     
 
 
-
-```cs
+```cs
 
             // Delete the old picture item
             foreach (ListItem item in items)
@@ -797,8 +784,7 @@ Agregue la lógica de actualización de la imagen, que eliminará el elemento de
             }
 
 
-
-```
+```
 
 
 ### Experiencia de usuario
@@ -861,20 +847,20 @@ Se usa un complemento para SharePoint vacía para conceder al complemento para S
   
 4. Establezca el complemento como proyecto de inicio y ejecute el proyecto. Puede encontrar los valores de ClientID y ClientSecret en el archivo ContosoMotorsCarInventoryWeb/Web.config. El código será similar a esto:
     
-  ```XML
+ ```XML
   
 <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6"/>
 <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk="/>
-  ```
+ ```
 
 5. Reemplace los valores de ClientID y ClientSecret en "Configuración de complemento hospedado" en ContosoMotorsCarInventoryWeb/TokenHelper.cs con los valores anteriores. El código debe ser similar al siguiente:
     
-  ```cs
+ ```cs
   
 private static readonly string ClientId = "06af1059-8916-4851-a271-2705e8cf53c6";
 private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=";
 
-  ```
+ ```
 
 
 ### Registrar la aplicación web con Azure AD
@@ -968,14 +954,14 @@ Configúrelas opciones para la nueva aplicación que creó en el procedimiento a
 
 1. Busque SellerDashboardHTMLClient/UserCode.js y busque el marcador de posición de código siguiente:
     
-  ```cs
+ ```cs
   
 sharePointUrl: "Replace with your SharePoint host site",
 // https://fake_domain.sharepoint.com/sites/Developer
 SharePointRootUrl: "Replace with your SharePoint root site"
  // https://fake_domain.sharepoint.com/ 
 
-  ```
+ ```
 
 
 1. Reemplace el valor de sharePointUrl con su sitio de SharePoint, en el que se instalará el complemento y también contiene la biblioteca de imágenes.
@@ -986,7 +972,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
   
 2. Busque SellerDashboard.Server/Web.config en la solución SellerDashboard y busque el marcador de posición de la configuración siguiente:
     
-  ```XML
+ ```XML
   
 <add key="ClientSecret" value="MwMp1yxOyy8BGhfD5d9VvuqlRbhaqWESxVNLzgpYNHU=" />
 <add key="ClientId" value="ed138b32-c89d-4f22-b74d-7d9d5044b260" />
@@ -1007,7 +993,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
 <add key="Ida:DefaultID" value="1024" />
 <add key="Ida:DefaultStockNo" value="2048" />
 <add key="Ida:SPPicLib" value="Replace with you picture library name, for example ContosoMotorsPictureLibrary" />
-  ```
+ ```
 
 
 1. Reemplace los valores de ClientId y ClientSecret con los valores que se obtuvo en el procedimiento anterior.
@@ -1042,7 +1028,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
     
 
 
-  ```XML
+ ```XML
   
 ZCAR_POC_SRV.ContosoMotors
 
@@ -1050,7 +1036,7 @@ ZCAR_POC_SRV.ContosoMotors
      <EntitySet sap:content-version="1" Name="ContosoMotorsCollection" sap:searchable="true" EntityType="ZCAR_POC_SRV.ContosoMotors"/>
 </EntityContainer>
 <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://contoso.cloudapp.net:8080/perf/sap/opu/odata/sap/ZCAR_POC_SRV.ContosoMotors"/>
-  ```
+ ```
 
 10. Reemplace el valor de Ida:SPPicLib con el nombre de la biblioteca de imágenes, que creó en el sitio de host de SharePoint.
     

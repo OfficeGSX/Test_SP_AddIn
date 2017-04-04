@@ -120,15 +120,13 @@ Open the SharePoint Management Shell as an administrator and run this Windows Po
     
 
 
-
-```
+```
 
 $certPrKPath = "c:\\location of your .pfx file"
 $certPassword = "password"
 $stsCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 $certPrKPath, $certPassword, 20
 Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -confirm:$false
-
-```
+```
 
 
 > **NOTE**
@@ -198,28 +196,28 @@ The function below does all the work to configure your on-premises SharePoint 20
   
 2. Open the SharePoint Management Shell as an administrator and run the following cmdlet to verify that the MySharePointFunctions module is listed.
     
-  ```
+ ```
   
 Get-Module -listavailable
-  ```
+ ```
 
 3. Run the following cmdlet to import the module.
     
-  ```
+ ```
   Import-Module MySharePointFunctions
-  ```
+ ```
 
 4. Run the following cmdlet to verify that the Connect-SPFarmToAAD function is listed as part of the module:
     
-  ```
+ ```
   Get-Command -module MySharePointFunctions
-  ```
+ ```
 
 5. Run the following cmdlet to verify that the Connect-SPFarmToAAD function is loaded.
     
-  ```
+ ```
   ls function:\\ | where {$_.Name -eq "Connect-SPFarmToAAD"}
-  ```
+ ```
 
 6. Run the  `Connect-SPFarmToAAD` function. Be sure to provide the required parameters and any optional parameters that apply to your developer environment. See the next section for details and examples.
     
@@ -240,7 +238,7 @@ Get-Module -listavailable
 | `-SharePointOnlineUrl` (required) <br/> |The URL of your Office 365 SharePoint site ( _https://yourcustomdomain_.sharepoint.com). Note that parent domain is  *not*  onmicrosoft.com. <br/> |
 | `-SharePointWeb` (sometimes required) <br/> |The full URL (including protocol) of the on-premises SharePoint web application where you'll run provider-hosted add-ins. This function adds only one SharePoint web application from your on-premises farm to ACS. If you don't specify a value for this, the script selects the first web application in your farm. If you're using a Host Name Site Collection (HNSC) that can be defined with a wildcard (such as  _http://*.contoso.com_), you can use that string as the value for this parameter. If the web application has an alternative access mapping (AAM) for the Internet zone, you must use that AAM URL for this parameter. If the SharePoint web application is not configured for HTTPS, you have to use HTTP as the protocol and  *you have to use the -AllowOverHttp switch (see below in this table).*  <br/> If you want to run provider-hosted add-ins that use ACS on more web applications in your farm, you'll need to add them to the service principal name collection. The Windows PowerShell script that follows the  `Connect-SPFarmToAAD` function below shows you how to add all of the web applications on your farm to the service principal name collection. <br/> |
 | `-AllowOverHttp` (optional) <br/> |Use this switch if you're working with a developer environment and don't want to use SSL with your add-ins. You have to use this switch if the SharePoint web application is not configured for HTTPS.  <br/> |
-| `-O365Credentials` (optional) <br/> |The first character is a capital "O", not a zero. If you find yourself repeatedly running the script for debugging purposes, this switch enables to you avoid having to manually enter your O365 name and password each time. Before you can use this parameter, you must create the credentials object that you will assign to it with these cmdlets:  <br/> ```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Use  `$Credential` as the value of the `-O365Credentials` parameter. <br/> |
+| `-O365Credentials` (optional) <br/> |The first character is a capital "O", not a zero. If you find yourself repeatedly running the script for debugging purposes, this switch enables to you avoid having to manually enter your O365 name and password each time. Before you can use this parameter, you must create the credentials object that you will assign to it with these cmdlets:  <br/>```$User = "username@yourcustomdomain.onmicrosoft.com"$PWord = ConvertTo-SecureString -String "the_password" -AsPlainText -Force$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord```Use  `$Credential` as the value of the `-O365Credentials` parameter. <br/> |
 | `-Verbose` (optional) <br/> |This switch generates more detailed feedback which might help if the function is not working and you need to rerun it for debugging.  <br/> |
 | `-RemoveExistingACS` (optional) <br/> |Use this switch if you're replacing an existing connection to Microsoft Azure Active Directory. It removes an existing ACS proxy if you've already created one on your farm.  <br/> |
 | `-RemoveExistingSTS` (optional) <br/> |Use this switch if you're replacing an existing connection to Microsoft Azure Active Directory. It removes an existing trusted security token issuer that is left over from an earlier connection to ACS.  <br/> |
@@ -251,8 +249,7 @@ The following are examples:
   
     
     
-
-```
+```
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com
 
@@ -261,15 +258,13 @@ Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineU
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp
 
 Connect-SPFarmToAAD -AADDomain 'MyO365Domain.onmicrosoft.com' -SharePointOnlineUrl https://MyO365Domain.sharepoint.com -SharePointWeb http://northwind.com -AllowOverHttp -RemoveExistingACS -RemoveExistingSTS -RemoveExistingSPOProxy -RemoveExistingAADCredentials
-
-```
+```
 
 
 ### Connect-SPFarmToAAD function script
 <a name="function"> </a>
 
-
-```
+```
 
 function Connect-SPFarmToAAD {
 param(
@@ -384,8 +379,7 @@ param(
     if (-not (Get-SPServiceApplicationProxy | ? DisplayName -EQ $SPO_MANAGEMENT_APPPROXY_NAME)) {
         $spoproxy = New-SPOnlineApplicationPrincipalManagementServiceApplicationProxy -Name $SPO_MANAGEMENT_APPPROXY_NAME -OnlineTenantUri $SharePointOnlineUrl -DefaultProxyGroup
     }  
-}
-```
+}```
 
 
 ### Configure the add-in and the SharePoint web application for the Office Store
@@ -395,12 +389,10 @@ There is an optional configuration step that farm administrators should take on 
   
     
     
-
-```
+```
 
 New-SPMarketplaceWebServiceApplicationProxy -Name "ApplicationIdentityDataWebServiceProxy" -ServiceEndpointUri "https://oauth.sellerdashboard.microsoft.com/ApplicationIdentityDataWebService.svc" -DefaultProxyGroup
-
-```
+```
 
 It is also a good practice on production SharePoint web applications to activate the **Add-ins that require accessible internet facing endpoints** Feature after the configuration steps above have been completed. (See the instructions below.) This Feature does not actually do anything. It simply serves as a flag that tells the Office Store that provider-hosted add-ins that use ACS can be installed on websites in the SharePoint web application.
   
@@ -412,11 +404,9 @@ This system may have implications for the add-in manifest of your SharePoint Add
     
 
 
+```
 
-```
-
-<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />
-```
+<AppPrerequisite Type="Feature" ID="{7877bbf6-30f5-4f58-99d9-a0cc787c1300}" />```
 
 The effect of the prerequisite is that when users are browsing the store from an on-premises SharePoint farm, your add-in will be grayed-out and uninstallable when the parent SharePoint web application does not have the **Add-ins that require accessible internet facing endpoints** Feature enabled. This ensures that you won't get complaints from customers who install your add-in to an on-premises SharePoint website and find that it does not work.
   
@@ -428,10 +418,8 @@ There are two ways to enable the Feature. The first is to run the following Powe
     
 
 
-
-```
-Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application
-```
+```
+Enable-SPFeature -identity "7877bbf6-30f5-4f58-99d9-a0cc787c1300" -Url http://domain_of_the_SharePoint_web_application```
 
 The other way to enable the Feature is carry out the following steps in Central Administration:
   
@@ -465,8 +453,7 @@ If you have additional web applications on your SharePoint farm and you want to 
   
     
     
-
-```
+```
 $SPAppPrincipal = Get-MsolServicePrincipal -AppPrincipalId 00000003-0000-0ff1-ce00-000000000000
 $id = "00000003-0000-0ff1-ce00-000000000000/"
 
@@ -483,8 +470,7 @@ Get-SPWebApplication | ForEach-Object {
        Set-MsolServicePrincipal -AppPrincipalId $SPAppPrincipal.AppPrincipalId -ServicePrincipalNames $SPAppPrincipal.ServicePrincipalNames
     }
 }
-
-```
+```
 
 
 ## Next Steps

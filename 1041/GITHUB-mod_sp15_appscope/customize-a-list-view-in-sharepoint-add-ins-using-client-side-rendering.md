@@ -129,7 +129,7 @@ SharePoint 2013 では、クライアント側レンダリングによって、S
     > **メモ**
       > JSLink プロパティは、アンケート リストやイベント リストではサポートされません。SharePoint の予定表は、イベント リストです。 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ SharePoint 2013 では、クライアント側レンダリングによって、S
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### JavaScript ファイルでカスタム レンダリング ロジックを定義するには
@@ -168,7 +168,7 @@ SharePoint 2013 では、クライアント側レンダリングによって、S
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### ソリューションを構築して実行するには

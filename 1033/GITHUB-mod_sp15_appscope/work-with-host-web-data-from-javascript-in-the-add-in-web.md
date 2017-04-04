@@ -109,12 +109,12 @@ Open the host web -- your developer test website -- and verify that there is a c
     
   
 
-  ```
+ ```
   
 var notStartedItems;
 var calendarList;
 var scheduledItems;
-  ```
+ ```
 
 3. When a SharePoint Add-in is run, SharePoint calls its start page and adds some query parameters to the start page URL. One of these is  `SPHostUrl` which is, of course, the URL of the host web. The add-in needs this information in order to make calls to host web data, so near the top of the Add-in.js file, just under the variable declaration for `scheduledItems`, add the following line. Note the following about this code:
     
@@ -125,14 +125,14 @@ var scheduledItems;
     
   
 
-  ```
+ ```
   
 var hostWebURL = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
-  ```
+ ```
 
 4. Add the following code to the bottom of the file. This function can be used to read the query parameters. 
     
-  ```
+ ```
   // Utility functions
 
 function getQueryStringParameter(paramToRetrieve) {
@@ -145,7 +145,7 @@ function getQueryStringParameter(paramToRetrieve) {
         }
      }
  }
-  ```
+ ```
 
 5. Add the following function to the Add-in.js file somewhere above the failure callbacks section. Note the following about this code:
     
@@ -156,7 +156,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
-  ```
+ ```
   
 function ensureOrientationScheduling() {
 
@@ -171,14 +171,14 @@ function ensureOrientationScheduling() {
     clientContext.executeQueryAsync(getScheduledOrientations, onGetNotStartedItemsFail);
     return false;
 }
-  ```
+ ```
 
 6. Add the following function to the Add-in.js file just below the preceding function. Notice that it uses the  `hostWebContext` object to identify the list that is queried.
     
     > **NOTE**
       > Notice that no query markup is added to the CAML query. The effect of having no actual query in the query object is to ensure that  *all*  of the list times will be retrieved. If the list was very large this might cause the request to the server to be unacceptably long-running. In that case, we'd want to find some other way of accomplishing our goal. But in this sample situation with a very small list (and calendar lists are almost always small), getting the whole list, so that we can iterate through it on the client will actually help us minimize the number of calls to the server; that is, calls of **executeQueryAsync**. 
 
-  ```
+ ```
   
 function getScheduledOrientations() {
 
@@ -191,7 +191,7 @@ function getScheduledOrientations() {
     clientContext.load(scheduledItems);
     clientContext.executeQueryAsync(scheduleAsNeeded, onGetScheduledItemsFail);
 }
-  ```
+ ```
 
 7. Add the following function to the file. Note the following about this code:
     
@@ -214,7 +214,7 @@ function getScheduledOrientations() {
     
   
 
-  ```
+ ```
   
 function scheduleAsNeeded() {
 
@@ -265,21 +265,21 @@ function scheduleAsNeeded() {
         clientContext.executeQueryAsync(onScheduleItemsSuccess, onScheduleItemsFail);
     }
 }
-  ```
+ ```
 
 8. Add the following success handler that is called when the previously unscheduled items are added to the calendar.
     
-  ```
+ ```
   
 function onScheduleItemsSuccess() {
     alert('There was one or more unscheduled orientations and they have been added to the '
               + 'Employee Orientation Schedule calendar.');
 }
-  ```
+ ```
 
 9. Add the following failure functions to the Failure callbacks section of the file.
     
-  ```
+ ```
   
 function onGetNotStartedItemsFail(sender, args) {
     alert('Unable to get the not-started items. Error:' 
@@ -295,18 +295,18 @@ function onScheduleItemsFail(sender, args) {
     alert('Unable to schedule items on host web calendar. Error:' 
         + args.get_message() + '\\n' + args.get_stackTrace());
 }
-  ```
+ ```
 
 10. Open the default.aspx file and find the **asp:Content** element with the ID **PlaceHolderMain**.
     
   
 11. Add the following markup just below the  `purgeCompletedItems` button.
     
-  ```HTML
+ ```HTML
   
 <p><asp:Button runat="server" OnClientClick="return ensureOrientationScheduling()"
   ID="ensureorientationschedulingbutton" Text="Ensure all items are on the Calendar" /></p>
-  ```
+ ```
 
 12. Rebuild the project in Visual Studio.
     
@@ -317,7 +317,7 @@ function onScheduleItemsFail(sender, args) {
     
 
 
-  ```
+ ```
   
 <Rows>
   <Row>
@@ -335,7 +335,7 @@ function onScheduleItemsFail(sender, args) {
     <Field Name="Title">Lertchai Treetawatchaiwong</Field>
   </Row>
 </Rows>
-  ```
+ ```
 
 
 ## Specify the permissions to the host web that the add-in needs

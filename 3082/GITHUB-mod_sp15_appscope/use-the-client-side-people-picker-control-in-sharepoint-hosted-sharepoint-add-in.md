@@ -144,8 +144,7 @@ En el primer ejemplo se muestra el marcado de página de las etiquetas **PlaceHo
     
 
 
-
-```HTML
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -167,8 +166,7 @@ En el primer ejemplo se muestra el marcado de página de las etiquetas **PlaceHo
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>
-```
+</asp:Content>```
 
 
 > **NOTA**
@@ -183,8 +181,7 @@ En el siguiente ejemplo se muestra el script del archivo App.js. Este script ini
     
 
 
-
-```
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -255,8 +252,7 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}
-```
+}```
 
 
 ## Recursos adicionales

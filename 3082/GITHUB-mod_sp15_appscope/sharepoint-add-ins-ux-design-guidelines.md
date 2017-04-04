@@ -116,13 +116,13 @@ Si no está compilando páginas ASPX hospedadas en SharePoint, pero aún así, q
     
   - Seleccione la biblioteca en la raíz de la carpeta con los diseños, tal como se muestra en el ejemplo siguiente.
     
-  ```
+ ```
   
 <script
     type="text/javascript" 
     src="http://{server URL}/_layouts/15/sp.ui.controls.js">
 </script>
-  ```
+ ```
 
   - Copie la biblioteca en su propio sitio web y haga referencia a la misma desde allí.
     
@@ -130,14 +130,14 @@ Si no está compilando páginas ASPX hospedadas en SharePoint, pero aún así, q
       > Si opta por esta alternativa, el complemento no se beneficiará de las actualizaciones para el control. 
 2. Agregue el elemento DOM del marcador donde se vaya a representar el control, tal como se muestra en este ejemplo.
     
-  ```
+ ```
   
 <div id='chromeControlContainer'></div>
-  ```
+ ```
 
 3. Genere una instancia del control.
     
-  ```
+ ```
   function addchromecontrol(){
     var options = {};
     options.siteTitle ="{host site title}";
@@ -148,14 +148,14 @@ Si no está compilando páginas ASPX hospedadas en SharePoint, pero aún así, q
     nav = new SP.UI.Controls.Navigation("chromeControlContainer", options);
     nav.setVisible(true);
 }
-  ```
+ ```
 
 4. (Opcional) Si no desea que el área del título aparezca en la página, puede quitarla si ejecuta el siguiente código de JavaScript.
     
-  ```
+ ```
   
 nav.setBottomHeaderVisible(false);
-  ```
+ ```
 
 El control cromo ofrece dos iconos de complemento opcionales: uno se encuentra en la parte superior de la barra de navegación y otro el área del título. El icono de la aplicación en la barra de navegación superior es de 24 x 24 píxeles y el icono en el área del título es del mismo tamaño que los iconos del sitio de SharePoint (hasta 64 píxeles de altura por 180 píxeles de largo). Se recomienda que use una imagen PNG que haya probado sobre fondos blanco, negro, gris, con brillo y sin brillo porque los usuarios y administradores pueden cambiar el tema del sitio. Para obtener más información sobre el control cromo, consulte  [Usar el control cromo de cliente en complementos de SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md).
   
@@ -190,18 +190,18 @@ Para obtener los estilos CSS desde el sitio web host, debe hacer referencia a su
   
 2. Si está dentro del sitio web de complemento, puede usar los controles **CssRegistration** y **CssLink** para hacer referencia al archivo CSS; para ello, coloque el siguiente código en la página maestra o en la página ASPX:
     
-  ```HTML
+ ```HTML
   <SharePoint:CssRegistration runat="server" name="default" />
 <SharePoint:CssLink runat="server />
 
-  ```
+ ```
 
 3. Puede usar un elemento <link> para hacer referencia al archivo CSS mediante la generación de una dirección URL a partir de la dirección URL del sitio web host, tal como se muestra en este ejemplo.
     
-  ```HTML
+ ```HTML
   
 <link rel="stylesheet" href="{host web URL}/_layouts/15/defaultcss.ashx" />
-  ```
+ ```
 
 
     Si se sirve de este enfoque, quizá deba ejecutar JavaScript en la página para obtener la dirección URL del sitio web host a partir de la cadena de consultas. Posteriormente, puede insertar la dirección URL del sitio web host en el elemento **link** antes de escribir el elemento en el DOM de la página.
@@ -511,11 +511,9 @@ La página ha funcionado sin problemas en un **iframe** en distintos dominios, c
     
 
 
+```
 
-```
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 Dado que no puede imponer los dominios en los que las páginas se incorporen con IFrame, las páginas que hospede en elementos de complemento estarán expuestas a ataques a la seguridad por secuestro de clics. En este tipo de ataques, las páginas pueden estar con IFrame en una página malintencionada y se podría engañar a los usuarios para que eligieran botones con el fin de tomar acciones cuyos resultados le pasen desapercibidos. Cuando diseñe su página, debería tener esto en cuenta y asegurarse de que no expone ningún tipo de funcionalidad del elemento en la página que pudiera resultar peligroso si se topara con una página malintencionada.
   
@@ -531,10 +529,8 @@ Si el elemento muestra contenido dinámico, sería buena idea solicitar un cambi
     
 
 
-
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
-```
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
 
 En el ejemplo anterior, el valor de **senderId** se va a establecer en la cadena de consultas de la página automáticamente por parte del código del elemento de complemento cuando se represente la página. Bastará con que la página lea el valor de **SenderId** en la cadena de consultas y lo use cuando se solicite cambiar el tamaño. La dirección URL de la web de host se puede recuperar desde la cadena de consultas adjuntando los tokens **StandardTokens** o **HostUrl** al atributo **Src** de la definición del elemento de complemento.
   
@@ -546,8 +542,7 @@ Para especificar un elemento para el sitio web host, debe especificar un element
     
 
 
-
-```XML
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -599,8 +594,7 @@ Para especificar un elemento para el sitio web host, debe especificar un element
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>
-```
+</ClientWebPart>```
 
 En el elemento **ClientWebPart**, será necesario especificar lo siguiente:
   
@@ -690,13 +684,11 @@ Por lo general, cuando un usuario elige una acción personalizada, las llevará 
     
 
 
-
-```
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"
-```
+HostWebDialogWidth="500"```
 
 Los atributos **HostWebDialogHeight** y **HostWebDialogWidth** son opcionales. Si no se especifican los atributos, se usará el tamaño predeterminado para cuadros de diálogo en SharePoint. Pese a esto, por lo general, se debe especificar el tamaño del cuadro de diálogo de forma que tenga el aspecto adecuado y no use barras de desplazamiento cuando se muestre al usuario.
   
@@ -708,12 +700,10 @@ El cuadro de diálogo incluye siempre un botón **Cerrar** en el control cromo d
     
 
 
-
-```
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
-```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
 
 En función de si usa **CloseCustomActionDialogRefresh** o **CloseCustomActionDialogNoRefresh**, el cuadro de diálogo se cierra y bien, actualiza la página subyacente o no lo hace.
   

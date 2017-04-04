@@ -356,13 +356,11 @@ The following is an example of raw **AppPrerequisites** markup that registers th
     
 
 
-
-```
+```
 
 <AppPrerequisites>
   <AppPrerequisite Type="Capability" ID="{CDD8F991-B459-4512-8048-03D5A03FF27E}" MinimumVersion="15.0.0.0" />
-</ AppPrerequisites>
-```
+</ AppPrerequisites>```
 
 
 ## In this section

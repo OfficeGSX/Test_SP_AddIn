@@ -134,32 +134,32 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
   
 8.  Ouvrez le fichier code-behind **Pages/EmployeeAdder.aspx.cs**. La méthode qui ajoute l'employé à la base de données distante,  `AddLocalEmployeeToCorpDB`, est déjà présente. Elle utilise l'objet **SharePointContext** pour obtenir l'URL du site web hôte, que le complément utilise comme discriminant client. Par conséquent, la première chose que la méthode **Page_Load** doit faire consiste à initialiser cet objet. Celui-ci est créé et mis en cache dans la session lors du chargement de la page d'accueil du complément, donc ajoutez le code suivant à la méthode **Page_Load**. (L'objet **SharePointContext** est défini dans le fichier SharePointContext.cs que les Outils de développement Office pour Visual Studio génèrent lors de la création de la solution de complément.)
     
-  ```cs
+ ```cs
   
 spContext = Session["SPContext"] as SharePointContext;
-  ```
+ ```
 
 9.  La méthode `AddLocalEmployeeToCorpDB` prend le nom de l'employé en tant que paramètre. Ajoutez la ligne suivante à la méthode **Page_Load**. Vous créerez la méthode  `GetLocalEmployeeName` dans une étape ultérieure.
     
-  ```cs
+ ```cs
   // Read from SharePoint
 string employeeName = GetLocalEmployeeName();
-  ```
+ ```
 
 10.  Sous cette ligne, ajoutez l'appel à la méthode `AddLocalEmployeeToCorpDB`.
     
-  ```cs
+ ```cs
   
 // Write to remote database
 AddLocalEmployeeToCorpDB(employeeName);
-  ```
+ ```
 
 11.  Ajoutez une instruction **using** au fichier pour l'espace de noms `Microsoft.SharePoint.Client`. (Les Outils de développement Office pour Visual Studio ont inclus l'assembly Microsoft.SharePoint.Client dans le projet **ChainStoreWeb** lors de sa création.)
     
   
 12.  À présent, ajoutez la méthode suivante à la classe `EmployeeAdder`. Le modèle objet côté client SharePoint .NET (CSOM) est décrit en détail sur une autre page de MSDN et nous vous encourageons à la consulter lorsque vous aurez terminé de lire cette série. Pour cet article, notez que la classe **ListItem** représente un élément dans une liste SharePoint et que la valeur d'un champ dans l'élément peut être référencée avec la syntaxe « indexer ». Notez également que le code fait référence au champ en tant que « Titre », même si vous avez modifié le nom du champ par « Nom ». En effet, les champs sont toujours référencés dans le code par leur nom *interne*  , pas par leur nom d'affichage. Le nom interne d'un champ est défini lorsque le champ est créé et ne peut pas être modifié. Vous terminerez de définir l'élément `TODO1` à une étape ultérieure.
     
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -170,36 +170,36 @@ private string GetLocalEmployeeName()
  
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 13.  Notre code a besoin de l'ID de l'élément de liste avant de pouvoir le récupérer auprès de SharePoint. Ajoutez la déclaration suivante à la classe `EmployeeAdder` juste en dessous de la déclaration de l'objet `spContext`.
     
-  ```cs
+ ```cs
   
 private int listItemID;
-  ```
+ ```
 
 14.  À présent, ajoutez la méthode suivante à la classe `EmployeeAdder` pour obtenir l'ID de l'élément de liste à partir du paramètre de requête.
     
-  ```cs
+ ```cs
   private int GetListItemIDFromQueryParameter()
 {
     int result;
     Int32.TryParse(Request.QueryString["SPListItemId"], out result);
     return result;
 }
-  ```
+ ```
 
 15.  Pour initialiser la variable `listItemID`, ajoutez la ligne suivante à la méthode **Page_Load** juste en dessous de la ligne qui initialise la variable `spContext`.
     
-  ```cs
+ ```cs
   
 listItemID = GetListItemIDFromQueryParameter();
-  ```
+ ```
 
 16.  Dans `GetLocalEmployeeName`, remplacez l'élément  `TODO1` par le code suivant. Considérez simplement ce code comme une boîte noire pendant que nous essayons de faire fonctionner le bouton personnalisé. Nous en apprendrons davantage sur ce code dans l'article suivant de cette série, qui porte sur le modèle objet client SharePoint.
     
-  ```cs
+ ```cs
   using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
@@ -208,14 +208,14 @@ listItemID = GetListItemIDFromQueryParameter();
     clientContext.ExecuteQuery();
 }
 
-  ```
+ ```
 
 
      L'ensemble de la méthode doit désormais se présenter de la façon suivante.
     
 
 
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -230,23 +230,23 @@ private string GetLocalEmployeeName()
     }
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 17.  La page EmployeeAdder ne doit pas réellement faire l'objet d'un rendu, ajoutez donc les éléments suivants en tant que dernière ligne de la méthode **Page_Load**. Cela permet de rediriger le navigateur vers la page de vue de liste pour la liste **Employés locaux**.
     
-  ```cs
+ ```cs
   
 // Go back to the Local Employees page
 Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 
-  ```
+ ```
 
 
      L'ensemble de la méthode **Page_Load** doit désormais se présenter de la façon suivante.
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -262,7 +262,7 @@ protected void Page_Load(object sender, EventArgs e)
     // Go back to the preceding page
     Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 }
-  ```
+ ```
 
 
 ## Demande d'autorisation pour lire la liste du site web hôte

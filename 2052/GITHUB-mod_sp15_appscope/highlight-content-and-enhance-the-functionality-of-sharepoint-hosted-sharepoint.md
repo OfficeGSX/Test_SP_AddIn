@@ -37,12 +37,10 @@ ms.assetid: bfa367bb-d2f5-4e3f-bf48-61b77f150f7d
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 您传递给  `SP.SOD.executeFunc` 函数的函数包含在 callout.js 文件加载后要运行的代码。加载这些文件后，使用 `CalloutManager` 对象为每个需要有与之关联的标注控件的页面元素创建一个 `Callout` 对象。 `CalloutManager` 是一个单方对象，用于在关联矩阵内存储对页面上每个 `Callout` 对象的引用。 `Callout` 对象只有两个必需的成员： `ID` 和 `launchPoint`。 `ID` 成员是映射到 `Callout`:  `CalloutManager` 中 `CalloutManager["value of the callout's ID member"]` 的对象的关键字。 `launchPoint` 成员是一个 HTML 页面元素。例如，您可以在页面上创建或获取一个 `div` 元素并将它作为 `Callout` 对象的成员进行传递。默认情况下，每当用户单击 `launchPoint` 元素时，都会显示标注控件。此示例为您显示了如何只使用两个必需成员和一个标题字符串创建尽可能简单的标注控件。
   
@@ -50,8 +48,7 @@ SP.SOD.executeFunc("callout.js", "Callout", function () {
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 每当用户单击页面元素时，该特定标注控件都会弹出并在控件顶部显示标题。您可以通过一些非常有效的方式，使用可选成员自定义控件的外观、行为、位置和操作。标注控件还有一个 set 方法，您可以在创建控件示例后用该方法为任何参数设定一个值。
   
@@ -68,11 +64,9 @@ var callout = CalloutManager.createNew({
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 您还可以为  `CalloutOptions` 对象中的所有标注成员设置值并将该对象传递给 `createNew` 方法。
   
@@ -80,15 +74,13 @@ callout.set({openOptions:{event: "hover"}});
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## 如何自定义标注控件的外观
@@ -149,7 +141,7 @@ var callout = CalloutManager.createNew(calloutOptions);
 
 |**使用此方法**|**目的**|**有效参数值**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |构造控件的实例后，为成员设置值。  <br/> |一个名称/值对，用于为任何标注控件成员定义值。  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |构造控件的实例后，为成员设置值。  <br/> |一个名称/值对，用于为任何标注控件成员定义值。  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |返回一个指示标注控件指向的  `CalloutOrientation` 对象。该对象具有四个布尔型成员： `up`、 `down`、 `left` 和 `right`。打开该控件时，其中两个值将为 **true** ，两个值将为 **false** （例如 `up` 和 `right`）。  <br/> |无参数  <br/> |
 |addEventCallback(string eventName, CalloutCallback callback  <br/> |注册一个回调函数，每当标注控件更改为  `eventName` 参数指定的状态时，即调用该函数。 <br/> | `eventName` 参数必须采用下列值之一： `opening`、 `open`、 `closing` 和 `closed`。 `callback` 参数必须是一个将标注控件的实例作为其第一个参数的函数。 <br/> |
 |open()  <br/> |显示控件。如果该控件已打开或正在打开，此方法返回 **false** 且不执行任何操作。 <br/> |无参数  <br/> |
@@ -166,8 +158,7 @@ var callout = CalloutManager.createNew(calloutOptions);
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 您还可以为  `CalloutActionOptions` 对象中的所有 `CalloutAction` 成员设置值，并将该对象传递给 `CalloutAction` 构造函数。
   
@@ -187,8 +177,7 @@ var calloutAction = new CalloutAction({
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 您可以使用这些成员定义标注操作的行为。
   
@@ -245,8 +233,7 @@ var calloutAction = new CalloutAction(calloutActionOptions);
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
  `CalloutActionMenuEntry` 构造函数有三个参数。前两个参数都是必需的。第三个是可选的，但非常有用，因为它允许您显示带有文本的图标。
   
@@ -315,14 +301,12 @@ callout.addAction(calloutAction);
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 然后将该函数作为  `Callout` 对象的 `positionAlgorithm` 成员的值进行传递。您可以在创建 `Callout` 时或在以后设置值时执行该操作。
   
@@ -330,12 +314,10 @@ function alwaysGoDownAndRight(calloutPositioningProxy)  {
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 您始终可以通过启动浏览器的 JavaScript 控制台（如 Internet Explorer F12 开发人员工具）查看默认定位逻辑。
   
@@ -343,11 +325,9 @@ callout.set({positionAlgorithm: alwaysGoDownAndRight});
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 您可以在  `CalloutPositioningProxy` 对象中使用这些方法编写自己的定位逻辑。
   
@@ -384,8 +364,7 @@ CalloutOptions.prototype.positionAlgorithm.toString()
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 这种定位算法将控件的默认方向更改为  `downAndRight` 而不是 `upAndRight`，但如果有任何冲突，它将使用默认算法。
   
@@ -410,8 +388,7 @@ callout.set({positionAlgorithm: examplePositionAlgorithm});
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## 其他资源

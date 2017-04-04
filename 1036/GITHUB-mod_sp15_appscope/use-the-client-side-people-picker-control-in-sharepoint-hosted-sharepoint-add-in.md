@@ -144,8 +144,7 @@ Le premier exemple illustre le balisage de page lié aux balises **PlaceHolderMa
     
 
 
-
-```HTML
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -167,8 +166,7 @@ Le premier exemple illustre le balisage de page lié aux balises **PlaceHolderMa
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>
-```
+</asp:Content>```
 
 
 > **REMARQUE**
@@ -183,8 +181,7 @@ L'exemple suivant illustre le script du fichier App.js. Ce script permet d'initi
     
 
 
-
-```
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -255,8 +252,7 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}
-```
+}```
 
 
 ## Ressources supplémentaires

@@ -104,17 +104,17 @@ Für das Debuggen von Ereignisempfängern muss der Azure-Dienstbus verwendet wer
   
   - Die Handler-URL ist im Add-In-Manifest registriert. Dieser Teil des Manifests ist nicht im Manifest-Designer sichtbar. Klicken Sie zum Anzeigen mit der rechten Maustaste in die Datei AppManifest.xml, und wählen Sie **Code anzeigen** aus. Es gibt ein neues untergeordnetes Element des Elements **Eigenschaften**, das wie folgt aussieht. Dieses Markup weist SharePoint an, die Methode **ProcessEvent** dieses Dienstes aufzurufen, nachdem alle eigenen Arbeiten im Zusammenhang mit der Installation des Add-Ins abgeschlossen wurden. Der benutzerdefinierte Handler wird zuletzt als Teil der Installation ausgeführt. Die Zeichenfolge `~remoteAppUrl` ist ein Platzhalter, dem die Office-Entwicklertools für Visual Studio durch die Diensthost-URL ersetzen. Beim Debuggen ist das eine Azure-Dienstbus-URL. Wenn Sie das Paket für die Bereitstellung an die Produktion erstellen, ist es die Produktions-URL.
     
-  ```XML
+ ```XML
   
 <InstalledEventEndpoint>~remoteAppUrl/Services/AppEventReceiver.svc</InstalledEventEndpoint>
-  ```
+ ```
 
 3. Öffnen Sie die Datei AppEventReceiver.svc.cs.
     
   
 4. Sehen Sie, dass die Office-Entwicklertools für Visual Studio eine Beispielimplementierung der Methode **ProcessEvent** erstellt haben. Alle Implementierungen dieser Methode beginnen mit der Initialisierung eines **SPRemoteEventResult**-Objekts und enden durch das Zurückgeben dieses Objekts an SharePoint. Unter anderem weist dieses Objekt SharePoint an, ob das Ereignis zurückgesetzt werden soll, weil ein Fehler bei der benutzerdefinierten Verarbeitungslogik aufgetreten ist. Möglicherweise haben die Tools auch einen **using**-Block in diese Methode eingefügt, der ein **ClientContext**-Objekt erstellt. Der benutzerdefinierte Handler im ChainStore-Add-In führt keinen Rückruf an SharePoint durch und kann deshalb gelöscht werden. Die Methode sollte jetzt wie folgt aussehen.
     
-  ```cs
+ ```cs
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
@@ -122,11 +122,11 @@ Für das Debuggen von Ereignisempfängern muss der Azure-Dienstbus verwendet wer
 
     return result;
 }
-  ```
+ ```
 
 5. Der Ereignisempfänger kann von jedem der drei möglichen Add-In-Ereignisse aufgerufen werden. Fügen Sie deshalb die folgende **switch**-Struktur zur Methode **ProcessEvent** zwischen den Zeilen hinzu, die das Objekt `result` erstellen und zurückgeben. Die Ereignisnamen enthalten die Zeichenfolge „App", da Add-Ins früher als Apps bezeichnet wurden.
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -144,7 +144,7 @@ switch (properties.EventType)
          
         break;
 }
-  ```
+ ```
 
 6. Unsere Installationslogik ruft eine in SQL gespeicherte Prozedur auf, um das Geschäft in Hongkong als Mandant in der Remotewebanwendung zu registrieren. Falls bei diesem Prozess ein Fehler auftritt, ist es sehr wichtig, dass der Handler SharePoint signalisiert, die Installation des Add-Ins zurückzusetzen. Fügen Sie deshalb die folgenden **try/catch**-Blöcke anstelle von  `TODO2` hinzu. Beachten Sie Folgendes bei diesem Code:
     
@@ -155,7 +155,7 @@ switch (properties.EventType)
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -167,32 +167,32 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 7. Die Hostweb-URL, die im Beispiel der Mandantendiskriminator ist, ist Teil der Informationen, die SharePoint im Parameter **SPRemoteEventProperties** an den Empfänger übergibt. Fügen Sie die folgende Zeile zur Methode **ProcessEvent** in der Zeile hinzu, die sich unterhalb der Initialisierung des Objekts **SPRemoteEventResult** befindet.
     
-  ```cs
+ ```cs
   
 string tenantName = properties.AppEventProperties.HostWebFullUrl.ToString();
-  ```
+ ```
 
 8. Jetzt muss unser Code mit einer kleinen Tücke der Eigenschaft **AppEventProperties.HostWebFullUrl** umgehen. In den meisten anderen Kontexten enthält SharePoint ein schließendes /-Zeichen am Ende der Hostweb-URL, sodass die Logik im Beispielcode annimmt, dass diese Zeichen vorhanden ist. Aber SharePoint fügt dieses Zeichen am Ende des Werts **HostWebFullUrl** hinzu, wenn, und nur wenn, das Hostweb die Stammwebsite einer Websitesammlung ist. Da unsere Hongkong-Website eine Unterwebsite in der Websitesammlung ist, müssen wir dieses Zeichen hinzufügen, um sicherzustellen, dass im gesamten Beispiel dieselbe Zeichenfolge für den Mandantennamen verwendet wird. Fügen Sie folgenden Code unterhalb der Initialisierung des Objekts `tenantName` hinzu.
     
-  ```cs
+ ```cs
   if (!tenantName.EndsWith("/"))
 {
     tenantName += "/";
 }
-  ```
+ ```
 
 9. Fügen Sie die folgenden **using**-Anweisungen an den Anfang der Datei hinzu.
     
-  ```
+ ```
   
 using System.Data.SqlClient;
 using System.Data;
 using ChainStoreWeb.Utilities;
-  ```
+ ```
 
 10. Fügen Sie die folgende Methode zur Klasse  `AppEventReceiver` hinzu. Dies wird nicht ausführlich behandelt, da der Zweck dieser Artikelreihe darin besteht, Kenntnisse zur SharePoint-Add-In-Programmierung zu vermitteln, nicht zur SQL Server-/Azure-Programmierung.
     
@@ -200,7 +200,7 @@ using ChainStoreWeb.Utilities;
     
 
 
-  ```cs
+ ```cs
   
 private void CreateTenant(string tenantName)
 {
@@ -218,7 +218,7 @@ private void CreateTenant(string tenantName)
         cmd.ExecuteNonQuery();
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 ## Erstellen des Handlers für die Deinstallation
@@ -245,7 +245,7 @@ Das Deinstallationsereignis wird nicht wie zu erwarten ausgeführt, wenn ein Ben
     
   
 
-  ```cs
+ ```cs
   
 try
 {
@@ -257,11 +257,11 @@ catch (Exception e)
     result.ErrorMessage = e.Message;
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
-  ```
+ ```
 
 3. Fügen Sie die folgende Methode zur Klasse  `AppEventReceiver` hinzu.
     
-  ```cs
+ ```cs
   
 private void DeleteTenant(string tenantName)
 {
@@ -279,7 +279,7 @@ private void DeleteTenant(string tenantName)
         cmd.ExecuteNonQuery();                
     }//dispose conn and cmd
 }
-  ```
+ ```
 
 
 > **HINWEIS**

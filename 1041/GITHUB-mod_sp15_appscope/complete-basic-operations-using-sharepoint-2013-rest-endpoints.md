@@ -72,8 +72,7 @@ REST エンドポイントから情報を読み取るには、エンドポイン
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -84,8 +83,7 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 JavaScript でアドインを記述するが SharePoint 2013 クロスドメイン ライブラリを使用している場合、この要求は少し違ったものになります。この場合、アクセス トークンを提供する必要がありません。次のコードは、クロスドメイン ライブラリを使用し、リストの OData 表現を JSON ではなく XML で受け取る場合のこの要求の例を示しています。 (Atom が既定の応答形式なので、 **Accept** ヘッダーを含める必要はありません。) クロスドメイン ライブラリの使用の詳細については、「 [クロスドメイン ライブラリを使用してアドインから SharePoint 2013 のデータにアクセスする](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)」を参照してください。
   
@@ -93,8 +91,7 @@ JavaScript でアドインを記述するが SharePoint 2013 クロスドメイ�
     
 
 
-
-```
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -107,8 +104,7 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);
-```
+);```
 
 次の C# コードは、JQuery を使用してサイトのリストすべての JSON 表現を返す **GET** 要求を実行する方法の例です。 ここでは、 **accessToken** 変数に格納されている有効な OAuth アクセス トークンがあることを前提としています。 アプリ Web 内部からこの呼び出しを実行する場合、SharePoint にホストされるアプリ内で実行する場合に必要になるように、アクセス トークンは必要ではありません。ブラウザー クライアントで実行しているコードからアクセス トークンを取得できないことに注意してください。サーバーで実行しているコードからアクセス トークンを取得する必要があります。「 [SharePoint のアドインのコンテキスト トークン OAuth フロー](context-token-oauth-flow-for-sharepoint-add-ins.md)」および「 [SharePoint アドインの認証コード OAuth フロー](authorization-code-oauth-flow-for-sharepoint-add-ins.md)」で、アクセス トークンの取得方法について説明しています。
   
@@ -116,16 +112,14 @@ executor.executeAsync(
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 
 ### リソースと共に返されないプロパティの取得
@@ -161,8 +155,7 @@ SharePoint エンティティを作成、更新、削除するときのもう 1 
     
 
 
-
-```cs
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -171,8 +164,7 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-
-```
+```
 
 「 [SharePoint アドインの承認と認証](authorization-and-authentication-of-sharepoint-add-ins.md)」で説明している認証と承認のフローを使用している場合は、要求に要求のダイジェストを含める必要はありません。
   
@@ -188,8 +180,7 @@ SharePoint でホストされる SharePoint アドインを作成する場合、
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -207,8 +198,7 @@ jQuery.ajax({
         error: doError
 });
 
-
-```
+```
 
 次の例は、前の例で作成されたリストを更新する方法を示しています。この例ではリストのタイトルを変更し、JQuery を使用しますが、SharePoint ホスト型アドインでこの操作を実行することを前提としています。
   
@@ -216,8 +206,7 @@ jQuery.ajax({
     
 
 
-
-```
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -234,8 +223,7 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-
-```
+```
 
 要求ヘッダーの **IF-MATCH** キーの値では、リストまたはリスト アイテムの **etag** 値を指定します。この特定の値はリストおよびリスト アイテムのみに適用され、それらのエンティティを更新するときに同時実行の問題を回避できるようにすることを目的としています。前の例ではこの値にアスタリスク (*) を使用しており、この値は同時実行の問題を心配する理由がない場合に使用できます。それ以外の場合は、エンティティを取得する **GET** 要求を実行してリストまたはリスト アイテムの **etag** 値を取得する必要があります。結果の HTTP 応答の応答ヘッダーは、この etag を **ETag** キーの値として渡します。この値はまた、エンティティ メタデータにも含まれます。次の例は、リスト情報を含む XML ノードの開始の `<entry>` タグを示しています。 **m:etag** プロパティに **etag** 値が含まれます。
   
@@ -243,14 +231,12 @@ jQuery.ajax({
     
 
 
-
-```XML
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
-```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
 
 
 ## REST によるサイトの作成
@@ -260,8 +246,7 @@ xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gm
   
     
     
-
-```
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -285,8 +270,7 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});
-```
+});```
 
 
 ## 環境によって異なる REST 要求の方法
@@ -387,8 +371,7 @@ OAuth アクセス トークンとそれらを取得する方法の詳細は、�
     
 
 
-
-```
+```
 
 var hostweburl;
 var appweburl;
@@ -425,8 +408,7 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions
-```
+… // success and error callback functions```
 
 
 ## REST 要求で使うプロパティ

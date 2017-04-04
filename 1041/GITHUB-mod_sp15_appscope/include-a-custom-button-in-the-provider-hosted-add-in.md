@@ -134,32 +134,32 @@ SharePoint アドイン には、カスタム アクションを組み込むこ�
   
 8. 分離コード ファイル **Pages/EmployeeAdder.aspx.cs** を開きます。リモート データベースに従業員を追加するメソッド `AddLocalEmployeeToCorpDB` が既にあります。これは **SharePointContext** オブジェクトを使用してホスト web の URL を取得し、アドインはそれをそのテナントの識別子として使用します。したがって、 **Page_Load** メソッドが最初に実行する必要があるのは、このオブジェクトの初期化です。アドインのスタート ページの読み込み時にオブジェクトは作成されて、セッションにキャッシュされるため、次のコードを **Page_Load** メソッドに追加してください。( **SharePointContext** オブジェクトは SharePointContext.cs ファイルで定義されています。このファイルは Office Developer Tools for Visual Studio がアドイン ソリューションの作成時に生成したものです)。
     
-  ```cs
+ ```cs
   
 spContext = Session["SPContext"] as SharePointContext;
-  ```
+ ```
 
 9.  `AddLocalEmployeeToCorpDB` メソッドは、従業員の名前をパラメーターと見なすため、次の行を **Page_Load** メソッドに追加してください。 `GetLocalEmployeeName` メソッドは後の手順で作成します。
     
-  ```cs
+ ```cs
   // Read from SharePoint
 string employeeName = GetLocalEmployeeName();
-  ```
+ ```
 
 10. この行で、 `AddLocalEmployeeToCorpDB` メソッドの呼び出しを追加します。
     
-  ```cs
+ ```cs
   
 // Write to remote database
 AddLocalEmployeeToCorpDB(employeeName);
-  ```
+ ```
 
 11. 名前空間  `Microsoft.SharePoint.Client` のファイルに **using** ステートメントを追加します。(Office Developer Tools for Visual Studio は、Microsoft.SharePoint.Client アセンブリをその作成時に **ChainStoreWeb** プロジェクトに含めました。)
     
   
 12. 続いて、次のメソッドを  `EmployeeAdder` クラスに追加します。SharePoint .NET クライアント側オブジェクト モデル (CSOM) については、MSDN の他の場所の詳細に説明されているため、このシリーズの記事を終えた後に調べてみることをお勧めします。この記事では、 **ListItem** クラスは SharePoint リスト内のアイテムを表すことと、アイテム内のフィールドの値は "indexer" 構文で参照できることに注意してください。また、フィールド名を「名前」に変更していても、コードはフィールドを「Title」として参照していることに注意してください。これはコード内では、フィールドは常に表示名ではなく *内部*  名で参照されるためです。フィールドの内部名は、フィールドの作成時に設定され、変更することはできません。 `TODO1` については、後の手順で説明します。
     
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -170,36 +170,36 @@ private string GetLocalEmployeeName()
  
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 13. このコードを SharePoint から取得するには、まずリスト アイテムの ID が必要になります。次の宣言を  `spContext` オブジェクトの宣言のすぐ下にある、 `EmployeeAdder` クラスに追加します。
     
-  ```cs
+ ```cs
   
 private int listItemID;
-  ```
+ ```
 
 14. 次のメソッドを  `EmployeeAdder` クラスに追加し、クエリ パラメーターからリスト アイテムの ID を取得します。
     
-  ```cs
+ ```cs
   private int GetListItemIDFromQueryParameter()
 {
     int result;
     Int32.TryParse(Request.QueryString["SPListItemId"], out result);
     return result;
 }
-  ```
+ ```
 
 15.  `listItemID` 変数を初期化するには、 `spContext` 変数を初期化する行のすぐ下にある **Page_Load** メソッドに次の行を追加します。
     
-  ```cs
+ ```cs
   
 listItemID = GetListItemIDFromQueryParameter();
-  ```
+ ```
 
 16.  `GetLocalEmployeeName` で、 `TODO1` を次のコードに置き換えます。しばらくの間、このコードを単なるブラック ボックスと見なし、カスタム ボタンの処理を続行します。このコードについては、SharePoint クライアント側オブジェクト モデルについて扱っている、このシリーズの次の記事で説明します。
     
-  ```cs
+ ```cs
   using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     List localEmployeesList = clientContext.Web.Lists.GetByTitle("Local Employees");
@@ -208,14 +208,14 @@ listItemID = GetListItemIDFromQueryParameter();
     clientContext.ExecuteQuery();
 }
 
-  ```
+ ```
 
 
     メソッド全体は、次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 private string GetLocalEmployeeName()
 {
@@ -230,23 +230,23 @@ private string GetLocalEmployeeName()
     }
     return localEmployee["Title"].ToString();
 }
-  ```
+ ```
 
 17. EmployeeAdder ページは実際にはレンダリングしないため、以下を **Page_Load** メソッドの最後の行として追加します。これにより、ブラウザーは [ **ローカル従業員**] リストのリスト ビュー ページに戻ります。
     
-  ```cs
+ ```cs
   
 // Go back to the Local Employees page
 Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 
-  ```
+ ```
 
 
     **Page_Load** メソッド全体は次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -262,7 +262,7 @@ protected void Page_Load(object sender, EventArgs e)
     // Go back to the preceding page
     Response.Redirect(spContext.SPHostUrl.ToString() + "Lists/LocalEmployees/AllItems.aspx", true);
 }
-  ```
+ ```
 
 
 ## ホスト Web リストの読み取りアクセス許可を要求する

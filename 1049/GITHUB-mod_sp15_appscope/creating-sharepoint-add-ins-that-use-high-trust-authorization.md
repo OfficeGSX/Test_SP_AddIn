@@ -82,11 +82,9 @@ ms.assetid: 135bf6be-b118-4d2c-8d40-27f5060b06f3
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 Переключатель  `-IsTrustBroker` не используется для создания издателя маркеров, не являющегося посредником доверия. Существует и другое отличие. Значение параметра `-RegisteredIssuerName` всегда представлено в форме двух идентификаторов GUID, разделенных символом "@"; _GUID_@ _GUID_. GUID в правой части всегда представляет идентификатор области проверки подлинности фермы SharePoint (или подписки сайта). GUID слева всегда представляет определенный идентификатор для издателя маркеров. Этот GUID произвольный, если создается  *посредник доверия*  . Но если создается другой тип издателя маркеров, указанный GUID издателя должен совпадать с GUID, который используется как код клиента Надстройка SharePoint. Данный параметр не только предоставляет имя издателя, но и сообщает SharePoint, какое Надстройка SharePoint является единственным приложением, для которого сертификат может выдавать маркеры. Далее представлен частичный пример:
   
@@ -94,11 +92,9 @@ New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_tok
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 Обычно командлет  `New-SPTrustedSecurityTokenIssuer` используется в сценарии, который выполняет другие задачи настройки SharePoint для надстроек с высоким уровнем доверия. Дополнительные сведения о таких сценариях и полные примеры применения командлета `New-SPTrustedSecurityTokenIssuer` см. в статье [Скрипты настройки высокого уровня доверия для SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -149,8 +145,7 @@ New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --o
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -160,8 +155,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 Корневой и промежуточные сертификаты необходимо добавить в ферму SharePoint только один раз. Обычно сертификат веб-приложения добавляется в отдельном скрипте, который выполняет и другие задачи настройки, например вызывает командлет  `New-SPTrustedSecurityTokenIssuer`. Примеры см. в статье  [Скрипты настройки высокого уровня доверия для SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -189,8 +183,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certifica
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -198,8 +191,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certifica
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **Примечание по безопасности**

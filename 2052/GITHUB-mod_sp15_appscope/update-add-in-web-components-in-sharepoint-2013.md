@@ -129,7 +129,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
 
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="2.0.0.0">
@@ -144,7 +144,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
 ### 将组件添加到外接程序
@@ -158,16 +158,16 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
 3. 对于每个新的元素清单，添加  [ElementManifest](http://msdn.microsoft.com/library/5a6a2865-5d31-45a2-a402-6da6e0f5567a%28Office.15%29.aspx) 元素，作为 Feature XML 的 **ElementManifests** 和 **ApplyElementManifests** 元素的子项。（两处完全相同的 **ElementManifest** 元素。）元素的 **Location** 属性应指向 elements.2.0.0.0.xml 文件的相对路径。例如，如果您添加了名为 MyCustomList 的列表， **ElementManifest** 元素将如下所示。
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="MyCustomList\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 4. 某些类型的组件将文件添加到项目。例如，当您添加列表时，会创建一个 schema.xml 文件；当您添加页面时，会创建一个页面文件。对于每个文件，添加  [ElementFile](http://msdn.microsoft.com/library/bd43638e-8f18-4a0d-b122-1c055f97aa71%28Office.15%29.aspx) 元素，作为 **ElementManifests** 元素的子项。（不要将其添加到 **ApplyElementManifests** 元素。） **Location** 属性应指向文件的相对路径。例如，如果您添加了列表，schema.xml 的 **ElementFile** 元素将如下所示。
     
-  ```XML
+ ```XML
   <ElementFile Location="MyCustomList\\Schema.xml" />
-  ```
+ ```
 
 5. 当您添加外接程序的之前版本中已有的项目类型时，Visual Studio Office 开发人员工具 可能会将对新项目的引用添加到现有的元素清单中，而非创建新的清单。例如，将页面添加到外接程序 Web 的标准方法是右键单击"解决方案资源管理器"中的"页面"节点，然后浏览"添加 | 新项目 | 页面 | 添加"。Visual Studio Office 开发人员工具 会将一个新的 **File** 元素添加到现有元素清单文件（通常称为 elements.xml）中的 **Pages** 模块，而非创建新的元素清单。
     
@@ -194,7 +194,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
 6. 如果您为功能中的内容类型添加了一个字段，将  [AddContentTypeField](http://msdn.microsoft.com/library/cb04a3ac-f41a-4ffe-aaa1-d4bf3fb6347d%28Office.15%29.aspx) 元素添加到 **VersionRange** 部分。确保为 **ContentTypeId** 和 **FieldId** 属性分配正确的值。（可选）使用 **PushDown** 属性指定是否应该为任何派生内容类型添加新字段。示例如下。
     
-  ```XML
+ ```XML
   <VersionRange>
   <AddContentTypeField 
     ContentTypeId="0x0101000728167cd9c94899925ba69c4af6743e"
@@ -202,7 +202,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
     PushDown="TRUE" />
   <!-- Other child elements of VersionRange -->
 </VersionRange>
-  ```
+ ```
 
 
 ### 修改外接程序的现有组件
@@ -223,28 +223,28 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
 4. 将 **ElementManifest** 元素添加到引用新清单文件（如本示例中所示）的 **ApplyElementManifests** 部分。
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 
     > **注释**
       >  不要删除原始清单。Feature XML 会使用新旧两个清单。>  不要将任何 **ElementFile** 元素从 **ElementManifests** 部分复制到 **ApplyElementManifests** 部分，即使 **ElementFile** 中引用的文件已更改也是如此。
 2. 打开 **ApplyElementManifests** 部分引用的每个元素清单文件，并确保所有 [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) 元素都有 **ReplaceContents** 属性，并且被设置为 **TRUE**。示例如下。Visual Studio Office 开发人员工具 可能已执行此操作，但您应该进行验证。即使对外接程序之前版本的元素清单也应执行此操作。这是编辑现有元素清单文件的几种方式之一。
     
-  ```XML
+ ```XML
   <Module Name="Pages">
   <File Path="Pages\\Default.aspx" Url="Pages/Default.aspx" ReplaceContent="TRUE" />
 </Module>
-  ```
+ ```
 
 3. 页面中应可以嵌入 Web 部件，如 [在外接程序 Web 上的网页中包含 Web 部件](include-a-web-part-in-a-webpage-on-the-add-in-web.md)中所述。如果您更改具有 Web 部件的页面（或更改 Web 部件的属性），则还需执行一个步骤：您必须将以下标记添加到页面，以防止 SharePoint 将 Web 部件的第二个副本添加到页面。标记应添加到 ID 为  `PlaceHolderAdditionalPageHead` 的 **asp:Content** 元素。（首次创建页面时，Visual Studio Office 开发人员工具 可能已添加，但您应进行验证。）
     
-  ```XML
+ ```XML
   
 <meta name="WebPartPageExpansion" content="full" />
-  ```
+ ```
 
 
     > **注释**
@@ -259,12 +259,12 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
 3. 将以下标记添加到 **asp:Content** 元素，然后将 _{RelativePathToNewPageFile}_ 替换为新路径和文件名。此脚本将浏览器重定向到新页面并包括查询参数。它还会将旧页面从浏览器历史记录中删除。
     
-  ```
+ ```
   <script type="text/javascript">
         var queryString = window.location.search.substring(1);
         window.location.replace("{RelativePathToNewPageFile}" + "?" + queryString);
 </script>
-  ```
+ ```
 
 4. 删除页面上的任何其他 **asp:Content** 元素。
     
@@ -282,8 +282,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
     
     
-
-```XML
+```XML
 
 <Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="MyApp Feature1"
       Description="SharePoint Add-in Feature" Id="85d309a8-107e-4a7d-b3a2-51341d3b11ff" 
@@ -308,8 +307,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
       </VersionRange>
   </UpgradeActions>
 </Feature>
-
-```
+```
 
 
 ### 外接程序 Web 的后续更新
@@ -336,7 +334,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
   
 4. 转到之前的 **VersionRange** 元素，即上次更新外接程序（在接下来的示例中，从 1.0.0.0 更新到 2.0.0.0）时添加的元素，并为其添加 **EndVersion** 属性。您希望此 **VersionRange** 中的升级操作应用到尚未应用该元素的所有版本的外接程序（版本 1.0.0.0）中，但是不希望将它们重新应用到已经应用了该元素的版本（版本 2.0.0.0）中。 **EndVersion** 值是 *唯一的*  ，因此，请将其设置为您 *不*  希望应用升级操作的最低版本。在接下来的示例中，您将其设置为 2.0.0.0。现在，您的文件应该如下所示。
     
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="3.0.0.0">
@@ -352,14 +350,14 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     每次升级功能时，请遵照相同的模式。为最近的更新操作添加新的 **VersionRange**。然后，将 **EndVersion** 元素添加到之前的 **VersionRange** 元素中，并将其设置为之前的版本号。在接下来的示例中，对于从 3.0.0.0 到 4.0.0.0 的更新，文件将如下所示。
     
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="4.0.0.0">
@@ -378,7 +376,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
     </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     请注意，最新的 **VersionRange** 元素没有 **BeginVersion** 或 **EndVersion** 属性。这样可以确保涉及此 **VersionRange** 元素的升级操作应用于功能所有之前的版本，这正是您希望的，因为所有最新更改都会在此 **VersionRange** 中引用，并且任何功能实例都未发生这些更改。

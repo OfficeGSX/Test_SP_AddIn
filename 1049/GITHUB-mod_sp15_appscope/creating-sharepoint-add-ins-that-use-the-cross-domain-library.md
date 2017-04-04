@@ -62,12 +62,10 @@ ms.assetid: e63411ef-7137-4f1c-aac5-a3414ec88154
     
   
 - В надстройке, размещенном в SharePoint, можно оставить тип субъекта надстройки по умолчанию, т. е. **Internal**. Затем задайте в атрибуте **AllowedRemoteHostUrl** элемента **Internal** URL-адрес удаленного приложения, как в следующем примере.
-    
-```
+    ```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>
-```
+</AppPrincipal>```
 
 
 > **Примечание**

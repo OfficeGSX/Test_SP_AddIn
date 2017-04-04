@@ -135,8 +135,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
 
 
-
-```
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -149,8 +148,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-
-```
+```
 
 В следующей таблице содержатся рекомендации о том, какие **свойства должен включать ваш код в маркер доступа и какие значения необходимо для них устанавливать**. Если вы используете управляемый код, файлы SharePointContext и TokenHelper (с расширением CS или VB) создают маркеры для вас. Например, ваш код выполняет один вызов метода **SharePointContext.CreateUserClientContextForSPHost**. Он в свою очередь вызывает методы в классе **TokenHelper**, создающем маркер доступа. Затем маркер доступа включается в каждый вызов к SharePoint от клиентского объекта контекста SharePoint, возвращаемого **SharePointContext.CreateUserClientContextForSPHost**.
   
@@ -190,8 +188,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
     
 
 
-
-```
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -203,8 +200,7 @@ ms.assetid: cb3264d4-41a6-498f-a408-75b077566051
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-
-```
+```
 
 
 > **Примечание**

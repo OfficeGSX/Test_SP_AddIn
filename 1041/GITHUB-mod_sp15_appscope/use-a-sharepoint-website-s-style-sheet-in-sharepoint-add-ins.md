@@ -132,7 +132,7 @@ SharePoint アドインでスタイル シートを使用するには、次の�
     
   
 
-  ```
+ ```
   
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StyleConsumer.aspx.cs" Inherits="StylesheetAppWeb.StyleConsumer" %>
 
@@ -225,7 +225,7 @@ SharePoint アドインでスタイル シートを使用するには、次の�
 </body>
 </html>
 
-  ```
+ ```
 
 
     場合によっては、ユーザーが SharePoint で認証されるまで、ページでスタイル指定用の CSS とイメージをダウンロードできないことがあります。リンク タグでは、まだサインインしていないユーザーは自動的に認証されません。アドイン Web からページ リソースを Web ページに読み込んで、CSS ファイルにリンクする前にユーザーの認証を強制的に行うことを検討してください。この例では、blank.html ページが非表示の IFrame に読み込まれます。

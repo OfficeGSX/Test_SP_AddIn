@@ -92,8 +92,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -149,8 +148,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
         }
     }
 </script>
-
-```
+```
 
 При создании надстройки с размещением в SharePoint можно добавить ссылку на объектную модель с помощью HTML-тегов <script>. Сайт надстройки для SharePoint позволяет использовать относительные пути для ссылок на нужные файлы, используемые в объектной модели JavaScript.
   
@@ -172,8 +170,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
 
 
-
-```
+```
 
 <script
     src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" 
@@ -191,8 +188,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 
     // Continue your program flow here.
 
-</script>
-```
+</script>```
 
 
 ## Задачи, связанные с веб-сайтом SharePoint
@@ -209,8 +205,7 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
   
     
     
-
-```
+```
 
 function retrieveWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -232,8 +227,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Получение только выбранных свойств веб-сайта
@@ -242,8 +236,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveWebSiteProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -265,8 +258,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 > **Примечание**
@@ -282,8 +274,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function updateWebSite(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -309,8 +300,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Задачи по работе со списками SharePoint
@@ -327,8 +317,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveAllListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -357,8 +346,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Извлечение только заданных свойств списков
@@ -367,8 +355,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListProperties(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -398,8 +385,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ### Хранение полученных списков в коллекции
@@ -408,8 +394,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -437,8 +422,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Применение фильтров к извлечению списков
@@ -447,8 +431,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function retrieveAllListsAllFields(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -490,8 +473,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 
 ## Создание, обновление и удаление списков
@@ -508,8 +490,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -536,8 +517,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 Если нужно обновить список после его создания, можно задать свойства списка и вызвать функцию **update()** перед вызовом **executeQueryAsync(succeededCallback, failedCallback)**, как показано далее в измененном примере.
   
@@ -545,8 +525,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 .
 .
@@ -561,8 +540,7 @@ clientContext.load(oList);
 clientContext.executeQueryAsync(
     Function.createDelegate(this, this.onQuerySucceeded), 
     Function.createDelegate(this, this.onQueryFailed)
-);
-```
+);```
 
 
 ### Добавление поля в список
@@ -571,8 +549,7 @@ clientContext.executeQueryAsync(
   
     
     
-
-```
+```
 
 function addFieldToList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -604,8 +581,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Удаление списка
@@ -614,8 +590,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -639,8 +614,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Создание, обновление и удаление папок
@@ -657,8 +631,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function createFolder(resultpanel) {
     var clientContext;
@@ -693,8 +666,7 @@ function createFolder(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Изменение папки в библиотеке документов
@@ -703,8 +675,7 @@ function createFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFolder(resultpanel) {
     var clientContext;
@@ -734,8 +705,7 @@ function updateFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Удаление папки в библиотеке документов
@@ -744,8 +714,7 @@ function updateFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFolder(resultpanel) {
     var clientContext;
@@ -776,8 +745,7 @@ function deleteFolder(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## Создание, чтение, обновление и удаление файлов
@@ -801,8 +769,7 @@ function deleteFolder(resultpanel) {
   
     
     
-
-```
+```
 
 function createFile(resultpanel) {
     var clientContext;
@@ -843,8 +810,7 @@ function createFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Чтение файла в библиотеке документов
@@ -853,8 +819,7 @@ function createFile(resultpanel) {
   
     
     
-
-```
+```
 
 function readFile(resultpanel) {
     var clientContext;
@@ -885,8 +850,7 @@ function readFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[2];
     }
-}
-```
+}```
 
 
 ### Изменение файла в библиотеке документов
@@ -895,8 +859,7 @@ function readFile(resultpanel) {
   
     
     
-
-```
+```
 
 function updateFile(resultpanel) {
     var clientContext;
@@ -939,8 +902,7 @@ function updateFile(resultpanel) {
         resultpanel.innerHTML =
             "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ### Удаление файла в библиотеке документов
@@ -949,8 +911,7 @@ function updateFile(resultpanel) {
   
     
     
-
-```
+```
 
 function deleteFile(resultpanel) {
     var clientContext;
@@ -983,8 +944,7 @@ function deleteFile(resultpanel) {
     function errorHandler() {
         resultpanel.innerHTML = "Request failed: " + arguments[1].get_message();
     }
-}
-```
+}```
 
 
 ## Задачи, связанные с элементами списков SharePoint
@@ -1001,8 +961,7 @@ function deleteFile(resultpanel) {
   
     
     
-
-```
+```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1040,8 +999,7 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Используйте метод Include для доступа к свойствам объектов ListItem
@@ -1057,8 +1015,7 @@ function onQueryFailed(sender, args) {
     
     
 
-
-```
+```
 
 function retrieveListItemsInclude(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1097,8 +1054,7 @@ function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
 }
-
-```
+```
 
 Так как в этом примере используется **Include**, после выполнения запроса доступны только указанные свойства. Поэтому возвращается исключение **PropertyOrFieldNotInitializedException** при попытке доступа к другим свойствам помимо указанных. Кроме того, эта ошибка возникает, если вы пытаетесь использовать такие функции как **get_contentType** или **get_parentList** с целью доступа к объектам, которые они содержат.
   
@@ -1126,8 +1082,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1153,8 +1108,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Обновление элемента списка
@@ -1163,8 +1117,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function updateListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
@@ -1187,8 +1140,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ### Удаление элемента списка
@@ -1197,8 +1149,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function deleteListItem(siteUrl) {
     this.itemId = 2;
@@ -1220,8 +1171,7 @@ function onQuerySucceeded() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 Если, например, требуется получить новое количество элементов, появившееся в результате операции удаления, следует включить вызов метода update(), чтобы обновить список. Кроме того, перед выполнением запроса необходимо загрузить либо сам объект "list", либо его свойство **itemCount**. Если требуется получить как исходное, так и итоговое количество элементов списка, то необходимо выполнить два запроса и получить число элементов дважды, как показано в следующем варианте предыдущего примера.
   
@@ -1229,8 +1179,7 @@ function onQueryFailed(sender, args) {
     
 
 
-
-```
+```
 
 function deleteListItemDisplayCount(siteUrl) {
     this.clientContext = new SP.ClientContext(siteUrl);
@@ -1270,8 +1219,7 @@ function displayCount() {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
-}
-```
+}```
 
 
 ## Доступ к объектам на хост-сайте
@@ -1281,8 +1229,7 @@ function onQueryFailed(sender, args) {
   
     
     
-
-```
+```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
     // context: The ClientContext object provides access to
@@ -1319,8 +1266,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
     function errorHandler(data, errorCode, errorMessage) {
         alert("Could not complete cross-domain call: " + errorMessage);
     }
-}
-```
+}```
 
 В предыдущем примере для доступа к хост-сайту используется междоменная библиотека в SharePoint 2013. Дополнительные сведения см. в разделе  [Обращение к данным SharePoint 2013 из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
   

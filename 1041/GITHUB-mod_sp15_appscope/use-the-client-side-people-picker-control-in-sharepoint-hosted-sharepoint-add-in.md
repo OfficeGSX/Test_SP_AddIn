@@ -144,8 +144,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
     
 
 
-
-```HTML
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -167,8 +166,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>
-```
+</asp:Content>```
 
 
 > **メモ**
@@ -183,8 +181,7 @@ SharePoint ホスト型 SharePoint アドインでクライアント側の [ユ�
     
 
 
-
-```
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -255,8 +252,7 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}
-```
+}```
 
 
 ## その他の技術情報

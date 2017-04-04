@@ -84,16 +84,14 @@ CSOM はバッチ処理システムを使用します。マネージ コード�
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 このシリーズの前の記事で、このパターンの例が、以下に示す  `GetLocalEmployeeName`メソッドにありました。このメソッドについて、以下の点に注意してください。
   
@@ -108,8 +106,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -123,8 +120,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

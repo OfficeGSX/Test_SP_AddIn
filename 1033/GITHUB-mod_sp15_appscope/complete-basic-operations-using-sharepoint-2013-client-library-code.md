@@ -63,11 +63,9 @@ All of these examples assume that the code is in a code-behind file for an Micro
     
 
 
+```
 
-```
-
-using Microsoft.SharePoint.Client;
-```
+using Microsoft.SharePoint.Client;```
 
 Except where specified otherwise, you can assume that each of these examples is in a parameterless method that is defined in the page's class. Also,  `label1`,  `label2`, and so on, are the names of  [Label](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Label.aspx) objects on the page.
   
@@ -95,8 +93,7 @@ Retrieve the title of a SharePoint website.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the 
 // server running SharePoint. 
@@ -114,8 +111,7 @@ context.ExecuteQuery();
 // Now, the web's properties are available and we could display 
 // web properties, such as title. 
 label1.Text = web.Title;
-
-```
+```
 
 
 ### Retrieve only selected properties of a website
@@ -124,8 +120,7 @@ Sometimes, the client is interested only in a few properties of an object. The S
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -145,8 +140,7 @@ context.ExecuteQuery();
 // an exception because other properties are not available. 
 label1.Text = web.Title;
 label1.Text = web. Description;
-
-```
+```
 
 
 > **NOTE**
@@ -162,8 +156,7 @@ This example shows how to write to the website's properties.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -181,8 +174,7 @@ web.Update();
 
 // Execute the query to server.
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Create a new SharePoint website
@@ -191,8 +183,7 @@ This example shows how to create a new SharePoint site as a subsite of the curre
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -208,8 +199,7 @@ context.Load(newWeb, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = newWeb.Title; 
-
-```
+```
 
 
 ## SharePoint list tasks
@@ -226,8 +216,7 @@ This example retrieves all SharePoint lists in a SharePoint website. To compile 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -249,8 +238,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 > **NOTE**
@@ -259,8 +247,7 @@ foreach (List list in web.Lists)
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -283,8 +270,7 @@ foreach (List list in web.Lists)
 { 
     label1.Text = label1.Text + ", " + list.Title; 
 } 
-
-```
+```
 
 
 ### Create and update a SharePoint list
@@ -293,8 +279,7 @@ This example creates a SharePoint list and updates it using the  [ListCreationIn
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -311,8 +296,7 @@ list.Description = "New Description";
 
 list.Update(); 
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Delete a SharePoint list
@@ -321,8 +305,7 @@ This example deletes a SharePoint list.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -335,8 +318,7 @@ List list = web.Lists.GetByTitle("My List");
 list.DeleteObject(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Add a field to a SharePoint list
@@ -352,8 +334,7 @@ This example adds a field to a SharePoint list. add an alias to the using statem
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -370,8 +351,7 @@ fldNumber.MinimumValue = 35;
 fldNumber.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## SharePoint list item tasks
@@ -395,8 +375,7 @@ This example retrieves the items in a SharePoint list. You will also need to add
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -418,8 +397,7 @@ foreach (ListItem listItem in items)
     // We have all the list item data. For example, Title. 
     label1.Text = label1.Text + ", " + listItem["Title"]; 
 } 
-
-```
+```
 
 
 ### Create a new list item
@@ -428,8 +406,7 @@ This example creates a new SharePoint list item using the  [ListItemCreationInfo
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -449,8 +426,7 @@ newItem["Body"] = "Hello World!";
 newItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Update a list item
@@ -459,8 +435,7 @@ This example updates a SharePoint list item.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -477,8 +452,7 @@ listItem["Body"] = "This is my new value!!";
 listItem.Update(); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Delete a list item
@@ -487,8 +461,7 @@ This example deletes a SharePoint list item.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -502,8 +475,7 @@ ListItem listItem = announcementsList.GetItemById(2);
 listItem.DeleteObject(); 
 
 context.ExecuteQuery(); } 
-
-```
+```
 
 
 ## SharePoint field tasks
@@ -520,8 +492,7 @@ This example retrieves all of the fields in a SharePoint list. You will also nee
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -537,8 +508,7 @@ foreach (SP.Field field in list.Fields)
 { 
     label1.Text = label1.Text + ", " + field.InternalName;
 } 
-
-```
+```
 
 
 ### Retrieve a specific field from the list
@@ -554,8 +524,7 @@ If you want to retrieve information about a specific field, use the **Fields.Get
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -569,8 +538,7 @@ context.ExecuteQuery();
 
 // Now, we can access the specific text field properties. 
 label1.Text = textField.MaxLength; 
-
-```
+```
 
 
 ## SharePoint user tasks
@@ -587,8 +555,7 @@ This example adds a user and some user information to a SharePoint group named M
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -609,8 +576,7 @@ userCreationInfo.Title = "Mr User";
 User newUser = membersGroup.Users.Add(userCreationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Retrieve all users in a SharePoint group
@@ -619,8 +585,7 @@ This example retrieves information about all users from a SharePoint group named
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -638,8 +603,7 @@ foreach (User member in membersGroup.Users)
     // We have all the user info. For example, Title. 
     label1.Text = label1.Text + ", " + member.Title; 
 }  
-
-```
+```
 
 
 ### Create a role
@@ -648,8 +612,7 @@ This example creates a role that has create and manage alerts permissions.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -667,8 +630,7 @@ creationInfo.Order = 0;
 RoleDefinition rd = context.Web.RoleDefinitions.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ### Add a user to a role
@@ -677,8 +639,7 @@ This example adds a user to a role.
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -694,8 +655,7 @@ roleDefCollection.Add(readDef);
 RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Rules and best practices for using the SharePoint .NET client object model
@@ -712,8 +672,7 @@ The SharePoint .NET Framework CSOM requires that you use a SQL-like programming 
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -721,8 +680,7 @@ ClientContext context = new ClientContext("http://SiteUrl");
 
 Web web = context.Web; 
 label1.Text = web.Title;  
-
-```
+```
 
 This code fails because SharePoint .NET Framework CSOM code must:
   
@@ -744,8 +702,7 @@ In SharePoint .NET Framework CSOM , when you call a method you build a query. Qu
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -758,8 +715,7 @@ context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 
 label1.Text = web.Title;   
-
-```
+```
 
 The differences are the addition of these lines:
   
@@ -767,13 +723,11 @@ The differences are the addition of these lines:
     
 
 
-
-```
+```
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
-
-```
+```
 
 The first line creates a query for the web's **Title** property. The second line executes the query.
   
@@ -786,8 +740,7 @@ When a value object is returned from a method or property, you cannot use that o
   
     
     
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -798,8 +751,7 @@ ListCreationInformation creationInfo = new ListCreationInformation();
 creationInfo.Description = web.Title; 
 creationInfo.Title = web.Title; 
 List newList = web.Lists.Add(creationInfo);  
-
-```
+```
 
 An exception is thrown because the property is not available before you execute the query. In SQL, you would declare a local variable to hold the value for  `web.Title` and use the local variable for web creation. In the client library, you can't create a local variable. You have to split functionality into two separate queries as is shown in the following example. You will also need to add a **using** statement for [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Also, add an alias to the using statement for [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) namespace so you can refer to its classes unambiguously. For example, `using SP = Microsoft.SharePoint.Client;`.
   
@@ -807,8 +759,7 @@ An exception is thrown because the property is not available before you execute 
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -826,8 +777,7 @@ creationInfo.Title = web.Title;
 SP.List newList = web.Lists.Add(creationInfo); 
 
 context.ExecuteQuery();  
-
-```
+```
 
 The difference is the following three lines:
   
@@ -835,15 +785,13 @@ The difference is the following three lines:
     
 
 
-
-```cs
+```cs
 
 context.Load(web, w => w.Title);
 context.ExecuteQuery(); 
 ...
 context.ExecuteQuery(); 
-
-```
+```
 
 
 ### Using methods or properties that return client objects in another method call in the same query
@@ -866,14 +814,12 @@ The counterpart to the value object is the client object. If the corresponding s
     
 
 
-
-```cs
+```cs
 
 ClientContext context = new ClientContext("http://SiteUrl");
 Web web = context.Web; 
 SP.List list = web.Lists.GetByTitle("Announcements"); 
-
-```
+```
 
 We know that the list is created by:
   
@@ -900,8 +846,7 @@ When reading multiple pieces of data from the same object, you should try to get
   
     
     
-
-```cs
+```cs
 
 static void Method1() 
 { 
@@ -923,8 +868,7 @@ static void Method2()
     context.Load(web, w => w.Description); 
     context.ExecuteQuery();  
 } 
-
-```
+```
 
 These are not equally efficient. In **Method1**, the code to retrieve the web's title and description is grouped together. In **Method2**, the code to retrieve the web's title and description is separated by other actions. This means that **Method2** will trigger two separated queries on the same web object, and there will be two result sets for the same web. Because the client library tries to return consistent data, the second result set will include both the title and description. You could think of the previous code as the following.
   
@@ -932,8 +876,7 @@ These are not equally efficient. In **Method1**, the code to retrieve the web's 
     
 
 
-
-```
+```
 
 Method1:
 SELECT Title, Description FROM Webs WHERE ... 
@@ -943,8 +886,7 @@ Method2:
 SELECT Title FROM Webs WHERE … 
 SELECT Description FROM Lists WHERE … 
 SELECT Title, Description FROM Webs WHERE … 
-
-```
+```
 
 
 ### Specify which properties of objects you want to return
@@ -953,11 +895,9 @@ In the SharePoint server object model, if you get an **SPWeb** object, you can i
   
     
     
+```
 
-```
-
-SELECT * FROM Webs 
-```
+SELECT * FROM Webs ```
 
 In the client library, neither **Load<T>** nor any other method returns all properties, so you have to explicitly specify what you want. For example, the following code retrieves the website object without specifying which properties to return. It then tries to read two properties and one of them is not among the properties that is automatically returned by **Load**. This code throws an exception. 
   
@@ -965,8 +905,7 @@ In the client library, neither **Load<T>** nor any other method returns all prop
     
 
 
-
-```cs
+```cs
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
 ClientContext context = new ClientContext("http://SiteUrl"); 
@@ -977,8 +916,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
  To get the code to compile successfully, update it to the following. To compile this code, you need to add a **using** statement for [System.Linq](https://msdn.microsoft.com/library/System.Linq.aspx) . Also, add an alias to the **using** statement for the [Microsoft.SharePoint.Client](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.aspx) namespace so you can refer to its classes unambiguously. For example, `using SP = Microsoft.SharePoint.Client;`.
   
@@ -986,8 +924,7 @@ Console.WriteLine(web.HasUniqueRoleAssignments);
     
 
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1000,8 +937,7 @@ context.ExecuteQuery();
 
 Console.WriteLine(web.Title); 
 Console.WriteLine(web.HasUniqueRoleAssignments);  
-
-```
+```
 
 
 ### Use conditional scope to test for preconditions before loading data
@@ -1017,8 +953,7 @@ To conditionally execute code, set a conditional scope by using a  [ConditionalS
     
     
 
-
-```cs
+```cs
 
 // Starting with ClientContext, the constructor requires a URL to the
 // server running SharePoint. 
@@ -1043,8 +978,7 @@ if (scope.TestResult.Value)
 { 
     label1.Text = list.Title; 
 }  
-
-```
+```
 
 
 ### Use an exception handling scope to catch exceptions
@@ -1053,8 +987,7 @@ This example shows how to create and use an exception handling scope with an  [E
   
     
     
-
-```cs
+```cs
 
 
 // Starting with ClientContext, the constructor requires a URL to the 
@@ -1090,8 +1023,7 @@ using (scope.StartScope())
 } 
 
 context.ExecuteQuery();  
-
-```
+```
 
 
 ## Additional resources

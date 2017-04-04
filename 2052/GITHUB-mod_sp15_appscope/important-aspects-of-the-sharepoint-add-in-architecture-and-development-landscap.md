@@ -349,13 +349,11 @@ SharePoint 2013 提供加载项运行状况监视，并且可以在 UI 中向网
     
 
 
-
-```
+```
 
 <AppPrerequisites>
   <AppPrerequisite Type="Capability" ID="{CDD8F991-B459-4512-8048-03D5A03FF27E}" MinimumVersion="15.0.0.0" />
-</ AppPrerequisites>
-```
+</ AppPrerequisites>```
 
 
 ## 本节内容

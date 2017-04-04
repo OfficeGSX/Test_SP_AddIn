@@ -1193,7 +1193,7 @@ Contoso 消防署では、インシデント管理アドインの追加機能に
   
 4. コード エディターで、次のコードを **Insured_render** メソッドに追加します。
     
-  ```
+ ```
   
 // Create the checkbox and add it to the DOM.
     var checkbox = $("<input type='checkbox'/>")
@@ -1217,7 +1217,7 @@ Contoso 消防署では、インシデント管理アドインの追加機能に
             checkbox[0].checked = newValue;
         }
     });
-  ```
+ ```
 
 
     このコードは、画面がレンダリングされるときに [ **CheckBox**] コントロールを作成します。このほかに、初期値を設定するコードを追加する必要もあります。
@@ -1234,11 +1234,11 @@ Contoso 消防署では、インシデント管理アドインの追加機能に
   
 8. コード エディターで、 **created** メソッドに次のコードを追加します。
     
-  ```
+ ```
   
 entity.Insured = new Boolean();
     entity.Insured = 'true';
-  ```
+ ```
 
 
     このコードでは、画面の作成時にコントロールの初期値をオン (true) に設定します。
@@ -1264,7 +1264,7 @@ entity.Insured = new Boolean();
   
 3. コード エディターで、 **ViewIncidents_created** メソッドに次のコードを追加します。
     
-  ```
+ ```
   
 screen.getPatients().then(function (results) {
         var queryCount = results.count;
@@ -1272,7 +1272,7 @@ screen.getPatients().then(function (results) {
             screen.findContentItem("Patients").isVisible = false;
         }
     });
-  ```
+ ```
 
 
     このコードでは、 **GetPatients** クエリを実行して **Patients** の数を取得します。その結果がゼロの場合、 **findContentItem** メソッドで [ **Patients**] タブの **isVisible** プロパティを false に設定し、そのタブを非表示にします。

@@ -21,16 +21,14 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 В следующем коде XML показан пример свойств папки, который вы получаете при запросе XML-типа контента.
   
@@ -38,8 +36,7 @@ headers:
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties>
@@ -48,8 +45,7 @@ headers:
 <d:ServerRelativeUrl>/Shared Documents</d:ServerRelativeUrl>
 <d:WelcomePage/>
 </m:properties>
-</content>
-```
+</content>```
 
 В следующем примере показано, как **создать** папку.
   
@@ -57,8 +53,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/folders
 method: POST
@@ -68,8 +63,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 В следующем примере показано, как **обновить** папку, используя метод **MERGE**.
   
@@ -77,8 +71,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -90,8 +83,7 @@ Headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 В следующем примере показано, как **удалить** папку.
   
@@ -99,8 +91,7 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -109,8 +100,7 @@ Headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Работа с файлами с помощью REST
@@ -120,16 +110,14 @@ Headers:
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 В следующем примере показано, как **получить** конкретный файл.
   
@@ -137,14 +125,12 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 Вы также можете **получить** файл, если вы знаете его URL-адрес, как показано в примере ниже.
   
@@ -152,14 +138,12 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 В следующем примере показано, как **создать** файл и добавить его в папку.
   
@@ -167,8 +151,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
 method: POST
@@ -176,8 +159,7 @@ body: "Contents of file"
 Headers: 
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 В следующем примере показано, как **обновить** файл, используя метод **PUT**.
   
@@ -192,8 +174,7 @@ Headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: POST
@@ -202,8 +183,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     X-HTTP-Method:"PUT"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 Чтобы обновить метаданные файла, понадобится создать конечную точку, которая будет получать доступ к файлу как к элементу списка. Это возможно благодаря тому, что каждая папка также является списком, а каждый файл также является элементом списка. Создайте следующую конечную точку:  `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`. В статье  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md) объясняется, как обновить метаданные элемента списка.
   
@@ -215,15 +195,13 @@ Headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 В следующем примере показано, как **проверить файл на входе**.
   
@@ -231,15 +209,13 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 В следующем примере показано, как **удалить** файл.
   
@@ -247,8 +223,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
 method: POST
@@ -257,8 +232,7 @@ headers:
      X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method:"DELETE"
-
-```
+```
 
 
 ## Работа с большими файлами с помощью REST
@@ -275,8 +249,7 @@ headers:
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
 method: POST
@@ -285,8 +258,7 @@ headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 В следующем примере кода показано, как создать файл с помощью конечной точки REST и междоменной библиотеки.
   
@@ -294,8 +266,7 @@ headers:
     
 
 
-
-```
+```
 
 function uploadFileBinary() {
 XDomainTestHelper.clearLog();
@@ -322,8 +293,7 @@ state: "Update"
 };
 ro.executeAsync(info);
 }
-
-```
+```
 
 
 ## Работа с файлами, подключенными к элементам списка с помощью REST
@@ -333,16 +303,14 @@ ro.executeAsync(info);
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 В следующем примере показано, как **извлечь** файл, подключенный к элементу списка.
   
@@ -350,16 +318,14 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 В следующем примере показано, как **создать** подключение файла к элементу списка.
   
@@ -367,8 +333,7 @@ headers:
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
 method: POST
@@ -376,8 +341,7 @@ headers:
     Authorization: "Bearer " + accessToken
     body: "Contents of file."
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 В следующем примере показано, как **обновить** подключение файла к элементу списка с помощью метода **PUT**.
   
@@ -392,8 +356,7 @@ headers:
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: POST
@@ -402,8 +365,7 @@ headers:
     Authorization: "Bearer " + accessToken
     "X-HTTP-Method":"PUT"
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 
 ## Дополнительные ресурсы

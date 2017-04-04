@@ -162,7 +162,7 @@ To use the People Picker widget, you must do the following:
     
   
 
-  ```
+ ```
   
 <!DOCTYPE html>
 <html>
@@ -254,7 +254,7 @@ Basic People Picker sample (HTML markup declaration):
 </body>
 </html>
 
-  ```
+ ```
 
 
 > **NOTE**
@@ -269,14 +269,12 @@ The following example shows you how to pass an empty object to the initialize me
     
 
 
-
-```
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});
-```
+Office.Controls.Runtime.initialize({});```
 
 
 ### To build and run the solution
@@ -311,11 +309,9 @@ Depending on your preference, you might want to use the JavaScript instead of HT
   
     
     
+```HTML
 
-```HTML
-
-<div id="PeoplePickerDiv"></div>
-```
+<div id="PeoplePickerDiv"></div>```
 
 Use the following JavaScript code to instantiate the People Picker.
   
@@ -323,11 +319,9 @@ Use the following JavaScript code to instantiate the People Picker.
     
 
 
-
-```
+```
 new Office.Controls.PeoplePicker(
-    document.getElementById("PeoplePickerDiv"), {});
-```
+    document.getElementById("PeoplePickerDiv"), {});```
 
 For a code sample that shows how to perform the tasks, see the **JSSimple.html** page in the [Use the People Picker experimental widget in an add-in](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85) code sample.
   
@@ -340,8 +334,7 @@ You can specify options for the widget by using the **data-office-options** attr
   
     
     
-
-```HTML
+```HTML
 
 <div id="PeoplePickerDiv"
         data-office-control="Office.Controls.PeoplePicker"
@@ -350,8 +343,7 @@ You can specify options for the widget by using the **data-office-options** attr
         "onChange" : handleChange,
         "placeholder" : "Check the count message, it changes when you add names..."
     }'>
-</div>
-```
+</div>```
 
 The following code shows how to specify options when you declare the PeoplePicker widget using JavaScript.
   
@@ -359,8 +351,7 @@ The following code shows how to specify options when you declare the PeoplePicke
     
 
 
-
-```
+```
 
 new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {
@@ -370,8 +361,7 @@ new Office.Controls.PeoplePicker(
             document.getElementById("count").textContent = 
 ctrl.selectedItems.length.toString();
         }
-    });
-```
+    });```
 
 You can also specify event handlers for the **onChange**, **onAdded**, and **onRemoved** events. Note in the code above that the event handler for the onChange event receives a single parameter **ctrl**, which is a reference to the widget.
   
@@ -401,11 +391,9 @@ You can get a reference to the widget using the following syntax.
     
 
 
+```
 
-```
-
-var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
-```
+var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;```
 
 You can also save a reference when you instantiate the widget.
   
@@ -413,11 +401,9 @@ You can also save a reference when you instantiate the widget.
     
 
 
-
-```
+```
 var pplPicker = new Office.Controls.PeoplePicker(
-                        document.getElementById("PeoplePickerDiv"), {});
-```
+                        document.getElementById("PeoplePickerDiv"), {});```
 
 The **selectedItems** property is an array of objects that represent people or groups. People or groups in the selectedItems array can either be resolved or unresolved, which you can check in the **isResolved** property. The following example shows how to access the element *i*  in the array and use the name of the person or group.
   
@@ -425,12 +411,10 @@ The **selectedItems** property is an array of objects that represent people or g
     
 
 
-
-```
+```
 
 var principal = pplPicker.selectedItems[i];
-$("#msg").text(principal.text + " is selected in the control.");
-```
+$("#msg").text(principal.text + " is selected in the control.");```
 
 For an example of how to retrieve the selected people or groups from the widget, see the **demo.html** page of the [Office Web Widgets - Experimental Demo](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e) code sample.
   

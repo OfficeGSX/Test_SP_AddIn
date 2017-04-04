@@ -90,7 +90,7 @@ ms.assetid: f40c910f-12a2-4caa-8e91-c7a61ae540db
 
 
 
-  ```cs
+ ```cs
   
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
@@ -98,11 +98,11 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 
     return result;
 }
-  ```
+ ```
 
 7. 立即出现在声明  `result` 变量的行下方，并添加以下开关结构来标识正在处理的事件。
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -113,14 +113,14 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+ ```
 
 
     > **注释**
       > **AppInstalled**、 **AppUpdated** 和 **AppInstalling** 事件，如果您有适用于它们的处理程序，就会将它们的 URL 分别在外接程序清单中注册。所以，您 *可以*  为它们分配不同的终结点；但本文（和 Visual Studio Office 开发人员工具）假设它们具有完全相同的终结点；这就是为什么代码需要确定哪个事件调用它的原因。
 8. 如 [将回滚逻辑和"已完成"逻辑包括在您的加载项事件处理程序中](handle-events-in-sharepoint-add-ins.md#Rollback)中所述，如果您的安装逻辑出错了，您几乎始终想要取消外接程序安装，想让 SharePoint 回滚安装过程中所执行的操作，并想回滚您的处理程序执行的操作。实现这些目的的一种办法是，将以下代码添加在 AppInstalled 事件的 **case** 中。
     
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppInstalled:
   try
@@ -135,7 +135,7 @@ case SPRemoteEventType.AppInstalled:
       // Rollback logic goes here.
   }
   break;
-  ```
+ ```
 
 
     > **注释**
@@ -146,7 +146,7 @@ case SPRemoteEventType.AppInstalled:
     
 
 
-  ```cs
+ ```cs
   
 SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
@@ -175,11 +175,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+ ```
 
 10. 使用以下代码将列表创建方法添加至 **AppEventReceiver** 类作为一个 **private** 方法。请注意， `TokenHelper` 类具有一个经过优化用以获取外接程序事件的客户端上下文的特定方法。为最后的参数传递 **false** 可确保该上下文适合主机 Web。
     
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
@@ -195,11 +195,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     return errorMessage;
 }
 
-  ```
+ ```
 
 11. 回滚逻辑基本上算是异常处理逻辑，SharePoint CSOM（客户端对象模型）有一个  [ExceptionHandlingScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.aspx) ，能够让您的 Web 服务将异常处理委派给 SharePoint 服务器。（另请参阅 [如何：使用异常处理范围](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx)。）将以下代码添加到前面代码段中的 **if** 块。
     
-  ```cs
+ ```cs
   
 ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext);
 
@@ -224,11 +224,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+ ```
 
 12. 前述的代码段中仅有一个对 SharePoint ( **ExecuteQuery**) 的调用，但遗憾的是，我们不能只处理这一个。每一个将在我们的异常作用域中进行引用的对象都必须首先被加载到客户端。所以要将以下代码添加在 **ExceptionHandlingScope** 的构造函数的 *上面*  。
     
-  ```cs
+ ```cs
   
 ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
@@ -237,11 +237,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+ ```
 
 13. 创建主机 Web 列表的代码将加入到  [StartTry](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartTry.aspx) 块中，但该代码必须首先检查该列表是否已完成添加（如 [将回滚逻辑和"已完成"逻辑包括在您的加载项事件处理程序中](handle-events-in-sharepoint-add-ins.md#Rollback)所述）。可通过使用  [ConditionalScope](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ConditionalScope.aspx) 类将 If-then-else 逻辑委派给 SharePoint 服务器。（另请参阅 [如何：使用条件范围](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx)。）将以下代码添加在 **StartTry** 块中。
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => foundList.ServerObjectIsNull.Value == true, true);
@@ -253,11 +253,11 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+ ```
 
 14.  [StartCatch](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartCatch.aspx) 块应撤销创建列表，但需要首先检查是否已创建列表，因为在完成列表创建之前，有可能 **StartTry** 块中已引发了异常。将以下代码添加至 **StartCatch** 块中。
     
-  ```cs
+ ```cs
   
 ConditionalScope condScope = new ConditionalScope(clientContext,
         () => createdList.ServerObjectIsNull.Value != true, true);
@@ -265,7 +265,7 @@ using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+ ```
 
 
     > **提示**
@@ -279,7 +279,7 @@ using (condScope.StartScope())
     
 
 
-  ```cs
+ ```cs
   
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
@@ -341,7 +341,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
     > **提示**
@@ -365,7 +365,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
     
 
 
-  ```cs
+ ```cs
   
 case SPRemoteEventType.AppUninstalling:
 
@@ -384,7 +384,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+ ```
 
 3. 添加用来回收列表的帮助程序方法。请注意以下关于此代码的内容：
     
@@ -398,7 +398,7 @@ break;
     
   
 
-  ```cs
+ ```cs
   
 private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
@@ -464,7 +464,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
     }
     return errorMessage;
 }
-  ```
+ ```
 
 
 ### 调试并测试外接程序卸载事件接收器

@@ -56,8 +56,7 @@ La forma más sencilla de recuperar la identidad del usuario actual de un sitio 
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - Si está usando Office 365, el nombre de inicio de sesión que obtiene será similar a  `i:0#.f|membership|adam@contoso.com`.
@@ -110,14 +108,12 @@ A continuación se ofrece un ejemplo donde se muestra cómo obtener la informaci
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
 El valor **Person.LoginName** facilita la información de inicio de sesión.
   
@@ -131,8 +127,7 @@ Si desea recuperar la identidad y propiedades del usuario, puede usar el token d
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 A continuación, use la API  [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) para obtener las propiedades del usuario que está usando el complemento.
   
@@ -152,15 +146,13 @@ A continuación, use la API  [UserProfilesPeopleManager](https://msdn.microsoft.
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 Respecto al código de trabajo:
   
@@ -172,11 +164,11 @@ Respecto al código de trabajo:
   
 - Es preciso que agregue el siguiente ámbito de permisos para las características sociales en el manifiesto del complemento:
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 Las API están en Microsoft.SharePoint.Client.UserProfiles.dll.
   
@@ -188,16 +180,14 @@ A continuación, se ofrece otro ejemplo de fragmento de código que muestra cóm
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## Recursos adicionales

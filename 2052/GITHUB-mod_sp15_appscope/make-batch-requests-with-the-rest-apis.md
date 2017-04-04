@@ -57,8 +57,7 @@ SharePoint Online（和本地 SharePoint 2016 及更高版本）和 Office 365 A
   
     
     
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -80,8 +79,7 @@ Content-Transfer-Encoding: binary
 GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Information%20List')/items?$select=Title HTTP/1.1
 
 --batch_e3b6819b-13c3-43bb-85b2-24b14122fed1--
-
-```
+```
 
 下面是一个原始 HTTP 请求的正文示例，该请求对列表的 DELETE 和 SharePoint 列表的列表的 GET 进行批处理。
   
@@ -89,8 +87,7 @@ GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Informatio
     
 
 
-
-```
+```
 
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
 Authorization: Bearer <access token omitted>
@@ -116,8 +113,7 @@ Content-Transfer-Encoding: binary
 
 GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 
---batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--
-```
+--batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--```
 
 
 ## 有用库的链接

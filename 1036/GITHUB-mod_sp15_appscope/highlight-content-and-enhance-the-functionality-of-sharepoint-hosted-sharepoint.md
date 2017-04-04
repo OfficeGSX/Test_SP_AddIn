@@ -37,12 +37,10 @@ Cet exemple utilise la méthode  `SP.SOD.executeFunc` pour garantir le chargemen
   
     
     
-
-```
+```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
-    });
-```
+    });```
 
 La fonction que vous passez à la fonction  `SP.SOD.executeFunc` contient le code que vous voulez exécuter après le chargement du fichier callout.js. Après avoir chargé ces fichiers, vous utilisez l'objet `CalloutManager` pour créer un objet `Callout` pour chaque élément de page associé à un contrôle de légende. `CalloutManager` est un singleton qui stocke les références à chaque objet `Callout` dans une page dans un tableau associatif. L'objet `Callout` n'a que deux membres requis : `ID` et `launchPoint`. Le membre  `ID` est la clé mappée à l'objet `Callout` dans `CalloutManager`:  `CalloutManager["value of the callout's ID member"]`. Le membre  `launchPoint` est un élément de page HTML. Vous pouvez, par exemple, créer ou obtenir un élément `div` dans votre page et le passer en tant que membre de l'objet `Callout`. Par défaut, le contrôle de légende s'affiche quand un utilisateur clique sur l'élément  `launchPoint`. Cet exemple montre comment créer le contrôle de légende le plus simple possible avec uniquement deux membres requis et une chaîne de titre.
   
@@ -50,8 +48,7 @@ La fonction que vous passez à la fonction  `SP.SOD.executeFunc` contient le cod
     
 
 
-
-```
+```
 
 var calloutPageElement = document.createElement("div");
 var callout = CalloutManager.createNew({
@@ -59,8 +56,7 @@ var callout = CalloutManager.createNew({
    launchPoint: calloutPageElement,
    title: "callout title"
 });
-
-```
+```
 
 Cette légende spécifique est contextuelle et affiche un titre en haut du contrôle quand un utilisateur clique sur l'élément de page. Vous utilisez les membres facultatifs pour personnaliser l'apparence, le comportement, l'emplacement et les actions du contrôle de façon très puissante. Le contrôle de légende utilise également une méthode set pour définir une valeur pour n'importe quel paramètre une fois l'instance d'un contrôle créée.
   
@@ -68,11 +64,9 @@ Cette légende spécifique est contextuelle et affiche un titre en haut du contr
     
 
 
+```
 
-```
-
-callout.set({openOptions:{event: "hover"}});
-```
+callout.set({openOptions:{event: "hover"}});```
 
 Vous pouvez également définir des valeurs pour les membres de légende dans un objet  `CalloutOptions`, puis passer cet objet à la méthode  `createNew`.
   
@@ -80,15 +74,13 @@ Vous pouvez également définir des valeurs pour les membres de légende dans un
     
 
 
-
-```
+```
 var calloutPageElement = document.createElement("div");
 var calloutOptions = new CalloutOptions();
 calloutOptions.ID = unique identifier;
 calloutOptions.launchPoint = calloutPageElement;
 calloutOptions.title = callout title;
-var callout = CalloutManager.createNew(calloutOptions);
-```
+var callout = CalloutManager.createNew(calloutOptions);```
 
 
 ## Comment personnaliser l'apparence du contrôle de légende
@@ -149,7 +141,7 @@ Vous pouvez utiliser ces méthodes pour personnaliser le comportement du contrô
 
 |**Utiliser cette méthode**|**Objectif**|**Valeurs de paramètre valides**|
 |:-----|:-----|:-----|
-|set({member:value})  <br/> |Définir des valeurs pour les membres après avoir construit une instance du contrôle.  <br/> |Une paire nom/valeur qui définit une valeur pour un membre de contrôle de légende.  <br/> ```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
+|set({member:value})  <br/> |Définir des valeurs pour les membres après avoir construit une instance du contrôle.  <br/> |Une paire nom/valeur qui définit une valeur pour un membre de contrôle de légende.  <br/>```var callout = new Callout({openOptions:{event: "click"}});callout.set({openOptions:{event: "hover"}});```|
 |getOrientation()  <br/> |Retourner un objet  `CalloutOrientation` qui indique la direction du contrôle de légende. Cet objet a quatre membres booléens : `up`,  `down`,  `left` et `right`. Quand le contrôle est ouvert, deux de ces valeurs seront **true** et deux seront **false** ( `up` et `right`, par exemple).  <br/> |Sans paramètre  <br/> |
 |addEventCallback(chaîne eventName, rappel CalloutCallback  <br/> |Enregistrer une fonction de rappel qui est appelée quand le contrôle de légende change d'état en fonction de l'état spécifié par le paramètre  `eventName`.  <br/> |Le paramètre  `eventName` doit avoir l'une de ces valeurs : `opening`,  `open`,  `closing`,  `closed`. Le paramètre  `callback` doit être une fonction qui prend une instance du contrôle de légende comme premier paramètre. <br/> |
 |open()  <br/> |Afficher le contrôle. Si le contrôle est déjà ouvert ou en cours d'ouverture, cette méthode retourne **false** et ne fait rien. <br/> |Sans paramètre  <br/> |
@@ -166,8 +158,7 @@ Vous ajoutez des actions après avoir créé une instance du contrôle de légen
   
     
     
-
-```
+```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
@@ -178,8 +169,7 @@ var calloutAction = new CalloutAction({
         });
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Vous pouvez également définir des valeurs pour tous les membres  `CalloutAction` d'un objet `CalloutActionOptions` et passer cet objet au constructeur `CalloutAction`.
   
@@ -187,8 +177,7 @@ Vous pouvez également définir des valeurs pour tous les membres  `CalloutActio
     
 
 
-
-```
+```
 
 //Create CalloutAction
 var calloutActionOptions = new CalloutActionOptions();
@@ -199,8 +188,7 @@ actionOptions.onClickCallback = function() {
 var calloutAction = new CalloutAction(calloutActionOptions);
 
 //Add Action to an instance of the CalloutControl        
-        myCalloutControl.addAction(calloutAction);
-```
+        myCalloutControl.addAction(calloutAction);```
 
 Vous pouvez utiliser les membres suivants pour définir le comportement d'une action de légende.
   
@@ -245,8 +233,7 @@ Vous pouvez créer autant d'entrées de menu que vous voulez, puis vous les ajou
     
 
 
-
-```
+```
 
 //Create two menu entries.
 var menuEntry1 = new CalloutActionMenuEntry("Entry One", calloutActionCallbackFunction, "/_layouts/images/DOC16.GIF");
@@ -260,8 +247,7 @@ var calloutAction = new CalloutAction({
 
 //Add the callout action to the callout control.
 callout.addAction(calloutAction);
-
-```
+```
 
 Le constructeur  `CalloutActionMenuEntry` a trois paramètres. Les deux premiers paramètres sont requis. Le troisième est facultatif, mais il peut être utile car il vous permet d'afficher une icône avec le texte.
   
@@ -315,14 +301,12 @@ L'objet  `calloutPositioningProxy` contient des méthodes et des propriétés qu
   
     
     
-
-```
+```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
     calloutPositioningProxy.moveDownAndRight();
 } 
-
-```
+```
 
 Vous pouvez ensuite passer cette fonction comme valeur du membre  `positionAlgorithm` de l'objet `Callout`. Vous pouvez le faire lors de la création de  `Callout` ou ultérieurement, en définissant la valeur.
   
@@ -330,12 +314,10 @@ Vous pouvez ensuite passer cette fonction comme valeur du membre  `positionAlgor
     
 
 
-
-```
+```
 
 callout.set({positionAlgorithm: alwaysGoDownAndRight});
-
-```
+```
 
 Vous pouvez toujours observer la logique de positionnement par défaut en lançant la console JavaScript de votre navigateur (Outils de développement F12 Internet Explorer, par exemple).
   
@@ -343,11 +325,9 @@ Vous pouvez toujours observer la logique de positionnement par défaut en lança
     
 
 
+```
 
-```
-
-CalloutOptions.prototype.positionAlgorithm.toString()
-```
+CalloutOptions.prototype.positionAlgorithm.toString()```
 
 Vous pouvez utiliser ces méthodes dans l'objet  `CalloutPositioningProxy` pour écrire votre propre logique de positionnement.
   
@@ -384,8 +364,7 @@ Avec cet algorithme de positionnement, le contrôle est placé au-dessus ou au-d
     
 
 
-
-```
+```
 function examplePositionAlgorithm(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL) {
         calloutPositioningProxy.moveDownAndRight();
@@ -401,8 +380,7 @@ function examplePositionAlgorithm(calloutPositioningProxy) {
     }
 }
 callout.set({positionAlgorithm: examplePositionAlgorithm});
-
-```
+```
 
 Cet algorithme de positionnement change le sens par défaut du contrôle en  `downAndRight` au lieu de `upAndRight`, mais il utilise l'algorithme par défaut en cas de collisions.
   
@@ -410,8 +388,7 @@ Cet algorithme de positionnement change le sens par défaut du contrôle en  `do
     
 
 
-
-```
+```
 
 function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
     if (!calloutPositioningProxy.isRTL)
@@ -423,8 +400,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
 callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
-
-```
+```
 
 
 ## Ressources supplémentaires

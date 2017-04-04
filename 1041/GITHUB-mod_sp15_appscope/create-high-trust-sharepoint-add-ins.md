@@ -215,69 +215,69 @@ SharePoint 2013 では、サーバー間 Security Token Service (STS) によっ�
 
 1. テキスト エディターまたは Windows PowerShell エディターで、新しいファイルを作成し、次の行を追加して証明書オブジェクトを作成します。
     
-  ```
+ ```
   
 $publicCertPath = "C:\\Certs\\HighTrustSampleCert.cer"
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($publicCertPath)
 
-  ```
+ ```
 
 2. 次の行を追加して、SharePoint が証明書をルート証明機関として扱うようにします。
     
-  ```
+ ```
   
 New-SPTrustedRootAuthority -Name "HighTrustSampleCert" -Certificate $certificate
 
-  ```
+ ```
 
 3. 次の行を追加して、認証領域の ID を取得します。
     
-  ```
+ ```
   
 $realm = Get-SPAuthenticationRealm
 
-  ```
+ ```
 
 4. リモート Web アプリケーションは、アクセス トークンを使用して SharePoint データへアクセスします。アクセス トークンは SharePoint が信頼しているトークン発行者によって発行される必要があります。高信頼の SharePoint アドインでは、証明書がトークン発行者です。次の行を追加して、SharePoint が必要とする形式で発行者 ID を作成します。 ** _specific_issuer_GUID_@ _realm_GUID_**
     
-  ```
+ ```
   
 $specificIssuerId = "11111111-1111-1111-1111-111111111111"
 $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
 
-  ```
+ ```
 
 
     > **メモ**
       >  `$specificIssuerId` の値は GUID である必要があります。これは、運用環境では、各証明書に一意の発行者が必要なためです。ただし、同じ証明書を使用してすべての高信頼アドインをデバッグするというこのコンテキストでは、値をハードコードできます。何らかの理由で、ここで使用するのとは異なる GUID を使用する場合、 * **GUID のすべての文字を小文字にします*** 。現在、SharePoint インフラストラクチャでは、証明書発行者の GUID は小文字である必要があります。
 5. 次の行を追加して、証明書を信頼されたトークン発行者として登録します。 `-Name` パラメーターは一意である必要があるため、運用構成では名前の一部 (またはすべて) として GUID を使用するのが一般的ですが、このコンテキストではわかりやすい名前を使用できます。 `-IsTrustBroker` スイッチは、開発するすべての高信頼アドインに同じ証明書を使用できるようにするために必要です。トークン発行者をすぐに登録するには、 `iisreset` コマンドが必要です。このコマンドがないと、新しい発行者が登録されるまでに最大 24 時間待たなければならない場合があります。
     
-  ```
+ ```
   
 New-SPTrustedSecurityTokenIssuer -Name "High Trust Sample Cert" -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 iisreset 
 
-  ```
+ ```
 
 6. 通常、SharePoint 2013 では自己署名入り証明書を使用できません。したがって、デバッグ用に自己署名入り証明書を使用するときは、次の行を追加して、リモート Web アプリケーションが SharePoint を呼び出すときに HTTPS を使用するという、SharePoint の通常の要件を無効にします。無効にしない場合、リモート Web アプリケーションが自己署名入り証明書を使用して SharePoint を呼び出すときに **403 (forbidden)** メッセージが表示されます。この手順は後で元に戻します。HTTPS 要件を無効にすることで、リモート Web アプリケーションから SharePoint への要求は暗号化されませんが、証明書はアクセス トークンの信頼できる発行者として引き続き使用されます (これは高信頼の SharePoint アドインの主要な目的です)。
     
-  ```
+ ```
   
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
 
-  ```
+ ```
 
 7. HighTrustConfig-ForDebugOnly.ps1 という名前でファイルを保存します。
     
   
 8. 管理者として **SharePoint 管理シェル**を開き、次の行を使用してファイルを実行します。
     
-  ```
+ ```
   
 ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ## 高信頼の SharePoint アドインを作成する
@@ -446,10 +446,10 @@ $serviceConfig.Update()
   
 3. 管理者として [ **SharePoint 管理シェル**] を開き、次の行を使用してファイルを実行します。
     
-  ```
+ ```
   
 ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ### リモート Web アプリケーションを再構成するには

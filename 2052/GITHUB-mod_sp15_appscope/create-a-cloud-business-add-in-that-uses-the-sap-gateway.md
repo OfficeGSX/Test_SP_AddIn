@@ -104,7 +104,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
     
 
 
-  ```cs
+ ```cs
   
 // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
@@ -145,7 +145,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
                 return accessToken.Item1;
             }
   }
-  ```
+ ```
 
 - **BoxXDataService**
     
@@ -155,7 +155,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
     
 
 
-  ```cs
+ ```cs
   
 [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
@@ -187,7 +187,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
         {
             BoxXDataDeleter.DeleteInventoryItem(carInventoryItem.ID);
  }
-  ```
+ ```
 
 - **CarInventoryBoxXDataOperation**
     
@@ -331,7 +331,7 @@ LightSwitch 可在设计器中添加两个数据源之间的关系，以支持�
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?> 
 - <edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
@@ -370,7 +370,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
 </edmx:DataServices>
 </edms:Edmx>               
 
-  ```
+ ```
 
 
     这是我们的测试数据库，"属性类型"和"可为空值"基于具体方案。ID 为 PropertyRef，OData CRUD 操作基于 ID。StockNo 属性用于将数据与 SharePoint 图片库中存储的汽车图片进行混搭。
@@ -378,7 +378,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   
 -  *为 RIA 服务定义的数据模型* 
     
-  ```cs
+ ```cs
   
 public interface IInventoryItem
     	{
@@ -426,7 +426,7 @@ public interface IInventoryItem
         bool CopyFrom(IInventoryCollection other);
 }
 
-  ```
+ ```
 
 
     未包括在 SAP 数据库架构中的任何属性均可忽略。例如，出于可伸缩性考虑，此处添加了 **Images** 属性。此数据模型是真实 SAP 数据库和 SellerDashboard.Server 数据源之间的中间层。LightSwitch 项目具有两个组件：View 和 Server。当您在服务器端添加外部数据源时，LightSwitch 将帮助您构建一个抽象数据层，此数据层已添加到服务器端的数据源中。
@@ -547,8 +547,7 @@ SellerDashboard 是一款 SharePoint 提供程序托管的外接程序，支持�
     
 
 
-
-```cs
+```cs
 
 protected override void Page_Load(object sender, EventArgs e)
 {
@@ -572,8 +571,7 @@ protected override void Page_Load(object sender, EventArgs e)
      }
 
      base.Page_Load(sender, e);
- }
-```
+ }```
 
 有关详细信息，请参阅代码示例中的 SellerDashBoard.Server/SharePointLaunch.aspx.cs 和 AADAuthLib/AuthUtil.cs。
   
@@ -596,8 +594,7 @@ SellerDashboard.Server 包括 SharePointContext.cs 和 TokenHelper.cs 文件，�
     
 
 
-
-```cs
+```cs
 
         public void CreateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -628,8 +625,7 @@ BoxXDataReader
 
                 dataCollection.CopyFrom(filteredCollection);
             }
-        }
-```
+        }```
 
  **BoxXDataUpdater**
   
@@ -637,8 +633,7 @@ BoxXDataReader
     
 
 
-
-```cs
+```cs
 
 public void UpdateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -666,8 +661,7 @@ BoxXDataDeleter
 
             // Delete existing entry request execute
             IODataResponseMessage responseMessage = requestMessage.GetResponse();
-        }
-```
+        }```
 
 
 ### 将照片上载到 SharePoint 图片库
@@ -686,16 +680,14 @@ BoxXDataDeleter
     
 
 
-
-```
+```
 
 uploadForm = $(
              '<form id="uploadForm" method="POST" enctype="multipart/form-data" action="' + API_URL + '"  data-ajax="false" target="uploadTargetIFrame">' +
              '   <input name="fileInput" id="fileInput" type="file" size="30" data-theme="c" accept="image/*" multiple="true"/>' +
              '   <input type="hidden" name=' + screen.InventoryItem.StockNo + '>' +
              '</form>');
-
-```
+```
 
 添加用于缓存图片 URL 的逻辑以及图片延迟逻辑。
   
@@ -703,8 +695,7 @@ uploadForm = $(
     
 
 
-
-```
+```
 
 function completeUpload(uploadedFiles) {
             var fullImageUrl = uploadedFiles[0];
@@ -716,8 +707,7 @@ function completeUpload(uploadedFiles) {
             setCacheUrl(screen.InventoryItem.StockNo, fullImageUrl + "*#00#" + thumbnailUrl);
             setDetailsCarPicture(fullImageUrl);
             screen.closePopup();
-        }
-```
+        }```
 
  **对于 PhotosController.cs 更改：**
   
@@ -733,8 +723,7 @@ function completeUpload(uploadedFiles) {
     
 
 
-
-```cs
+```cs
 
 private ClientContext AppWebContext
     {
@@ -747,8 +736,7 @@ private ClientContext AppWebContext
             return appWebContext;
         }
     }
-
-```
+```
 
  **对于 PhotoListHelper.cs 更改：**
   
@@ -760,8 +748,7 @@ private ClientContext AppWebContext
     
 
 
-
-```cs
+```cs
 
             // Delete the old picture item
             foreach (ListItem item in items)
@@ -796,8 +783,7 @@ private ClientContext AppWebContext
             }
 
 
-
-```
+```
 
 
 ### 用户体验
@@ -860,20 +846,20 @@ private ClientContext AppWebContext
   
 4. 将外接程序设置为启动项目，并运行此项目。您可以在 ContosoMotorsCarInventoryWeb/Web.config 文件中找到 ClientID 和 ClientSecret 值。代码应类似于：
     
-  ```XML
+ ```XML
   
 <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6"/>
 <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk="/>
-  ```
+ ```
 
 5. 使用上述值替换 ContosoMotorsCarInventoryWeb/TokenHelper.cs 中的"托管外接程序配置"上 ClientID 和 ClientSecret 的值。代码应类似于：
     
-  ```cs
+ ```cs
   
 private static readonly string ClientId = "06af1059-8916-4851-a271-2705e8cf53c6";
 private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=";
 
-  ```
+ ```
 
 
 ### 在 Azure AD 中注册您的 Web 应用程序
@@ -967,14 +953,14 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 
 1. 找到 SellerDashboardHTMLClient/UserCode.js，并查找以下代码占位符：
     
-  ```cs
+ ```cs
   
 sharePointUrl: "Replace with your SharePoint host site",
 // https://fake_domain.sharepoint.com/sites/Developer
 SharePointRootUrl: "Replace with your SharePoint root site"
  // https://fake_domain.sharepoint.com/ 
 
-  ```
+ ```
 
 
 1. 将 sharePointUrl 值替换为您的 SharePoint 网站，即，将安装外接程序且包含图片库的网站。
@@ -985,7 +971,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
   
 2. 在 SellerDashboard 解决方案中找到 SellerDashboard.Server/Web.config 并查找以下配置占位符：
     
-  ```XML
+ ```XML
   
 <add key="ClientSecret" value="MwMp1yxOyy8BGhfD5d9VvuqlRbhaqWESxVNLzgpYNHU=" />
 <add key="ClientId" value="ed138b32-c89d-4f22-b74d-7d9d5044b260" />
@@ -1006,7 +992,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
 <add key="Ida:DefaultID" value="1024" />
 <add key="Ida:DefaultStockNo" value="2048" />
 <add key="Ida:SPPicLib" value="Replace with you picture library name, for example ContosoMotorsPictureLibrary" />
-  ```
+ ```
 
 
 1. 将 ClientId 和 ClientSecret 值替换为您在上一过程中获取的值。
@@ -1041,7 +1027,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
     
 
 
-  ```XML
+ ```XML
   
 ZCAR_POC_SRV.ContosoMotors
 
@@ -1049,7 +1035,7 @@ ZCAR_POC_SRV.ContosoMotors
      <EntitySet sap:content-version="1" Name="ContosoMotorsCollection" sap:searchable="true" EntityType="ZCAR_POC_SRV.ContosoMotors"/>
 </EntityContainer>
 <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://contoso.cloudapp.net:8080/perf/sap/opu/odata/sap/ZCAR_POC_SRV.ContosoMotors"/>
-  ```
+ ```
 
 10. 将 Ida:SPPicLib 值替换为您在 SharePoint 主机网站中创建的图片库名称。
     

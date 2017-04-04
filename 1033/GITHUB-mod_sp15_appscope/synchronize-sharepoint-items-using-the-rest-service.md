@@ -34,8 +34,7 @@ The request returns ADO **rowset** XML which includes rows corresponding to any 
 |**Example request** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**Example POST Body** <br/> |
-|
-```XML
+|```XML
 
 { 'd' : {
   'query': { 
@@ -58,8 +57,7 @@ The request returns ADO **rowset** XML which includes rows corresponding to any 
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-
-```
+```
 
 |
    

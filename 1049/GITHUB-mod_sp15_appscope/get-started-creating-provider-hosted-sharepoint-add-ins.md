@@ -238,7 +238,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
   
 2. Удалите разметку в теге **<body>** файла Pages/Default.aspx веб-приложения, а затем добавьте следующие элементы управления HTML и ASP.NET в **<body>**. В этом примере используется элемент управления  [UpdatePanel](https://msdn.microsoft.com/library/System.Web.UI.UpdatePanel.aspx) , который включает частичную отрисовку страницы.
     
-  ```HTML
+ ```HTML
   
 <form id="form1" runat="server">
   <div>
@@ -281,22 +281,22 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+ ```
 
 3. Добавьте следующие объявления в файл Default.aspx.cs веб-приложения.
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+ ```
 
 4. В файле Default.aspx.cs веб-приложения добавьте указанные ниже переменные в класс  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) .
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
@@ -305,11 +305,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+ ```
 
 5. Добавьте метод  `RetrieveWithCSOM` в класс [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) . Этот метод использует CSOM SharePoint, чтобы получать сведения о вашем сайте и отображать их на странице.
     
-  ```cs
+ ```cs
   
 // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
@@ -358,11 +358,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+ ```
 
 6. Добавьте метод  `CSOM_Click` в класс [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) . Этот метод вызывает событие, которое возникает, когда пользователь переходит по ссылке **Заполнение данными**.
     
-  ```cs
+ ```cs
   
 protected void CSOM_Click(object sender, EventArgs e)
 {
@@ -375,11 +375,11 @@ protected void CSOM_Click(object sender, EventArgs e)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+ ```
 
 7. Замените существующий метод  `Page_Load` указанным ниже. Метод `Page_Load` использует методы файла TokenHelper.cs, чтобы извлечь контекст из объекта `Request` и получить маркер доступа от Служба контроля доступа Microsoft Azure (ACS).
     
-  ```cs
+ ```cs
   
 // The Page_load method fetches the context token and the access token.
 // The access token is used by all of the data retrieval methods.
@@ -407,11 +407,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+ ```
 
 8. После этого файл Default.aspx.cs должен выглядеть следующим образом.
     
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -540,7 +540,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+ ```
 
 9. Нажмите клавишу F5, чтобы развернуть и запустить надстройку. Если появится окно **Оповещение системы безопасности** с запросом о доверии самозаверяющему сертификату Localhost, нажмите кнопку **Да**.
     

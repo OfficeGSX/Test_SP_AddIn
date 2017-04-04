@@ -163,7 +163,7 @@ ms.assetid: 16913e6d-4fc6-4c5e-84a4-6c2688703798
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -254,7 +254,7 @@ Categories from the Northwind database exposed as an OData service:
     }
 })();
 </script>
-  ```
+ ```
 
 
 ### (Необязательно) Изменение страницы Default.aspx для использования веб-прокси с помощью конечной точки REST
@@ -287,7 +287,7 @@ Categories from the Northwind database exposed as an OData service:
     
   
 
-  ```
+ ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -393,7 +393,7 @@ Categories from the Northwind database exposed as an OData service:
 })();
 </script>
 
-  ```
+ ```
 
 
 ### Изменение файла манифеста надстройки
@@ -404,12 +404,12 @@ Categories from the Northwind database exposed as an OData service:
   
 2. Скопируйте следующее определение **RemoteEndPoints** в качестве дочернего элемента узла **App**.
     
-  ```XML
+ ```XML
   
 <RemoteEndpoints>
     <RemoteEndpoint Url=" http://services.odata.org" />
 </RemoteEndpoints>
-  ```
+ ```
 
 
     Элемент **RemoteEndpoint** используется для указания удаленного домена. Веб-прокси проверяет, объявлены ли запросы к удаленным доменам в манифесте надстройки. Вы можете создать до 20 записей в элементе **RemoteEndpoints**. Учитывается только часть источника;  `http://domain:port` и `http://domain:port/website` считаются одной и той же конечной точкой. Вы можете осуществлять вызовы множества различных конечных точек в одном домене с помощью одного определения **RemoteEndpoint**.
@@ -462,7 +462,7 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|Необработанное исключение **SP is undefined**. <br/> |Убедитесь, что можно получить доступ к файлу SP.RequestExecutor.js в окне браузера.  <br/> Если вы используете локальный сервер в качестве среды разработки, необходимо отключить проверку обратной связи IIS. Выполните следующую команду в командной строке Windows PowerShell.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **Внимание!**> Отключение проверки обратной связи IIS в производственной среде не рекомендуется.           |
+|Необработанное исключение **SP is undefined**. <br/> |Убедитесь, что можно получить доступ к файлу SP.RequestExecutor.js в окне браузера.  <br/> Если вы используете локальный сервер в качестве среды разработки, необходимо отключить проверку обратной связи IIS. Выполните следующую команду в командной строке Windows PowerShell.  <br/>```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **Внимание!**> Отключение проверки обратной связи IIS в производственной среде не рекомендуется.           |
 |Размер ответа от удаленной конечной точки превышает настроенный предел.  <br/> |Размер ответа на запросы веб-прокси не может превышать 200 КБ.  <br/> |
    
 

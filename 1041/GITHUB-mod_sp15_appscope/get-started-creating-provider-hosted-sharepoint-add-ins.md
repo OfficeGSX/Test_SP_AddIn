@@ -238,7 +238,7 @@ Office 365 プランを取得する方法は 3 つあります。
   
 2. Web アプリケーションの Pages/Default.aspx ファイルの **<body>** タグ内にあるすべてのマークアップを削除してから、以下の HTML と ASP.NET コントロールを **<body>** に追加します。このサンプルでは、 [UpdatePanel](https://msdn.microsoft.com/library/System.Web.UI.UpdatePanel.aspx) コントロールを使用して、部分ページ レンダリングを可能にしています。
     
-  ```HTML
+ ```HTML
   
 <form id="form1" runat="server">
   <div>
@@ -281,22 +281,22 @@ Office 365 プランを取得する方法は 3 つあります。
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+ ```
 
 3. 以下の宣言を Web アプリの Default.aspx.cs ファイルに追加します。
     
-  ```cs
+ ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+ ```
 
 4. Web アプリケーションの Default.aspx.cs ファイルで、次の変数を  [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) クラス内に追加します。
     
-  ```cs
+ ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
@@ -305,11 +305,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+ ```
 
 5.  `RetrieveWithCSOM` メソッドを [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) クラス内に追加します。このメソッドは、SharePoint CSOM を使用してサイトに関する情報を取得し、ページ上に表示します。
     
-  ```cs
+ ```cs
   
 // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
@@ -358,11 +358,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+ ```
 
 6.  `CSOM_Click` メソッドを [Page](https://msdn.microsoft.com/library/System.Web.UI.Page.aspx) クラス内に追加します。このメソッドは、ユーザーが [ **データの入力**] リンクをクリックしたときに発生するイベントをトリガーします。
     
-  ```cs
+ ```cs
   
 protected void CSOM_Click(object sender, EventArgs e)
 {
@@ -375,11 +375,11 @@ protected void CSOM_Click(object sender, EventArgs e)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+ ```
 
 7. 既存の  `Page_Load` メソッドを以下のコードに置き換えます。 `Page_Load` メソッドは TokenHelper.cs ファイルのメソッドを使用して、 `Request` オブジェクトからコンテキストを取得し、Microsoft Azure アクセス制御サービス (ACS) からアクセス トークンを取得します。
     
-  ```cs
+ ```cs
   
 // The Page_load method fetches the context token and the access token.
 // The access token is used by all of the data retrieval methods.
@@ -407,11 +407,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+ ```
 
 8. 終了すると、Default.aspx.cs ファイルは次のようになります。
     
-  ```cs
+ ```cs
   
 using System;
 using System.Collections.Generic;
@@ -540,7 +540,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+ ```
 
 9. F5 キーを使用して、アドインを展開して実行します。自己署名 Localhost 証明書を信頼するか尋ねる [ **セキュリティの警告**] ウィンドウが表示されたら、[ **はい**] を選択します。
     

@@ -129,7 +129,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
 
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="2.0.0.0">
@@ -144,7 +144,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
 ### コンポーネントをアドインに追加するには
@@ -158,16 +158,16 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
   
 3. それぞれの新しい要素マニフェストでは、 [ElementManifest](http://msdn.microsoft.com/library/5a6a2865-5d31-45a2-a402-6da6e0f5567a%28Office.15%29.aspx) 要素をフィーチャー XML の **ElementManifests** 要素と **ApplyElementManifests** 要素の両方に子として追加します。(まったく同じ **ElementManifest** 要素を両方の場所に追加します。) 要素の **Location** 属性は elements.2.0.0.0.xml ファイルの相対パスを指している必要があります。たとえば、CustomList という名前のリストを追加した場合、 **ElementManifest** 要素は次のようになります。
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="MyCustomList\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 4. コンポーネントの種類の一部は、ファイルをプロジェクトに追加します。たとえば、リストを追加すると schema.xml ファイルが作成され、ページを追加するとページ ファイルが作成されます。それぞれのファイルで、 [ElementFile](http://msdn.microsoft.com/library/bd43638e-8f18-4a0d-b122-1c055f97aa71%28Office.15%29.aspx) 要素を **ElementManifests** 要素に子として追加します。( **ApplyElementManifests** 要素には追加しません。) **Location** 属性は、ファイルの相対パスを指している必要があります。たとえば、リストを追加した場合、schema.xml の **ElementFile** 要素は次のようになります。
     
-  ```XML
+ ```XML
   <ElementFile Location="MyCustomList\\Schema.xml" />
-  ```
+ ```
 
 5. 以前のバージョンのアドインに既に存在した種類の別のアイテムを追加する場合、Office Developer Tools for Visual Studio は新しい要素マニフェストを作成するのではなく、既存の要素マニフェストに新しいアイテムに対するリファレンスを追加します。たとえば、標準的な方法でアドイン Web にページを追加する場合は、 **[ソリューション エクスプローラー]** の **[ページ]** ノードを右クリックし、 **[追加] | [新しいアイテム] | [ページ] | [追加]** の順に移動します。Office Developer Tools for Visual Studio は、新しい要素マニフェストを作成するのではなく、既存の要素マニフェスト ファイル (通常は elements.xml と呼ばれる) 内の **Pages** モジュールに新しい **File** 要素を追加します。
     
@@ -194,7 +194,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
   
 6. フィーチャーのコンテンツ タイプにフィールドを追加する場合、 [AddContentTypeField](http://msdn.microsoft.com/library/cb04a3ac-f41a-4ffe-aaa1-d4bf3fb6347d%28Office.15%29.aspx) 要素を **VersionRange** セクションに追加します。 **ContentTypeId** 属性と **FieldId** 属性に正しい値を割り当ててください。また、 **PushDown** 属性を使用して、新しいフィールドを派生コンテンツ タイプに追加するかどうか指定することもできます。次に例を示します。
     
-  ```XML
+ ```XML
   <VersionRange>
   <AddContentTypeField 
     ContentTypeId="0x0101000728167cd9c94899925ba69c4af6743e"
@@ -202,7 +202,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
     PushDown="TRUE" />
   <!-- Other child elements of VersionRange -->
 </VersionRange>
-  ```
+ ```
 
 
 ### アドインの既存のコンポーネントを変更するには
@@ -223,28 +223,28 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
   
 4. 次の例に示すように、新しいマニフェスト ファイルを参照する **ApplyElementManifests** セクションに **ElementManifest** 要素を追加します。
     
-  ```XML
+ ```XML
   
 <ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
-  ```
+ ```
 
 
     > **メモ**
       >  元のマニフェストを削除しないでください。フィーチャー XML では、古いマニフェストと新しいマニフェストの両方が使用されます。> **ElementFile** で参照されているファイルが変更された場合でも、 **ElementFile** 要素を **ElementManifests** セクションから **ApplyElementManifests** セクションにコピーしないでください。
 2. **ApplyElementManifests** セクションで参照されたすべての要素マニフェスト ファイルを開いて、すべての [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx) 要素に **ReplaceContents** 属性があり、 **TRUE** に設定されていることを確認します。以下に例を示します。これは Office Developer Tools for Visual Studio によって既に実行されているかもしれませんが、確認してください。以前のバージョンのアドインの要素マニフェストに対してもそのようにしてください。これは、既存の要素マニフェスト ファイルを編集するのが有効な数少ない方法の 1 つです。
     
-  ```XML
+ ```XML
   <Module Name="Pages">
   <File Path="Pages\\Default.aspx" Url="Pages/Default.aspx" ReplaceContent="TRUE" />
 </Module>
-  ```
+ ```
 
 3. 「 [アドイン Web の Web ページに Web パーツを含める](include-a-web-part-in-a-webpage-on-the-add-in-web.md)」で説明されているように、ページには Web パーツを埋め込むことができます。Web パーツ付きのページを変更する (または Web パーツのプロパティを変更する) 場合は、追加の手順があります。以下のマークアップをページに追加して、SharePoint が Web パーツの 2 つ目のコピーをページに追加しないようにします。マークアップは、ID  `PlaceHolderAdditionalPageHead` を使用して **asp:Content** 要素に追加する必要があります。(初めてページを作成したときに、Office Developer Tools for Visual Studio によって既に追加されているかもしれませんが、マークアップがあることを確認してください。)
     
-  ```XML
+ ```XML
   
 <meta name="WebPartPageExpansion" content="full" />
-  ```
+ ```
 
 
     > **メモ**
@@ -259,12 +259,12 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
   
 3. 以下のマークアップを **asp:Content** 要素に追加し、 _{RelativePathToNewPageFile}_ を新しいパスとファイル名に置き換えます。このスクリプトによりブラウザーが新しいページにリダイレクトされ、クエリ パラメーターが追加されます。さらに、古いページがブラウザーの履歴から排除されます。
     
-  ```
+ ```
   <script type="text/javascript">
         var queryString = window.location.search.substring(1);
         window.location.replace("{RelativePathToNewPageFile}" + "?" + queryString);
 </script>
-  ```
+ ```
 
 4. ページにある他のすべての **asp:Content** 要素を削除します。
     
@@ -282,8 +282,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
   
     
     
-
-```XML
+```XML
 
 <Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="MyApp Feature1"
       Description="SharePoint Add-in Feature" Id="85d309a8-107e-4a7d-b3a2-51341d3b11ff" 
@@ -308,8 +307,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
       </VersionRange>
   </UpgradeActions>
 </Feature>
-
-```
+```
 
 
 ### アドイン Web の 2 回目以降の更新
@@ -336,7 +334,7 @@ SharePoint アドインを 2 回目 (または 3 回目以降) に更新する�
   
 4. 以前の **VersionRange** 要素 － アドインを最後に (この例では 1.0.0.0 から 2.0.0.0 に) 更新したときに追加したもの － に移動し、 **EndVersion** 属性を追加します。この **VersionRange** のアップグレード アクションは、まだ適用されていないアドインのバージョン (バージョン 1.0.0.0) に適用する必要がありますが、既に適用済みのバージョン (バージョン 2.0.0.0) には再適用する必要がありません。 **EndVersion** 値は *排他的*  であるため、この値はアップグレード アクションを *適用しない*  最も小さいバージョンに設定します。この例では 2.0.0.0 に設定します。ファイルは次のようになります。
     
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="3.0.0.0">
@@ -352,14 +350,14 @@ SharePoint アドインを 2 回目 (または 3 回目以降) に更新する�
    </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     フィーチャーをアップグレードするごとに、同じパターンを実行します。最新更新アクションに対して新しい **VersionRange** を追加します。次に、 **EndVersion** 要素を *前の* **VersionRange** 要素に追加し、前のバージョン番号に設定します。この例で、3.0.0.0 から 4.0.0.0 への更新ではファイルは次のようになります。
     
 
 
-  ```XML
+ ```XML
   
 <Feature <!-- Some attributes omitted -->
                Version="4.0.0.0">
@@ -378,7 +376,7 @@ SharePoint アドインを 2 回目 (または 3 回目以降) に更新する�
     </VersionRange>
   </UpgradeActions>
 </Feature>
-  ```
+ ```
 
 
     最新の **VersionRange** 要素には **BeginVersion** 属性や **EndVersion** 属性がないことに注意してください。この **VersionRange** 要素のアップグレード アクションはフィーチャーの以前のすべてのバージョンに適用されます。これは、最新の変更内容はすべてこの **VersionRange** で参照されており、フィーチャーのインスタンスにはいずれもまだ反映していないためです。

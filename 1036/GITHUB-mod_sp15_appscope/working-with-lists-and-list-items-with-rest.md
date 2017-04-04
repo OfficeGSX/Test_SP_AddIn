@@ -28,16 +28,14 @@ L'exemple ci-après montre comment **récupérer** une liste spécifique lorsque
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 
 > **REMARQUE**
@@ -52,16 +50,14 @@ L'exemple ci-après montre comment **récupérer** une liste spécifique lorsque
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 Le code XML ci-après donne un exemple des propriétés de liste qui sont renvoyées lorsque vous demandez le type de contenu XML.
   
@@ -69,8 +65,7 @@ Le code XML ci-après donne un exemple des propriétés de liste qui sont renvoy
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -112,8 +107,7 @@ Le code XML ci-après donne un exemple des propriétés de liste qui sont renvoy
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>
-```
+  </content>```
 
 
 > **REMARQUE**
@@ -130,8 +124,7 @@ L'exemple ci-après montre comment **créer** une liste.
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -142,8 +135,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 L'exemple ci-après montre comment **mettre à jour** une liste à l'aide de la méthode **MERGE**.
   
@@ -151,8 +143,7 @@ L'exemple ci-après montre comment **mettre à jour** une liste à l'aide de la 
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -164,8 +155,7 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 L'exemple suivant montre comment **créer** un **champ personnalisé** pour une liste.
   
@@ -173,8 +163,7 @@ L'exemple suivant montre comment **créer** un **champ personnalisé** pour une 
     
 
 
-
-```
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -183,8 +172,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 L'exemple ci-après montre comment **supprimer** une liste.
   
@@ -192,8 +180,7 @@ L'exemple ci-après montre comment **supprimer** une liste.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -202,8 +189,7 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-
-```
+```
 
 
 ## Utilisation d'éléments de liste à l'aide de l'interface REST
@@ -220,16 +206,14 @@ L'exemple ci-après montre comment **récupérer** tous les éléments d'une lis
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 L'exemple ci-après montre comment **récupérer** un élément de liste spécifique.
   
@@ -237,16 +221,14 @@ L'exemple ci-après montre comment **récupérer** un élément de liste spécif
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 Le code XML ci-après donne un exemple des propriétés d'élément de liste qui sont renvoyées lorsque vous demandez le type de contenu XML.
   
@@ -254,8 +236,7 @@ Le code XML ci-après donne un exemple des propriétés d'élément de liste qui
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -272,8 +253,7 @@ Le code XML ci-après donne un exemple des propriétés d'élément de liste qui
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>
-```
+</content>```
 
 L'exemple ci-après montre comment **créer** un élément de liste.
   
@@ -288,8 +268,7 @@ L'exemple ci-après montre comment **créer** un élément de liste.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -299,8 +278,7 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 L'exemple ci-après montre comment **mettre à jour** un élément de liste.
   
@@ -315,8 +293,7 @@ L'exemple ci-après montre comment **mettre à jour** un élément de liste.
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -328,8 +305,7 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 L'exemple ci-après montre comment **supprimer** un élément de liste.
   
@@ -337,8 +313,7 @@ L'exemple ci-après montre comment **supprimer** un élément de liste.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -347,8 +322,7 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Utilisation de valeurs ETag pour déterminer la version des documents et des éléments de liste

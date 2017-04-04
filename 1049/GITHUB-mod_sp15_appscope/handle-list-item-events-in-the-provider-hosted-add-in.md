@@ -70,7 +70,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
     
   
 
-  ```cs
+ ```cs
   
 private static void CreateExpectedShipmentsList()
  {
@@ -121,14 +121,14 @@ private static void CreateExpectedShipmentsList()
         }
      }
  }
-  ```
+ ```
 
 2. В методе  `DeployChainStoreComponentsToHostWeb` добавьте указанную ниже строку перед строкой `RemoteTenantVersion = localTenantVersion`.
     
-  ```
+ ```
   
 CreateExpectedShipmentsList();
-  ```
+ ```
 
 
 ## Создание приемника событий элемента списка
@@ -171,7 +171,7 @@ CreateExpectedShipmentsList();
     
   
 
-  ```cs
+ ```cs
   using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
@@ -206,11 +206,11 @@ namespace ChainStoreWeb.Services
         }
     }
 }
-  ```
+ ```
 
 5. Добавьте указанный ниже код в метод  `ProcessOneWayEvent`. Обратите внимание, что **ItemUpdated**  единственное событие, которое будет обрабатываться в данном примере, поэтому вместо оператора **switch** можно использовать простую структуру **if**. Приемники событий обычно обрабатывают несколько событий, поэтому желательно, чтобы вы изучили шаблон, который вы (как разработчик надстроек SharePoint) чаще всего будете использовать в своих обработчиках событий.
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -220,11 +220,11 @@ switch (properties.EventType)
                     
         break;
 }  
-  ```
+ ```
 
 6. Замените  `TODO12` указанным ниже кодом. Здесь мы опять используем структуру **switch** в случае, когда достаточно использовать простую структуру **if**. Мы делаем это, чтобы показать вам стандартный шаблон, используемый в приемниках событий SharePoint.
     
-  ```cs
+ ```cs
   
 switch (properties.ItemEventProperties.ListTitle)
 {
@@ -234,7 +234,7 @@ switch (properties.ItemEventProperties.ListTitle)
 
         break;
 }
-  ```
+ ```
 
 7. Код, выполняемый по прибытии отгруженного элемента, должен выполнять два указанных ниже действия.
     
@@ -249,21 +249,21 @@ switch (properties.ItemEventProperties.ListTitle)
     
 
 
-  ```cs
+ ```cs
   
 bool updateComplete = TryUpdateInventory(properties);
 if (updateComplete)
 {
     RecordInventoryUpdateLocally(properties);
 }
-  ```
+ ```
 
 
     Теперь метод  `ProcessOneWayEvent` должен иметь указанный ниже вид.
     
 
 
-  ```cs
+ ```cs
   
 public void ProcessOneWayEvent(SPRemoteEventProperties properties)
 {
@@ -284,11 +284,11 @@ public void ProcessOneWayEvent(SPRemoteEventProperties properties)
             break;
     }          
 }
-  ```
+ ```
 
 8. Добавьте указанный ниже метод в класс  `RemoteEventReceiver1`.
     
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -300,7 +300,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
 
     return successFlag;
 }
-  ```
+ ```
 
 9. В списке **Expected Shipments** (Ожидаемые отгрузки) имеется пять столбцов, но нам не нужно, чтобы обработчик реагировал на большинство видов обновлений элемента. Например, если пользователь исправляет написание названия поставщика, возникает событие обновления элемента, но при этом наш обработчик не должен ничего делать. Он должен действовать только тогда, когда полю **Arrived** (Прибыл) присваивается значение **Yes** (Да).
     
@@ -310,7 +310,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     
 
 
-  ```cs
+ ```cs
   
 var arrived = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Arrived"]);
 var addedToInventory = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Added_x0020_to_x0020_Inventory"]);
@@ -322,7 +322,7 @@ if (arrived &amp;&amp; !addedToInventory)
 
     successFlag = true;
 }
-  ```
+ ```
 
 10. Замените  `TODO15` указанным ниже кодом. По большей части это код для SQL и ASP.NET, поэтому мы не будем подробно рассматривать его, но обратите внимание на указанные ниже моменты.
     
@@ -336,7 +336,7 @@ if (arrived &amp;&amp; !addedToInventory)
     
   
 
-  ```cs
+ ```cs
   
 using (SqlConnection conn = SQLAzureUtilities.GetActiveSqlConnection())
 using (SqlCommand cmd = conn.CreateCommand())
@@ -352,14 +352,14 @@ using (SqlCommand cmd = conn.CreateCommand())
     quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
     cmd.ExecuteNonQuery();
 }
-  ```
+ ```
 
 
     Мы еще не закончили работу с методом  `TryUpdateInventory`, но на данный момент он должен иметь указанный ниже вид.
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -388,7 +388,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }  
     return successFlag;
 }
-  ```
+ ```
 
 11. Когда метод  `TryUpdateInventory` возвращает значение **true**, наш обработчик вызывает (еще не написанный) метод, который обновляет тот же элемент в списке **Expected Shipments** (Ожидаемые отгрузки), задавая для поля **Added to Inventory** (Добавлен в запасы) значение **Yes** (Да). Он представляет собой событие обновления элемента, поэтому обработчик будет вызван еще раз. (Так как теперь поле **Added to Inventory** [Добавлен в запасы] имеет значение **Yes** [Да], обработчик не будет еще раз добавлять одну и ту же отгрузку на склад, но при этом он по-прежнему будет вызван.)
     
@@ -405,13 +405,13 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
   
 12. Добавьте указанный ниже блок **catch** сразу же после блока **try**.
     
-  ```cs
+ ```cs
   
 catch (KeyNotFoundException)
 {
     successFlag = false;
 }
-  ```
+ ```
 
 
     > **Примечание**
@@ -421,7 +421,7 @@ catch (KeyNotFoundException)
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -457,11 +457,11 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }
     return successFlag;
 }
-  ```
+ ```
 
 13. Добавьте указанный ниже метод в класс  `RemoteEventReceiver1`. Этот шаблон кода должен быть знаком вам по предыдущим статьям этой серии. Тем не менее есть одно отличие. Код получает объект **ClientContext**, вызывая метод **TokenHelper.CreateRemoteEventReceiverClientContext**, а не метод **SharePointContext.CreateUserClientContextForSPHost**, который мы использовали в коде, который вызывался в SharePoint из страниц, например из страницы EmployeeAdder. Основная причина использования разных методов для получения объекта **ClientContext** состоит в том, что SharePoint передает приемникам событий информацию, необходимую для создания таких объектов, другим способом, чем страницам. В случае приемников событий он передает объект **SPRemoteEventProperties**, а в случае страниц он передает специальное поле, называемое маркером контекста, в тексте запроса, запускающего страницу надстройки.
     
-  ```cs
+ ```cs
   
 private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 {
@@ -474,7 +474,7 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 14. Закройте и сохраните файл кода приемника.
     
@@ -489,14 +489,14 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 
 1. Откройте файл SharePointContentDeployer.cs и добавьте указанную ниже строку в метод  `DeployChainStoreComponentsToHostWeb` сразу же за строкой, в которой создается список **Expected Shipments** (Ожидаемые отгрузки). Мы добавим этот метод на следующем этапе. Обратите внимание, что в метод мы передаем объект **HttpRequest**, который начальная страница надстройки передавала в метод  `DeployChainStoreComponentsToHostWeb`.
     
-  ```cs
+ ```cs
   
 RegisterExpectedShipmentsEventHandler(request);
-  ```
+ ```
 
 2. Добавьте указанный ниже метод в класс  `SharePointComponentDeployer`. 
     
-  ```cs
+ ```cs
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())    
@@ -514,11 +514,11 @@ RegisterExpectedShipmentsEventHandler(request);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 3. Замените  `TODO16` указанными ниже строками. Обратите внимание, что для приемников событий существует "легковесный" класс ***CreationInformation**, аналогичный тому, который используется для списков и элементов списков. 
     
-  ```cs
+ ```cs
   
 EventReceiverDefinitionCreationInformation receiver = new EventReceiverDefinitionCreationInformation();
 receiver.ReceiverName = "ExpectedShipmentsItemUpdated";
@@ -528,7 +528,7 @@ receiver.EventType = EventReceiverType.ItemUpdated;
 
 expectedShipmentsList.EventReceivers.Add(receiver);
 
-  ```
+ ```
 
 4. Теперь вам необходимо сообщить SharePoint URL-адрес приемника событий. В рабочей среде это будет тот же домен, что и для удаленных страниц (с путем /Services/RemoteEventReceiver1.svc). Так как обработчик зарегистрирован в коде, выполняемом при первом запуске и размещенном в начальной странице надстройки, то домен находится в заголовке узла объекта **HttpRequest** для запроса, вызвавшего эту страницу. Наш код передал этот объект из страницы в метод `DeployChainStoreComponentsToHostWeb`, который затем передал его в метод  `RegisterExpectedShipmentsEventHandler`. Так что мы можем задать URL-адрес приемника с помощью указанного ниже кода.
     
@@ -538,7 +538,7 @@ expectedShipmentsList.EventReceivers.Add(receiver);
     
 
 
-  ```cs
+ ```cs
   
 #if DEBUG
                     receiver.ReceiverUrl = WebConfigurationManager.AppSettings["RERdebuggingServiceBusUrl"].ToString();
@@ -546,14 +546,14 @@ expectedShipmentsList.EventReceivers.Add(receiver);
                     receiver.ReceiverUrl = "https://" + request.Headers["Host"] + "/Services/RemoteEventReceiver1.svc"; 
 #endif
 
-  ```
+ ```
 
 
     Теперь весь метод  `RegisterExpectedShipmentsEventHandler` должен выглядеть, как указано ниже.
     
 
 
-  ```cs
+ ```cs
   
 private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {    
@@ -580,14 +580,14 @@ private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 5. Добавьте указанный ниже оператор **using** в начало файла.
     
-  ```cs
+ ```cs
   
 using System.Web.Configuration;
-  ```
+ ```
 
 6. Чтобы параметр  `DEBUG` гарантированно имел значение True тогда и только тогда, когда выполняется отладка надстройки, выполните указанную ниже подпроцедуру.
     
@@ -618,9 +618,9 @@ using System.Web.Configuration;
   
 7. Откройте файл web.config, а затем добавьте указанную ниже разметку в качестве дочерней разметки для элемента **appSettings**. Мы получим значение этого параметра в следующем разделе.
     
-  ```XML
+ ```XML
   <add key="RERdebuggingServiceBusUrl" value="" />
-  ```
+ ```
 
 
 ## Получение URL-адреса приемника для отладки
@@ -635,9 +635,9 @@ using System.Web.Configuration;
   
 2. Добавьте указанный ниже код в качестве самой первой строки в методе **ProcessEvent**.
     
-  ```cs
+ ```cs
   string debugEndpoint = System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri.ToString(); 
-  ```
+ ```
 
 3. В следующую за ней строку метода добавьте точку останова.
     

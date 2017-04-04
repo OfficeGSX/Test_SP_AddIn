@@ -133,7 +133,7 @@ Figure 1 shows a SharePoint webpage that is using the style sheet.
     
   
 
-  ```
+ ```
   
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StyleConsumer.aspx.cs" Inherits="StylesheetAppWeb.StyleConsumer" %>
 
@@ -226,7 +226,7 @@ Figure 1 shows a SharePoint webpage that is using the style sheet.
 </body>
 </html>
 
-  ```
+ ```
 
 
     In some cases, the user has to be authenticated to SharePoint before your page will be able to download the CSS and images for styling. Link tags do not automatically authenticate a user who is not already signed in. Consider loading a page resource from the add-in web in your webpage to force the user's authentication before linking to the CSS file. In this example, the blank.html page is loaded in an invisible IFrame.

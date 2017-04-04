@@ -87,8 +87,7 @@ SharePoint 外接程序包是文件扩展名为".app"且使用 [开放数据包�
 
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -113,8 +112,7 @@ SharePoint 外接程序包是文件扩展名为".app"且使用 [开放数据包�
     <RemoteWebApplication ClientId="1ee82b34-7c1b-471b-b27e-ff272accd564" />
   </AppPrincipal>
 </App>
-
-```
+```
 
 
 ### 外接程序清单中的 URL 标记

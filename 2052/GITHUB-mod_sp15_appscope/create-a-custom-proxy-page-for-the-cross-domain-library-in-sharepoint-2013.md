@@ -78,12 +78,12 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
   
 2. 将整个 **AppPrincipal** 元素替换为以下内容。
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **注释**
@@ -113,7 +113,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
 </html>
 
 
-  ```
+ ```
 
 
     > **重要信息**
@@ -209,7 +209,7 @@ ms.assetid: f3f87cdf-5cbf-47c9-9ce1-1ab65cd598de
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -217,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### 创建使用跨域库的 SharePoint 页面
@@ -240,7 +240,7 @@ Response.End();
   
 6. 将以下代码复制并粘贴到 **PlaceHolderMain** 内容标记中。
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -315,7 +315,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. 在您粘贴的上述代码中，查找行  `remotedomain = "<your_remote_add-in_domain>";`，将占位符  _<your_remote_add-in_domain>_ 替换为您在 Visual Studio 中使用 F5 运行外接程序时使用的 Web 应用程序的"localhost"URL。要查找此值，请在"解决方案资源管理器"中选择 Web 应用程序项目。"URL"属性将位于"属性"窗格中。请使用完整的值，包括协议、端口和结束斜杠，例如"http://localhost:45072"。
     

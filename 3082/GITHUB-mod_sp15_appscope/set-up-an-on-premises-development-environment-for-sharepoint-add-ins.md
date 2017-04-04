@@ -64,11 +64,11 @@ En función de sus requisitos y presupuesto específicos, podrá elegir alguna d
   
 5. Si se producen errores en la instalación, revise el archivo de registro. Para buscar el archivo de registro, abra una ventana con el símbolo del sistema y luego escriba los siguientes comandos en este símbolo del sistema. Aparecerá asimismo un vínculo al archivo de registro cuando se complete la instalación.
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. Una vez se haya completado la instalación, se le solicitará que inicie el Asistente para configuración de Productos y Tecnologías de SharePoint.
     
@@ -212,40 +212,40 @@ Siga los pasos del procedimiento a continuación para crear un dominio aislado d
 
 1. Abra el símbolo del sistema y escriba los comandos siguientes para asegurarse de que los servicios spadmin y sptimer se están ejecutando.
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. Ejecute la Consola de administración de SharePoint como administrador y escriba el siguiente comando para crear el dominio aislado de complemento. Reemplace  _contosoaddins.com_ con el dominio de complemento. *No*  debería ser un subdominio del dominio de host de SharePoint. Si lo es, invalidaría enormemente las ventajas de seguridad de tener dominios de complemento aislados. Por ejemplo, si el dominio de host es contoso.com, no use addins.contoso.com como dominio de complemento.
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. Escriba el siguiente comando en la Consola de administración de SharePoint para asegurarse de que los servicios SPSubscriptionSettingsService y AppManagementServiceInstance se están ejecutando.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. Escriba el comando siguiente en la Consola de administración de SharePoint para comprobar que los servicios SPSubscriptionSettingsService y AppManagementServiceInstance se están ejecutando. El resultado indicará si cada uno de los servicios está en línea.
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. Debe especificar una cuenta donde se vayan a ejecutar las instancias de los servicios SPSubscriptionService y AppManagementServiceInstance. Esta cuenta debe ser una cuenta SPManagedAccount. Puede crear una cuenta SPManagedAccount si escribe el siguiente comando en la Consola de administración de SharePoint. (Se le pedirá el dominio o usuario y contraseña de la cuenta).
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. Especifique la configuración de una cuenta, de un grupo de aplicaciones y de una base de datos para los servicios SPSubscriptionService y AppManagementServiceInstance; para ello, escriba el código siguiente en la Consola de administración de SharePoint. Si ha creado una cuenta SPManagedAccount en el paso anterior, use el nombre de la cuenta aquí.
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. Especifique el prefijo de su complemento (consulte  [Sitios web host, sitios web de complemento y el dominio aislado](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)) escribiendo el código siguiente en el Shell de administración de SharePoint.
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **Lleve a cabo el procedimiento siguiente únicamente si su entorno usa un servidor proxy.** Una vez que haya creado el dominio de complemento aislado, siga los pasos del procedimiento a continuación para agregar un dominio a la lista de omisión de Internet Explorer. De esta forma, tendrá la certeza de que podrá visitar este dominio tras implementar un complemento hospedado en SharePoint o un complemento hospedado por el proveedor que incluya una web de complemento.
   

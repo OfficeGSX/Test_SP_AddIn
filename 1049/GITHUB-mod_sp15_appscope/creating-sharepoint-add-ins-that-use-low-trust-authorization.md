@@ -105,14 +105,12 @@ ms.assetid: c33966ab-1515-407c-b1ac-8c653eab10dc
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
-
-```
+```
 
 Чтобы позже снова включить обязательное использование HTTPS, воспользуйтесь указанными ниже командлетами Windows PowerShell.
   
@@ -120,14 +118,12 @@ $serviceConfig.Update()
     
 
 
-
-```
+```
 
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $false
 $serviceConfig.Update()
-
-```
+```
 
 
 ### Различные ошибки авторизации, связанные с SSL и доменами
@@ -180,14 +176,12 @@ HTTP DAV не работает с OAuth. Если вы используете к
   
     
     
-
-```cs
+```cs
 
 File f = clientContext.Web.GetFileByServerRelativeUrl( url);
 ClientResult<Stream> r = f.OpenBinaryStream();
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## В этом разделе

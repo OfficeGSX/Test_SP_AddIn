@@ -219,8 +219,7 @@ Im folgenden Code wird gezeigt, wie Sie Berechtigungsbereiche und Rechte in der 
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -241,8 +240,7 @@ Im folgenden Code wird gezeigt, wie Sie Berechtigungsbereiche und Rechte in der 
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 Im folgenden Code wird eine App veranschaulicht, die Lesezugriff auf den Webbereich und Schreibzugriff auf den Listenbereich anfordert.
   
@@ -250,8 +248,7 @@ Im folgenden Code wird eine App veranschaulicht, die Lesezugriff auf den Webbere
     
 
 
-
-```XML
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -273,8 +270,7 @@ Im folgenden Code wird eine App veranschaulicht, die Lesezugriff auf den Webbere
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
   </AppPermissionRequests>
-</App>
-```
+</App>```
 
 
 ### Berechtigungsanforderungsbereiche für andere SharePoint-Funktionen
@@ -424,13 +420,11 @@ Die **BaseTemplateId** -Eigenschaft ist ein untergeordnetes Element, kein Attrib
     
 
 
-
-```XML
+```XML
 
 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write">
   <Property Name="BaseTemplateId" Value="101"/>
-</AppPermissionRequest>
-```
+</AppPermissionRequest>```
 
 
 **Tabelle 7. Berechtigungsanforderungsbereich mit zugehörigen Eigenschaften**

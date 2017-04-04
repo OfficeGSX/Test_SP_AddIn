@@ -335,20 +335,20 @@ SharePoint for Office 365 の機能の 1 つにニュースフィードの追加
   
 3. コード エディターで、 **Candidates_Validate** メソッドに次のコードを追加します。
     
-  ```VB.net
+ ```VB.net
   
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
-  ```
+ ```
 
 
-  ```cs
+ ```cs
   
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
-  ```
+ ```
 
 
     **Validate** メソッドは、ユーザーがレコードを保存しようとしたときに実行されます。 ユーザーが Hiring Managers セキュリティ グループのメンバーである場合、レコードは保存されます。メンバーでない場合、"アクセス許可は拒否されました" というエラー メッセージが表示され、レコードは破棄されます。

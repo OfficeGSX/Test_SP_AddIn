@@ -215,69 +215,69 @@ Le script Windows PowerShell que vous créez dans cette section est destiné à 
 
 1. Dans un éditeur de texte ou dans l'éditeur Windows PowerShell, créez un fichier et ajoutez-y les lignes suivantes pour créer un objet certificat :
     
-  ```
+ ```
   
 $publicCertPath = "C:\\Certs\\HighTrustSampleCert.cer"
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($publicCertPath)
 
-  ```
+ ```
 
 2. Ajoutez la ligne suivante pour vous assurer que SharePoint traite le certificat comme une autorité racine.
     
-  ```
+ ```
   
 New-SPTrustedRootAuthority -Name "HighTrustSampleCert" -Certificate $certificate
 
-  ```
+ ```
 
 3. Ajoutez la ligne suivante pour obtenir l'ID du domaine d'autorisation.
     
-  ```
+ ```
   
 $realm = Get-SPAuthenticationRealm
 
-  ```
+ ```
 
 4. Votre application web à distance utilisera un jeton d'accès pour accéder aux données SharePoint. Le jeton d'accès doit être émis par un émetteur de jeton approuvé par SharePoint. Dans un Complément SharePoint à haut niveau de fiabilité, le certificat est l'émetteur de jeton. Ajoutez les lignes suivantes pour créer un ID de l'émetteur au format requis par SharePoint : ** _specific_issuer_GUID_@ _realm_GUID_**.
     
-  ```
+ ```
   
 $specificIssuerId = "11111111-1111-1111-1111-111111111111"
 $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
 
-  ```
+ ```
 
 
     > **REMARQUE**
       > La valeur  `$specificIssuerId` doit être un GUID car, dans un environnement de production, chaque certificat doit avoir un émetteur unique. Toutefois, dans ce contexte où vous utilisez le même certificat pour déboguer tous les compléments à haut niveau de fiabilité, vous pouvez coder en dur la valeur. Si, pour une raison quelconque, vous utilisez un GUID différent de celui utilisé ici, * **assurez-vous que toutes les lettres du GUID sont en minuscules*** . L'infrastructure SharePoint exige actuellement l'utilisation de lettres minuscules pour les GUID d'émetteur de certificat.
 5. Ajoutez les lignes suivantes pour enregistrer le certificat sous la forme d'un émetteur de jeton approuvé. Le paramètre  `-Name` doit être unique. Ainsi, dans une configuration de production, il est courant d'utiliser un GUID pour une partie ou la totalité du nom. Toutefois, dans ce contexte, vous pouvez utiliser un nom convivial. Le commutateur `-IsTrustBroker` est nécessaire pour garantir que vous pouvez utiliser le même certificat pour tous les compléments à haut niveau de fiabilité que vous développez. La commande `iisreset` est requise pour que votre émetteur de jeton soit immédiatement enregistré. Sans cette dernière, il se peut que vous deviez patienter jusqu'à 24 heures avant que le nouvel émetteur soit enregistré.
     
-  ```
+ ```
   
 New-SPTrustedSecurityTokenIssuer -Name "High Trust Sample Cert" -Certificate $certificate -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 iisreset 
 
-  ```
+ ```
 
 6. Normalement, SharePoint 2013 n'accepte pas les certificats auto-signés. Ainsi, lorsque vous utilisez un certificat auto-signé pour le débogage, ajoutez les lignes suivantes pour contourner l'exigence normale de SharePoint que les applications web à distance utilisent le protocole HTTPS quand elles appellent SharePoint. À défaut, vous obtiendrez un message **403 Interdit** lorsque l'application web à distance appellera SharePoint en utilisant un certificat auto-signé. Vous pourrez annuler cette action dans une procédure ultérieure. Le contournement de l'exigence d'utilisation du protocole HTTPS a pour effet que les demandes de l'application web à distance adressées à SharePoint ne sont pas chiffrées, mais que le certificat continue à être utilisé comme émetteur approuvé de jetons d'accès, ce qui est l'objectif principal dans des Compléments SharePoint à haut niveau de fiabilité.
     
-  ```
+ ```
   
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
 $serviceConfig.Update()
 
-  ```
+ ```
 
 7. Enregistrez le fichier sous le nom HighTrustConfig-ForDebugOnly.ps1.
     
   
 8. Ouvrez **SharePoint Management Shell** en tant qu'administrateur, puis exécutez le fichier avec la ligne suivante :
     
-  ```
+ ```
   
 ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ## Créer un Complément SharePoint à haut niveau de fiabilité
@@ -446,9 +446,9 @@ Après avoir obtenu le nouveau certificat, si ce dernier est dépourvu de mot de
   
 3. Ouvrez **SharePoint Management Shell** en tant qu'administrateur, puis exécutez le fichier avec la ligne suivante :
     
-  ```
+ ```
   ./HighTrustConfig-ForDebugOnly.ps1
-  ```
+ ```
 
 
 ### Pour reconfigurer l'application web à distance

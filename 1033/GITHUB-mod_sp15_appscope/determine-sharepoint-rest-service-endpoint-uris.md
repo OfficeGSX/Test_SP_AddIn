@@ -235,8 +235,7 @@ Then, pass the complex type in the request body, formatted here using JSON.
     
 
 
-
-```
+```
 
 { "d" : {
    "results": {
@@ -251,8 +250,7 @@ Then, pass the complex type in the request body, formatted here using JSON.
    }
 } 
 }
-
-```
+```
 
 
 ### Using parameter aliases in REST service calls

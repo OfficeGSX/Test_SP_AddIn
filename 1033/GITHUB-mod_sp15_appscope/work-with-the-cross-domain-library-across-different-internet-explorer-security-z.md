@@ -111,8 +111,7 @@ The following markup is an example of a simple apphost page. The markup performs
   
 
 
-
-```HTML
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -161,8 +160,7 @@ The following markup is an example of a simple apphost page. The markup performs
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>
-```
+</html>```
 
 If you want your users to deep link into portions of your add-in, your apphost page and the contents of the **IFrame** can collaborate to make that possible. One alternative is to use **IFrame** post-message communication and individual URLs per page in the remote add-in. To have individual URLs per page, you can create individual pages in the add-in web or use query string parameters on one page.
   

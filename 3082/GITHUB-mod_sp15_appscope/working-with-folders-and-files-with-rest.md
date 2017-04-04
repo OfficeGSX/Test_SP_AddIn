@@ -21,16 +21,14 @@ Puede recuperar una carpeta de una biblioteca de documentos cuando sabe su direc
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 El XML siguiente muestra un ejemplo de las propiedades de carpeta que se devuelven cuando solicita el tipo de contenido XML.
   
@@ -38,8 +36,7 @@ El XML siguiente muestra un ejemplo de las propiedades de carpeta que se devuelv
     
 
 
-
-```XML
+```XML
 
 <content type="application/xml">
 <m:properties>
@@ -48,8 +45,7 @@ El XML siguiente muestra un ejemplo de las propiedades de carpeta que se devuelv
 <d:ServerRelativeUrl>/Shared Documents</d:ServerRelativeUrl>
 <d:WelcomePage/>
 </m:properties>
-</content>
-```
+</content>```
 
 En el siguiente ejemplo se muestra cómo **crear** una carpeta.
   
@@ -57,8 +53,7 @@ En el siguiente ejemplo se muestra cómo **crear** una carpeta.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/folders
 method: POST
@@ -68,8 +63,7 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **actualizar** una carpeta usando el método **MERGE**.
   
@@ -77,8 +71,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** una carpeta usando el m�
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -90,8 +83,7 @@ Headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **eliminar** una carpeta.
   
@@ -99,8 +91,7 @@ En el siguiente ejemplo se muestra cómo **eliminar** una carpeta.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
 method: POST
@@ -109,8 +100,7 @@ Headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-
-```
+```
 
 
 ## Trabajar con archivos usando REST
@@ -120,16 +110,14 @@ En el siguiente ejemplo se muestra cómo **recuperar** todos los archivos de una
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 En el siguiente ejemplo se muestra cómo **recuperar** un archivo específico.
   
@@ -137,14 +125,12 @@ En el siguiente ejemplo se muestra cómo **recuperar** un archivo específico.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 También puede **recuperar** un archivo cuando sabe su URL, como en el caso siguiente.
   
@@ -152,14 +138,12 @@ También puede **recuperar** un archivo cuando sabe su URL, como en el caso sigu
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: GET
 headers:
-    Authorization: "Bearer " + accessToken
-```
+    Authorization: "Bearer " + accessToken```
 
 En el siguiente ejemplo se muestra cómo **crear** un archivo y agregarlo a una carpeta.
   
@@ -167,8 +151,7 @@ En el siguiente ejemplo se muestra cómo **crear** un archivo y agregarlo a una 
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
 method: POST
@@ -176,8 +159,7 @@ body: "Contents of file"
 Headers: 
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo se muestra cómo **actualizar** un archivo usando el método **PUT**.
   
@@ -192,8 +174,7 @@ En el siguiente ejemplo se muestra cómo **actualizar** un archivo usando el mé
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
 method: POST
@@ -202,8 +183,7 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     X-HTTP-Method:"PUT"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 Si desea actualizar los metadatos de un archivo, deberá construir un extremo que alcance al archivo como un elemento de lista. Esto se puede hacer porque cada carpeta es también una lista, y cada archivo es también un elemento de lista. Construya un extremo que tenga el siguiente aspecto:  `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`. En  [Trabajar con listas y elementos de lista con REST](working-with-lists-and-list-items-with-rest.md) se explica cómo actualizar los metadatos de un elemento de lista.
   
@@ -215,15 +195,13 @@ Puede que desee desproteger un archivo para asegurarse de que nadie lo cambie an
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 En el ejemplo siguiente se muestra cómo **proteger un archivo**.
   
@@ -231,15 +209,13 @@ En el ejemplo siguiente se muestra cómo **proteger un archivo**.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
 method: POST
 headers:
     Authorization: "Bearer " + accessToken
-    X-RequestDigest: form digest value
-```
+    X-RequestDigest: form digest value```
 
 En el siguiente ejemplo se muestra cómo **eliminar** un archivo.
   
@@ -247,8 +223,7 @@ En el siguiente ejemplo se muestra cómo **eliminar** un archivo.
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
 method: POST
@@ -257,8 +232,7 @@ headers:
      X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method:"DELETE"
-
-```
+```
 
 
 ## Trabajar con archivos grandes usando REST
@@ -275,8 +249,7 @@ Cuando necesita subir un archivo binario de más de 1,5 megabytes (MB), la inter
     
     
 
-
-```
+```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
 method: POST
@@ -285,8 +258,7 @@ headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el siguiente ejemplo de código se muestra cómo crear un archivo usando este extremo de REST y la biblioteca entre dominios.
   
@@ -294,8 +266,7 @@ En el siguiente ejemplo de código se muestra cómo crear un archivo usando este
     
 
 
-
-```
+```
 
 function uploadFileBinary() {
 XDomainTestHelper.clearLog();
@@ -322,8 +293,7 @@ state: "Update"
 };
 ro.executeAsync(info);
 }
-
-```
+```
 
 
 ## Trabajar con archivos adjuntos a elementos de lista usando REST
@@ -333,16 +303,14 @@ En el ejemplo siguiente se muestra cómo **recuperar** todos los archivos que es
   
     
     
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 En el ejemplo siguiente se muestra cómo **recuperar** un archivo que está adjunto a un elemento de lista.
   
@@ -350,16 +318,14 @@ En el ejemplo siguiente se muestra cómo **recuperar** un archivo que está adju
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-
-```
+```
 
 En el ejemplo siguiente se muestra cómo **crear** un archivo adjunto a un elemento de lista.
   
@@ -367,8 +333,7 @@ En el ejemplo siguiente se muestra cómo **crear** un archivo adjunto a un eleme
     
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
 method: POST
@@ -376,8 +341,7 @@ headers:
     Authorization: "Bearer " + accessToken
     body: "Contents of file."
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 En el ejemplo siguiente se muestra cómo **actualizar** un archivo adjunto a un elemento de lista usando el método **PUT**.
   
@@ -392,8 +356,7 @@ En el ejemplo siguiente se muestra cómo **actualizar** un archivo adjunto a un 
 
 
 
-
-```
+```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
 method: POST
@@ -402,8 +365,7 @@ headers:
     Authorization: "Bearer " + accessToken
     "X-HTTP-Method":"PUT"
     X-RequestDigest: form digest value
-    content-length:length of post body
-```
+    content-length:length of post body```
 
 
 ## Recursos adicionales

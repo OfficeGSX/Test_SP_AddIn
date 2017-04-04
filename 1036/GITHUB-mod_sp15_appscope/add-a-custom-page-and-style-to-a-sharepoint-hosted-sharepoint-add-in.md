@@ -50,30 +50,30 @@ Dans cet article, vous ajoutez une page d'aide au Complément SharePoint Employe
   
 3. Recherchez les deux éléments **asp:Content** dans le fichier, et ajoutez la troisième balise **asp:Content** suivante entre les deux.
     
-  ```HTML
+ ```HTML
   
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
     Help
 </asp:Content> 
-  ```
+ ```
 
 4. Recherchez l'élément **asp:Content** portant l'ID **PlaceholderAdditionalPageHead**, et ajoutez-y le balisage suivant.
     
-  ```HTML
+ ```HTML
   
 <link rel="Stylesheet" type="text/css" href="../Content/App.css" />
-  ```
+ ```
 
 5. Recherchez l'élément **asp:Content** portant l'ID **PlaceHolderMain** et supprimez les éléments enfants éventuels qu'il contient.
     
   
 6. Ajoutez ce qui suit en tant que contenu au même élément **asp:Content**.
     
-  ```HTML
+ ```HTML
   <H3>Having a problem with the add-in?</H3>
 <p> Call the help line for Fabrikam Add-ins:</p>
 <p>1-555-555-5555</p>
-  ```
+ ```
 
 7. Enregistrez et fermez le fichier.
     
@@ -83,12 +83,12 @@ Dans cet article, vous ajoutez une page d'aide au Complément SharePoint Employe
   
 9. Recherchez l'élément **asp:Content** portant l'ID **PlaceHolderMain** et ajoutez le balisage suivant à la fin de celui-ci.
     
-  ```HTML
+ ```HTML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Pages/Help.aspx';"
     Text="Get help for the Employee Orientation add-in" /></p>
 
-  ```
+ ```
 
 10. Enregistrez et fermez le fichier.
     
@@ -103,10 +103,10 @@ Dans cet article, vous ajoutez une page d'aide au Complément SharePoint Employe
 
 1. Dans l' **Explorateur de solutions**, ouvrez le fichier app.css figurant dans le dossier **Contents**, puis ajoutez-y la ligne suivante.
     
-  ```
+ ```
   
 p {color: green;}
-  ```
+ ```
 
 2. Enregistrez et fermez le fichier.
     

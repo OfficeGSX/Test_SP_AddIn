@@ -154,8 +154,7 @@ Vous trouverez ci-dessous un **exemple décodé d'un jeton d'accès utilisateur 
     
 
 
-
-```
+```
 
 {
  "aud": "00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -165,8 +164,7 @@ Vous trouverez ci-dessous un **exemple décodé d'un jeton d'accès utilisateur 
  "nameid": "2303000085ff9abc",
  "actor": "964de6ad-6d28-4dc7-8e05-3acd8006e5c9@040f2415-e6e3-4480-96ce-26ef73275f73",
  "identityprovider": "urn:federation:microsoftonline"
-}
-```
+}```
 
 
 **Tableau 1 : Revendications contenues dans le jeton d'accès utilisateur + complément généré par les services ACS**
@@ -192,8 +190,7 @@ Vous trouverez ci-dessous un **exemple décodé d'un jeton d'accès complément 
     
 
 
-
-```
+```
 
 {
  "aud":"00000003-0000-0ff1-ce00-000000000000/company.sharepoint.com@040f2415-e6e3-4480-96ce-26ef73275f73",
@@ -205,8 +202,7 @@ Vous trouverez ci-dessous un **exemple décodé d'un jeton d'accès complément 
  "oid":"1d47ac31-498b-4988-8aac-85fc9bd2e1ce",
  "trustedfordelegation":"false",
  "identityprovider":"00000001-0000-0000-c000-000000000000@040f2415-e6e3-4480-96ce-26ef73275f73"
-}
-```
+}```
 
 
 **Tableau 2 : Revendications contenues dans le jeton d'accès complément uniquement généré par les services ACS**
@@ -258,13 +254,11 @@ Si vous utilisez du code managé, un exemple de code pour certaines de ces tâch
     
 
 
-
-```cs
+```cs
 
 SharePointContextToken contextToken =
     TokenHelper.ReadAndValidateContextToken(contextTokenString, 
-    Request.Url.Authority);
-```
+    Request.Url.Authority);```
 
 Pour obtenir un exemple illustrant comment effectuer certaines de ces tâches avec du code PHP, voir  [SharePoint 2013 : Effectuer des opérations dans la bibliothèque de documents SharePoint à partir d'un site PHP](https://code.msdn.microsoft.com/SharePoint-2013-Perform-8a78b8ef).
   
@@ -368,11 +362,9 @@ La structure de l'URL doit être la suivante :
     
 
 
+```
 
-```
-
-https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>
-```
+https://<SharePointDomain> /_layouts/15/appredirect.aspx?client_id=<app_client_GUID> &amp;redirect_uri=<URL-encoded_redirect_URI>```
 
 L'exemple ci-dessous montre comment effectuer une demande dans ASP.NET en utilisant le fichier TokenHelper :
   
@@ -380,10 +372,8 @@ L'exemple ci-dessous montre comment effectuer une demande dans ASP.NET en utilis
     
 
 
-
-```
-Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));
-```
+```
+Response.Redirect(TokenHelper.GetAppContextTokenRequestUrl(sharePointUrl, Server.UrlEncode(Request.Url.ToString())));```
 
 
 ### Exemple de jeton de contexte
@@ -393,8 +383,7 @@ Vous trouverez ci-dessous un exemple de jeton de contexte. Le petit objet JavaSc
   
     
     
-
-```
+```
 {"typ":"JWT","alg":"HS256"}
 .
 {
@@ -413,8 +402,7 @@ xJnejSW3umatKM4fsfY1MClVCxrkXb2EQ8H/TmwaJc388YW063GEVUS/3BTSgSIRBKQUmXJuJ6BZY7WT
 6Vv7dVhQ1Dq5Y3fQ65e9LpJ580jCgzYYvpIFT+Wx5V+17mjY2T8wug04K2ts87Znsr+GfFCorf7NS/lj5HjoxRAQ2tva/8dwguSLwxcUwi/Q9MbpR0NNtlpwVazqi9O
 hJ4Df7gVhUDdJ0Dtc6aFCPbl5ZLDDRs42xK2", 
  "isbrowserhostedapp": "true"
-}
-```
+}```
 
 Les revendications **aud**, **iss**, **nbf** et **exp** sont identiques à celles décrites ci-dessus pour le jeton d'accès. Les revendications **appctxsender**, **appctx**, **CacheKey**, **SecurityTokenServiceUri**, **refreshtoken** et **isbrowserhostedapp** sont décrites dans le tableau suivant.
   
@@ -492,12 +480,10 @@ Les revendications **nbf** et **exp** sont au format indiqué par la [spécifica
   
     
     
-
-```cs
+```cs
 
 DateTime exp = new DateTime(1970,1,1).AddSeconds(jWTTimeStamp);
-
-```
+```
 
 
 ## Résolution des problèmes relatifs à la gestion des jetons

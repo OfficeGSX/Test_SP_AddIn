@@ -129,7 +129,7 @@ La Figura 1 muestra una vista de representación de cliente de una lista de anun
     > **NOTA**
       > La propiedad JSLink no es compatible con las listas de encuesta o de eventos. Un calendario de SharePoint es una lista de eventos. 
 
-  ```XML
+ ```XML
   
 <View BaseViewID="2"
       Name="8d2719f3-c3c3-415b-989d-33840d8e2ddb" 
@@ -147,7 +147,7 @@ La Figura 1 muestra una vista de representación de cliente de una lista de anun
   <XslLink>main.xsl</XslLink>
   <JSLink Default="TRUE">~site/Scripts/CSRListView.js</JSLink>
 </View>
-  ```
+ ```
 
 
 ### Para proporcionar la lógica de representación personalizada en un archivo JavaScript
@@ -168,7 +168,7 @@ La Figura 1 muestra una vista de representación de cliente de una lista de anun
     
   
 
-  ```
+ ```
   
 (function () {
     // Initialize the variable that stores the objects.
@@ -235,7 +235,7 @@ function postRenderHandler(ctx) {
         }
     }
 }
-  ```
+ ```
 
 
 ### Para compilar y ejecutar la solución

@@ -57,18 +57,14 @@ Pour utiliser les exemples de cet article, vous avez besoin des éléments suiva
     
   
 - Une référence à la bibliothèque jQuery dans le balisage de votre page. Par exemple :
-    
-```HTML
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
+    ```HTML
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
 
 - Les commandes suivantes dans le balisage de votre page.
-    
-```HTML
+    ```HTML
 <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
+<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>```
 
 
 ## Exemple de code 1 : télécharger un fichier entre domaines SharePoint à l'aide de l'API REST et de jQuery
@@ -84,8 +80,7 @@ Vous devez respecter  [ces exigences](upload-a-file-by-using-the-rest-api-and-jq
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -248,8 +243,7 @@ function getQueryStringParameter(paramToRetrieve) {
         var singleParam = params[i].split("=");
         if (singleParam[0] == paramToRetrieve) return singleParam[1];
     }
-}
-```
+}```
 
 
 ## Exemple de code 2 : télécharger un fichier dans le même domaine à l'aide de l'API REST et de jQuery
@@ -265,8 +259,7 @@ Vous devez respecter  [ces exigences](upload-a-file-by-using-the-rest-api-and-jq
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -401,8 +394,7 @@ function uploadFile() {
 // Display error messages. 
 function onError(error) {
     alert(error.responseText);
-}
-```
+}```
 
 
 ## Ressources supplémentaires

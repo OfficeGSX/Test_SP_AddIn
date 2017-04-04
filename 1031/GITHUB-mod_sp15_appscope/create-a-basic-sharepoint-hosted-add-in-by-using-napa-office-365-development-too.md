@@ -219,7 +219,7 @@ Fügen Sie der standardmäßigen Homepage im SharePoint-Add-In Steuerelemente zu
   
 2. Fügen Sie im Abschnitt  `PlaceHolderMain` den folgenden Code unter dem vorhandenen HTML-Code hinzu:
     
-  ```HTML
+ ```HTML
   
 <br />
 <div>
@@ -234,7 +234,7 @@ Fügen Sie der standardmäßigen Homepage im SharePoint-Add-In Steuerelemente zu
     <select id="selectlistbox" ></select><button id="deletelistbutton">Delete Selected List</button>
     </p>
 </div>
-  ```
+ ```
 
 
     Mit dem HTML-Code werden die folgenden Steuerelemente erstellt:
@@ -282,7 +282,7 @@ In diesem Verfahren fügen Sie JavaScript-Code hinzu, damit Benutzer Listen im S
     > **HINWEIS**
       > Im Code werden gewellte Unterstreichungen angezeigt. Diese werden im Laufe der nächsten Schritte ausgeblendet. 
 
-  ```
+ ```
   
 'use strict';
 
@@ -315,7 +315,7 @@ $(document).ready(function () {
         displayLists();
     });
 
-  ```
+ ```
 
 
     Im nächsten Schritt fügen Sie JavaScript-Funktionen für die Definitionen hinzu. Jede Funktion im Code wird per Aufruf von  `executeQueryAsync()` ausgeführt. Bei diesem Aufruf wird die aktuelle ausstehende Anforderung asynchron auf dem Server ausgeführt, indem das clientseitige Objektmodell (CSOM) für SharePoint verwendet wird. Wenn eine Funktion asynchron ausgeführt wird, wird Ihr Skript weiter ausgeführt, ohne dass eine Antwort des Servers abgewartet wird. Jeder `executeQueryAsync()`-Aufruf umfasst zwei Ereignishandler. Ein Handler antwortet, wenn die Funktion erfolgreich ausgeführt wird, und der andere Handler antwortet, wenn die Funktion fehlschlägt. In dieser Tabelle sind die Hauptfunktionen beschrieben.
@@ -331,7 +331,7 @@ $(document).ready(function () {
    
 3. Fügen Sie den folgenden Code nach der Funktion  `onGetUserNameFail()` in **App.js** ein.
     
-  ```
+ ```
   
 function getWebProperties() {
         // Get the number of lists in the current web.
@@ -416,7 +416,7 @@ function createlist() {
     function onDeleteListFail(sender, args) {
         alert('Failed to delete the list. ' + args.get_message());
     }
-  ```
+ ```
 
 
 ## Führen Sie die App aus!
@@ -491,7 +491,7 @@ Da Benutzer jetzt Listen erstellen und löschen können, können Sie die folgend
   
 2. Fügen Sie unter dem  `selectlistbox`-Element den folgenden Code hinzu.
     
-  ```XML
+ ```XML
   
 <p>
     Items
@@ -501,7 +501,7 @@ Da Benutzer jetzt Listen erstellen und löschen können, können Sie die folgend
     <p>
     <select id="selectitembox"></select> <button id="deleteitembutton">Delete Selected Item</button>
     </p>
-  ```
+ ```
 
 
     Mit diesem Code wird ein Eingabefeld hinzugefügt, in dem Benutzer den Namen eines Elements, eine Schaltfläche zum Hinzufügen des Elements zur Liste und eine Schaltfläche zum Löschen des Elements aus der Liste angeben können.
@@ -512,7 +512,7 @@ Da Benutzer jetzt Listen erstellen und löschen können, können Sie die folgend
   
 4. Fügen Sie in der  `$(document).ready()`-Funktion Definitionen für Funktionen hinzu, die aufgerufen werden, wenn Benutzer auf die Schaltflächen **Element erstellen** und **Ausgewähltes Element löschen** klicken. Fügen Sie außerdem einen jQuery-Ereignishandler für das Listenfeld **Listen** hinzu, um sicherzustellen, dass die Listenelemente aktualisiert werden, wenn Sie eine neue Liste auswählen.
     
-  ```
+ ```
   
 $("#createitembutton").click(function (event) {
             createitem();
@@ -530,7 +530,7 @@ $("#createitembutton").click(function (event) {
             getitems();
             event.preventDefault();
         });
-  ```
+ ```
 
 
     > **HINWEIS**
@@ -547,7 +547,7 @@ $("#createitembutton").click(function (event) {
    
 5. Fügen Sie diesen Code am Ende der Datei **App.js** nach der Funktion `onDeleteListFail()` hinzu.
     
-  ```
+ ```
   
 function createitem() {
     // Retrieve the list that the user chose, and add an item to it.
@@ -636,7 +636,7 @@ function onGetItemsFail(sender, args) {
     // The list items couldn't be retrieved - display an error message.
     alert('Failed to get items. Error: ' + args.get_message());
 }
-  ```
+ ```
 
 
 ## Führen Sie das aktualisierte SharePoint-Add-In aus!

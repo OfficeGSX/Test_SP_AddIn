@@ -114,7 +114,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
   
 3. Use el atributo **Descripción** para llamar del mismo modo al recurso de cadena de la descripción de lista (por ejemplo,$Resources:OrdersListInstance_Description). A continuación se muestra el marcado que usa las cadenas localizadas en el archivo Elements.xml de la instancia de una lista.
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -126,7 +126,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
       Description="$Resources:OrdersListInstance_Description">
   </ListInstance>
 </Elements>
-  ```
+ ```
 
 
     En la siguiente imagen se muestra la lista personalizada localizada en inglés.
@@ -157,7 +157,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
   
 4. En el archivo **Schema.xml** de la lista personalizada, quite el atributo **DisplayName** de todos los nodos **Field** copiados anteriormente. A continuación se muestra un marcado de ejemplo en el que se usan las cadenas localizadas en el archivo **Elements.xml** de la definición de lista.
     
-  ```
+ ```
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -192,7 +192,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
         List="Lists/Order status"
         ShowField="Title" />
 </Elements>
-  ```
+ ```
 
 
 ### Para crear archivos de recursos de JavaScript destinados a páginas personalizadas
@@ -211,7 +211,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
   
 4. Para cada una de las cadenas localizables en cada una de las páginas personalizadas, declare una variable en el archivo con un nombre que identifique el propósito de la cadena y asígnele el valor correspondiente para el idioma. Este es un ejemplo del contenido del archivo Resources.en-US.js.
     
-  ```
+ ```
   
 var instructionstitle = "Instructions:";
 var step01 = "Go to any document library in the host web.";
@@ -224,7 +224,7 @@ var step06 = "Go to any SharePoint page in the host web and add the" +
 var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     " and <a href=\\"../Lists/Order status\\">Order status</a> custom lists.";
 
-  ```
+ ```
 
 5. Copie el contenido del archivo en cada uno de los archivos de JavaScript restantes y, a continuación, guarde todos los archivos.
     
@@ -241,10 +241,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 2. Asegúrese de que solamente se cargue uno de los archivos JavaScript localizados cuando se cargue la página y, asimismo, procure que sea el apropiado para el idioma de la web de complemento de SharePoint. Para lograrlo, agregue el siguiente marcado al elemento **asp:content** de la página que tenga un `ContentPlaceholderId` con el valor `PlaceholderAdditionalPageHead`.  *En el siguiente marcado no hay marcadores. Especifique el marcado exactamente como aparece aquí.* 
     
-  ```HTML
+ ```HTML
   
 <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
-  ```
+ ```
 
 
     Con este marcado se carga uno de los archivos JavaScript, que determina qué archivo de idioma se va a cargar al leer el recurso de SharePoint denominado "language_value". Este recurso se resuelve en un nombre de idioma-referencia cultural según el patrón  _LL_- _CC_ descrito en un procedimiento anterior. Específicamente, se resuelve en el idioma de la web de complemento.
@@ -256,7 +256,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     > **SUGERENCIA**
       > La palabra "INVARIANT" se ha agregado a la primera de las cadenas invariables. Esto no debe realizarse en un complemento de producción, pero, en el transcurso de las pruebas, es una forma muy práctica de saber de un vistazo si se están usando cadenas de idioma invariable o si se ha cargado el archivo Resources. _LL_- _CC_.js del idioma que resulta ser su idioma invariable. 
 
-  ```HTML
+ ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
 <ol>
     <li id="step01">Go to any document library in the host web.</li>
@@ -287,7 +287,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     }
 </script>
 
-  ```
+ ```
 
 
     La siguiente imagen es una vista previa de la versión en inglés de la página una vez completado el complemento.
@@ -350,10 +350,10 @@ El método fundamental para localizar componentes de web de host es el mismo que
 
 1. Abra el archivo AppManifest.xml y sustituya el valor del elemento **Título** por una llamada a la cadena de recurso apropiada. Por ejemplo, si asignó un nombre a la cadenaTítulodelComplemento, el elemento **Title** debería tener el siguiente aspecto:
     
-  ```XML
+ ```XML
   
 <Title>$Resources:Addin_Title;</Title>
-  ```
+ ```
 
 
     > **PRECAUCIóN**
@@ -375,8 +375,7 @@ Reemplace el idioma de página y de subproceso de forma que sea el mismo que el 
     
 
 
-
-```cs
+```cs
 protected override void InitializeCulture()
 {
     if (Request.QueryString["SPLanguage"] != null)
@@ -394,8 +393,7 @@ protected override void InitializeCulture()
             CultureInfo(selectedLanguage);
     }
     base.InitializeCulture();
-}
-```
+}```
 
 
 ## Localizar JavaScript JavaScript remoto y el control de cromo de SharePoint
@@ -418,7 +416,7 @@ Si hay valores de cadena localizables en el código JavaScript de su aplicación
 
 1. Una vez que tenga en funcionamiento el control de cromo, vuelva al método  `renderChrome` donde se definen las opciones de cromo.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -441,11 +439,11 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 2. Como se indica en los comentarios, hay al menos tres cadenas localizables. Sustituya cada una de ellas por un nombre de variable que haya declarado en un paso anterior.
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -468,47 +466,47 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 3. Agregue un archivo JavaScript llamado ChromeStrings.js al proyecto de aplicación web. En él deben estar declaradas las variables que usó en el paso anterior y habérseles asignado un valor en el idioma invariable.
     
-  ```
+ ```
   
 var chromeAppTitle = "My SharePoint add-in";
 var chromeAccountLinkName = "Account settings";
 var chromeContactUsLinkName = "Contact us";
 
-  ```
+ ```
 
 4. Por cada idioma en el que quiera localizar el complemento, agregue otro archivo JavaScript con el nombre ChromeStrings. _LL-CC_.js, donde  _LL-CC_ es el identificador de idioma. *La base del nombre del archivo (esto es, "ChromeStrings") debe ser exactamente la misma que usó en el archivo de idioma invariable.*  Copie el contenido del archivo de idioma invariable en cada uno de los archivos localizados y reemplace los valores por sus versiones traducidas correspondientes.
     
-  ```
+ ```
   
 var chromeAppTitle = "Mi aplicación SharePoint";
 var chromeAccountLinkName = "Preferencias";
 var chromeContactUsLinkName = "Contacto";
 
-  ```
+ ```
 
 5. En cualquier archivo de página donde se llame al script SP.UI.controls.js, agregue una llamada al archivo ChromeStrings.js por encima de este. Por ejemplo, si la llamada a SP.UI.controls.js está cargada como un archivo intermedio llamado ChromeLoader.js, el marcado de la página en este punto debería ser parecido al siguiente:
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 6. Agregue un atributo **ResourceUICultures** al elemento **ScriptReference** que llama a sus cadenas. Su valor es una lista separada por comas con los idiomas que se admiten.
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" ResourceUICultures="en-US,es-ES" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 
     El efecto del atributo **ResourceUICultures** es que ASP.NET buscará un archivo llamado ChromeStrings. _LL-CC_.js, donde  _LL-CC_ es el idioma de la página, y lo cargará. Si no lo encuentra, cargará el archivo ChromeStrings.js.

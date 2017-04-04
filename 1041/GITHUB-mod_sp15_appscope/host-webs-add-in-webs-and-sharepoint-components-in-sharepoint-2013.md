@@ -196,10 +196,10 @@ SharePoint コンポーネントを、ホスト Web ではなくアドイン Web
   
   -  [Web テンプレート要素 (PropertiesDefinition コントロール (SharePoint アドイン マニフェスト)](http://msdn.microsoft.com/library/62302903-e97a-a9a3-a64e-13176a7c4e1e%28Office.15%29.aspx) をアドイン マニフェストに追加します。 **Properties** 要素の子として追加し、その **Id** 属性にアドイン Web フィーチャーの GUID と [WebTemplate 要素 (Web テンプレート)](http://msdn.microsoft.com/library/ff4ba91a-cc5f-47ff-9101-a7651f452185%28Office.15%29.aspx) の **Name** 属性の値を設定します。GUID はハイフンで区切り、中かっこ {} で囲む必要があります。また GUID とテンプレート名は「#」文字で区切ります。以下の例を参照してください。
     
-  ```XML
+ ```XML
   
 <WebTemplate Id="{81dd4ae5-873b-4759-9838-4ad9c3dd2952}#NewSiteType" />
-  ```
+ ```
 
 
     > **メモ**

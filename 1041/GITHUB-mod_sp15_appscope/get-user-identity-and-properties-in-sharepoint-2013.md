@@ -56,8 +56,7 @@ Web サイトの現在のユーザーの ID を取得する最も簡単な方法
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(
@@ -76,8 +75,7 @@ ClientContext clientContext =
             clientContext.Load(web.CurrentUser);
             clientContext.ExecuteQuery();
             currentUser = clientContext.Web.CurrentUser.LoginName;
-
-```
+```
 
 
 - Office 365 を使用している場合、取得するログイン名は  `i:0#.f|membership|adam@contoso.com` のようになります。
@@ -110,14 +108,12 @@ ClientContext clientContext =
     
 
 
-
-```cs
+```cs
 
 ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Microsoft.SharePoint.Client.Utilities.Utility.ResolvePrincipal(clientContext, clientContext.Web, <email>, Microsoft.SharePoint.Client.Utilities.PrincipalType.User, Microsoft.SharePoint.Client.Utilities.PrincipalSource.All, null, true);
                     clientContext.ExecuteQuery();
                     Microsoft.SharePoint.Client.Utilities.PrincipalInfo person = persons.Value;
-
-```
+```
 
  **Person.LoginName** 値がログイン情報を示します。
   
@@ -131,8 +127,7 @@ ClientResult<Microsoft.SharePoint.Client.Utilities.PrincipalInfo> persons = Micr
   
     
     
-
-```cs
+```cs
 
 ClientContext clientContext = new ClientContext(<sharepointurl>);
 clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
@@ -143,8 +138,7 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
-
-```
+```
 
 次に、 [UserProfilesPeopleManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfilesPeopleManager.aspx) API を使用して、アドインを使用中のユーザーのプロパティを取得します。
   
@@ -152,15 +146,13 @@ delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
     
 
 
-
-```cs
+```cs
 
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties personDetails = peopleManager.GetMyProperties();
 clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => personsD.Email,  personsD => personsD.DisplayName);
                 clientContext.ExecuteQuery();
-
-```
+```
 
 コードを動作させるための条件:
   
@@ -172,11 +164,11 @@ clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => 
   
 - ソーシャル フィーチャーに対する次のアクセス許可範囲をアドイン マニフェストに追加する必要があります。
     
-  ```XML
+ ```XML
   
 <AppPermissionRequest Right="Read" Scope="http://sharepoint/social/tenant" />
 
-  ```
+ ```
 
 これらの API は Microsoft.SharePoint.Client.UserProfiles.dll にあります。
   
@@ -188,16 +180,14 @@ clientContext.Load(personDetails, personsD => personsD.AccountName, personsD => 
     
 
 
-
-```cs
+```cs
 
 ClientContext clientContext; //Create this like you normally would.               
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);
 clientContext.ExecuteQuery();
-
-```
+```
 
 
 ## その他の技術情報

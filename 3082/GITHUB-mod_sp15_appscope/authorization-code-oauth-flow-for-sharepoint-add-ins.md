@@ -82,8 +82,7 @@ La aplicación de impresión de fotografías se registra para disponer de un ide
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
@@ -92,8 +91,7 @@ La aplicación de impresión de fotografías se registra para disponer de un ide
 
   </appSettings>
 
-</configuration>
-```
+</configuration>```
 
 Los siguientes son los pasos en el flujo de código de autenticación.
   
@@ -136,14 +134,12 @@ Los alias de ámbito solo se usan cuando se usa la página de redireccionamiento
     
 
 
-
-```cs
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));
-```
+    "https://contoso.com/RedirectAccept.aspx "));```
 
 El valor del parámetro  _scope_,  `Web.Read List.Write`, es un ejemplo de cómo se pedirían permisos usando el alias de ámbito. El parámetro  _scope_ es un conjunto, delimitado por espacios, de solicitudes de derechos y ámbitos de permisos.
   
@@ -202,15 +198,13 @@ El **URI de redireccionamiento** que usan los complementos que solicitan permiso
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>
-```
+<configuration>```
 
 El valor se puede recuperar con una llamada a  `WebConfigurationManager.AppSettings.Get("RedirectUri")`.
   
@@ -249,8 +243,7 @@ Para ver un ejemplo más complejo que usa el token de actualización para obtene
     
 
 
-
-```cs
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -273,8 +266,7 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-
-```
+```
 
 
 ## Muestra de código subyacente de una página que accede a SharePoint
@@ -302,8 +294,7 @@ El siguiente es el código subyacente de una página Default.aspx. Esta página 
 - A continuación se define la clase **TokenCache** a la que se hace referencia en este código.
     
   
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -354,8 +345,7 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}
-```
+}```
 
 El siguiente es código de ejemplo de un módulo de caché de tokens al que el código de muestra anterior llama. Usa cookies como memoria caché. Hay otras opciones de almacenamiento en caché. Para obtener más información, vea  [Administrar tokens de seguridad en complementos de confianza baja hospedados por el proveedor para SharePoint](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).
   
@@ -363,8 +353,7 @@ El siguiente es código de ejemplo de un módulo de caché de tokens al que el c
     
 
 
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -433,8 +422,7 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-
-```
+```
 
 
 ## Recursos adicionales

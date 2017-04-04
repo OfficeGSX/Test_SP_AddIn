@@ -53,20 +53,20 @@ Ausführliche Informationen dazu, wie Sie einen Handler für das Add-In-Ereignis
 
 1. Öffnen Sie die AppEventReceiver.svc.cs-Datei, und fügen Sie der  [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) -Methode, die testet, ob das Ereignis, das den Handler aufgerufen hat, das Updated-Ereignis ist, eine Bedingungsstruktur hinzu. Ihr Aktualisierungscode wird in diese Struktur eingefügt. Wenn Ihr Code auf SharePoint zugreifen muss, können Sie die SharePoint-CSOM (Client Object Model)- oder REST (Representational State Transfer)-Schnittstelle verwenden. Wo in der Methode sich die Bedingungsstruktur befindet, hängt davon ab, wie Sie den anderen Code in der Methode strukturiert haben. Normalerweise sind die Bedingungsstrukturen, die auf Installations- und Deinstallationsereignisse von Apps testen, ähnlich. Sie kann sich innerhalb einer Bedingungsstruktur befinden, die bestimmte Eigenschaften oder untergeordnete Eigenschaften des [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) -Objekts testet, das an [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) für **null**-Werte oder andere ungültige Werte übergeben wird. Sie kann sich auch in einem **try**-Block befinden. Hier ist ein Beispiel für die Struktur. Das  _properties_-Objekt ist ein  [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) -Objekt.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
 }
 
-  ```
+ ```
 
 2. Um CSOM im Handler zu verwenden, fügen Sie (innerhalb des Bedingungsblocks) einen **using**-Block hinzu, der ein  [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) -Objekt durch das Aufrufen der **TokenHelper.CreateAppEventClientContext**-Methode erhält. Geben Sie für den zweiten Parameter **true** an, um auf das App-Web zuzugreifen. Geben Sie **false** an, um auf das Hostweb zuzugreifen. Wenn Sie auf beide zugreifen müssen, benötigen Sie zwei unterschiedliche Clientkontextobjekte.
     
   
 3. Wenn Ihr Handler auf Nicht-SharePoint-Komponenten zugreifen muss, fügen Sie diesen Code außerhalb von Clientkontextblöcken ein. Ihr Code sollte in etwa folgendermaßen strukturiert sein:
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -81,11 +81,11 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 4. Um die REST-Schnittstelle zu verwenden, verwendet Ihr Code andere Methoden in der **TokenHelper**-Klasse, um ein Zugriffstoken zu erhalten, das dann in die Anforderungen eingefügt wird, die an SharePoint gesendet werden. Weitere Informationen finden Sie in  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md). Ihr Code sollte in etwa folgendermaßen strukturiert sein.
     
-  ```cs
+ ```cs
   
 if (properties.EventType == SPRemoteEventType.AppUpgraded)
 {
@@ -102,15 +102,15 @@ if (properties.EventType == SPRemoteEventType.AppUpgraded)
     // Other update code
 }
 
-  ```
+ ```
 
 5. Um auf SharePoint zuzugreifen, muss Ihr REST-Code auch die URL des Hostwebs und/oder App-Webs kennen. Diese URLs sind beide untergeordnete Eigenschaften des  [SPRemoteEventProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventProperties.aspx) -Objekts, das an die [ProcessEvent](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.IRemoteEventService.ProcessEvent.aspx) -Methode übergeben wird. Der folgende Code zeigt, wie Sie die URLs abrufen.
     
-  ```cs
+ ```cs
   
 Uri hostWebURL = properties.AppEventProperties.HostWebFullUrl;
 Uri appWebURL = properties.AppEventProperties.AppWebFullUrl;
-  ```
+ ```
 
 Wenn Sie eine App das zweite (oder dritte usw.) Mal aktualisieren, müssen Sie möglicherweise sicherstellen, dass Updatelogik nicht mehrere Male auf der gleichen App-Instanz ausgeführt wird. Das folgende Verfahren zeigt, wie Sie dabei vorgehen.
   
@@ -128,7 +128,7 @@ Wenn Sie eine App das zweite (oder dritte usw.) Mal aktualisieren, müssen Sie m
   
 3. Fügen Sie Ihre neue Updatelogik (für das Update von 2.0.0.0 auf 3.0.0.0) unterhalb dieser Struktur ein. Hier ist ein Beispiel.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -137,11 +137,11 @@ if (properties.AppEventProperties.PreviousVersion < ver2OOO)
 }
 // Code to update from 2.0.0.0 to 3.0.0.0 is here.
 
-  ```
+ ```
 
 4. Wiederholen Sie diese Schritte für jedes weitere Update. Für das Update von 3.0.0.0 auf 4.0.0.0 sollte Ihr Code die folgende Struktur aufweisen.
     
-  ```cs
+ ```cs
   
 Version ver2OOO = new Version("2.0.0.0");
 if (properties.AppEventProperties.PreviousVersion < ver2OOO)
@@ -156,7 +156,7 @@ if (properties.AppEventProperties.PreviousVersion < ver3OOO)
 }
 // Code to update from 3.0.0.0 to 4.0.0.0 is here.
 
-  ```
+ ```
 
 
 > **WICHTIG**
@@ -196,8 +196,7 @@ Beim zweiten (oder dritten usw.) Update muss Ihre Ausnahmebehandlungslogik die T
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 { 
@@ -214,8 +213,7 @@ catch (Exception e)
     {
         // Rollback of the 1.0.0.0 to 2.0.0.0 update logic goes here.
     }
-}
-```
+}```
 
 Ihr Fehlerbehandlung sollte dem  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) -Objekt, das die **ProcessEvent**-Methode an die SharePoint 2013-Updateinfrastruktur zurückgibt, auf keinen Fall eine Fehlermeldung oder einen Abbruchstatus zuweisen. Hier ein Beispiel: In diesem Code ist  _Ergebnis_ ein **SPRemoteEventResult**-Objekt, das zuvor in der **ProcessEvent**-Methode deklariert wurde.
   
@@ -223,8 +221,7 @@ Ihr Fehlerbehandlung sollte dem  [SPRemoteEventResult](https://msdn.microsoft.co
     
 
 
-
-```cs
+```cs
 
 catch (Exception e)
 {     
@@ -233,8 +230,7 @@ catch (Exception e)
 
      // Rollback logic from the preceding code snippet  is here. 
 
-}
-```
+}```
 
 
 > **WICHTIG**

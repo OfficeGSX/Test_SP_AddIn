@@ -62,12 +62,10 @@ Die Remotekomponenten des SharePoint-Add-Ins benötigen natürlich dennoch autor
     
   
 - Bei einem in SharePoint gehosteten Add-In können Sie für den Prinzipaltyp des Add-Ins den Standardwert **Internal** übernehmen. Legen Sie anschließend für das **AllowedRemoteHostUrl**-Attribut des **Internal**-Elements die URL der Remotewebanwendung fest, siehe folgendes Beispiel.
-    
-```
+    ```
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>
-```
+</AppPrincipal>```
 
 
 > **HINWEIS**

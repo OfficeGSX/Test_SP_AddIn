@@ -71,7 +71,7 @@ You saw in an earlier article in this series that when an order is placed, it is
     
   
 
-  ```cs
+ ```cs
   
 private static void CreateExpectedShipmentsList()
  {
@@ -122,14 +122,14 @@ private static void CreateExpectedShipmentsList()
         }
      }
  }
-  ```
+ ```
 
 2. In the  `DeployChainStoreComponentsToHostWeb` method, add the following line, just above the line `RemoteTenantVersion = localTenantVersion`.
     
-  ```
+ ```
   
 CreateExpectedShipmentsList();
-  ```
+ ```
 
 
 ## Create the list item event receiver
@@ -172,7 +172,7 @@ The Office Developer Tools for Visual Studio include a **Remote Event Receiver**
     
   
 
-  ```cs
+ ```cs
   using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
@@ -207,11 +207,11 @@ namespace ChainStoreWeb.Services
         }
     }
 }
-  ```
+ ```
 
 5. Add the following code to the  `ProcessOneWayEvent` method. Note that the **ItemUpdated** event is the only one that this sample will handle, so we could have used a simple **if** structure instead of a **switch**. But event receivers typically handle multiple events, so we want you to see the pattern you'll most commonly be using in your event handlers as a SharePoint add-in developer.
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -221,11 +221,11 @@ switch (properties.EventType)
                     
         break;
 }  
-  ```
+ ```
 
 6. Replace  `TODO12` with the following code. Again, here, we are using a **switch** structure when a simple **if** structure would do, because we want you to see the common pattern in SharePoint event receivers.
     
-  ```cs
+ ```cs
   
 switch (properties.ItemEventProperties.ListTitle)
 {
@@ -235,7 +235,7 @@ switch (properties.ItemEventProperties.ListTitle)
 
         break;
 }
-  ```
+ ```
 
 7. The code that responds to the arrival of a shipment should do two things:
     
@@ -250,21 +250,21 @@ switch (properties.ItemEventProperties.ListTitle)
     
 
 
-  ```cs
+ ```cs
   
 bool updateComplete = TryUpdateInventory(properties);
 if (updateComplete)
 {
     RecordInventoryUpdateLocally(properties);
 }
-  ```
+ ```
 
 
     The  `ProcessOneWayEvent` method should now look like the following:
     
 
 
-  ```cs
+ ```cs
   
 public void ProcessOneWayEvent(SPRemoteEventProperties properties)
 {
@@ -285,11 +285,11 @@ public void ProcessOneWayEvent(SPRemoteEventProperties properties)
             break;
     }          
 }
-  ```
+ ```
 
 8. Add the following method to the  `RemoteEventReceiver1` class.
     
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -301,7 +301,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
 
     return successFlag;
 }
-  ```
+ ```
 
 9. There are five columns on the **Expected Shipments** list, but we don't want to the handler to react to most kinds of updates to an item. For example, if a user corrects the spelling of a supplier's name, the item updated event is triggered, but our handler should do nothing. The handler should only act when the **Arrived** field has just been set to **Yes**. 
     
@@ -311,7 +311,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     
 
 
-  ```cs
+ ```cs
   
 var arrived = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Arrived"]);
 var addedToInventory = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Added_x0020_to_x0020_Inventory"]);
@@ -323,7 +323,7 @@ if (arrived &amp;&amp; !addedToInventory)
 
     successFlag = true;
 }
-  ```
+ ```
 
 10. Replace  `TODO15` with the following code. This is mainly SQL and ASP.NET programming, so we don't discuss it in detail, but note:
     
@@ -337,7 +337,7 @@ if (arrived &amp;&amp; !addedToInventory)
     
   
 
-  ```cs
+ ```cs
   
 using (SqlConnection conn = SQLAzureUtilities.GetActiveSqlConnection())
 using (SqlCommand cmd = conn.CreateCommand())
@@ -353,14 +353,14 @@ using (SqlCommand cmd = conn.CreateCommand())
     quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
     cmd.ExecuteNonQuery();
 }
-  ```
+ ```
 
 
     We are not finished with the  `TryUpdateInventory` method yet, but at this point it should look like the following.
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -389,7 +389,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }  
     return successFlag;
 }
-  ```
+ ```
 
 11. When the  `TryUpdateInventory` method returns **true**, our handler will call a method (not yet written) that will update the same item in the **Expected Shipments** list by setting the **Added to Inventory** field to **Yes**. This is itself a item update event, so the handler will be called again. (The fact that the **Added to Inventory** field is now **Yes**, will prevent the handler from adding the same shipment to inventory a second time, but the handler is still called.) 
     
@@ -406,13 +406,13 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
   
 12. Add the following **catch** block just below the **try** block.
     
-  ```cs
+ ```cs
   
 catch (KeyNotFoundException)
 {
     successFlag = false;
 }
-  ```
+ ```
 
 
     > **NOTE**
@@ -422,7 +422,7 @@ catch (KeyNotFoundException)
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -458,11 +458,11 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }
     return successFlag;
 }
-  ```
+ ```
 
 13. Add the following method to the  `RemoteEventReceiver1` class. By now this pattern of code is familiar from earlier articles in this series. But note one difference. The code gets the **ClientContext** object by calling **TokenHelper.CreateRemoteEventReceiverClientContext** method, instead of the **SharePointContext.CreateUserClientContextForSPHost** method as we used in code that called into SharePoint from pages, such as the EmployeeAdder page. The primary reason for having different methods to get a **ClientContext** object is that SharePoint passes the information needed to create such objects differently to event receivers from how it passes it to pages. For event receivers, it passes a **SPRemoteEventProperties** object, but for pages it passes a special field, called a context token, in the body of the request that launches the add-in page.
     
-  ```cs
+ ```cs
   
 private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 {
@@ -475,7 +475,7 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 14. Save and close the receiver code file.
     
@@ -490,14 +490,14 @@ The final task is to tell SharePoint that we have a custom receiver that we want
 
 1. Open the SharePointContentDeployer.cs file and add the following line to the  `DeployChainStoreComponentsToHostWeb` method just below the line that creates the **Expected Shipments** list. We'll add this method in the next step. Note that we are passing to the method the **HttpRequest** object that the add-in's start page passed to the `DeployChainStoreComponentsToHostWeb`method.
     
-  ```cs
+ ```cs
   
 RegisterExpectedShipmentsEventHandler(request);
-  ```
+ ```
 
 2. Add the following method to the  `SharePointComponentDeployer` class.
     
-  ```cs
+ ```cs
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())    
@@ -515,11 +515,11 @@ RegisterExpectedShipmentsEventHandler(request);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 3. Replace  `TODO16` with the following lines. Note that there is a light weight ***CreationInformation** class for event receivers just as there is for lists and list items.
     
-  ```cs
+ ```cs
   
 EventReceiverDefinitionCreationInformation receiver = new EventReceiverDefinitionCreationInformation();
 receiver.ReceiverName = "ExpectedShipmentsItemUpdated";
@@ -529,7 +529,7 @@ receiver.EventType = EventReceiverType.ItemUpdated;
 
 expectedShipmentsList.EventReceivers.Add(receiver);
 
-  ```
+ ```
 
 4. Now you need to tell SharePoint the URL of the event receiver. In production, it's going to be at the same domain as the remote pages, with the path of /Services/RemoteEventReceiver1.svc. Since the handler is being registered in first-run logic from the add-in's start page, the domain is in the host header of the **HttpRequest** object for the request that called the page. Our code has passed that object from the page to the `DeployChainStoreComponentsToHostWeb` method, which itself passed it to the `RegisterExpectedShipmentsEventHandler` method. So we can set the receiver's URL with the following code.
     
@@ -539,7 +539,7 @@ expectedShipmentsList.EventReceivers.Add(receiver);
     
 
 
-  ```cs
+ ```cs
   
 #if DEBUG
                     receiver.ReceiverUrl = WebConfigurationManager.AppSettings["RERdebuggingServiceBusUrl"].ToString();
@@ -547,14 +547,14 @@ expectedShipmentsList.EventReceivers.Add(receiver);
                     receiver.ReceiverUrl = "https://" + request.Headers["Host"] + "/Services/RemoteEventReceiver1.svc"; 
 #endif
 
-  ```
+ ```
 
 
     The whole  `RegisterExpectedShipmentsEventHandler` method should now look like the following.
     
 
 
-  ```cs
+ ```cs
   
 private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {    
@@ -581,14 +581,14 @@ private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 5. Add the following **using** statement to the top of the file.
     
-  ```cs
+ ```cs
   
 using System.Web.Configuration;
-  ```
+ ```
 
 6. To ensure that  `DEBUG` is true if, and only if, the add-in is being debugged, carry out the following subprocedure:
     
@@ -619,9 +619,9 @@ using System.Web.Configuration;
   
 7. Open the web.config file, and add the following mark up as a child of the **appSettings** element. We get the value of the setting in the next section.
     
-  ```XML
+ ```XML
   <add key="RERdebuggingServiceBusUrl" value="" />
-  ```
+ ```
 
 
 ## Get the receiver URL for debugging
@@ -636,9 +636,9 @@ The add-in event and list item event receivers are Windows Communication Service
   
 2. Add the following as the very first line in the **ProcessEvent** method.
     
-  ```cs
+ ```cs
   string debugEndpoint = System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri.ToString(); 
-  ```
+ ```
 
 3. Add a breakpoint to the very next line of the method.
     

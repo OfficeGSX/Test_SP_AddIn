@@ -118,7 +118,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
     
 
 
-  ```HTML
+ ```HTML
   
 <html>
     <body>
@@ -161,7 +161,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
     </script>
     </body>
 </html>
-  ```
+ ```
 
 4. Save and close the file.
     
@@ -278,7 +278,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
   
 10. Visual Studio generates the following XML code in the elements.xml file of the add-in part (line breaks added for clarity). Note that the **Title** attribute of the **ClientWebPart** element is set to "Basic add-in part Title" and the Description is set to "Basic add-in part Description". Delete the word "Title" from the first, and replace the second withA basic add-in part. 
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -336,7 +336,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
     </ClientWebPart>
 </Elements>               
 
-  ```
+ ```
 
 
 ### Set the add-in start page to the host web home page
@@ -444,11 +444,9 @@ If your page hosted on the add-in web is not susceptible to ClickJacking attacks
     
 
 
+```XML
 
-```XML
-
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
-```
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
 
 You can download an  [add-in part code sample](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16) that shows how to use a SharePoint page as the content page.
   
@@ -467,10 +465,8 @@ You can use POST messages from your content webpage to specify the frame's size.
     
 
 
-
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
-```
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
 
 In the example above, the **senderId** value will be set on the query string of the page automatically by the add-in part code when the page is rendered. Your page would just need to read the **SenderId** value off of the query string and use it when requesting a resize. You can retrieve the host web URL from the query string by appending the **StandardTokens** or **HostUrl** tokens to the **Src** attribute in your add-in part definition. You can download the [Resize add-in parts code sample](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88) to see an add-in part that dynamically resizes.
   
@@ -500,10 +496,8 @@ To use the **_editMode_** token, add a query string parameter to the **Src** att
     
 
 
-
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">
-```
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
 
 The **_editMode_** token lets your content page determine if the add-in part is in edit mode. If the add-in part is in edit mode, the **_editMode_** token resolves to 1; otherwise, the token resolves to 0.
   

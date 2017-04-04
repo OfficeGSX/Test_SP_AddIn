@@ -64,11 +64,11 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
   
 5. 如果在安装中出现任何错误，请查看日志文件。若要查找日志文件，请打开命令提示符窗口并在命令提示符处键入以下命令。此外，在安装完成时，将显示指向日志文件的链接。
     
-  ```
+ ```
   
 cd %temp%
 dir /od *.log
-  ```
+ ```
 
 6. 安装完成后，系统将提示您启动 SharePoint 产品和技术配置向导。
     
@@ -212,40 +212,40 @@ dir /od *.log
 
 1. 通过打开命令提示符并键入以下命令来确保 spadmin 和 sptimer 服务正在运行。
     
-  ```
+ ```
   
 net start spadminv4
 net start sptimerv4
-  ```
+ ```
 
 2. 作为管理员运行 SharePoint Management Shell 并键入以下命令以创建独立的加载项域。将  _contosoaddins.com_ 替换为您的加载项域。它 *不*  应是 SharePoint 主机域的子域。这样做在很大程度上抵消了隔离加载项域的安全优势。例如，如果主机域是 contoso.com，则不要将 addins.contoso.com 用作加载项域。
     
-  ```
+ ```
   
 Set-SPAppDomain "contosoaddins.com"
-  ```
+ ```
 
 3. 通过在 SharePoint Management Shell 中键入以下命令来确保 SPSubscriptionSettingsService 和 AppManagementServiceInstance 服务正在运行。
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
-  ```
+ ```
 
 4. 通过在 SharePoint Management Shell 中键入以下命令来验证 SPSubscriptionSettingsService 和 AppManagementServiceInstance 服务是否正在运行。输出将指明每项服务是否处于联机状态。
     
-  ```
+ ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
-  ```
+ ```
 
 5. 您必须指定运行 SPSubscriptionService 和 AppManagementServiceInstance 服务实例将使用的帐户。此帐户必须是 SPManagedAccount。通过在 SharePoint Management Shell 中键入以下命令，您可以创建 SPManagedAccount（将会提示您输入帐户域\\用户和密码）。
     
-  ```
+ ```
   $account = New-SPManagedAccount
-  ```
+ ```
 
 6. 通过在 SharePoint Management Shell 中键入以下代码，为 SPSubscriptionService 和 AppManagementServiceInstance 服务指定帐户、应用程序池和数据库设置。如果在上一步骤中创建了 SPManagedAccount，请在此处使用该帐户名称。
     
-  ```
+ ```
   $account = Get-SPManagedAccount "domain\\user"
 $appPoolSubSvc = New-SPServiceApplicationPool -Name SettingsServiceAppPool -Account $account
 $appPoolAppSvc = New-SPServiceApplicationPool -Name AppServiceAppPool -Account $account
@@ -254,14 +254,14 @@ $proxySubSvc = New-SPSubscriptionSettingsServiceApplicationProxy -ServiceApplica
 $appAppSvc = New-SPAppManagementServiceApplication -ApplicationPool $appPoolAppSvc -Name AppServiceApp -DatabaseName AppServiceDB
 $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $appAppSvc
 
-  ```
+ ```
 
 7. 通过在 SharePoint 命令行管理程序中键入以下代码来指定加载项前缀（请参阅 [主机 Web、外接程序 Web 以及独立的域](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md#IsolatedDomain)）。
     
-  ```
+ ```
   
 Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
-  ```
+ ```
 
  **仅在您的环境使用代理服务器时执行以下过程。** 创建独立的加载项域之后，请执行以下过程中的步骤，以在 Internet Explorer 中将该域添加到您的绕过列表中。这可以确保在部署 Sharepoint 承载的加载项或部署包含加载项 Web 的提供程序承载的加载项之后可以导航到此域。
   

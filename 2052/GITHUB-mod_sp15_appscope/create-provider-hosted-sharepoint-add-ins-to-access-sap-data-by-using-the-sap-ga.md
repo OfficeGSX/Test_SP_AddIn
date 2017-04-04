@@ -191,15 +191,15 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
   
 2. 在  `<appSettings>` 部分，Visual Studio Office 开发人员工具 已添加 SharePoint 外接程序的 **ClientID** 和 **ClientSecret** 元素。（如果应用程序访问 SharePoint，这两个元素将用于 Azure ACS 授权系统。在下面的示例中，您可以将它们忽略，但不能删除。在提供程序托管的 SharePoint 外接程序中需要这两个元素，即使外接程序不访问 SharePoint 数据。每当您在 Visual Studio 中按 F5 时，它们的值都会更改。）将以下两个元素添加到此部分。应用程序使用这两个元素来向 Azure AD 进行身份验证。（请记住，在基于 OAuth 的身份验证和授权系统中，应用程序和用户都是安全主体。）
     
-  ```
+ ```
   
 <add key="ida:ClientID" value="" />
 <add key="ida:ClientKey" value="" />
-  ```
+ ```
 
 3. 插入在之前的过程中从 Azure AD 目录保存的客户端 ID，作为 **ida:ClientID** 密钥的值。将大小写和标点保持为与您复制时一样，注意不要在值的开头或结尾包含空格字符。对于 **ida:ClientKey** 密钥，使用从目录保存的 *密钥*  。同样，请小心不要插入空格字符或以任何方式更改值。 `<appSettings>` 部分现在应该如下所示。（ **ClientId** 值可能具有 GUID 或空字符串。）
     
-  ```
+ ```
   
 <appSettings>
   <add key="ClientId" value="" />
@@ -207,36 +207,36 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
   <add key="ida:ClientID" value="4da99afe-08b5-4bce-bc66-5356482ec2df" />
   <add key="ida:ClientKey" value="URwh/oiPay/b5jJWYHgkVdoE/x7gq3zZdtcl/cG14ss=" />
 </appSettings>
-  ```
+ ```
 
 
     > **注释**
       > Azure AD 通过您用于注册应用程序的"localhost"URL 来识别您的应用程序。客户端 ID 和客户端密钥与该标识相关。当您准备好将应用程序暂存到 Azure 网站，时，您需要使用新的 URL 重新注册。 
 4. 仍在 **appSettings** 部分，添加 **Authority** 密钥，将其值设置为您的组织帐户的 Office 365 域 ( *some_domain*  .onmicrosoft.com)。在下面的示例中，组织帐户为 Bob@<O365_domain>.onmicrosoft.com，因此标识为 `<O365_domain>.onmicrosoft.com`。 
     
-  ```
+ ```
   
 <add key="Authority" value="<O365_domain>.onmicrosoft.com" />
-  ```
+ ```
 
 5. 仍在 **appSettings** 部分，添加 **AppRedirectUrl** 密钥，将其值设置为在 ASP.NET 外接程序从 Azure AD 获取授权代码后，用户浏览器应重定向到的页面。通常情况下，这是调用 Azure AD 时用户位于的页面。在下面的示例中，使用 SSL URL 值及其所附加的"/Pages/Default.aspx"，如下所示。（这是您需为暂存更改的另一个值。）
     
-  ```
+ ```
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
-  ```
+ ```
 
 6. 仍在 **appSettings** 部分，添加 **ResourceUrl** 密钥，将其值设置为 SAP Gateway for Microsoft 的 APP ID URI（ *不是*  您的 ASP.NET 应用程序的 APP ID URI）。从 SAP Gateway for Microsoft 管理员那获取此值。示例如下。
     
-  ```
+ ```
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
-  ```
+ ```
 
 
      `<appSettings>` 部分现在应该如下所示：
     
 
 
-  ```
+ ```
   <appSettings>
   <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6" />
   <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=" />
@@ -246,7 +246,7 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
 </appSettings>
-  ```
+ ```
 
 7. 保存并关闭 web.config 文件。
     
@@ -261,24 +261,24 @@ Azure AD 中的 OAuth 2.0 使应用程序可以访问 Microsoft Azure 托管的�
   
 2. 向文件中添加以下 **using** 语句：
     
-  ```
+ ```
   
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Configuration;
 using System.Web.UI;
 
-  ```
+ ```
 
 3. 将访问关键字从 **public** 更改为 **internal** 并将 **static** 关键字添加到类声明。
     
-  ```
+ ```
   
 internal static class AADAuthHelper
-  ```
+ ```
 
 4. 将下列字段添加到类。这些字段存储您的 ASP.NET 应用程序用于从 AAD 获取访问令牌的信息。
     
-  ```
+ ```
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"];     
@@ -290,11 +290,11 @@ private static readonly ClientCredential _clientCredential = new ClientCredentia
 private static readonly AuthenticationContext _authenticationContext = 
             new AuthenticationContext("https://login.windows.net/common/" + 
                                       ConfigurationManager.AppSettings["Authority"]);
-  ```
+ ```
 
 5. 将以下属性添加到类。该属性保存到 Azure AD 登录屏幕的 URL。
     
-  ```
+ ```
   
 private static string AuthorizeUrl
 {
@@ -308,11 +308,11 @@ private static string AuthorizeUrl
     }
 }
 
-  ```
+ ```
 
 6. 将下列属性添加到类。这些属性缓存访问令牌和刷新令牌并检查它们的有效性。
     
-  ```
+ ```
   
 public static Tuple<string, DateTimeOffset> AccessToken
 {
@@ -345,11 +345,11 @@ private static bool IsRefreshTokenValid
     get { return !string.IsNullOrEmpty(RefreshToken); }
 }
 
-  ```
+ ```
 
 7. 将下列方法添加到类。这些方法用于检查授权代码的有效性，并使用身份验证代码或刷新令牌从 Azure AD 获取访问令牌。
     
-  ```
+ ```
   
 private static bool IsAuthorizationCodeNotNull(string authCode)
 {
@@ -380,11 +380,11 @@ private static Tuple<string, DateTimeOffset> RenewAccessTokenUsingRefreshToken()
     return new Tuple<string, DateTimeOffset>(authResult.AccessToken, authResult.ExpiresOn);
 }
 
-  ```
+ ```
 
 8. 将以下方法添加到类。此方法从后台的 ASP.NET 代码调用以获取有效的访问令牌，然后执行调用，通过 SAP Gateway for Microsoft 获取 SAP 数据。
     
-  ```
+ ```
   
 internal static void EnsureValidAccessToken(Page page)
 {
@@ -417,7 +417,7 @@ internal static void EnsureValidAccessToken(Page page)
         page.Response.Redirect(AuthorizeUrl);
     }
 }
-  ```
+ ```
 
 
 > **提示**
@@ -435,7 +435,7 @@ internal static void EnsureValidAccessToken(Page page)
   
 2. 将以下代码添加到类的正文：
     
-  ```
+ ```
   
 public string Price;
 public string Brand;
@@ -445,7 +445,7 @@ public string Engine;
 public int MaxPower;
 public string BodyStyle;
 public string Transmission;
-  ```
+ ```
 
 
 ### 添加后台代码，以通过 SAP Gateway for Microsoft 从 SAP 获取数据
@@ -453,44 +453,44 @@ public string Transmission;
 
 1. 打开 Default.aspx.cs 文件，并添加以下 **using** 语句。
     
-  ```
+ ```
   
 using System.Net;
 using Newtonsoft.Json.Linq;
-  ```
+ ```
 
 2. 将 **const** 声明添加到 Default 类，其值为外接程序将访问的 SAP OData 终结点的基 URL。下面是一个示例：
     
-  ```
+ ```
   
 private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net:8081/perf/sap/opu/odata/sap/ZCAR_POC_SRV/";
-  ```
+ ```
 
 3. Visual Studio Office 开发人员工具 已添加 **Page_PreInit** 方法和 **Page_Load** 方法。将 **Page_Load** 方法中的代码注释掉，并注释掉整个 **Page_Init** 方法。此代码未在此示例中使用。（如果您的 SharePoint 外接程序将要访问 SharePoint，您应还原此代码。请参阅 [可以选择将 SharePoint 访问权限添加到 ASP.NET 应用程序](#SharePoint)。）
     
   
 4. 将以下行添加到 **Page_Load** 方法最前面。这将简化调试过程，因为您的 ASP.NET 应用程序使用 SSL (HTTPS) 与 SAP Gateway for Microsoft 进行通信；但是，您的"localhost:port"服务器未配置为信任 SAP Gateway for Microsoft 的证书。如果没有此代码行，在 Default.aspx 打开之前，您将收到证书无效的警告。某些浏览器允许您单击跳过此错误，但是有些浏览器不会允许您始终打开 Default.aspx。
     
-  ```
+ ```
   ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, errors) => true;
-  ```
+ ```
 
 
     > **重要信息**
       > 当您准备好将 ASP.NET 应用程序部署到暂存环境之后，删除此行。请参阅 [修改外接程序并将其暂存到 Azure 和 Office 365](#Stage)。 
 5. 将以下代码添加到 **Page_Load** 方法。您传递到 `GetSAPData` 方法的字符串是 OData 查询。
     
-  ```
+ ```
   if (!IsPostBack)
 {
     GetSAPData("DataCollection?$top=3");
 }
 
-  ```
+ ```
 
 6. 将以下方法添加到 Default 类。此方法首先确保访问令牌缓存具有从 Azure AD 获取的有效访问令牌。然后创建包含访问令牌的 HTTP **GET** 请求并将其发送到 SAP OData 终结点。结果是作为 JSON 对象返回，已转换为 .NET **List** 对象。项目的三个属性用于绑定到 **DataListView** 的阵列。
     
-  ```
+ ```
   
 private void GetSAPData(string oDataQuery)
 {
@@ -513,7 +513,7 @@ private void GetSAPData(string oDataQuery)
     }
 }
 
-  ```
+ ```
 
 
 ### 创建用户界面
@@ -521,7 +521,7 @@ private void GetSAPData(string oDataQuery)
 
 1. 打开 Default.aspx 文件，并将以下标记添加到页面的 **form**：
     
-  ```
+ ```
   
 <div>
   <h3>Data from SAP via SAP Gateway for Microsoft</h3>
@@ -537,7 +537,7 @@ private void GetSAPData(string oDataQuery)
     </ItemTemplate>
   </asp:ListView>
 </div>
-  ```
+ ```
 
 2. 可以选择通过 SharePoint  [Chrome 控件](use-the-client-chrome-control-in-sharepoint-add-ins.md)和 [主机 SharePoint 网站的样式表](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)为网页设置 SharePoint 页面外观。
     
@@ -592,21 +592,21 @@ private void GetSAPData(string oDataQuery)
   
 2. 如果您的 SharePoint 外接程序要访问 SharePoint 数据，则当外接程序在 SharePoint 中启动时，您必须将已执行 POST 操作的 SharePoint 上下文令牌缓存到 Default.aspx 页面。这是为了确保当浏览器按照 Azure AD 身份验证重定向时，SharePoint 上下文令牌不会丢失。（您具有缓存此上下文方式的多个选项。）Visual Studio Office 开发人员工具 将 SharePointContext.cs 文件添加到执行大部分工作的 ASP.NET 项目。要使用会话缓存，您只需在" `if (!IsPostBack)`"块内，在引出 SAP Gateway for Microsoft 的代码 *前面*  添加以下代码：
     
-  ```
+ ```
   
 if (HttpContext.Current.Session["SharePointContext"] == null)
 {
      HttpContext.Current.Session["SharePointContext"]
         = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
-  ```
+ ```
 
 3. SharePointContext.cs 文件调用 Visual Studio Office 开发人员工具 添加到项目中的另一个文件：TokenHelper.cs。该文件提供获取和使用 SharePoint 的访问令牌所需的大部分代码。但是，它不提供续订已过期访问令牌或已过期的刷新令牌的任何代码。它也不包含任何令牌缓存代码。要实现生产质量 SharePoint 外接程序，您需要添加此类代码。例如前一步中的缓存逻辑。您的代码还应该缓存访问令牌并重复使用，直至其过期。当访问令牌过期时，您的代码应使用刷新令牌获取新的访问令牌。
     
   
 4. 使用 CSOM 或 REST 添加对 SharePoint 的数据调用。以下示例是修改 Visual Studio Office 开发人员工具 添加到 **Page_Load** 方法的 CSOM 代码。在本示例中，代码已移至单独的方法中，并通过检索已缓存的上下文令牌来启动。
     
-  ```
+ ```
   
 private void GetSharePointTitle()
 {
@@ -618,14 +618,14 @@ private void GetSharePointTitle()
         SharePointTitle.Text = "SharePoint web site title is: " + clientContext.Web.Title;
     }
 }
-  ```
+ ```
 
 5. 添加 UI 元素以呈现 SharePoint 数据。下面显示了在前一方法中引用的 HTML 控件：
     
-  ```
+ ```
   
 <h3>SharePoint title</h3><asp:Label ID="SharePointTitle" runat="server"></asp:Label><br />
-  ```
+ ```
 
 
 > **注释**

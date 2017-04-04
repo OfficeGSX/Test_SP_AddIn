@@ -211,12 +211,12 @@ Tras finalizar el proceso de registro, el explorador abre la página de instalac
   
 7. Una vez creado el proyecto, abra el archivo **/Pages/Default.aspx** de la raíz del proyecto. Entre otras cosas, este archivo generado carga uno o ambos scripts que se hospedan en SharePoint: sp.runtime.js y sp.js. La marca para cargar estos archivos está en el control **Content** situado cerca de la parte superior del archivo que tiene el ID **PlaceHolderAdditionalPageHead**. La marca varía según la versión de **Microsoft Office Developer Tools para Visual Studio** que está utilizando. Esta serie de tutoriales requiere que ambos archivos se carguen mediante etiquetas HTML de **<script>**, no con etiquetas de **<SharePoint:ScriptLink>**. Asegúrese de que las líneas siguientes están en el control **PlaceHolderAdditionalPageHead**,  *justo encima*  de la línea `<meta name="WebPartPageExpansion" content="full" />`:
     
-  ```
+ ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+ ```
 
 
     A continuación, busque en el archivo cualquier otra marca que también permita cargar uno de estos archivos y quite la marca redundante. Guarde y cierre el archivo.
@@ -312,21 +312,21 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
     
 
 
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
-  ```
+ ```
 
 20. En el archivo schema.xml, en el elemento **View** cuyo valor **BaseViewID** es "1", sustituya el elemento **ViewFields** existente con el siguiente marcador. (Use exactamente este GUID para el **FieldRef** llamado `LinkTitle`.)
     
-  ```
+ ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
-  ```
+ ```
 
 21. Guarde y cierre el archivo schema.xml.
     
@@ -336,7 +336,7 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
   
 23. En este archivo, rellene la lista con algunos datos iniciales. Para ello, agregue el siguiente elemento de marcador **Data** como elemento secundario del elemento **ListInstance**.
     
-  ```
+ ```
   
 <Data>
   <Rows>
@@ -354,7 +354,7 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
     </Row>
   </Rows>
 </Data>
-  ```
+ ```
 
 24. Guarde y cierre el archivo.
     
@@ -373,13 +373,13 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
   
 29. Busque el elemento **Content** de ASP.NET con el identificador **PlaceHolderMain**.  *Reemplace*  su contenido con el siguiente marcador. ` _spPageContextInfo` es un objeto JavaScript que SharePoint incluye automáticamente en la página. Su propiedad `webAbsoluteUrl` devuelve la dirección URL del web de complemento.
     
-  ```XML
+ ```XML
   
 <p><asp:HyperLink runat="server"
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
-  ```
+ ```
 
 
 ## Ejecutar el complemento y probar la lista

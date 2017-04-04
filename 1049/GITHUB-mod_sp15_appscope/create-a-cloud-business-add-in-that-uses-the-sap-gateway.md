@@ -104,7 +104,7 @@ Contoso Motors  это вымышленная компания по прода
     
 
 
-  ```cs
+ ```cs
   
 // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
@@ -145,7 +145,7 @@ Contoso Motors  это вымышленная компания по прода
                 return accessToken.Item1;
             }
   }
-  ```
+ ```
 
 - **BoxXDataService**
     
@@ -155,7 +155,7 @@ Contoso Motors  это вымышленная компания по прода
     
 
 
-  ```cs
+ ```cs
   
 [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
@@ -187,7 +187,7 @@ Contoso Motors  это вымышленная компания по прода
         {
             BoxXDataDeleter.DeleteInventoryItem(carInventoryItem.ID);
  }
-  ```
+ ```
 
 - **CarInventoryBoxXDataOperation**
     
@@ -331,7 +331,7 @@ LightSwitch поддерживает интеграцию данных благ�
     
 
 
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="UTF-8"?> 
 - <edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
@@ -370,7 +370,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
 </edmx:DataServices>
 </edms:Edmx>               
 
-  ```
+ ```
 
 
     Это наша тестовая база данных. Тип свойства и значение, допускающее значение null, зависит от сценария. ИД  это PropertyRef и основа операции CRUD OData. Свойство StockNo используется для интеграции данных с изображением автомобиля, которое хранится в библиотеке изображений SharePoint.
@@ -378,7 +378,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   
 -  *Модель данных, которая задается для службы RIA* 
     
-  ```cs
+ ```cs
   
 public interface IInventoryItem
     	{
@@ -426,7 +426,7 @@ public interface IInventoryItem
         bool CopyFrom(IInventoryCollection other);
 }
 
-  ```
+ ```
 
 
     Любое свойство, которое не включено в схему базы данных SAP, можно игнорировать. Например, свойство **Images** добавлено для масштабируемости. Эта модель данных  нечто среднее между реальной базой данных SAP и источником данных SellerDashboard.Server. Проект LightSwitch содержит два компонента: для просмотра и для сервера. При добавлении внешнего источника данных сервера приложение LightSwitch помогает создать слой абстрактных данных, который добавляется к источнику данных сервера.
@@ -547,8 +547,7 @@ SellerDashboard  это размещенная у поставщика над�
     
 
 
-
-```cs
+```cs
 
 protected override void Page_Load(object sender, EventArgs e)
 {
@@ -572,8 +571,7 @@ protected override void Page_Load(object sender, EventArgs e)
      }
 
      base.Page_Load(sender, e);
- }
-```
+ }```
 
 Дополнительные сведения см. в файлах SellerDashBoard.Server/SharePointLaunch.aspx.cs и AADAuthLib/AuthUtil.cs, указанных в примере кода.
   
@@ -596,8 +594,7 @@ SellerDashboard.Server содержит файлы SharePointContext.cs и Token
     
 
 
-
-```cs
+```cs
 
         public void CreateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -628,8 +625,7 @@ BoxXDataReader
 
                 dataCollection.CopyFrom(filteredCollection);
             }
-        }
-```
+        }```
 
  **BoxXDataUpdater**
   
@@ -637,8 +633,7 @@ BoxXDataReader
     
 
 
-
-```cs
+```cs
 
 public void UpdateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -666,8 +661,7 @@ BoxXDataDeleter
 
             // Delete existing entry request execute
             IODataResponseMessage responseMessage = requestMessage.GetResponse();
-        }
-```
+        }```
 
 
 ### Отправка фотографий в библиотеку изображений SharePoint
@@ -686,16 +680,14 @@ BoxXDataDeleter
     
 
 
-
-```
+```
 
 uploadForm = $(
              '<form id="uploadForm" method="POST" enctype="multipart/form-data" action="' + API_URL + '"  data-ajax="false" target="uploadTargetIFrame">' +
              '   <input name="fileInput" id="fileInput" type="file" size="30" data-theme="c" accept="image/*" multiple="true"/>' +
              '   <input type="hidden" name=' + screen.InventoryItem.StockNo + '>' +
              '</form>');
-
-```
+```
 
 Добавьте логику для кэширования URL-адреса изображения, а также логику для обратного преобразования изображения.
   
@@ -703,8 +695,7 @@ uploadForm = $(
     
 
 
-
-```
+```
 
 function completeUpload(uploadedFiles) {
             var fullImageUrl = uploadedFiles[0];
@@ -716,8 +707,7 @@ function completeUpload(uploadedFiles) {
             setCacheUrl(screen.InventoryItem.StockNo, fullImageUrl + "*#00#" + thumbnailUrl);
             setDetailsCarPicture(fullImageUrl);
             screen.closePopup();
-        }
-```
+        }```
 
  **Чтобы изменить PhotosController.cs:**
   
@@ -733,8 +723,7 @@ function completeUpload(uploadedFiles) {
     
 
 
-
-```cs
+```cs
 
 private ClientContext AppWebContext
     {
@@ -747,8 +736,7 @@ private ClientContext AppWebContext
             return appWebContext;
         }
     }
-
-```
+```
 
  **Чтобы изменить PhotoListHelper.cs:**
   
@@ -760,8 +748,7 @@ private ClientContext AppWebContext
     
 
 
-
-```cs
+```cs
 
             // Delete the old picture item
             foreach (ListItem item in items)
@@ -796,8 +783,7 @@ private ClientContext AppWebContext
             }
 
 
-
-```
+```
 
 
 ### Взаимодействие с пользователем
@@ -860,20 +846,20 @@ private ClientContext AppWebContext
   
 4. Укажите надстройку как запускаемый проект и запустите проект. Значения ClientID и ClientSecret можно найти в файле ContosoMotorsCarInventoryWeb/Web.config. Код должен выглядеть так:
     
-  ```XML
+ ```XML
   
 <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6"/>
 <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk="/>
-  ```
+ ```
 
 5. Замените значения ClientID и ClientSecret в разделе "Hosted app configuration" (Конфигурации размещенний надстройки) файла ContosoMotorsCarInventoryWeb/TokenHelper.cs значениями, указанными выше. Код должен выглядеть так:
     
-  ```cs
+ ```cs
   
 private static readonly string ClientId = "06af1059-8916-4851-a271-2705e8cf53c6";
 private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=";
 
-  ```
+ ```
 
 
 ### Регистрация веб-приложения в Azure AD
@@ -967,14 +953,14 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 
 1. Найдите файл SellerDashboardHTMLClient/UserCode.js и такой заполнитель кода:
     
-  ```cs
+ ```cs
   
 sharePointUrl: "Replace with your SharePoint host site",
 // https://fake_domain.sharepoint.com/sites/Developer
 SharePointRootUrl: "Replace with your SharePoint root site"
  // https://fake_domain.sharepoint.com/ 
 
-  ```
+ ```
 
 
 1. Измените значение sharePointUrl на адрес сайта SharePoint, где будет установлена надстройка и который содержит библиотеку изображений.
@@ -985,7 +971,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
   
 2. Найдите файл SellerDashboard.Server/Web.config в решении SellerDashboard и такой заполнитель конфигурации:
     
-  ```XML
+ ```XML
   
 <add key="ClientSecret" value="MwMp1yxOyy8BGhfD5d9VvuqlRbhaqWESxVNLzgpYNHU=" />
 <add key="ClientId" value="ed138b32-c89d-4f22-b74d-7d9d5044b260" />
@@ -1006,7 +992,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
 <add key="Ida:DefaultID" value="1024" />
 <add key="Ida:DefaultStockNo" value="2048" />
 <add key="Ida:SPPicLib" value="Replace with you picture library name, for example ContosoMotorsPictureLibrary" />
-  ```
+ ```
 
 
 1. Замените значения ClientId и ClientSecret значениями, полученными на предыдущем шаге.
@@ -1041,7 +1027,7 @@ SharePointRootUrl: "Replace with your SharePoint root site"
     
 
 
-  ```XML
+ ```XML
   
 ZCAR_POC_SRV.ContosoMotors
 
@@ -1049,7 +1035,7 @@ ZCAR_POC_SRV.ContosoMotors
      <EntitySet sap:content-version="1" Name="ContosoMotorsCollection" sap:searchable="true" EntityType="ZCAR_POC_SRV.ContosoMotors"/>
 </EntityContainer>
 <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://contoso.cloudapp.net:8080/perf/sap/opu/odata/sap/ZCAR_POC_SRV.ContosoMotors"/>
-  ```
+ ```
 
 10. Замените значение Ida:SPPicLib именем библиотеки изображений, созданной на хост-сайте SharePoint.
     

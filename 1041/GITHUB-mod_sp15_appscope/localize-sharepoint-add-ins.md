@@ -114,7 +114,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
   
 3. [ **説明**] 属性を使用して、リストの説明の文字列リソースを、同じ方法で呼び出します。たとえば、「$Resources:OrdersListInstance_Description」と入力します。次に示すのは、リストのインスタンスの Elements.xml ファイル内でローカライズされた文字列を使用するマークアップです。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -126,7 +126,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
       Description="$Resources:OrdersListInstance_Description">
   </ListInstance>
 </Elements>
-  ```
+ ```
 
 
     次に示すのは、英語でローカライズされたカスタム リストの画像です。
@@ -157,7 +157,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
   
 4. カスタム リストの **Schema.xml** ファイルで、前にコピーしたすべての **Field** ノードの **DisplayName** 属性を削除します。次に示すのは、リスト定義の **Elements.xml** ファイルのローカライズされた文字列を使用するマークアップの例です。
     
-  ```
+ ```
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -192,7 +192,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
         List="Lists/Order status"
         ShowField="Title" />
 </Elements>
-  ```
+ ```
 
 
 ### カスタム ページ用の JavaScript リソース ファイルを作成するには
@@ -211,7 +211,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
   
 4. 各カスタム ページの各ローカライズ可能文字列に対して、文字列を識別する目的の名前となる変数をファイル内に宣言し、言語に適した値を割り当てます。次に示すのは Resources.en-US.js ファイルの内容です。
     
-  ```
+ ```
   
 var instructionstitle = "Instructions:";
 var step01 = "Go to any document library in the host web.";
@@ -224,7 +224,7 @@ var step06 = "Go to any SharePoint page in the host web and add the" +
 var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     " and <a href=\\"../Lists/Order status\\">Order status</a> custom lists.";
 
-  ```
+ ```
 
 5. このファイルの内容を、残りの JavaScript ファイルにコピーし、すべてのファイルを保存します。
     
@@ -241,10 +241,10 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   
 2. ページの読み込み時に、ローカライズされた JavaScript ファイルが 1 つだけ読み込まれ、そのファイルが SharePoint アドイン Web に適していることを確認してください。これを行うには、値が  `PlaceholderAdditionalPageHead` の `ContentPlaceholderId` がある、ページの **asp:content** 要素に次のマークアップを追加する必要があります。 *次のマークアップにはプレースホルダーはありません。ここに示したマークアップとまったく同じように入力してください。* 
     
-  ```HTML
+ ```HTML
   
 <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
-  ```
+ ```
 
 
     このマークアップは、いずれかの JavaScript ファイルを読み込みます。読み込まれるファイルは、"language_value" という名前の SharePoint リソースを読み取ることで決定されます。このリソースは、前の手順で説明した  _LL_- _CC_ というパターンの言語カルチャ名に解決されます。つまり、アドイン Web の言語に解決されます。
@@ -256,7 +256,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     > **ヒント**
       > ロケールに依存しない文字列の先頭に「INVARIANT」という語が追加されています。これを製品アドインで行うことはありませんが、テストの際にロケールに依存しない言語文字列が使用されているか、またはロケールに依存しない言語になる言語の Resources. _LL_- _CC_.js ファイルが読み込まれたかを一目で知るための役立つ方法となります。 
 
-  ```HTML
+ ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
 <ol>
     <li id="step01">Go to any document library in the host web.</li>
@@ -287,7 +287,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
     }
 </script>
 
-  ```
+ ```
 
 
     次の図は、アドインが完了したときの、英語バージョンのページのプレビューを示しています。
@@ -350,10 +350,10 @@ AppManifest.xml ファイルで指定されているアドイン タイトルを
 
 1. AppManifest.xml ファイルを開き、 **Title** 要素の値を、適切なリソース文字列の呼び出しに置き換えます。たとえば、文字列にAddin_Title という名前を付けた場合、 **Title** 要素は次のようになります。
     
-  ```XML
+ ```XML
   
 <Title>$Resources:Addin_Title;</Title>
-  ```
+ ```
 
 
     > **注意**
@@ -375,8 +375,7 @@ AppManifest.xml ファイルで指定されているアドイン タイトルを
     
 
 
-
-```cs
+```cs
 protected override void InitializeCulture()
 {
     if (Request.QueryString["SPLanguage"] != null)
@@ -394,8 +393,7 @@ protected override void InitializeCulture()
             CultureInfo(selectedLanguage);
     }
     base.InitializeCulture();
-}
-```
+}```
 
 
 ## リモート JavaScript と SharePoint クロム コントロールのローカライズ
@@ -418,7 +416,7 @@ Web アプリケーションの JavaScript にローカライズ可能な文字�
 
 1. クロム コントロールの機能が開始した後に、クロム オプションを設定した  `renderChrome` メソッドに戻ります。
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -441,11 +439,11 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 2. コメントに記されているように、少なくとも 3 つのローカライズ可能な文字列があります。それぞれを、後の手順で宣言する変数名に置き換えます。
     
-  ```
+ ```
   
 function renderChrome() {
     var options = {
@@ -468,47 +466,47 @@ function renderChrome() {
         ]
     };
 
-  ```
+ ```
 
 3. ChromeStrings という名前の JavaScript ファイルを Web アプリケーション プロジェクトに追加します。そこでは直前の手順で使用された変数を宣言して、ロケールに依存しない言語でそれぞれに値を割り当てる必要があります。
     
-  ```
+ ```
   
 var chromeAppTitle = "My SharePoint add-in";
 var chromeAccountLinkName = "Account settings";
 var chromeContactUsLinkName = "Contact us";
 
-  ```
+ ```
 
 4. アドインをローカライズする言語ごとに、ChromeStrings. _LL-CC_.js という名前の別の JavaScript ファイルを追加します。ここで、 _LL-CC_ は言語 ID です。 *ファイル名のベース (このケースでは "ChromeStrings") は、ロケールに依存しない言語のファイルに使用したものと完全に同じでなければなりません。*  ロケールに依存しない言語のファイルの内容をローカライズされる各ファイルにコピーして、それらの値を翻訳されたバージョンに置き換えます。
     
-  ```
+ ```
   
 var chromeAppTitle = "Mi aplicación SharePoint";
 var chromeAccountLinkName = "Preferencias";
 var chromeContactUsLinkName = "Contacto";
 
-  ```
+ ```
 
 5. スクリプト SP.UI.controls.js が呼び出されるすべてのページ ファイルで、その上の ChromeStrings.js に対する呼び出しを追加します。たとえば、SP.UI.controls.js への呼び出しが ChromeLoader.js という名前の中間ファイルに読み込まれる場合、この時点でのページのマークアップは次のようになるはずです。
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 6. 文字列を呼び出す **ScriptReference** 要素に **ResourceUICultures** 属性を追加します。これはサポートする言語のコンマ区切りリストです。
     
-  ```
+ ```
   
 <Scripts>
   <asp:ScriptReference Path="Scripts/ChromeStrings.js" ResourceUICultures="en-US,es-ES" />
   <asp:ScriptReference Path="Scripts/ChromeLoader.js" />
 </Scripts>
-  ```
+ ```
 
 
     **ResourceUICultures** 属性の効果として、ASP.NET は ChromeStrings. _LL-CC_.js という名前のファイルを検索して読み込むようになります。ここで、 _LL-CC_ はページの言語です。そのようなファイルが見つからない場合、ChromeStrings.js ファイルを読み込みます。

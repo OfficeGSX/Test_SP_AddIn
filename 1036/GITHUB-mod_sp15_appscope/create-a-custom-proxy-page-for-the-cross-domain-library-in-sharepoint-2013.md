@@ -78,12 +78,12 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
   
 2. Remplacez tout l'élément **AppPrincipal** par ce qui suit.
     
-  ```XML
+ ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
-  ```
+ ```
 
 
     > **REMARQUE**
@@ -113,7 +113,7 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
     
   
 
-  ```HTML
+ ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,7 +185,7 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
 </html>
 
 
-  ```
+ ```
 
 
     > **IMPORTANTE**
@@ -209,7 +209,7 @@ Pour lire les données du service distant, vous devez effectuer les opérations 
     
   
 
-  ```cs
+ ```cs
   
 string content;
 content = "Just some text.";
@@ -217,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
-  ```
+ ```
 
 
 ### Pour créer une page web SharePoint qui utilise la bibliothèque inter-domaines
@@ -240,7 +240,7 @@ Response.End();
   
 6. Copiez le code ci-dessous et collez-le dans la balise de contenu **PlaceHolderMain**. 
     
-  ```
+ ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -315,7 +315,7 @@ Response.End();
     }
     </script>
 
-  ```
+ ```
 
 7. Dans le code précédent que vous avez collé, recherchez la ligne  `remotedomain = "<your_remote_add-in_domain>";` et remplacez l'espace réservé _<your_remote_add-in_domain>_ par l'URL « localhost » que votre complément web utilise lorsque vous l'exécutez avec la touche F5 dans Visual Studio. Pour trouver cette valeur, sélectionnez le projet d'application web dans l' **Explorateur de solutions**. La propriété **URL** figure dans le volet **Propriétés**. Indiquez la valeur entière, avec le protocole, le port et la barre oblique de fermeture, par exemple « http://localhost: 45072 ».
     

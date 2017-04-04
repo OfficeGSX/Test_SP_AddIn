@@ -82,11 +82,9 @@ SharePoint 2013 では、セキュリティ トークン サービス (STS) に�
     
 
 
+```
 
-```
-
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
 
 ブローカーではないトークン発行者を作成するには、 `-IsTrustBroker` スイッチを使用しません。もう 1 つ違いがあります。 `-RegisteredIssuerName` パラメーターの値は常に 2 つの GUID を「@」文字で区切った形 ( _GUID_@ _GUID_) を取ります。右側の GUID は常に SharePoint ファーム (またはサイト サブスクリプション) の認証領域の ID です。左側の GUID は常にトークン発行者に固有の ID です。この ID は、 *信頼ブローカー*  であるトークン発行者の作成時にはランダム GUID です。しかし、ブローカーではないトークン発行者の作成時には、固有の発行者 GUID は SharePoint アドイン のクライアント ID として使用されるものと同一の GUID でなければなりません。このパラメーターは発行者の名前を指定するだけでなく、証明書がトークンを発行できる唯一の対象の SharePoint アドイン を SharePoint に通知します。次に示すのは、入力例の一部です。
   
@@ -94,11 +92,9 @@ New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_tok
     
 
 
-
-```
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
-```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
 
 通常、 `New-SPTrustedSecurityTokenIssuer` コマンドレットは、高信頼アドイン用に SharePoint を構成する他のタスクを実行するスクリプト内で使用します。そのスクリプトおよび `New-SPTrustedSecurityTokenIssuer` コマンドレットの完全な例の詳細については、 [SharePoint 2013 の高信頼設定スクリプト](high-trust-configuration-scripts-for-sharepoint-2013.md)を参照してください。
   
@@ -149,8 +145,7 @@ SharePoint およびネットワーク管理者には、高信頼 SharePoint ア
     
 
 
-
-```
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -160,8 +155,7 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-
-```
+```
 
 ルート証明書と中間証明書は SharePoint ファームに一度だけ追加します。通常は、Web アプリケーションの証明書は、 `New-SPTrustedSecurityTokenIssuer` への呼出など、他の構成も実行する別のスクリプトで追加します。例については、 [SharePoint 2013 の高信頼設定スクリプト](high-trust-configuration-scripts-for-sharepoint-2013.md)を参照してください。
   
@@ -189,8 +183,7 @@ SharePoint アドイン のリモート Web アプリケーション構成要素
     
 
 
-
-```XML
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -198,8 +191,7 @@ SharePoint アドイン のリモート Web アプリケーション構成要素
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-
-```
+```
 
 
 > **セキュリティ メモ**

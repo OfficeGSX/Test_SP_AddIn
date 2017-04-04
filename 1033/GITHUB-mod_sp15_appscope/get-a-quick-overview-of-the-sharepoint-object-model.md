@@ -84,16 +84,14 @@ SharePoint code on a client begins by retrieving a client context object that re
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 There was an example of this pattern in the previous article of this series, in the  `GetLocalEmployeeName` method shown below. Note the following about this method:
   
@@ -108,8 +106,7 @@ There was an example of this pattern in the previous article of this series, in 
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -123,8 +120,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

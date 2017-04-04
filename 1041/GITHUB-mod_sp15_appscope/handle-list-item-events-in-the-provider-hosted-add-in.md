@@ -70,7 +70,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
     
   
 
-  ```cs
+ ```cs
   
 private static void CreateExpectedShipmentsList()
  {
@@ -121,14 +121,14 @@ private static void CreateExpectedShipmentsList()
         }
      }
  }
-  ```
+ ```
 
 2.  `DeployChainStoreComponentsToHostWeb` メソッドで、次の行を `RemoteTenantVersion = localTenantVersion` 行のすぐ上に追加します。
     
-  ```
+ ```
   
 CreateExpectedShipmentsList();
-  ```
+ ```
 
 
 ## リスト アイテム イベント レシーバーの作成
@@ -171,7 +171,7 @@ Office Developer Tools for Visual Studio には **リモート イベント レ�
     
   
 
-  ```cs
+ ```cs
   using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
@@ -206,11 +206,11 @@ namespace ChainStoreWeb.Services
         }
     }
 }
-  ```
+ ```
 
 5. 次のコードを  `ProcessOneWayEvent` メソッドに追加します。このサンプルが処理するイベントは **ItemUpdated** イベントだけなので、これまで単純な **if** 構造を **switch** の代わりに使用してきたことに留意してください。しかし、通常イベント レシーバーは複数のイベントを処理するので、ここでは SharePoint アドイン開発者がイベント ハンドラーで最もよく使用するパターンを確認します。
     
-  ```cs
+ ```cs
   
 switch (properties.EventType)
 {
@@ -220,11 +220,11 @@ switch (properties.EventType)
                     
         break;
 }  
-  ```
+ ```
 
 6.  `TODO12` を次のコードに置き換えます。ここでも、SharePoint イベント レシーバー内の一般的なパターンを確認するために、単純な **if** 構造を使用する代わりに **switch** 構造を使用しています。
     
-  ```cs
+ ```cs
   
 switch (properties.ItemEventProperties.ListTitle)
 {
@@ -234,7 +234,7 @@ switch (properties.ItemEventProperties.ListTitle)
 
         break;
 }
-  ```
+ ```
 
 7. 品物の配送に応答するコードは、次の 2 つの処理が必要です。
     
@@ -249,21 +249,21 @@ switch (properties.ItemEventProperties.ListTitle)
     
 
 
-  ```cs
+ ```cs
   
 bool updateComplete = TryUpdateInventory(properties);
 if (updateComplete)
 {
     RecordInventoryUpdateLocally(properties);
 }
-  ```
+ ```
 
 
      `ProcessOneWayEvent` メソッドは次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 public void ProcessOneWayEvent(SPRemoteEventProperties properties)
 {
@@ -284,11 +284,11 @@ public void ProcessOneWayEvent(SPRemoteEventProperties properties)
             break;
     }          
 }
-  ```
+ ```
 
 8.  `RemoteEventReceiver1` クラスに次のメソッドを追加します。
     
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -300,7 +300,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
 
     return successFlag;
 }
-  ```
+ ```
 
 9. **[出荷予定]** リストには 5 つの列がありますが、ハンドラーがアイテムに対するほとんどの種類の更新に応答することは望ましくありません。たとえば、ユーザーが業者の名前のつづりを訂正すると、アイテム更新イベントがトリガーされますが、ハンドラーは応答すべきではありません。ハンドラーが応答する必要があるのは、 **[配送済み]** フィールドが **[はい]** に設定された直後だけです。
     
@@ -310,7 +310,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     
 
 
-  ```cs
+ ```cs
   
 var arrived = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Arrived"]);
 var addedToInventory = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Added_x0020_to_x0020_Inventory"]);
@@ -322,7 +322,7 @@ if (arrived &amp;&amp; !addedToInventory)
 
     successFlag = true;
 }
-  ```
+ ```
 
 10.  `TODO15` を次のコードに置き換えます。これは主に SQL と ASP.NET のプログラミングなので詳しくは説明していませんが、以下の点に注意してください。
     
@@ -336,7 +336,7 @@ if (arrived &amp;&amp; !addedToInventory)
     
   
 
-  ```cs
+ ```cs
   
 using (SqlConnection conn = SQLAzureUtilities.GetActiveSqlConnection())
 using (SqlCommand cmd = conn.CreateCommand())
@@ -352,14 +352,14 @@ using (SqlCommand cmd = conn.CreateCommand())
     quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
     cmd.ExecuteNonQuery();
 }
-  ```
+ ```
 
 
      `TryUpdateInventory` メソッドをまだ終了していませんが、この時点で次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -388,7 +388,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }  
     return successFlag;
 }
-  ```
+ ```
 
 11.  `TryUpdateInventory` メソッドが **true** を返すと、ハンドラーは **[在庫に追加済み]** フィールドを **[はい]** に設定して、 **[出荷予定]** リスト内の同じアイテムを更新する (まだ作成されていない) メソッドを呼び出します。このメソッド自体はアイテム更新イベントなので、ハンドラーをもう一度呼び出します (現在 **[在庫に追加済み]** フィールドは **[はい]** で、、ハンドラーが同じ出荷を 2 回在庫に追加できなくなっていますが、それでもハンドラーが呼び出されます)。
     
@@ -405,13 +405,13 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
   
 12. 次の **catch** ブロックを、 **try** ブロックのすぐ下に追加します。
     
-  ```cs
+ ```cs
   
 catch (KeyNotFoundException)
 {
     successFlag = false;
 }
-  ```
+ ```
 
 
     > **メモ**
@@ -421,7 +421,7 @@ catch (KeyNotFoundException)
     
 
 
-  ```cs
+ ```cs
   
 private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
@@ -457,11 +457,11 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
     }
     return successFlag;
 }
-  ```
+ ```
 
 13.  `RemoteEventReceiver1` クラスに次のメソッドを追加します。このコードのパターンはこのシリーズの前の記事から使い続けているものです。しかし、1 つの違いに注目してください。このコードは、EmployeeAdder ページなどのページから SharePoint へ呼び出されるコード内で使用した **SharePointContext.CreateUserClientContextForSPHost** メソッドではなく **TokenHelper.CreateRemoteEventReceiverClientContext** メソッドを呼び出して **ClientContext** オブジェクトを取得します。 **ClientContext** オブジェクトを取得するさまざまなメソッドがある主な理由は、SharePoint がこの種のオブジェクトの作成に必要な情報をイベント レシーバーに渡す方法とページに渡す方法が違うからです。イベント レシーバーの場合は、 **SPRemoteEventProperties** オブジェクトを渡しますが、ページの場合は、アドイン ページを起動する要求の本文でコンテキスト トークンと呼ばれる特別なフィールドを渡します。
     
-  ```cs
+ ```cs
   
 private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 {
@@ -474,7 +474,7 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 14. レシーバーのコード ファイルを保存して閉じます。
     
@@ -489,14 +489,14 @@ private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 
 1. >SharePointContentDeployer.cs ファイルを開き、次の行を  `DeployChainStoreComponentsToHostWeb` メソッドの **[出荷予定]** リストを作成する行のすぐ下に追加します。次のステップでこのメソッドを追加します。アドインのスタート ページで `DeployChainStoreComponentsToHostWeb` メソッドに渡した **HttpRequest** オブジェクトをこのメソッドに渡すことに注意してください。
     
-  ```cs
+ ```cs
   
 RegisterExpectedShipmentsEventHandler(request);
-  ```
+ ```
 
 2.  `SharePointComponentDeployer` クラスに以下のメソッドを追加します。
     
-  ```cs
+ ```cs
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())    
@@ -514,11 +514,11 @@ RegisterExpectedShipmentsEventHandler(request);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 3.  `TODO16` を次の行に置き換えます。リストとリスト アイテムと同様に、イベント レシーバーには軽量の ***CreationInformation** クラスがあることに注意してください。
     
-  ```cs
+ ```cs
   
 EventReceiverDefinitionCreationInformation receiver = new EventReceiverDefinitionCreationInformation();
 receiver.ReceiverName = "ExpectedShipmentsItemUpdated";
@@ -528,7 +528,7 @@ receiver.EventType = EventReceiverType.ItemUpdated;
 
 expectedShipmentsList.EventReceivers.Add(receiver);
 
-  ```
+ ```
 
 4. この時点で、SharePoint にイベント レシーバーの URL を知らせる必要があります。運用環境では、リモート ページと同じドメインになり、パスは /Services/RemoteEventReceiver1.svc です。ハンドラーはアドインのスタート ページからの初回実行時ロジックに登録されるので、このドメインは、ページを呼び出した要求に関する **HttpRequest** オブジェクトのホスト ヘッダー内にあります。コードはこのオブジェクトをページから `DeployChainStoreComponentsToHostWeb` メソッドに渡し、このメソッド自体はオブジェクトを `RegisterExpectedShipmentsEventHandler` メソッドに渡しました。したがって、次のコードでレシーバーの URL を設定できます。
     
@@ -538,7 +538,7 @@ expectedShipmentsList.EventReceivers.Add(receiver);
     
 
 
-  ```cs
+ ```cs
   
 #if DEBUG
                     receiver.ReceiverUrl = WebConfigurationManager.AppSettings["RERdebuggingServiceBusUrl"].ToString();
@@ -546,14 +546,14 @@ expectedShipmentsList.EventReceivers.Add(receiver);
                     receiver.ReceiverUrl = "https://" + request.Headers["Host"] + "/Services/RemoteEventReceiver1.svc"; 
 #endif
 
-  ```
+ ```
 
 
      `RegisterExpectedShipmentsEventHandler` メソッド全体は次のようになります。
     
 
 
-  ```cs
+ ```cs
   
 private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {    
@@ -580,14 +580,14 @@ private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
         clientContext.ExecuteQuery();
     }
 }
-  ```
+ ```
 
 5. 次の **using** ステートメントをファイルの一番上に追加します。
     
-  ```cs
+ ```cs
   
 using System.Web.Configuration;
-  ```
+ ```
 
 6. アドインがデバッグされる場合に限り  `DEBUG` が true になることを確認するには、次の Sub プロシージャを実行します。
     
@@ -618,9 +618,9 @@ using System.Web.Configuration;
   
 7. web.config ファイルを開き、 **appSettings** 要素の子として次のマークアップを追加します。次のセクションで、この設定の値を取得します。
     
-  ```XML
+ ```XML
   <add key="RERdebuggingServiceBusUrl" value="" />
-  ```
+ ```
 
 
 ## デバッグ用のレシーバー URL の取得
@@ -635,9 +635,9 @@ using System.Web.Configuration;
   
 2. **ProcessEvent** メソッド内の最初の行として以下を追加します。
     
-  ```cs
+ ```cs
   string debugEndpoint = System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri.ToString(); 
-  ```
+ ```
 
 3. メソッドの次の行にブレークポイントを追加します。
     

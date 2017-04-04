@@ -57,18 +57,14 @@ REST API および jQuery AJAX 要求を使用して、ローカル ファイル
     
   
 - ページ マークアップでの jQuery ライブラリの参照。次に例を示します。
-    
-```HTML
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
+    ```HTML
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
 
 - ページ マークアップでは次のように制御します。
-    
-```HTML
+    ```HTML
 <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
+<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>```
 
 
 ## コード例 1: REST API と jQuery を使用して、ファイルを複数の SharePoint ドメインにまたがってアップロードする
@@ -84,8 +80,7 @@ REST API および jQuery AJAX 要求を使用して、ローカル ファイル
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -248,8 +243,7 @@ function getQueryStringParameter(paramToRetrieve) {
         var singleParam = params[i].split("=");
         if (singleParam[0] == paramToRetrieve) return singleParam[1];
     }
-}
-```
+}```
 
 
 ## コード例 2: REST API と jQuery を使用して、ファイルを同一ドメインにアップロードする
@@ -265,8 +259,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
 
 
-
-```
+```
 
 'use strict';
 
@@ -401,8 +394,7 @@ function uploadFile() {
 // Display error messages. 
 function onError(error) {
     alert(error.responseText);
-}
-```
+}```
 
 
 ## その他の技術情報

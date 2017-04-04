@@ -35,14 +35,14 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   
 3. 将 **WebPartZone** 添加到 **<asp:Content>** 元素，您希望该元素的 Web 部件具有如下所示的标记。通常，您希望将其添加到 **<asp:Content>**，其中 **ContentPlaceHolderId** 为 `PlaceHolderMain`。下面是一个示例：
     
-  ```XML
+ ```XML
   
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
   <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" 
       ID="HomePage1" Title="loc:full" />
 </asp:Content>
 
-  ```
+ ```
 
 
     > **警告**
@@ -52,7 +52,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   
 5. 在页面的 **File** 元素中，添加一个子 **AllUsersWebPart** 元素，并将其 **WebPartZoneID** 设置为您在页面上创建的 Web 部件区域的值，如此示例中所示。
     
-  ```
+ ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -64,11 +64,11 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
   </Module>
 </Elements>
 
-  ```
+ ```
 
 6. 添加 **CDATA** 元素作为 **AllUsersWebPart** 的子元素，然后添加 **webParts** 元素作为 **CDATA** 的子元素，如此示例中所示。
     
-  ```
+ ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -77,14 +77,14 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
     </webParts>
   ]]>
 </AllUsersWebPart>
-  ```
+ ```
 
 7. 添加 **webPart** 标记作为 **webParts** 元素的子元素。下面是一个添加 **XsltListViewWebPart** 的示例。该示例假定名为"测试列表"的自定义列表是同一个外接程序项目的一部分。有关如何将自定义类表添加到外接程序 Web 中的信息，请参阅 [创建包括自定义 SharePoint 列表和内容类型的提供商托管的外接程序](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md)。 
     
     > **注释**
       >  请注意，Web 部件没有 ID 属性。最佳做法是仅在确实需要的两种情况下包含 Web 部件的显式 ID：>  Web 部件将添加到 SharePoint Wiki 页面。>  Web 部件是将连接的两个或多个 Web 部件之一。
 
-  ```
+ ```
   
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
@@ -106,7 +106,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
     </data>
   </webPart>
 </webParts>
-  ```
+ ```
 
 8. 按 F5 调试外接程序。您应该在页面上看到 Web 部件。
     

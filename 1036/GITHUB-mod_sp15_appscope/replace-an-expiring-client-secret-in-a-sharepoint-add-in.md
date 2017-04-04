@@ -46,11 +46,11 @@ Tenez compte des informations suivantes avant de commencer :
 
 1. Ouvrez Windows PowerShell et exécutez la cmdlet suivante :
     
-  ```
+ ```
   
 Connect-MsolService
 
-  ```
+ ```
 
 2. À l'invite de connexion, entrez les identifiants de l'administrateur client (ou de l'administrateur de batterie de serveurs) pour l'architecture Office 365 ou la batterie de serveurs où le complément a été enregistré avec AppRegNew.aspx.
     
@@ -64,7 +64,7 @@ Connect-MsolService
     
   
 
-  ```
+ ```
   
 $applist = Get-MsolServicePrincipal -all  |Where-Object -FilterScript { ($_.DisplayName -notlike "*Microsoft*") -and ($_.DisplayName -notlike "autohost*") -and  ($_.ServicePrincipalNames -notlike "*localhost*") }
 
@@ -79,7 +79,7 @@ foreach ($appentry in $applist)
      Write-Host "$principalName;$principalId;$appentry.KeyId;$appentry.type;$date;$appentry.Usage"
 
 }  > c:\\temp\\appsec.txt
-  ```
+ ```
 
 4. Ouvrez le fichier C:\\temp\\appsec.txt pour afficher le rapport. Laissez la fenêtre Windows PowerShell ouverte pour effectuer la procédure suivante, si l'une des clés secrètes arrive à expiration.
     
@@ -94,15 +94,15 @@ foreach ($appentry in $applist)
 
 1. Créez une variable de l'ID client à l'aide du code suivant, en utilisant l'ID client du Complément SharePoint comme paramètre.
     
-  ```
+ ```
   
 $clientId = 'client id of the add-in'
 
-  ```
+ ```
 
 2. Générez une nouvelle clé secrète client en saisissant le code suivant :
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -113,7 +113,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
 $newClientSecret
-  ```
+ ```
 
 3. La nouvelle clé secrète client apparaît sur la console Windows PowerShell. Copiez-la dans un fichier texte. Vous en aurez besoin pour la suite.
     
@@ -138,7 +138,7 @@ $newClientSecret
 
 1. Ouvrez le projet du Complément SharePoint dans Visual Studio, puis le fichier web.config du projet d'application web. La section **appSettings** contient les clés pour l'ID client et la clé secrète client. Voici un exemple :
     
-  ```XML
+ ```XML
   
 <appSettings>
   <add key="ClientId" value="your client id here" />
@@ -146,25 +146,25 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 
-  ```
+ ```
 
 2. Modifiez le nom de la clé **ClientSecret** et renommez-la «SecondaryClientSecret » comme dans l'exemple suivant :
     
-  ```XML
+ ```XML
   
 <add key="SecondaryClientSecret" value="your old secret here" />
-  ```
+ ```
 
 3. Ajoutez une nouvelle clé **ClientSecret** et attribuez-lui votre nouvelle clé secrète client. La syntaxe de la clé doit ressembler à ceci :
     
-  ```XML
+ ```XML
   <appSettings>
   <add key="ClientId" value="your client id here" />
   <add key="ClientSecret" value="your new secret here" />
   <add key="SecondaryClientSecret" value="your old secret here" />
      ... other settings may be here ...
 </appSettings>
-  ```
+ ```
 
 4. Si vous avez créé un nouveau fichier TokenHelper, régénérez le projet.
     
@@ -182,13 +182,13 @@ En cas d'expiration de clés secrètes client, vous devez d'abord supprimer tout
 
 1. Connectez-vous à MSOnline en tant qu'administrateur client en utilisant la syntaxe suivante obtenue via SharePoint 2013 pour Windows PowerShell.
     
-  ```
+ ```
   
 import-module MSOnline
 $msolcred = get-credential
 connect-msolservice -credential $msolcred
 
-  ```
+ ```
 
 2. Obtenez la chaîne **ServicePrincipals** et les clés correspondantes. L'impression de la chaîne **$keys** renvoie trois enregistrements. Remplacez chaque chaîne **KeyId** dans *KeyId1*  , *KeyId2*  et *KeyId3*  . Vous verrez également la chaîne **EndDate** de chaque clé. Vérifiez que votre clé expirée apparaît ici.
     
@@ -196,17 +196,17 @@ connect-msolservice -credential $msolcred
     
 
 
-  ```
+ ```
   
 $clientId = "27c5b286-62a6-45c7-beda-abbaea6eecf2"
 $keys = Get-MsolServicePrincipalCredential -AppPrincipalId $clientId
 Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -AppPrincipalId $clientId 
 
-  ```
+ ```
 
 3. Générez une nouvelle clé **ClientSecret** pour cet élément **clientID**. Elle utilise l'élément **clientId** défini à l'étape précédente. La nouvelle clé **ClientSecret** est valable pour une durée de 3 ans.
     
-  ```
+ ```
   
 $bytes = New-Object Byte[] 32
 $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
@@ -220,7 +220,7 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret   -StartDate $dtStart  -EndDate $dtEnd
 $newClientSecret
 
-  ```
+ ```
 
 4. Copiez la nouvelle clé **$newClientSecret**.
     

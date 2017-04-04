@@ -84,16 +84,14 @@ ms.assetid: 6b8b55f8-9370-43a0-af8d-e07d1028a075
   
 
 
-
-```cs
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}
-```
+}```
 
 В одной из предыдущих статей этой серии был пример этого шаблона (в показанном ниже методе  `GetLocalEmployeeName`). Обратите внимание на указанные ниже особенности этого метода.
   
@@ -108,8 +106,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
   
 
 
-
-```cs
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -123,8 +120,7 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}
-```
+}```
 
 
 ## 

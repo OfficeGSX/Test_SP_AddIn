@@ -82,8 +82,7 @@ Contoso がオンラインで写真印刷サービスを提供しているとし
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
@@ -92,8 +91,7 @@ Contoso がオンラインで写真印刷サービスを提供しているとし
 
   </appSettings>
 
-</configuration>
-```
+</configuration>```
 
 認証コードのフローの手順を次に示します。
   
@@ -136,14 +134,12 @@ Contoso がオンラインで写真印刷サービスを提供しているとし
     
 
 
-
-```cs
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));
-```
+    "https://contoso.com/RedirectAccept.aspx "));```
 
  _scope_ パラメーター値 `Web.Read List.Write` は、スコープ エイリアスを使用して権限を要求する方法の一例です。 _scope_ パラメーターには、権限のスコープと適切な要求をスペースで区切って指定します。
   
@@ -202,15 +198,13 @@ Response.Redirect(TokenHelper.GetAuthorizationUrl(
     
 
 
-
-```XML
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>
-```
+<configuration>```
 
 値は  `WebConfigurationManager.AppSettings.Get("RedirectUri")` への呼び出しを使用して取得できます。
   
@@ -249,8 +243,7 @@ ASP.NET アプリケーションのそのようなページのコード ビハ�
     
 
 
-
-```cs
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -273,8 +266,7 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-
-```
+```
 
 
 ## SharePoint にアクセスする、ページのコード ビハインドのサンプルを取得する
@@ -302,8 +294,7 @@ Default.aspx ページのコード ビハインドを次に示します。この
 - このコードで参照される **TokenCache** クラスを以下に定義します。
     
   
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -354,8 +345,7 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}
-```
+}```
 
 次に、前のサンプル コードが呼び出すトークン キャッシュ モジュールのコード例を示します。これはキャッシュとして Cookie を使用しています。キャッシュのオプションはほかにもあります。詳細については、「 [SharePoint のプロバイダー向けのホスト型低信頼アドインでセキュリティ トークンを処理する](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md)」を参照してください。
   
@@ -363,8 +353,7 @@ namespace DynamicAppPermissionRequest
     
 
 
-
-```cs
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -433,8 +422,7 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-
-```
+```
 
 
 ## その他の技術情報

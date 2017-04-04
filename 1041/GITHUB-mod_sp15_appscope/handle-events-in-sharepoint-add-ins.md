@@ -131,7 +131,7 @@ Visual Studio で作業して、RER を SharePoint アドイン プロジェク�
   
 - リモート イベント レシーバー用のプロジェクト アイテムが SharePoint アドイン プロジェクトに追加されます。リモート イベント レシーバー用の Elements.xml ファイルは、Web アプリケーション内の Web サービスと、指定されたリモート イベントを参照します。次の例は、リスト項目の追加および削除に対応する Elements.xml ファイルです。
     
-  ```XML
+ ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ Visual Studio で作業して、RER を SharePoint アドイン プロジェク�
       </Receiver>
   </Receivers>
 </Elements>
-  ```
+ ```
 
 リモート イベント レシーバーが処理するイベントを変更するには、 **ソリューション エクスプローラー**を開いてリモート イベント レシーバーの [ **プロパティ**] ウィンドウを開きます。[ **SharePoint イベント**] ノードを展開して、処理するイベントのみ **True** に設定します。
   
@@ -298,8 +298,7 @@ SharePoint がハンドラーから 30 秒以内に結果メッセージを受�
   
     
     
-
-```
+```
 
 Try
     If X not already done,
@@ -308,8 +307,7 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-
-```
+```
 
 ただし、Web サービスでロールバックと「既に実行」ロジックを実装するとハンドラーの速度が低下する恐れがあります。通常、インストールとロールバックのロジックによって、SharePoint ホスト Web やバックエンド データベースなどの Web サービスからリモートに何らかの変更が加えられます。インストールとロールバックのコードが Try セクションと Catch セクションに分散していると、サービスは複数のリモート コンポーネントに対して別々に呼び出しを行います。多くの場合、セクションごとにそうした呼び出しが数回行われます。リモート コンポーネント自体で、Try セクションでハンドラーから呼び出すことができるプロシージャによってインストールとロールバックのロジックを実装するのがベスト プラクティスです。そのプロシージャでは成功メッセージまたは失敗メッセージを返すようにし、失敗を報告する場合にはTry セクションのコードで Catch セクションを (例外をスローして) 呼び出します。Catch セクションが行うのは、SharePoint に通知するだけです。これを、ハンドラー委任ストラテジと言います。以下の疑似コードは、このストラテジを示しています。
   
@@ -317,16 +315,14 @@ Catch
     
 
 
-
-```
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-
-```
+```
 
 リモート システムで実行される "Do X" プロシージャには、以下のようなロールバックと「既に実行」ロジックを入れます。
   
@@ -334,8 +330,7 @@ Catch
     
 
 
-
-```
+```
 
 Try
     If X not already done,
@@ -347,8 +342,7 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-
-```
+```
 
 たとえば、ハンドラーが SQL Server データベースでアクションを実行する必要がある場合、ストアド プロシージャを SQL Server にインストールして、 [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx) ブロックを使用してインストール - ロールバック ロジックを実装し 、 [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx) ブロックを使用して「既に実行」ロジックを実装します。
   
@@ -399,8 +393,7 @@ SharePoint 2010 では、イベント レシーバーは、SharePoint サーバ�
 
 |**SharePoint ソリューション**|**SharePoint アドイン**|
 |:-----|:-----|
-|
-```cs
+|```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -417,11 +410,9 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
+```
 
-```
-
-|
-```cs
+|```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -435,8 +426,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-
-```
+```
 
 |
    

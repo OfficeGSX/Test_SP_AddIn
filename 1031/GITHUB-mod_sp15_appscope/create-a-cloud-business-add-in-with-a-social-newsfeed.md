@@ -335,20 +335,20 @@ In vielen Geschäfts-Add-Ins möchten Sie möglicherweise den Zugriff auf bestim
   
 3. Fügen Sie im Code-Editor folgenden Code zur **Candidates_Validate**-Methode hinzu:
     
-  ```VB.net
+ ```VB.net
   
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
-  ```
+ ```
 
 
-  ```cs
+ ```cs
   
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
-  ```
+ ```
 
 
     Die **Validate**-Methode wird ausgeführt, wenn ein Benutzer versucht, einen Datensatz zu speichern. Wenn der Benutzer Mitglied der Einstellungsmanager-Sicherheitsgruppe ist, wurde der Datensatz gespeichert, andernfalls wird die Fehlermeldung „Berechtigung verweigert" angezeigt und der Datensatz verworfen.

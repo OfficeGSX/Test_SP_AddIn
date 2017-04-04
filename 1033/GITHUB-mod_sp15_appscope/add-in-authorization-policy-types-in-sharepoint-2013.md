@@ -66,13 +66,11 @@ To be able to make add-in-only calls to SharePoint, your add-in must request per
   
     
     
-
-```XML
+```XML
 
 <AppPermissionRequests AllowAppOnlyPolicy="true">
     ...
-</AppPermissionRequests>
-```
+</AppPermissionRequests>```
 
 
 > **NOTE**
@@ -93,8 +91,7 @@ The difference between an add-in-only call to SharePoint and a user+add-in call 
   
     
     
-
-```cs
+```cs
 
 string contextTokenString = TokenHelper.GetContextTokenFromRequest(Request);
 if (contextTokenString != null)
@@ -120,8 +117,7 @@ if (contextTokenString != null)
                               sharepointUrl.Authority, contextToken.Realm).AccessToken;
          //Do something.
          ...
-}
-```
+}```
 
 
 > **NOTE**

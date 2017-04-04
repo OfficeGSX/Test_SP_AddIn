@@ -27,8 +27,7 @@ SharePoint とアドインまたはサービス間でアイテムを同期させ
 |**要求の例** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**POST 本文の例** <br/> |
-|
-```XML
+|```XML
 
 { 'd' : {
   'query': { 
@@ -51,8 +50,7 @@ SharePoint とアドインまたはサービス間でアイテムを同期させ
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-
-```
+```
 
 |
    
