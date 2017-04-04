@@ -87,7 +87,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
 
 
     > **HINWEIS**
-      > Das Attribut **AllowedRemoteHostUrl** wird zur Angabe der Remotedomäne verwendet. **~remoteAppUrl** wird in die URL des Remote-Add-Ins aufgelöst. Weitere Informationen über Token finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
+    > Das Attribut **AllowedRemoteHostUrl** wird zur Angabe der Remotedomäne verwendet. **~remoteAppUrl** wird in die URL des Remote-Add-Ins aufgelöst. Weitere Informationen über Token finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### So erstellen Sie eine benutzerdefinierte Proxyseite
 
@@ -189,7 +189,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
 
 
     > **WICHTIG**
-      > In einer Produktions-SharePoint-Add-In müssen Sie die Autorisierungslogik bereitstellen und den entsprechenden Wert im Objekt **originAuthorityValidator** der Einstellungen zurückgeben.
+    > In einer Produktions-SharePoint-Add-In müssen Sie die Autorisierungslogik bereitstellen und den entsprechenden Wert im Objekt **originAuthorityValidator** der Einstellungen zurückgeben.
 
 ### So erstellen Sie eine Inhaltsseite
 
@@ -198,13 +198,8 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
     
   
 2. Kopieren Sie den folgenden Code, und fügen Sie ihn in die **Page_Load**-Methode in der Code-Behind-Datei ein. Der Code führt die folgenden Aufgaben aus:
-    
   - Legt die Ausgabe **content-type** auf **text/plain** fest.
-    
-  
   - Schreibt den Inhalt in den Ausgabepuffer.
-    
-  
   - Beendet die Verbindung
     
   
@@ -336,7 +331,7 @@ Response.End();
 2. Drücken Sie F5.
     
     > **HINWEIS**
-      > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
+    > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 3. Klicken Sie auf die Schaltfläche **Vertrauen**.
     
     Die Startseite wird geöffnet und sollte wie folgt aussehen. Es kann einige Sekunden dauern, bis der Begriff „Nur etwas Text" angezeigt wird, da er von der Content.aspx-Seite der Remotedomäne abgerufen wird.
