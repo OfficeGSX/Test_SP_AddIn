@@ -284,7 +284,9 @@ SharePoint 2013 自動裝載增益集轉換至裝載提供者增益集包含多�
 
     
 > **注意事項**
-> 根據如何建立資料庫時自動裝載增益集，可能需要將其部署至 Azure 一些額外的工作。請參閱 MSDN 中的其他指導的下列文章：>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
+> 根據如何建立資料庫時自動裝載增益集，可能需要將其部署至 Azure 一些額外的工作。請參閱 MSDN 中的其他指導的下列文章：
+>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)
+>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
     

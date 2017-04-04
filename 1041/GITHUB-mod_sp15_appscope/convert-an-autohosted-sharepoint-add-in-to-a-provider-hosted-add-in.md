@@ -284,7 +284,9 @@ Visual Studio [ **SQL Server オブジェクト エクスプローラー**] ツ�
 
     
 > **メモ**
->  データベースが自動ホスト型アドイン用にどのような方法で作成されたかによって、Azure への展開用に余分の作業が必要になる場合があります。詳しいガイダンスについては、MSDN の次の記事を参照してください。>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
+>  データベースが自動ホスト型アドイン用にどのような方法で作成されたかによって、Azure への展開用に余分の作業が必要になる場合があります。詳しいガイダンスについては、MSDN の次の記事を参照してください。
+>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)
+>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
     

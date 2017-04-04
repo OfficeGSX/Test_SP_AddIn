@@ -10,7 +10,7 @@ Hier lernen Sie die OAuth-Authentifizierung und den Autorisierungsablauf für vo
 ## Überblick über OAuth und in SharePoint von einem Anbieter gehosteten SharePoint-Add-Ins
 <a name="OAuth_Actors"> </a>
 
-In SharePoint ** umfasst die OAuth-Authentifizierung und der Autorisierungsablauf eines von einem Anbieter gehosteten Add-Ins mit niedriger Vertrauensebene zur Laufzeit eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver und dem Browser**. In diesem Szenario ist Microsoft Azure Access Control Service (ACS) der Autorisierungsserver.
+In SharePoint **umfasst die OAuth-Authentifizierung und der Autorisierungsablauf eines von einem Anbieter gehosteten Add-Ins mit niedriger Vertrauensebene zur Laufzeit eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver und dem Browser**. In diesem Szenario ist Microsoft Azure Access Control Service (ACS) der Autorisierungsserver.
   
     
     
@@ -47,7 +47,7 @@ Sie müssen einige vorbereitende Schritte unternehmen, bevor eine SharePoint-Add
   - Die **Farm muss so konfiguriert werden**, dass sie Add-Ins unterstützt. (Dies ist tatsächlich eine Anforderung für die Installation beliebiger SharePoint-Add-Ins in der Farm, selbst wenn sie den Kontexttokenablauf nicht verwenden.) Weitere Informationen finden Sie unter [Konfigurieren einer Umgebung für Add-Ins für SharePoint](http://technet.microsoft.com/de-de/library/fp161236%28v=office.15%29.aspx).
     
   
-  - Der **Kunde**, der das Add-In installiert **, muss über ein Office 365-Konto verfügen**. Dies ist erforderlich, um Zugriff auf ACS zu erhalten. Der Kunde muss sein Konto nicht für andere Zwecke nutzen.
+  - Der **Kunde**, der das Add-In installiert, **muss über ein Office 365-Konto verfügen**. Dies ist erforderlich, um Zugriff auf ACS zu erhalten. Der Kunde muss sein Konto nicht für andere Zwecke nutzen.
     
   
   - Die Farm muss für die Verwendung der Vertrauensstellung konfiguriert werden, die Office 365 mit ACS hat. Dies kann einfach über Windows PowerShell-Skripts durchgeführt werden. Ausführliche Informationen finden Sie unter  [Verwenden einer Office 365 SharePoint-Website, um vom Anbieter gehostete Add-Ins auf einer lokalen SharePoint-Website zu autorisieren](use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on.md).

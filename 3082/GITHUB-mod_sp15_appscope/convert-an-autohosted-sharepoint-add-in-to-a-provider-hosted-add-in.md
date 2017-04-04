@@ -284,7 +284,9 @@ Actualice la ventana de herramientas **Explorador de objetos de SQL Server** de 
 
     
 > **NOTA**
->  En función de la forma de crearse la base de datos del complemento autohospedado, podría necesitarse trabajo adicional para implementarlo en Azure. Consulte los siguientes artículos de MSDN para obtener orientación adicional:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
+>  En función de la forma de crearse la base de datos del complemento autohospedado, podría necesitarse trabajo adicional para implementarlo en Azure. Consulte los siguientes artículos de MSDN para obtener orientación adicional:
+>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)
+>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
   
     
     
