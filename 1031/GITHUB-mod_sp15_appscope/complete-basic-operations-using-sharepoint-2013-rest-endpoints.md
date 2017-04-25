@@ -139,7 +139,7 @@ Das folgende Beispiel zeigt, wie Sie eine Eigenschaft abrufen, indem Sie den Nam
 
 
 
-http:// _<site url>_/_api/web/getfilebyserverrelativeurl('/ _<Ordnername >_/ _<Dateiname>_')/author
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<Ordnername \>_/ _\<Dateiname\>_')/author
 
 
 
@@ -309,10 +309,7 @@ Wenn Sie eine POST-Anforderung senden, muss die Anforderung im **X-RequestDigest
 
 
 
-- In von SharePoint gehosteten Add-Ins können Sie einfach den folgenden Header übergeben: 
-
-
-
+- In von SharePoint gehosteten Add-Ins können Sie einfach den folgenden Header übergeben:
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -349,7 +346,7 @@ Die Anforderungen werden an den in der **url**-Eigenschaft der Anforderung angeg
 
 
 
- _<Website-URL>_/_api/ _<Kontext>_/ _<Ressource>_ (Beispiel: https://contoso.com/_api/web/lists)
+ _\<Website-URL\>_/_api/ _\<Kontext\>_/ _\<Ressource\>_ (Beispiel: https://contoso.com/_api/web/lists)
 
 
 
@@ -370,9 +367,9 @@ Domänenübergreifende Bibliotheksanforderungen verwenden dieses Format für den
 
 |**Add-In-Typ**|**Szenario für den domänenübergreifenden Datenzugriff**|**Beispiel-Endpunkt-URI**|
 |:-----|:-----|:-----|
-|In der Cloud gehostet  <br/> |JavaScript-Add-In-Komponente, die mithilfe der domänenübergreifenden Bibliothek auf Hostwebdaten zugreift  <br/> | _<App-Web-URL>_/_api/SP.AppContextSite(@target)/web/lists?@target=' _<Hostweb-URL>_'  <br/> |
-|In der Cloud gehostet  <br/> |JavaScript-Add-In-Komponente, die mithilfe der domänenübergreifenden Bibliothek auf Daten zugreift, die sich in einer anderen Websitesammlung als dem Hostweb befinden (gilt nur für Add-Ins mit Mandantenbereich)  <br/> | _<App-Web-URL>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<URL der Zielwebsite>_'  <br/> |
-|Von SharePoint gehostet  <br/> |Add-In-Webkomponente, die auf Daten einer anderen Websitesammlung zugreift (gilt nur für Add-Ins mit Mandantenbereich)  <br/> | _<App-Web-URL>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<URL der Zielwebsite>_'  <br/> |
+|In der Cloud gehostet  <br/> |JavaScript-Add-In-Komponente, die mithilfe der domänenübergreifenden Bibliothek auf Hostwebdaten zugreift  <br/> | _\<App-Web-URL\>_/_api/SP.AppContextSite(@target)/web/lists?@target=' _\<Hostweb-URL\>_'  <br/> |
+|In der Cloud gehostet  <br/> |JavaScript-Add-In-Komponente, die mithilfe der domänenübergreifenden Bibliothek auf Daten zugreift, die sich in einer anderen Websitesammlung als dem Hostweb befinden (gilt nur für Add-Ins mit Mandantenbereich)  <br/> | _\<App-Web-URL\>_/_api/SP.AppContextSite(@target)/web/title?@target=' _\<URL der Zielwebsite\>_'  <br/> |
+|Von SharePoint gehostet  <br/> |Add-In-Webkomponente, die auf Daten einer anderen Websitesammlung zugreift (gilt nur für Add-Ins mit Mandantenbereich)  <br/> | _\<App-Web-URL\>_/_api/SP.AppContextSite(@target)/web/title?@target=' _\<URL der Zielwebsite\>_'  <br/> |
  
 
 > **HINWEIS**
