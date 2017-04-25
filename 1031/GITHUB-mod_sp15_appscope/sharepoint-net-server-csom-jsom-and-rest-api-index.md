@@ -20,7 +20,7 @@ Tabelle 1 enthält die am meisten verwendeten Haupt-APIs, die meistenteils auf T
  *Tabelle 1. Haupt-APIs, auf die häufig zugegriffen wird* 
 ||||
 |:-----|:-----|:-----|
-|**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**REST-Endpunkt** <br/> |
+|**API**|**SP.Object/Enumeration (sp.js)**|**REST-Endpunkt**|
 | [AttachmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.AttachmentCollection.aspx) [SPAttachmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPAttachmentCollection.aspx) <br/> | [SP. AttachmentCollection Object (sp.js)](http://msdn.microsoft.com/library/28247ba7-eeaf-e1fc-0609-fb4c39b5d53c%28Office.15%29.aspx) <br/> | `…/_api/web/lists('<list id>')/items(<item id>)/attachmentfiles` <br/> |
 | [BasePermissions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.BasePermissions.aspx) [SPBasePermissions](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPBasePermissions.aspx) <br/> | [SP. Komplexer BasePermissions Object (sp.js)](http://msdn.microsoft.com/library/40349d51-1068-08c6-8ba4-b23ee58396c4%28Office.15%29.aspx) <br/> |Nicht zutreffend  <br/> |
 | [CalendarType](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.CalendarType.aspx) [SPCalendarType](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPCalendarType.aspx) <br/> | [SP. CalendarType-Enumeration (sp.js)](http://msdn.microsoft.com/library/33242ef7-1300-b534-6e8e-c5df1a3df85b%28Office.15%29.aspx) <br/> |Nicht zutreffend  <br/> |
