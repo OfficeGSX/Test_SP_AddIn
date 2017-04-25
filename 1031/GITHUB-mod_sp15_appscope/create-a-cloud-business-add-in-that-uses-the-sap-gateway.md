@@ -42,7 +42,7 @@ Im Folgenden finden Sie die Voraussetzungen zu den Vorgehensweisen in diesem Art
 - **Ein Organisationskonto in Microsoft Azure.** Weitere Informationen finden Sie unter [Erstellen eines Organisationsbenutzerkontos in Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
 
     > **HINWEIS**
-      > Melden Sie sich in Ihrem Office 365-Konto (login.microsoftonline.com) an, um das temporäre Kennwort zu ändern, nachdem das Konto erstellt wurde. 
+    > Melden Sie sich in Ihrem Office 365-Konto (login.microsoftonline.com) an, um das temporäre Kennwort zu ändern, nachdem das Konto erstellt wurde. 
 - **Ein SAP OData-Endpunkt** mit Beispieldaten. Weitere Informationen finden Sie in der Dokumentation zu [SAP-Gateway für Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
 
 
@@ -106,8 +106,7 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
 
 
   ```cs
-
-// Use the auth code, acquire the refresh token and access token, and store them in the current session
+  // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
         {
             if (!IsAuthorized &amp;&amp; !string.IsNullOrEmpty(authCode))
