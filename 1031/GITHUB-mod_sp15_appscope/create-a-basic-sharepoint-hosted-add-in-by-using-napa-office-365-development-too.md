@@ -10,11 +10,7 @@ Erfahren Sie, wie Sie ein einfaches von SharePoint gehostetes SharePoint-Add-In 
 
 
 
-![Schaltfläche "Ausführen"](images/Apps_NAPA_Run_Button.png)
-
-
-
- [Führen Sie jetzt dieses Beispiel aus!](http://go.microsoft.com/fwlink/?LinkId=313212)
+![Schaltfläche "Ausführen"](images/Apps_NAPA_Run_Button.png) [Führen Sie jetzt dieses Beispiel aus!](http://go.microsoft.com/fwlink/?LinkId=313212)
 Napa ist ein Tool, mit dem Sie von SharePoint gehostete SharePoint-Add-Ins erstellen können. Napa selbst wird als eine (vom Anbieter gehostete) SharePoint-Add-In implementiert, die auf SharePoint Online-Websites installiert werden kann, die mit der Vorlage **Entwicklerwebsite** erstellt werden. SharePoint-Entwicklerwebsites verfügen über eine Bibliothek namens **Add-Ins im Test** auf der Startseite. Anweisungen zum Erstellen einer Entwicklerwebsite und Installieren von Napa finden Sie weiter unten in diesem Artikel.
 
 
@@ -35,7 +31,7 @@ Durch die Verwendung von Napa können Sie Ihr SharePoint-Add-Ins im Browser stat
 
 Durch Befolgen der Schritte in diesem Artikel erfahren Sie, wie Sie ein einfaches in SharePoint gehostetes SharePoint-Add-In mithilfe von Napa erstellen. Das von Ihnen erstellte Add-In enhält Steuerelemente und Code für das Verwalten von Listen und Listenelementen.
 > **HINWEIS**
-> Sie können mit Napa nur von SharePoint gehostete, keine von Anbietern gehostete SharePoint-Add-Ins erstellen. Informationen zu den Unterschieden finden Sie unter  [SharePoint-Add-Ins](sharepoint-add-ins.md). > Sie können in Napa nicht die Add-In-Aktualisierungssemantik von SharePoint verwenden, die unter  [Aktualisieren von Add-In-Webkomponenten in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) beschrieben ist. Wenn Sie also eine in Napa erstellte App aktualisieren müssen, müssen Sie diese zuerst in Visual Studio importieren. Anweisungen dazu finden Sie später in diesem Artikel.> Sie können ein SharePoint-Add-In auch mit Visual Studio erstellen. Weitere Informationen finden Sie unter  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
+> Sie können mit Napa nur von SharePoint gehostete, keine von Anbietern gehostete SharePoint-Add-Ins erstellen. Informationen zu den Unterschieden finden Sie unter  [SharePoint-Add-Ins](sharepoint-add-ins.md). <br /><br /> Sie können in Napa nicht die Add-In-Aktualisierungssemantik von SharePoint verwenden, die unter  [Aktualisieren von Add-In-Webkomponenten in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) beschrieben ist. Wenn Sie also eine in Napa erstellte App aktualisieren müssen, müssen Sie diese zuerst in Visual Studio importieren. Anweisungen dazu finden Sie später in diesem Artikel.<br /><br /> Sie können ein SharePoint-Add-In auch mit Visual Studio erstellen. Weitere Informationen finden Sie unter  [Erste Schritte beim Erstellen von von SharePoint gehosteten SharePoint-Add-Ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
 
 
 
@@ -50,7 +46,7 @@ Wenn Sie noch kein SharePoint Online-Abonnement haben, das Sie für die Entwicku
 
 
 > **HINWEIS**
->  Möglicherweise haben Sie bereits Zugriff auf eine Website für Office 365-Entwickler.> **Sind Sie MSDN-Abonnent?** Visual Studio Ultimate und Visual Studio Premium mit MSDN-Abonnenten erhalten als Bonus ein einjähriges Office 365 Developer-Abonnement. [Lösen Sie Ihren Bonus heute ein.](https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1402926170&amp;rver=6.0.5276.0&amp;wp=MCMBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fsubscriptions%2fmanage%2fdefault.aspx&amp;lc=1033&amp;id=254354&amp;mkt=de-DE)> **Besitzen Sie einen der folgenden Office 365 Abonnementpläne?**> **Falls ja, kann ein Administrator des Office 365-Abonnements eine Website für Entwickler** über das [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx) erstellen. Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Möglicherweise haben Sie bereits Zugriff auf eine Website für Office 365-Entwickler.<br /><br /> **Sind Sie MSDN-Abonnent?** Visual Studio Ultimate und Visual Studio Premium mit MSDN-Abonnenten erhalten als Bonus ein einjähriges Office 365 Developer-Abonnement. [Lösen Sie Ihren Bonus heute ein.](https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1402926170&amp;rver=6.0.5276.0&amp;wp=MCMBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fsubscriptions%2fmanage%2fdefault.aspx&amp;lc=1033&amp;id=254354&amp;mkt=de-DE)<br /><br /> **Besitzen Sie einen der folgenden Office 365 Abonnementpläne?**<br /> **Falls ja, kann ein Administrator des Office 365-Abonnements eine Website für Entwickler** über das [Office 365 Admin Center](https://portal.microsoftonline.com/admin/default.aspx) erstellen. Weitere Informationen finden Sie unter [Erstellen einer Entwicklerwebsite in einem vorhandenen Office 365-Abonnement](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
@@ -113,7 +109,7 @@ Es gibt zwei Wege zu einem Office 365-Plan.
 
 
 > **HINWEIS**
-> Wenn Sie beim Versuch, sich bei einem Entwicklerkonto anzumelden, bei einem anderen Microsoft-Konto angemeldet sind, wird möglicherweise die folgende Nachricht angezeigt: „Die eingegebene Benutzer-ID hat leider nicht funktioniert. Sie ist anscheinend nicht gültig. Geben Sie die Benutzer-ID ein, die Ihnen von Ihrem Unternehmen zugewiesen wurde. Ihre Benutzer-ID hat in der Regel das Format  *someone@example.com*  oder *someone@example.onmicrosoft.com*  ."> Wenn diese Nachricht angezeigt wird, melden Sie sich vom Microsoft-Konto ab, und versuchen Sie es erneut. Sollte die Nachricht weiterhin angezeigt werden, löschen Sie den Browsercache, oder wechseln Sie zu **InPrivate-Browsen** und füllen Sie das Formular aus.
+> Wenn Sie beim Versuch, sich bei einem Entwicklerkonto anzumelden, bei einem anderen Microsoft-Konto angemeldet sind, wird möglicherweise die folgende Nachricht angezeigt: „Die eingegebene Benutzer-ID hat leider nicht funktioniert. Sie ist anscheinend nicht gültig. Geben Sie die Benutzer-ID ein, die Ihnen von Ihrem Unternehmen zugewiesen wurde. Ihre Benutzer-ID hat in der Regel das Format  *someone@example.com*  oder *someone@example.onmicrosoft.com*  ."<br /><br /> Wenn diese Nachricht angezeigt wird, melden Sie sich vom Microsoft-Konto ab, und versuchen Sie es erneut. Sollte die Nachricht weiterhin angezeigt werden, löschen Sie den Browsercache, oder wechseln Sie zu **InPrivate-Browsen** und füllen Sie das Formular aus.
 
 
 
@@ -237,7 +233,7 @@ Fügen Sie der standardmäßigen Homepage im SharePoint-Add-In Steuerelemente zu
   ```
 
 
-    Mit dem HTML-Code werden die folgenden Steuerelemente erstellt:
+Mit dem HTML-Code werden die folgenden Steuerelemente erstellt:
 
   - Eine Schaltfläche, mit der die Anzahl von Listen im Web des SharePoint-Add-Ins abgerufen wird.
 
@@ -274,7 +270,7 @@ In diesem Verfahren fügen Sie JavaScript-Code hinzu, damit Benutzer Listen im S
 | `deletelist()` <br/> |Verbunden mit dem **deletelistbutton**-Steuerelement - löscht die Liste, die Benutzer aus der Liste mit den verfügbaren Listen ausgewählt haben.  <br/> |
  
 
-    Außerdem rufen Sie die Funktionen  `welcome()` und `displayLists()` auf. Dies wird weiter unten in dieser exemplarischen Vorgehensweise beschrieben.
+Außerdem rufen Sie die Funktionen  `welcome()` und `displayLists()` auf. Dies wird weiter unten in dieser exemplarischen Vorgehensweise beschrieben.
 
 
 2. Fügen Sie in der Datei **App.js** die Variablen `web`,  `lists` und `listItemcollection` zu den beiden Standardvariablen hinzu, und ändern Sie den Code in der Funktion `$(document).ready()` in das folgende Beispiel.
@@ -430,15 +426,7 @@ Der erste Teil der Benutzeroberfläche und des Codes ist jetzt fertig. Sie sollt
 ### So führen Sie das Add-In aus
 
 
-1. Wählen Sie unten auf der Seite die Ausführungsschaltfläche (
-
-
-
-![Schaltfläche "Ausführen"](images/Apps_NAPA_Run_Button.png)
-
-
-
-) aus.
+1. Wählen Sie unten auf der Seite die Ausführungsschaltfläche (![Schaltfläche "Ausführen"](images/Apps_NAPA_Run_Button.png)) aus.
 
     Das Add-In wird verpackt, bereitgestellt und auf Ihrer Office 365 Developer Site installiert.
 
@@ -504,7 +492,7 @@ Da Benutzer jetzt Listen erstellen und löschen können, können Sie die folgend
   ```
 
 
-    Mit diesem Code wird ein Eingabefeld hinzugefügt, in dem Benutzer den Namen eines Elements, eine Schaltfläche zum Hinzufügen des Elements zur Liste und eine Schaltfläche zum Löschen des Elements aus der Liste angeben können.
+Mit diesem Code wird ein Eingabefeld hinzugefügt, in dem Benutzer den Namen eines Elements, eine Schaltfläche zum Hinzufügen des Elements zur Liste und eine Schaltfläche zum Löschen des Elements aus der Liste angeben können.
 
 
 3. Wählen Sie die Datei **App.js** zur Bearbeitung aus.
@@ -533,8 +521,8 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > **HINWEIS**
-      > Werden die Listenelemente nicht angezeigt, wenn Sie das Add-In ausführen, stellen Sie sicher, dass die  `displayLists();`-Anweisung nach dem vorhergehenden Code kommt. 
+> **HINWEIS**
+> Werden die Listenelemente nicht angezeigt, wenn Sie das Add-In ausführen, stellen Sie sicher, dass die  `displayLists();`-Anweisung nach dem vorhergehenden Code kommt. 
 
     Im nächsten Schritt fügen Sie JavaScript-Funktionen für die neuen Definitionen und eine Unterstützungsfunktion ( `getItems()`) hinzu. In der folgenden Tabelle sind die Hauptfunktionen beschrieben.
 
