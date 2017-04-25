@@ -46,7 +46,6 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 4. Bearbeiten Sie in der Datei „elements.xml" für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel gezeigten Attribute und Werte hat, mit der Ausnahme, dass Sie den Wert *der GUID*  für das Attribut **ID** **nicht** von dem Wert ändern, den Visual Studio dafür generiert hat. *Seien Sie also vorsichtig, wenn Sie Kopieren und Einfügen verwenden*  .
 
   ```
-
 <Field ID="{generated GUID}"
        Name="Division" 
        Title="Division" 
@@ -64,7 +63,6 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 6. Bearbeiten Sie in der Datei elements.xml für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel dargestellten Attribute und Werte aufweist, mit der Ausnahme, dass der Wert der GUID für das Attribut **ID**, den Visual Studio dafür generiert hat, nicht geändert wird.
 
   ```
-
 <Field ID="{generated GUID}"
        Name="OrientationStage" 
        Title="OrientationStage"
@@ -79,7 +77,6 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 7. Da es sich um ein Auswahlfeld handelt, müssen Sie die Auswahlmöglichkeiten und die Reihenfolge angeben, in der diese in der Dropdownliste angezeigt werden sollen, wenn ein Benutzer eine Auswahl vornimmt. Und da es ein Pflichtfeld ist, müssen Sie einen Standardwert angeben. Fügen Sie das folgende untergeordnete Markup zum Element **Field** hinzu.
 
   ```
-
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
       <CHOICE>Tour of building</CHOICE>
@@ -117,6 +114,8 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 3. Öffnen Sie die Seite **Einstellungen** der Liste, und fügen Sie die zwei Spalten mit den folgenden Schritten hinzu.
 
 a. Klicken Sie auf die Popupschaltfläche **· · ·** direkt über der Liste, und wählen Sie dann **Ansicht erstellen** aus.
+
+
 b. Die Seite **Ansichtstyp** wird mit der Breadcrumb-Struktur **Einstellungen und Ansichtstyp** im oberen Bereich geöffnet. Klicken Sie auf den Breadcrumb **Einstellungen**.
 
    **Schritte zum Öffnen der Seite „Listeneinstellungen"**
@@ -149,13 +148,19 @@ d. Wählen Sie auf der Seite **Spalten aus Websitespalten hinzufügen** in der D
 
 ![Das Steuerelement für die SharePoint-Spaltenauswahl, wobei "Mitarbeiterorientierung" in der Dropdownliste mit der Bezeichnung "Websitespalten auswählen" ausgewählt ist.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
 
+
+
+
+
 e. Fügen Sie die Spalten **Division** und **OrientationStage** zum Feld **Hinzuzufügende Spalten** hinzu.
+
+
 f. Wählen Sie **OK** aus, um zur Seite **Einstellungen** zurückzukehren, und klicken Sie dann auf den Breadcrumb **Neue Mitarbeiter in Seattle** im oberen Bereich der Seite.
 
 
 4. Die neuen Spalten befinden sich jetzt in der Liste. Fügen Sie der Liste ein neues Element hinzu. Auf dem Bearbeitungsformular enthält das Feld **OrientationStage** bereits den StandardwertNicht gestartet. (Die vorhandenen Elemente in diesem Feld sind leer, da sie erstellt wurden, bevor sich das Feld in der Liste befand.)
 
-   **Die Liste mit neuen Spalten**
+**Die Liste mit neuen Spalten**
 
 
 
