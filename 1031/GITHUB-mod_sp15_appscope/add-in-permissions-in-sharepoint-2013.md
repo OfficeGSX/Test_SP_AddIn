@@ -134,7 +134,7 @@ Berechtigungen geben die Aktivitäten an, die eine App im Anforderungsbereich au
 
 
 > **HINWEIS**
-> Diese Rechte entsprechen den Standard-Benutzerberechtigungsstufen von SharePoint: Leser, Teilnehmer, Designer und Vollzugriff. Weitere Informationen zu Berechtigungen und Berechtigungsstufen finden Sie unter  [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/de-de/library/cc288074.aspx). > Um Verwechslungen zu vermeiden, stimmen die Namen der App-Rechte nicht mit den Namen der Rechte von SharePoint-Benutzerrollenberechtigungen überein. Weil sich die Anpassung der Berechtigungen, die mit SharePoint-Benutzerrollen verknüpft sind, nicht auf die App-Berechtigungsanforderungsstufen auswirken, entsprechen die Namen der App-Rechte nicht den entsprechenden SharePoint-Benutzerrollen mit Ausnahme des Rechts FullControl, das nicht über die Benutzeroberfläche zur Berechtigungsverwaltung angepasst werden kann. 
+> Diese Rechte entsprechen den Standard-Benutzerberechtigungsstufen von SharePoint: Leser, Teilnehmer, Designer und Vollzugriff. Weitere Informationen zu Berechtigungen und Berechtigungsstufen finden Sie unter  [Benutzerberechtigungen und Berechtigungsstufen](http://technet.microsoft.com/de-de/library/cc288074.aspx). <BR/><BR /> Um Verwechslungen zu vermeiden, stimmen die Namen der App-Rechte nicht mit den Namen der Rechte von SharePoint-Benutzerrollenberechtigungen überein. Weil sich die Anpassung der Berechtigungen, die mit SharePoint-Benutzerrollen verknüpft sind, nicht auf die App-Berechtigungsanforderungsstufen auswirken, entsprechen die Namen der App-Rechte nicht den entsprechenden SharePoint-Benutzerrollen mit Ausnahme des Rechts FullControl, das nicht über die Benutzeroberfläche zur Berechtigungsverwaltung angepasst werden kann. 
 
 
 
@@ -438,7 +438,7 @@ Die **BaseTemplateId** -Eigenschaft ist ein untergeordnetes Element, kein Attrib
 ||||
 |:-----|:-----|:-----|
 |**Bereichs-URI** <br/> |**Eigenschaft** <br/> |**Typ** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **HINWEIS**> Weitere Informationen zu **BaseTemplateId** und dem zugehörigen ganzzahligen Wert für die Listenbasisvorlage finden Sie unter dem **Type**-Attribut von  [List-Element (Liste)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/><br /> **HINWEIS** <br /> Weitere Informationen zu **BaseTemplateId** und dem zugehörigen ganzzahligen Wert für die Listenbasisvorlage finden Sie unter dem **Type**-Attribut von  [List-Element (Liste)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
  
 
 ## Verwalten von App-Berechtigungen und Problembehandlung
@@ -478,7 +478,7 @@ Wenn Sie eine App entwickeln oder Fehler in einer App beheben, gibt es mögliche
 
 
 
-1. Navigieren Sie zu  `http://<SharePointWebSite>/_layouts/15/AppInv.aspx`, wobei  _<SharePointWebSite>_ die URL der Website ist, auf der die App installiert ist. Achten Sie sorgfältig darauf, dass Sie der URL keine Abfrageparameter hinzufügen. Das benötigte Formular wird nur auf dieser Seite angezeigt, wenn Sie die URL exakt wie angezeigt eingeben.
+1. Navigieren Sie zu  `http://<SharePointWebSite>/_layouts/15/AppInv.aspx`, wobei  _\<SharePointWebSite\>_ die URL der Website ist, auf der die App installiert ist. Achten Sie sorgfältig darauf, dass Sie der URL keine Abfrageparameter hinzufügen. Das benötigte Formular wird nur auf dieser Seite angezeigt, wenn Sie die URL exakt wie angezeigt eingeben.
 
 
 2. Geben Sie die ID der App, die auch als Client-ID bezeichnet wird, in das Feld **App-ID** ein, und klicken Sie auf **Suchen**. Die anderen Felder im Formular werden dann mit Informationen zur App ausgefüllt.
