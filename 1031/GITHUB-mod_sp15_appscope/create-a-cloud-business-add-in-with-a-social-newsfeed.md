@@ -145,9 +145,9 @@ Das Kandidaten-Nachverfolgungs-Add-In benötigt eine Datenbanktabelle, die Sie i
 ![Der Bildschirm-Desginer "Kandidaten durchsuchen"](images/CBAscreen.PNG)
 
 
-    Dadurch werden die Informationen zu **Kandidat** im Tabellenformat statt des standardmäßig festgelegten Listenformats angezeigt.
+Dadurch werden die Informationen zu **Kandidat** im Tabellenformat statt des standardmäßig festgelegten Listenformats angezeigt.
 
-    Beachten Sie, dass es zusätzlich zu den von Ihnen für die Tabelle definierten Feldern noch vier weitere Felder gibt: Erstellt von, Erstellt, Geändert von und Geändert. Diese Felder erstellen einen Audit-Trail, der anzeigt, wenn ein Element hinzugefügt oder zuletzt aktualisiert wurde und von wem. 
+Beachten Sie, dass es zusätzlich zu den von Ihnen für die Tabelle definierten Feldern noch vier weitere Felder gibt: Erstellt von, Erstellt, Geändert von und Geändert. Diese Felder erstellen einen Audit-Trail, der anzeigt, wenn ein Element hinzugefügt oder zuletzt aktualisiert wurde und von wem. 
 
 
 
@@ -159,14 +159,14 @@ Das Kandidaten-Nachverfolgungs-Add-In benötigt eine Datenbanktabelle, die Sie i
 
 2. Erweitern Sie im Dialogfeld **Schaltfläche hinzufügen** die Liste **showTab**, klicken Sie dann auf **addAndEditNew** wie in Abbildung 4 dargestellt, und klicken Sie dann auf die Schaltfläche **OK**.
 
-   **Abbildung 4. Das Dialogfeld "Schaltfläche hinzufügen"**
+**Abbildung 4. Das Dialogfeld "Schaltfläche hinzufügen"**
 
 
 
 ![Dialogfeld "Schaltfläche hinzufügen"](images/CBAadd.PNG)
 
 
-    Das Dialogfeld **Neuen Bildschirm hinzufügen** wird geöffnet.
+Das Dialogfeld **Neuen Bildschirm hinzufügen** wird geöffnet.
 
 
 3. Akzeptieren Sie im Dialogfeld **Neuen Bildschirm hinzufügen** die Standardwerte und klicken Sie dann auf die Schaltfläche **OK**.
@@ -336,7 +336,6 @@ In vielen Geschäfts-Add-Ins möchten Sie möglicherweise den Zugriff auf bestim
 3. Fügen Sie im Code-Editor folgenden Code zur **Candidates_Validate**-Methode hinzu:
 
   ```VB.net
-
 If Not Application.User.Department = "Hiring Managers" Then
                 results.AddEntityError("Permission denied")
             End If
@@ -344,14 +343,13 @@ If Not Application.User.Department = "Hiring Managers" Then
 
 
   ```cs
-
 if (!(Application.User.Department == "Hiring Managers")) {
 results.AddEntityError("Permission denied");
 }
   ```
 
 
-    Die **Validate**-Methode wird ausgeführt, wenn ein Benutzer versucht, einen Datensatz zu speichern. Wenn der Benutzer Mitglied der Einstellungsmanager-Sicherheitsgruppe ist, wurde der Datensatz gespeichert, andernfalls wird die Fehlermeldung „Berechtigung verweigert" angezeigt und der Datensatz verworfen.
+Die **Validate**-Methode wird ausgeführt, wenn ein Benutzer versucht, einen Datensatz zu speichern. Wenn der Benutzer Mitglied der Einstellungsmanager-Sicherheitsgruppe ist, wurde der Datensatz gespeichert, andernfalls wird die Fehlermeldung „Berechtigung verweigert" angezeigt und der Datensatz verworfen.
 
 
 An diesem Punkt wird Ihnen wahrscheinlich beim Ausführen des Add-Ins und Hinzufügen eines neuen Kandidaten die Fehlermeldung angezeigt, sofern Sie kein Mitglied einer Sicherheitsgruppe mit der Bezeichnung Einstellungsmanager sind. Ersetzen Sie „Einstellungsmanager" durch den Namen einer Sicherheitsgruppe, der Sie angehören und versuchen Sie es erneut. Sie sollten nun über die Berechtigung verfügen, einen Kandidaten hinzuzufügen.

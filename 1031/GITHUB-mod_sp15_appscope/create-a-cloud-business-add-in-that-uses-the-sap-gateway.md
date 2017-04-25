@@ -918,7 +918,7 @@ In den Schritten in diesem Abschnitt wird beschrieben, wie das Beispiel-Add-In �
 
 
 > **HINWEIS**
-> Sie müssen das Add-In mit Azure AD zweimal registrieren: Einmal für Debuggingzwecke und dann noch mal zum Bereitstellen für die Produktion, wie in Schritt 10 beschrieben. <br /><br /> Verwenden Sie zum Registrieren des Add-Ins für Debuggingzwecke **URL FÜR ANMELDUNG** und **APP-ID-URI** mit der Debugging-URL des SellerDashboard.Server-Projekts, damit Sie den Visual Studio-Debugger (F5) ausführen können. Diese URL weist das Format https://localhost. *nnnn*  auf, wobei *nnnn*  eine Portnummer ist. Diese URL finden Sie im Bereich "Eigenschaften" in Visual Studio.<br /><br /> Bearbeiten Sie die Registrierung zur Verwendung der richtigen Produktions-URL, wenn Sie für die Bereitstellung für die Produktion bereit sind. 
+> Sie müssen das Add-In mit Azure AD zweimal registrieren: Einmal für Debuggingzwecke und dann noch mal zum Bereitstellen für die Produktion, wie in Schritt 10 beschrieben. <br /><br /> Verwenden Sie zum Registrieren des Add-Ins für Debuggingzwecke **URL FÜR ANMELDUNG** und **APP-ID-URI** mit der Debugging-URL des SellerDashboard.Server-Projekts, damit Sie den Visual Studio-Debugger (F5) ausführen können. Diese URL weist das Format https://localhost.*nnnn*  auf, wobei *nnnn*  eine Portnummer ist. Diese URL finden Sie im Bereich "Eigenschaften" in Visual Studio.<br /><br /> Bearbeiten Sie die Registrierung zur Verwendung der richtigen Produktions-URL, wenn Sie für die Bereitstellung für die Produktion bereit sind. 
 
 
 
