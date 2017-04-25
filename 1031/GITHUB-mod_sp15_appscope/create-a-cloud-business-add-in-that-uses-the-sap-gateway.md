@@ -106,7 +106,7 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
 
 
   ```cs
-  // Use the auth code, acquire the refresh token and access token, and store them in the current session
+// Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
         {
             if (!IsAuthorized &amp;&amp; !string.IsNullOrEmpty(authCode))
@@ -125,7 +125,7 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
             return false;
   }
 
- // Provide the access token, which is stored in the current session, if the access token expired, use the refresh token get a new one.
+// Provide the access token, which is stored in the current session, if the access token expired, use the refresh token get a new one.
  public string AccessToken
         {
             get
