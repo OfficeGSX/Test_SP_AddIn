@@ -63,10 +63,10 @@ In der folgenden Tabelle werden einige wichtige Artikel aufgelistet, in denen di
 
 |**Artikeltitel**|**Beschreibung**|
 |:-----|:-----|
-| [SharePoint-Add-Ins](sharepoint-add-ins.md) <br/> |Erfahren Sie mehr über das neue App-Modell in SharePoint 2013, mit dem Sie Apps, d. h. kleine, einfach zu verwendende Lösungen für Endbenutzer, erstellen können.  <br/> |
-| [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) <br/> |Erfahren Sie mehr über Datenzugriffsoptionen in SharePoint-Add-Ins. In diesem Artikel finden Sie Anleitungen zu den allgemeinen Entscheidungen, die Sie beim Arbeiten mit Daten in Ihrer App treffen müssen.  <br/> |
-| [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md) <br/> |Lernen Sie den Unterschied zwischen Hostwebs und App-Webs kennen. Erfahren Sie, welche SharePoint 2013-Komponenten in eine SharePoint-Add-In eingeschlossen werden können, welche Komponenten im Hostweb und welche im App-Web bereitgestellt werden und wie das App-Web in einer isolierten Domäne bereitgestellt wird.  <br/> |
-| [Clientseitige domänenübergreifende Sicherheit](http://msdn.microsoft.com/de-de/library/cc709423%28VS.85%29.aspx) <br/> |Machen Sie sich mit domänenübergreifende Bedrohungen und Anwendungsfällen sowie Sicherheitsprinzipien für ursprungsübergreifende Anforderungen vertraut, und wägen Sie die Risiken ab, die Entwickler eingehen, wenn sie den domänenübergreifenden Zugriff von im Browser ausgeführten Webanwendungen erweitern.  <br/> |
+| [SharePoint-Add-Ins](sharepoint-add-ins.md)|Erfahren Sie mehr über das neue App-Modell in SharePoint 2013, mit dem Sie Apps, d. h. kleine, einfach zu verwendende Lösungen für Endbenutzer, erstellen können. |
+| [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)|Erfahren Sie mehr über Datenzugriffsoptionen in SharePoint-Add-Ins. In diesem Artikel finden Sie Anleitungen zu den allgemeinen Entscheidungen, die Sie beim Arbeiten mit Daten in Ihrer App treffen müssen. |
+| [Hostwebsites, Add-In-Websites und SharePoint-Komponenten in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md)|Lernen Sie den Unterschied zwischen Hostwebs und App-Webs kennen. Erfahren Sie, welche SharePoint 2013-Komponenten in eine SharePoint-Add-In eingeschlossen werden können, welche Komponenten im Hostweb und welche im App-Web bereitgestellt werden und wie das App-Web in einer isolierten Domäne bereitgestellt wird. |
+| [Clientseitige domänenübergreifende Sicherheit](http://msdn.microsoft.com/de-de/library/cc709423%28VS.85%29.aspx)|Machen Sie sich mit domänenübergreifende Bedrohungen und Anwendungsfällen sowie Sicherheitsprinzipien für ursprungsübergreifende Anforderungen vertraut, und wägen Sie die Risiken ab, die Entwickler eingehen, wenn sie den domänenübergreifenden Zugriff von im Browser ausgeführten Webanwendungen erweitern. |
    
 
 ## Codebeispiel: Zugreifen auf Daten in einem Remotedienst mithilfe des Webproxys
@@ -447,12 +447,12 @@ Categories from the Northwind database exposed as an OData service:
 
 |**Problem**|**Lösung**|
 |:-----|:-----|
-|Der Browser wird nicht geöffnet, nachdem Sie F5 gedrückt haben.  <br/> |Legen Sie das SharePoint-Add-In-Projekt als Startprojekt fest.  <br/> |
-|Die Schema-Port-Kombination wird nicht unterstützt.  <br/> |Die Aufrufschema-Port-Kombination muss folgende Kriterien erfüllen:  <br/> |**Schema**|**Port**|
+|Der Browser wird nicht geöffnet, nachdem Sie F5 gedrückt haben. |Legen Sie das SharePoint-Add-In-Projekt als Startprojekt fest. |
+|Die Schema-Port-Kombination wird nicht unterstützt. |Die Aufrufschema-Port-Kombination muss folgende Kriterien erfüllen: |**Schema**|**Port**|
 |:-----|:-----|
-|http  <br/> |80  <br/> |
-|https  <br/> |443  <br/> |
-|http oder https  <br/> |7000-10000  <br/> |
+|http |80 |
+|https |443 |
+|http oder https |7000-10000 |
    
 
 > **WICHTIG**
@@ -462,8 +462,8 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|Unbehandelte Ausnahme: **SP ist nicht definiert**. <br/> |Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **VORSICHT**> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
-|Die Größe der Antwort vom Remoteendpunkt übersteigt den konfigurierten Höchstwert.  <br/> |Die Webproxyanforderungen der Antwort dürfen nicht größer als 200 KB sein.  <br/> |
+|Unbehandelte Ausnahme: **SP ist nicht definiert**.|Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```<BR /> **VORSICHT** <BR /> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
+|Die Größe der Antwort vom Remoteendpunkt übersteigt den konfigurierten Höchstwert. |Die Webproxyanforderungen der Antwort dürfen nicht größer als 200 KB sein. |
    
 
 ## Nächste Schritte
