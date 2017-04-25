@@ -101,15 +101,7 @@ Der Workflow sendet eine E-Mail, um einen Mitarbeiter der Personalabteilung zu b
 
 
 > **HINWEIS**
-> An verschiedenen Punkten während des Entwerfens Ihres Workflows wird ein blaues Rautensymbol mit einem Ausrufezeichen 
-
-
-
-![Ein kleines blaues Rautensymbol mit einem weißen Ausrufezeichen darin.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG)
-
-
-
-für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf temporäre Fehler hin. (Bewegen Sie den Cursor über das Symbol, um eine kurze Meldung anzuzeigen, oder suchen Sie in der **Fehlerliste** von Visual Studio nach Details.) Hierbei handelt es sich um Nebeneffekte der Unvollständigkeit des Workflows. Diese sollten nicht mehr vorhanden sein, wenn Sie das Verfahren abgeschlossen haben.
+> An verschiedenen Punkten während des Entwerfens Ihres Workflows wird ein blaues Rautensymbol mit einem Ausrufezeichen ![Ein kleines blaues Rautensymbol mit einem weißen Ausrufezeichen darin.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf temporäre Fehler hin. (Bewegen Sie den Cursor über das Symbol, um eine kurze Meldung anzuzeigen, oder suchen Sie in der **Fehlerliste** von Visual Studio nach Details.) Hierbei handelt es sich um Nebeneffekte der Unvollständigkeit des Workflows. Diese sollten nicht mehr vorhanden sein, wenn Sie das Verfahren abgeschlossen haben.
 
 
 
@@ -270,11 +262,7 @@ Klicken Sie auf eine beliebige Stelle außerhalb des Bereichs, um die Änderunge
 
 
 > **TIPP**
-> Wenn der Workflow gestartet, aber niemals abgeschlossen und die E-Mail nicht gesendet wird, versuchen Sie, die Debugsitzung zu beenden, und drücken Sie einige Male erneut F5, bevor Sie davon ausgehen, dass etwas in Ihrem Code nicht in Ordnung ist. Manchmal liegt das Problem bei SharePoint Online. > Wenn weiterhin Probleme auftreten, versuchen Sie, einen Inhaltstyp namens **ListFieldsContentType**, falls dieser noch nicht vorhanden ist, zum Abschnitt **ContentTypes** der schema.xml-Datei hinzuzufügen. Das folgende ist ein Beispiel für das Markup.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
-
-
-
- `</ContentType>`> Kopieren Sie dann den gesamten Abschnitt **FieldRefs** des Inhaltstyps **NewEmployee** in diesen neuen Inhaltstyp.> Speichern Sie das Projekt, ziehen Sie es zurück, und drücken Sie erneut F5. 
+> Wenn der Workflow gestartet, aber niemals abgeschlossen und die E-Mail nicht gesendet wird, versuchen Sie, die Debugsitzung zu beenden, und drücken Sie einige Male erneut F5, bevor Sie davon ausgehen, dass etwas in Ihrem Code nicht in Ordnung ist. Manchmal liegt das Problem bei SharePoint Online. > Wenn weiterhin Probleme auftreten, versuchen Sie, einen Inhaltstyp namens **ListFieldsContentType**, falls dieser noch nicht vorhanden ist, zum Abschnitt **ContentTypes** der schema.xml-Datei hinzuzufügen. Das folgende ist ein Beispiel für das Markup.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`<BR /> Kopieren Sie dann den gesamten Abschnitt **FieldRefs** des Inhaltstyps **NewEmployee** in diesen neuen Inhaltstyp.> Speichern Sie das Projekt, ziehen Sie es zurück, und drücken Sie erneut F5. 
 4. Schließen Sie zum Beenden der Debugsitzung das Browserfenster, oder beenden Sie das Debuggen in Visual Studio. Jedes Mal, wenn Sie F5 drücken, zieht Visual Studio die vorherige Version des Add-Ins zurück und installiert die neueste.
 
 
