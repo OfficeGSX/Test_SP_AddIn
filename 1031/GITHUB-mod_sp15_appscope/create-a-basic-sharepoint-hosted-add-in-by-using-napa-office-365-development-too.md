@@ -314,7 +314,7 @@ $(document).ready(function () {
   ```
 
 
-    Im nächsten Schritt fügen Sie JavaScript-Funktionen für die Definitionen hinzu. Jede Funktion im Code wird per Aufruf von  `executeQueryAsync()` ausgeführt. Bei diesem Aufruf wird die aktuelle ausstehende Anforderung asynchron auf dem Server ausgeführt, indem das clientseitige Objektmodell (CSOM) für SharePoint verwendet wird. Wenn eine Funktion asynchron ausgeführt wird, wird Ihr Skript weiter ausgeführt, ohne dass eine Antwort des Servers abgewartet wird. Jeder `executeQueryAsync()`-Aufruf umfasst zwei Ereignishandler. Ein Handler antwortet, wenn die Funktion erfolgreich ausgeführt wird, und der andere Handler antwortet, wenn die Funktion fehlschlägt. In dieser Tabelle sind die Hauptfunktionen beschrieben.
+Im nächsten Schritt fügen Sie JavaScript-Funktionen für die Definitionen hinzu. Jede Funktion im Code wird per Aufruf von  `executeQueryAsync()` ausgeführt. Bei diesem Aufruf wird die aktuelle ausstehende Anforderung asynchron auf dem Server ausgeführt, indem das clientseitige Objektmodell (CSOM) für SharePoint verwendet wird. Wenn eine Funktion asynchron ausgeführt wird, wird Ihr Skript weiter ausgeführt, ohne dass eine Antwort des Servers abgewartet wird. Jeder `executeQueryAsync()`-Aufruf umfasst zwei Ereignishandler. Ein Handler antwortet, wenn die Funktion erfolgreich ausgeführt wird, und der andere Handler antwortet, wenn die Funktion fehlschlägt. In dieser Tabelle sind die Hauptfunktionen beschrieben.
 
 
 |**Funktionsname**|**Beschreibung**|
@@ -524,7 +524,7 @@ $("#createitembutton").click(function (event) {
 > **HINWEIS**
 > Werden die Listenelemente nicht angezeigt, wenn Sie das Add-In ausführen, stellen Sie sicher, dass die  `displayLists();`-Anweisung nach dem vorhergehenden Code kommt. 
 
-    Im nächsten Schritt fügen Sie JavaScript-Funktionen für die neuen Definitionen und eine Unterstützungsfunktion ( `getItems()`) hinzu. In der folgenden Tabelle sind die Hauptfunktionen beschrieben.
+Im nächsten Schritt fügen Sie JavaScript-Funktionen für die neuen Definitionen und eine Unterstützungsfunktion ( `getItems()`) hinzu. In der folgenden Tabelle sind die Hauptfunktionen beschrieben.
 
 
 |**Funktionsname**|**Beschreibung**|
