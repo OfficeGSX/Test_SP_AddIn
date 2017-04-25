@@ -35,7 +35,7 @@ SharePoint Online (und die lokalen SharePoint 2016 und höher) und Office 365-AP
 - Ein Teil kann ein Lesevorgang (oder Funktionsaufruf) oder ein ChangeSet aus mindestens einem Schreibvorgang (oder Funktionsaufruf) sein. Ein ChangeSet ist selbst vom MIME-Typ  *multipart/mixed*  mit Unterteilen, die Einfügungs-, Aktualisierungs- oder Löschvorgänge enthalten.
     
     > **WICHTIG**
-      > Zu diesem Zeitpunkt wird in SharePoint und Office 365-APIs keine "Alles oder nichts"-Funktionalität für ChangeSets mit mehreren Vorgängen unterstützt. Wenn in einem der untergeordneten Vorgänge ein Fehler auftritt, werden die anderen dennoch abgeschlossen und nicht zurückgesetzt. 
+    > Zu diesem Zeitpunkt wird in SharePoint und Office 365-APIs keine "Alles oder nichts"-Funktionalität für ChangeSets mit mehreren Vorgängen unterstützt. Wenn in einem der untergeordneten Vorgänge ein Fehler auftritt, werden die anderen dennoch abgeschlossen und nicht zurückgesetzt. 
 
 ## Codebeispiele
 
