@@ -116,10 +116,10 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
 3. Öffnen Sie die Seite **Einstellungen** der Liste, und fügen Sie die zwei Spalten mit den folgenden Schritten hinzu.
 
-	1. Klicken Sie auf die Popupschaltfläche **· · ·** direkt über der Liste, und wählen Sie dann **Ansicht erstellen** aus.
+a. Klicken Sie auf die Popupschaltfläche **· · ·** direkt über der Liste, und wählen Sie dann **Ansicht erstellen** aus.
 
 
-	2. Die Seite **Ansichtstyp** wird mit der Breadcrumb-Struktur **Einstellungen und Ansichtstyp** im oberen Bereich geöffnet. Klicken Sie auf den Breadcrumb **Einstellungen**.
+b. Die Seite **Ansichtstyp** wird mit der Breadcrumb-Struktur **Einstellungen und Ansichtstyp** im oberen Bereich geöffnet. Klicken Sie auf den Breadcrumb **Einstellungen**.
 
    **Schritte zum Öffnen der Seite „Listeneinstellungen"**
 
@@ -131,7 +131,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
 
 
-	3. Öffnen Sie auf der Seite **Einstellungen** den Link **Aus vorhandenen Websitespalten hinzufügen** etwa in der Mitte der Seite links.
+c. Öffnen Sie auf der Seite **Einstellungen** den Link **Aus vorhandenen Websitespalten hinzufügen** etwa in der Mitte der Seite links.
 
    **Seite „Listeneinstellungen"**
 
@@ -143,7 +143,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
 
 
-4. Wählen Sie auf der Seite **Spalten aus Websitespalten hinzufügen** in der Dropdownliste **Websitespalten auswählen aus** die Option **Employee Orientation** aus.
+d. Wählen Sie auf der Seite **Spalten aus Websitespalten hinzufügen** in der Dropdownliste **Websitespalten auswählen aus** die Option **Employee Orientation** aus.
 
    **Hinzufügen von Spalten von der Seite „Websitespalten"**
 
@@ -155,10 +155,10 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
 
 
-5. Fügen Sie die Spalten **Division** und **OrientationStage** zum Feld **Hinzuzufügende Spalten** hinzu.
+e. Fügen Sie die Spalten **Division** und **OrientationStage** zum Feld **Hinzuzufügende Spalten** hinzu.
 
 
-6. Wählen Sie **OK** aus, um zur Seite **Einstellungen** zurückzukehren, und klicken Sie dann auf den Breadcrumb **Neue Mitarbeiter in Seattle** im oberen Bereich der Seite.
+f. Wählen Sie **OK** aus, um zur Seite **Einstellungen** zurückzukehren, und klicken Sie dann auf den Breadcrumb **Neue Mitarbeiter in Seattle** im oberen Bereich der Seite.
 
 
 4. Die neuen Spalten befinden sich jetzt in der Liste. Fügen Sie der Liste ein neues Element hinzu. Auf dem Bearbeitungsformular enthält das Feld **OrientationStage** bereits den StandardwertNicht gestartet. (Die vorhandenen Elemente in diesem Feld sind leer, da sie erstellt wurden, bevor sich das Feld in der Liste befand.)
