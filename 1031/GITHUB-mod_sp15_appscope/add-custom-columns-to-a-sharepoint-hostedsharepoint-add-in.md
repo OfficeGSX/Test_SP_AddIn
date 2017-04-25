@@ -117,8 +117,6 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 3. Öffnen Sie die Seite **Einstellungen** der Liste, und fügen Sie die zwei Spalten mit den folgenden Schritten hinzu.
 
 a. Klicken Sie auf die Popupschaltfläche **· · ·** direkt über der Liste, und wählen Sie dann **Ansicht erstellen** aus.
-
-
 b. Die Seite **Ansichtstyp** wird mit der Breadcrumb-Struktur **Einstellungen und Ansichtstyp** im oberen Bereich geöffnet. Klicken Sie auf den Breadcrumb **Einstellungen**.
 
    **Schritte zum Öffnen der Seite „Listeneinstellungen"**
@@ -151,13 +149,7 @@ d. Wählen Sie auf der Seite **Spalten aus Websitespalten hinzufügen** in der D
 
 ![Das Steuerelement für die SharePoint-Spaltenauswahl, wobei "Mitarbeiterorientierung" in der Dropdownliste mit der Bezeichnung "Websitespalten auswählen" ausgewählt ist.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
 
-
-
-
-
 e. Fügen Sie die Spalten **Division** und **OrientationStage** zum Feld **Hinzuzufügende Spalten** hinzu.
-
-
 f. Wählen Sie **OK** aus, um zur Seite **Einstellungen** zurückzukehren, und klicken Sie dann auf den Breadcrumb **Neue Mitarbeiter in Seattle** im oberen Bereich der Seite.
 
 
