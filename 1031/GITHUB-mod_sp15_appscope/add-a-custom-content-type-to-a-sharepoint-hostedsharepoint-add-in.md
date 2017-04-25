@@ -101,7 +101,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
   ```
 
 
-    Beachten Sie, dass wir diesen Feldern einen benutzerdefinierten Anzeigenamen gegeben haben: **Employee**.
+Beachten Sie, dass wir diesen Feldern einen benutzerdefinierten Anzeigenamen gegeben haben: **Employee**.
 
 
 12. Speichern und schließen Sie die Datei.
