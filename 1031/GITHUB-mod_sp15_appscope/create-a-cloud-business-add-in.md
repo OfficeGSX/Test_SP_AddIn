@@ -48,9 +48,9 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 ![SharePoint-URL](images/SiteURL.PNG)
 
 
-    Die URL sollte folgende Form annehmen https://  _MySite_.sharepoint.com/sites/Developer/.
+Die URL sollte folgende Form annehmen https:// _MySite_.sharepoint.com/sites/Developer/.
 
-    Dem Projektmappen-Explorer wurde eine neue Lösung mit vier Projekten hinzugefügt: ein Projekt auf oberster Ebene, ein **HTMLClient**-Projekt, ein **Server**-Projekt und ein **SharePoint**-Projekt.
+Dem Projektmappen-Explorer wurde eine neue Lösung mit vier Projekten hinzugefügt: ein Projekt auf oberster Ebene, ein **HTMLClient**-Projekt, ein **Server**-Projekt und ein **SharePoint**-Projekt.
 
 
 
@@ -66,7 +66,7 @@ Mit der Cloud-Geschäfts-Add-In-Vorlage in Visual Studio können Sie Add-Ins fü
 ![Der Projektknoten auf oberster Ebene](images/Top-levelprojectnode.PNG)
 
 
-    Der Anwendungs-Designer wird geöffnet.
+Der Anwendungs-Designer wird geöffnet.
 
 
 2. Klicken Sie im Anwendungs-Designer auf die Registerkarte **SharePoint** wie in Abbildung 4 dargestellt.
