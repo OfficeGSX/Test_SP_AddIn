@@ -10,13 +10,13 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 ## SharePoint API インデックス
 
 API インデックスを使用すると, .NET サーバー オブジェクト モデルと少なくとも 1 つのクライアント プログラミング モデル (.NET クライアント側オブジェクト モデル (CSOM)、JavaScript オブジェクト モデル (JSOM)、および REST) で実装された使用頻度の高い API の型やオブジェクトを参照できます。
-  
-    
-    
+
+
+
 表 1 に、使用頻度の高いコア API を示します。ほとんどの場合、コア API は .NET サーバー実装の型に基づいています。ただし、SharePoint クライアント プログラミング ネイティブで、相当する .NET Server の型が存在しない場合や、すべてのクライアント プログラミング モデルの実装が使用できない場合があります。
-  
-    
-    
+
+
+
  *表 1。使用頻度の高いコア API* 
 ||||
 |:-----|:-----|:-----|
@@ -91,13 +91,13 @@ API インデックスを使用すると, .NET サーバー オブジェクト �
 | [WebInformation](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebInformation.aspx) [SPWebInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebInfo.aspx) <br/> | [SP へWebInformation オブジェクト (sp.js)](http://msdn.microsoft.com/library/006ca57d-50c2-9605-c4ef-fee212aacd54%28Office.15%29.aspx) <br/> | `…/_api/web/webinfos('<web information id>')` <br/> |
 | [WebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.aspx) [SPWebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplate.aspx) <br/> | [SP へWeb テンプレート オブジェクト (sp.js)](http://msdn.microsoft.com/library/cd670582-20a3-30b7-20f5-758be6d838da%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)/getbyname(templatename)` <br/> |
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP へWebTemplateCollection オブジェクト (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
-   
+ 
 
 > **メモ**
 > 表に示した REST エンドポイント URI を使用する前に、 `…` の省略記号を SharePoint サイトへのパスで置き換えてください。たとえば、 `http://<site collection>/<site>/_api/web/lists` とします。
-  
-    
-    
+
+
+
 
 
 ## その他の技術情報
@@ -105,12 +105,12 @@ API インデックスを使用すると, .NET サーバー オブジェクト �
 
 
 -  [SharePoint 2013 のクライアント ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 -  [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 

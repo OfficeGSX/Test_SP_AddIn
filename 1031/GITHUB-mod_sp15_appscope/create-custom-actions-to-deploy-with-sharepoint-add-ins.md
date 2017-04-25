@@ -104,7 +104,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
     <script lang="javascript">
         var params = document.URL.split("?")[1].split("&amp;");
         var paramsHTML = "";
-  
+
         // Extracts the parameters from the query string.
         // Parameters are URLencoded, decode for rendering
         // in page.

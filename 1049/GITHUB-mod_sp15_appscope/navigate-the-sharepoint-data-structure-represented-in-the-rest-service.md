@@ -10,108 +10,108 @@ ms.assetid: fa4154ea-de8c-4f62-8a1b-8c70072eddce
 ## Переход с данного URL-адреса к другим ресурсам SharePoint
 
 При работе со службой REST SharePoint вы часто начинаете с того, что узнаете URL-адрес определенного элемента SharePoint, но хотите получить доступ к связанным элементам, например папке или структуре библиотеки, в которой находится элемент. Предположим, что вы создаете надстройку, где пользователь вводит URL-адрес документа в библиотеке SharePoint. Ваша надстройка должна затем разбить этот URL-адрес, чтобы вычислить фактический URL-адрес сайта SharePoint. После этого надстройка может отправлять больше запросов от имени пользователя, например для создания, обновления или удаления связанных элементов или ресурсов. 
-  
-    
-    
+
+
+
 Для этого ваша надстройка должна запросить в SharePoint следующие сведения.
-  
-    
-    
+
+
+
 
 - Заданные относительно сервера URL-адреса сайта и семейство сайтов, содержащего ресурс.
-    
-  
+
+
 - Дайджест формы, позволяющий выполнять запросы, которые изменяют состояние ресурса, например **POST**, **PUT**, **MERGE** и **DELETE**
-    
-  
+
+
 Базовый процесс:
-  
-    
-    
+
+
+
 
 1. Используйте оператор  `/contextinfo` с данным URL-адресом, чтобы получить доступ к адресам сайта и семейства сайтов и дайджесту формы. Используйте оператор `/contextinfo` в следующем формате:
-    
+
      `http://server/web/doclib/forms/_api/contextinfo`
-    
+
     Чтобы повысить безопасность и предотвратить попытки межсайтовых сценариев, оператор  `/contextinfo` принимает только запросы **POST**.
-    
-  
+
+
 2. Используйте  [Свойства объекта SPContextWebInformation](#bk_props), которые оператор  `/contextinfo` возвращает для получения доступа к дополнительным ресурсам.
-    
-  
+
+
  **Попробуйте следующее**
-  
-    
-    
+
+
+
 
 1. Начните с URL-адреса для данного элемента SharePoint. Например:
-    
+
      `http://site/web/doclib/myDocument.docx`
-    
-  
+
+
 2. Удалите имя ресурса в конце URL-адреса таким образом, чтобы URL-адрес указывал на библиотеку документа, папку или список. В данном случае:
-    
+
      `http://site/web/doclib/`
-    
-  
+
+
 3. Добавьте указатель службы REST и оператор  `/contextinfo` в URL-адрес:
-    
+
      `http://site/web/doclib/_api/contextinfo`
-    
-  
+
+
 4. Извлеките дайджест формы и свойства **webFullUrl** из ответа.
-    
-  
+
+
 5. Добавьте указатель службы REST  `_api` в URL-адрес веб-сайта.
-    
-  
+
+
 6. Используйте полученный URL-адрес и дайджест формы для выполнения запросов других необходимых ресурсов.
-    
-  
+
+
 Вам не нужно передавать дайджест формы, если вы выполняете запросы **GET** или выполняете запросы, используя проверенный маркер OAuth.
-  
-    
-    
+
+
+
 
 ## Переход на родительские и дочерние сайты
 <a name="bk_sites"> </a>
 
 При переходе по структуре сайта с использованием серверной объектной модели SharePoint вы используете свойства  [SPWeb.ParentWeb](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWeb.ParentWeb.aspx) и [SPWeb.Webs](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWeb.Webs.aspx) для получения доступа к объектам, которые представляют родительские и дочерние сайты.
-  
-    
-    
+
+
+
 Соответствующие ресурсы REST   `web/parentweb` и `web/webs`  не возвращают объекты, представляющие сайты. Это происходит из-за соответствия службы REST стандартам OData, а возвращение полных представлений сайтов сделало бы такие запросы неэффективными. Вместо этого они возвращают [Объект WebInfo ](#bk_webinfo), содержащий скалярные свойства сайта, но без соответствующих наборов объектов, таких как коллекции или семейства полей.
-  
-    
-    
+
+
+
 Чтобы перейти на определенный родительский или дочерний сайт, создайте соответствующий URL-адрес REST для сайта, используя свойство **Id** или **Title**. С его помощью вы можете получить доступ к соответствующим наборам объектов данного сайта.
-  
-    
-    
+
+
+
 
 ## Переход по структуре папок
 <a name="bk_folders"> </a>
 
 Служба REST SharePoint не поддерживает обзор иерархии папок сайта с использованием построения URL-адресов. Вместо этого необходимо использовать REST-эквивалент метода  [Web.GetFolderByServerRelativeUrl](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Web.GetFolderByServerRelativeUrl.aspx) . Например:
-  
-    
-    
+
+
+
  *Навигация не поддерживается в службе REST:* 
-  
-    
-    
+
+
+
  `/_vti_bin/client.svc/web/lists/SharedDocuments/folder1/stuff/things/Recycle`
-  
-    
-    
+
+
+
 Навигация, которая поддерживается службой REST: 
-  
-    
-    
+
+
+
  `/_vti_bin/client.svc/web/GetFolderByServerRelativeUrl('SharedDocuments/folder1/stuff/things')/Recycle`.
-  
-    
-    
+
+
+
 
 ## Свойства объекта SPContextWebInformation
 <a name="bk_props"> </a>
@@ -125,7 +125,7 @@ ms.assetid: fa4154ea-de8c-4f62-8a1b-8c70072eddce
 |**formDigestValue** <br/> |Получает дайджест формы запроса сервера.  <br/> |
 |**LibraryVersion** <br/> |Получает текущую версию библиотеки REST.  <br/> |
 |**SupportedSchemaVersions** <br/> |Получает поддерживаемые версии схемы библиотеки REST или CSOM.  <br/> |
-   
+ 
 
 ## Объект WebInfo
 <a name="bk_webinfo"> </a>
@@ -141,41 +141,41 @@ ms.assetid: fa4154ea-de8c-4f62-8a1b-8c70072eddce
 |**LastItemModifiedDate** <br/> |Получает значение, которое указывает время последнего изменения элемента на сайте.  <br/> |
 |**Title** <br/> |Получает или задает имя сайта.  <br/> |
 |**WebTemplateId** <br/> |Получает идентификатор шаблона сайта.  <br/> |
-   
+ 
 
 ## Дополнительные ресурсы
 <a name="bk_addresources"> </a>
 
 
 -  [Знакомство со службой REST для SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
--  [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
-    
-  
--  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris.md)
-    
-  
--  [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests.md)
-    
-  
--  [SharePoint 2013 REST API, конечные точки и примеры](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
--  [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service.md)
-    
-  
--  [Использование значений ETag в службе REST для управления версиями элементов списков документов](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
-    
-  
 
-  
-    
-    
+
+-  [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
+
+
+-  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
+
+
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
+
+
+-  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris.md)
+
+
+-  [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests.md)
+
+
+-  [SharePoint 2013 REST API, конечные точки и примеры](02128c70-9d27-4388-9374-a11bce68fdb8.md)
+
+
+-  [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service.md)
+
+
+-  [Использование значений ETag в службе REST для управления версиями элементов списков документов](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
+
+
+
+
+
+
 

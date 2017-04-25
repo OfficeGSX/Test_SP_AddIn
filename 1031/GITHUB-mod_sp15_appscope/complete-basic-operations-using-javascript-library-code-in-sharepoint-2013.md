@@ -471,11 +471,11 @@ function onQuerySucceeded() {
         var oList = this.listInfoArray[i];
         var collField = oList.get_fields();
         var fieldEnumerator = collField.getEnumerator();
-        
+    
         while (fieldEnumerator.moveNext()) {
             var oField = fieldEnumerator.get_current();
             var regEx = new RegExp('name', 'ig');
-        
+    
             if (regEx.test(oField.get_internalName())) {
                 listInfo += '\\nList: ' + oList.get_title() + 
                     '\\n\\tField Title: ' + oField.get_title() + 
@@ -821,7 +821,7 @@ function createFile(resultpanel) {
     fileContent = "The content of my new file";
 
     for (var i = 0; i < fileContent.length; i++) {
-    
+
         fileCreateInfo.get_content().append(fileContent.charCodeAt(i));
     }
 
@@ -1007,7 +1007,7 @@ Mit der **getItems(query)**-Funktion können Sie eine Collaborative Application 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-    
+
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml(
         '<View><Query><Where><Geq><FieldRef Name=\\'ID\\'/>' + 
@@ -1015,7 +1015,7 @@ function retrieveListItems(siteUrl) {
         '<RowLimit>10</RowLimit></View>'
     );
     this.collListItem = oList.getItems(camlQuery);
-    
+
     clientContext.load(collListItem);
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.onQuerySucceeded), 
@@ -1026,7 +1026,7 @@ function retrieveListItems(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-    
+
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1081,7 +1081,7 @@ function retrieveListItemsInclude(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-    
+
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1132,7 +1132,7 @@ Zum Erstellen von Listenelementen erstellen Sie ein **ListItemCreationInformatio
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-    
+
     var itemCreateInfo = new SP.ListItemCreationInformation();
     this.oListItem = oList.addItem(itemCreateInfo);
     oListItem.set_item('Title', 'My New Item!');
@@ -1251,7 +1251,7 @@ function deleteItem() {
 
     oList.update();
     clientContext.load(oList);
-    
+
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.displayCount), 
         Function.createDelegate(this, this.onQueryFailed)
@@ -1263,7 +1263,7 @@ function displayCount() {
     var listItemInfo = 'Item deleted: ' + itemId + 
         '\\nStart Count: ' +  startCount + 
         ' End Count: ' + endCount;
-    
+
     alert(listItemInfo)
 }
 

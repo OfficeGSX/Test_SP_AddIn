@@ -10,17 +10,17 @@ Aprenda cómo sincronizar elementos entre SharePoint y sus complementos o servic
 ## Sincronización de elementos de SharePoint mediante el recurso GetListItemChangesSinceToken
 
 Si desea sincronizar elementos entre SharePoint y sus complementos o servicios, puede hacerlo con el recurso **GetListItemChangesSinceToken**. El recurso **GetListItemChangesSinceToken**, que forma parte del servicio REST de SharePoint, se corresponde con la llamada al servicio web  [Lists.GetListItemChangesSinceToken](https://msdn.microsoft.com/library/WebSvcLists.Lists.GetListItemChangesSinceToken.aspx) .
-  
-    
-    
+
+
+
 Realice una solicitud **POST** que incluya un objeto [Propiedades del objeto SP.ChangeLogItemQuery](#bk_props) en el cuerpo de la solicitud.
-  
-    
-    
+
+
+
 La solicitud devuelve el XML **rowset** de ADO, que incluye las filas correspondientes a cualquier cambio de elemento de lista que coincida con la consulta especificada. Para más información sobre estas propiedades, incluidas las estructuras de datos de las propiedades, descripciones de elementos CAML y valores de devolución, vea [Lists.GetListItemChangesSinceToken](https://msdn.microsoft.com/library/WebSvcLists.Lists.GetListItemChangesSinceToken.aspx) .
-  
-    
-    
+
+
+
 
 ||
 |:-----|
@@ -53,7 +53,7 @@ La solicitud devuelve el XML **rowset** de ADO, que incluye las filas correspond
 ```
 
 |
-   
+ 
 
 ## Propiedades del objeto SP.ChangeLogItemQuery
 <a name="bk_props"> </a>
@@ -70,41 +70,41 @@ La solicitud devuelve el XML **rowset** de ADO, que incluye las filas correspond
 |**QueryOptions** <br/> |Fragmento XML en el formulario siguiente que contiene nodos independientes para las diferentes propiedades del objeto  [SPQuery](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPQuery.aspx) . <br/> |
 |**ChangeToken** <br/> |Cadena que contiene el token de cambio de la solicitud. Para obtener una descripción del formato usado en esta cadena, vea  [Información general acerca del registro de cambios](http://msdn.microsoft.com/es-es/library/bb417456.aspx). Si se transfiere un valor nulo, se devuelven todos los elementos de la lista.  <br/> |
 |**Contains** <br/> |Elemento  [Contains](http://msdn.microsoft.com/es-es/library/ms196501.aspx) que define un filtro personalizado para la consulta. <br/> |
-   
+ 
 
 ## Recursos adicionales
 <a name="bk_addresources"> </a>
 
 
 -  [Introducción al servicio REST para SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
--  [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Trabajar con listas y elementos de lista con REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
--  [Trabajar con carpetas y archivos con REST](working-with-folders-and-files-with-rest.md)
-    
-  
--  [Navegar por la estructura de datos de SharePoint representada en el servicio REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
-    
-  
--  [Determinar los URI de extremo de REST de SharePoint](determine-sharepoint-rest-service-endpoint-uris.md)
-    
-  
--  [Usar operaciones de consulta de OData en solicitudes REST de SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md)
-    
-  
--  [API de REST, extremos y ejemplos de SharePoint 2013](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
--  [Usar valores de ETag a través del servicio REST para obtener control de versiones en documentos y elementos de lista](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
-    
-  
 
-  
-    
-    
+
+-  [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
+
+
+-  [Trabajar con listas y elementos de lista con REST](working-with-lists-and-list-items-with-rest.md)
+
+
+-  [Trabajar con carpetas y archivos con REST](working-with-folders-and-files-with-rest.md)
+
+
+-  [Navegar por la estructura de datos de SharePoint representada en el servicio REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
+
+
+-  [Determinar los URI de extremo de REST de SharePoint](determine-sharepoint-rest-service-endpoint-uris.md)
+
+
+-  [Usar operaciones de consulta de OData en solicitudes REST de SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md)
+
+
+-  [API de REST, extremos y ejemplos de SharePoint 2013](02128c70-9d27-4388-9374-a11bce68fdb8.md)
+
+
+-  [Usar valores de ETag a través del servicio REST para obtener control de versiones en documentos y elementos de lista](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
+
+
+
+
+
+
 

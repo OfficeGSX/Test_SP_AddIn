@@ -81,7 +81,7 @@ private static void CreateExpectedShipmentsList()
                     select list;
         IEnumerable<List> matchingLists = clientContext.LoadQuery(query);
         clientContext.ExecuteQuery();
-               
+           
         if (matchingLists.Count() == 0)
         {
                 ListCreationInformation listInfo = new ListCreationInformation();
@@ -217,7 +217,7 @@ switch (properties.EventType)
     case SPRemoteEventType.ItemUpdated:
 
         // TODO12: Handle the item updated event.
-                
+            
         break;
 }
   ```
@@ -282,7 +282,7 @@ public void ProcessOneWayEvent(SPRemoteEventProperties properties)
                     break;
             }
             break;
-    }      
+    }  
 }
   ```
 
@@ -383,7 +383,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
             SqlParameter quantity = cmd.Parameters.Add("@Quantity", SqlDbType.SmallInt);
             quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
             cmd.ExecuteNonQuery();
-        }        
+        }    
         successFlag = true;
     }
     return successFlag;
@@ -447,7 +447,7 @@ private bool TryUpdateInventory(SPRemoteEventProperties properties)
                 SqlParameter quantity = cmd.Parameters.Add("@Quantity", SqlDbType.SmallInt);
                 quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
                 cmd.ExecuteNonQuery();
-            }        
+            }    
             successFlag = true;
         }
     }
@@ -509,7 +509,7 @@ RegisterExpectedShipmentsEventHandler(request);
 
         List expectedShipmentsList = matchingLists.Single();
 
-        // TODO16: Add the event receiver to the list's collection of event receivers.   
+        // TODO16: Add the event receiver to the list's collection of event receivers. 
 
         clientContext.ExecuteQuery();
     }

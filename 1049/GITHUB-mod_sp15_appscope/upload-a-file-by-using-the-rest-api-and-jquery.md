@@ -8,54 +8,54 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 # Отправка файла с помощью API REST и jQuery
 Узнайте, как загрузить локальный файл в папку SharePoint с помощью API REST и запросов jQuery AJAX.
 В примерах кода в этой статье интерфейс REST и запросы jQuery AJAX используются для добавления локального файла в библиотеку **Документы** и изменения свойств элемента списка, который представляет загруженный файл.
-  
-    
-    
+
+
+
 
 Этот процесс состоит из следующих высокоуровневых шагов.
 1. Преобразование локального файла в буфер массива с помощью **FileReader** API, для чего необходима поддержка HTML5. Функция **jQuery(document).ready** проверяет поддержку FileReader API в браузере.
-    
-  
+
+
 2. Добавление файла в папку **Общие документы** с помощью метода **Add** в коллекции файлов папки. Буфер массива передается в тексте запроса POST.
-    
+
     В этих примерах для доступа к коллекции файлов используется конечная точка **getfolderbyserverrelativeurl**, но также можно воспользоваться конечной точкой списка (например,  `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).
-    
-  
+
+
 3. Получение элемента списка, соответствующего загруженному файлу, с помощью свойства **ListItemAllFields** файла.
-    
-  
+
+
 4. Изменение отображаемого имени и название элемента списка с помощью запроса на MERGE.
-    
-  
+
+
 
 ## Запуск примеров кода
 <a name="RunTheExamples"> </a>
 
 В обоих примерах кода в этой статье API REST и запросы jQuery AJAX используются для загрузки файла в папку **Общие документы** и изменения свойств элемента списка. В первом примере **SP.AppContextSite** используется для вызовов в доменах SharePoint, как надстройка с размещением в SharePoint для отправки файлов на хост-сайт. Второй пример осуществляет вызовы в одном домене, как надстройка с размещением в SharePoint для отправки файлов в надстройку или Интернет или как решение, работающее на сервере, при отправке файлов.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > Надстройки с размещением у поставщика, написанные на JavaScript, должны использовать междоменную библиотеку SP.RequestExecutor для отправки запросов в домен SharePoint. Пример, см. в разделе  [Загрузка файла с помощью междоменной библиотеки](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
-  
-    
-    
+
+
+
 
 Для использования примеров, описанных в этой статье, вам необходимо следующее:
-  
-    
-    
+
+
+
 
 - SharePoint Server 2013 или SharePoint Online.
-    
-  
+
+
 - Разрешения **Write** для библиотеки **Документы** для пользователя, выполняющего код. Если вы создаете Надстройка SharePoint, можно указать разрешения надстройки **Write** в области **List**.
-    
-  
+
+
 - Браузер, поддерживающий **FileReader** API (HTML5).
-    
-  
+
+
 - Ссылка на библиотеку jQuery в разметке страницы. Например:
     ```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
@@ -71,13 +71,13 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 <a name="RunTheExamples"> </a>
 
 Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера  размещенное в SharePoint надстройку, которая загружает файл в папку на хост-сервере.
-  
-    
-    
+
+
+
 Для использования этого примера необходимо выполнение  [этих требований](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
-  
-    
-    
+
+
+
 
 
 ```
@@ -186,7 +186,7 @@ function uploadFile() {
         // add-in web and specifies the host web as the context site.
         fileListItemUri = fileListItemUri.replace(hostWebUrl, '{0}');
         fileListItemUri = fileListItemUri.replace('_api/Web', '_api/sp.appcontextsite(@target)/web');
-        
+    
         var listItemAllFieldsEndpoint = String.format(fileListItemUri + "?@target='{1}'",
             appWebUrl, hostWebUrl);
 
@@ -250,13 +250,13 @@ function getQueryStringParameter(paramToRetrieve) {
 <a name="UploadFile"> </a>
 
 Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера  решение, работающее на сервере. Код аналогичен коду надстройки с размещением в SharePoint, которое загружает файл на сайт надстройки.
-  
-    
-    
+
+
+
 Для использования этого примера необходимо выполнение  [этих требований](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
-  
-    
-    
+
+
+
 
 
 ```
@@ -402,18 +402,18 @@ function onError(error) {
 
 
 -  [Знакомство со службой REST для SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
+
+
 -  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
-    
-  
+
+
 -  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
+
+
 -  [SharePoint 2013 REST API, конечные точки и примеры](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
+
+
 -  [Обращение к данным SharePoint 2013 из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
-    
-  
+
+
 

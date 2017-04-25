@@ -10,13 +10,13 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 ## Index des API SharePoint
 
 L'index des API permet de rechercher de nombreux types et objets fréquemment utilisés implémentés dans le modèle objet serveur .NET, et au moins un modèle de programmation client : CSOM (Client-side Server Object Model) .NET, JSOM (JavaScript Object Model) et/ou REST.
-  
-    
-    
+
+
+
 Le tableau 1 présente les API principales les plus fréquemment utilisées, qui sont généralement basées sur des types issus de l'implémentation de serveur .NET. Dans certains cas, les types sont originaires de la programmation du client SharePoint et il n'existe pas de type de serveur .NET équivalent. Dans d'autres cas, certaines implémentations de modèle de programmation client d'un type spécifique sont disponibles.
-  
-    
-    
+
+
+
  *Tableau 1. API principales fréquemment utilisées* 
 ||||
 |:-----|:-----|:-----|
@@ -91,13 +91,13 @@ Le tableau 1 présente les API principales les plus fréquemment utilisées, qui
 | [WebInformation](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebInformation.aspx) [SPWebInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebInfo.aspx) <br/> | [SP. WebInformation object (sp.js)](http://msdn.microsoft.com/library/006ca57d-50c2-9605-c4ef-fee212aacd54%28Office.15%29.aspx) <br/> | `…/_api/web/webinfos('<web information id>')` <br/> |
 | [WebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.aspx) [SPWebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplate.aspx) <br/> | [SP. WebTemplate object (sp.js)](http://msdn.microsoft.com/library/cd670582-20a3-30b7-20f5-758be6d838da%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)/getbyname(templatename)` <br/> |
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP. WebTemplateCollection object (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
-   
+ 
 
 > **REMARQUE**
 > Avant d'utiliser un URI de point de terminaison REST indiqué dans le tableau, remplacez l'abréviation  `…` par le chemin de votre site SharePoint, par exemple `http://<site collection>/<site>/_api/web/lists`. 
-  
-    
-    
+
+
+
 
 
 ## Ressources supplémentaires
@@ -105,12 +105,12 @@ Le tableau 1 présente les API principales les plus fréquemment utilisées, qui
 
 
 -  [Effectuer des opérations de base avec du code de bibliothèque client SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 -  [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 

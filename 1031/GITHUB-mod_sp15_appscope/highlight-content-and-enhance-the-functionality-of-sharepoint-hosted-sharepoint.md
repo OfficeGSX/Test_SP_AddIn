@@ -172,12 +172,12 @@ Aktionen werden nach Erstellung einer Instanz des Popupsteuerelements hinzugefü
 //Create CalloutAction
 var calloutAction = new CalloutAction({
             text: "Open window"
-            onClickCallback: function() {            
+            onClickCallback: function() {        
                 window.open(url);
             }
         });
 
-//Add Action to an instance of the CalloutControl    
+//Add Action to an instance of the CalloutControl
         myCalloutControl.addAction(calloutAction);
 ```
 
@@ -198,7 +198,7 @@ actionOptions.onClickCallback = function() {
 };
 var calloutAction = new CalloutAction(calloutActionOptions);
 
-//Add Action to an instance of the CalloutControl    
+//Add Action to an instance of the CalloutControl
         myCalloutControl.addAction(calloutAction);
 ```
 

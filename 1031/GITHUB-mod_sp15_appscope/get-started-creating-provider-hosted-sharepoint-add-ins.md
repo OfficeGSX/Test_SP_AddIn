@@ -245,7 +245,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
     <asp:ScriptManager ID="ScriptManager1" runat="server"
             EnablePartialRendering="true" />
     <asp:UpdatePanel ID="PopulateData" runat="server" UpdateMode="Conditional">
-      <ContentTemplate>  
+      <ContentTemplate>
         <table border="1" cellpadding="10">
          <tr><th><asp:LinkButton ID="CSOM" runat="server" Text="Populate Data" 
                                OnClick="CSOM_Click" /></th></tr>
@@ -274,7 +274,7 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
                     </asp:Label><br />
                   </ItemTemplate>
               </asp:ListView>
-            </td>          
+            </td>      
           </tr>
          </table>
        </ContentTemplate>
@@ -318,7 +318,7 @@ private void RetrieveWithCSOM(string accessToken)
     if (IsPostBack)
     {
         sharepointUrl = new Uri(Request.QueryString["SPHostUrl"]);
-    }        
+    }    
 
     ClientContext clientContext =
                     TokenHelper.GetClientContextWithAccessToken(

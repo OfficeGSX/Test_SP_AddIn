@@ -282,7 +282,7 @@ internal static class AADAuthHelper
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"]; 
-private static readonly string _clientId = ConfigurationManager.AppSettings["ida:ClientID"];    
+private static readonly string _clientId = ConfigurationManager.AppSettings["ida:ClientID"];
 private static readonly ClientCredential _clientCredential = new ClientCredential(
                            ConfigurationManager.AppSettings["ida:ClientID"],
                            ConfigurationManager.AppSettings["ida:ClientKey"]);

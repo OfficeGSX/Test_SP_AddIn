@@ -191,7 +191,7 @@ function uploadFile() {
         // add-in web and specifies the host web as the context site.
         fileListItemUri = fileListItemUri.replace(hostWebUrl, '{0}');
         fileListItemUri = fileListItemUri.replace('_api/Web', '_api/sp.appcontextsite(@target)/web');
-    
+
         var listItemAllFieldsEndpoint = String.format(fileListItemUri + "?@target='{1}'",
             appWebUrl, hostWebUrl);
 

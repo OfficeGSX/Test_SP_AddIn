@@ -8,78 +8,78 @@ ms.assetid: d5fcc26c-4e44-404b-aacf-e9351af8cc7d
 # Establecer permisos personalizados en una lista usando la interfaz REST
 Aprenda a definir permisos específicos personalizados en una lista de SharePoint con la interfaz REST y JavaScript.
 Los sitios, las listas y los elementos de lista de SharePoint son tipos de **SecurableObject**. De forma predeterminada, un objeto protegible hereda los permisos de su elemento primario. Para establecer permisos personalizados en un objeto, tiene que romper su herencia para que deje de heredar permisos del elemento primario y luego definir permisos nuevos agregando o eliminando asignaciones de roles.
-  
-    
-    
+
+
+
 
 
 > **NOTA**
 > En  [Recursos adicionales](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) encontrará vínculos a artículos sobre la configuración de permisos específicos.
-  
-    
-    
+
+
+
 
 
 El ejemplo de código de este artículo establece permisos personalizados en una lista y luego cambia los permisos que un grupo tiene en ella. En el ejemplo se usa la interfaz REST para:
-  
-    
-    
+
+
+
 
 
 - Obtener el id. del grupo de destino. En el ejemplo se usa el id. de grupo para obtener los enlaces de rol actuales para el grupo que hay en la lista y agregar el nuevo rol a la lista.
-    
-  
+
+
 - Obtener el id. de la definición de rol que define los nuevos permisos para el grupo. El id. se usa para agregar el nuevo rol a la lista. En este ejemplo se usa una definición de rol existente para el nuevo rol, pero también puede crear una nueva definición de rol.
-    
-  
+
+
 - Interrumpir la herencia de roles en la lista usando el método  `BreakRoleInheritance`. En el ejemplo se rompe la herencia de rol, pero se mantiene el conjunto actual de roles. (Como alternativa, puede elegir no copiar las asignaciones de roles y agregar el usuario actual al nivel de permisos Administrar).
-    
-  
+
+
 - Quitar la asignación de rol actual del grupo que hay en la lista enviando una solicitud de eliminación (DELETE) al extremo de la asignación de rol. (Si no decide copiar las asignaciones de rol, omita este paso).
-    
-  
+
+
 - Agregar una asignación de rol para el grupo en la lista usando el método  `AddRoleAssignment`, que enlaza el grupo a la definición de rol y agrega el rol a la lista.
-    
-  
+
+
 
 ## Requisitos previos para usar los ejemplos de este artículo
 <a name="SP15Accessdatafromremoteapp_Prereq"> </a>
 
 Para usar el ejemplo de este artículo, necesitará:
-  
-    
-    
+
+
+
 
 - Un entorno de desarrollo de SharePoint 2013 (hay que aislar la aplicación en los escenarios locales)
-    
-  
+
+
 - Visual Studio 2012 o Visual Studio 2013 con Office Developer Tools para Visual Studio 2012, o 
-  
-    
-    
+
+
+
 Napa (solo SharePoint Online)
-    
-  
+
+
 También tendrá que establecer los permisos del complemento **Full Control** en el ámbito **Web**. Solo los usuarios que tengan permisos suficientes para cambiar los permisos de la lista (como los propietarios de sitios) pueden ejecutar este complemento.
-  
-    
-    
+
+
+
 
 ## Ejemplo: establecer permisos personalizados en una lista usando la interfaz REST
 <a name="bk_example1"> </a>
 
 En los ejemplos siguientes se representa el contenido del archivo App.js de un complemento hospedado en SharePoint. El primer ejemplo usa la biblioteca entre dominios de JavaScript para compilar y enviar solicitudes HTTP. El segundo ejemplo usa las solicitudes jQuery AJAX.
-  
-    
-    
+
+
+
 Antes de ejecutar el código, reemplace los valores de marcador de posición por los valores reales. Si usa un lenguaje o entorno distintos, tiene que agregar o cambiar algunos componentes de la solicitud. Vea  [Cómo difieren las solicitudes REST por entorno](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) para más información.
-  
-    
-    
+
+
+
  **Ejemplo 1: solicitudes de bibliotecas entre dominios**
-  
-    
-    
+
+
+
 
 
 ```
@@ -210,9 +210,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 }```
 
  **Ejemplo 2: solicitudes jQuery AJAX**
-  
-    
-    
+
+
+
 
 
 ```
@@ -313,36 +313,36 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 
 
 -  [Introducción al servicio REST para SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
+
+
 -  [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
+
+
 -  [Trabajar con listas y elementos de lista con REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
+
+
 - Recursos de REST:
-    
+
      [Recurso GroupCollection](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_GroupCollection)
-    
+
      [Recurso de grupo](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_Group)
-    
+
      [Recurso RoleAssignmentCollection](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_RoleAssignmentCollection)
-    
+
      [Recurso RoleAssignment](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_RoleAssignment)
-    
+
      [Recurso RoleDefinitionCollection](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_RoleDefinitionCollection)
-    
+
      [Recurso RoleDefinition](c5e49290-78d4-4167-b4de-da32376bbf90.md#bk_RoleDefinition)
-    
-  
+
+
 - Artículos de TechNet:
-    
+
      [Referencia sobre la personalización avanzada de permisos para SharePoint Server 2013](http://technet.microsoft.com/es-es/library/dn169567.aspx)
-    
+
      [Procedimientos recomendados para usar la personalización avanzada de permisos en SharePoint Server 2013](http://technet.microsoft.com/es-es/library/gg128955.aspx)
-    
+
      [Permisos de usuario y niveles de permisos en SharePoint 2013](http://technet.microsoft.com/es-es/library/cc721640.aspx)
-    
-  
+
+
 

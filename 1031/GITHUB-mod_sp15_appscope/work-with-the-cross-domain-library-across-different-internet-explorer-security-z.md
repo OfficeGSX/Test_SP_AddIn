@@ -137,13 +137,13 @@ Das folgende Markup ist ein Beispiel für eine einfache apphost-Seite. Damit wer
         {
             overflow:hidden;
         }
-    
+
         body
         {
             margin:0px;
             padding:0px;
         }
-     
+ 
         iframe 
         {
             border:0px;

@@ -139,7 +139,7 @@ clientContext.AuthenticationMode = ClientAuthenticationMode.Anonymous;
 clientContext.FormDigestHandlingEnabled = false;
 clientContext.ExecutingWebRequest +=
 delegate(object oSender, WebRequestEventArgs webRequestEventArgs)
-{                  
+{              
     webRequestEventArgs.WebRequestExecutor.RequestHeaders["Authorization"] =
         "Bearer " + accessToken;
 };
@@ -191,7 +191,7 @@ Es folgt ein weiterer Codeausschnitt, der zeigt, wie auf den Benutzerprofilspeic
 
 ```cs
 
-ClientContext clientContext; //Create this like you normally would.           
+ClientContext clientContext; //Create this like you normally would.       
 PeopleManager peopleManager = new PeopleManager(clientContext);
 PersonProperties myProperties = peopleManager.GetMyProperties();
 clientContext.Load(myProperties);

@@ -437,7 +437,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     try
     {
-        // Open for read-only access             
+        // Open for read-only access         
         store.Open(OpenFlags.ReadOnly);
 
         // Find the cert

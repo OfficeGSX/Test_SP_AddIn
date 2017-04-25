@@ -101,7 +101,7 @@ Der Workflow sendet eine E-Mail, um einen Mitarbeiter der Personalabteilung zu b
 
 
 > **HINWEIS**
-> An verschiedenen Punkten während des Entwerfens Ihres Workflows wird ein blaues Rautensymbol mit einem Ausrufezeichen ![Ein kleines blaues Rautensymbol mit einem weißen Ausrufezeichen darin.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf temporäre Fehler hin. (Bewegen Sie den Cursor über das Symbol, um eine kurze Meldung anzuzeigen, oder suchen Sie in der **Fehlerliste** von Visual Studio nach Details.) Hierbei handelt es sich um Nebeneffekte der Unvollständigkeit des Workflows. Diese sollten nicht mehr vorhanden sein, wenn Sie das Verfahren abgeschlossen haben.
+> An verschiedenen Punkten während des Entwerfens Ihres Workflows wird ein blaues Rautensymbol mit einem Ausrufezeichen![Ein kleines blaues Rautensymbol mit einem weißen Ausrufezeichen darin.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf temporäre Fehler hin. (Bewegen Sie den Cursor über das Symbol, um eine kurze Meldung anzuzeigen, oder suchen Sie in der **Fehlerliste** von Visual Studio nach Details.) Hierbei handelt es sich um Nebeneffekte der Unvollständigkeit des Workflows. Diese sollten nicht mehr vorhanden sein, wenn Sie das Verfahren abgeschlossen haben.
 
 
 

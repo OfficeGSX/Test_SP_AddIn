@@ -291,7 +291,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
         Name="Basic add-in part"
         Title="Basic add-in part Title"
         Description="Basic add-in part Description" >
-    
+
         <!--  The properties are passed through the query string 
                 using the following notation: _propertyName_
                 in the Src property of the Content element.
@@ -339,7 +339,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
             </Property>
         </Properties>
     </ClientWebPart>
-</Elements>           
+</Elements>       
 
   ```
 

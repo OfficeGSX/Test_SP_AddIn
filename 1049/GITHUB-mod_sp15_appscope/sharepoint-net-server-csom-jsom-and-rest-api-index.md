@@ -10,13 +10,13 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 ## Индекс SharePoint API
 
 Используйте индекс API для поиска наиболее часто используемых типов и объектов, реализованных в серверной объектной модели .NET и, по крайней мере, в одной клиентской модели программирования: клиентская объектная модель .NET, объектная модель JavaScript и REST.
-  
-    
-    
+
+
+
 В таблице 1 приведены наиболее часто используемые основные API, которые в большинстве случаев основаны на типах реализации сервера .NET. В некоторых случаях типы являются уникальными для клиентской модели SharePoint без эквивалентного типа серверной модели .NET. Для некоторых типов существуют клиентские реализации модели программирования определенного типа.
-  
-    
-    
+
+
+
  *Таблица 1. Часто используемые основные API* 
 ||||
 |:-----|:-----|:-----|
@@ -91,13 +91,13 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 | [WebInformation](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebInformation.aspx) [SPWebInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebInfo.aspx) <br/> | [SP. WebInformation object (sp.js)](http://msdn.microsoft.com/library/006ca57d-50c2-9605-c4ef-fee212aacd54%28Office.15%29.aspx) <br/> | `…/_api/web/webinfos('<web information id>')` <br/> |
 | [WebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.aspx) [SPWebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplate.aspx) <br/> | [SP. WebTemplate object (sp.js)](http://msdn.microsoft.com/library/cd670582-20a3-30b7-20f5-758be6d838da%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)/getbyname(templatename)` <br/> |
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP. WebTemplateCollection object (sp.js)](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
-   
+ 
 
 > **Примечание**
 > Перед использованием URI конечной точки REST, приведенного в таблице, замените сокращение  `…` на путь к вашему сайту SharePoint, например `http://<site collection>/<site>/_api/web/lists`. 
-  
-    
-    
+
+
+
 
 
 ## Дополнительные ресурсы
@@ -105,12 +105,12 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 
 
 -  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 -  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 

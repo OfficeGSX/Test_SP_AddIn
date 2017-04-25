@@ -10,29 +10,29 @@ Al usar la plantilla Complemento empresarial de nube en Visual Studio, puede cre
 ## Inicio
 
  [Introducción al desarrollo de complementos empresariales de nube](get-started-developing-cloud-business-add-ins.md) proporciona vínculos a recursos de aprendizaje incluidos tutoriales y ejemplos de un extremo a otro.
-  
-    
-    
+
+
+
 
 ## Desarrollar
 
  [Desarrollo de complementos empresariales de nube](develop-cloud-business-add-ins.md) proporciona ayuda con las tareas relacionadas con el desarrollo de un complemento empresarial de nube.
-  
-    
-    
+
+
+
 
 ## Publicar
 
  [Publicación de complementos empresariales de nube](publish-cloud-business-add-ins.md) cubre la publicación de complementos empresariales de nube en SharePoint para Office 365 y SharePoint 2013.
-  
-    
-    
+
+
+
 
 ## Recursos adicionales
 <a name="bk_addresources"> </a>
 
 
 -  [Nuevo nombre de aplicaciones para SharePoint](new-name-for-apps-for-sharepoint.md)
-    
-  
+
+
 

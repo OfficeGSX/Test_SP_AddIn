@@ -152,29 +152,29 @@ SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
 
 switch (properties.EventType)
-{           
+{       
     case SPRemoteEventType.AppInstalled:
-                
+            
    try
    {
         string error = TryCreateList(listTitle, properties);
         if (error != String.Empty)
         {
-            throw new Exception(error);        
+            throw new Exception(error);    
         }
    }
     catch (Exception e)
    {
         // Tell SharePoint to cancel the event.
         result.ErrorMessage = e.Message;
-        result.Status = SPRemoteEventServiceStatus.CancelWithError;           
+        result.Status = SPRemoteEventServiceStatus.CancelWithError;       
     }
         break;
     case SPRemoteEventType.AppUpgraded:
        break;
     case SPRemoteEventType.AppUninstalling:
        break;
-}                  
+}              
   ```
 
 10. Fügen Sie die Listenerstellungsmethode zur **AppEventReceiver**-Klasse als **private**-Methode mit folgendem Code hinzu. Beachten Sie, dass die  `TokenHelper`-Klasse eine besondere Methode aufweist, die für das Abrufen eines Clientkontexts für ein Add-In-Ereignis optimiert ist. Durch die Übergabe von **false** für den letzten Parameter wird sichergestellt, dass der Kontext für das Hostweb gilt.
@@ -183,7 +183,7 @@ switch (properties.EventType)
 
 private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {
-    string errorMessage = String.Empty;      
+    string errorMessage = String.Empty;  
 
     using (ClientContext clientContext =
         TokenHelper.CreateAppEventClientContext(properties, useAppWeb: false))
@@ -207,9 +207,9 @@ using (scope.StartScope())
 { 
     using (scope.StartTry()) 
     { 
-    }     
+    } 
     using (scope.StartCatch()) 
-    {                             
+    {                         
     } 
     using (scope.StartFinally()) 
     { 
@@ -251,7 +251,7 @@ using (condScope.StartScope())
     listInfo.Title = listTitle;
     listInfo.TemplateType = (int)ListTemplateType.GenericList;
     listInfo.Url = listTitle;
-    createdList = clientContext.Web.Lists.Add(listInfo);                            
+    createdList = clientContext.Web.Lists.Add(listInfo);                        
 }
   ```
 
@@ -313,7 +313,7 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
                         createdList = clientContext.Web.Lists.Add(listInfo);
                     }
                 } 
-            
+        
                 using (scope.StartCatch()) 
                 { 
                     ConditionalScope condScope = new ConditionalScope(clientContext, 
@@ -414,7 +414,7 @@ private string TryRecycleList(String listTitle, SPRemoteEventProperties properti
                 clientContext.LoadQuery(allLists.Where(list => list.Title == listTitle));
             RecycleBinItemCollection bin = clientContext.Web.RecycleBin;
             IEnumerable<RecycleBinItem> matchingRecycleBinItems = 
-                clientContext.LoadQuery(bin.Where(item => item.Title == listTitle));    
+                clientContext.LoadQuery(bin.Where(item => item.Title == listTitle));
             clientContext.ExecuteQuery();
 
             List foundList = matchingLists.FirstOrDefault();

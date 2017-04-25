@@ -9,18 +9,18 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 SharePoint 2013 REST インターフェイスを使用してフォルダーやファイルで基本的な作成、読み取り、更新、および削除 (CRUD) の操作を実行する方法について説明します。
 > **ヒント**
 > SharePoint Online (およびオンプレミスの SharePoint 2016 以降の) REST サービスは、OData  `$batch` クエリ オプションを使用して、複数の要求を結合して 1 つのサービスへの呼び出しにすることをサポートしています。詳細およびコード サンプルへのリンクについては、「 [REST API によりバッチ要求を発行する](make-batch-requests-with-the-rest-apis.md)」を参照してください。 
-  
-    
-    
+
+
+
 
 
 ## REST を使用してフォルダーを操作する
 <a name="Folders"> </a>
 
 URL がわかっている場合は、ドキュメント ライブラリ内のフォルダーを取得できます。たとえば、次の例のエンドポイントを使用すると、共有ドキュメント ライブラリのルート フォルダーを取得できます。
-  
-    
-    
+
+
+
 ```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
@@ -31,9 +31,9 @@ headers:
 ```
 
 次の XML は、XML コンテンツ タイプを要求したときに返されるフォルダー プロパティの例を示しています。
-  
-    
-    
+
+
+
 
 
 ```XML
@@ -48,9 +48,9 @@ headers:
 </content>```
 
 次の例は、フォルダーを **作成** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -66,9 +66,9 @@ Headers:
     content-length:length of post body```
 
 次の例は、 **MERGE** メソッドを使用してフォルダーを **更新** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -86,9 +86,9 @@ Headers:
     content-length:length of post body```
 
 次の例は、フォルダーを **削除** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -107,9 +107,9 @@ Headers:
 <a name="Files"> </a>
 
 次の例は、フォルダー内のすべてのファイルを **取得** する方法を示しています。
-  
-    
-    
+
+
+
 ```
 
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
@@ -120,9 +120,9 @@ headers:
 ```
 
 次の例は、特定のファイルを **取得** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -133,9 +133,9 @@ headers:
     Authorization: "Bearer " + accessToken```
 
 URL がわかっている場合は、次の例のように、ファイルを **取得** することもできます。
-  
-    
-    
+
+
+
 
 
 ```
@@ -146,9 +146,9 @@ headers:
     Authorization: "Bearer " + accessToken```
 
 次の例は、ファイルを **作成** してフォルダーに追加する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -162,15 +162,15 @@ Headers:
     content-length:length of post body```
 
 次の例は、 **PUT** メソッドを使用してファイルを **更新** する方法を示しています。
-  
-    
-    
+
+
+
 
 > **メモ**
 > **PUT** はファイルの更新に使用できる唯一のメソッドであり、 **MERGE** メソッドは使用できません。
-  
-    
-    
+
+
+
 
 
 
@@ -186,13 +186,13 @@ Headers:
     content-length:length of post body```
 
 ファイルのメタデータを更新する場合は、リスト アイテムとしてファイルに到達するエンドポイントを作成する必要があります。この操作を行うことができるのは、各フォルダーがリストでもあり、各ファイルはリスト アイテムでもあるからです。 `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)` のようなエンドポイントを作成します。「 [REST を使用したリスト アイテムの操作](working-with-lists-and-list-items-with-rest.md)」に、リスト アイテムのメタデータを更新する方法が説明されています。
-  
-    
-    
+
+
+
 更新するまでファイルが変更されないようにするため、ファイルをチェックアウトすることもできます。また、更新した後は、他のユーザーが操作できるようにファイルをチェックインして戻す必要がある場合もあります。次の例は、 **ファイルをチェックアウト** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -204,9 +204,9 @@ headers:
     X-RequestDigest: form digest value```
 
 次の例は、 **ファイルをチェックイン** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -218,9 +218,9 @@ headers:
     X-RequestDigest: form digest value```
 
 次の例は、ファイルを **削除** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -239,15 +239,15 @@ headers:
 <a name="LargeFiles"> </a>
 
 1.5 メガバイト (MB) を超えるバイナリ ファイルをアップロードする必要がある場合は、REST インターフェイスを使用するのが唯一の方法です。SharePoint 2013 JavaScript オブジェクト モデルを使用して 1.5 MB 未満のバイナリ ファイルをアップロードする方法を示すコード例については、「 [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)」を参照してください。REST を使用して作成できるバイナリ ファイルの最大サイズは 2 ギガバイト (GB) です。次の例は、大きなバイナリ ファイルを **作成** する方法を示しています。
-  
-    
-    
+
+
+
 
 > **注意**
 > このアプローチは、Internet Explorer 10 と他の最新バージョンのブラウザーでのみ使用できます。 
-  
-    
-    
+
+
+
 
 ```
 
@@ -261,9 +261,9 @@ headers:
     content-length:length of post body```
 
 次のコード サンプルは、この REST エンドポイントとクロスドメイン ライブラリを使用してファイルを作成する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -300,9 +300,9 @@ ro.executeAsync(info);
 <a name="FileAttachments"> </a>
 
 次の例は、リスト アイテムに添付されているすべてのファイルを **取得** する方法を示しています。
-  
-    
-    
+
+
+
 ```
 
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
@@ -313,9 +313,9 @@ headers:
 ```
 
 次の例は、リスト アイテムに添付されているファイルを **取得** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -328,9 +328,9 @@ headers:
 ```
 
 次の例は、リスト アイテムの添付ファイルを **作成** する方法を示しています。
-  
-    
-    
+
+
+
 
 
 ```
@@ -344,15 +344,15 @@ headers:
     content-length:length of post body```
 
 次の例は、 **PUT** メソッドを使用してリスト アイテムの添付ファイルを **更新** する方法を示しています。
-  
-    
-    
+
+
+
 
 > **メモ**
 > **PUT** はファイルの更新に使用できる唯一のメソッドであり、 **MERGE** メソッドは使用できません。
-  
-    
-    
+
+
+
 
 
 
@@ -373,52 +373,52 @@ headers:
 
 
 -  [SharePoint 2013 REST エンドポイントを使用して基本的な操作を完了する](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [ファイルおよびフォルダー REST API リファレンス](2c3d2545-1cd7-497e-b535-12199d8edfbb.md)
-    
-  
--  [REST API および jQuery を使用してファイルをアップロードする](upload-a-file-by-using-the-rest-api-and-jquery.md)
-    
-  
--  [REST を使用したリスト アイテムの操作](working-with-lists-and-list-items-with-rest.md)
-    
-  
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
-  
--  [SharePoint 2013: REST を使用してファイルおよびフォルダーに対する基本的なデータ操作を実行する](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
-    
-  
--  [SharePoint 2013 で C# および JavaScript を使用して REST 呼び出しを実行する](http://www.microsoft.com/resources/msdn/ja-jp/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
-  
--  [SharePoint 2013 で C# および JavaScript を使用して REST 呼び出しを実行するデモ](http://www.microsoft.com/resources/msdn/ja-jp/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
-  
--  [SharePoint 2013 のクライアント ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
--  [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
--  [SharePoint アドインの開発](develop-sharepoint-add-ins.md)
-    
-  
--  [SharePoint アドインのセキュリティで保護されたデータ アクセスとクライアント オブジェクト モデル](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
--  [SharePoint 2013 の外部データの操作](work-with-external-data-in-sharepoint-2013.md)
-    
-  
--  [Open Data Protocol](http://www.odata.org/)
-    
-  
--  [OData: JavaScript Object Notation (JSON) 形式](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
-    
-  
 
-  
-    
-    
+
+-  [ファイルおよびフォルダー REST API リファレンス](2c3d2545-1cd7-497e-b535-12199d8edfbb.md)
+
+
+-  [REST API および jQuery を使用してファイルをアップロードする](upload-a-file-by-using-the-rest-api-and-jquery.md)
+
+
+-  [REST を使用したリスト アイテムの操作](working-with-lists-and-list-items-with-rest.md)
+
+
+-  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+
+
+-  [SharePoint 2013: REST を使用してファイルおよびフォルダーに対する基本的なデータ操作を実行する](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+
+
+-  [SharePoint 2013 で C# および JavaScript を使用して REST 呼び出しを実行する](http://www.microsoft.com/resources/msdn/ja-jp/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+
+
+-  [SharePoint 2013 で C# および JavaScript を使用して REST 呼び出しを実行するデモ](http://www.microsoft.com/resources/msdn/ja-jp/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
+
+
+-  [SharePoint 2013 のクライアント ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
+
+
+-  [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
+
+
+-  [SharePoint アドインの開発](develop-sharepoint-add-ins.md)
+
+
+-  [SharePoint アドインのセキュリティで保護されたデータ アクセスとクライアント オブジェクト モデル](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+
+
+-  [SharePoint 2013 の外部データの操作](work-with-external-data-in-sharepoint-2013.md)
+
+
+-  [Open Data Protocol](http://www.odata.org/)
+
+
+-  [OData: JavaScript Object Notation (JSON) 形式](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
+
+
+
+
+
+
 

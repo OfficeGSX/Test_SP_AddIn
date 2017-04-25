@@ -10,22 +10,22 @@ ms.assetid: 85bc228c-44bd-4f9a-a24f-92b988f02d52
 ## 发布提供程序托管的外接程序
 
 您可以使用提供程序托管选项将云企业外接程序发布到 SharePoint 2013。请参阅 [将云企业外接程序发布到 SharePoint](publish-a-cloud-business-add-in-to-sharepoint.md)。
-  
-    
-    
+
+
+
 
 ## 发布到外接程序目录
 
-发布到 SharePoint 网站后，您可以使其在本地外接程序目录或 SharePoint 商店中可用。请参阅 [将 LightSwitch SharePoint 外接程序发布到目录](http://blogs.msdn.com/b/lightswitch/archive/2013/04/29/publishing-lightswitch-apps-for-sharepoint-to-the-catalog.aspx)。 
-  
-    
-    
+发布到 SharePoint 网站后，您可以使其在本地外接程序目录或 SharePoint 商店中可用。请参阅 [将 LightSwitch SharePoint 外接程序发布到目录](http://blogs.msdn.com/b/lightswitch/archive/2013/04/29/publishing-lightswitch-apps-for-sharepoint-to-the-catalog.aspx)。
+
+
+
 
 ## 其他资源
 <a name="bk_addresources"> </a>
 
 
 -  [创建云企业外接程序](create-cloud-business-add-ins.md)
-    
-  
+
+
 

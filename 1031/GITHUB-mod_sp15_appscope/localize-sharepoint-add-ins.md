@@ -381,7 +381,7 @@ protected override void InitializeCulture()
     if (Request.QueryString["SPLanguage"] != null)
     {
         string selectedLanguage = Request.QueryString["SPLanguage"];
-    
+
         // Override the page language.
         UICulture = selectedLanguage;
         Culture = selectedLanguage;

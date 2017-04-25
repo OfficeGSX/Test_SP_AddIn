@@ -8,54 +8,54 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 # REST API および jQuery を使用してファイルをアップロードする
 REST API および jQuery AJAX 要求を使用して、ローカル ファイルを SharePoint フォルダーにアップロードする方法について説明します。
 この記事のコード例では、ローカル ファイルを **ドキュメント** ライブラリに追加してから、アップロードしたファイルを表すリスト項目を変更するのに、REST インターフェイスと jQuery AJAX 要求を使用します。
-  
-    
-    
+
+
+
 
 この処理は概ね次のような手順で行われます。
 1. **FileReader** API (HTML5 のサポートが必要) を使用して、ローカル ファイルを配列バッファーに変換します。 **jQuery(document).ready** 関数により、ブラウザーで FileReader API がサポートされているかどうかを確認します。
-    
-  
+
+
 2. フォルダーのファイル コレクションに **Add** メソッドを使用し、ファイルを **共有ドキュメント** フォルダーに追加します。配列バッファーは POST 要求の本文で渡されます。
-    
+
     これらの例ではファイル コレクションに到達するために **getfolderbyserverrelativeurl** エンドポイントを使用しますが、リスト エンドポイント (例: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`) も使用できます。
-    
-  
+
+
 3. アップロードしたファイルの **ListItemAllFields** プロパティを使用して、アップロードしたファイルに対応するリスト項目を取得します。
-    
-  
+
+
 4. MERGE 要求を使用して、リスト項目の表示名とタイトルを変更します。
-    
-  
+
+
 
 ## コード例の実行
 <a name="RunTheExamples"> </a>
 
 この記事の両方のコード例では、ファイルを **共有ドキュメント** フォルダーにアップロードしてリスト項目のプロパティを変更するのに REST API と jQuery AJAX 要求を使用します。最初の例は、SharePoint ホスト型アドインでファイルをホスト Web にアップロードする際に行うように、 **SP.AppContextSite** を使用して複数の SharePoint ドメインにまたがって呼び出しを行います。2 つ目の例では、SharePoint でホストされるアドインがファイルをアドイン Web にアップロードするときのように、または、サーバー上で実行されているソリューションがファイルをアップロードするときのように、同一ドメイン呼び出しを行います。
-  
-    
-    
+
+
+
 
 > **メモ**
 > JavaScript で作成されたプロバイダー向けのホスト型アドインは、SP.RequestExecutor クロスドメイン ライブラリを使用して要求を SharePoint ドメインに送信する必要があります。例については、「 [クロスドメイン ライブラリを使用してファイルをアップロードする](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd)」を参照してください。 
-  
-    
-    
+
+
+
 
 この記事の例を使用するには、次のものが必要です。
-  
-    
-    
+
+
+
 
 - SharePoint Server 2013 または SharePoint Online
-    
-  
+
+
 - コードを実行するユーザーの、 **ドキュメント** ライブラリに対する **Write**権限。SharePoint アドイン を開発している場合は、 **List** スコープでアドイン **Write**権限を指定できます。
-    
-  
+
+
 - **FileReader** API (HTML5) 対応のブラウザー
-    
-  
+
+
 - ページ マークアップでの jQuery ライブラリの参照。次に例を示します。
     ```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
@@ -71,13 +71,13 @@ REST API および jQuery AJAX 要求を使用して、ローカル ファイル
 <a name="RunTheExamples"> </a>
 
 次のコード例では SharePoint REST API および jQuery AJAX 要求を使用してファイルを **ドキュメント** ライブラリにアップロードし、ファイルを表すリスト項目のプロパティを変更します。この例のコンテキストは、ファイルをホスト Web 上のフォルダーにアップロードする SharePoint でホスト型アドインのものです。
-  
-    
-    
+
+
+
 この例を使用するには、 [これらの要件](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples)を満たす必要があります。
-  
-    
-    
+
+
+
 
 
 ```
@@ -186,7 +186,7 @@ function uploadFile() {
         // add-in web and specifies the host web as the context site.
         fileListItemUri = fileListItemUri.replace(hostWebUrl, '{0}');
         fileListItemUri = fileListItemUri.replace('_api/Web', '_api/sp.appcontextsite(@target)/web');
-        
+    
         var listItemAllFieldsEndpoint = String.format(fileListItemUri + "?@target='{1}'",
             appWebUrl, hostWebUrl);
 
@@ -250,13 +250,13 @@ function getQueryStringParameter(paramToRetrieve) {
 <a name="UploadFile"> </a>
 
 次のコード例では SharePoint REST API および jQuery AJAX 要求を使用してファイルを **ドキュメント** ライブラリにアップロードし、ファイルを表すリスト項目のプロパティを変更します。この例のコンテキストは、サーバー上で実行されているソリューションのものです。このコードは、ファイルをアドイン Web にアップロードする SharePoint ホスト型アドインのものと似ています。
-  
-    
-    
+
+
+
 この例を実行する前に、 [これらの要件](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples)を満たす必要があります。
-  
-    
-    
+
+
+
 
 
 ```
@@ -402,18 +402,18 @@ function onError(error) {
 
 
 -  [SharePoint 2013 REST サービスの概要](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
+
+
 -  [REST を使用してフォルダーとファイルを操作する](working-with-folders-and-files-with-rest.md)
-    
-  
+
+
 -  [REST を使用したリスト アイテムの操作](working-with-lists-and-list-items-with-rest.md)
-    
-  
+
+
 -  [SharePoint 2013 REST API、エンドポイント、およびサンプル](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
+
+
 -  [クロスドメイン ライブラリを使用してアドインから SharePoint 2013 のデータにアクセスする](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
-    
-  
+
+
 

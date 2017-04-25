@@ -11,9 +11,9 @@ Aprenda cómo crear componentes de experiencia de usuario (UX) para los compleme
 <a name="SP15CreateUX_Creating"> </a>
 
 El modelo para aplicaciones para SharePoint ofrece muchos componentes y mecanismos de UX que le ayudan a crear una gran experiencia de usuario en Complementos de SharePoint. La experiencia del usuario en el modelo de complemento también es lo suficientemente flexible como para permitir el uso de las técnicas y plataformas que mejor se adapten a las necesidades de los usuarios finales. En la Tabla 1 se muestra una lista de los recursos que le servirán para aprender a crear y usar componentes UX en los complementos.
-  
-    
-    
+
+
+
 
 **Tabla 1. Recursos y pautas para la creación de componentes UX en Complementos de SharePoint**
 
@@ -26,27 +26,27 @@ El modelo para aplicaciones para SharePoint ofrece muchos componentes y mecanism
 | [Crear acciones personalizadas para implementarlas con complementos de SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md) <br/> |Cuando está creando un Complemento de SharePoint, las acciones personalizadas le permiten interactuar con las listas y la cinta en la web de host. Una acción personalizada se implementa en la web de host cuando los usuarios finales instalan el complemento. Las acciones personalizadas pueden abrir una página web remota y pasar información a través de la cadena de consulta. Hay dos tipos de acciones personalizadas disponibles para los complementos: de la cinta y de bloque de control de edición.  <br/> |
 | [Personalizar una vista de lista en complementos de SharePoint mediante representación del lado cliente](customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering.md) <br/> |La representación del lado cliente proporciona un mecanismo que puede usar para producir su propia salida de un conjunto de controles hospedados en una página de SharePoint. Este mecanismo le permite usar tecnologías muy conocidas (como HTML y JavaScript) para definir la lógica de representación de las vistas de listas de SharePoint. En la representación del lado cliente, puede especificar sus propios recursos de JavaScript y hospedarlos en las opciones de almacenamiento de datos disponibles para sus complementos, como una biblioteca de documentos.  <br/> |
 | [Usar el control Selector de personas del lado cliente en complementos hospedados por SharePoint](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in.md) <br/> |Aprenda a usar el control Selector de personas del lado cliente en las Complementos de SharePoint. El control Selector de personas del lado cliente permite a los usuarios buscar y seleccionar rápidamente cuentas de usuario válidas para usuarios individuales, grupos y notificaciones en su organización. El Selector es un control HTML y JavaScript que proporciona compatibilidad entre exploradores.  <br/> |
-   
+ 
 
 ## Pasos siguientes: Cómo trabajar con datos en Complementos de SharePoint
 <a name="SP15CreateUX_Next"> </a>
 
 ¿Terminó de diseñar una gran experiencia de usuario para su complemento? Incorpore datos con los mecanismos disponibles en el modelo para aplicaciones para SharePoint. Para obtener más información, vea  [Trabajar con datos externos en SharePoint 2013](work-with-external-data-in-sharepoint-2013.md).
-  
-    
-    
+
+
+
 
 ## Recursos adicionales
 <a name="SP15CreateUX_AddRes"> </a>
 
 
 -  [Complementos de SharePoint](sharepoint-add-ins.md)
-    
-  
+
+
 -  [Diseño de la experiencia de usuario para aplicaciones en SharePoint 2013](ux-design-for-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Desarrollar complementos para SharePoint](develop-sharepoint-add-ins.md)
-    
-  
+
+
 

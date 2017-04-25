@@ -199,7 +199,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
     <script 
         type="text/javascript" 
         src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js">
-    </script>  
+    </script>
     <script 
         type="text/javascript"
         src="ChromeLoader.js">
@@ -333,7 +333,7 @@ function getQueryStringParameter(paramToRetrieve) {
     <script 
         type="text/javascript" 
         src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js">
-    </script>  
+    </script>
     <script type="text/javascript">
     var hostweburl;
 

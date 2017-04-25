@@ -239,7 +239,7 @@ SellerDashboardStudio umfasst die standardmäßigen LightSwitch-Add-In-Komponent
     Diese Komponente umfasst Bildschirme, ein benutzerdefiniertes Steuerelement und ein Fotoupload-Steuerelement. In der folgenden Abbildung werden die Hauptkomponenten dargestellt.
 
 
-- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
     SellerDashboard.HTML.Client umfasst die folgenden vier Bildschirme:
@@ -366,7 +366,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://contoso.cloudapp.net:8080/perf/sap/opu/odata/sap/ZCAR_POC_SRV/$metadata" rel="latest-version"/>
 </Schema>
 </edmx:DataServices>
-</edms:Edmx>           
+</edms:Edmx>       
 
   ```
 

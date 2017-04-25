@@ -9,87 +9,87 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 Сведения о том, как писать код для выполнения базовых операций с помощью клиентской объектной модели JavaScript в SharePoint 2013.
 > **Примечание**
 > Пример создания Надстройка SharePoint "Hello World", использующей библиотеку JavaScript, см. в статье  [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md). 
-  
-    
-    
+
+
+
 
 
 ## Клиентские API-интерфейсы SharePoint 2013
 <a name="ClientAPIs"> </a>
 
 Вы можете использовать клиентскую объектную модель SharePoint для извлечения, обновления данных и управления ими в SharePoint 2013. SharePoint предоставляет объектные модели в нескольких формах.
-  
-    
-    
+
+
+
 
 - Распространяемые сборки .NET Framework
-    
-  
+
+
 - Библиотека JavaScript
-    
-  
+
+
 - конечные точки REST и OData;
-    
-  
+
+
 - Сборки Windows Phone
-    
-  
+
+
 - Распространяемые сборки Silverlight
-    
-  
+
+
 Для получения дополнительной информации о наборах API-интерфейсов, доступных для SharePoint 2013, см.  [Выбор правильного набора API в SharePoint 2013](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx).
-  
-    
-    
+
+
+
 В этой статье описано, каким образом следует выполнять базовые операции с помощью объектной модели JavaScript. Вы можете добавить ссылку на объектную модель, используя HTML-теги <script>. Дополнительные сведения об использовании других клиентских API-интерфейсов см. в разделе
-  
-    
-    
+
+
+
 
 -  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
+
+
 -  [Построение приложений Windows Phone, обращающихся к SharePoint 2013](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx)
-    
-  
+
+
 -  [Использование объектной модели Silverlight](http://msdn.microsoft.com/library/cea7829d-f360-4052-8b76-91d90bcefd2a%28Office.15%29.aspx)
-    
-  
+
+
 
 ## Выполнение базовых задач в SharePoint 2013 с использованием клиентской объектной модели JavaScript
 <a name="BasicOps_SPJSOMOps"> </a>
 
 В следующих разделах описаны задачи, которые можно выполнять программно, и они включают примеры кода JavaScript, демонстрирующие выполнение этих операций.
-  
-    
-    
+
+
+
 При создании надстройки с размещением в облаке можно добавить ссылку на объектную модель с помощью HTML-тегов <script>. Мы рекомендуем создать ссылку на хост-сайт, так как сайт надстройки может существовать не в каждом сценарии работы с надстройками, размещаемыми в облаке. Вы можете извлечь URL-адрес хост-сайта из параметра строки запроса  _SPHostUrl_, если вы используете маркер **{StandardTokens}**. Вы также можете использовать пользовательский параметр строки запроса, если вы применяете маркер **{HostUrl}**. После получения URL-адреса хост-сайта вы должны использовать код JavaScript для динамичного создания ссылки на объектную модель.
-  
-    
-    
+
+
+
 В следующем примере кода выполняются следующие задачи для добавления ссылки на объектную модель JavaScript:
-  
-    
-    
+
+
+
 
 - Создание ссылки на библиотеку AJAX из сети Microsoft Content Delivery Network (CDN).
-    
-  
+
+
 - Создание ссылки на библиотеку jQuery из сети Microsoft CDN.
-    
-  
+
+
 - Извлечение URL-адреса хост-сайта из строки запроса.
-    
-  
+
+
 - Загрузка файлов SP.Runtime.js и SP.js с помощью функции **getScript** в jQuery. После загрузки файлов программа получает доступ к объектной модели JavaScript для SharePoint.
-    
-  
+
+
 - Продолжение рабочего процесса функции **execOperation**.
-    
-  
+
+
 
 
 ```
@@ -151,23 +151,23 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 ```
 
 При создании надстройки с размещением в SharePoint можно добавить ссылку на объектную модель с помощью HTML-тегов <script>. Сайт надстройки для SharePoint позволяет использовать относительные пути для ссылок на нужные файлы, используемые в объектной модели JavaScript.
-  
-    
-    
+
+
+
 Следующая разметка выполняет указанные далее задачи для добавления ссылки на объектную модель JavaScript:
-  
-    
-    
+
+
+
 
 - Создание ссылки на библиотеку AJAX из сети Microsoft CDN.
-    
-  
+
+
 - Создание ссылки на файл SP.Runtime.js с использованием относительного URL-адреса сайта надстройки.
-    
-  
+
+
 - Создание ссылки на файл SP.js с использованием относительного URL-адреса сайта надстройки.
-    
-  
+
+
 
 
 ```
@@ -195,16 +195,16 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 <a name="BasicOps_SPWebTasks"> </a>
 
 Для работы с веб-сайтами с использованием JavaScript начните с использования конструктора **ClientContext(serverRelativeUrl)** и передачи URL-адреса или URI-кода для возврата определенного контекста запроса.
-  
-    
-    
+
+
+
 
 ### Получите свойства веб-сайта
 
 Используйте веб-свойства класса **ClientContext** для указания свойств объекта веб-сайта, которые размещены по указанному URL-адресу контекста. После загрузки объекта веб-сайта с помощью метода **load(clientObject)** и вызова **executeQueryAsync(succeededCallback, failedCallback)** можно получить доступ ко всем свойствам этого веб-сайта. В следующем примере отображается заголовок и описание определенного веб-сайта, хотя все другие возвращаемые свойства по умолчанию становятся доступными после загрузки объекта веб-сайта и выполнения запроса.
-  
-    
-    
+
+
+
 ```
 
 function retrieveWebSite(siteUrl) {
@@ -223,7 +223,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Description: ' + this.oWebsite.get_description());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -233,9 +233,9 @@ function onQueryFailed(sender, args) {
 ### Получение только выбранных свойств веб-сайта
 
 Для снижения объема передаваемых данных между клиентом и сервером можно получать только указанные свойства объекта веб-сайта, а не все свойства. В этом случае используйте запрос LINQ или синтаксис лямбда-выражений с методом **load(clientObject)** для определения того, какие свойства следует получать от сервера. В следующем примере после вызова запроса **executeQueryAsync(succeededCallback, failedCallback)** доступны только заголовок и дата создания объекта веб-сайта.
-  
-    
-    
+
+
+
 ```
 
 function retrieveWebSiteProperties(siteUrl) {
@@ -254,7 +254,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Created: ' + this.oWebsite.get_created());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -263,17 +263,17 @@ function onQueryFailed(sender, args) {
 
 > **Примечание**
 > Если вы пытаетесь получить доступ к другим свойствам, код создает исключение, потому что остальные свойства недоступны. 
-  
-    
-    
+
+
+
 
 
 ### Запись в свойства веб-сайта
 
 Для изменения веб-сайта следует задать его свойства и вызвать метод **update()** аналогично применению серверной объектной модели. Однако в клиентской объектной модели следует вызвать **executeQueryAsync(succeededCallback, failedCallback)** для запроса пакетной обработки всех указанных команд. В следующем примере изменяется заголовок и описание указанного веб-сайта.
-  
-    
-    
+
+
+
 ```
 
 function updateWebSite(siteUrl) {
@@ -296,7 +296,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Description: ' + this.oWebsite.get_description());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -307,16 +307,16 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_SPListTasks"> </a>
 
 Работа с объектами списков с использованием JavaScript похожа на работу с объектами веб-сайтов. Начинайте работу с использования конструктора **ClientContext(serverRelativeUrl)** и передачи URL-адреса или URI-кода для возврата определенного контекста запроса. После этого можно использовать свойство **lists** класса **Web** для получения коллекции списков на веб-сайте.
-  
-    
-    
+
+
+
 
 ### Извлечение всех свойств всех списков на веб-сайте
 
 Для возврата всех списков веб-сайта загрузите коллекцию списков с помощью метода **load(clientObject)**, а затем вызовите **executeQueryAsync(succeededCallback, failedCallback)**. В следующем примере представлен URL-адрес веб-сайта, а также дата и время создания списка.
-  
-    
-    
+
+
+
 ```
 
 function retrieveAllListProperties(siteUrl) {
@@ -352,9 +352,9 @@ function onQueryFailed(sender, args) {
 ### Извлечение только заданных свойств списков
 
 В предыдущем примере выполнялся возврат всех свойств списков на веб-сайте. Для уменьшения ненужных данных, передаваемых между клиентом и сервером, можно использовать выражения запросов LINQ, чтобы указать возвращаемые свойства. В JavaScript следует указать **Include** как часть строки запроса, который передается в метод **load(clientObject)** для указания возвращаемых свойств. В следующем примере этот подход используется для возврата только заголовка и идентификатора каждого из списков в коллекции.
-  
-    
-    
+
+
+
 ```
 
 function retrieveSpecificListProperties(siteUrl) {
@@ -391,9 +391,9 @@ function onQueryFailed(sender, args) {
 ### Хранение полученных списков в коллекции
 
 Как показывает следующий пример, вы можете использовать метод **loadQuery(clientObjectCollection, exp)** вместо метода **load(clientObject)** для хранения возвращаемого значения в другой коллекции вместо его сохранения в свойстве списков.
-  
-    
-    
+
+
+
 ```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
@@ -428,9 +428,9 @@ function onQueryFailed(sender, args) {
 ### Применение фильтров к извлечению списков
 
 Как показано в следующем примере, операторы **Include** можно вкладывать в запрос JavaScript, чтобы возвратить метаданные как для списка, так и для его полей. В примере возвращаются все поля из всех списков на веб-сайте, а также отображаются заголовок и внутреннее имя всех полей, внутреннее имя которых содержит строку "name".
-  
-    
-    
+
+
+
 ```
 
 function retrieveAllListsAllFields(siteUrl) {
@@ -454,11 +454,11 @@ function onQuerySucceeded() {
         var oList = this.listInfoArray[i];
         var collField = oList.get_fields();
         var fieldEnumerator = collField.getEnumerator();
-            
+        
         while (fieldEnumerator.moveNext()) {
             var oField = fieldEnumerator.get_current();
             var regEx = new RegExp('name', 'ig');
-            
+        
             if (regEx.test(oField.get_internalName())) {
                 listInfo += '\\nList: ' + oList.get_title() + 
                     '\\n\\tField Title: ' + oField.get_title() + 
@@ -480,22 +480,22 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_SPListCRUD"> </a>
 
 Создание, обновление и удаление списков с использованием клиентской объектной модели аналогично выполнению этих операций с помощью серверной объектной модели .NET, хотя клиентские операции не будут завершены до вызова функции **executeQueryAsync(succeededCallback, failedCallback)**.
-  
-    
-    
+
+
+
 
 ### Создание и обновление списка
 
 Для создания объекта списка с помощью JavaScript, используйте объект **ListCreationInformation**, чтобы определить его свойства, и передайте объект функции **add(parameters)** объекта **ListCollection**. В следующем примере создается новый список объявлений.
-  
-    
-    
+
+
+
 ```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oWebsite = clientContext.get_web();
-    
+
     var listCreationInfo = new SP.ListCreationInformation();
     listCreationInfo.set_title('My Announcements List');
     listCreationInfo.set_templateType(SP.ListTemplateType.announcements);
@@ -520,9 +520,9 @@ function onQueryFailed(sender, args) {
 }```
 
 Если нужно обновить список после его создания, можно задать свойства списка и вызвать функцию **update()** перед вызовом **executeQueryAsync(succeededCallback, failedCallback)**, как показано далее в измененном примере.
-  
-    
-    
+
+
+
 
 
 ```
@@ -546,9 +546,9 @@ clientContext.executeQueryAsync(
 ### Добавление поля в список
 
 Используйте функцию **add(field)** или **addFieldAsXml(schemaXml, addToDefaultView, options)** объекта **FieldCollection** для добавления поля в коллекцию полей списка. В следующем примере создается поле, которое затем обновляется перед вызовом **executeQueryAsync(succeededCallback, failedCallback)**.
-  
-    
-    
+
+
+
 ```
 
 function addFieldToList(siteUrl) {
@@ -587,9 +587,9 @@ function onQueryFailed(sender, args) {
 ### Удаление списка
 
 Чтобы удалить список, вызовите функцию **deleteObject()** объекта списка, как показано в примере ниже.
-  
-    
-    
+
+
+
 ```
 
 function deleteList(siteUrl) {
@@ -621,16 +621,16 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_FolderTasks"> </a>
 
 Вы можете работать с папками, упорядочивая контент, с помощью объектной модели JavaScript. В следующих разделах рассказывается об основных операциях с папками.
-  
-    
-    
+
+
+
 
 ### Создание папки в библиотеке документов
 
 Чтобы создать папку, нужно использовать объект **ListItemCreationInformation**, задав базовый тип как **SP.FileSystemObjectType.folder**, и передать его в параметре функции **addItem(parameters)** объекту **List**. Задайте свойства объекта элемента списка, возвращенного методом, и вызовите функцию **update()**, как показано в следующем примере.
-  
-    
-    
+
+
+
 ```
 
 function createFolder(resultpanel) {
@@ -672,9 +672,9 @@ function createFolder(resultpanel) {
 ### Изменение папки в библиотеке документов
 
 Чтобы изменить имя папки, вы можете записать его в свойство **FileLeafRef** и вызвать функцию **update()**, чтобы изменения вступили в силу при вызове метода **executeQueryAsync**.
-  
-    
-    
+
+
+
 ```
 
 function updateFolder(resultpanel) {
@@ -711,9 +711,9 @@ function updateFolder(resultpanel) {
 ### Удаление папки в библиотеке документов
 
 Чтобы удалить папку, следует вызвать функцию **deleteObject()** объекта. В следующем примере метод **getFolderByServerRelativeUrl** используется для извлечения папки из библиотеки документов и удаления элемента.
-  
-    
-    
+
+
+
 ```
 
 function deleteFolder(resultpanel) {
@@ -752,23 +752,23 @@ function deleteFolder(resultpanel) {
 <a name="BasicOps_FileTasks"> </a>
 
 Вы можете работать с файлами с помощью объектной модели JavaScript. В следующих разделах рассказывается об основных операциях с файлами.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > С помощью объектной модели JavaScript можно работать только с файлами размером до 1,5 МБ. Чтобы отправлять более крупные файлы, используйте REST. Дополнительные сведения см. в разделе  [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles). 
-  
-    
-    
+
+
+
 
 
 ### Создание файла в библиотеке документов
 
 Для создания файлов используйте объект **FileCreationInformation**, задав атрибут URL и добавив контент как байтовый массив в кодировке Base64, как показано в следующем примере.
-  
-    
-    
+
+
+
 ```
 
 function createFile(resultpanel) {
@@ -788,7 +788,7 @@ function createFile(resultpanel) {
     fileContent = "The content of my new file";
 
     for (var i = 0; i < fileContent.length; i++) {
-        
+    
         fileCreateInfo.get_content().append(fileContent.charCodeAt(i));
     }
 
@@ -816,9 +816,9 @@ function createFile(resultpanel) {
 ### Чтение файла в библиотеке документов
 
 Для чтения контента файла используйте операцию **GET** с URL-адресом файла, как показано в следующем примере.
-  
-    
-    
+
+
+
 ```
 
 function readFile(resultpanel) {
@@ -856,9 +856,9 @@ function readFile(resultpanel) {
 ### Изменение файла в библиотеке документов
 
 Чтобы изменить контент файла, используйте объект **FileCreationInformation**, задав атрибут перезаписи равным "true" с помощью метода **set_overwrite()**, как показано в следующем примере.
-  
-    
-    
+
+
+
 ```
 
 function updateFile(resultpanel) {
@@ -908,9 +908,9 @@ function updateFile(resultpanel) {
 ### Удаление файла в библиотеке документов
 
 Чтобы удалить файл, следует вызвать функцию **deleteObject()** объекта. В следующем примере метод **getFileByServerRelativeUrl** используется для извлечения файла из библиотеки документов и удаления элемента.
-  
-    
-    
+
+
+
 ```
 
 function deleteFile(resultpanel) {
@@ -951,22 +951,22 @@ function deleteFile(resultpanel) {
 <a name="BasicOps_SPListItemTasks"> </a>
 
 Для получения элементов из списка с помощью JavaScript используйте функцию **getItemById(id)** для возврата одного элемента или функцию **getItems(query)** для извлечения нескольких элементов. Затем используется функция **load(clientObject)** для получения объектов, представляющих элементы списка.
-  
-    
-    
+
+
+
 
 ### Получение элементов из списка
 
 Функция **getItems(query)** позволяет задавать запрос Язык CAML, который определяет возвращаемые элементы. Вы можете передать неопределенный объект **CamlQuery** для возврата всех элементов из списка или использовать функцию **set_viewXml** для определения запроса CAML и возврата элементов, которые отвечают определенным критериям. В следующем примере отображается идентификатор (помимо значений столбцов Title и Body) первых 100 элементов списка объявлений, начиная с элементов списка, идентификатор коллекции которых превышает 10.
-  
-    
-    
+
+
+
 ```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-        
+    
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml(
         '<View><Query><Where><Geq><FieldRef Name=\\'ID\\'/>' + 
@@ -974,7 +974,7 @@ function retrieveListItems(siteUrl) {
         '<RowLimit>10</RowLimit></View>'
     );
     this.collListItem = oList.getItems(camlQuery);
-        
+    
     clientContext.load(collListItem);
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.onQuerySucceeded), 
@@ -985,7 +985,7 @@ function retrieveListItems(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-        
+    
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1005,15 +1005,15 @@ function onQueryFailed(sender, args) {
 ### Используйте метод Include для доступа к свойствам объектов ListItem
 
 Четыре свойства объектов **ListItem** недоступны по умолчанию при возврате элементов списка: **displayName**, **effectiveBasePermissions**, **hasUniqueRoleAssignments** и **roleAssignments**. В предыдущем примере, если попытаться получить доступ к одному из этих свойств, возвращается исключение **PropertyOrFieldNotInitializedException**. Для доступа к этим свойствам используйте метод **Include** как часть строки запроса, как показано в следующем примере.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > При создании запросов для клиентской объектной модели с помощью LINQ применяется поставщик  [LINQ to Objects](http://msdn.microsoft.com/library/bb397919.aspx), а не  [LINQ to SharePoint](http://msdn.microsoft.com/library/ee535491.aspx), который можно использовать только при написании кода для серверной 
-  
-    
-    
+
+
+
 
 ```
 
@@ -1038,7 +1038,7 @@ function retrieveListItemsInclude(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-        
+    
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1057,37 +1057,37 @@ function onQueryFailed(sender, args) {
 ```
 
 Так как в этом примере используется **Include**, после выполнения запроса доступны только указанные свойства. Поэтому возвращается исключение **PropertyOrFieldNotInitializedException** при попытке доступа к другим свойствам помимо указанных. Кроме того, эта ошибка возникает, если вы пытаетесь использовать такие функции как **get_contentType** или **get_parentList** с целью доступа к объектам, которые они содержат.
-  
-    
-    
+
+
+
 
 ### Ограничения получения объектов
 
 Метод **loadQuery(clientObjectCollection, exp)** объектной модели JavaScript в SharePoint Foundation 2010 не поддерживает методы и операторы LINQ, которые используются в управляемой объектной модели.
-  
-    
-    
+
+
+
 
 ## Создание, обновление и удаление элементов списков
 <a name="BasicOps_SPListItemCRUD"> </a>
 
 Создание, обновление и удаление элементов списка с помощью клиентской объектной модели работает аналогично выполнению этих задач с помощью серверной объектной модели. Можно создать объект элемента списка, установить его свойства, а затем обновить этот объект. Чтобы изменить или удалить объект "list item", необходимо вернуть этот объект с помощью функции **getById(id)** объекта **ListItemCollection**, а затем либо установить свойства и вызвать обновление в объекте, возвращенном методом, либо вызвать собственный метод объекта для удаления. В отличие от серверной объектной модели, каждая из этих операций в клиентской объектной модели должна завершаться вызовом метода **to executeQueryAsync(succeededCallback, failedCallback)**, чтобы изменения вступили в силу на сервере
-  
-    
-    
+
+
+
 
 ### Создание элемента списка
 
 Чтобы создать элементы списка, следует создать объект **ListItemCreationInformation**, установить его свойства и передать его как параметр в функцию **addItem(parameters)** объекта **List**. Затем устанавливаются свойства элемента списка, который возвращает этот метод, и вызывается функция **update()**, как показано в следующем примере.
-  
-    
-    
+
+
+
 ```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-        
+    
     var itemCreateInfo = new SP.ListItemCreationInformation();
     this.oListItem = oList.addItem(itemCreateInfo);
     oListItem.set_item('Title', 'My New Item!');
@@ -1114,9 +1114,9 @@ function onQueryFailed(sender, args) {
 ### Обновление элемента списка
 
 Для установки большинства свойств элемента списка можно с помощью индексатора столбца создать назначение, а затем вызвать функцию **update()**, чтобы изменения вступили в силу при вызове **executeQueryAsync(succeededCallback, failedCallback)**. В следующем примере устанавливается заголовок третьего элемента списка объявлений.
-  
-    
-    
+
+
+
 ```
 
 function updateListItem(siteUrl) {
@@ -1146,9 +1146,9 @@ function onQueryFailed(sender, args) {
 ### Удаление элемента списка
 
 Чтобы удалить элемент списка, следует вызвать функцию **deleteObject()** объекта. В следующем примере используется функция **getItemById(id)** для возврата второго элемента списка, а затем выполняется удаление элемента. SharePoint обслуживает целочисленные идентификаторы элементов в коллекциях, даже если эти элементы удаляются. Поэтому, например, второй элемент списка должен иметь идентификатор, отличный от 2. **ServerException** возвращается, если функция **deleteObject()** вызывается для несуществующего элемента.
-  
-    
-    
+
+
+
 ```
 
 function deleteListItem(siteUrl) {
@@ -1174,9 +1174,9 @@ function onQueryFailed(sender, args) {
 }```
 
 Если, например, требуется получить новое количество элементов, появившееся в результате операции удаления, следует включить вызов метода update(), чтобы обновить список. Кроме того, перед выполнением запроса необходимо загрузить либо сам объект "list", либо его свойство **itemCount**. Если требуется получить как исходное, так и итоговое количество элементов списка, то необходимо выполнить два запроса и получить число элементов дважды, как показано в следующем варианте предыдущего примера.
-  
-    
-    
+
+
+
 
 
 ```
@@ -1200,7 +1200,7 @@ function deleteItem() {
 
     oList.update();
     clientContext.load(oList);
-        
+    
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.displayCount), 
         Function.createDelegate(this, this.onQueryFailed)
@@ -1212,7 +1212,7 @@ function displayCount() {
     var listItemInfo = 'Item deleted: ' + itemId + 
         '\\nStart Count: ' +  startCount + 
         ' End Count: ' + endCount;
-        
+    
     alert(listItemInfo)
 }
 
@@ -1226,9 +1226,9 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_AccessHostweb"> </a>
 
 При разработке надстройки может потребоваться доступ к хост-сайту для работы с элементами на нем. Используйте объект **AppContextSite** для ссылки на хост-сайт или другие сайты SharePoint, как показано в следующем примере. Полный пример кода см. в разделе [Получение названия хост-сайта с помощью междоменной библиотеки (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-2013-Get-the-563f2a3d).
-  
-    
-    
+
+
+
 ```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
@@ -1269,27 +1269,27 @@ function execCrossDomainRequest(appweburl, hostweburl) {
 }```
 
 В предыдущем примере для доступа к хост-сайту используется междоменная библиотека в SharePoint 2013. Дополнительные сведения см. в разделе  [Обращение к данным SharePoint 2013 из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
-  
-    
-    
+
+
+
 
 ## Дополнительные ресурсы
 <a name="BasicOps_AddRes"> </a>
 
 
 -  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
+
+
 -  [Разработка надстроек для SharePoint](develop-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Работа с внешними данными в SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
-    
-  
+
+
 

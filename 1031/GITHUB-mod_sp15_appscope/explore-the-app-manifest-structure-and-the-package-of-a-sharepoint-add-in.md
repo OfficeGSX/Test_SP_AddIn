@@ -102,7 +102,7 @@ Sie müssen in Ihrem Add-In-Manifest entweder das **SupportedLocales**- oder das
     <StartPage>http://MyRemoteWebApplicationServer/default.aspx/?SPHostUrl={HostUrl}</StartPage>
     <SupportedLocales>
       <SupportedLocale CultureName="en-US" />
-    </SupportedLocales>    
+    </SupportedLocales>
   </Properties>
 
   <AppPermissionRequests>

@@ -143,7 +143,7 @@ RegistrationId="100"
          var query = from action in clientContext.Web.UserCustomActions
                      where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
                      select action;
-          IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);	   
+          IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);	 
 	         clientContext.ExecuteQuery();
 	
           UserCustomAction webScopedEmployeeAction = matchingActions.Single();
@@ -156,7 +156,7 @@ RegistrationId="100"
          // TODO10: Copy property values from the descriptively deployed
          // custom action to the new custom action
 
-        // TODO11: Delete the original custom action.     
+        // TODO11: Delete the original custom action. 
 
           clientContext.ExecuteQuery();
     }
@@ -227,7 +227,7 @@ webScopedEmployeeAction.DeleteObject();
          var query = from action in clientContext.Web.UserCustomActions
                      where action.Name == "{button_GUID} .AddEmployeeToCorpDB"
                      select action;
-          IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);	   
+          IEnumerable<UserCustomAction> matchingActions = clientContext.LoadQuery(query);	 
 	         clientContext.ExecuteQuery();
 	
           UserCustomAction webScopedEmployeeAction = matchingActions.Single();
@@ -251,7 +251,7 @@ webScopedEmployeeAction.DeleteObject();
         listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
         listScopedEmployeeAction.Update();
 
-        webScopedEmployeeAction.DeleteObject();     
+        webScopedEmployeeAction.DeleteObject(); 
 
         clientContext.ExecuteQuery();
     }

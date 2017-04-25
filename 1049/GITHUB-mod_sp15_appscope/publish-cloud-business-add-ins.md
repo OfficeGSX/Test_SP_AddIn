@@ -10,22 +10,22 @@ ms.assetid: 85bc228c-44bd-4f9a-a24f-92b988f02d52
 ## Публикация надстройки с размещением у поставщика
 
 Вы можете публиковать облачные бизнес-надстройки в SharePoint 2013, используя возможность размещения у поставщика. См. статью  [Публикация облачной бизнес-надстройки в SharePoint](publish-a-cloud-business-add-in-to-sharepoint.md).
-  
-    
-    
+
+
+
 
 ## Публикация надстройки в каталоге
 
 Опубликовав надстройку на сайте SharePoint, вы можете сделать ее доступной в локальном каталоге надстроек или в Магазине SharePoint. См. статью  [Публикация надстроек LightSwitch для SharePoint в каталоге](http://blogs.msdn.com/b/lightswitch/archive/2013/04/29/publishing-lightswitch-apps-for-sharepoint-to-the-catalog.aspx). 
-  
-    
-    
+
+
+
 
 ## Дополнительные ресурсы
 <a name="bk_addresources"> </a>
 
 
 -  [Создание облачных бизнес-надстроек](create-cloud-business-add-ins.md)
-    
-  
+
+
 

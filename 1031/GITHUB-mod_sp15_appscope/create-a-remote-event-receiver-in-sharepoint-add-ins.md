@@ -149,7 +149,7 @@ namespace BasicDataOperationsWeb.Services
         public void ProcessOneWayEvent(SPRemoteEventProperties properties)
         {
             // When an "after" event occurs (such as ItemAdded), call the event 
-            // receiver code.        
+            // receiver code.    
         }
 
         public static void ListRemoteEventReceiver(SPRemoteEventProperties properties)

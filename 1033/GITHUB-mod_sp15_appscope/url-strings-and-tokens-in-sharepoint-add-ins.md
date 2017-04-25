@@ -9,33 +9,33 @@ ms.assetid: 800ec8cd-a448-46bc-b41e-d4030eeb4048
 Learn which URL tokens are available for use in SharePoint Add-ins.
 > **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
-  
-    
-    
+
+
+
 
 
 > **IMPORTANT**
 > For general information about constructing URLs in SharePoint 2013 and the use of tokens in those URLs, see  [URLs and tokens in SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). This topic describes the tokens that are available in SharePoint Add-ins. 
-  
-    
-    
+
+
+
 
 
 ## 
 <a name="URLtokens"> </a>
 
 SharePoint 2013 supports the tokens listed in the following tables for use in SharePoint Add-ins.
-  
-    
-    
+
+
+
 The tokens in the tables of this section can be used in URLs in a wide variety of situations in development of SharePoint Add-ins, such as in Custom Actions and in links on custom pages. In some contexts, some of these tokens cannot be used. Three of the most important places where only a restricted list of tokens can be used are the start page of an add-in, a custom action on the host web, and the  [Src](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPAppIFrame.Src.aspx) property of an add-in part. These are called out in separate columns, * **but these three are not an exhaustive list of places where tokens can be used.*** 
-  
-    
-    
+
+
+
 The **StartPage** column specifies whether the token can be used in the **StartPage** element of an add-in manifest. The **Custom Action** column specifies whether the token can be used in the URL of a custom action on a host web. The **Add-in Part** column specifies whether the token can be used in the [Src](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPAppIFrame.Src.aspx) property of the add-in part.
-  
-    
-    
+
+
+
 
 **Tokens that can be used at the beginning of a URL in a SharePoint Add-in**
 
@@ -50,11 +50,11 @@ The **StartPage** column specifies whether the token can be used in the **StartP
 |~remoteAppUrl  <br/> |The URL of a remote web application in a SharePoint Add-in.  <br/> |Yes  <br/> |Yes, in the host web, but No in the add-in web.  <br/> |Yes  <br/> |If you are not using Microsoft Office Developer Tools for Visual Studio to develop your SharePoint Add-in, you cannot use **~remoteAppUrl** in the **StartPage** URL. However, when you are using Visual Studio and the tools, you can use this token for any provider-hosted add-in and it is resolved when Visual Studio packages the add-in. In this usage, it is really more of a Visual Studio token than a SharePoint token. It can be used outside the add-in manifest, even when you are not using Microsoft Office Developer Tools for Visual Studio. <br/> |
 |~site  <br/> |The URL of the current website.  <br/> |No  <br/> |No  <br/> |Yes  <br/> ||
 |~sitecollection  <br/> |The URL of the parent site collection of the current website.  <br/> |No  <br/> |No  <br/> |Yes  <br/> ||
-   
+ 
 Except where indicated otherwise, none of the tokens in the next table can be used in the  *path*  portion of the [Src](https://msdn.microsoft.com/library/Microsoft.SharePoint.WebControls.SPAppIFrame.Src.aspx) property value of the add-in part. The **Add-in Part** column refers to their use in the *query string*  portion of the value.
-  
-    
-    
+
+
+
 
 **Tokens that can be used inside a URL**
 
@@ -79,22 +79,22 @@ Except where indicated otherwise, none of the tokens in the next table can be us
 |{SiteUrl}  <br/> |The URL of the current website.  <br/> |No  <br/> |Yes  <br/> |No  <br/> ||
 |{Source}  <br/> |The HTTP Request URL.  <br/> |No  <br/> |Yes  <br/> |No  <br/> ||
 |{StandardTokens}  <br/> |See Remarks.  <br/> |Yes  <br/> |Yes  <br/> |Yes  <br/> |This combines five other tokens. It initially resolves to  `SPHostUrl={HostUrl}&amp;SPAppWebUrl={AppWebUrl}&amp;SPLanguage={Language}&amp;SPClientTag={ClientTag}&amp;SPProductNumber={ProductNumber}`. Then each of these tokens resolves. If there is no add-in web, the portion  `&amp;SPAppWebUrl={AppWebUrl}` is not present. <br/> |
-   
+ 
 
 ## Additional resources
 <a name="SP15URLstrings_bk_addlresources"> </a>
 
 
 -  [Advanced Extranet Support](http://msdn.microsoft.com/library/21d67796-23c5-4339-8f0e-124208d21ab2%28Office.15%29.aspx)
-    
-  
+
+
 -  [Getting References to Sites, Web Applications, and other Key Objects](http://msdn.microsoft.com/library/8623ef1d-e3cc-426c-84a3-6379e0ae284f%28Office.15%29.aspx)
-    
-  
+
+
 -  [Working with List Objects and Collections](http://msdn.microsoft.com/library/d4167b10-6f1e-49f1-8b22-16ce20012a27%28Office.15%29.aspx)
-    
-  
+
+
 -  [Sample Object Model Tasks](http://msdn.microsoft.com/library/94d6898d-6a0f-43a7-ad06-1b27ec6916ea%28Office.15%29.aspx)
-    
-  
+
+
 

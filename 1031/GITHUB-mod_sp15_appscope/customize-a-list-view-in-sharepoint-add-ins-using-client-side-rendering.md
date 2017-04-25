@@ -229,7 +229,7 @@ function postRenderHandler(ctx) {
         var x = ulObj.children[i];
         for (j = 1; j < ulObj.children.length; j++) {
             var y = ulObj.children[j];
-            if(x.innerText<y.innerText){              
+            if(x.innerText<y.innerText){          
                 ulObj.insertBefore(y, x);
             }
         }

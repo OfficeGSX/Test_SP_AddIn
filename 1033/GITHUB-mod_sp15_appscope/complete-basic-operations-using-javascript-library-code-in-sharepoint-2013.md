@@ -9,94 +9,94 @@ ms.assetid: 29089af8-dbc0-49b7-a1a0-9e311f49c826
 Learn how to write code to perform basic operations using the JavaScript client object model in SharePoint 2013.
 > **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
-  
-    
-    
+
+
+
 
 
 > **NOTE**
 > For a "Hello World" level sample SharePoint Add-in that uses the JavaScript library, see  [Use the SharePoint JavaScript APIs to work with SharePoint data](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md). 
-  
-    
-    
+
+
+
 
 
 ## SharePoint 2013 client APIs
 <a name="ClientAPIs"> </a>
 
 You can use the SharePoint client object model to retrieve, update, and manage data in SharePoint 2013. SharePoint makes the object model available in several forms.
-  
-    
-    
+
+
+
 
 - .NET Framework redistributable assemblies
-    
-  
+
+
 - JavaScript library
-    
-  
+
+
 - REST/OData endpoints
-    
-  
+
+
 - Windows Phone assemblies
-    
-  
+
+
 - Silverlight redistributable assemblies
-    
-  
+
+
 For more information about the sets of APIs that are available for SharePoint 2013, see  [Choose the right API set in SharePoint 2013](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx). 
-  
-    
-    
+
+
+
 This article shows how to perform basic operations using the JavaScript object model. You can add a reference to the object model using HTML <script> tags. For information about how to use the other client APIs, see the following:
-  
-    
-    
+
+
+
 
 -  [Complete basic operations using SharePoint 2013 client library code](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Complete basic operations using SharePoint 2013 REST endpoints](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
+
+
 -  [Build Windows Phone apps that access SharePoint 2013](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx)
-    
-  
+
+
 -  [Using the Silverlight Object Model](http://msdn.microsoft.com/library/cea7829d-f360-4052-8b76-91d90bcefd2a%28Office.15%29.aspx)
-    
-  
+
+
 
 ## Perform basic tasks in SharePoint 2013 using the JavaScript client object model
 <a name="BasicOps_SPJSOMOps"> </a>
 
 The following sections describe tasks that you can complete programmatically, and they include JavaScript code examples that demonstrate the operations.
-  
-    
-    
+
+
+
 When you create a cloud-hosted add-in, you can add a reference to the object model by using HTML <script> tags. We recommend that you reference the host web because the add-in web may not exist in every scenario in cloud-hosted add-ins. You can retrieve the host web URL from the  _SPHostUrl_ query string parameter if you are using the **{StandardTokens}** token. You can also use your custom defined query string parameter if you are using the **{HostUrl}** token. After you have the host web URL, you must use JavaScript code to dynamically create the reference to the object model.
-  
-    
-    
+
+
+
 The following code example performs these tasks to add a reference to the JavaScript object model:
-  
-    
-    
+
+
+
 
 - References the AJAX library from the Microsoft Content Delivery Network (CDN).
-    
-  
+
+
 - References the jQuery library from the Microsoft CDN.
-    
-  
+
+
 - Extracts the host web URL from the query string.
-    
-  
+
+
 - Loads the SP.Runtime.js and SP.js files by using the **getScript** function in jQuery. After loading the files, your program has access to the JavaScript object model for SharePoint.
-    
-  
+
+
 - Continues the flow in the **execOperation** function.
-    
-  
+
+
 
 
 ```
@@ -158,23 +158,23 @@ The following code example performs these tasks to add a reference to the JavaSc
 ```
 
 When you create a SharePoint-hosted add-in, you can add a reference to the object model by using HTML <script> tags. The add-in web in a SharePoint-hosted add-in allows you to use relative paths to reference the required files to use the JavaScript object model.
-  
-    
-    
+
+
+
 The following markup performs these tasks to add a reference to the JavaScript object model:
-  
-    
-    
+
+
+
 
 - References the AJAX library from the Microsoft CDN.
-    
-  
+
+
 - References the SP.Runtime.js file by using a URL relative to the add-in web.
-    
-  
+
+
 - References the SP.js file by using a URL relative to the add-in web.
-    
-  
+
+
 
 
 ```
@@ -202,16 +202,16 @@ The following markup performs these tasks to add a reference to the JavaScript o
 <a name="BasicOps_SPWebTasks"> </a>
 
 To work with websites using JavaScript, start by using the **ClientContext(serverRelativeUrl)** constructor and pass a URL or URI to return a specific request context.
-  
-    
-    
+
+
+
 
 ### Retrieve the properties of a website
 
 Use the web property of the **ClientContext** class to specify the properties of the website object that is located at the specified context URL. After you load the website object through the **load(clientObject)** method and then call **executeQueryAsync(succeededCallback, failedCallback)**, you acquire access to all the properties of that website. The following example displays the title and description of the specified website, although all other properties that are returned by default become available after you load the website object and execute the query.
-  
-    
-    
+
+
+
 ```
 
 function retrieveWebSite(siteUrl) {
@@ -230,7 +230,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Description: ' + this.oWebsite.get_description());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -240,9 +240,9 @@ function onQueryFailed(sender, args) {
 ### Retrieve only selected properties of a website
 
 To reduce unnecessary data transference between client and server, you might want to return only specified properties of the website object, not all of its properties. In this case, use LINQ query or lambda expression syntax with the **load(clientObject)** method to specify which properties to return from the server. In the following example, only the title and creation date of the website object become available after **executeQueryAsync(succeededCallback, failedCallback)** is called.
-  
-    
-    
+
+
+
 ```
 
 function retrieveWebSiteProperties(siteUrl) {
@@ -261,7 +261,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Created: ' + this.oWebsite.get_created());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -270,17 +270,17 @@ function onQueryFailed(sender, args) {
 
 > **NOTE**
 > If you try to access other properties, the code throws an exception because other properties are not available. 
-  
-    
-    
+
+
+
 
 
 ### Write to a website's properties
 
 To modify a website, you set its properties and call the **update()** method, similarly to how the server object model functions. However, in the client object model, you must call **executeQueryAsync(succeededCallback, failedCallback)** to request batch processing of all commands that you specify. The following example changes the title and description of a specified website.
-  
-    
-    
+
+
+
 ```
 
 function updateWebSite(siteUrl) {
@@ -303,7 +303,7 @@ function onQuerySucceeded(sender, args) {
     alert('Title: ' + this.oWebsite.get_title() + 
         ' Description: ' + this.oWebsite.get_description());
 }
-    
+
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + 
         '\\n' + args.get_stackTrace());
@@ -314,16 +314,16 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_SPListTasks"> </a>
 
 Working with list objects using JavaScript is similar to working with website objects. Start by using the **ClientContext(serverRelativeUrl)** constructor and passing a URL or URI to return a specific request context. You can then use the **lists** property of the **Web** class to get the collection of lists in the website.
-  
-    
-    
+
+
+
 
 ### Retrieve all properties of all lists in a website
 
 To return all the lists of a website, load the list collection through the **load(clientObject)** method, and then call **executeQueryAsync(succeededCallback, failedCallback)**. The following example displays the URL of the website and the date and time that the list was created.
-  
-    
-    
+
+
+
 ```
 
 function retrieveAllListProperties(siteUrl) {
@@ -359,9 +359,9 @@ function onQueryFailed(sender, args) {
 ### Retrieve only specified properties of lists
 
 The previous example returns all properties of the lists in a website. To reduce unnecessary data transference between client and server, you can use LINQ query expressions to specify which properties to return. In JavaScript, you specify **Include** as part of the query string that is passed to the **load(clientObject)** method to specify which properties to return. The following example uses this approach to return only the title and ID of each list in the collection.
-  
-    
-    
+
+
+
 ```
 
 function retrieveSpecificListProperties(siteUrl) {
@@ -398,9 +398,9 @@ function onQueryFailed(sender, args) {
 ### Store retrieved lists in a collection
 
 As the following example shows, you can use the **loadQuery(clientObjectCollection, exp)** method instead of the **load(clientObject)** method to store the return value in another collection instead of storing it in the lists property.
-  
-    
-    
+
+
+
 ```
 
 function retrieveSpecificListPropertiesToCollection(siteUrl) {
@@ -435,9 +435,9 @@ function onQueryFailed(sender, args) {
 ### Apply filters to list retrieval
 
 As the following example shows, you can nest **Include** statements in a JavaScript query to return metadata for both a list and its fields. The example returns all fields from all lists within a website and displays the title and internal name of all fields whose internal name contains the string "name".
-  
-    
-    
+
+
+
 ```
 
 function retrieveAllListsAllFields(siteUrl) {
@@ -461,11 +461,11 @@ function onQuerySucceeded() {
         var oList = this.listInfoArray[i];
         var collField = oList.get_fields();
         var fieldEnumerator = collField.getEnumerator();
-            
+        
         while (fieldEnumerator.moveNext()) {
             var oField = fieldEnumerator.get_current();
             var regEx = new RegExp('name', 'ig');
-            
+        
             if (regEx.test(oField.get_internalName())) {
                 listInfo += '\\nList: ' + oList.get_title() + 
                     '\\n\\tField Title: ' + oField.get_title() + 
@@ -487,22 +487,22 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_SPListCRUD"> </a>
 
 Creating, updating, and deleting lists through the client object model works similarly to how you perform these tasks using the .NET client object model, although client operations do not complete until you call the **executeQueryAsync(succeededCallback, failedCallback)** function.
-  
-    
-    
+
+
+
 
 ### Create and update a list
 
 To create a list object using JavaScript, use the **ListCreationInformation** object to define its properties, and then pass this object to the **add(parameters)** function of the **ListCollection** object. The following example creates a new announcements list.
-  
-    
-    
+
+
+
 ```
 
 function createList(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oWebsite = clientContext.get_web();
-    
+
     var listCreationInfo = new SP.ListCreationInformation();
     listCreationInfo.set_title('My Announcements List');
     listCreationInfo.set_templateType(SP.ListTemplateType.announcements);
@@ -527,9 +527,9 @@ function onQueryFailed(sender, args) {
 }```
 
 If you need to update the list after it has been created, you can set list properties and call the **update()** function before calling **executeQueryAsync(succeededCallback, failedCallback)**, as shown in the following modifications of the previous example.
-  
-    
-    
+
+
+
 
 
 ```
@@ -553,9 +553,9 @@ clientContext.executeQueryAsync(
 ### Add a field to a list
 
 Use the **add(field)** or **addFieldAsXml(schemaXml, addToDefaultView, options)** function of the **FieldCollection** object to add a field to the field collection of a list. The following example creates a field and then updates it before calling **executeQueryAsync(succeededCallback, failedCallback)**.
-  
-    
-    
+
+
+
 ```
 
 function addFieldToList(siteUrl) {
@@ -594,9 +594,9 @@ function onQueryFailed(sender, args) {
 ### Delete a list
 
 To delete a list, call the **deleteObject()** function of the list object, as shown in the following example.
-  
-    
-    
+
+
+
 ```
 
 function deleteList(siteUrl) {
@@ -628,16 +628,16 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_FolderTasks"> </a>
 
 You can manipulate folders to organize your content by using the JavaScript object model. The following sections show you how to perform basic operations on folders.
-  
-    
-    
+
+
+
 
 ### Create a folder in a document library
 
 To create a folder, you use a **ListItemCreationInformation** object, set the underlying object type to **SP.FileSystemObjectType.folder**, and pass it as parameter to the **addItem(parameters)** function of the **List** object. Set properties on the list item object that this method returns, and then call the **update()** function, as shown in the following example.
-  
-    
-    
+
+
+
 ```
 
 function createFolder(resultpanel) {
@@ -679,9 +679,9 @@ function createFolder(resultpanel) {
 ### Update a folder in a document library
 
 To update the folder name, you can write to the **FileLeafRef** property and call the **update()** function so that changes take effect when you call the **executeQueryAsync** method.
-  
-    
-    
+
+
+
 ```
 
 function updateFolder(resultpanel) {
@@ -718,9 +718,9 @@ function updateFolder(resultpanel) {
 ### Delete a folder in a document library
 
 To delete a folder, call the **deleteObject()** function on the object. The following example uses the **getFolderByServerRelativeUrl** method to retrieve the folder from the document library and then deletes the item.
-  
-    
-    
+
+
+
 ```
 
 function deleteFolder(resultpanel) {
@@ -759,23 +759,23 @@ function deleteFolder(resultpanel) {
 <a name="BasicOps_FileTasks"> </a>
 
 You can manipulate files by using the JavaScript object model. The following sections show you how to perform basic operations on files.
-  
-    
-    
+
+
+
 
 > **NOTE**
 > You can only work with files up to 1.5 MB by using the JavaScript object model. To upload larger files, use REST (Representational State Transfer). For more information, see  [](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#LargeFiles). 
-  
-    
-    
+
+
+
 
 
 ### Create a file in a document library
 
 To create files, you use a **FileCreationInformation** object, set the URL attribute, and append content as a base64 encoded array of bytes, as shown in this example.
-  
-    
-    
+
+
+
 ```
 
 function createFile(resultpanel) {
@@ -795,7 +795,7 @@ function createFile(resultpanel) {
     fileContent = "The content of my new file";
 
     for (var i = 0; i < fileContent.length; i++) {
-        
+    
         fileCreateInfo.get_content().append(fileContent.charCodeAt(i));
     }
 
@@ -823,9 +823,9 @@ function createFile(resultpanel) {
 ### Read a file in a document library
 
 To read a file's content, you perform a **GET** operation on the file's URL, as shown in the following example.
-  
-    
-    
+
+
+
 ```
 
 function readFile(resultpanel) {
@@ -863,9 +863,9 @@ function readFile(resultpanel) {
 ### Update a file in a document library
 
 To update the file's content, you can use a **FileCreationInformation** object, and set the overwrite attribute to true by using the **set_overwrite()** method, as shown in this example.
-  
-    
-    
+
+
+
 ```
 
 function updateFile(resultpanel) {
@@ -915,9 +915,9 @@ function updateFile(resultpanel) {
 ### Delete a file in a document library
 
 To delete a file, call the **deleteObject()** function on the object. The following example uses the **getFileByServerRelativeUrl** method to retrieve the file from the document library, and then deletes the item.
-  
-    
-    
+
+
+
 ```
 
 function deleteFile(resultpanel) {
@@ -958,22 +958,22 @@ function deleteFile(resultpanel) {
 <a name="BasicOps_SPListItemTasks"> </a>
 
 To return items from a list using JavaScript, use the **getItemById(id)** function to return a single item, or use the **getItems(query)** function to return multiple items. You then use the **load(clientObject)** function to attain list item objects that represent the items.
-  
-    
-    
+
+
+
 
 ### Retrieve items from a list
 
 The **getItems(query)** function enables you to define a Collaborative Application Markup Language (CAML) query that specifies which items to return. You can pass an undefined **CamlQuery** object to return all items from the list, or use the **set_viewXml** function to define a CAML query and return items that meet specific criteria. The following example displays the ID, in addition to the Title and Body column values, of the first 100 items in the Announcements list, starting with list items whose collection ID is greater than 10.
-  
-    
-    
+
+
+
 ```
 
 function retrieveListItems(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-        
+    
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml(
         '<View><Query><Where><Geq><FieldRef Name=\\'ID\\'/>' + 
@@ -981,7 +981,7 @@ function retrieveListItems(siteUrl) {
         '<RowLimit>10</RowLimit></View>'
     );
     this.collListItem = oList.getItems(camlQuery);
-        
+    
     clientContext.load(collListItem);
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.onQuerySucceeded), 
@@ -992,7 +992,7 @@ function retrieveListItems(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-        
+    
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1012,15 +1012,15 @@ function onQueryFailed(sender, args) {
 ### Use the Include method to access properties of ListItem objects
 
 Four properties of **ListItem** objects are not available by default when you return list items— **displayName**, **effectiveBasePermissions**, **hasUniqueRoleAssignments**, and **roleAssignments**. The previous example returns a **PropertyOrFieldNotInitializedException** if you try to access one of these properties. To access these properties, use the **Include** method as part of the query string, as shown in the following example.
-  
-    
-    
+
+
+
 
 > **NOTE**
 > When you use LINQ to create queries against the client object model, you are using  [LINQ to Objects](http://msdn.microsoft.com/library/bb397919), not the  [LINQ to SharePoint provider](http://msdn.microsoft.com/library/ee535491), which can only be used when you write code against the server object model. 
-  
-    
-    
+
+
+
 
 ```
 
@@ -1045,7 +1045,7 @@ function retrieveListItemsInclude(siteUrl) {
 function onQuerySucceeded(sender, args) {
     var listItemInfo = '';
     var listItemEnumerator = collListItem.getEnumerator();
-        
+    
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
         listItemInfo += '\\nID: ' + oListItem.get_id() + 
@@ -1064,37 +1064,37 @@ function onQueryFailed(sender, args) {
 ```
 
 Because this example uses an **Include**, only the specified properties are available after query execution. Therefore, you receive a **PropertyOrFieldNotInitializedException** if you try to access other properties beyond those that have been specified. In addition, you receive this error if you try to use functions such as **get_contentType** or **get_parentList** to access the properties of containing objects.
-  
-    
-    
+
+
+
 
 ### Restrictions on retrieving items
 
 The **loadQuery(clientObjectCollection, exp)** method of the JavaScript object model in SharePoint Foundation 2010 does not support LINQ methods and operators that are used by the managed object model.
-  
-    
-    
+
+
+
 
 ## Create, update, and delete list items
 <a name="BasicOps_SPListItemCRUD"> </a>
 
 Creating, updating, or deleting list items through the client object model works similarly to performing these tasks through the server object model. You create a list item object, set its properties, and then update the object. To modify or delete a list item object, use the **getById(id)** function of the **ListItemCollection** object to return the object, and then either set properties and call update on the object that this method returns, or call the object's own method for deletion. Unlike the server object model, each of these operations in the client object model must conclude with a call **to executeQueryAsync(succeededCallback, failedCallback)** for changes to take effect on the server.
-  
-    
-    
+
+
+
 
 ### Create a list item
 
 To create list items, you create a **ListItemCreationInformation** object, set its properties, and pass it as parameter to the **addItem(parameters)** function of the **List** object. Set properties on the list item object that this method returns, and then call the **update()** function, as shown in the following example.
-  
-    
-    
+
+
+
 ```
 
 function createListItem(siteUrl) {
     var clientContext = new SP.ClientContext(siteUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Announcements');
-        
+    
     var itemCreateInfo = new SP.ListItemCreationInformation();
     this.oListItem = oList.addItem(itemCreateInfo);
     oListItem.set_item('Title', 'My New Item!');
@@ -1121,9 +1121,9 @@ function onQueryFailed(sender, args) {
 ### Update a list item
 
 To set most list item properties, you can use a column indexer to make an assignment, and call the **update()** function so that changes will take effect when you call **executeQueryAsync(succeededCallback, failedCallback)**. The following example sets the title of the third item in the Announcements list.
-  
-    
-    
+
+
+
 ```
 
 function updateListItem(siteUrl) {
@@ -1153,9 +1153,9 @@ function onQueryFailed(sender, args) {
 ### Delete a list item
 
 To delete a list item, call the **deleteObject()** function on the object. The following example uses the **getItemById(id)** function to return the second item from the list, and then deletes the item. SharePoint maintains the integer IDs of items within collections, even if they have been deleted. So, for example, the second item in a list might not have 2 as its identifier. A **ServerException** is returned if the **deleteObject()** function is called for an item that does not exist.
-  
-    
-    
+
+
+
 ```
 
 function deleteListItem(siteUrl) {
@@ -1181,9 +1181,9 @@ function onQueryFailed(sender, args) {
 }```
 
 If you want to retrieve, for example, the new item count that results from a delete operation, include a call to the update() method to refresh the list. In addition, you must load either the list object itself or the **itemCount** property on the list object before executing the query. If you want to retrieve both a start and end count of the list items, you must execute two queries and return the item count twice, as shown in the following modification of the previous example.
-  
-    
-    
+
+
+
 
 
 ```
@@ -1207,7 +1207,7 @@ function deleteItem() {
 
     oList.update();
     clientContext.load(oList);
-        
+    
     clientContext.executeQueryAsync(
         Function.createDelegate(this, this.displayCount), 
         Function.createDelegate(this, this.onQueryFailed)
@@ -1219,7 +1219,7 @@ function displayCount() {
     var listItemInfo = 'Item deleted: ' + itemId + 
         '\\nStart Count: ' +  startCount + 
         ' End Count: ' + endCount;
-        
+    
     alert(listItemInfo)
 }
 
@@ -1233,9 +1233,9 @@ function onQueryFailed(sender, args) {
 <a name="BasicOps_AccessHostweb"> </a>
 
 While developing your add-in, you might need to access the host web to interact with items in it. Use the **AppContextSite** object to reference the host web or other SharePoint sites, as shown in the following example. For a full code sample, see [Get the host web title using the cross-domain library (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-2013-Get-the-563f2a3d).
-  
-    
-    
+
+
+
 ```
 
 function execCrossDomainRequest(appweburl, hostweburl) {
@@ -1276,27 +1276,27 @@ function execCrossDomainRequest(appweburl, hostweburl) {
 }```
 
 The previous example uses the cross-domain library in SharePoint 2013 to access the host web. For more information, see  [Access SharePoint 2013 data from add-ins using the cross-domain library](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
-  
-    
-    
+
+
+
 
 ## Additional resources
 <a name="BasicOps_AddRes"> </a>
 
 
 -  [Complete basic operations using SharePoint 2013 client library code](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Complete basic operations using SharePoint 2013 REST endpoints](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
+
+
 -  [Develop SharePoint Add-ins](develop-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Secure data access and client object models for SharePoint Add-ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Work with external data in SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
-    
-  
+
+
 

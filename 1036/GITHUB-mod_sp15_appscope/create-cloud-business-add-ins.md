@@ -10,29 +10,29 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 ## Démarrage
 
  [Initiation au développement de compléments de gestion des informations professionnelles dans le Cloud](get-started-developing-cloud-business-add-ins.md) fournit des liens vers des ressources d'apprentissage, notamment des didacticiels de bout en bout et des exemples.
-  
-    
-    
+
+
+
 
 ## Développer
 
  [Développement de compléments de gestion d'informations professionnelles dans le Cloud](develop-cloud-business-add-ins.md) offre de l'aide sur les tâches liées au développement d'un complément de gestion d'informations professionnelles dans le Cloud.
-  
-    
-    
+
+
+
 
 ## Publier
 
  [Publier des compléments de gestion d'informations professionnelles en nuage](publish-cloud-business-add-ins.md) traite de la publication des compléments de gestion en nuage vers SharePoint pour Office 365 et de SharePoint 2013.
-  
-    
-    
+
+
+
 
 ## Ressources supplémentaires
 <a name="bk_addresources"> </a>
 
 
 -  [Nouveau nom pour les applications pour SharePoint](new-name-for-apps-for-sharepoint.md)
-    
-  
+
+
 

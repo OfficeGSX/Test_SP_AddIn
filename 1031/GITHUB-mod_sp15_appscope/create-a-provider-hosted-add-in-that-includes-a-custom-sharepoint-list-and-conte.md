@@ -453,7 +453,7 @@ protected void Page_Load(object sender, EventArgs e)
         // Get access token
         sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
         accessToken = TokenHelper.GetAccessToken(contextToken, sharepointUrl.Authority).AccessToken;
-    
+
         // Pass the access token to the button event handler.
         Button1.CommandArgument = accessToken;
     }

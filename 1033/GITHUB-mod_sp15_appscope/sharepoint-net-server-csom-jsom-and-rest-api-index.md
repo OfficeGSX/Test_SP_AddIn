@@ -9,21 +9,21 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 
 > **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
-  
-    
-    
+
+
+
 
 
 ## SharePoint API index
 
 Use the API index look up many of the most frequently used types and objects that are implemented in the .NET server object model and at least one client programming model: .NET client-side object model (CSOM), JavaScript object model (JSOM), and/or REST.
-  
-    
-    
+
+
+
 Table 1 lists the most frequently used, core APIs, which are in most cases based on types from the .NET server implementation. In some cases, types are native to SharePoint client programming, and there is no equivalent .NET server type. In other cases, some but not all possible client programming model implementations of a specific type exist.
-  
-    
-    
+
+
+
  *Table 1. Frequently used Core APIs* 
 ||||
 |:-----|:-----|:-----|
@@ -98,13 +98,13 @@ Table 1 lists the most frequently used, core APIs, which are in most cases based
 | [WebInformation](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebInformation.aspx) [SPWebInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebInfo.aspx) <br/> | [SP.WebInformation object](http://msdn.microsoft.com/library/006ca57d-50c2-9605-c4ef-fee212aacd54%28Office.15%29.aspx) <br/> | `…/_api/web/webinfos('<web information id>')` <br/> |
 | [WebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplate.aspx) [SPWebTemplate](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplate.aspx) <br/> | [SP.WebTemplate object](http://msdn.microsoft.com/library/cd670582-20a3-30b7-20f5-758be6d838da%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)/getbyname(templatename)` <br/> |
 | [WebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.WebTemplateCollection.aspx) [SPWebTemplateCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPWebTemplateCollection.aspx) <br/> | [SP.WebTemplateCollection object](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx) <br/> | `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)` <br/> |
-   
+ 
 
 > **NOTE**
 > Before using a REST endpoint URI shown in the table, replace the  `…` abbreviation with the path to your SharePoint site, for example `http://<site collection>/<site>/_api/web/lists`. 
-  
-    
-    
+
+
+
 
 
 ## Additional resources
@@ -112,12 +112,12 @@ Table 1 lists the most frequently used, core APIs, which are in most cases based
 
 
 -  [Complete basic operations using SharePoint 2013 client library code](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
+
+
 -  [Complete basic operations using JavaScript library code in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 -  [Complete basic operations using JavaScript library code in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
+
+
 

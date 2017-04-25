@@ -8,54 +8,54 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 # Subir un archivo con la API de REST y jQuery
 Aprenda a subir un archivo local a una carpeta de SharePoint mediante la API de REST y las solicitudes AJAX de jQuery.
 En los ejemplos de código de este artículo se usa la interfaz REST y las solicitudes AJAX de jQuery para agregar un archivo local a la biblioteca **Documentos** y luego cambiar las propiedades del elemento de lista que representa al archivo cargado.
-  
-    
-    
+
+
+
 
 Este procedimiento comprende los siguientes pasos generales:
 1. Convierta el archivo local en un búfer de matriz mediante el uso de la API de **FileReader**, que requiere compatibilidad con HTML5. La función **jQuery(document).ready** comprueba la compatibilidad de la API de FileReader en el explorador.
-    
-  
+
+
 2. Agregue el archivo a la carpeta **Documentos compartidos** mediante el método **Add** en la recopilación de archivos de la carpeta. El búfer de matriz se pasa en el cuerpo de la solicitud POST.
-    
+
     En estos ejemplos se usa el extremo **getfolderbyserverrelativeurl** para alcanzar la recopilación de archivos, pero también se puede usar un extremo de lista (por ejemplo: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).
-    
-  
+
+
 3. Obtenga el elemento de lista que corresponda al archivo cargado con la propiedad **ListItemAllFields** del archivo cargado.
-    
-  
+
+
 4. Cambie el nombre para mostrar y el título del elemento de lista mediante una solicitud MERGE.
-    
-  
+
+
 
 ## Ejecución de los ejemplos de código
 <a name="RunTheExamples"> </a>
 
 En los dos ejemplos de código que se usan en este artículo se usa la API de REST y las solicitudes AJAX de jQuery para cargar un archivo en la carpeta **Documentos compartidos** y luego cambiar las propiedades del elemento de lista. En el primer ejemplo se usa **SP.AppContextSite** para realizar llamadas entre los dominios de SharePoint, tal como lo haría un complemento hospedado por SharePoint cuando carga archivos en la web de host. En el segundo ejemplo se realizan llamadas al mismo dominio, tal como lo haría un complemento hospedado por SharePoint cuando carga archivos en la web del complemento o como lo haría una solución que se ejecuta en el servidor al cargar archivos.
-  
-    
-    
+
+
+
 
 > **NOTA**
 > Los complementos hospedados por el proveedor escritos en JavaScript deben usar la biblioteca SP.RequestExecutor entre dominios para enviar solicitudes a un dominio de SharePoint. Para conocer un ejemplo, consulte el tema sobre cómo  [cargar un archivo mediante la biblioteca entre dominios](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
-  
-    
-    
+
+
+
 
 Para usar los ejemplos de este artículo, precisará lo siguiente:
-  
-    
-    
+
+
+
 
 - SharePoint Server 2013 o SharePoint Online.
-    
-  
+
+
 - Permisos **Write** para la biblioteca **Documentos** para el usuario que ejecuta el código. Si está desarrollando una Complemento de SharePoint, puede especificar los permisos **Write** del complemento en el ámbito **List**.
-    
-  
+
+
 - Explorador compatible con la API de **FileReader** (HTML5).
-    
-  
+
+
 - Una referencia a la biblioteca de jQuery en el marcado de su página. Por ejemplo:
     ```HTML
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
@@ -71,13 +71,13 @@ Para usar los ejemplos de este artículo, precisará lo siguiente:
 <a name="RunTheExamples"> </a>
 
 En el siguiente ejemplo de código se usa la API de REST y las solicitudes AJAX de jQuery de SharePoint para cargar un archivo a la biblioteca **Documentos** y para cambiar las propiedades del elemento de lista que representa al archivo. El contexto para este ejemplo es un complemento hospedado por SharePoint que carga un archivo en una carpeta en la web de host.
-  
-    
-    
+
+
+
 Debe cumplir con  [estos requisitos](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) para usar este ejemplo.
-  
-    
-    
+
+
+
 
 
 ```
@@ -186,7 +186,7 @@ function uploadFile() {
         // add-in web and specifies the host web as the context site.
         fileListItemUri = fileListItemUri.replace(hostWebUrl, '{0}');
         fileListItemUri = fileListItemUri.replace('_api/Web', '_api/sp.appcontextsite(@target)/web');
-        
+    
         var listItemAllFieldsEndpoint = String.format(fileListItemUri + "?@target='{1}'",
             appWebUrl, hostWebUrl);
 
@@ -250,13 +250,13 @@ function getQueryStringParameter(paramToRetrieve) {
 <a name="UploadFile"> </a>
 
 En el siguiente ejemplo de código se usa la API de REST y las solicitudes AJAX de jQuery de SharePoint para cargar un archivo en la biblioteca **Documentos** y para cambiar las propiedades del elemento de lista que representa el archivo. El contexto para este ejemplo es una solución que se está ejecutando en el servidor. El código sería similar en un complemento hospedado por SharePoint que carga archivos en la web del complemento.
-  
-    
-    
+
+
+
 Debe cumplir  [estos requisitos](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) para poder ejecutar este ejemplo.
-  
-    
-    
+
+
+
 
 
 ```
@@ -402,18 +402,18 @@ function onError(error) {
 
 
 -  [Introducción al servicio REST para SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
+
+
 -  [Trabajar con carpetas y archivos con REST](working-with-folders-and-files-with-rest.md)
-    
-  
+
+
 -  [Trabajar con listas y elementos de lista con REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
+
+
 -  [API de REST, extremos y ejemplos de SharePoint 2013](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
+
+
 -  [Cómo obtener acceso a los datos de SharePoint 2013 desde aplicaciones con la biblioteca entre dominios](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
-    
-  
+
+
 

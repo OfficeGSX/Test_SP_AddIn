@@ -9,25 +9,25 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса SharePoint 2013 REST.
 > **Совет**
 > SharePoint Online REST (а также локальной версии SharePoint 2016 и последующих выпусков) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData  `$batch`. Дополнительные сведения и ссылки на примеры кода см. в разделе  [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md). 
-  
-    
-    
+
+
+
 
 
 ## Необходимые условия
 
 В этом разделе предполагается, что вы уже знакомы с разделами  [Знакомство со службой REST для SharePoint 2013](get-to-know-the-sharepoint-2013-rest-service.md) и [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md). Здесь фрагменты кода не предоставлены.
-  
-    
-    
+
+
+
 
 ## Получение списков и свойств списков с помощью REST
 <a name="RetrieveLists"> </a>
 
 В следующем примере показывается, как **получить** определенный список, если вам известен его GUID.
-  
-    
-    
+
+
+
 ```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
@@ -40,14 +40,14 @@ Headers:
 
 > **Примечание**
 > Используйте  `application/json;odata=verbose` в заголовке `accept`, если вы хотите получить ответ в формате JSON. Используйте  `application/atom+xml` в заголовке `accept`, если вы хотите получить ответ в формате Atom. 
-  
-    
-    
+
+
+
 
 В следующем примере показывается, как **получить** определенный список, если вам известно его название.
-  
-    
-    
+
+
+
 
 
 ```
@@ -60,9 +60,9 @@ Headers:
 ```
 
 В следующем XML показывается пример свойств списка, которые возвращаются при запросе типов контента XML.
-  
-    
-    
+
+
+
 
 
 ```XML
@@ -112,18 +112,18 @@ Headers:
 
 > **Примечание**
 > Свойство **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** в предыдущем примере) особенно важно при создании и обновлении элементов списка. Это значение должно быть передано как свойство **type** в метаданные, которые вы передаете в тексте HTTP-запроса всякий раз при создании и обновлении элементов списка.
-  
-    
-    
+
+
+
 
 
 ## Работа со списками при помощи REST
 <a name="WorkLists"> </a>
 
 В следующем примере показывается, как **создавать** список.
-  
-    
-    
+
+
+
 ```
 
 url: http://site url/_api/web/lists
@@ -138,9 +138,9 @@ Headers:
     content-length:length of post body```
 
 В следующем примере показано, как **обновить** список, используя метод **MERGE**.
-  
-    
-    
+
+
+
 
 
 ```
@@ -158,9 +158,9 @@ Headers:
     content-length:length of post body```
 
 В следующем примере показывается, как **создать** **настраиваемое поле** для списка.
-  
-    
-    
+
+
+
 
 
 ```
@@ -175,9 +175,9 @@ Headers:
     content-length:length of post body```
 
 В следующем примере показывается, как **удалить** список.
-  
-    
-    
+
+
+
 
 
 ```
@@ -196,15 +196,15 @@ Headers:
 <a name="ListItems"> </a>
 
 В следующем примере показывается, как **получить** все элементы списка.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > Параметр запроса OData $skip не работает при запросе элементов списка. Вместо него в большинстве случаев вы можете использовать параметр  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx). 
-  
-    
-    
+
+
+
 
 ```
 
@@ -216,9 +216,9 @@ headers:
 ```
 
 В следующем примере показывается, как **получить** определенный элемент списка.
-  
-    
-    
+
+
+
 
 
 ```
@@ -231,9 +231,9 @@ headers:
 ```
 
 В следующем XML показывается пример свойств элементов списка, которые возвращаются при вашем запросе типа контента XML.
-  
-    
-    
+
+
+
 
 
 ```XML
@@ -256,15 +256,15 @@ headers:
 </content>```
 
 В следующем примере показывается, как **создать** элемент списка.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
-  
-    
-    
+
+
+
 
 
 
@@ -281,15 +281,15 @@ headers:
     content-length:length of post body```
 
 В следующем примере показывается, как **обновить** элемент списка.
-  
-    
-    
+
+
+
 
 > **Примечание**
 > Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
-  
-    
-    
+
+
+
 
 
 
@@ -308,9 +308,9 @@ headers:
     content-length:length of post body```
 
 В следующем примере показывается, как **удалить** элемент списка.
-  
-    
-    
+
+
+
 
 
 ```
@@ -329,70 +329,70 @@ headers:
 <a name="Etag"> </a>
 
 Служба SharePoint REST, которая следует  [стандарту OData](http://www.odata.org/developers/protocols/operations), использует  [теги HTML ETags для контролирования блокировок](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) элементов списков и списков SharePoint. Чтобы проверить версию элемента во время выполнения вами запроса **PUT**, **MERGE** или **DELETE**, укажите **ETag** в заголовке запроса HTTP **If-Match**.
-  
-    
-    
+
+
+
 Если **ETag**, который вы указываете в вашем запросе, не соответствует **ETag** документа или элемента списка на сервере, служба REST возвращает исключение 412 с помощью спецификации OData.
-  
-    
-    
+
+
+
 
 - Чтобы принудительно переписать элемент независимо от версии, установите значение **ETag** на **"*"**.
-    
-  
+
+
 - Если не указать **ETag**, SharePoint переписывает элемент независимо от версии.
-    
-  
+
+
 В SharePoint теги ETags применяются только к спискам SharePoint и элементам списков.
-  
-    
-    
+
+
+
 
 ## Дополнительные ресурсы
 <a name="bk_addresources"> </a>
 
 
 -  [Выполнение базовых операций с использованием конечных точек SharePoint 2013 REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
-    
-  
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
-  
--  [SharePoint 2013: выполнение основных операций доступа к данным в файлах и папках при помощи REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
-    
-  
--  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint 2013](http://www.microsoft.com/resources/msdn/ru-ru/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
-  
--  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint 2013 (ролик) ](http://www.microsoft.com/resources/msdn/ru-ru/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
-  
--  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
--  [Разработка надстроек для SharePoint](develop-sharepoint-add-ins.md)
-    
-  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
--  [Работа с внешними данными в SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
-    
-  
--  [Open Data Protocol](http://www.odata.org/)
-    
-  
--  [OData: формат нотаций объектов JavaScript (JSON)](http://www.odata.org/documentation/odata-version-2-0/json-format/)
-    
-  
 
-  
-    
-    
+
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
+
+
+-  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+
+
+-  [SharePoint 2013: выполнение основных операций доступа к данным в файлах и папках при помощи REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+
+
+-  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint 2013](http://www.microsoft.com/resources/msdn/ru-ru/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+
+
+-  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint 2013 (ролик) ](http://www.microsoft.com/resources/msdn/ru-ru/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
+
+
+-  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint 2013](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
+
+
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
+
+
+-  [Разработка надстроек для SharePoint](develop-sharepoint-add-ins.md)
+
+
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+
+
+-  [Работа с внешними данными в SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
+
+
+-  [Open Data Protocol](http://www.odata.org/)
+
+
+-  [OData: формат нотаций объектов JavaScript (JSON)](http://www.odata.org/documentation/odata-version-2-0/json-format/)
+
+
+
+
+
+
 

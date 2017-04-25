@@ -192,7 +192,7 @@ Ein neues Fenster des Bildschirm-Designers wird geöffnet.
 !["Item Tap"-Eigenschaft](images/CBAproperty.PNG)
 
 
-    Das Dialogfeld **Aktion bei Tippen auf Element** wird geöffnet.
+Das Dialogfeld **Aktion bei Tippen auf Element** wird geöffnet.
 
 
 3. Erweitern Sie im Dialogfeld **Aktion bei Tippen auf Element bearbeiten** die Liste **showTab**, klicken Sie auf **editSelected** wie in Abbildung 6 dargestellt, und klicken Sie dann auf die Schaltfläche **OK**.

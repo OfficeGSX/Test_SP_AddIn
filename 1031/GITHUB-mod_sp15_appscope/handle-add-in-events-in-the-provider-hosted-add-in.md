@@ -140,8 +140,8 @@ switch (properties.EventType)
         break;
     case SPRemoteEventType.AppUninstalling:
 
-        // TODO3: Custom uninstallation logic goes here.     
-     
+        // TODO3: Custom uninstallation logic goes here. 
+ 
         break;
 }
   ```
@@ -276,7 +276,7 @@ private void DeleteTenant(string tenantName)
         cmd.CommandType = CommandType.StoredProcedure;
         SqlParameter name = cmd.Parameters.Add("@Name", SqlDbType.NVarChar);
         name.Value = tenantName;
-        cmd.ExecuteNonQuery();            
+        cmd.ExecuteNonQuery();        
     }//dispose conn and cmd
 }
   ```

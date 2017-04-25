@@ -10,49 +10,49 @@ ms.assetid: bfa367bb-d2f5-4e3f-bf48-61b77f150f7d
 The SharePoint callout control provides a flexible way to engage your user and showcase your SharePoint-hosted app's functionality. You can configure it in a variety of ways to suit your app's UI. This article shows you how to construct this control, add it to your page, and customize its appearance and behavior.When you do searches in a SharePoint 2013 site, you'll see examples of the callout control in action, as it pops up whenever you hover over a search result. Figure 1 shows the callout for a single search result and shows a few of the typical things in a content control: a title, some information about the item on the page, and actions ( **Open** and **Send**) that you can take on the item. In this case, the information and actions are relatively simple, but you can already see two advantages to using it. First, it lets you show additional information about elements in a page when that's needed, and second, it gives you an elegant way of adding functionality to the page. 
 **Figure 1. Example of the callout control on a SharePoint 2013 search results page**
 
-  
-    
-    
 
-  
-    
-    
+
+
+
+
+
+
 ![Example of the callout control on a SharePoint 2013 search results page](images/S15_CalloutControlExample.png)
-  
-    
-    
 
-  
-    
-    
 
-  
-    
-    
+
+
+
+
+
+
+
+
+
 
 > **NOTE**
 > The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
-  
-    
-    
+
+
+
 
 
 ## Make the control available to your HTML page by including the callout.js file
 <a name="GettingStarted"> </a>
 
 This example uses the  `SP.SOD.executeFunc` method to ensure that the script file loads before you run any code that depends on it.
-  
-    
-    
+
+
+
 ```
 
 SP.SOD.executeFunc("callout.js", "Callout", function () {
     });```
 
 The function that you pass to the  `SP.SOD.executeFunc` function contains the code that you want to run after the callout.js file loads. After you load those files, you use the `CalloutManager` object to create a `Callout` object for each page element that needs to have a callout control associated with it. The `CalloutManager` is a singleton that stores references to every `Callout` object on a page inside an associative array. The `Callout` object has only two required members: `ID` and `launchPoint`. The  `ID` member is the key that is mapped to the `Callout` object in the `CalloutManager`:  `CalloutManager["value of the callout's ID member"]`. The  `launchPoint` member is an HTML page element. You can, for example, create or get a `div` element on your page and pass it as a member of the `Callout` object. By default, the callout control appears whenever a user clicks the `launchPoint` element. This example shows you how to create the simplest possible callout control with only the two required members and a title string.
-  
-    
-    
+
+
+
 
 
 ```
@@ -66,9 +66,9 @@ var callout = CalloutManager.createNew({
 ```
 
 This particular callout pops up and displays a title at the top of the control whenever a user clicks on the page element. You use the optional members to customize the control's appearance, behavior, positioning, and actions in some very powerful ways. The callout control also has a set method that you can use to set a value for any parameter after you create an instance of the control.
-  
-    
-    
+
+
+
 
 
 ```
@@ -76,9 +76,9 @@ This particular callout pops up and displays a title at the top of the control w
 callout.set({openOptions:{event: "hover"}});```
 
 You can also set values for all of the callout members in a  `CalloutOptions` object and then pass that object to the `createNew` method.
-  
-    
-    
+
+
+
 
 
 ```
@@ -94,9 +94,9 @@ var callout = CalloutManager.createNew(calloutOptions);```
 <a name="Appearance"> </a>
 
 You can use these members to control the display of callout.
-  
-    
-    
+
+
+
 
 
 |**Member**|**Purpose**|**Valid values (default in bold)**|
@@ -106,15 +106,15 @@ You can use these members to control the display of callout.
 |contentElement  <br/> |Display an HTML element inside the control when there is no value for the  `content` member. <br/> |any HTML element, **null**, must be null if `content` has a value <br/> |
 |contentWidth  <br/> |Specify the width, in pixels, of the callout body container. This container also has a 1-pixel border and 15-pixel padding on each side, so the control is 32 pixels wider than the body width that you specify. The control's CSS  `overflow` property is set to `hidden`, so your content will be clipped if it does not fit inside the width that you specify. If you set this member on an open callout, the change will take effect immediately. This is not true of the other members.  <br/> |Any number between 240 and 610, **350** (making the control 382 pixels wide by default) <br/> |
 |beakOrientation  <br/> |Specify the orientation of the beak or pointer of the callout control.  <br/> |**topBottom**, to look like this (Figure 2): **Figure 2. Where the callout control's beak appears with the topBottom orientation**!\[Where the callout control's beak appears with the topbottom orientation](images/SP15_CalloutTopBottom.png) **leftRight**, to look like this (Figure 3): **Figure 3. Where the callout control's beak appears with the leftright orientation**!\[Where the callout control's beak appears with the leftright orientation](images/SP15_CalloutLeftRight.png)|
-   
+ 
 
 ## How to customize the behavior of the callout control
 <a name="Behavior"> </a>
 
 You can use the following members to control the behavior of the callout. Begin with the important  `openOptions` member because it lets you specify how the control will open and close when the user interacts with it on the page.
-  
-    
-    
+
+
+
 
 
 |**Use these values for the  `openOptions` member**|**Purpose**|
@@ -122,11 +122,11 @@ You can use the following members to control the behavior of the callout. Begin 
 |**{event: "click", closeCalloutOnBlur: true}** <br/> |Make the callout control appear when the user clicks on the  `launchPoint` element with a mouse and close whenever a user moves the mouse away from the `launchPoint` element. Because the value of `event` is `click`, the value of the  `showCloseButton` option is **true** by default and can't be changed. This is the default combination of values. <br/> |
 | `{event: "hover", showCloseButton: true}` <br/> |Make the callout control appear when the user hovers over the  `launchPoint` element with a mouse and close whenever the user clicks on an **X** button in the upper right corner of the control. Because the value of `event` is `hover`, the value of  `closeCalloutOnBlur` is not applicable and can't be set. <br/> |
 | `{event: "click", closeCalloutOnBlur: false}` <br/> |Make the callout control appear when the user hovers over the  `launchPoint` element with a mouse and close only whenever the user clicks on an **X** button in the upper right corner of the control. Since the value of `event` is `click`, the value of the  `showClosebutton` option is **true** by default and can't be changed. <br/> |
-   
+ 
 These are the other members that you can set to control the callout's behavior.
-  
-    
-    
+
+
+
 
 
 |**Use this member**|**Purpose**|**Valid values (default in bold)**|
@@ -135,15 +135,15 @@ These are the other members that you can set to control the callout's behavior.
 |onOpenedCallback  <br/> |Perform actions that must happen after the callout control is rendered on the page and fully animated. You might use this member to manipulate the Document Object Model (DOM) of the control. You can set a value for this member only once.  <br/> | `function(callout /*=Callout*/) {...}`, **null** <br/> |
 |onClosingCallback  <br/> |Perform actions that must happen while the callout control is closing but before it has fully been removed from the page. You can set a value for this member only once.  <br/> | `function(callout /*=Callout*/) {...}`, **null** <br/> |
 |onClosedCallback  <br/> |Perform actions that must happen after the callout control has closed and been removed from the page. You can set a value for this member only once.  <br/> | `function(callout /*=Callout*/) {...}`, **null** <br/> |
-   
+ 
 
 ## How to use the callout control methods
 <a name="CalloutMethods"> </a>
 
 You can use these methods to customize the behavior of the callout control.
-  
-    
-    
+
+
+
 
 
 |**Use this method**|**Purpose**|**Valid parameter values**|
@@ -156,32 +156,32 @@ You can use these methods to customize the behavior of the callout control.
 |toggle()  <br/> |Toggle the control's open/close state.  <br/> |No parameters  <br/> |
 |addAction(CallOutAction calloutAction)  <br/> |Add a new  `CalloutAction` to the callout control's array of `CalloutAction` objects. These objects define the actions to show in the footer of the control. The [How to add actions to the callout control](#AddActions) section explains how to construct these objects. You can add actions only after creating an instance of the control. The control can have no more than three actions, and if you try to add more you'll get an exception. <br/> |A  `CalloutAction` object. <br/> |
 |refreshActions()  <br/> |Reload all of the actions that have been added to the control. You can use this method to change, enable, or disable actions while the control is open.  <br/> |No parameters  <br/> |
-   
+ 
 
 ## How to add actions to the callout control
 <a name="AddActions"> </a>
 
 You add actions after you've created an instance of the callout control. A callout action can consist of either a single action or a menu of actions. You can add up to three actions to a callout control. Once you have created a callout action, you add it to the  `CalloutControl` object with its `addAction` method. This sample action opens a new window in your browser after the user clicks on the text.
-  
-    
-    
+
+
+
 ```
 
 //Create CalloutAction
 var calloutAction = new CalloutAction({
             text: "Open window"
-            onClickCallback: function() {                
+            onClickCallback: function() {            
                 window.open(url);
             }
         });
 
-//Add Action to an instance of the CalloutControl        
+//Add Action to an instance of the CalloutControl    
         myCalloutControl.addAction(calloutAction);```
 
 You can also set values for all of the  `CalloutAction` members in a `CalloutActionOptions` object and pass that object to the `CalloutAction` constructor.
-  
-    
-    
+
+
+
 
 
 ```
@@ -194,13 +194,13 @@ actionOptions.onClickCallback = function() {
 };
 var calloutAction = new CalloutAction(calloutActionOptions);
 
-//Add Action to an instance of the CalloutControl        
+//Add Action to an instance of the CalloutControl    
         myCalloutControl.addAction(calloutAction);```
 
 You can use these members to define the behavior of a callout action.
-  
-    
-    
+
+
+
 
 
 |**Use this member**|**Purpose**|**Valid values (default in bold)**|
@@ -212,32 +212,32 @@ You can use these members to define the behavior of a callout action.
 |tooltip  <br/> |Display text when the user hovers over the callout action text.  <br/> |string, **null** <br/> |
 |disabledTooltip  <br/> |Display text when the user hovers over the callout action text and the callout action has been disabled (when the  `isEnabledCallback` function returns **false** ). <br/> |string, **null** <br/> |
 |menuEntries  <br/> |Define a menu of actions instead of a single action. The next section explains how to create a  `CalloutActionMenuEntry` and add it to a `CalloutAction` object. <br/> |[ `CalloutActionMenuEntry`, ...], null  <br/> |
-   
+ 
 
 ### How to add action menus to the callout control
 
 When a callout action contains a menu instead of a single action, the user sees a down arrow next to the callout action text, as in Figure 4.
-  
-    
-    
+
+
+
 
 **Figure 4. A callout action displays a menu when a user clicks on the arrow next to the action label**
 
-  
-    
-    
 
-  
-    
-    
+
+
+
+
+
+
 ![A callout action displays a menu when a user clicks on the arrow next to the action label.](images/SP15_CalloutMenu.png)
-  
-    
-    
+
+
+
 You can create as many menu entries as you want and add them to the callout action by passing them in an array, as the value of the  `menuEntries` member of the `CalloutAction` object.
-  
-    
-    
+
+
+
 
 
 ```
@@ -257,27 +257,27 @@ callout.addAction(calloutAction);
 ```
 
 The  `CalloutActionMenuEntry` constructor takes three parameters. The first two parameters are required. The third is optional, but it can be helpful because it lets you display an icon with the text.
-  
-    
-    
+
+
+
 
 - Pass a string as the first parameter to display a text label for each menu entry.
-    
-  
+
+
 - Pass a function as the second parameter to define the action that occurs when the user clicks on the menu entry text.
-    
-  
+
+
 - Pass a string that contains the URL for the icon that you want to display to the left of the text label.
-    
-  
+
+
 
 ## How to use the CalloutManager to create and manage instances of the callout control
 <a name="UseCalloutManager"> </a>
 
 The  `CalloutManager` singleton object stores references to every `Callout` object on a page. It stores each instance of the callout control in an associative array where the `ID` value of each control is the key. The `CalloutManager` contains methods that help you create and manage the `Callout` objects that it stores.
-  
-    
-    
+
+
+
 
 
 |**Use this method**|**Purpose**|**Valid parameter values**|
@@ -289,7 +289,7 @@ The  `CalloutManager` singleton object stores references to every `Callout` obje
 |getFromCalloutDescendant: function (/*@type(HTMLElement)*/descendant)  <br/> |Get the  `Callout` object associated with the HTML element provided in the function given element. This element can be any descendent of the callout element. For example, you could pass the value of the `contentElement` member that you assigned when you created the `Callout` object. This method throws an exception if the descendant doesn't have a `Callout` object associated with it. <br/> |No parameters  <br/> |
 |closeAll()  <br/> |Closes all open  `Callout` objects. This method returns true if it closes at least one callout. <br/> |No parameters  <br/> |
 |isAtLeastOneCalloutOpen()  <br/> |Check to see if at least one callout is open.  <br/> |No parameters  <br/> |
-   
+ 
 
 ## How to position the callout control on the page
 <a name="Positioning"> </a>
@@ -300,14 +300,14 @@ The  `CalloutManager` singleton object stores references to every `Callout` obje
 |:-----|:-----|:-----|
 |boundingBox  <br/> |Specify the HTML element that will serve as the equivalent of the  `offsetParent` of the callout control. By default, the default value for this will be the callout control's `offsetParent`, but you can use this member to make sure that the control is positioned correctly. The callout control will attempt to position itself so that it's visible within this box. It will change direction (from top to bottom or from left to right, depending on the beak orientation) to remain visible within it.  <br/> |any HTML element, **the offsetParent of the HTML element that contains the callout control** <br/> |
 |positionAlgorithm  <br/> |Override the default positioning algorithm for the callout control. The following section describes how to use the  `calloutPositioningProxy` object to write positioning algorithms for the callout control. <br/> |**CalloutOptions.prototype.defaultPositionAlgorithm**, `function(calloutPositioningProxy) { ... }` <br/> |
-   
+ 
 
 ### How to write positioning algorithms with calloutPositioningProxy
 
 The  `calloutPositioningProxy` object contains methods and properties that you can use to override the positioning logic that the callout control uses by default. For example, if you want the control to appear below and to the right of the `launchPoint` element all of the time, you write a positioning algorithm that looks like the following.
-  
-    
-    
+
+
+
 ```
 
 function alwaysGoDownAndRight(calloutPositioningProxy)  {
@@ -316,9 +316,9 @@ function alwaysGoDownAndRight(calloutPositioningProxy)  {
 ```
 
 You would then pass that function as the value of the  `Callout` object's `positionAlgorithm` member. You can do that when you create the `Callout`, or later by setting the value.
-  
-    
-    
+
+
+
 
 
 ```
@@ -327,9 +327,9 @@ callout.set({positionAlgorithm: alwaysGoDownAndRight});
 ```
 
 You can always take a look at the default positioning logic by launching your browser's JavaScript console (the Internet Explorer F12 Developer Tools, for example).
-  
-    
-    
+
+
+
 
 
 ```
@@ -337,9 +337,9 @@ You can always take a look at the default positioning logic by launching your br
 CalloutOptions.prototype.positionAlgorithm.toString()```
 
 You can use these methods in the  `CalloutPositioningProxy` object to write your own positioning logic.
-  
-    
-    
+
+
+
 
 
 |**Method**|**Description**|
@@ -364,11 +364,11 @@ You can use these methods in the  `CalloutPositioningProxy` object to write your
 |flipHorizontal()  <br/> |Returns nothing. Changes the direction of the control.  <br/> |
 |flipVertical()  <br/> |Returns nothing. Changes the direction of the control.  <br/> |
 |numberOfEdgesCollidingWithBoundingBox()  <br/> |Returns an integer between 0 and 4 that represents the number of edges where the callout collides with the visible bounding box. For example, if the top of the control is clipped by the top of the document body after you call the  `moveUpAndRight()` method, the `numberOfEdgesCollidingWithBoundingBox()` method returns a number greater than 1. <br/> |
-   
+ 
 This positioning algorithm makes the control go above or below the text. The  `isRTL` property of the `CalloutPositioningProxy` tells you whether the text is displaying a right-to-left language. You check for this property to ensure that the control is always positioned correctly in relation to the text on the page.
-  
-    
-    
+
+
+
 
 
 ```
@@ -390,9 +390,9 @@ callout.set({positionAlgorithm: examplePositionAlgorithm});
 ```
 
 This positioning algorithm changes the default direction of the control to  `downAndRight` instead of `upAndRight`, but it uses the default algorithm if there are any collisions.
-  
-    
-    
+
+
+
 
 
 ```
@@ -402,7 +402,7 @@ function tryDownAndRightThenGoDefault(calloutPositioningProxy) {
         calloutPositioningProxy.moveDownAndRight();
     else
         calloutPositioningProxy.moveDownAndLeft();
-    
+
     if (calloutPositioningProxy.numberOfEdgesCollidingWithBoundingBox() > 0)
         return CalloutOptions.prototype.positionAlgorithm.apply(this, arguments);
 };
@@ -415,18 +415,18 @@ callout.set({positionAlgorithm: tryDownAndRightThenGoDefault});
 
 
 -  [SharePoint 2013: Use list views, callouts, and dialogs in SharePoint-hosted add-ins](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Use-list-cb3e4e14)
-    
-  
--  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
-    
-  
--  [Create a basic SharePoint-hosted add-in by using Napa Office 365 Development Tools](create-a-basic-sharepoint-hosted-add-in-by-using-napa-office-365-development-too.md)
-    
-  
--  [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md)
-    
-  
 
-  
-    
-    
+
+-  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
+
+
+-  [Create a basic SharePoint-hosted add-in by using Napa Office 365 Development Tools](create-a-basic-sharepoint-hosted-add-in-by-using-napa-office-365-development-too.md)
+
+
+-  [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md)
+
+
+
+
+
+

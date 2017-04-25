@@ -11,9 +11,9 @@ Découvrez comment créer des composants UX pour vos compléments dans SharePoin
 <a name="SP15CreateUX_Creating"> </a>
 
 Le modèle de complément SharePoint propose de nombreux composants et mécanismes UX vous aidant à créer une formidable expérience utilisateur dans des Compléments SharePoint. L'expérience utilisateur dans le modèle de complément est également suffisamment flexible pour vous permettre d'utiliser les techniques et les plateformes les mieux adaptées aux besoins des utilisateurs finaux. Le Tableau 1 répertorie les ressources vous permettant d'apprendre à créer et à utiliser les composants UX dans les compléments.
-  
-    
-    
+
+
+
 
 **Tableau 1. Ressources et instructions pour créer des composants UX dans des Compléments SharePoint**
 
@@ -26,27 +26,27 @@ Le modèle de complément SharePoint propose de nombreux composants et mécanism
 | [Créer des actions personnalisées à déployer avec les compléments pour SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md) <br/> |Lorsque vous créez un Complément SharePoint, les actions personnalisées vous permettent d'interagir avec les listes et le ruban sur le site web hôte. Une action personnalisée peut être déployée sur le site web hôte quand les utilisateurs finaux installent votre complément. Les actions personnalisées peuvent ouvrir une page web distante et transférer des informations par l'intermédiaire de la chaîne de requête. Deux types d'actions personnalisées sont disponibles pour les compléments : Ruban et Bloc de contrôle d'édition.  <br/> |
 | [Personnaliser le mode Liste dans les compléments pour SharePoint à l'aide du rendu côté client](customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering.md) <br/> |Le rendu côté client propose un mécanisme qui vous permet de produire votre propre destination pour un jeu de contrôles hébergés sur une page SharePoint. Vous pouvez également utiliser des technologies connues, telles que le HTML et JavaScript, afin de définir la logique de rendu des affichages de liste SharePoint. Avec le rendu côté client, vous pouvez spécifier vos propres ressources JavaScript et les héberger dans les options de stockage de données disponibles pour vos compléments, par exemple dans une bibliothèque de documents.  <br/> |
 | [Utiliser le contrôle Sélecteur de personnes côté client dans des compléments hébergés par SharePoint](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in.md) <br/> |Découvrez comment utiliser le contrôle Sélecteur de personnes côté client dans les Compléments SharePoint. Ce contrôle permet aux utilisateurs de rapidement rechercher et sélectionner des comptes d'utilisateurs valides afin de trouver des personnes, des groupes et des revendications dans leur organisation. Le sélecteur est un contrôle HTML et JavaScript est pris en charge par plusieurs navigateurs.  <br/> |
-   
+ 
 
 ## Étapes suivantes : utilisation de données dans des Compléments SharePoint
 <a name="SP15CreateUX_Next"> </a>
 
 Avez-vous fini de créer une UX performante pour votre complément ? Incorporez les données avec les mécanismes disponibles dans le modèle de complément SharePoint. Pour plus d'informations, voir  [Utiliser des données externes dans SharePoint 2013](work-with-external-data-in-sharepoint-2013.md).
-  
-    
-    
+
+
+
 
 ## Ressources supplémentaires
 <a name="SP15CreateUX_AddRes"> </a>
 
 
 -  [Compléments](sharepoint-add-ins.md)
-    
-  
+
+
 -  [Conception de l'expérience utilisateur pour les compléments dans SharePoint](ux-design-for-sharepoint-add-ins.md)
-    
-  
+
+
 -  [Développer des compléments pour SharePoint](develop-sharepoint-add-ins.md)
-    
-  
+
+
 
