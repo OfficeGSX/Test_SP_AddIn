@@ -69,12 +69,12 @@ In diesem Artikel fügen Sie eine besondere Art von Webpart namens Add-In-Webpar
 
 |**Attribut**|**Wert**|
 |:-----|:-----|
-|Titel  <br/> |Bestellung aufgeben  <br/> |
-|Beschreibung  <br/> |Formular zum Aufgeben einer Bestellung  <br/> |
-|DefaultHeight  <br/> |320  <br/> |
+|Titel|Bestellung aufgeben|
+|Beschreibung|Formular zum Aufgeben einer Bestellung|
+|DefaultHeight|320|
    
 
-    Behalten Sie für alle anderen Attribute die Standardwerte bei, und speichern Sie die Datei.
+Behalten Sie für alle anderen Attribute die Standardwerte bei, und speichern Sie die Datei.
     
   
 
