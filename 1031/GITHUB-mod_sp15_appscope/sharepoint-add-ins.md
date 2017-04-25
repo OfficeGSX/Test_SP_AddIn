@@ -43,14 +43,14 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: in SharePoint gehostet u
     
 |||
 |:-----|:-----|
-|![Umfassende ganzseitige Erfahrung mit einer SharePoint-App](images/7298a25b-ed54-4953-a781-26c3f633866a.jpg)|**Als übersichtliche ganze Seite**, die das Aussehen und Verhalten einer SharePoint-Seite haben kann. <br/> |
-|![App-Webpart-Erfahrung mit einer SharePoint-App](images/90cd4b6e-462e-442e-92de-86b2d98282d0.jpg)|**Als Teil einer Webseite, die ein spezielles Steuerelement verwendet, das als Add-In-Part** bezeichnet wird und mit dem ein iFrame-Element mit dem Add-In verfügbar gemacht wird. <br/> |
-|![Erfahrung "Benutzerdefinierte Aktion" mit einer SharePoint-App](images/3a14cfdc-51e1-446f-82d9-acb4f2bcbc0e.jpg)|**Als Benutzeroberflächenbefehle, die Menübänder und Menüs** für Listen, Dokumente und vieles mehr erweitern. <br/> |
+|![Umfassende ganzseitige Erfahrung mit einer SharePoint-App](images/7298a25b-ed54-4953-a781-26c3f633866a.jpg)|**Als übersichtliche ganze Seite**, die das Aussehen und Verhalten einer SharePoint-Seite haben kann.|
+|![App-Webpart-Erfahrung mit einer SharePoint-App](images/90cd4b6e-462e-442e-92de-86b2d98282d0.jpg)|**Als Teil einer Webseite, die ein spezielles Steuerelement verwendet, das als Add-In-Part** bezeichnet wird und mit dem ein iFrame-Element mit dem Add-In verfügbar gemacht wird.|
+|![Erfahrung "Benutzerdefinierte Aktion" mit einer SharePoint-App](images/3a14cfdc-51e1-446f-82d9-acb4f2bcbc0e.jpg)|**Als Benutzeroberflächenbefehle, die Menübänder und Menüs** für Listen, Dokumente und vieles mehr erweitern.|
    
 - **Alle von den Benutzern installierten SharePoint-Add-Ins haben eine Kachel auf der Seite **Websiteinhalte** der SharePoint-Website.** Beim Klicken auf die Kachel wird das Add-In ausgeführt.
     
   
-- **Eine SharePoint-Add-In wird durch ein  *Add-In-Manifest* ** konfiguriert. Dies ist eine XML-Datei, in der deklariert wird, welche grundlegenden Eigenschaften das Add-In hat, wo es ausgeführt wird und welche Aktion SharePoint beim Starten des Add-Ins ausführen soll. Das Manifest kann unter anderem festlegen, welche Sprachen das Add-In unterstützt, von welchen SharePoint-Diensten und -Funktionen es abhängt und welche Berechtigungen für dasHostweb erforderlich sind, das vom Add-In benötigt wird. (SharePoint-Add-Ins haben Vollzugriff auf ihr eigenesAdd-In-Web.)
+- **Eine SharePoint-Add-In wird durch ein  *Add-In-Manifest*** konfiguriert. Dies ist eine XML-Datei, in der deklariert wird, welche grundlegenden Eigenschaften das Add-In hat, wo es ausgeführt wird und welche Aktion SharePoint beim Starten des Add-Ins ausführen soll. Das Manifest kann unter anderem festlegen, welche Sprachen das Add-In unterstützt, von welchen SharePoint-Diensten und -Funktionen es abhängt und welche Berechtigungen für dasHostweb erforderlich sind, das vom Add-In benötigt wird. (SharePoint-Add-Ins haben Vollzugriff auf ihr eigenesAdd-In-Web.)
     
   
 - **Sie verteilen SharePoint-Add-Ins in Add-In-Paketen**, die immer mindestens das Add-In-Manifest enthalten. (Wenn keine SharePoint-Komponenten vorhanden sind, enthält das Add-In-Paket möglicherweise nur das Add-In-Manifest.) Wenn das Add-In SharePoint-Komponenten in einem Add-In-Web hat, sind diese im Paket als ein Satz von XML-Dateien enthalten. Remotekomponenten, die außerhalb von SharePoint gehostet werden, z. B. eine Remotewebanwendung oder eine Datenbank, sind dagegen nicht im Paket enthalten und werden separat vom Add-In-Paket bereitgestellt. (Das Add-In-Manifest gibt jedoch die URLs der Remotekomponenten an.)
@@ -61,7 +61,7 @@ Es gibt zwei grundlegende Arten von SharePoint-Add-Ins: in SharePoint gehostet u
   
 
 > **TIPP**
-> **Sehen Sie sich ein Paar SharePoint-Add-Ins im** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint) an, um einen Eindruck zu erhalten, welche Möglichkeiten bei der Entwicklung Sie haben. Sie können auch eine SharePoint 2013-Website aufrufen und einige der kostenlosen SharePoint-Add-Ins installieren. Navigieren Sie einfach zu ** Websiteinhalte | ein Add-In hinzufügen | SharePoint Store**. 
+> **Sehen Sie sich ein Paar SharePoint-Add-Ins im** [Office Store](https://store.office.com/appshome.aspx?productgroup=SharePoint) an, um einen Eindruck zu erhalten, welche Möglichkeiten bei der Entwicklung Sie haben. Sie können auch eine SharePoint 2013-Website aufrufen und einige der kostenlosen SharePoint-Add-Ins installieren. Navigieren Sie einfach zu **Websiteinhalte | ein Add-In hinzufügen | SharePoint Store**. 
   
     
     
@@ -124,10 +124,10 @@ Wie bei allen SharePoint-Add-Ins kann ein Benutzer ein von SharePoint gehostetes
 
 ||||
 |:-----|:-----|:-----|
-|Benutzerdefinierte Seiten  <br/> | Workflows <br/> |Module (Dateigruppen)  <br/> |
-|Listenvorlagen  <br/> |Listen- und Bibliotheksinstanzen  <br/> |Benutzerdefinierte Listenformulare und Ansichten  <br/> |
-|Angepasste Inhaltstypen  <br/> |Webvorlagen  <br/> |Integrierte Spalten (keine benutzerdefinierten Spalten)  <br/> |
-|Integrierte Webparts (keine benutzerdefinierten Webparts)  <br/> |JavaScript-Dateien  <br/> |Benutzerdefinierte Schaltflächen und Menüelemente für das Add-In-Web  <br/> |
+|Benutzerdefinierte Seiten| Workflows|Module (Dateigruppen)|
+|Listenvorlagen|Listen- und Bibliotheksinstanzen|Benutzerdefinierte Listenformulare und Ansichten|
+|Angepasste Inhaltstypen|Webvorlagen|Integrierte Spalten (keine benutzerdefinierten Spalten)|
+|Integrierte Webparts (keine benutzerdefinierten Webparts)|JavaScript-Dateien|Benutzerdefinierte Schaltflächen und Menüelemente für das Add-In-Web|
    
 
   
