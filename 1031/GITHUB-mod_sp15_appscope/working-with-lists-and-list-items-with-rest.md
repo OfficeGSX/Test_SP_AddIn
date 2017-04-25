@@ -1,6 +1,6 @@
 ---
 title: Arbeiten mit Listen und Listenelementen unter Verwendung von REST
-ms.prod: SHAREPOINT
+ms.prod: MULTIPLEPRODUCTS
 ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 ---
 
@@ -28,14 +28,16 @@ Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihre
   
     
     
-```
+
+```
 
 url: http://site url/_api/web/lists(guid'list GUID'),
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-```
+
+```
 
 
 > **HINWEIS**
@@ -50,14 +52,16 @@ Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihr 
     
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')
 method: GET
 Headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-```
+
+```
 
 Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.
   
@@ -65,7 +69,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim 
     
 
 
-```XML
+
+```XML
 
 <content type="application/xml">
   <m:properties>
@@ -107,7 +112,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim 
   <d:TemplateFeatureId m:type="Edm.Guid">00bfea71-de22-43b2-a848-c05709900100</d:TemplateFeatureId> 
   <d:Title>Project Policy Item List</d:Title> 
   </m:properties>
-  </content>```
+  </content>
+```
 
 
 > **HINWEIS**
@@ -124,7 +130,8 @@ Das folgende Beispiel zeigt, wie Sie eine Liste **erstellen**.
   
     
     
-```
+
+```
 
 url: http://site url/_api/web/lists
 method: POST
@@ -135,7 +142,8 @@ Headers:
     X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body```
+    content-length:length of post body
+```
 
 Das folgende Beispiel zeigt, wie Sie eine Liste **aktualisieren** und dazu die **MERGE**-Methode verwenden.
   
@@ -143,7 +151,8 @@ Das folgende Beispiel zeigt, wie Sie eine Liste **aktualisieren** und dazu die *
     
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -155,7 +164,8 @@ Headers:
     X-HTTP-Method: MERGE,
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body```
+    content-length:length of post body
+```
 
 Das folgende Beispiel zeigt, wie Sie ein **benutzerdefiniertes Feld** für eine Liste **erstellen**.
   
@@ -163,7 +173,8 @@ Das folgende Beispiel zeigt, wie Sie ein **benutzerdefiniertes Feld** für eine 
     
 
 
-```
+
+```
 
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
 Method:POST
@@ -172,7 +183,8 @@ Headers:
     Authorization: "Bearer " + accessToken
     X-RequestDigest: form digest value
     content-type: "application/json;odata=verbose"
-    content-length:length of post body```
+    content-length:length of post body
+```
 
 Das folgende Beispiel zeigt, wie Sie eine Liste **löschen**.
   
@@ -180,7 +192,8 @@ Das folgende Beispiel zeigt, wie Sie eine Liste **löschen**.
     
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists(guid'list GUID')
 method: POST
@@ -189,7 +202,8 @@ Headers:
     X-RequestDigest: form digest value
     IF-MATCH: etag or "*"
     X-HTTP-Method: DELETE
-```
+
+```
 
 
 ## Arbeiten mit Listenelementen unter Verwendung von REST
@@ -206,14 +220,16 @@ Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.
     
     
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-```
+
+```
 
 Das folgende Beispiel zeigt, wie sie ein bestimmtes Listenelement **abrufen**.
   
@@ -221,14 +237,16 @@ Das folgende Beispiel zeigt, wie sie ein bestimmtes Listenelement **abrufen**.
     
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: GET
 headers:
     Authorization: "Bearer " + accessToken
     accept: "application/json;odata=verbose" or "application/atom+xml"
-```
+
+```
 
 Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.
   
@@ -236,7 +254,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, di
     
 
 
-```XML
+
+```XML
 
 <content type="application/xml">
 <m:properties> 
@@ -253,7 +272,8 @@ Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, di
 <d:Attachments m:type="Edm.Boolean">false</d:Attachments>
 <d:GUID m:type="Edm.Guid">eb6850c5-9a30-4636-b282-234eda8b1057</d:GUID>
 </m:properties>
-</content>```
+</content>
+```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
   
@@ -268,7 +288,8 @@ Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
 
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -278,7 +299,8 @@ headers:
      X-RequestDigest: form digest value
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body```
+    content-length:length of post body
+```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
   
@@ -293,7 +315,8 @@ Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
 
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -305,7 +328,8 @@ headers:
     "X-HTTP-Method":"MERGE",
     accept: "application/json;odata=verbose"
     content-type: "application/json;odata=verbose"
-    content-length:length of post body```
+    content-length:length of post body
+```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **löschen**.
   
@@ -313,7 +337,8 @@ Das folgende Beispiel zeigt, wie Sie ein Listenelement **löschen**.
     
 
 
-```
+
+```
 
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
 method: POST
@@ -322,7 +347,8 @@ headers:
      X-RequestDigest: form digest value
     "IF-MATCH": etag or "*"
     "X-HTTP-Method":"DELETE"
-```
+
+```
 
 
 ## Verwenden von ETag-Werten zum Bestimmen der Version von Dokument- und Listenelementen

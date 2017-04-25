@@ -82,9 +82,11 @@ In der Praxis legen SharePoint-Farmadministratoren anhand der Switches und Param
     
 
 
-```
 
-New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--```
+```
+
+New-SPTrustedSecurityTokenIssuer -IsTrustBroker -RegisteredIssuerName "<full_token_issuer_name> " --other parameters omitted--
+```
 
 Um einen Tokenherausgeber zu erstellen, der kein Broker ist, wird der Switch  `-IsTrustBroker` nicht verwendet. Es besteht ein weiterer Unterschied. Der Wert des `-RegisteredIssuerName`-Parameters weist stets die Form zweier GUIDs auf, die durch das Zeichen "@" getrennt sind;  _GUID_@ _GUID_. Die GUID auf der rechten Seite ist immer die ID des Authentifizierungsbereichs der SharePoint-Farm (oder des Websiteabonnements). Die GUID auf der linken Seite ist immer eine bestimmte ID für einen Tokenherausgeber. Es handelt sich um eine zufällige GUID, wenn ein Tokenherausgeber erstellt wird, der ein  *Vertrauensbroker*  ist. Wenn jedoch ein Tokenherausgeber erstellt wird, der kein Vertrauensbroker ist, muss die spezifische Herausgeber-GUID mit der GUID identisch sein, die als Client-ID der SharePoint-Add-In verwendet wird. Dieser Parameter liefert nicht nur einen Namen für den Herausgeber, sondern er informiert SharePoint auch darüber, welche SharePoint-Add-In die einzige ist, für die das Zertifikat Token ausstellen kann. Hier ein unvollständiges Beispiel:
   
@@ -92,9 +94,11 @@ Um einen Tokenherausgeber zu erstellen, der kein Broker ist, wird der Switch  `-
     
 
 
-```
+
+```
 $fullIssuerIdentifier = "<client_ID_of_SP_app> " + "@" + "<realm_GUID> "
-New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--```
+New-SPTrustedSecurityTokenIssuer -RegisteredIssuerName $fullIssuerIdentifier --other parameters omitted--
+```
 
 Normalerweise wird das Cmdlet  `New-SPTrustedSecurityTokenIssuer` in einem Skript verwendet, das andere Aufgaben durchführt, um SharePoint für besonders vertrauenswürdige Add-Ins zu konfigurieren. Weitere Informationen zu diesen Skripts und vollständige Beispiele für das Cmdlet `New-SPTrustedSecurityTokenIssuer` finden Sie unter [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -145,7 +149,8 @@ Jedes Zertifikat in der Kette wird durch den Aufruf des Cmdlets  `New-SPTrustedR
     
 
 
-```
+
+```
 
 $rootCA = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("<path_to_top-level_CA's_cer_file>")
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $rootCA
@@ -155,7 +160,8 @@ New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $intermedi
 
 $certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("path_to_web_application's_cer_file") 
 New-SPTrustedRootAuthority -Name "<name_of_certificate>" -Certificate $certificate 
-```
+
+```
 
 Das Stammzertifikat und das Zertifikat der mittleren Ebene sollten nur einmal in einer SharePoint-Farm hinzugefügt werden. Normalerweise wird das Zertifikat der Webanwendung in einem separaten Skript hinzugefügt, das auch andere Konfigurationen vornimmt, wie dem Aufruf von  `New-SPTrustedSecurityTokenIssuer`. Beispiele finden Sie unter  [Besonders vertrauenswürdige Konfigurationsskripts für SharePoint 2013](high-trust-configuration-scripts-for-sharepoint-2013.md).
   
@@ -183,7 +189,8 @@ Es folgt ein Beispiel für einen **appSettings**-Abschnitt für eine besonders v
     
 
 
-```XML
+
+```XML
 
 <appSettings>
   <add key="ClientId" value="6569a7e8-3670-4669-91ae-ec6819ab461" />
@@ -191,7 +198,8 @@ Es folgt ein Beispiel für einen **appSettings**-Abschnitt für eine besonders v
   <add key="ClientSigningCertificatePassword" value="3VeryComplexPa$$word82" />
   <add key="IssuerId" value="e9134021-0180-4b05-9e7e-0a9e5a524965" />
 </appSettings>
-```
+
+```
 
 
 > **SICHERHEITSHINWEIS**

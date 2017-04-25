@@ -132,7 +132,7 @@ In Abbildung 1 ist eine SharePoint-Webseite dargestellt, die das Stylesheet verw
     
   
 
- ```
+  ```
   
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StyleConsumer.aspx.cs" Inherits="StylesheetAppWeb.StyleConsumer" %>
 
@@ -225,7 +225,7 @@ In Abbildung 1 ist eine SharePoint-Webseite dargestellt, die das Stylesheet verw
 </body>
 </html>
 
- ```
+  ```
 
 
     In einigen Fällen müssen Benutzer für SharePoint authentifiziert werden, bevor Ihre Seite das CSS und Bilder für die Formaterstellung herunterladen kann. Von Linktags wird nicht automatisch eine Authentifizierung von Benutzern vorgenommen, die nicht bereits angemeldet sind. Sie können eine Seitenressource aus dem App-Web für die Webseite laden, um die Authentifizierung des Benutzers zu erzwingen, bevor Sie eine Verknüpfung mit der CSS-Datei erstellen. In diesem Beispiel wird die Seite "blank.html" in ein unsichtbares IFrame-Element geladen.

@@ -110,7 +110,8 @@ Das folgende Markup ist ein Beispiel für eine einfache apphost-Seite. Damit wer
   
 
 
-```HTML
+
+```HTML
 
 <%@ Page
     Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" 
@@ -159,7 +160,8 @@ Das folgende Markup ist ein Beispiel für eine einfache apphost-Seite. Damit wer
         frameborder="0">
     </SharePoint:SPAppIFrame>
 </body>
-</html>```
+</html>
+```
 
 Wenn Benutzer über Deep-Links auf Teile des Add-Ins zugreifen können sollen, kann die apphost-Seite mit Inhalten des **IFrame** zusammenarbeiten, um dies zu ermöglichen. Eine Alternative besteht darin, die postMessage-Methode des **IFrame** und jeweils verschiedene URLs für jede Seite des Remote-Add-Ins zu verwenden. Um verschiedene URLs für Seiten anzugeben, können Sie einzelne Seiten im Add-In-Web erstellen oder Abfragezeichenfolgen-Parameter für eine Seite verwenden.
   

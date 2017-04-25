@@ -78,16 +78,16 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
   
 2. Ersetzen Sie das gesamte **AppPrincipal**-Element durch Folgendes.
     
- ```XML
+  ```XML
   
 <AppPrincipal>
     <Internal AllowedRemoteHostUrl="~remoteAppUrl"/>
 </AppPrincipal>
- ```
+  ```
 
 
     > **HINWEIS**
-    > Das Attribut **AllowedRemoteHostUrl** wird zur Angabe der Remotedomäne verwendet. **~remoteAppUrl** wird in die URL des Remote-Add-Ins aufgelöst. Weitere Informationen über Token finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
+      > Das Attribut **AllowedRemoteHostUrl** wird zur Angabe der Remotedomäne verwendet. **~remoteAppUrl** wird in die URL des Remote-Add-Ins aufgelöst. Weitere Informationen über Token finden Sie unter [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md). 
 
 ### So erstellen Sie eine benutzerdefinierte Proxyseite
 
@@ -113,7 +113,7 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
     
   
 
- ```HTML
+  ```HTML
   
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -185,11 +185,11 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
 </html>
 
 
- ```
+  ```
 
 
     > **WICHTIG**
-    > In einer Produktions-SharePoint-Add-In müssen Sie die Autorisierungslogik bereitstellen und den entsprechenden Wert im Objekt **originAuthorityValidator** der Einstellungen zurückgeben.
+      > In einer Produktions-SharePoint-Add-In müssen Sie die Autorisierungslogik bereitstellen und den entsprechenden Wert im Objekt **originAuthorityValidator** der Einstellungen zurückgeben.
 
 ### So erstellen Sie eine Inhaltsseite
 
@@ -198,13 +198,18 @@ Um Daten vom Remotedienst zu lesen, müssen Sie Folgendes tun:
     
   
 2. Kopieren Sie den folgenden Code, und fügen Sie ihn in die **Page_Load**-Methode in der Code-Behind-Datei ein. Der Code führt die folgenden Aufgaben aus:
+    
   - Legt die Ausgabe **content-type** auf **text/plain** fest.
+    
+  
   - Schreibt den Inhalt in den Ausgabepuffer.
+    
+  
   - Beendet die Verbindung
     
   
 
- ```cs
+  ```cs
   
 string content;
 content = "Just some text.";
@@ -212,7 +217,7 @@ Response.ContentType="text/plain";
 Response.Write(content);
 Response.End();
 
- ```
+  ```
 
 
 ### So erstellen Sie eine SharePoint-Webseite, die die domänenübergreifende Bibliothek verwendet
@@ -235,7 +240,7 @@ Response.End();
   
 6. Kopieren Sie den folgenden Code, und fügen Sie ihn in das **PlaceHolderMain**-Inhaltstag ein. 
     
- ```
+  ```
   
 <!-- The page dynamically loads the cross-domain library's
     js file, rescript acts as the placeholder. -->
@@ -310,7 +315,7 @@ Response.End();
     }
     </script>
 
- ```
+  ```
 
 7. Suchen Sie im vorstehenden, von Ihnen eingefügten Code nach der Zeile  `remotedomain = "<your_remote_add-in_domain>";`, und ersetzen Sie den Platzhalter  _<your_remote_add-in_domain>_ durch die Localhost-URL, die Ihre Webanwendung verwendet, wenn Sie das Add-In mit F5 in Visual Studio ausführen. Sie finden diesen Wert, indem Sie das Webanwendungsprojekt im **Projektmappen-Explorer** auswählen. Die Eigenschaft **URL** befindet sich im Bereich **Eigenschaften**. Verwenden Sie den gesamten Wert, einschließlich Protokoll, Port und schließendem Schrägstrich, z. B. http://localhost:45072.
     
@@ -331,7 +336,7 @@ Response.End();
 2. Drücken Sie F5.
     
     > **HINWEIS**
-    > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
+      > Wenn Sie F5 drücken, erstellt Visual Studio die Lösung, stellt das Add-In bereit und öffnet die Berechtigungsseite für das Add-In. 
 3. Klicken Sie auf die Schaltfläche **Vertrauen**.
     
     Die Startseite wird geöffnet und sollte wie folgt aussehen. Es kann einige Sekunden dauern, bis der Begriff „Nur etwas Text" angezeigt wird, da er von der Content.aspx-Seite der Remotedomäne abgerufen wird.

@@ -72,7 +72,8 @@ Der folgende C#-Code zeigt die Vorgehensweise zum Durchführen der **GET**-Anfor
     
 
 
-```cs
+
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -83,7 +84,8 @@ endpointRequest.Headers.Add("Authorization",
   "Bearer " + accessToken);
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-```
+
+```
 
 Diese Anforderung würde etwas anders aussehen, wenn Sie Ihr Add-In in JavaScript schreiben, jedoch die domänenübergreifende SharePoint 2013-Bibliothek verwenden. In diesem Fall müssen Sie keinen Zugriffstoken zur Verfügung stellen. Der folgende Code zeigt, wie die Anforderung aussehen würde, wenn Sie die domänenübergreifende Bibliothek verwenden und die OData-Darstellung der Listen im XML-Format anstatt im JSON-Format erfolgen soll. (Da Atom das Standardantwortformat ist, müssen Sie keinen **Accept**-Header einfügen.) Weitere Informationen über die Verwendung der domänenübergreifenden Bibliothek finden Sie unter  [Zugreifen auf SharePoint 2013-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md).
   
@@ -91,7 +93,8 @@ Diese Anforderung würde etwas anders aussehen, wenn Sie Ihr Add-In in JavaScrip
     
 
 
-```
+
+```
 
 var executor = new SP.RequestExecutor(appweburl);
 executor.executeAsync(
@@ -104,7 +107,8 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);```
+);
+```
 
 Der Code im folgenden Beispiel zeigt, wie Sie eine JSON-Darstellung aller Listen in einer Website anfordern, indem Sie C# verwenden. Das Beispiel geht davon aus, dass Sie über einen OAuth-Zugriffstoken verfügen, den Sie in der  `accessToken`-Variablen speichern.
   
@@ -112,14 +116,16 @@ Der Code im folgenden Beispiel zeigt, wie Sie eine JSON-Darstellung aller Listen
     
 
 
-```cs
+
+```cs
 
 HttpWebRequest endpointRequest = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + "/_api/web/lists");
 endpointRequest.Method = "GET";
 endpointRequest.Accept = "application/json;odata=verbose";
 endpointRequest.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse();
-```
+
+```
 
 
 ### Abrufen von Eigenschaften, die nicht mit der Ressource zurückgegeben werden
@@ -155,7 +161,8 @@ Eine weitere wichtige Überlegung beim Erstellen, Aktualisieren und Löschen von
     
 
 
-```cs
+
+```cs
 
 HttpWebRequest endpointRequest =
   (HttpWebRequest)HttpWebRequest.Create(
@@ -164,7 +171,8 @@ endpointRequest.Method = "POST";
 endpointRequest.Accept = "application/json;odata=verbose";
 HttpWebResponse endpointResponse =
   (HttpWebResponse)endpointRequest.GetResponse();
-```
+
+```
 
 Wenn Sie den unter  [Autorisierung und Authentifizierung für Add-Ins in SharePoint 2013](authorization-and-authentication-of-sharepoint-add-ins.md) beschriebenen Authentifizierungs- und Autorisierungsablauf verwenden, müssen Sie den Anforderungsdigest nicht in Ihre Anforderungen einschließen.
   
@@ -180,7 +188,8 @@ Wenn Sie eine in SharePoint gehostete SharePoint-Add-In erstellen, müssen Sie k
     
 
 
-```
+
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists",
@@ -198,7 +207,8 @@ jQuery.ajax({
         error: doError
 });
 
-```
+
+```
 
 Das folgende Beispiel zeigt, wie Sie die im vorherigen Beispiel erstellte Liste aktualisieren. In dem Beispiel wird der Titel der Liste geändert, JQuery wird verwendet, und es wird davon ausgegangen, dass Sie diese Operation in einem in SharePoint gehosteten Add-In durchführen.
   
@@ -206,7 +216,8 @@ Das folgende Beispiel zeigt, wie Sie die im vorherigen Beispiel erstellte Liste 
     
 
 
-```
+
+```
 
 jQuery.ajax({
         url: "http://<site url>/_api/web/lists/GetByTitle('Test')",
@@ -223,7 +234,8 @@ jQuery.ajax({
         success: doSuccess,
         error: doError
 });
-```
+
+```
 
 Geben Sie im Wert des **IF-MATCH**-Schlüssels in den Anforderungs-Headern den **etag**-Wert einer Liste oder eines Listenelements an. Dieser bestimmte Wert gilt nur für Listen und Listenelemente und soll Ihnen nicht helfen, Parallelitätsprobleme beim Aktualisieren dieser Entitäten zu vermeiden. Im vorherigen Beispiel wird ein Sternchen (*) für diesen Wert verwendet. Sie können den Wert immer verwenden, wenn Sie sicher sind, dass keine Parallelitätsprobleme bestehen. Andernfalls sollten Sie den **etag**-Wert bzw. eine Liste oder ein Listenelement abrufen, indem Sie eine **GET**-Anforderung durchführen, die die Entität abruft. Die Antwortheader der resultierenden HTTP-Antwort übergeben das ETag als Wert des **ETag**-Schlüssels. Dieser Wert ist auch in den Entitätsmetadaten enthalten. Das folgende Beispiel zeigt das öffnende Tag  `<entry>` für den XML-Knoten, der die Listeninformationen enthält. Die Eigenschaft **m:etag** enthält den **etag**-Wert.
   
@@ -231,12 +243,14 @@ Geben Sie im Wert des **IF-MATCH**-Schlüssels in den Anforderungs-Headern den *
     
 
 
-```XML
+
+```XML
 
 <entry xml:base="http://site url/_api/" xmlns=http://www.w3.org/2005/Atom
 xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">```
+xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" m:etag=""1"">
+```
 
 
 ## Erstellen einer Website mit REST
@@ -246,7 +260,8 @@ Das folgende Beispiel zeigt, wie Sie eine Website in JavaScript erstellen könne
   
     
     
-```
+
+```
 
 jQuery.ajax({
     url: "http://<site url>/_api/web/webinfos/add",
@@ -270,7 +285,8 @@ jQuery.ajax({
     },
     success: doSuccess,
     error: doError
-});```
+});
+```
 
 
 ## So unterscheiden sich REST-Anforderungen je nach Umgebung
@@ -371,7 +387,8 @@ SharePoint-Add-Ins können die Add-In-Web-URL und die Hostweb-URL aus der Abfrag
     
 
 
-```
+
+```
 
 var hostweburl;
 var appweburl;
@@ -408,7 +425,8 @@ function getQueryStringParameter(paramToRetrieve) {
     if (singleParam[0] == paramToRetrieve) return singleParam[1];
   }
 }
-… // success and error callback functions```
+… // success and error callback functions
+```
 
 
 ## In REST-Anforderungen verwendete Eigenschaften

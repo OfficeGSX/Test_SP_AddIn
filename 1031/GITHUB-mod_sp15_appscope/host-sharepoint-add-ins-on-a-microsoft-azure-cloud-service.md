@@ -2,14 +2,15 @@
 
 # Hosten von Add-Ins für SharePoint 2013 in einem Microsoft Azure-Cloud-Dienst
 Erfahren Sie, wie Sie eine vom Anbieter gehostete SharePoint-Add-In in einem Microsoft Azure-Clouddienst anstatt einer Web-App hosten, wie Sie eine SharePoint-Add-In zu einer Azure-Webrolle hinzufügen, und warum das Hosting auf Azure möglicherweise besser ist als in einer Web-App.
-
-
-
+ * **Gilt für:*** 
+  
+    
+    
 
 
 |||
 |:-----|:-----|
-|**In diesem Artikel** <BR/> [Voraussetzungen](#SP15createselfhostapp_bk_prereq) <BR/> [So hosten Sie eine SharePoint-Add-In in einem Azure-Clouddienst](#SP15HostAzure_bk_HowTo) <BR/> [Vorteile von Azure](#SP15HostAzure_bk_Why) <BR/> [Zusätzliche Ressourcen](#SP15Devapps_AddtionalResources)||
+|**In diesem Artikel**          [Voraussetzungen](#SP15createselfhostapp_bk_prereq)           [So hosten Sie eine SharePoint-Add-In in einem Azure-Clouddienst](#SP15HostAzure_bk_HowTo)           [Vorteile von Azure](#SP15HostAzure_bk_Why)           [Zusätzliche Ressourcen](#SP15Devapps_AddtionalResources)||
    
 
 ## Voraussetzungen

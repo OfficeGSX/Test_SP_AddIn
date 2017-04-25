@@ -95,11 +95,11 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
   
 11. Die Datei enthält bereits **FieldRef**-Elemente für die beiden Spalten, die Sie hinzugefügt haben. Fügen Sie **FieldRef**-Elemente für zwei integrierte SharePoint-Spalten als übergeordnete Elemente der beiden bereits vorhandenen hinzu. Nachfolgend dargestellt ist das Markup für die Elemente.  *Sie müssen diese GUIDs für die ID-Attribute verwenden, da diese integrierte Feldtypen mit festen IDs sind.*  Fügen Sie sie *über*  den beiden **FieldRef**-Elementen für die benutzerdefinierten Websitespalten hinzu.
     
- ```
+  ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
- ```
+  ```
 
 
     Beachten Sie, dass wir diesen Feldern einen benutzerdefinierten Anzeigenamen gegeben haben: **Employee**.
@@ -152,12 +152,12 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
   
 24. Während Sie sich weiterhin in der Datei „schema.xml" befinden, suchen Sie im Element **View**, dessen **BaseViewID**-Wert gleich 1 ist, nach dem untergeordneten **ViewFields**-Element, und fügen Sie ihm dann die folgenden zwei **FieldRef**-Elemente als untergeordnete Elemente hinzu. Möglicherweise sind sie bereits vorhanden, jedoch fehlt ein **ID**-Attribut. Wenn dies der Fall ist, fügen Sie das ID-Attribut hinzu.
     
- ```
+  ```
   
 <FieldRef Name="Division" ID="{GUID from the Field element}" />
 <FieldRef Name="OrientationStage" ID="{GUID from the Field element}" />
 
- ```
+  ```
 
 25. Ersetzen Sie die zwei Platzhalter- **ID**-Attributwerte durch die GUIDs aus den entsprechenden **Field**-Elementen im Element **ContentType** für **NewEmployee**, das sich zuvor in der Datei „schema.xml" befand. Vergessen Sie nicht die umschließenden Klammern „{}". 
     
@@ -165,14 +165,14 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
     
 
 
- ```
+  ```
   
 <ViewFields>
    <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
    <FieldRef Name="Division" ID="{509d2d67-9a96-4596-9b3b-58449cdcc6ff}" />
    <FieldRef Name="OrientationStage" ID="{38a3b54c-acf3-4ddf-b748-55c7c28d4cc2}" />        
 </ViewFields>
- ```
+  ```
 
 26. Während Sie sich weiterhin in der Datei „schema.xml" befinden, suchen Sie im Element **View**, dessen **BaseViewID**-Wert gleich 0 ist, nach dem enthaltenen **ViewFields**-Element.
     
@@ -188,7 +188,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
   
 30. Fügen Sie zwei **Field**-Elemente zum ersten **Row**-Element hinzu, sodass das Element **Row** wie folgt aussieht.
     
- ```
+  ```
   
 <Row>
   <Field Name="Title">Tom Higginbotham</Field>
@@ -196,7 +196,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
   <Field Name="OrientationStage">Tour of building</Field>
 </Row>
    
- ```
+  ```
 
 31. Speichern und schließen Sie die Datei.
     

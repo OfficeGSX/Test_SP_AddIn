@@ -135,7 +135,8 @@ Der Header hat zwei Eigenschaften. „typ" ist der Tokentyp. Der Code in der Rem
     
 
 
-```
+
+```
 
 {"typ":"JWT", "alg":"none"}
 .
@@ -148,7 +149,8 @@ Der Header hat zwei Eigenschaften. „typ" ist der Tokentyp. Der Code in der Rem
  "nii":"urn:office:idp:activedirectory",
  "actortoken":"6sMZhbw … [remainder of long base 64 string omitted] … "
 }
-```
+
+```
 
 In der folgenden Tabelle finden Sie einige Anweisung dazu, welche **Eigenschaften Ihr Code in das Zugriffstoken einschließen sollte und welche Werte für diese Eigenschaften festgelegt werden sollten**. Wenn Sie verwalteten Code verwenden, erstellen die Dateien SharePointContext.cs (oder .vb) und TokenHelper.cs (oder .vb) die Token für Sie. Nehmen wir beispielsweise an, Ihr Code führt einen einzigen Aufruf an die **SharePointContext.CreateUserClientContextForSPHost**-Methode durch. Diese wiederum ruft Methoden in der **TokenHelper**-Klasse auf, die das Zugriffstoken konstruieren, das dann in jeden Aufruf an SharePoint durch das SharePoint-Clientkontextobjekt eingefügt wird, das von **SharePointContext.CreateUserClientContextForSPHost** zurückgegeben wird.
   
@@ -188,7 +190,8 @@ In Tabelle 2 sind die Ansprüche beschrieben, die Ihr Code in den Hauptteil des 
     
 
 
-```
+
+```
 
 {"typ":"JWT","alg":"RS256","x5t":"7MjK99QvkVdwz6UrKldx8AG7ydM"}
 .
@@ -200,7 +203,8 @@ In Tabelle 2 sind die Ansprüche beschrieben, die Ihr Code in den Hauptteil des 
  "nameid":"c3ab8885-458f-4864-8804-1608145e2ac4@52aa6841-b76b-4ed4-a3d7-a259fce1dfa2",
  "trustedfordelegation":"true"
 }
-```
+
+```
 
 
 > **HINWEIS**

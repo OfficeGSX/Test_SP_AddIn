@@ -123,7 +123,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
     
 
 
- ```HTML
+  ```HTML
   
 <html>
     <body>
@@ -166,7 +166,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
     </script>
     </body>
 </html>
- ```
+  ```
 
 4. Speichern und schließen Sie die Datei.
     
@@ -283,7 +283,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
   
 10. Visual Studio generiert den folgenden XML-Code in der Datei „elements.xml" des Add-In-Webparts (aus Gründen der Übersichtlichkeit wurden Zeilenumbrüche hinzugefügt). Beachten Sie, dass das Attribut **Title** des Elements **ClientWebPart** auf „Titel des Add-In-Basiswebparts" und die Beschreibung auf „Beschreibung für Add-In-Basiswebpart" festgelegt sind. Löschen Sie das Wort „Titel" aus Ersterem, und ersetzen Sie Zweiteres durchEin Add-In-Basiswebpart.
     
- ```XML
+  ```XML
   
 <?xml version="1.0" encoding="UTF-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -341,7 +341,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
     </ClientWebPart>
 </Elements>               
 
- ```
+  ```
 
 
 ### Festlegen der Add-In-Startseite auf die Hostweb-Startseite
@@ -449,9 +449,11 @@ Wenn Ihre im Add-In-Web gehostete Seite nicht für ClickJacking-Angriffe anfäll
     
 
 
-```XML
 
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
+```XML
+
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
+```
 
 Sie können ein  [Codebeispiel für ein Add-In-Webpart](http://code.msdn.microsoft.com/SharePoint-2013-Display-be8dac16) herunterladen, das zeigt, wie Sie eine SharePoint-Seite als Inhaltsseite verwenden.
   
@@ -470,8 +472,10 @@ Sie können POST-Meldungen von Ihrer Inhaltswebseite verwenden, um die Größe d
     
 
 
-```
-window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});```
+
+```
+window.parent.postMessage("<message senderId={SenderId}>resize(120, 300)</message>", {hostweburl});
+```
 
 In dem Beispiel oben wird der **senderId**-Wert vom Add-In-Partcode automatisch auf die Abfragezeichenfolge gesetzt, sobald die Seite gerendert wird. Ihre Seite muss nur den **SenderId**-Wert aus der Abfragezeichenfolge auslesen und bei der Anforderung einer Größenänderung verwenden. Sie können die Hostweb-URL aus der Abfragezeichenfolge abrufen und die Token **StandardTokens** oder **HostUrl** an das **Src** -Attribut in Ihrer Add-In-Partdefinition anhängen. Wenn Sie [Beispielcode für die Größenänderung von Add-In-Parts](http://code.msdn.microsoft.com/officeapps/SharePoint-2013-Resize-app-594acc88) herunterladen, sehen Sie ein Add-In-Part, das dynamisch seine Größe ändert.
   
@@ -501,8 +505,10 @@ Um das **_editMode_** -Token zu verwenden, fügen Sie in der Add-In-Webpart-Dekl
     
 
 
-```XML
-<Content Src="content_page_url&amp;amp;editmode=_editMode_">```
+
+```XML
+<Content Src="content_page_url&amp;amp;editmode=_editMode_">
+```
 
 Über das **_editMode_**-Token kann die Inhaltsseite bestimmen, ob sich das Add-In-Webpart im Bearbeitungsmodus befindet. Wenn sich das Add-In-Webpart im Bearbeitungsmodus befindet, wird das **_editMode_**-Token zu 1 ausgewertet, andernfalls zu 0.
   

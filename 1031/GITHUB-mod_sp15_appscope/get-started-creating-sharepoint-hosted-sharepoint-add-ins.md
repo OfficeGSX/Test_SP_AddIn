@@ -211,12 +211,12 @@ Nachdem Sie die Registrierung abgeschlossen haben, wird in Ihrem Browser die Off
   
 7. Nachdem das Projekt erstellt wurde, öffnen Sie die Datei **/Pages/Default.aspx** aus dem Stammverzeichnis des Projekts. Unter anderem lädt diese generierte Datei eines oder beide der zwei Skripts, die auf SharePoint: sp.runtime.js und sp.js gehostet werden. Das Markup zum Laden dieser Dateien befindet sich im **Content**-Steuerelement im oberen Bereich der Datei mit der ID **PlaceHolderAdditionalPageHead**. Das Markup variiert in Abhängigkeit von der **Microsoft Office-Entwicklertools für Visual Studio** -Version, die Sie verwenden. Diese Reihe von Lernprogrammen erfordert, dass beide Dateien geladen werden und sie mit normalen HTML **<script>**-Tags und nicht mit **<SharePoint:ScriptLink>**-Tags geladen werden. Stellen Sie sicher, dass die folgenden Zeilen im **PlaceHolderAdditionalPageHead**-Steuerelement  *über*  der Zeile `<meta name="WebPartPageExpansion" content="full" />` enthalten sind:
     
- ```
+  ```
   
 <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
- ```
+  ```
 
 
     Durchsuchen Sie anschließend die Datei nach einem anderen Markup, das auch eine oder die andere dieser Dateien lädt, und entfernen Sie das redundante Markup. Speichern und schließen Sie die Datei.
@@ -312,21 +312,21 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
     
 
 
- ```
+  ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
- ```
+  ```
 
 20. Ersetzen Sie dann in der Datei „schema.xml" im Element **View**, dessen **BaseViewID**-Wert „1" ist, das vorhandene Element **ViewFields** durch das folgende Markup. (Verwenden Sie genau diese GUID für das **FieldRef**-Element mit dem Namen  `LinkTitle`.)
     
- ```
+  ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
- ```
+  ```
 
 21. Speichern und schließen Sie die Datei schema.xml.
     
@@ -336,7 +336,7 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
   
 23. Füllen Sie in dieser Datei die Liste mit einigen Ausgangsdaten. Hierzu fügen Sie folgendes **Data**-Elementmarkup als untergeordnetes Element des **ListInstance**-Elements hinzu. 
     
- ```
+  ```
   
 <Data>
   <Rows>
@@ -354,7 +354,7 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
     </Row>
   </Rows>
 </Data>
- ```
+  ```
 
 24. Speichern und schließen Sie die Datei.
     
@@ -373,13 +373,13 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
   
 29. Suchen Sie das ASP.NET **Content**-Element mit der ID **PlaceHolderMain**.  *Ersetzen*  Sie seinen Inhalt mit dem folgenden Markup. ` _spPageContextInfo` ist ein JavaScript-Objekt, das SharePoint automatisch auf der Seite enthält. Die entsprechende `webAbsoluteUrl`-Eigenschaft gibt die URL des Add-In-Web zurück.
     
- ```XML
+  ```XML
   
 <p><asp:HyperLink runat="server"
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
- ```
+  ```
 
 
 ## Ausführen des Add-Ins und Testen der Liste

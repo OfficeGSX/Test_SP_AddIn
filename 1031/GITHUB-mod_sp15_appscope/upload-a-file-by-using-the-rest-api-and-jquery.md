@@ -57,14 +57,19 @@ Um die Beispiele in diesem Artikel zu verwenden, benötigen Sie Folgendes:
     
   
 - Ein Verweis zur jQuery-Bibliothek library in Ihrem Seitenmarkup. Beispiel:
-    ```HTML
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>```
+    
+  ```HTML
+  
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
+  ```
 
 - Die folgenden Steuerelemente in Ihrem Seitenmarkup.
-    ```HTML
-<input id="getFile" type="file"/><br />
+    
+  ```HTML
+  <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>```
+<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
+  ```
 
 
 ## Codebeispiel 1: Laden Sie eine SharePoint-domänenübergreifende Datei mit der REST-API und jQuery hoch
@@ -80,7 +85,8 @@ Um dieses Beispiel verwenden zu können, müssen Sie  [diese Anforderungen](uplo
     
 
 
-```
+
+```
 
 'use strict';
 
@@ -243,7 +249,8 @@ function getQueryStringParameter(paramToRetrieve) {
         var singleParam = params[i].split("=");
         if (singleParam[0] == paramToRetrieve) return singleParam[1];
     }
-}```
+}
+```
 
 
 ## Codebeispiel 2: Laden Sie eine Datei mit der REST-API und jQuery auf die gleiche Domäne hoch
@@ -259,7 +266,8 @@ Bevor Sie dieses Beispiel ausführen können, müssen Sie  [diese Anforderungen]
     
 
 
-```
+
+```
 
 'use strict';
 
@@ -394,7 +402,8 @@ function uploadFile() {
 // Display error messages. 
 function onError(error) {
     alert(error.responseText);
-}```
+}
+```
 
 
 ## Zusätzliche Ressourcen

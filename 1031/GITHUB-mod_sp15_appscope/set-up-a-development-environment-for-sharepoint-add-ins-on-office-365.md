@@ -1,6 +1,6 @@
 ---
 title: Einrichten einer Entwicklungsumgebung für SharePoint-Add-Ins in Office 365
-ms.prod: SHAREPOINT
+ms.prod: MULTIPLEPRODUCTS
 ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
 ---
 

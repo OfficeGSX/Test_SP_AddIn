@@ -163,7 +163,7 @@ In Abbildung 1 ist das Browserfenster mit Daten vom Remotedienst auf einer Share
     
   
 
- ```
+  ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -254,7 +254,7 @@ Categories from the Northwind database exposed as an OData service:
     }
 })();
 </script>
- ```
+  ```
 
 
 ### (Optional) So ändern Sie die Seite "Default.aspx" für die Verwendung des Webproxys mithilfe des REST-Endpunkts
@@ -287,7 +287,7 @@ Categories from the Northwind database exposed as an OData service:
     
   
 
- ```
+  ```
   
 Categories from the Northwind database exposed as an OData service:
     
@@ -393,7 +393,7 @@ Categories from the Northwind database exposed as an OData service:
 })();
 </script>
 
- ```
+  ```
 
 
 ### So bearbeiten Sie die App-Manifestdatei
@@ -404,12 +404,12 @@ Categories from the Northwind database exposed as an OData service:
   
 2. Kopieren Sie die folgende **RemoteEndPoints**-Definition als untergeordneten Knoten des **App**-Knotens.
     
- ```XML
+  ```XML
   
 <RemoteEndpoints>
     <RemoteEndpoint Url=" http://services.odata.org" />
 </RemoteEndpoints>
- ```
+  ```
 
 
     Mit dem **RemoteEndpoint**-Element wird die Remotedomäne angegeben. Der Webproxy überprüft, ob die ausgegebenen Anforderungen an Remotedomänen im App-Manifest deklariert sind. Sie können bis zu 20 Einträge im **RemoteEndpoints**-Element erstellen. Nur die Autoritätskomponente wird berücksichtigt,  `http://domain:port` und `http://domain:port/website` werden als derselbe Endpunkt betrachtet. Sie können mit einer einzelnen **RemoteEndpoint** -Definition Aufrufe für viele verschiedene Endpunkte in derselben Domäne ausgeben.
@@ -462,7 +462,7 @@ Categories from the Northwind database exposed as an OData service:
     
 
 |
-|Unbehandelte Ausnahme: **SP ist nicht definiert**. <br/> |Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/>```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **VORSICHT**> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
+|Unbehandelte Ausnahme: **SP ist nicht definiert**. <br/> |Stellen Sie sicher, dass Sie in einem Browserfenster auf die Datei **SP.RequestExecutor.js** zugreifen können. <br/> Wenn Sie den lokalen Server als Entwicklungsumgebung verwenden, müssen Sie die IIS-Loopbackprüfung deaktivieren. Führen Sie an einer Windows PowerShell-Eingabeaufforderung den folgenden Befehl aus.  <br/> ```New-ItemProperty HKLM:\\System\\CurrentControlSet\\Control\\Lsa -Name "DisableLoopbackCheck" -value "1" -PropertyType dword```> **VORSICHT**> Das Deaktivieren der IIS-Loopbackprüfung wird in einer Produktionsumgebung nicht empfohlen.           |
 |Die Größe der Antwort vom Remoteendpunkt übersteigt den konfigurierten Höchstwert.  <br/> |Die Webproxyanforderungen der Antwort dürfen nicht größer als 200 KB sein.  <br/> |
    
 

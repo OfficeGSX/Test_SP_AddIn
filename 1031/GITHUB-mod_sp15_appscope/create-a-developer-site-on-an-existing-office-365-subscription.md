@@ -84,8 +84,11 @@ Eine Website für Office 365-Entwickler erleichtert Ihnen die Einrichtung und de
 6. Geben Sie im Dialogfeld **Neue Websitesammlung** Informationen zu Ihrer Entwicklerwebsite an.
     
     **Klicken Sie auf das folgende Bild, um Schritt für Schritt durch die Optionen im Dialogfeld „Neue Websitesammlung" zu gehen. Weitere Hinweise finden Sie in der Tabelle unter dem Bild.**
-     [![Click to zoom into new site collection options](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)](http://go.microsoft.com/fwlink/?LinkId=400960)
-	 
+     [![Click to zoom into new site collection options](images/SPAdminCenter_newSiteCollection_options_ZoomIt.gif)
+  
+    
+    
+](http://go.microsoft.com/fwlink/?LinkId=400960)
 |||
 |:-----|:-----|
 |**Title** <br/> |Der Name, den Sie Ihrer Entwicklerwebsite geben möchten.  <br/> |

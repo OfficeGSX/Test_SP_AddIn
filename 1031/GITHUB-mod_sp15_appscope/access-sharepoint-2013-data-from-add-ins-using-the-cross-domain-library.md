@@ -115,7 +115,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
   
 3. Doppelklicken Sie auf **Ankündigungen** **>** **Elements.xml**. Fügen Sie die folgenden XML-Knoten als untergeordnete Objekte des **ListInstance** -Elements ein.
     
- ```
+  ```
   
 <Data>
     <Rows>
@@ -129,7 +129,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
         </Row>
     </Rows>
 </Data>
- ```
+  ```
 
 
 ### So fügen Sie eine neue Webseite hinzu, die die domänenübergreifende Bibliothek verwendet
@@ -168,7 +168,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
     
   
 
- ```
+  ```
   
 <html>
     <head>
@@ -272,7 +272,7 @@ Abbildung 2 zeigt eine Webseite, die Daten im Add-In-Web anzeigt.
         </script>
     </body>
 </html>
- ```
+  ```
 
 
 ### So erstellen Sie die Lösung und führen sie aus
@@ -300,7 +300,7 @@ Falls Sie herunterladbare Codebeispiel bevorzugen, rufen Sie diese aus der Code 
 |:-----|:-----|
 |Fehlermeldung: Zugriff auf Ihre Website nicht möglich.  <br/> Es gibt zwar eine Schaltfläche zur Fehlerbehebung, aber sie löst nicht das Problem.  <br/> |Möglicherweise haben Sie ein bekanntes Problem mit Sicherheitszonen in Internet Explorer. Weitere Informationen dazu finden Sie unter  [Arbeiten mit der domänenübergreifenden Bibliothek in verschiedenen Internet Explorer-Sicherheitszonen in Add-Ins für SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).  <br/> |
 |Fehlermeldung: Die erforderlichen Funktionen werden von Ihrem Browser nicht unterstützt. Stellen Sie bitte sicher, dass Sie IE8 oder höher bzw. einen anderen modernen Browser verwenden. Stellen Sie bitte ferner sicher, dass das Metatag "X-UA-Compatible" auf "IE = 8" oder höher festgelegt ist.  <br/> |Die domänenübergreifende Bibliothek erfordert den Dokumentmodus **IE8** oder höher. In einigen Fällen ist der Dokumentmodus standardmäßig auf **IE7** festgelegt. Sie können die Internet Explorer-Entwicklertools verwenden, um den Dokumentmodus der Seite zu ermitteln bzw. zu ändern. Weitere Informationen finden Sie unter [Definieren der Dokumentkompatibilität](http://msdn.microsoft.com/de-de/library/cc288325.aspx).  <br/> |
-|Fehlermeldung: "Typ" wurde nicht definiert.  <br/> Ihr Add-In verwendet auch das JavaScript-Objektmodell (JSOM).  <br/> |Das JSOM verwendet die **Type.registerNamespace**-Methode in der Microsoft Ajax-Bibliothek, um den **SP** -Namespace zu registrieren. Verwenden Sie den folgenden Code, um einen Verweis von Ihrer Webseite auf die Microsoft Ajax-Bibliothek zu erstellen: <br/>```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
+|Fehlermeldung: "Typ" wurde nicht definiert.  <br/> Ihr Add-In verwendet auch das JavaScript-Objektmodell (JSOM).  <br/> |Das JSOM verwendet die **Type.registerNamespace**-Methode in der Microsoft Ajax-Bibliothek, um den **SP** -Namespace zu registrieren. Verwenden Sie den folgenden Code, um einen Verweis von Ihrer Webseite auf die Microsoft Ajax-Bibliothek zu erstellen: <br/> ```HTML<script type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```|
    
 
 ## Nächste Schritte
@@ -356,7 +356,8 @@ Sie können die Kontextwebsite über den **AppContextSite**-Endpunkt (REST) oder
     
 
 
-```
+
+```
 
 executor.executeAsync(
     {
@@ -369,7 +370,8 @@ executor.executeAsync(
         success: successHandler,
         error: errorHandler
     }
-);```
+);
+```
 
 Das folgende Codebeispiel zeigt, wie die Kontextwebsite mit JSOM geändert wird:
   
@@ -377,7 +379,8 @@ Das folgende Codebeispiel zeigt, wie die Kontextwebsite mit JSOM geändert wird:
     
 
 
-```
+
+```
 
 context = new SP.ClientContext(appweburl);
 factory = new SP.ProxyWebRequestExecutorFactory(appweburl);
@@ -385,7 +388,8 @@ context.set_webRequestExecutorFactory(factory);
 appContextSite = new SP.AppContextSite(context, hostweburl);
 
 this.web = appContextSite.get_web();
-context.load(this.web);```
+context.load(this.web);
+```
 
 Ihr Add-In hat standardmäßig Berechtigungen für das Add-In-Web, aber nicht für das Hostweb. Das folgende Beispiel zeigt einen Manifestabschnitt, der eine Berechtigungsanforderung zum Lesen von Daten aus dem Hostweb deklariert:
   
@@ -393,13 +397,15 @@ Ihr Add-In hat standardmäßig Berechtigungen für das Add-In-Web, aber nicht f�
     
 
 
-```XML
+
+```XML
 
 <AppPermissionRequests>
     <AppPermissionRequest 
         Scope="http://sharepoint/content/sitecollection/web" 
         Right="Read" />
-</AppPermissionRequests>```
+</AppPermissionRequests>
+```
 
 Stellen Sie sicher, dass Sie eine Ressource im Add-In-Web erstellen (beispielsweise eine leere Seite oder Liste), um die Bereitstellung des Add-In-Webs zu erzwingen, die für eine Verwendung der domänenübergreifenden Bibliothek erforderlich ist.
   
@@ -432,13 +438,15 @@ Ihr Add-In benötigt auch Zugriffsberechtigungen für Daten aus dem Mandanten. D
     
 
 
-```XML
+
+```XML
 
 <AppPermissionRequests>
   <AppPermissionRequest 
     Scope="http://sharepoint/content/tenant" 
     Right="Read" />
-</AppPermissionRequests>```
+</AppPermissionRequests>
+```
 
 Wenn Sie die Kontextwebsite in Ihrem Code wechseln möchten, verwenden Sie den **AppContextSite**-Endpunkt (REST) oder das Objekt (JSOM), genau so wie im Abschnitt  [Zugreifen auf Daten in einem Hostweb](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) beschrieben. Hier finden Sie zur Erinnerung Informationen zum REST-Endpunkt:/_api/SP.AppContextSite(@target)/web/title?@target='weburl' und ein Beispiel zum Instanziieren des Objekts in JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
   

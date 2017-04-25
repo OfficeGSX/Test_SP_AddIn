@@ -27,7 +27,8 @@ Die Anforderung gibt eine ADO- **rowset**-XML-Datei zurück, die Zeilen enthält
 |**Beispielanforderung** <br/> |
 | `POST http://server/site/_api/web/Lists/GetByTitle('Announcements')/GetListItemChangesSinceToken` <br/> |
 |**Beispiel für einen POST-Textkörper** <br/> |
-|```XML
+|
+```XML
 
 { 'd' : {
   'query': { 
@@ -50,7 +51,8 @@ Die Anforderung gibt eine ADO- **rowset**-XML-Datei zurück, die Zeilen enthält
       <Value Type="Text">Testing</Value></Contains>' } 
   } 
 }
-```
+
+```
 
 |
    

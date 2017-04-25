@@ -1,6 +1,6 @@
 ---
 title: Festlegen von benutzerdefinierten Berechtigungen in einer Liste mit der REST-Schnittstelle
-ms.prod: MULTIPLEPRODUCTS
+ms.prod: SHAREPOINT
 ms.assetid: d5fcc26c-4e44-404b-aacf-e9351af8cc7d
 ---
 
@@ -82,7 +82,8 @@ Bevor Sie den Code ausführen, müssen Sie die Platzhalterwerte durch tatsächli
     
 
 
-```
+
+```
 
 'use strict';
 
@@ -207,7 +208,8 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}```
+}
+```
 
  **Beispiel 2: jQuery AJAX-Anforderungen**
   
@@ -215,7 +217,8 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
 
 
-```
+
+```
 
 // Change placeholder values before you run this code.
 var siteUrl = 'http://server/site';
@@ -305,7 +308,8 @@ function successHandler() {
 
 function errorHandler(xhr, ajaxOptions, thrownError) {
     alert('Request failed: ' + xhr.status + '\\n' + thrownError + '\\n' + xhr.responseText);
-}```
+}
+```
 
 
 ## Zusätzliche Ressourcen

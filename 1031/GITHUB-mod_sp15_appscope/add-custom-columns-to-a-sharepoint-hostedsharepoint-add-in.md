@@ -45,7 +45,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
   
 4. Bearbeiten Sie in der Datei „elements.xml" für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel gezeigten Attribute und Werte hat, mit der Ausnahme, dass Sie den Wert *der GUID*  für das Attribut **ID** **nicht** von dem Wert ändern, den Visual Studio dafür generiert hat. *Seien Sie also vorsichtig, wenn Sie Kopieren und Einfügen verwenden*  .
     
- ```
+  ```
   
 <Field ID="{generated GUID}"
        Name="Division" 
@@ -56,14 +56,14 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
        Type="Text" 
        Required ="FALSE">
 </Field>
- ```
+  ```
 
 5. Fügen Sie eine weitere **Websitespalte** im selben Ordner mit dem NamenOrientationStage hinzu.
     
   
 6. Bearbeiten Sie in der Datei elements.xml für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel dargestellten Attribute und Werte aufweist, mit der Ausnahme, dass der Wert der GUID für das Attribut **ID**, den Visual Studio dafür generiert hat, nicht geändert wird.
     
- ```
+  ```
   
 <Field ID="{generated GUID}"
        Name="OrientationStage" 
@@ -74,11 +74,11 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
        Type="Choice"
        Required ="TRUE">
 </Field>
- ```
+  ```
 
 7. Da es sich um ein Auswahlfeld handelt, müssen Sie die Auswahlmöglichkeiten und die Reihenfolge angeben, in der diese in der Dropdownliste angezeigt werden sollen, wenn ein Benutzer eine Auswahl vornimmt. Und da es ein Pflichtfeld ist, müssen Sie einen Standardwert angeben. Fügen Sie das folgende untergeordnete Markup zum Element **Field** hinzu.
     
- ```
+  ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -95,7 +95,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
       <MAPPING Value="5">Completed</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
- ```
+  ```
 
 8. Speichern Sie alle Dateien.
     

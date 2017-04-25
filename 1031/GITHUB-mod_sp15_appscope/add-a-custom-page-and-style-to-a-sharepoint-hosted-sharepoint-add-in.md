@@ -50,30 +50,30 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Employee Orientation" eine
   
 3. Suchen Sie nach den beiden **asp:Content**-Elementen in der Datei, und fügen Sie das folgende dritte **asp:Content**-Markup dazwischen hinzu.
     
- ```HTML
+  ```HTML
   
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
     Help
 </asp:Content> 
- ```
+  ```
 
 4. Suchen Sie nach dem **asp:Content**-Element mit der ID **PlaceholderAdditionalPageHead**, und fügen Sie das folgende Markup hinzu.
     
- ```HTML
+  ```HTML
   
 <link rel="Stylesheet" type="text/css" href="../Content/App.css" />
- ```
+  ```
 
 5. Suchen Sie nach dem **asp:Content**-Element mit der ID **PlaceHolderMain**, und entfernen Sie alle darin enthaltenten untergeordneten Elemente.
     
   
 6. Fügen Sie Folgendes als Inhalt zum selben **asp:Content**-Element hinzu.
     
- ```HTML
+  ```HTML
   <H3>Having a problem with the add-in?</H3>
 <p> Call the help line for Fabrikam Add-ins:</p>
 <p>1-555-555-5555</p>
- ```
+  ```
 
 7. Speichern und schließen Sie die Datei.
     
@@ -83,12 +83,12 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Employee Orientation" eine
   
 9. Suchen Sie nach dem **asp:Content**-Element mit der ID **PlaceHolderMain**, und fügen Sie an dessen Ende das folgende Markup hinzu. 
     
- ```HTML
+  ```HTML
   
 <p><asp:HyperLink runat="server" NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Pages/Help.aspx';"
     Text="Get help for the Employee Orientation add-in" /></p>
 
- ```
+  ```
 
 10. Speichern und schließen Sie die Datei.
     
@@ -103,10 +103,10 @@ In diesem Artikel fügen Sie dem SharePoint-Add-In „Employee Orientation" eine
 
 1. Öffnen Sie im **Projektmappen-Explorer** im Ordner **Inhalt** die Datei „app.css", und fügen Sie der Datei dann die folgende Zeile hinzu.
     
- ```
+  ```
   
 p {color: green;}
- ```
+  ```
 
 2. Speichern und schließen Sie die Datei.
     

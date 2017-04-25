@@ -131,7 +131,7 @@ Wenn Sie in Visual Studio arbeiten und einen RER zu einem SharePoint-Add-In-Proj
   
 - Ein Projektelement für den Remoteereignisempfänger wird dem SharePoint-Add-In-Projekt hinzugefügt. Die Datei "Elements.xml" für den Remoteereignisempfänger verweist auf den Webdienst in der Webanwendung und die Remoteereignisse, die Sie angegeben haben. Das folgende Beispiel zeigt eine Datei "Elements.xml", die das Hinzufügen oder Löschen eines Listenelements behandelt.
     
- ```XML
+  ```XML
   
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -150,7 +150,7 @@ Wenn Sie in Visual Studio arbeiten und einen RER zu einem SharePoint-Add-In-Proj
       </Receiver>
   </Receivers>
 </Elements>
- ```
+  ```
 
 Um die Ereignisse zu ändern, die der Remote-Ereignisempfänger behandelt, öffnen Sie den **Projektmappen-Explorer** und dann das Fenster **Eigenschaften** für den Remote-Ereignisempfänger, erweitern den Knoten **SharePoint-Ereignisse** und legen dann nur die zu behandelnden Ereignisse auf **True** fest.
   
@@ -298,7 +298,8 @@ Ausgedrückt in Pseudocode sollte Ihr Handler in der Regel etwa wie folgt aufgeb
   
     
     
-```
+
+```
 
 Try
     If X not already done,
@@ -307,7 +308,8 @@ Catch
     Send cancel message to SharePoint.
     If X not already undone,
         Undo X.
-```
+
+```
 
 Das Implementieren der Rollback- und "Bereits erledigt"-Logik in Ihrem Webdienst kann jedoch den Handler verlangsamen. Die Installations- und die Rollbacklogik nehmen in der Regel Änderungen an mehr oder weniger vom Webdienst entfernten Komponenten vor, wie z. B. dem SharePoint-Hostweb oder einer Back-End-Datenbank. Wenn der Installations- und Rollbackcode zwischen den Try und Catch-Abschnitten aufgeteilt ist, macht der Dienst separate Aufrufe an die Remotekomponenten, häufig mehrere solcher Aufrufe in jedem Abschnitt. Die bewährte Methode ist in der Regel, die Installations- und Rollbacklogik auf der Remotekomponente selbst in einer Prozedur zu implementieren, die im Try-Abschnitt vom Ereignishandler aufgerufen werden kann. Die Prozedur sollte eine Erfolgs- oder Fehlernachricht zurückgeben, und wenn ein Fehler gemeldet wird, ruft Code im Try-Abschnitt den Catch-Abschnitt auf (z. B. durch Auslösen einer Ausnahme). Im Catch-Abschnitt wird lediglich SharePoint benachrichtigt. Wir nennen dies die Strategie der Handlerdelegierung. Der folgende Pseudocode veranschaulicht die Strategie:
   
@@ -315,14 +317,16 @@ Das Implementieren der Rollback- und "Bereits erledigt"-Logik in Ihrem Webdienst
     
 
 
-```
+
+```
 
 Try
     Call the "Do X" procedure on remote platform.
     If remote platform reports failure, call Catch.
 Catch
     Send cancel message to SharePoint.
-```
+
+```
 
 Die Prozedur "Do X" selbst, die auf dem Remotesystem ausgeführt wird, enthält die Rollback- und "Bereits erledigt"-Logik, wie die folgende.
   
@@ -330,7 +334,8 @@ Die Prozedur "Do X" selbst, die auf dem Remotesystem ausgeführt wird, enthält 
     
 
 
-```
+
+```
 
 Try
     If X not already done,
@@ -342,7 +347,8 @@ Catch
     Set success flag to false.
 Send
     Return success flag to the event handler.
-```
+
+```
 
 Wenn der Handler z. B. eine Aktion in einer SQL Server-Datenbank ausführen muss, können Sie auf dem SQL-Server eine gespeicherte Prozedur mit einem  [TRY-CATCH](http://msdn.microsoft.com/library/248df62a-7334-4bca-8262-235a28f4b07f%28Office.15%29.aspx)-Block für die Logik zum Zurücksetzen der Installation und mit  [IF-ELSE](http://msdn.microsoft.com/library/676c881f-dee1-417a-bc51-55da62398e81%28Office.15%29.aspx)-Blöcken zum Implementieren von "Bereits erledigt"-Logik installieren.
   
@@ -393,7 +399,8 @@ In SharePoint 2010 verarbeiten Ereignisempfänger Ereignisse, die in SharePoint-
 
 |**SharePoint-Lösungen**|**SharePoint-Add-Ins**|
 |:-----|:-----|
-|```cs
+|
+```cs
 
 // Trigger an event when an item is added to the SharePoint list.
 Public class OnPlantUpdated : SPItemEventReceiver
@@ -410,9 +417,11 @@ Public override void ItemUpdating(SPItemEventProperties properties)
 Properties.AfterProperties.ChangedProperties.Add("Image",CreateLink9properties));
 Properties.Status= SPEventReceiverStatus.Continue;
 }
-```
 
-|```cs
+```
+
+|
+```cs
 
 /* Trigger an event when an item is added to the SharePoint list*/
 Public class OnPlantUpdated : IRemoteEventService
@@ -426,7 +435,8 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 // Add code that runs when an item is added or updated.
 }
-```
+
+```
 
 |
    

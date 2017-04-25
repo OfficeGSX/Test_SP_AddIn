@@ -87,7 +87,8 @@ Sie müssen in Ihrem Add-In-Manifest entweder das **SupportedLocales**- oder das
 
 
 
-```XML
+
+```XML
 
 <?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
@@ -112,7 +113,8 @@ Sie müssen in Ihrem Add-In-Manifest entweder das **SupportedLocales**- oder das
     <RemoteWebApplication ClientId="1ee82b34-7c1b-471b-b27e-ff272accd564" />
   </AppPrincipal>
 </App>
-```
+
+```
 
 
 ### URL-Token im Add-In-Manifest

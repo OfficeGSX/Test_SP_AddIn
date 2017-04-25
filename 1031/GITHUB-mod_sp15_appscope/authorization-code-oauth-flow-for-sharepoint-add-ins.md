@@ -82,7 +82,8 @@ Die Fotodruck-Anwendung ist registriert, verfügt also bereits über eine Client
     
 
 
-```XML
+
+```XML
 
 <configuration>
   <appSettings>
@@ -91,7 +92,8 @@ Die Fotodruck-Anwendung ist registriert, verfügt also bereits über eine Client
 
   </appSettings>
 
-</configuration>```
+</configuration>
+```
 
 Im Folgenden sind die einzelnen Schritte im Authentifizierungscodeablauf aufgeführt.
   
@@ -134,12 +136,14 @@ Die Bereichsaliaswerte kommen nur im Rahmen der Verwendung der OAuthAuthorize.as
     
 
 
-```cs
+
+```cs
 
 Response.Redirect(TokenHelper.GetAuthorizationUrl(
     sharePointSiteUrl.ToString(), 
     "Web.Read List.Write ", 
-    "https://contoso.com/RedirectAccept.aspx "));```
+    "https://contoso.com/RedirectAccept.aspx "));
+```
 
 Der  _scope_-Parameterwert  `Web.Read List.Write` ist ein Beispiel für die Anforderung von Berechtigungen unter Verwendung von Bereichsaliasen. Der _scope_-Parameter ist ein durch Leerzeichen getrennter Satz von Anforderungen für Berechtigungsbereiche und Rechte.
   
@@ -198,13 +202,15 @@ Der **Umleitungs-URI**, der von Add-Ins verwendet wird, die Berechtigungen dynam
     
 
 
-```XML
+
+```XML
 
 <configuration>
   <appSettings>
     <add key="RedirectUri" value="https://contoso.com/RedirectAccept.aspx" />
   </appSettings>
-<configuration>```
+<configuration>
+```
 
 Der Wert kann mit einem Aufruf an  `WebConfigurationManager.AppSettings.Get("RedirectUri")` abgerufen werden.
   
@@ -243,7 +249,8 @@ Ein komplexeres Beispiel zur Verwendung des Aktualisierungstoken zum Abrufen ein
     
 
 
-```cs
+
+```cs
 
 public partial class RedirectAccept : System.Web.UI.Page
 {
@@ -266,7 +273,8 @@ public partial class RedirectAccept : System.Web.UI.Page
        }
     }
 }
-```
+
+```
 
 
 ## Beispielcode für eine Seite, die auf SharePoint zugreift
@@ -294,7 +302,8 @@ Im Folgenden sehen Sie den Code, der einer Default.aspx-Seite zugrunde liegt. Di
 - Die in diesem Code referenzierte **TokenCache**-Klasse ist unten definiert.
     
   
-```cs
+
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -345,7 +354,8 @@ namespace DynamicAppPermissionRequest
             }
         }
     }
-}```
+}
+```
 
 Im Folgenden sehen Sie ein Codebeispiel für ein Tokencachemodul, das vom vorherigen Beispiel aufgerufen wird. Dabei werden Cookies als Cache verwendet. Es gibt weitere Cacheoptionen. Weitere Informationen finden Sie unter  [Handhabung von Sicherheitstoken in vom Anbieter gehosteten Add-Ins für SharePoint mit niedriger Vertrauensebene](handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins.md).
   
@@ -353,7 +363,8 @@ Im Folgenden sehen Sie ein Codebeispiel für ein Tokencachemodul, das vom vorher
     
 
 
-```cs
+
+```cs
 
 using System;
 using System.Collections.Generic;
@@ -422,7 +433,8 @@ namespace DynamicAppPermissionRequest
         }
     }
 }
-```
+
+```
 
 
 ## Weitere Ressourcen

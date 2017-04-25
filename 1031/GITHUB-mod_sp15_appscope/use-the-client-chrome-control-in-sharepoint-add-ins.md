@@ -186,7 +186,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
     
   
 
- ```HTML
+  ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -306,7 +306,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
- ```
+  ```
 
 3. Sie können das Chromsteuerelement auch in deklarativem Code verwenden. Im folgenden Codebeispiel wird das Chromsteuerelement im HTML-Markup deklariert, ohne dass JavaScript-Code zum Konfigurieren und Initialisieren des Steuerelements verwendet wird. Das nachstehende Markup führt die folgenden Aufgaben aus:
     
@@ -320,7 +320,7 @@ function getQueryStringParameter(paramToRetrieve) {
     
   
 
- ```HTML
+  ```HTML
   
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -406,7 +406,7 @@ function getQueryStringParameter(paramToRetrieve) {
     </div>
 </body>
 </html>
- ```
+  ```
 
 
     Die Bibliothek **SP.UI.Controls.js** rendert das Steuerelement automatisch, wenn sie das **data-ms-control="SP.UI.Controls.Navigation"**-Attribut in einem **div**-Element findet.

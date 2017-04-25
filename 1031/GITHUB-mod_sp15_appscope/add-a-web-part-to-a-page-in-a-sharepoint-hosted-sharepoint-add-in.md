@@ -48,12 +48,12 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
   
 3. Fügen Sie im selben **<asp:Content>**-Element die folgende **WebPartZone** hinzu.
     
- ```XML
+  ```XML
   
 <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly"
       ID="HomePage1" Title="loc:full" />
 
- ```
+  ```
 
 4. Speichern und schließen Sie die Datei.
     
@@ -66,7 +66,7 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
   
 7. Fügen Sie im Element **File** ein untergeordnetes **AllUsersWebPart**-Element hinzu, und legen Sie dessen **WebPartZoneID** auf die ID der Webpartzone fest, die Sie auf der Seite erstellt haben. Der Inhalt der Datei sollte nun wie folgt aussehen. Dieses Markup weist SharePoint an, ein **AllUsersWebPart** in der Webpartzone namens „HomePage1" einzufügen.
     
- ```
+  ```
   
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Pages">
@@ -78,11 +78,11 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
   </Module>
 </Elements>
 
- ```
+  ```
 
 8. Fügen Sie ein **CDATA**-Element als untergeordnetes Element von **AllUsersWebPart** hinzu, und fügen Sie dann ein **webParts**-Element als untergeordnetes Element von **CDATA** hinzu, wie im folgenden Markup gezeigt.
     
- ```
+  ```
   
 <AllUsersWebPart WebPartZoneID="HomePage1" WebPartOrder="1">
   <![CDATA[
@@ -91,11 +91,11 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
     </webParts>
   ]]>
 </AllUsersWebPart>
- ```
+  ```
 
 9. Fügen Sie das folgende **webPart**-Markup als untergeordnetes Element des Elements **webParts** hinzu. Dieses Markup fügt ein **XsltListViewWebPart** hinzu und weist das Webpart an, die ListeNeue Mitarbeiter in Seattle anzuzeigen. Beachten Sie, dass der Eigenschaftswert **ViewContentTypeId** nur „0x" und nicht die tatsächliche ID des InhaltstypsNewEmployee ist.
     
- ```
+  ```
   
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
@@ -115,7 +115,7 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
       </properties>
     </data>
   </webPart>
- ```
+  ```
 
 
 ## Ausführen und Testen des Add-Ins

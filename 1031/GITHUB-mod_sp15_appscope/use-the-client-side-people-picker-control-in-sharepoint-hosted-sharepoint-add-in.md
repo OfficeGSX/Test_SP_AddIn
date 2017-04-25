@@ -144,7 +144,8 @@ Das erste Beispiel zeigt das Seitenmarkup für die **PlaceHolderMain**- **asp:Co
     
 
 
-```HTML
+
+```HTML
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <SharePoint:ScriptLink name="clienttemplates.js" runat="server" LoadAfterUI="true" Localizable="false" />
@@ -166,7 +167,8 @@ Das erste Beispiel zeigt das Seitenmarkup für die **PlaceHolderMain**- **asp:Co
         <h1>User ID:</h1>
         <p id="userId"></p>
     </div>
-</asp:Content>```
+</asp:Content>
+```
 
 
 > **HINWEIS**
@@ -181,7 +183,8 @@ Das folgende Beispiel zeigt das Skript aus der Datei "App.js". Dieses Skript ini
     
 
 
-```
+
+```
 
 // Run your custom code when the DOM is ready.
 $(document).ready(function () {
@@ -252,7 +255,8 @@ function ensureUserSuccess() {
 
 function onFail(sender, args) {
     alert('Query failed. Error: ' + args.get_message());
-}```
+}
+```
 
 
 ## Zusätzliche Ressourcen

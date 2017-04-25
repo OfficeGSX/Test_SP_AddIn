@@ -133,7 +133,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
   
 2. Bearbeiten Sie in der Datei elements.xml für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel dargestellten Attribute und Werte aufweist, mit der Ausnahme, dass der Wert der GUID für das **ID**Attribut, den Visual Studio 2012 dafür generiert hat, nicht geändert wird. Vergessen Sie nicht die umschließenden Klammern "{}".
     
- ```
+  ```
   
 <Field ID="{generated GUID}"
        Name="Actor" 
@@ -143,14 +143,14 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
        Description="The person cast, perhaps tentatively, in the role" 
        Type="Text" 
 />
- ```
+  ```
 
 3. Fügen Sie eine weitere **Websitespalte** zum Projekt mit dem NamenCastingStatus hinzu.
     
   
 4. Bearbeiten Sie in der Datei elements.xml für die neue Websitespalte das Element **Field** so, dass es die im folgenden Beispiel dargestellten Attribute und Werte aufweist, mit der Ausnahme, dass der Wert der GUID für das Attribut **ID**, den Visual Studio 2012 dafür generiert hat, nicht geändert wird.
     
- ```
+  ```
   
 <Field ID="{generated GUID}"
        Name="CastingStatus" 
@@ -160,11 +160,11 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
        Description="The current casting status of the role" 
        Type="Choice">
 </Field>
- ```
+  ```
 
 5. Weil es sich um ein Auswahlfeld handelt, müssen Sie die Auswahlmöglichkeiten, die Reihenfolge ihrer Anzeige in der Dropdownliste, wenn ein Benutzer eine Auswahl trifft, sowie die Standardauswahl angeben. Fügen Sie dem Element **Field** das folgende untergeordnete Markup hinzu.
     
- ```
+  ```
   
 <CHOICES>
       <CHOICE>Not Started</CHOICE>
@@ -181,7 +181,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
       <MAPPING Value="5">Committed to Role</MAPPING>
 </MAPPINGS>
 <Default>Not Started</Default>
- ```
+  ```
 
 
 ### So erstellen Sie den benutzerdefinierten Inhaltstyp
@@ -221,11 +221,11 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
   
 9. Die Datei enthält bereits **FieldRef**-Elemente für die beiden Spalten, die Sie hinzugefügt haben. Fügen Sie **FieldRef**-Elemente für zwei integrierte SharePoint 2013-Spalten als übergeordnete Elemente der beiden bereits vorhandenen hinzu. Nachfolgend dargestellt ist das Markup für die Elemente.  *Sie müssen diese GUIDs für die ID-Attribute verwenden, da diese integrierte Feldtypen mit festen IDs sind.*  Fügen Sie sie *über*  den beiden **FieldRef**-Elementen für die benutzerdefinierten Websitespalten hinzu.
     
- ```
+  ```
   
 <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
- ```
+  ```
 
 
     Beachten Sie, dass wir diesen Feldern einen benutzerdefinierten Anzeigenamen zugewiesen haben: **Character**, im Sinne eines Charakters in einem Stück oder Film.
@@ -306,26 +306,26 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
   
 19. Ersetzen Sie dann in der Datei schema.xml im Element **View**, dessen BaseViewID-Wert "0" ist, das vorhandene Element **ViewFields** durch das folgende Markup. (Verwenden Sie genau diese GUID für das **FieldRef**-Element mit dem Namen  `LinkTitle`.)
     
- ```
+  ```
   
 <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Character" />
   <FieldRef Name="Actor" ID="{GUID from the site column elements.xml}" />
   <FieldRef Name="CastingStatus" ID="{GUID from the site column elements.xml}" />
 </ViewFields>
- ```
+  ```
 
 20. Ersetzen Sie die beiden fehlenden ID-Attributwerte durch die GUIDs in den Dateien elements.xml der entsprechenden Websitespalten. Vergessen Sie nicht die umschließenden Klammern "{}".
     
   
 21. Ersetzen Sie dann in der Datei schema.xml im Element **View**, dessen BaseViewID-Wert "1" ist, das vorhandene Element **ViewFields** durch das folgende Markup. (Verwenden Sie genau diese GUID für das **FieldRef**-Element mit dem Namen  `LinkTitle`.)
     
- ```
+  ```
   
 <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Character" />
 </ViewFields>
- ```
+  ```
 
 22. Kopieren Sie die beiden **FieldRef**-Elemente für  `Actor` und `CastingStatus`, die Sie in der vorherigen Ansicht diesem **ViewFields**-Element als gleichgeordnete Elemente von  `LinkTitle` **FieldRef** hinzugefügt haben.
     
@@ -338,7 +338,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
   
 25. Geben Sie in die Liste einige Anfangsdaten ein, indem Sie das folgende Markup als untergeordnetes Element des **ListInstance**-Elements hinzufügen.
     
- ```
+  ```
   
 <Data>
   <Rows>
@@ -369,7 +369,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
     </Row>
   </Rows>
 </Data>
- ```
+  ```
 
 2. Wählen Sie im **Projektmappen-Explorer** die Option **Feature1** aus, um den Feature-Designer zu öffnen. Im Designer legen Sie für den **Titel**Theater and Movie Data Components und für die **Beschreibung**Websitespalten, Inhaltstypen und Listeninstanzen für Daten zu Theater und Film fest. Speichern Sie die Datei und schließen Sie den Designer.
     
@@ -390,7 +390,7 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
     
 1. Öffnen Sie die Datei Default.aspx und ersetzen Sie das Textelement der Datei durch das folgende Markup. Das Markup fügt eine Schaltfläche **Get the Cast (Besetzung abrufen)** hinzu, welche, wenn sie ausgewählt wird, die Liste **Characters in Hamlet** in der Add-In-Website liest und deren Daten in einem [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) -Steuerelement darstellt, das erst nach dem Drücken der Schaltfläche angezeigt wird.
     
- ```HTML
+  ```HTML
   
 <body >
     <form id="form1" runat="server">
@@ -406,11 +406,11 @@ Mit den Schritten in diesem Abschnitt erstellen Sie auf Ihrem Entwicklungscomput
     <asp:GridView ID="GridView1" runat="server" Caption="The Cast" ></asp:GridView>
     </form>
 </body>
- ```
+  ```
 
 2. Öffnen Sie die Datei Default.aspx.cs und fügen Sie die folgenden **using**-Anweisungen hinzu.
     
- ```cs
+  ```cs
   
 using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
@@ -421,7 +421,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.SharePoint.Samples;
- ```
+  ```
 
 
     Die letzte dieser Anweisungen bezieht sich auf den Namespace, der in der Datei TokenHelper.cs deklariert ist.
@@ -429,16 +429,16 @@ using Microsoft.SharePoint.Samples;
   
 3. Fügen Sie der **Default**-Klasse die folgenden Felder hinzu.
     
- ```cs
+  ```cs
   
 SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
- ```
+  ```
 
 4. Ersetzen Sie die **Page_Load**-Methode durch den folgenden Code, der die **TokenHelper**-Klasse verwendet, um Token von dem OAuth-kompatiblen sicheren Token-Server abzurufen. Der Zugriffstoken wird dann in der Eigenschaft  [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) der Schaltfläche zum späteren Abrufen durch den Click-Ereignishandler der Schaltfläche gespeichert.
     
- ```cs
+  ```cs
   
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -458,11 +458,11 @@ protected void Page_Load(object sender, EventArgs e)
         Button1.CommandArgument = accessToken;
     }
 }
- ```
+  ```
 
 5. Fügen Sie der **Default**-Klasse den folgenden Ereignishandler hinzu. Der Handler beginnt, den in der Eigenschaft  [CommandArgument](https://msdn.microsoft.com/library/System.Web.UI.WebControls.Button.CommandArgument.aspx) der Schaltfläche gespeicherten Zugriffstoken abzurufen.
     
- ```cs
+  ```cs
   
 protected void Button1_Click(object sender, EventArgs e)
 {
@@ -470,29 +470,29 @@ protected void Button1_Click(object sender, EventArgs e)
     // in the button's command argument.
     string accessToken = ((Button)sender).CommandArgument;
 }
- ```
+  ```
 
 6. Der Handler muss die geänderte Add-In-Web-URL auf Postbacks neu beziehen. Fügen Sie daher den folgenden Code hinzu.
     
- ```cs
+  ```cs
   
 if (IsPostBack)
 {
     sharepointUrl = new Uri(Request.QueryString["SPAppWebUrl"]);
 }
- ```
+  ```
 
 7. Fügen Sie die folgende Zeile hinzu, die einen der SharePoint 2013-REST/OData-Endpunkte verwendet, um Listendaten abzurufen. In diesem Beispiel liest der Code die Liste **Characters in Hamlet**, die für die Add-In-Website bereitgestellt wird. Die APIs für diesen Dienst machen es einfach, in einer einzelnen Codezeile eine Liste auszuwählen und drei Felder in der Liste zum Zurückgeben festzulegen. Beachten Sie, dass Sie in der OData-URL den internen Namen der Felder (Spalten) und nicht den Anzeigenamen angeben müssen, damit der Code  `Title`,  `Actor` sowie `CastingStatus` verwendet und nicht `Character`,  `Actor/Actress` und `Casting Status.` Weitere Informationen über den REST/OData-Webdienst finden Sie unter [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md).
     
- ```cs
+  ```cs
   
 // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
- ```
+  ```
 
 8. Fügen Sie den folgenden Code hinzu, der die Klassen  [HttpWebRequest](https://msdn.microsoft.com/library/System.Net.HttpWebRequest.aspx) und [HttpWebResponse](https://msdn.microsoft.com/library/System.Net.HttpWebResponse.aspx) des Namespace [System.Net](https://msdn.microsoft.com/library/System.Net.aspx) verwendet, um die HTTP-Anforderungs- und Antwortobjekte zu erstellen.
     
- ```cs
+  ```cs
   
 // HTTP Request and Response construction section
 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(sharepointUrl.ToString() + oDataUrl);
@@ -501,11 +501,11 @@ request.Accept = "application/atom+xml";
 request.ContentType = "application/atom+xml;type=entry";
 request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
- ```
+  ```
 
 9. Fügen Sie den folgenden Code hinzu, um das ATOM-formatierte Antwort-XML zu analysieren. Er verwendet die Klassen des Namespace  [System.Xml.Linq](https://msdn.microsoft.com/library/System.Xml.Linq.aspx) , um die zurückgegebenen Daten zu analysieren und eine [List<T>](http://msdn2.microsoft.com/DE-DE/library/6sh2ey19) der Elemente aus der SharePoint-Liste zu erstellen. (Sie könnten auch die Klassen des Namespace [System.Xml](https://msdn.microsoft.com/library/System.Xml.aspx) verwenden.) Beachten Sie, dass in dem von SharePoint zurückgegebenen XML die untergeordneten Elemente des **entry**-Elements die Metadaten zu dem Listenelement enthalten. Die tatsächlichen Zeilendaten eines SharePoint-Listenelements sind zwei Schichten weiter unten im **properties**-Element geschachtelt. Aus diesem Grund wird die Erweiterungsmethode  [Elements<T>](http://msdn2.microsoft.com/DE-DE/library/bb348465) zweimal verwendet, um die höheren Ebenen herauszufiltern.
     
- ```cs
+  ```cs
   
 // Response markup parsing section
 XDocument oDataXML = XDocument.Load(response.GetResponseStream(), LoadOptions.None);
@@ -517,27 +517,27 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .Elements(atom + "content")
                          .Elements(m + "properties")
                          .ToList();
- ```
+  ```
 
 10. Fügen Sie die folgende LINQ-Abfrage hinzu, um eine  [IEnumerable<T>](http://msdn2.microsoft.com/DE-DE/library/9eekhta0) Sammlung eines anonymen Typs zu erstellen, die nur die Eigenschaften besitzt, die Sie benötigen. Beachten Sie, dass obwohl der Code durch seinen internen `Title`-Namen auf das Elementfeld Titel verweisen muss, der Eigenschaftenname in dem anonymen Typ, dem der Wert zugewiesen wird, als  `Character` benannt werden kann. Ein Effekt davon ist, dass der besser geeignete Name **Character** auf der Seite angezeigt wird, wenn die Sammlung an ein Rastersteuerelement gebunden wird.
     
- ```cs
+  ```cs
   
 var entryFieldValues = from entry in entries
                        select new { Character=entry.Element(d + "Title").Value, 
                                     Actor=entry.Element(d + "Actor").Value, 
                                     CastingStatus=entry.Element(d + "CastingStatus").Value };
 
- ```
+  ```
 
 11. Schließen Sie den Handler mit dem folgenden Code ab, um die Daten an ein  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) -Steuerelement auf der Seite zu binden. Die Spaltenüberschriften in dem Steuerelement werden standardmäßig als die Eigenschaftsnamen des anonymen Typs angezeigt: `Character`,  `Actor` und `CastingStatus`. Das  [GridView](https://msdn.microsoft.com/library/System.Web.UI.WebControls.GridView.aspx) -Steuerelement besitzt Eigenschaften, die es Ihnen ermöglichen, die Überschriften der Namens- und Formatierungsspalten zu steuern, sodass sie **Actor/Actress** und **Casting Status** lauten können, um mit den Spaltenüberschriften in SharePoint übereinzustimmen. Diese Methoden werden der Einfachheit halber hier nicht beschrieben. (Sie könnten auch ein [DataGrid](https://msdn.microsoft.com/library/System.Web.UI.WebControls.DataGrid.aspx) -Steuerelement verwenden.)
     
- ```cs
+  ```cs
   
 GridView1.DataSource = entryFieldValues;
 GridView1.DataBind();
 
- ```
+  ```
 
 12. Speichern Sie alle Dateien.
     

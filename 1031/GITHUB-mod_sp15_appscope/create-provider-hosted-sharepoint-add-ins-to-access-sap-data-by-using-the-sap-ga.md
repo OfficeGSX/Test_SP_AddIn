@@ -191,15 +191,15 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
   
 2. Im Abschnitt  `<appSettings>` verfügen die Office-Entwicklertools für Visual Studio über hinzugefügte Elemente für **ClientID** und **ClientSecret** des SharePoint-Add-In. (Diese werden im Azure ACS-Autorisierungssystem verwendet, wenn die ASP.NET-Anwendung auf SharePoint zugreift. Sie können diese für das fortlaufende Beispiel ignorieren, sollten sie aber nicht löschen. Sie sind in vom Anbieter gehosteten SharePoint-Add-Ins erforderlich, selbst wenn die App nicht auf SharePoint-Daten zugreift. Ihre Werte ändern sich jedes Mal, wenn Sie F5 in Visual Studio drücken.) Fügen Sie die folgenden zwei Elemente zum Abschnitt hinzu. Diese werden von der Anwendung für die Authentifizierung bei Azure AD verwendet. (Denken Sie daran, dass Anwendungen und Benutzer in OAuth-basierten Authentifizierungs- und Autorisierungssystemen Sicherheitsprinzipale sind.)
     
- ```
+  ```
   
 <add key="ida:ClientID" value="" />
 <add key="ida:ClientKey" value="" />
- ```
+  ```
 
 3. Geben Sie die Client-ID, die Sie in einem früheren Schritt aus Ihrem Azure AD-Verzeichnis gespeichert haben, als den Wert des **ida:ClientID**-Schlüssels ein. Behalten Sie Groß-/Kleinschreibung und Satzzeichen exakt so bei, wie Sie sie kopiert haben, und achten Sie darauf, am Anfang oder Ende des Werts kein Leerzeichen einzufügen. Verwenden Sie als **ida:ClientKey**-Schlüssel den  *Schlüssel*  , den Sie aus dem Verzeichnis gespeichert haben. Auch hier sollten Sie darauf achten, keine Leerzeichen einzufügen oder den Wert auf irgendeine Weise zu ändern. Der Abschnitt `<appSettings>` sollte jetzt ungefähr wie das folgende Beispiel aussehen. (Der Wert **ClientId** enthält möglicherweise eine GUID oder eine leere Zeichenfolge.)
     
- ```
+  ```
   
 <appSettings>
   <add key="ClientId" value="" />
@@ -207,36 +207,36 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
   <add key="ida:ClientID" value="4da99afe-08b5-4bce-bc66-5356482ec2df" />
   <add key="ida:ClientKey" value="URwh/oiPay/b5jJWYHgkVdoE/x7gq3zZdtcl/cG14ss=" />
 </appSettings>
- ```
+  ```
 
 
     > **HINWEIS**
       > Azure AD kennt Ihre Anwendung über die "localhost"-URL, mit der Sie sie registriert haben. Die Client-ID und der Clientschlüssel sind mit dieser Identität verknüpft. Wenn Sie bereit sind, Ihre Anwendung an eine Azure-Website bereitzustellen, werden Sie sie mit einer neuen URL erneut registrieren. 
 4. Fügen Sie weiterhin im Bereich **appSettings** einen **Authority**-Schlüssel hinzu, und legen Sie seinen Wert auf die Office 365-Domäne ( *some_domain*  .onmicrosoft.com) Ihres Organisationskontos fest. Im fortlaufenden Beispiel ist das Organisationskonto Bob@<O365_domain>.onmicrosoft.com, deshalb ist die Autorität `<O365_domain>.onmicrosoft.com`. 
     
- ```
+  ```
   
 <add key="Authority" value="<O365_domain>.onmicrosoft.com" />
- ```
+  ```
 
 5. Fügen Sie immer noch im Abschnitt **appSettings** einen **AppRedirectUrl**-Schlüssel hinzu, und legen Sie seinen Wert auf die Seite fest, auf die der Browser des Benutzers umgeleitet werden soll, nachdem die ASP.NET-App einen Autorisierungscode von Azure AD erhalten hat. Normalerweise ist dies dieselbe Seite, auf der sich der Benutzer befand, als der Aufruf an Azure AD stattfand. Im fortlaufenden Beispiel verwenden Sie den SSL-URL-Wert, dem Sie "/Pages/Default.aspx" anhängen, wie unten gezeigt. (Dies ist ein weiterer Wert, den Sie für das Staging verändern werden.)
     
- ```
+  ```
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
- ```
+  ```
 
 6. Fügen Sie weiterhin im Abschnitt **appSettings** einen **ResourceUrl**-Schlüssel hinzu, und legen Sie seinen Wert auf den APP-ID-URI von SAP-Gateway für Microsoft fest ( *nicht*  den APP-ID-URI Ihrer ASP.NET-Anwendung). Sie erhalten Sie diesen Wert vom SAP-Gateway für Microsoft-Administrator. Im Folgenden sehen Sie ein Beispiel.
     
- ```
+  ```
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
- ```
+  ```
 
 
     Der Abschnitt  `<appSettings>` sollte jetzt ungefähr wie folgt aussehen:
     
 
 
- ```
+  ```
   <appSettings>
   <add key="ClientId" value="06af1059-8916-4851-a271-2705e8cf53c6" />
   <add key="ClientSecret" value="LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE4PtKCjIQkk=" />
@@ -246,7 +246,7 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
   <add key="AppRedirectUrl" value="https://localhost:44322/Pages/Default.aspx" />
   <add key="ResourceUrl" value="http://<SAP_gateway_domain>.cloudapp.net/" />
 </appSettings>
- ```
+  ```
 
 7. Speichern und schließen Sie die web.config-Datei.
     
@@ -261,24 +261,24 @@ Eine ausführliche Beschreibung und ein Diagramm zu dem in OAuth 2.0 verwendeten
   
 2. Fügen Sie der Datei die folgenden **using**-Anweisungen hinzu.
     
- ```
+  ```
   
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Configuration;
 using System.Web.UI;
 
- ```
+  ```
 
 3. Ändern Sie das Zugriffsschlüsselwort von **public** zu **internal**, und fügen Sie das **static**-Schlüsselwort zur Klassendeklaration hinzu.
     
- ```
+  ```
   
 internal static class AADAuthHelper
- ```
+  ```
 
 4. Fügen Sie der Klasse die folgenden Fehler hinzu. In diesen Feldern werden Informationen gespeichert, die Ihre ASP.NET-Anwendung verwendet, um Zugriffstoken von AAD zu erhalten.
     
- ```
+  ```
   private static readonly string _authority = ConfigurationManager.AppSettings["Authority"];
 private static readonly string _appRedirectUrl = ConfigurationManager.AppSettings["AppRedirectUrl"];
 private static readonly string _resourceUrl = ConfigurationManager.AppSettings["ResourceUrl"];     
@@ -290,11 +290,11 @@ private static readonly ClientCredential _clientCredential = new ClientCredentia
 private static readonly AuthenticationContext _authenticationContext = 
             new AuthenticationContext("https://login.windows.net/common/" + 
                                       ConfigurationManager.AppSettings["Authority"]);
- ```
+  ```
 
 5. Fügen Sie der Klasse die folgende Eigenschaft hinzu. Diese Eigenschaft hält die URL zum Azure AD-Anmeldebildschirm.
     
- ```
+  ```
   
 private static string AuthorizeUrl
 {
@@ -308,11 +308,11 @@ private static string AuthorizeUrl
     }
 }
 
- ```
+  ```
 
 6. Fügen Sie der Klasse die folgenden Eigenschaften hinzu. Diese speichern das Zugriffs- und Aktualisierungstoken zwischen und überprüfen ihre Gültigkeit.
     
- ```
+  ```
   
 public static Tuple<string, DateTimeOffset> AccessToken
 {
@@ -345,11 +345,11 @@ private static bool IsRefreshTokenValid
     get { return !string.IsNullOrEmpty(RefreshToken); }
 }
 
- ```
+  ```
 
 7. Fügen Sie der Klasse die folgenden Methoden hinzu. Diese werden verwendet, um die Gültigkeit des Autorisierungscodes zu überprüfen und ein Zugriffstoken von Azure AD zu erhalten, indem entweder ein Authentifizierungscode oder ein Aktualisierungstoken verwendet wird.
     
- ```
+  ```
   
 private static bool IsAuthorizationCodeNotNull(string authCode)
 {
@@ -380,11 +380,11 @@ private static Tuple<string, DateTimeOffset> RenewAccessTokenUsingRefreshToken()
     return new Tuple<string, DateTimeOffset>(authResult.AccessToken, authResult.ExpiresOn);
 }
 
- ```
+  ```
 
 8. Fügen Sie der Klasse die folgende Methode hinzu. Sie wird vom ASP.NET-Code dahinter aufgerufen, um ein gültiges Zugriffstoken zu erhalten, bevor ein Aufruf zum Abrufen von SAP-Daten über SAP-Gateway für Microsoft erfolgt.
     
- ```
+  ```
   
 internal static void EnsureValidAccessToken(Page page)
 {
@@ -417,7 +417,7 @@ internal static void EnsureValidAccessToken(Page page)
         page.Response.Redirect(AuthorizeUrl);
     }
 }
- ```
+  ```
 
 
 > **TIPP**
@@ -435,7 +435,7 @@ internal static void EnsureValidAccessToken(Page page)
   
 2. Fügen Sie den folgenden Code zum Textteil der Klasse hinzu:
     
- ```
+  ```
   
 public string Price;
 public string Brand;
@@ -445,7 +445,7 @@ public string Engine;
 public int MaxPower;
 public string BodyStyle;
 public string Transmission;
- ```
+  ```
 
 
 ### Hinzufügen von dahinter liegendem Code zum Abrufen von Daten von SAP über das SAP-Gateway für Microsoft
@@ -453,44 +453,44 @@ public string Transmission;
 
 1. Öffnen Sie die Datei Default.aspx.cs, und fügen Sie die folgenden **using**-Anweisungen hinzu.
     
- ```
+  ```
   
 using System.Net;
 using Newtonsoft.Json.Linq;
- ```
+  ```
 
 2. Fügen Sie eine **const**-Deklaration zur Standardklasse hinzu, deren Wert die Basis-URL des SAP OData-Endpunkts ist, auf den die App zugreift. Im Folgenden ist ein Beispiel dargestellt:
     
- ```
+  ```
   
 private const string SAP_ODATA_URL = @"https://<SAP_gateway_domain>.cloudapp.net:8081/perf/sap/opu/odata/sap/ZCAR_POC_SRV/";
- ```
+  ```
 
 3. Die Office-Entwicklertools für Visual Studio haben eine **Page_PreInit**-Methode und eine **Page_Load**-Methode hinzugefügt. Kommentieren Sie den Code in der **Page_Load**-Methode und die gesamte **Page_Init**-Methode aus. Dieser Code wird im Beispiel nicht verwendet. (Wenn Ihr SharePoint-Add-In auf SharePoint zugreifen wird, stellen Sie diesen Code wieder her. Informationen finden Sie unter  [Optionales Hinzufügen eines Zugriffs auf SharePoint zur ASP.NET-Anwendung](#SharePoint).)
     
   
 4. Fügen Sie die folgende Zeile im oberen Bereich der **Page_Load**-Methode hinzu. Damit wird der Debugging-Prozess vereinfacht, da Ihre ASP.NET-Anwendung über SSL (HTTPS) mit SAP-Gateway für Microsoft kommuniziert. Ihr "localhost:port"-Server ist aber nicht so konfiguriert, dass er dem Zertifikat des SAP-Gateway für Microsoft vertraut. Mit dieser Codezeile würden Sie eine Warnung zu einem ungültigen Zertifikat erhalten, bevor Default.aspx geöffnet wird. In einigen Browsern können Sie diesen Fehler einfach wegklicken, aber in anderen können Sie Default.aspx gar nicht öffnen.
     
- ```
+  ```
   ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, errors) => true;
- ```
+  ```
 
 
     > **WICHTIG**
       > Löschen Sie diese Zeile, wenn Sie bereit sind, die ASP.NET-Anwendung für das Staging bereitzustellen. Weitere Informationen finden Sie unter  [Ändern der App und Staging an Azure und Office 365](#Stage). 
 5. Fügen Sie der **Page_Load**-Methode den folgenden Code hinzu. Die an die  `GetSAPData`-Methode übergebene Zeichenfolge ist eine OData-Abfrage.
     
- ```
+  ```
   if (!IsPostBack)
 {
     GetSAPData("DataCollection?$top=3");
 }
 
- ```
+  ```
 
 6. Fügen Sie die folgende Methode zur Standardklasse hinzu. Diese Methode stellt zunächst sicher, dass der Cache für das Zugriffstoken ein gültiges Zugriffstoken enthält, das von Azure AD erhalten wurde. Dann erstellt sie eine HTTP **GET**-Anforderung, die das Zugriffstoken enthält, und sendet diese an den SAP OData-Endpunkt. Das Ergebnis wird als JSON-Objekt zurückgegeben, das in ein .NET **List**-Objekt konvertiert wird. Drei Eigenschaften der Elemente werden in einem Array verwendet, das an **DataListView** gebunden ist.
     
- ```
+  ```
   
 private void GetSAPData(string oDataQuery)
 {
@@ -513,7 +513,7 @@ private void GetSAPData(string oDataQuery)
     }
 }
 
- ```
+  ```
 
 
 ### Erstellen der Benutzeroberfläche
@@ -521,7 +521,7 @@ private void GetSAPData(string oDataQuery)
 
 1. Öffnen Sie die Datei Default.aspx, und fügen Sie dem **form** auf der Seite das folgende Markup hinzu:
     
- ```
+  ```
   
 <div>
   <h3>Data from SAP via SAP Gateway for Microsoft</h3>
@@ -537,7 +537,7 @@ private void GetSAPData(string oDataQuery)
     </ItemTemplate>
   </asp:ListView>
 </div>
- ```
+  ```
 
 2. Geben Sie der Webseite optional das Erscheinungsbild einer SharePoint-Seite, indem Sie das SharePoint [-Chromsteuerelement](use-the-client-chrome-control-in-sharepoint-add-ins.md) und [das Stylesheet der Host-SharePoint-Website](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md) verwenden.
     
@@ -592,21 +592,21 @@ Unabhängig davon, ob Sie CSOM oder die REST-APIs für den Zugriff auf SharePoin
   
 2. Wenn Ihr SharePoint-Add-In auf SharePoint-Daten zugreifen wird, müssen Sie das SharePoint-Kontexttoken auskommentieren, das an die Default.aspx-Seite übertragen wurde, als die App in SharePoint gestartet wurde. Damit wird sichergestellt, dass das SharePoint-Kontexttoken nicht verloren geht, wenn der Browser nach der Azure AD-Authentifizierung umgeleitet wird. (Sie haben mehrere Optionen für das Zwischenspeichern dieses Kontexts. Weitere Informationen finden Sie unter  [OAuth-Token](cf2bdd88-4b04-47f6-a876-322f734a6af2.md#Tokens).) Die Office-Entwicklertools für Visual Studio fügen eine SharePointContext.cs-Datei zum ASP.NET-Projekt hinzu, die den größten Teil der Arbeit übernimmt. Zum Verwenden des Sitzungscaches fügen Sie einfach den folgenden Code in den Block " `if (!IsPostBack)`"  *vor*  den Code ein, der den Aufruf an SAP-Gateway für Microsoft durchführt:
     
- ```
+  ```
   
 if (HttpContext.Current.Session["SharePointContext"] == null)
 {
      HttpContext.Current.Session["SharePointContext"]
         = SharePointContextProvider.Current.GetSharePointContext(Context);
 }
- ```
+  ```
 
 3. Die SharePointContext.cs-Datei führt Aufrufe an eine andere Datei durch, die die Office-Entwicklertools für Visual Studio zum Projekt hinzugefügt haben: TokenHelper.cs. Diese Datei stellt den größten Teil des Codes bereit, der erforderlich ist, um Zugriffstoken für SharePoint abzurufen und zu verwenden. Sie stellt jedoch keinen Code für das Erneuern eines abgelaufenen Zugriffstoken oder Aktualisierungstoken bereit. Sie enthält außerdem keinen Code zum Zwischenspeichern von Token. Für ein SharePoint-Add-In in Produktionsqualität benötigen solchen Code. Die Zwischenspeicherlogik im vorherigen Schritt ist ein Beispiel. Ihr Code sollte außerdem das Zugriffstoken zwischenspeichern und es wiederverwenden, bis es abgelaufen ist. Wenn das Zugriffstoken abgelaufen ist, sollte Ihr Code das Aktualisierungstoken verwenden, um ein neues Zugriffstoken abzurufen. Es wird empfohlen, dass Sie  [OAuth-Token](cf2bdd88-4b04-47f6-a876-322f734a6af2.md#Tokens) lesen.
     
   
 4. Fügen Sie die Datenaufrufe an SharePoint entweder über CSOM oder REST hinzu. Im folgenden Beispiel wurde CSOM-Code geändert, den die Office-Entwicklertools für Visual Studio zur **Page_Load**-Methode hinzufügen. In diesem Beispiel wurde der Code an eine separate Methode verschoben und beginnt mit dem Abrufen des zwischengespeicherten Kontexttokens.
     
- ```
+  ```
   
 private void GetSharePointTitle()
 {
@@ -618,14 +618,14 @@ private void GetSharePointTitle()
         SharePointTitle.Text = "SharePoint web site title is: " + clientContext.Web.Title;
     }
 }
- ```
+  ```
 
 5. Fügen Sie Benutzerflächenelemente hinzu, um die SharePoint-Daten wiederzugeben. Im Folgenden ist das HTML-Steuerelement gezeigt, das in der vorhergehenden Methode referenziert wird:
     
- ```
+  ```
   
 <h3>SharePoint title</h3><asp:Label ID="SharePointTitle" runat="server"></asp:Label><br />
- ```
+  ```
 
 
 > **HINWEIS**

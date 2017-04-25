@@ -363,14 +363,16 @@ Der folgende Code ist ein Beispiel dafür. Beachten Sie, dass für eine besonder
     
 
 
-```XML
+
+```XML
 
 <appSettings>
   <add key="ClientID" value="c1c12d4c-4900-43c2-8b89-c05725e0ba30" />
   <add key="ClientSigningCertificateSerialNumber" value="556a1c9c5a5415994941abd0ef2f947b" />
   <add key="IssuerId" value="f94591d5-89e3-47cd-972d-f1895cc158c6" />
 </appSettings>
-```
+
+```
 
 
 ## Ändern der "TokenHelper"-Datei
@@ -396,23 +398,23 @@ Die von den Office-Entwicklertools für Visual Studio generierte Datei "TokenHel
   
 2. Fügen Sie an ihrer Stelle folgende Zeile hinzu:
     
- ```
+  ```
   
 private static readonly string ClientSigningCertificateSerialNumber
     = WebConfigurationManager.AppSettings.Get("ClientSigningCertificateSerialNumber");
- ```
+  ```
 
 3. Suchen Sie die Zeile mit der Deklaration des  `SigningCredentials`-Felds. Ersetzen Sie es durch die folgende Zeile:
     
- ```
+  ```
   
 private static readonly X509SigningCredentials SigningCredentials
     = GetSigningCredentials(GetCertificateFromStore());
- ```
+  ```
 
 4. Wechseln Sie zum Teil  `#region private methods` der Datei, und fügen Sie die folgenden beiden Methoden hinzu:
     
- ```
+  ```
   
 private static X509SigningCredentials GetSigningCredentials(X509Certificate2 cert)
 {
@@ -451,7 +453,7 @@ private static X509Certificate2 GetCertificateFromStore()
 
     return storedCert;
 }
- ```
+  ```
 
 
 ## Verwenden des Visual Studio-Assistenten zum Verpacken der Remotewebanwendung und der SharePoint-Add-In für die Veröffentlichung

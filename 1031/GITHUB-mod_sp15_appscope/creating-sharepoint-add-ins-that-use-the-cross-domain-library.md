@@ -62,14 +62,17 @@ Die Remotekomponenten des SharePoint-Add-Ins benötigen natürlich dennoch autor
     
   
 - Bei einem in SharePoint gehosteten Add-In können Sie für den Prinzipaltyp des Add-Ins den Standardwert **Internal** übernehmen. Legen Sie anschließend für das **AllowedRemoteHostUrl**-Attribut des **Internal**-Elements die URL der Remotewebanwendung fest, siehe folgendes Beispiel.
-    ```
+    
+  ```
+  
 <AppPrincipal>
   <Internal AllowedRemoteHostUrl="https://example.com/Home.html" />
-</AppPrincipal>```
+</AppPrincipal>
+  ```
 
 
 > **HINWEIS**
-> Wenn Sie die zweite Option verwenden (ein **Internal**-Add-In-Prinzipal), können Sie nur JavaScript und die domänenübergreifende Bibliothek zum Zugreifen auf SharePoint verwenden. Das SharePoint-Clientobjektmodell ist für **Internal** SharePoint-Add-Ins gesperrt, Sie können also kein duales Autorisierungssystem nutzen, das die domänenübergreifende Bibliothek und Systeme mit niedriger Vertrauensebene oder besonders vertrauenswürdige Systeme verwendet. 
+> Wenn Sie die zweite Option verwenden (ein **Internal**-Add-In-Prinzipal), können Sie nur JavaScript und die domänenübergreifende Bibliothek zum Zugreifen auf SharePoint verwenden. Das SharePoint-Clientobjektmodell ist für **Internal**SharePoint-Add-Ins gesperrt, Sie können also kein duales Autorisierungssystem nutzen, das die domänenübergreifende Bibliothek und Systeme mit niedriger Vertrauensebene oder besonders vertrauenswürdige Systeme verwendet. 
   
     
     

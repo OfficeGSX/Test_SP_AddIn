@@ -37,7 +37,8 @@ In der folgenden Tabelle finden Sie die Hierarchie von Inhalten in SharePoint un
     
     
 
-
+|
+|
 |**Entität**|**Klasse**|**Bemerkungen**|
 |:-----|:-----|:-----|
 |Lokale SharePoint-Serverfarm oder SharePoint Online-Abonnement (auch als Mandant bezeichnet)  <br/> ||Es gibt nur eingeschränkten programmgesteuerten Zugriff auf diese Ebene in CSOM. Es gibt z. B. keine Klasse „Farm" oder „Abonnements" oder „Mandant". (Das serverseitige SharePoint-Objektmodell, das in Add-Ins nicht verwendet werden kann, ermöglicht den programmgesteuerten Zugriff auf diese Entitäten.)  <br/> |
@@ -84,14 +85,16 @@ SharePoint-Code auf einem Client beginnt mit dem Abrufen eines Clientkontextobje
   
 
 
-```cs
+
+```cs
 
 using (var clientContext = spContext.CreateUserClientContextForSPHost())
 {
     // CRUD operation or query code goes here.
 
     clientContext.ExecuteQuery();
-}```
+}
+```
 
 Im vorherigen Artikel dieser Reihe war ein Beispiel dieses Musters in der unten gezeigten Methode  `GetLocalEmployeeName` dargestellt. Beachten Sie Folgendes zu dieser Methode:
   
@@ -106,7 +109,8 @@ Im vorherigen Artikel dieser Reihe war ein Beispiel dieses Musters in der unten 
   
 
 
-```cs
+
+```cs
 
 private string GetLocalEmployeeName()
 {
@@ -120,7 +124,8 @@ private string GetLocalEmployeeName()
         clientContext.ExecuteQuery();
     }
     return localEmployee["Title"].ToString();
-}```
+}
+```
 
 
 ## 

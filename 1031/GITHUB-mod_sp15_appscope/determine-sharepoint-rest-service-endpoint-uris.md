@@ -240,7 +240,8 @@ Die  [ListCollection.Add](https://msdn.microsoft.com/library/Microsoft.SharePoin
     
 
 
-```
+
+```
 
 { "d" : {
    "results": {
@@ -255,7 +256,8 @@ Die  [ListCollection.Add](https://msdn.microsoft.com/library/Microsoft.SharePoin
    }
 } 
 }
-```
+
+```
 
 
 ### Verwenden von Parameter-Aliasen in REST-Dienstaufrufen

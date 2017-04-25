@@ -182,7 +182,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
     
   
 
- ```
+  ```
   
 <!DOCTYPE html>
 <html>
@@ -312,7 +312,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
     </script>
 </body>
 </html>
- ```
+  ```
 
 
 > **HINWEIS**
@@ -327,12 +327,14 @@ Das folgende Beispiel zeigt, wie Sie ein leeres Objekt übergeben, um die Method
     
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### So erstellen Sie die Lösung und führen sie aus
@@ -366,9 +368,11 @@ Möglicherweise verwenden Sie zum Deklarieren des Widgets anstatt HTML lieber da
   
     
     
-```HTML
 
-<div id="ListViewDiv"></div>```
+```HTML
+
+<div id="ListViewDiv"></div>
+```
 
 Verwenden Sie den folgenden JavaScript-Code, um die Listenansicht zu instanziieren.
   
@@ -376,11 +380,13 @@ Verwenden Sie den folgenden JavaScript-Code, um die Listenansicht zu instanziier
     
 
 
-```
+
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });```
+    });
+```
 
 Ein Beispiel dafür, wie die Aufgaben durchgeführt werden, finden Sie auf der Seite **JSSimple.html** im Codebeispiel [Verwenden des experimentellen Desktoplistenansichts-Widgets in einem Add-In](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
   
@@ -399,7 +405,8 @@ Wenn Sie zum Deklarieren des Widgets HTML-Markup verwenden, können Sie zum Fest
     
 
 
-```
+
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -407,7 +414,8 @@ Wenn Sie zum Deklarieren des Widgets HTML-Markup verwenden, können Sie zum Fest
                             viewID: 'GUID'
                             }">
 </div> 
-```
+
+```
 
 Wenn Sie das Widget mit JavaScript deklarieren, verwenden Sie zum Festlegen einer Ansicht die folgende Syntax.
   
@@ -415,13 +423,15 @@ Wenn Sie das Widget mit JavaScript deklarieren, verwenden Sie zum Festlegen eine
     
 
 
-```
+
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });```
+    });
+```
 
 
 ## Schlussbemerkung
