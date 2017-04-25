@@ -61,7 +61,7 @@ Im vorherigen Artikel haben Sie die benutzerdefinierte **AddEmployeeToCorpDB**-M
 
 1. Klicken Sie im **Projektmappen-Explorer** auf die Schaltfläche **Alle Dateien anzeigen** auf der kleinen Symbolleiste am oberen Rand des **Projektmappen-Explorers**.
 
-!\[Die Projektmappen-Explorer-Symbolleiste mit einem Feld um die Schaltfläche „Alle Dateien anzeigen'.](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
+![Die Projektmappen-Explorer-Symbolleiste mit einem Feld um die Schaltfläche „Alle Dateien anzeigen'.](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
 
 
 

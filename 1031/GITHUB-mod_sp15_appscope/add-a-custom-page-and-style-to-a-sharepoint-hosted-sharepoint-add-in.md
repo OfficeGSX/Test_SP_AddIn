@@ -131,7 +131,7 @@ p {color: green;}
 
 
 
-!\[Eine SharePoint-Seite mit dem Titel "Hilfe". Es gibt eine Kopfzeile in Schwarz, gefolgt von zwei Textzeilen in grün.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
+![Eine SharePoint-Seite mit dem Titel "Hilfe". Es gibt eine Kopfzeile in Schwarz, gefolgt von zwei Textzeilen in grün.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
 
 
 

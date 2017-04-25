@@ -193,7 +193,7 @@ function renderOrientationStage(ctx) {
 
 
 
-!\[Liste "Neue Mitarbeiter in Seattle" mit den Orientierungsphasewerten "Nicht gestartet" in Rot und "Abgeschlossen" in Grün. Andere Werte in Schwarz.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
+![Liste "Neue Mitarbeiter in Seattle" mit den Orientierungsphasewerten "Nicht gestartet" in Rot und "Abgeschlossen" in Grün. Andere Werte in Schwarz.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
 
 
 

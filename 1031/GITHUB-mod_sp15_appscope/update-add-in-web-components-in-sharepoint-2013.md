@@ -83,7 +83,7 @@ Die Microsoft Office-Entwicklertools für Visual Studio sind darauf ausgelegt, n
 
 
 
-!\[Schritte zum Öffnen des Feature XML-Editors](images/UpdateAppOpenFeatureXML.png)
+![Schritte zum Öffnen des Feature XML-Editors](images/UpdateAppOpenFeatureXML.png)
 
 
 

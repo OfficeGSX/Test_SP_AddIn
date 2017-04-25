@@ -188,7 +188,7 @@ Die nächste Verbesserung am ChainStore-Add-In besteht darin, neue Elemente in e
 
 10. Klicken Sie auf **Neues Element**. Das Formular für das Erstellen von Elementen sollte genau wie folgt aussehen, einschließlich der zwei Sternchen, die erforderliche Felder angeben:
 
-!\[The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
 
 
 
@@ -342,7 +342,7 @@ Sie erinnern sich, dass SharePoint, wenn ein Add-In Lese- oder Schreibberechtigu
 
 5. Navigieren Sie von der Startseite des Hongkong-Stores zur Seite **Websiteinhalte**, und öffnen Sie die Liste **Erwartete Lieferungen**. Es befindet sich jetzt ein Element in der Liste, das der Bestellung entspricht. Der folgende Screenshot ist ein Beispiel.
 
-!\[The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
 
 
 

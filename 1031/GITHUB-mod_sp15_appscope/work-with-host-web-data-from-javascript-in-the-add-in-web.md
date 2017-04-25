@@ -83,7 +83,7 @@ Standardmäßig verhindert SharePoint, dass JavaScript in einem Add-In Zugriff a
 
 
 
-!\[Ein Kalender namens "Zeitplan für Mitarbeiterorientierung" mit einem Element am 1. Juni: "Orientierung Cassie Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+![Ein Kalender namens "Zeitplan für Mitarbeiterorientierung" mit einem Element am 1. Juni: "Orientierung Cassie Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
 
 
 
@@ -365,7 +365,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Die Liste der Berechtigungen auf der Registerkarte „Berechtigungen' im Add-In-Manifest-Designer von Visual Studio; die Schaltfläche „Bearbeiten' wird in der Zelle der Spalte „Eigenschaften' angezeigt.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
+![Die Liste der Berechtigungen auf der Registerkarte „Berechtigungen' im Add-In-Manifest-Designer von Visual Studio; die Schaltfläche „Bearbeiten' wird in der Zelle der Spalte „Eigenschaften' angezeigt.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
 
 
 
@@ -380,7 +380,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Dialogfeld „Eigenschaften' für Listenberechtigungen in Visual Studio; der Eigenschaftsname ist auf „Base List ID' und der Wert auf „106' festgelegt.](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
+![Dialogfeld „Eigenschaften' für Listenberechtigungen in Visual Studio; der Eigenschaftsname ist auf „Base List ID' und der Wert auf „106' festgelegt.](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
     Wählen Sie **OK** aus. Die Registerkarte **Berechtigungen** sollte jetzt etwa wie folgt aussehen:
@@ -390,7 +390,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Registerkarte „Berechtigungen' des Add-In-Manifest-Designers in Visual Studio; sie zeigt, dass das Add-In die Berechtigung „Verwalten' für Listen mit dem Basistyp 106 fordert.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
+![Registerkarte „Berechtigungen' des Add-In-Manifest-Designers in Visual Studio; sie zeigt, dass das Add-In die Berechtigung „Verwalten' für Listen mit dem Basistyp 106 fordert.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
 
 
 
@@ -419,7 +419,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Die Zustimmungseingabeaufforderung des SharePoint-Add-Ins mit einer kurzen Beschreibung der vom Add-In benötigten Berechtigungen und den Schaltflächen „Vertrauen' und „Abbrechen'.](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
+![Die Zustimmungseingabeaufforderung des SharePoint-Add-Ins mit einer kurzen Beschreibung der vom Add-In benötigten Berechtigungen und den Schaltflächen „Vertrauen' und „Abbrechen'.](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
 
 
 
@@ -431,7 +431,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Die Startseite von „Einführung für Mitarbeiter' mit neu hinzugefügter Schaltfläche mit der Beschriftung „Sicherstellen, dass Elemente eingeplant sind'.](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
+![Die Startseite von „Einführung für Mitarbeiter' mit neu hinzugefügter Schaltfläche mit der Beschriftung „Sicherstellen, dass Elemente eingeplant sind'.](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
 
 
 
@@ -449,7 +449,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 
 
 
-!\[Kalender von „Einführung für Mitarbeiter', dem neue Ereignisse für die Einführung von zwei Mitarbeitern am 10. und 11. des Monats hinzugefügt wurden](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
+![Kalender von „Einführung für Mitarbeiter', dem neue Ereignisse für die Einführung von zwei Mitarbeitern am 10. und 11. des Monats hinzugefügt wurden](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
 
 
 

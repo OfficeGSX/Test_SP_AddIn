@@ -38,7 +38,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
 
 2. Füllen Sie auf der Seite **Neue SharePoint-Website** das Formular für eine neue Teamwebsite mithilfe der Werte im folgenden Screenshot aus.
 
-!\[Das Formular zum Erstellen einer neuen SharePoint-Unterwebsite mit dem Text "Fabrikam Hong Kong Store" im Textfeld "Titel" und "hongkong" im Textfeld "URL".](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
+![Das Formular zum Erstellen einer neuen SharePoint-Unterwebsite mit dem Text "Fabrikam Hong Kong Store" im Textfeld "Titel" und "hongkong" im Textfeld "URL".](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
 
 
 
@@ -79,7 +79,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
 
 7. Die Add-In-Startseite sieht wie im folgenden Screenshot aus. Ganz oben wird der Name der SharePoint-Website angezeigt, auf der das Add-In installiert ist. Dies ist ein Nebeneffekt eines Beispielcodes, den Office-Entwicklertools für Visual Studio generiert. Dies wird in einem späteren Schritt geändert. Die Seite hat Bereiche, in denen Daten aus den SQL-Unternehmensdatenbanktabellen **Bestand**, **Aufträge** und **Mitarbeiter** angezeigt werden. Diese Tabellen sind zunächst leer.
 
-!\[Die Startseite des Filialen-Add-Ins mit beschrifteten Bereichen und Schaltflächen zum Anzeigen des Lagerbestands, der Bestellungen und der Mitarbeiter des Ladens.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
+![Die Startseite des Filialen-Add-Ins mit beschrifteten Bereichen und Schaltflächen zum Anzeigen des Lagerbestands, der Bestellungen und der Mitarbeiter des Ladens.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
 
 
 
@@ -87,7 +87,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
 
 8. Öffnen Sie den Link **Auftragsformular** am unteren Rand der Seite, um ein Auftragsformular zu öffnen. Geben Sie einige Werte in das Formular ein, und klicken Sie auf **Bestellung aufgeben**. Der folgende Screenshot zeigt ein Beispiel. Es sieht nicht so aus, als wäre etwas passiert, aber der Code hinter der Schaltfläche übergibt die Werte an eine parametrisierte gespeicherte Prozedur in der SQL-Datenbank. Das Verwenden von parametrisierten gespeicherten Prozeduren schützt die Datenbank vor Angriffen durch Einschleusung von SQL-Befehlen.
 
-!\[Bestellformular mit Textfeldern für Lieferant, Produkt und Menge und einer Schaltfläche mit der Bezeichnung "Bestellen"](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
+![Bestellformular mit Textfeldern für Lieferant, Produkt und Menge und einer Schaltfläche mit der Bezeichnung "Bestellen"](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
 
 
 
@@ -99,7 +99,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
 
     Die Remotewebanwendung ruft die Hostweb-URL von einen Abfragezeichenfolgenparameter ab, den SharePoint zur URL der Startseite hinzufügt, wenn das Add-In gestartet wird. Da SSL verwendet wird, wird diese Abfragezeichenfolge verschlüsselt, während sie über das Internet an die Remotewebanwendung übergeben wird. 
 
-!\[Der Abschnitt der Startseite für Bestellungen mit einer Bestellung in einer HTML-Tabelle. Sie enthält Spalten für ID, Mandant, Lieferant, Produkt und Menge.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
+![Der Abschnitt der Startseite für Bestellungen mit einer Bestellung in einer HTML-Tabelle. Sie enthält Spalten für ID, Mandant, Lieferant, Produkt und Menge.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
 
 
 
@@ -110,7 +110,7 @@ Wir werden Ihnen in dieser Reihe keine Kenntnisse der ASP.NET- oder T-SQL-Progra
 
 11. Das Add-In bleibt standardmäßig im SharePoint-Hostweb zwischen Debugsitzungen in Visual Studio installiert. Um anzuzeigen, wie Endbenutzer es nach der Installation starten, öffnen Sie die SharePoint-Website „Fabrikam Hong Kong" in Ihrem Browser, und navigieren Sie zur Seite **Websiteinhalte**. Sie sehen die Kachel für das Add-In, wie im folgenden Screenshot gezeigt:
 
-!\[Die Startkachel für das Filialen-Add-In auf der Seite mit dem Websiteinhalt mit dem Symbol und Namen des Add-Ins](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
+![Die Startkachel für das Filialen-Add-In auf der Seite mit dem Websiteinhalt mit dem Symbol und Namen des Add-Ins](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
 
 
 
@@ -310,7 +310,7 @@ protected SharePointContext spContext;
 
 2. Wenn die Add-In-Startseite geöffnet wird, sieht sie jetzt wie eine SharePoint-Seite aus. Klicken Sie auf den Link **Auftragsformular**. Das Formular sieht jetzt ebenfalls wie ein SharePoint-Formular aus.
 
-!\[Noch einmal des Bestellformular. Jetzt wird die Schriftart Segoe verwendet, und der Ausdruck "Bestellen" ist in Blau hervorgehoben.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
+![Noch einmal des Bestellformular. Jetzt wird die Schriftart Segoe verwendet, und der Ausdruck "Bestellen" ist in Blau hervorgehoben.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
 
 
 
@@ -321,7 +321,7 @@ protected SharePointContext spContext;
 
 4.  Verwenden Sie die Schaltfläche „Zurück" des Browsers, um zurück zur Add-In-Startseite zu navigieren, und klicken Sie dann auf **Bestellungen anzeigen**. Die Seite sollte jetzt ungefähr wie folgt aussehen. Beachten Sie, dass die Spaltenüberschriften jetzt in Großbuchstaben dargestellt sind. 
 
-!\[Die Startseite mit dem Chromsteuerelement am oberen Rand. Der gesamte Text und die Steuerelemente weisen das SharePoint-Format auf.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
+![Die Startseite mit dem Chromsteuerelement am oberen Rand. Der gesamte Text und die Steuerelemente weisen das SharePoint-Format auf.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
 
 
 
@@ -344,7 +344,7 @@ protected SharePointContext spContext;
 
 10. Navigieren Sie zur Seite **Websiteinhalte**, und starten Sie die ChainStore-App über ihre Kachel. Ihre benutzerdefinierten Seiten haben das ausgewählte Aussehen übernommen. Die folgenden Screenshots zeigen, wie sie im zusammengesetzten Design **Natur** angezeigt werden.
 
-!\[Startseite und Bestellformular des Add-Ins in den grünlichen Farben des zusammengesetzten Designs "Natur"](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
+![Startseite und Bestellformular des Add-Ins in den grünlichen Farben des zusammengesetzten Designs "Natur"](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
 
 
 

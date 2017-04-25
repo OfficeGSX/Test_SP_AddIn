@@ -264,7 +264,7 @@ In Abbildung 1 ist eine SharePoint-Webseite dargestellt, die das Stylesheet verw
 
 
 
-!\[Auf Webseite verwendetes Stylesheet-Steuerelement](images/StylesheetControl_result2.png)
+![Auf Webseite verwendetes Stylesheet-Steuerelement](images/StylesheetControl_result2.png)
 
 
 

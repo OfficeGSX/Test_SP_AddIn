@@ -51,7 +51,7 @@ Sie entwickeln das mobile Add-In, die zur Eingabe der wichtigsten Informationen 
 
 
 
-!\[Cloud Business App-Vorlage](images/CBA_IM1.PNG)
+![Cloud Business App-Vorlage](images/CBA_IM1.PNG)
 
 
 
@@ -217,7 +217,7 @@ Im nächsten Schritt fügen Sie eine Auswahlliste hinzu, mit der der Benutzer au
 
 
 
-!\[Die Entität "Patient"](images/CBA_IM_2a.PNG)
+![Die Entität "Patient"](images/CBA_IM_2a.PNG)
 
 
 
@@ -256,7 +256,7 @@ Im nächsten Schritt fügen Sie eine Auswahlliste hinzu, mit der der Benutzer au
 
 
 
-!\[Die Beziehung zwischen Vorfall und Patient](images/CBA_IM_3.PNG)
+![Die Beziehung zwischen Vorfall und Patient](images/CBA_IM_3.PNG)
 
 
     Dadurch wird eine Null-oder-Eins-zu-Viele-Beziehung zwischen den Vorfällen und Patienten erstellt. Für einen Vorfalldatensatz ist kein Patient erforderlich, jedem Patienten muss jedoch ein Vorfalldatensatz zugeordnet werden.
@@ -300,7 +300,7 @@ Im nächsten Schritt fügen Sie eine Auswahlliste hinzu, mit der der Benutzer au
 
 
 
-!\[Die Bildschirmgruppe "Vorfälle"](images/CBA_IM_4.PNG)
+![Die Bildschirmgruppe "Vorfälle"](images/CBA_IM_4.PNG)
 
 
     Zu dem HTMLClient-Projekt werden Such-, Detailansicht- und Hinzufügen-/Bearbeiten-Bildschirme hinzugefügt. Der Such-Bildschirm wird automatisch als Startbildschirm der App festgelegt und die zum Starten der Anzeige- und Hinzufügen-/Bearbeiten-Bildschirme werden automatisch bereitgestellt.
@@ -350,7 +350,7 @@ Im nächsten Schritt fügen Sie eine Auswahlliste hinzu, mit der der Benutzer au
 
 
 
-!\[Bildschirmlayout durchsuchen](images/CBA_IM4a.PNG)
+![Bildschirmlayout durchsuchen](images/CBA_IM4a.PNG)
 
 
     Zur Laufzeit zeigt der Bildschirm eine Kachel für jeden Vorfall inklusive Vorfallnummer, -datum und -adresse an.
@@ -385,7 +385,7 @@ Im nächsten Schritt fügen Sie eine Auswahlliste hinzu, mit der der Benutzer au
 
 
 
-!\[Der Link "Patienten hinzufügen"](images/CBA_IM_5.PNG)
+![Der Link "Patienten hinzufügen"](images/CBA_IM_5.PNG)
 
 
 
@@ -948,7 +948,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Dokumentbibliothek mit IncidentNumber-Spalte](images/CBA_IM_12.PNG)
+![Dokumentbibliothek mit IncidentNumber-Spalte](images/CBA_IM_12.PNG)
 
 
     Damit Sie die Dokumentbibliothek mit Ihrem Add-In verknüpfen können, muss die Dokumentbibliothek eine benutzerdefinierte Spalte enthalten, die einem eindeutigen Feld in Ihrer Entität zugeordnet ist. In diesem Fall ist die **IncidentNumber**-Spalte dem **IncidentNumber**-Feld in der **Incidents**-Entität zugeordnet.
@@ -975,7 +975,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Die Dokumentbibliothek auswählen](images/CBA_IM_13.PNG)
+![Die Dokumentbibliothek auswählen](images/CBA_IM_13.PNG)
 
 
     Ein **IncidentDocuments.lsml**-Knoten wird im Projektmappen-Explorer hinzugefügt.
@@ -1005,7 +1005,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Die Beziehung zwischen Entitäten](images/CBA_IM_11b.PNG)
+![Die Beziehung zwischen Entitäten](images/CBA_IM_11b.PNG)
 
 
 
@@ -1023,7 +1023,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Die verwandten Felder](images/CBA_IM_11c.PNG)
+![Die verwandten Felder](images/CBA_IM_11c.PNG)
 
 
 
@@ -1063,7 +1063,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Schaltfläche zum Erstellen oder Hochladen von Dokumenten](images/CBA_IM_14.PNG)
+![Schaltfläche zum Erstellen oder Hochladen von Dokumenten](images/CBA_IM_14.PNG)
 
 
 
@@ -1087,7 +1087,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Das SharePoint-Dialogfeld "Neue Datei erstellen"](images/CBA_IM_15.PNG)
+![Das SharePoint-Dialogfeld "Neue Datei erstellen"](images/CBA_IM_15.PNG)
 
 
 
@@ -1110,7 +1110,7 @@ Bei einem Vorfall müssen viele Sachverhalte im Incident Commander dokumentiert 
 
 
 
-!\[Der Dateiname](images/CBA_IM_16.PNG)
+![Der Dateiname](images/CBA_IM_16.PNG)
 
 
     Er wird als Dateiname des Dokuments verwendet.
@@ -1153,7 +1153,7 @@ Die Contoso-Feuerwehr ist sehr zufrieden mit den zusätzlichen Funktionen in dem
 
 
 
-!\[Die Dateien für Logo und Begrüßungsbildschirm](images/CBA_IM_17.PNG)
+![Die Dateien für Logo und Begrüßungsbildschirm](images/CBA_IM_17.PNG)
 
 
 
@@ -1310,7 +1310,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
+![Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
 
 
     Der **Assistent zum Veröffentlichen von LightSwitch-Anwendungen** wird angezeigt.
@@ -1322,7 +1322,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Der Veröffentlichungs-Assistent](images/CBA_IM_19.PNG)
+![Der Veröffentlichungs-Assistent](images/CBA_IM_19.PNG)
 
 
     Nachdem Ihr Add-In veröffentlicht ist, wird der **Datei-Explorer** und darin der **Veröffentlichen**-Ordner Ihres Projekts angezeigt.
@@ -1337,7 +1337,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Die Apps in der Testliste](images/CBA_IM_20.PNG)
+![Die Apps in der Testliste](images/CBA_IM_20.PNG)
 
 
 
@@ -1352,7 +1352,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Das Dialogfeld "App bereitstellen"](images/CBA_IM_20a.PNG)
+![Das Dialogfeld "App bereitstellen"](images/CBA_IM_20a.PNG)
 
 
     Das Dialogfeld **Add-In hochladen** wird geöffnet.
@@ -1377,7 +1377,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[App wird installiert](images/CBA_IM_21.PNG)
+![App wird installiert](images/CBA_IM_21.PNG)
 
 
 
@@ -1392,7 +1392,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[App wird installiert](images/CBA_IM_22.PNG)
+![App wird installiert](images/CBA_IM_22.PNG)
 
 
 
@@ -1407,7 +1407,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Die App ist bereit zur Ausführung](images/CBA_IM_23.PNG)
+![Die App ist bereit zur Ausführung](images/CBA_IM_23.PNG)
 
 
     Das Add-In öffnet sich im Browser und sieht genauso aus, als hätten Sie das Add-In im Debuggingmodus gestartet. Beachten Sie, dass die von Ihnen während der Entwicklung eingegebenen Daten nicht mehr vorhanden sind. Beim Bereitstellen des Add-Ins wird die Datenbank bereitgestellt, jedoch nicht die Daten.
@@ -1422,7 +1422,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Layout im Desktopbrowser](images/CBA_IM_24.PNG)
+![Layout im Desktopbrowser](images/CBA_IM_24.PNG)
 
 
     Sie können Ihr Add-In auch auf einem mobilen Gerät überprüfen. Melden Sie sich aus dem Webbrowser auf Ihrem Gerät auf Ihrer SharePoint-Website an, und starten Sie anschließend das Add-In.
@@ -1434,7 +1434,7 @@ Bis jetzt haben Sie das Add-In nur im Debuggingmodus ausgeführt, der SharePoint
 
 
 
-!\[Layout auf mobilem Gerät](images/CBA_IM_25.PNG)
+![Layout auf mobilem Gerät](images/CBA_IM_25.PNG)
 
 
 

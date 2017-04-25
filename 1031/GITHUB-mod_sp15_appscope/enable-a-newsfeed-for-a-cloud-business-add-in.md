@@ -25,7 +25,7 @@ Zum Hosten des Newsfeeds benötigen Sie in Office 365 eine SharePoint-Entwickler
 
 2. Aktivieren Sie im Fenster **Eigenschaften** die Kontrollkästchen **Nach dem Erstellen posten** und/oder **Nach dem Aktualisieren posten**.
 
-!\[Eigenschaften für soziales Netzwerk](images/CBAsocial.PNG)
+![Eigenschaften für soziales Netzwerk](images/CBAsocial.PNG)
 
 
     Durch Aktivieren von **Nach dem Erstellen posten** wird für jedes neue Listenelement ein Thread zum Newsfeed hinzugefügt. Durch Aktivieren von **Nach dem Aktualisieren posten** wird ein Thread hinzugefügt, wenn ein Wert eines Listenelements geändert wird. Postauslöser ermitteln, welche Felder in dem Element einen Posts auslösen.
@@ -53,7 +53,7 @@ Zum Hosten des Newsfeeds benötigen Sie in Office 365 eine SharePoint-Entwickler
 
 3. Klicken Sie in der SharePoint-Chromleiste auf den Link **Newsfeed**.
 
-!\[Die SharePoint-Chromleiste](images/CBAnewsfeed.PNG)
+![Die SharePoint-Chromleiste](images/CBAnewsfeed.PNG)
 
 
     Die Seite **Newsfeed** wird in einem neuen Browserfenster geöffnet und zeigt die Einträge der hinzugefügten und/oder aktualisierten Elemente an. Sie können für einen Post auf den Link **Gefällt mir** klicken oder auf den Link **Antworten** klicken, um einen Kommentar hinzuzufügen.

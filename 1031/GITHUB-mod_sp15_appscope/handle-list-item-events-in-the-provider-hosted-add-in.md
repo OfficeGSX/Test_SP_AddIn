@@ -599,7 +599,7 @@ using System.Web.Configuration;
 
 3. Stellen Sie sicher, dass das Kontrollkästchen **DEBUG-Konstante definieren** aktiviert ist. (Das ist standardmäßig normalerweise der Fall.) Der folgende Screenshot zeigt die richtige Einstellung.
 
-!\[The Build sub-tab of the Properties tab in Visual Studio. The Configuration drop down is set to Debug. The check box for "Define DEBUG constant" is checked.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
+![The Build sub-tab of the Properties tab in Visual Studio. The Configuration drop down is set to Debug. The check box for "Define DEBUG constant" is checked.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
 
 
 
@@ -607,7 +607,7 @@ using System.Web.Configuration;
 
 4. Ändern Sie die Dropdownlinste **Konfiguration** auf **Version**, und stellen Sie sicher, dass das Kontrollkästchen **DEBUG-Konstante definieren** ** *nicht* ** aktiviert ist. (Standardmäßig ist es normalerweise nicht aktiviert.) Der folgende Screenshot zeigt die richtige Einstellung.
 
-!\[The Build sub-tab of the Properties tab. The Configuration drop down says Release. The check box for "Define DEBUG constant" is not checked.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
+![The Build sub-tab of the Properties tab. The Configuration drop down says Release. The check box for "Define DEBUG constant" is not checked.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
 
 
 
@@ -647,7 +647,7 @@ Die Add-In-Ereignis- und -Listenelement Ereignisempfänger sind Windows Communic
 
 5. Wenn der Haltepunkt erreicht ist, bewegen Sie den Cursor über die Variable  `debugEndpoint`. Wenn der Visual Studio-Datentipp angezeigt wird, klicken Sie auf den Pfeil nach unten, und wählen Sie **Text-Schnellansicht** aus.
 
-!\[Eine Visual Studio-Textschnellansicht mit einer Azure Service Bus-URL](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
+![Eine Visual Studio-Textschnellansicht mit einer Azure Service Bus-URL](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
 
 
 

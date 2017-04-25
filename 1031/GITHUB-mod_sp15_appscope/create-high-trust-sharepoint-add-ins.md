@@ -113,7 +113,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
 
 
-!\[Option "Serverzertifikate" in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+![Option "Serverzertifikate" in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
 
 
 
@@ -125,7 +125,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
 
 
-!\[Verknüpfung "Selbstsigniertes Zertifikat erstellen"](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+![Verknüpfung "Selbstsigniertes Zertifikat erstellen"](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
 
 
 
@@ -140,7 +140,7 @@ Erstellen Sie zunächst eine PFX-Zertifikat-Testdatei und dann eine entsprechend
 
 
 
-!\[Exportieren eines Testzertifikats](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+![Exportieren eines Testzertifikats](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
 
 
 
@@ -353,7 +353,7 @@ In diesem Abschnitt erfahren Sie, wie Sie mithilfe von Visual Studio eine besond
 
 
 
-!\[Beispiel-App, die Webtitel abruft](images/SP15HighTrustLaunchNew.gif)
+![Beispiel-App, die Webtitel abruft](images/SP15HighTrustLaunchNew.gif)
 
 
 

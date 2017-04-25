@@ -100,7 +100,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
 
 
 
-!\[Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
+![Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
 
 
 
-!\[App für SharePoint-Projekte im Projektmappen-Explorer](images/AppVSTemplateSolutionExplorer.jpg)
+![App für SharePoint-Projekte im Projektmappen-Explorer](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
 
 
 
-!\[Manifest-Editor mit Abfragezeichenfolge-Parametern](images/ChromeControl_manifest.PNG)
+![Manifest-Editor mit Abfragezeichenfolge-Parametern](images/ChromeControl_manifest.PNG)
 
 
     Das Chromsteuerelement übernimmt automatisch die folgenden Werte aus der Abfragezeichenfolge:
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[Auf einer Seite verwendetes SharePoint-Website-Stylesheet](images/ChromControl_stylesheet.png)
+![Auf einer Seite verwendetes SharePoint-Website-Stylesheet](images/ChromControl_stylesheet.png)
 
 
 

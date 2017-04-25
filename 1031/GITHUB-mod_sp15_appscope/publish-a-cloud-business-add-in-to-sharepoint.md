@@ -17,7 +17,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
 
 
 
-!\[Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
+![Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
 
 
 
@@ -109,7 +109,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
 
 
 
-!\[Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
+![Der Knoten "IncidentManager"](images/CBA_IM_18.PNG)
 
 
 

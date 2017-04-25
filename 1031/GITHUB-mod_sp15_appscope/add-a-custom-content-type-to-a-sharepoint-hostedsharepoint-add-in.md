@@ -66,7 +66,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
 
 
-!\[Der Inhaltstyp-Designer, in dem "NewEmployee" als Typname "Stellt einen neuen Mitarbeiter dar" als Beschreibung und "Mitarbeiterorientierung" als Gruppe angezeigt wird.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+![Der Inhaltstyp-Designer, in dem "NewEmployee" als Typname "Stellt einen neuen Mitarbeiter dar" als Beschreibung und "Mitarbeiterorientierung" als Gruppe angezeigt wird.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
 
 
 
@@ -81,7 +81,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
 
 
-!\[Die Registerkarte "Spalten" des Inhaltstyp-Designers, wobei "Mitarbeiter", "Abteilung" und "Orientierungsphase" im Raster aufgeführt ist.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+![Die Registerkarte "Spalten" des Inhaltstyp-Designers, wobei "Mitarbeiter", "Abteilung" und "Orientierungsphase" im Raster aufgeführt ist.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
 
 
 
@@ -96,9 +96,8 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 11. Die Datei enthält bereits **FieldRef**-Elemente für die beiden Spalten, die Sie hinzugefügt haben. Fügen Sie **FieldRef**-Elemente für zwei integrierte SharePoint-Spalten als übergeordnete Elemente der beiden bereits vorhandenen hinzu. Nachfolgend dargestellt ist das Markup für die Elemente.  *Sie müssen diese GUIDs für die ID-Attribute verwenden, da diese integrierte Feldtypen mit festen IDs sind.*  Fügen Sie sie *über*  den beiden **FieldRef**-Elementen für die benutzerdefinierten Websitespalten hinzu.
 
   ```
-
-<FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
-<FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
+  <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
+  <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
   ```
 
 
@@ -129,7 +128,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
 
 
-!\[Das Dialogfeld "Einstellungen" des Inhaltstyps, in dem nur ein einziger Inhaltstyp mit dem Namen "NewEmployee" aufgeführt ist.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+![Das Dialogfeld "Einstellungen" des Inhaltstyps, in dem nur ein einziger Inhaltstyp mit dem Namen "NewEmployee" aufgeführt ist.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
 
 
 
@@ -221,7 +220,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
 
 
-!\[Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Abteilung" und "Orientierungsphase" bereits vorhanden sind.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
+![Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Abteilung" und "Orientierungsphase" bereits vorhanden sind.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
 
 
 

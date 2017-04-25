@@ -120,7 +120,7 @@ In Abbildung 1 ist das Browserfenster mit Daten vom Remotedienst auf einer Share
 
 
 
-!\[Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
+![Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -435,7 +435,7 @@ Categories from the Northwind database exposed as an OData service:
 
 
 
-!\[SharePoint-Seite mit Daten vom Remotedienst](images/WebProxy_result.png)
+![SharePoint-Seite mit Daten vom Remotedienst](images/WebProxy_result.png)
 
 
 

@@ -261,7 +261,7 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
 
 
 
-!\[Listenordner mit der untergeordneten Vorlage "NewEmployeeOrientation", die wiederum über drei untergeordnete Elemente verfügt: eine NewEmployeeOrientationInstance, die Datei "elements.xml" und die Datei "schema.xml". Die Instanz selbst ist ein untergeordnetes Element mit dem Namen "elements.xml".](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
+![Listenordner mit der untergeordneten Vorlage "NewEmployeeOrientation", die wiederum über drei untergeordnete Elemente verfügt: eine NewEmployeeOrientationInstance, die Datei "elements.xml" und die Datei "schema.xml". Die Instanz selbst ist ein untergeordnetes Element mit dem Namen "elements.xml".](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
 
 
 
@@ -399,7 +399,7 @@ Für das erste von SharePoint gehostete SharePoint-Add-In ist die klassische Sha
 
 
 
-!\[Die Standardseite des Add-Ins mit dem Titel "Neue Mitarbeiter nach Standort" wird angezeigt. Es gibt einen Link mit der Bezeichnung "Neue Mitarbeiter in Seattle". Ein Pfeil von diesem Link zeigt auf die Listenansichtsseite für die Liste. Diese hat den Titel "Neue Mitarbeiter in Seattle" und weist die folgende Liste auf.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
+![Die Standardseite des Add-Ins mit dem Titel "Neue Mitarbeiter nach Standort" wird angezeigt. Es gibt einen Link mit der Bezeichnung "Neue Mitarbeiter in Seattle". Ein Pfeil von diesem Link zeigt auf die Listenansichtsseite für die Liste. Diese hat den Titel "Neue Mitarbeiter in Seattle" und weist die folgende Liste auf.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
 
 
 

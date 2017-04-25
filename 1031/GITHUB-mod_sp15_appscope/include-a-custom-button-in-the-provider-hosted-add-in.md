@@ -74,7 +74,7 @@ Die benutzerdefinierte Schaltfläche wird sich auf dem Menüband einer bestimmte
 
 10. Klicken Sie auf **Neues Element**, und geben Sie auf dem Formular zum Erstellen eines Element einen Namen ein, aber aktivieren Sie  *nicht* **Zu Unternehmens-DB hinzugefügt**. Klicken Sie dann auf **Speichern**. Die Liste sollte etwa wie folgt aussehen:
 
-!\[Die Liste der lokalen Mitarbeiter mit einem einzelnen Element. Der Name ist Brayden Sawtell. Der Wert der Spalte "Zu Unternehmens-DB hinzugefügt" ist "Nein".](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
+![Die Liste der lokalen Mitarbeiter mit einem einzelnen Element. Der Name ist Brayden Sawtell. Der Wert der Spalte "Zu Unternehmens-DB hinzugefügt" ist "Nein".](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
 
 
 
@@ -283,7 +283,7 @@ Wie Sie gesehen haben, werden Sie von SharePoint aufgefordert, die Add-In-Berech
 
 4. Lassen Sie die das Feld **Eigenschaften** leer, und speichern Sie die Datei. Die Registerkarte **Berechtigung** sollte etwa wie folgt aussehen:
 
-!\[Die Registerkarte "Berechtigungen" im Add-In-Manifest-Designer zeigt den Bereich "Liste" und die Berechtigung "Lesen".](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
+![Die Registerkarte "Berechtigungen" im Add-In-Manifest-Designer zeigt den Bereich "Liste" und die Berechtigung "Lesen".](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
 
 
 
@@ -299,7 +299,7 @@ Wie Sie gesehen haben, werden Sie von SharePoint aufgefordert, die Add-In-Berech
 
 1. Verwenden Sie die F5-TASTE, um Ihr Add-In bereitzustellen und auszuführen. Visual Studio hostet die Remotewebanwendung in IIS Express und die SQL-Datenbank in SQL Express. Außerdem wird eine temporäre Installation des Add-Ins auf Ihrer SharePoint-Testwebsite durchgeführt, und das Add-In wird sofort ausgeführt. Sie werden aufgefordert, Berechtigungen für das Add-In zu erteilen, bevor die Startseite geöffnet wird. Diesmal umfasst die Aufforderung eine Dropdownliste, aus der Sie die Liste auswählen, die das Add-In lesen muss, wie im folgenden Screenshot dargestellt. 
 
-!\[Die SharePoint-Add-In-Berechtigungsaufforderung; die Liste "Lokale Mitarbeiter" ist in der Dropdownliste "Darf Elemente in der Liste lesen" ausgewählt.](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
+![Die SharePoint-Add-In-Berechtigungsaufforderung; die Liste "Lokale Mitarbeiter" ist in der Dropdownliste "Darf Elemente in der Liste lesen" ausgewählt.](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
 
 
 
@@ -322,7 +322,7 @@ Wie Sie gesehen haben, werden Sie von SharePoint aufgefordert, die Add-In-Berech
 
 7. Wählen Sie ein Element in der Liste aus. Die Seite und das Menüband sollten etwa wie folgt aussehen:
 
-!\[Die Lister der lokalen Mitarbeiter. Ein Element ist hervorgehoben. Darüber befindet sich das Menüband, und der Abschnitt "Aktionen" enthält eine Schaltfläche mit dem Namen "Zu Unternehmens-DB hinzufügen".](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
+![Die Lister der lokalen Mitarbeiter. Ein Element ist hervorgehoben. Darüber befindet sich das Menüband, und der Abschnitt "Aktionen" enthält eine Schaltfläche mit dem Namen "Zu Unternehmens-DB hinzufügen".](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
 
 
 
@@ -339,7 +339,7 @@ Wie Sie gesehen haben, werden Sie von SharePoint aufgefordert, die Add-In-Berech
 
 11. Klicken Sie auf **Mitarbeiter anzeigen**, und die Liste der Mitarbeiter wird mit dem Mitarbeiter, den Sie hinzugefügt haben, aufgefüllt. Sie sollte etwa wie folgt aussehen:
 
-!\[Die Liste der Unternehmensmitarbeiter auf der Startseite des Add-Ins mit Anzeige des Mitarbeiters, der in einem früheren Schritt ausgewählt wurde](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
+![Die Liste der Unternehmensmitarbeiter auf der Startseite des Add-Ins mit Anzeige des Mitarbeiters, der in einem früheren Schritt ausgewählt wurde](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
 
 
 
