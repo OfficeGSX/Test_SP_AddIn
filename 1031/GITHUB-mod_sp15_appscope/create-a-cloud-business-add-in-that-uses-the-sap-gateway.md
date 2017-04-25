@@ -376,8 +376,7 @@ Dies ist unsere Testdatenbank, und der Eigenschaftstyp und Nullable-Wert basiere
 
 -  *Für RIA-Dienst definiertes Datenmodell* 
 
-  ```cs
-
+```cs
 public interface IInventoryItem
     	{
         IEnumerable<InventoryPropertyName> ValidPropertyNames { get; }
@@ -424,7 +423,7 @@ public interface IInventoryItem
         bool CopyFrom(IInventoryCollection other);
 }
 
-  ```
+```
 
 
     Alle nicht im SAP-Datenbankschema enthaltenen Eigenschaften können ignoriert werden. Die **Images** -Eigenschaft beispielsweise wurde hier für Skalierbarkeitsaspekte hinzugefügt. Dieses Datenmodell stellt eine mittlere Ebene zwischen der SAP-Datenbank und der SellerDashboard.Server-Datenquelle dar. Das LightSwitch-Projekt besteht aus zwei Komponenten: Ansicht und Server. Wenn Sie eine externe Datenquelle auf der Serverseite hinzufügen, können Sie mit LightSwitch eine abstrakte Datenebene erstellen, die zu der Datenquelle auf Serverseite hinzugefügt wird.
@@ -432,7 +431,7 @@ public interface IInventoryItem
     Die meisten Eigenschaften weisen den gleichen Typ auf wie die Eigenschaften in dem SAP-Datenbankschema, mit Ausnahme von StockNo, deren Typ von **int** zu **string** geändert wurde. Das liegt daran, dass StockNo zum Definieren der Beziehung zwischen den SAP-Daten und der SharePoint-Bildbibliothek verwendet wird.
 
     > **TIPP**
-      > StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
+    > StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
 
     Die Implementierung von zwei Schnittstellen findet in "CarInventoryModel/InventoryItem.cs" und "CarInventoryModel/InventoryCollection.cs" statt.
 
@@ -919,7 +918,7 @@ In den Schritten in diesem Abschnitt wird beschrieben, wie das Beispiel-Add-In �
 
 
 > **HINWEIS**
-> Sie müssen das Add-In mit Azure AD zweimal registrieren: Einmal für Debuggingzwecke und dann noch mal zum Bereitstellen für die Produktion, wie in Schritt 10 beschrieben. > Verwenden Sie zum Registrieren des Add-Ins für Debuggingzwecke **URL FÜR ANMELDUNG** und **APP-ID-URI** mit der Debugging-URL des SellerDashboard.Server-Projekts, damit Sie den Visual Studio-Debugger (F5) ausführen können. Diese URL weist das Format https://localhost. *nnnn*  auf, wobei *nnnn*  eine Portnummer ist. Diese URL finden Sie im Bereich "Eigenschaften" in Visual Studio.> Bearbeiten Sie die Registrierung zur Verwendung der richtigen Produktions-URL, wenn Sie für die Bereitstellung für die Produktion bereit sind. 
+> Sie müssen das Add-In mit Azure AD zweimal registrieren: Einmal für Debuggingzwecke und dann noch mal zum Bereitstellen für die Produktion, wie in Schritt 10 beschrieben. <br /><br /> Verwenden Sie zum Registrieren des Add-Ins für Debuggingzwecke **URL FÜR ANMELDUNG** und **APP-ID-URI** mit der Debugging-URL des SellerDashboard.Server-Projekts, damit Sie den Visual Studio-Debugger (F5) ausführen können. Diese URL weist das Format https://localhost. *nnnn*  auf, wobei *nnnn*  eine Portnummer ist. Diese URL finden Sie im Bereich "Eigenschaften" in Visual Studio.<br /><br /> Bearbeiten Sie die Registrierung zur Verwendung der richtigen Produktions-URL, wenn Sie für die Bereitstellung für die Produktion bereit sind. 
 
 
 
@@ -945,7 +944,7 @@ Konfigurieren Sie die Einstellungen für die neue Anwendung, die Sie im vorherig
 |App-ID-URI  <br/> |Kopieren Sie den Wert, der im Feld **Add-In-ID-URI** angezeigt wird. <br/> |
  
 
-    Denken Sie daran, diese Informationen bereitzuhalten, da Sie sie in einem späteren Verfahren benötigen.
+Denken Sie daran, diese Informationen bereitzuhalten, da Sie sie in einem späteren Verfahren benötigen.
 
 
 3. Gehen Sie im Abschnitt **Berechtigungen für andere Anwendungen** folgendermaßen vor:
