@@ -149,14 +149,14 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
 
 - **BoxXDataService**
 
-    Dies ist ein WCF-RIA-Dienst, der die von der in Azure gehosteten serverseitigen SellerDashboard-Komponente verwendete Schnittstelle darstellt und die SAP-Datenquelle vom SAP-Gateway für Microsoft verwendet.
+Dies ist ein WCF-RIA-Dienst, der die von der in Azure gehosteten serverseitigen SellerDashboard-Komponente verwendete Schnittstelle darstellt und die SAP-Datenquelle vom SAP-Gateway für Microsoft verwendet.
 
-    Der folgende Codeausschnitt veranschaulicht die CRUD-Webmethode, die vom WCF-RIA-Dienst unterstützt wird. Weitere Informationen finden Sie unter BoxXDataService/BoxXDataService.cs.
+Der folgende Codeausschnitt veranschaulicht die CRUD-Webmethode, die vom WCF-RIA-Dienst unterstützt wird. Weitere Informationen finden Sie unter BoxXDataService/BoxXDataService.cs.
 
 
 
   ```cs
-[Query(IsDefault = true)]
+  [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
         {
             BoxXDataReader dataReader = BoxXDataReader.Instance;
@@ -433,7 +433,7 @@ Die meisten Eigenschaften weisen den gleichen Typ auf wie die Eigenschaften in d
 > **TIPP**
 > StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
 
-    Die Implementierung von zwei Schnittstellen findet in "CarInventoryModel/InventoryItem.cs" und "CarInventoryModel/InventoryCollection.cs" statt.
+Die Implementierung von zwei Schnittstellen findet in "CarInventoryModel/InventoryItem.cs" und "CarInventoryModel/InventoryCollection.cs" statt.
 
 
 -  *Von der LightSwitch-Serverseite verwendete Datenquelle* 
