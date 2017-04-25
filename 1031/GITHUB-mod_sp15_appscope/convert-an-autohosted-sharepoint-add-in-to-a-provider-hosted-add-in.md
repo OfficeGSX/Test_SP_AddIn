@@ -284,7 +284,7 @@ Aktualisieren Sie das Visual Studio-Toolfenster **SQL Server-Objekt-Explorer**, 
 
 
 > **HINWEIS**
->  Abhängig davon, wie die Datenbank für das automatisch gehostete Add-In erstellt wurde, sind möglicherweise einige weitere Schritte erforderlich, um es für Azure bereitzustellen. Zusätzliche Anweisungen finden Sie in den folgenden Artikeln in MSDN:>  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
+>  Abhängig davon, wie die Datenbank für das automatisch gehostete Add-In erstellt wurde, sind möglicherweise einige weitere Schritte erforderlich, um es für Azure bereitzustellen. Zusätzliche Anweisungen finden Sie in den folgenden Artikeln in MSDN:<BR /><BR />  [Converting between Data-tier Application Projects and Database Projects](http://msdn.microsoft.com/library/40b51f5a-d52c-44ac-8f84-037a0917af33.aspx)<BR/>  [Creating &amp; Managing Data-Tier Application](http://msdn.microsoft.com/library/18907b6c-7678-4182-9304-fe56fdb9f0bd.aspx)
 
 
 
