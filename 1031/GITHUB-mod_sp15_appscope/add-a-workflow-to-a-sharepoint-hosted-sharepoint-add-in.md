@@ -61,12 +61,12 @@ In diesem Artikel fügen Sie einen Workflow zur SharePoint-Add-In „Employee Or
 
   - **Die Verlaufsliste...**
 
-    <Neu erstellen>
+    \<Neu erstellen\>
 
 
   - **Die Aufgabenliste...**
 
-    <Neu erstellen>
+    \<Neu erstellen\>
 
 
 
@@ -140,7 +140,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 ![Eigenschaftenbereich der Workflowaktivität "Listenelement suchen", wobei die Eigenschaften "ItemID", "ListID" und "DisplayName" festgelegt sind.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
 
 
-    Klicken Sie auf eine beliebige Stelle außerhalb des Bereichs, um die Änderungen zu speichern. Die Designeroberfläche sollte jetzt wie folgt aussehen.
+Klicken Sie auf eine beliebige Stelle außerhalb des Bereichs, um die Änderungen zu speichern. Die Designeroberfläche sollte jetzt wie folgt aussehen.
 
 
    **Sequenz im Workflow-Designer**
@@ -255,8 +255,8 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
 
 
-    > **HINWEIS**
-      > Wenn die Konsole **Diensttesthost** nicht geöffnet wird, müssen Sie möglicherweise das Workflow-Debugging aktivieren. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Öffnen Sie im Bereich **Eigenschaften** die Registerkarte **SharePoint**, und aktivieren Sie das Kontrollkästchen **Workflow-Debugging aktivieren**. 
+> **HINWEIS**
+> Wenn die Konsole **Diensttesthost** nicht geöffnet wird, müssen Sie möglicherweise das Workflow-Debugging aktivieren. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus. Öffnen Sie im Bereich **Eigenschaften** die Registerkarte **SharePoint**, und aktivieren Sie das Kontrollkästchen **Workflow-Debugging aktivieren**. 
 3. Navigieren Sie zum E-Mail-Postfach (Outlook) Ihres Office 365-Entwicklerkontos. Dort finden Sie eine E-Mail mit dem Betreff „ *Employee*  is ready for HR paperwork", wobei *Employee*  der Name des Mitarbeiters ist, deren Element Sie bearbeitet haben. Im Textkörper der E-Mail steht: „ *Employee*  is waiting in the lobby to fill out benefits and employment forms." Im Folgenden sehen Sie ein Beispiel:
 
    **Vom Workflow gesendete E-Mail**
@@ -269,8 +269,8 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
 
 
-    > **TIPP**
-      > Wenn der Workflow gestartet, aber niemals abgeschlossen und die E-Mail nicht gesendet wird, versuchen Sie, die Debugsitzung zu beenden, und drücken Sie einige Male erneut F5, bevor Sie davon ausgehen, dass etwas in Ihrem Code nicht in Ordnung ist. Manchmal liegt das Problem bei SharePoint Online. > Wenn weiterhin Probleme auftreten, versuchen Sie, einen Inhaltstyp namens **ListFieldsContentType**, falls dieser noch nicht vorhanden ist, zum Abschnitt **ContentTypes** der schema.xml-Datei hinzuzufügen. Das folgende ist ein Beispiel für das Markup.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
+> **TIPP**
+> Wenn der Workflow gestartet, aber niemals abgeschlossen und die E-Mail nicht gesendet wird, versuchen Sie, die Debugsitzung zu beenden, und drücken Sie einige Male erneut F5, bevor Sie davon ausgehen, dass etwas in Ihrem Code nicht in Ordnung ist. Manchmal liegt das Problem bei SharePoint Online. > Wenn weiterhin Probleme auftreten, versuchen Sie, einen Inhaltstyp namens **ListFieldsContentType**, falls dieser noch nicht vorhanden ist, zum Abschnitt **ContentTypes** der schema.xml-Datei hinzuzufügen. Das folgende ist ein Beispiel für das Markup.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
 
 
 
