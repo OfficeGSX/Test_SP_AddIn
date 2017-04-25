@@ -9,18 +9,18 @@ ms.assetid: 4c051a49-6393-4a08-868a-4a51408842cf
 Erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Ordner und Dateien mit der SharePoint 2013-REST-Schnittstelle durchführen.
 > **TIPP**
 > Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md). 
-  
-    
-    
+
+
+
 
 
 ## Arbeiten mit Ordnern unter Verwendung von REST
 <a name="Folders"> </a>
 
 Sie können einen Ordner innerhalb einer Dokumentbibliothek abrufen, wenn Sie die URL des Ordners kennen. Zum Beispiel können Sie den Stammordner Ihrer Bibliothek für freigegebene Dokumente abrufen, indem Sie den Endpunkt im folgenden Beispiel verwenden.
-  
-    
-    
+
+
+
 
 ```
 
@@ -33,9 +33,9 @@ headers:
 ```
 
 Der folgende XML-Code zeigt ein Beispiel für die Ordnereigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.
-  
-    
-    
+
+
+
 
 
 
@@ -52,9 +52,9 @@ Der folgende XML-Code zeigt ein Beispiel für die Ordnereigenschaften, die beim 
 ```
 
 Das folgende Beispiel zeigt, wie Sie einen Ordner **erstellen**.
-  
-    
-    
+
+
+
 
 
 
@@ -72,9 +72,9 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie einen Ordner **aktualisieren** und dazu die **MERGE**-Methode verwenden.
-  
-    
-    
+
+
+
 
 
 
@@ -94,9 +94,9 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie einen Ordner **löschen**.
-  
-    
-    
+
+
+
 
 
 
@@ -117,9 +117,9 @@ Headers:
 <a name="Files"> </a>
 
 Das folgende Beispiel zeigt, wie Sie alle Dateien in einem Ordner **abrufen**.
-  
-    
-    
+
+
+
 
 ```
 
@@ -132,9 +132,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine bestimmte Datei **abrufen**.
-  
-    
-    
+
+
+
 
 
 
@@ -147,9 +147,9 @@ headers:
 ```
 
 Sie können eine Datei auch **abrufen**, wenn Sie ihre URL kennen, wie im folgenden Beispiel.
-  
-    
-    
+
+
+
 
 
 
@@ -162,9 +162,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Datei **erstellen** und einem Ordner hinzufügen.
-  
-    
-    
+
+
+
 
 
 
@@ -180,15 +180,15 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Datei **aktualisieren** und dazu die **PUT** -Methode verwenden.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die **MERGE** -Methode ist nicht zulässig.
-  
-    
-    
+
+
+
 
 
 
@@ -206,13 +206,13 @@ Headers:
 ```
 
 Wenn Sie die Metadaten einer Datei aktualisieren möchten, müssen Sie einen Endpunkt erstellen, der die Datei als ein Listenelement erreicht. Dies ist möglich, weil jeder Ordner auch eine Liste und jede Datei auch ein Listenelement ist. Erstellen Sie einen Endpunkt, der folgendermaßen aussieht:  `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`. In  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md) wird erklärt, wie Sie die Metadaten eines Listenelements aktualisieren.
-  
-    
-    
+
+
+
 Sie können eine Datei auschecken, um sicherzustellen, dass andere Benutzer sie nicht ändern, bevor Sie sie aktualisiert haben. Nachdem Sie die Datei aktualisiert haben, können Sie sie wieder zurückchecken, damit andere Benutzer mit ihr arbeiten können. Das folgende Beispiel zeigt, wie Sie **eine Datei auschecken**.
-  
-    
-    
+
+
+
 
 
 
@@ -226,9 +226,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie **eine Datei einchecken**.
-  
-    
-    
+
+
+
 
 
 
@@ -242,9 +242,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Datei **löschen**.
-  
-    
-    
+
+
+
 
 
 
@@ -265,15 +265,15 @@ headers:
 <a name="LargeFiles"> </a>
 
 Binärdateien mit einer Größe von über 1,5 Megabyte (MB) müssen über die REST-Schnittstelle hochgeladen werden. Unter  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md) finden Sie ein Codebeispiel, in dem das Hochladen einer Binärdatei mit einer Größe von weniger als 1,5 MB unter Verwendung des Javascript-Objektmodells von SharePoint 2013veranschaulicht wird. Mit REST können Binärdateien mit einer Größe von bis zu 2 Gigabyte (GB) erstellt werden. Im folgenden Beispiel wird die Vorgehensweise zum **Erstellen** einer großen Binärdatei veranschaulicht.
-  
-    
-    
+
+
+
 
 > **VORSICHT**
 > Diese Vorgehensweise funktioniert nur mit Internet Explorer 10 und den neuesten Versionen anderer Browser. 
-  
-    
-    
+
+
+
 
 
 ```
@@ -289,9 +289,9 @@ headers:
 ```
 
 Das folgende Codebeispiel veranschaulicht die Vorgehensweise zum Erstellen einer Datei unter Verwendung dieses REST-Endpunkts und der domänenübergreifenden Bibliothek.
-  
-    
-    
+
+
+
 
 
 
@@ -330,9 +330,9 @@ ro.executeAsync(info);
 <a name="FileAttachments"> </a>
 
 Das folgende Beispiel zeigt, wie Sie alle Dateien **abrufen**, die mit einem Listenelement verknüpft sind.
-  
-    
-    
+
+
+
 
 ```
 
@@ -345,9 +345,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Datei **abrufen**, die mit einem Listenelement verknüpft ist.
-  
-    
-    
+
+
+
 
 
 
@@ -362,9 +362,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Dateianlage für ein Listenelement **erstellen**.
-  
-    
-    
+
+
+
 
 
 
@@ -380,15 +380,15 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Dateianlage für ein Listenelement **aktualisieren**, indem Sie die **PUT** -Methode verwenden.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > **PUT** ist die einzige Methode, die Sie zum Aktualisieren einer Datei verwenden können. Die **MERGE** -Methode ist nicht zulässig.
-  
-    
-    
+
+
+
 
 
 
@@ -411,52 +411,52 @@ headers:
 
 
 -  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Dateien und Ordner - REST API-Referenz](2c3d2545-1cd7-497e-b535-12199d8edfbb.md)
-    
-  
--  [Hochladen einer Datei mit der REST-API und jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
-    
-  
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
-  
--  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
-    
-  
--  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
-  
--  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013 Demo](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
-  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
--  [Entwickeln von Add-Ins für SharePoint](develop-sharepoint-add-ins.md)
-    
-  
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
--  [Arbeiten mit externen Daten in SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
-    
-  
--  [OData (Open Data Protocol)](http://www.odata.org/)
-    
-  
--  [OData: JavaScript Object Notation (JSON)-Format](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
-    
-  
 
-  
-    
-    
+
+-  [Dateien und Ordner - REST API-Referenz](2c3d2545-1cd7-497e-b535-12199d8edfbb.md)
+
+
+-  [Hochladen einer Datei mit der REST-API und jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
+
+
+-  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
+
+
+-  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+
+
+-  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+
+
+-  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+
+
+-  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013 Demo](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
+
+
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
+
+
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
+
+
+-  [Entwickeln von Add-Ins für SharePoint](develop-sharepoint-add-ins.md)
+
+
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+
+
+-  [Arbeiten mit externen Daten in SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
+
+
+-  [OData (Open Data Protocol)](http://www.odata.org/)
+
+
+-  [OData: JavaScript Object Notation (JSON)-Format](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
+
+
+
+
+
+
 

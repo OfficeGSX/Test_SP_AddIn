@@ -8,62 +8,62 @@ ms.assetid: b48a9cb8-131a-4bd4-af4c-a98017ee2e5a
 # Hochladen einer Datei mit der REST-API und jQuery
 Erfahren Sie, wie Sie eine lokale Datei mit der REST-API und jQuery AJAX-Anforderungen in einen SharePoint-Ordner hochladen.
 Die Codebeispiele in diesem Artikel verwenden die REST-Schnittstelle und jQuery AJAX-Anforderungen, um eine lokale Datei zur **Dokument**bibliothek hinzuzufügen und ändern dann die Eigenschaften des Listenelements, dass die hochgeladene Datei repräsentiert.
-  
-    
-    
+
+
+
 
 Dieser Prozess verwendet die folgenden allgemeinen Schritte:
 1. Konvertieren Sie die lokale Datei mit der **FileReader**-API in einen Arraypuffer, dafür ist Unterstützung von HTML5 erforderlich. Die **jQuery(document).ready**-Funktion überprüft den Browser auf FileReader API-Unterstützung.
-    
-  
+
+
 2. Fügen Sie die Datei mithilfe der **Add**-Methode in der Dateisammlung des Ordners zum Ordner **Freigegebene Elemente** hinzu. Der Arraypuffer wird im Text der POST-Anforderung übergeben.
-    
+
     Diese Beispiele verwenden den **getfolderbyserverrelativeurl**-Endpunkt, um die Dateisammlung zu erreichen, Sie können aber auch einen Listenendpunkt verwenden (Beispiel:  `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).
-    
-  
+
+
 3. Rufen Sie das Listenelement, das der hochgeladenen Datei entspricht, mithilfe der **ListItemAllFields**-Eigenschaft der hochgeladenen Datei ab.
-    
-  
+
+
 4. Ändern Sie den Anzeigenamen und den Titel des Listenelements mit einer MERGE-Anforderung.
-    
-  
+
+
 
 ## Ausführen von Codebeispielen
 <a name="RunTheExamples"> </a>
 
 Beide Codebeispiele in diesem Artikel verwenden die REST-API und jQuery AJAX-Anforderungen, um eine Datei in den Ordner **Freigegebene Elemente** hochzuladen und dann die Listenelementeigenschaften zu ändern. Das erste Beispiel verwendet **SP.AppContextSite**, um SharePoint-domänenübergreifende Aufrufe auszuführen, z. B. ein in SharePoint gehostetes Add-In beim Hochladen von Dateien in das Hostweb. Das zweite Beispiel führt Aufrufe auf der gleichen Domäne aus, z. B. ein in SharePoint gehostetes Add-In beim Hochladen von Dateien in das Add-In-Web oder eine Lösung, die beim Hochladen der Dateien auf dem Server ausgeführt wird.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > In JavaScript geschriebene vom Anbieter gehostete Add-Ins müssen die domänenübergreifende SP.RequestExecutor-Bibliothek verwenden, um Anforderungen an eine SharePoint-Domäne zu senden. Ein Beispiel dazu finden Sie unter  [Hochladen einer Datei mithilfe der domänenübergreifenden Bibliothek](2c3d2545-1cd7-497e-b535-12199d8edfbb.md#bk_FileCollectionAdd). 
-  
-    
-    
+
+
+
 
 Um die Beispiele in diesem Artikel zu verwenden, benötigen Sie Folgendes:
-  
-    
-    
+
+
+
 
 - SharePoint Server 2013 oder SharePoint Online
-    
-  
+
+
 - **Write**-Berechtigungen für die **Dokument**bibliothek für den Benutzer, der den Code ausführt. Wenn Sie ein SharePoint-Add-In entwickeln, können Sie die **Write**-Add-In-Berechtigungen im Bereich **List** angeben
-    
-  
+
+
 - Browserunterstützung für die **FileReader**-API (HTML5)
-    
-  
+
+
 - Ein Verweis zur jQuery-Bibliothek library in Ihrem Seitenmarkup. Beispiel:
-    
-  ```HTML  
+
+  ```HTML
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
   ```
 
 - Die folgenden Steuerelemente in Ihrem Seitenmarkup.
-    
+
   ```HTML
   <input id="getFile" type="file"/><br />
   <input id="displayName" type="text" value="Enter a unique name" /><br />
@@ -75,13 +75,13 @@ Um die Beispiele in diesem Artikel zu verwenden, benötigen Sie Folgendes:
 <a name="RunTheExamples"> </a>
 
 Das folgende Codebeispiel verwendet die SharePoint-REST API und jQuery AJAX-Anforderungen, um eine Datei in die **Dokument**bibliothek hochzuladen und die Eigenschaften des Listenelements zu ändern, das die Datei repräsentiert. Der Kontext für dieses Beispiel ist ein in SharePoint gehostetes Add-In, das eine Datei in einen Ordner im Hostweb hochlädt.
-  
-    
-    
+
+
+
 Um dieses Beispiel verwenden zu können, müssen Sie  [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) erfüllen.
-  
-    
-    
+
+
+
 
 
 
@@ -191,7 +191,7 @@ function uploadFile() {
         // add-in web and specifies the host web as the context site.
         fileListItemUri = fileListItemUri.replace(hostWebUrl, '{0}');
         fileListItemUri = fileListItemUri.replace('_api/Web', '_api/sp.appcontextsite(@target)/web');
-        
+    
         var listItemAllFieldsEndpoint = String.format(fileListItemUri + "?@target='{1}'",
             appWebUrl, hostWebUrl);
 
@@ -256,13 +256,13 @@ function getQueryStringParameter(paramToRetrieve) {
 <a name="UploadFile"> </a>
 
 Das folgende Codebeispiel verwendet die SharePoint-REST-API und jQuery AJAX-Anforderungen, um eine Datei in die **Dokument**bibliothek hochzuladen und die Eigenschaften des Listenelements zu ändern, das die Datei repräsentiert. Der Kontext für dieses Beispiel ist eine Lösung, die auf dem Server ausgeführt wird. Der Code wäre in einem in SharePoint gehosteten Add-In ähnlich, das Dateien in das Add-In-Web hochlädt.
-  
-    
-    
+
+
+
 Bevor Sie dieses Beispiel ausführen können, müssen Sie  [diese Anforderungen](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) erfüllen.
-  
-    
-    
+
+
+
 
 
 
@@ -410,18 +410,18 @@ function onError(error) {
 
 
 -  [Einführung in den SharePoint 2013 REST-Dienst](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
+
+
 -  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md)
-    
-  
+
+
 -  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
+
+
 -  [SharePoint 2013 - REST-API, Endpunkte und Beispiele](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
+
+
 -  [Zugreifen auf SharePoint 2013-Daten über Add-Ins mithilfe der domänenübergreifenden Bibliothek](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
-    
-  
+
+
 

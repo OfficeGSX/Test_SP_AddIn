@@ -9,25 +9,25 @@ ms.assetid: 956f3a09-bddc-4154-9cba-6143c914d60f
 In diesem Artikel erfahren Sie, wie Sie grundlegende Erstellungs-, Lese-, Aktualisierungs- und Löschoperationen, auch als CRUD-Operationen (Create, Read, Update, Delete) bezeichnet, für Listen und Listenelemente mit der SharePoint 2013-REST-Schnittstelle durchführen.
 > **TIPP**
 > Der SharePoint Online-REST-Dienst unterstützt die Kombination mehrerer Anforderungen in einem einzelnen Dienstaufruf mithilfe der OData-Abfrageoption  `$batch`. Einzelheiten und Links zu Codebeispielen finden Sie unter  [Erstellen von Batchanforderungen mit den REST-APIs](make-batch-requests-with-the-rest-apis.md). 
-  
-    
-    
+
+
+
 
 
 ## Voraussetzungen
 
 In diesem Thema wird davon ausgegangen, dass Sie bereits mit den Themen  [Einführung in den SharePoint 2013 REST-Dienst](get-to-know-the-sharepoint-2013-rest-service.md) und [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md) vertraut sind. Es werden keine Codeausschnitte bereitgestellt.
-  
-    
-    
+
+
+
 
 ## Abrufen von Listen und Listeneigenschaften mit REST
 <a name="RetrieveLists"> </a>
 
 Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihre GUID bekannt ist.
-  
-    
-    
+
+
+
 
 ```
 
@@ -42,14 +42,14 @@ Headers:
 
 > **HINWEIS**
 > Verwenden Sie  `application/json;odata=verbose` im `accept`-Header, wenn die Antwort im JSON-Format erfolgen soll. Verwenden Sie  `application/atom+xml` im `accept`-Header, wenn die Antwort im Atom-Format erfolgen soll. 
-  
-    
-    
+
+
+
 
 Das folgende Beispiel zeigt, wie Sie eine bestimmte Liste **abrufen**, wenn ihr Titel bekannt ist.
-  
-    
-    
+
+
+
 
 
 
@@ -64,9 +64,9 @@ Headers:
 ```
 
 Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.
-  
-    
-    
+
+
+
 
 
 
@@ -118,18 +118,18 @@ Der folgende XML-Code zeigt ein Beispiel für die Listeneigenschaften, die beim 
 
 > **HINWEIS**
 > Die Eigenschaft **ListItemEntityTypeFullName** ( **SP.Data.ProjectPolicyItemListItem** im vorherigen Beispiel) ist besonders wichtig, wenn Sie Listenelemente erstellen und aktualisieren möchten. Dieser Wert muss als Eigenschaft **type** in den Metadaten übergeben werden, die Sie grundsätzlich beim Erstellen und Aktualisieren von Listenelemente im Textkörper der HTTP-Anforderung übergeben.
-  
-    
-    
+
+
+
 
 
 ## Arbeiten mit Listen unter Verwendung von REST
 <a name="WorkLists"> </a>
 
 Das folgende Beispiel zeigt, wie Sie eine Liste **erstellen**.
-  
-    
-    
+
+
+
 
 ```
 
@@ -146,9 +146,9 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Liste **aktualisieren** und dazu die **MERGE**-Methode verwenden.
-  
-    
-    
+
+
+
 
 
 
@@ -168,9 +168,9 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie ein **benutzerdefiniertes Feld** für eine Liste **erstellen**.
-  
-    
-    
+
+
+
 
 
 
@@ -187,9 +187,9 @@ Headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie eine Liste **löschen**.
-  
-    
-    
+
+
+
 
 
 
@@ -210,15 +210,15 @@ Headers:
 <a name="ListItems"> </a>
 
 Das folgende Beispiel zeigt, wie Sie alle Elemente einer Liste **abrufen**.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > Die OData-Abfrageoption $skip funktioniert nicht beim Abfragen von Listenelementen. In vielen Situationen können Sie stattdessen die Option  [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx) verwenden.
-  
-    
-    
+
+
+
 
 
 ```
@@ -232,9 +232,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie sie ein bestimmtes Listenelement **abrufen**.
-  
-    
-    
+
+
+
 
 
 
@@ -249,9 +249,9 @@ headers:
 ```
 
 Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, die beim Anfordern des XML-Inhaltstyps zurückgegeben werden.
-  
-    
-    
+
+
+
 
 
 
@@ -276,15 +276,15 @@ Der folgende XML-Code zeigt ein Beispiel für die Listenelementeigenschaften, di
 ```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **erstellen**.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
-  
-    
-    
+
+
+
 
 
 
@@ -303,15 +303,15 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **aktualisieren**.
-  
-    
-    
+
+
+
 
 > **HINWEIS**
 > Um diese Operation durchzuführen, müssen Sie die Eigenschaft **ListItemEntityTypeFullName** der Liste kennen und sie als Wert von **type** im Textkörper der HTTP-Anforderung übergeben.
-  
-    
-    
+
+
+
 
 
 
@@ -332,9 +332,9 @@ headers:
 ```
 
 Das folgende Beispiel zeigt, wie Sie ein Listenelement **löschen**.
-  
-    
-    
+
+
+
 
 
 
@@ -355,70 +355,70 @@ headers:
 <a name="Etag"> </a>
 
 Der SharePoint-REST-Dienst, der dem  [OData-Standard](http://www.odata.org/developers/protocols/operations) folgt, verwendet [HTML-ETags für die Steuerung der Parallelität](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) von SharePoint-Listen und -Listenelementen. Geben Sie zum Prüfen der Version eines Elements bei der Durchführung einer **PUT**-, **MERGE**- oder **DELETE**-Anforderung ein **ETag** im **If-Match**-HTTP-Anforderungsheader an.
-  
-    
-    
+
+
+
 Wenn das in Ihrer Anforderung angegebene **ETag** nicht mit dem **ETag** des Dokument- oder Listenelements auf dem Server übereinstimmt, gibt der REST-Dienst gemäß der OData-Spezifikation eine 412-Ausnahme zurück.
-  
-    
-    
+
+
+
 
 - Wenn Sie ein Überschreiben des Elements unabhängig von der Version erzwingen möchten, legen Sie den **ETag**-Wert auf **"*"** fest.
-    
-  
+
+
 - Wenn Sie kein **ETag** angeben, überschreibt SharePoint das Element unabhängig von der Version.
-    
-  
+
+
 In SharePoint gelten ETags nur für SharePoint-Listen und Listenelemente.
-  
-    
-    
+
+
+
 
 ## Zusätzliche Ressourcen
 <a name="bk_addresources"> </a>
 
 
 -  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md)
-    
-  
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
-  
--  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
-    
-  
--  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
-  
--  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013 Demo](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
-  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
-    
-  
--  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
-    
-  
--  [Entwickeln von Add-Ins für SharePoint](develop-sharepoint-add-ins.md)
-    
-  
--  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
-  
--  [Arbeiten mit externen Daten in SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
-    
-  
--  [OData (Open Data Protocol)](http://www.odata.org/)
-    
-  
--  [OData: JSON (JavaScript Object Notation)-Format](http://www.odata.org/documentation/odata-version-2-0/json-format/)
-    
-  
 
-  
-    
-    
+
+-  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md)
+
+
+-  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+
+
+-  [SharePoint 2013: Ausführen grundlegender Datenzugriffsvorgänge für Dateien und Ordner mithilfe von REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+
+
+-  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+
+
+-  [Durchführen von REST-Aufrufen mit C# und JavaScript für SharePoint 2013 Demo](http://www.microsoft.com/resources/msdn/de-de/office/media/video/video.mdl?cid=sdc&amp;from=mscomsdc&amp;videoid=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
+
+
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-Clientbibliothekscode](complete-basic-operations-using-sharepoint-2013-client-library-code.md)
+
+
+-  [Ausführen grundlegender Vorgänge unter Verwendung von JavaScript-Bibliothekscode in SharePoint 2013](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013.md)
+
+
+-  [Entwickeln von Add-Ins für SharePoint](develop-sharepoint-add-ins.md)
+
+
+-  [Sicherer Datenzugriff und Clientobjektmodelle für SharePoint-Add-Ins](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+
+
+-  [Arbeiten mit externen Daten in SharePoint 2013](work-with-external-data-in-sharepoint-2013.md)
+
+
+-  [OData (Open Data Protocol)](http://www.odata.org/)
+
+
+-  [OData: JSON (JavaScript Object Notation)-Format](http://www.odata.org/documentation/odata-version-2-0/json-format/)
+
+
+
+
+
+
 

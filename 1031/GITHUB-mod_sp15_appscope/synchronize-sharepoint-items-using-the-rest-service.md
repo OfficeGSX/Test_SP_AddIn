@@ -10,17 +10,17 @@ In diesem Artikel erfahren Sie, wie Sie Elemente zwischen SharePoint und Ihren A
 ## Synchronisieren von SharePoint-Elementen mit der Ressource "GetListItemChangesSinceToken"
 
 Wenn Sie Elemente zwischen SharePoint und Ihren Add-Ins oder Diensten synchronisieren wollen, können Sie dazu die Ressource **GetListItemChangesSinceToken** verwenden. **GetListItemChangesSinceToken** ist Teil des SharePoint REST-Dienst und entspricht dem Webdienstaufruf [Lists.GetListItemChangesSinceToken](https://msdn.microsoft.com/library/WebSvcLists.Lists.GetListItemChangesSinceToken.aspx) .
-  
-    
-    
+
+
+
 Führen Sie eine **POST**-Anforderung durch, die im Textkörper ein  [Objekteigenschaften von SP.ChangeLogItemQuery](#bk_props)-Objekt enthält.
-  
-    
-    
+
+
+
 Die Anforderung gibt eine ADO- **rowset**-XML-Datei zurück, die Zeilen enthält, die jedem Listenelement entsprechen, das zur jeweiligen Anfrage passt. Weitere Informationen zu diesen Eigenschaften, einschließlich Eingenschaftsdatenstrukturen, CAML-Elementbeschreibungen und Rückgabewerten, finden Sie unter  [Lists.GetListItemChangesSinceToken](https://msdn.microsoft.com/library/WebSvcLists.Lists.GetListItemChangesSinceToken.aspx) .
-  
-    
-    
+
+
+
 
 ||
 |:-----|
@@ -55,7 +55,7 @@ Die Anforderung gibt eine ADO- **rowset**-XML-Datei zurück, die Zeilen enthält
 ```
 
 |
-   
+ 
 
 ## Objekteigenschaften von SP.ChangeLogItemQuery
 <a name="bk_props"> </a>
@@ -72,41 +72,41 @@ Die Anforderung gibt eine ADO- **rowset**-XML-Datei zurück, die Zeilen enthält
 |**QueryOptions** <br/> |Ein XML-Fragment in der folgenden Form, das separate Knoten für die verschienden Eingeschaften des  [SPQuery](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPQuery.aspx) -Objekts enthält. <br/> |
 |**ChangeToken** <br/> |Eine Zeichenfolge, die den Änderungstoken für die Anforderung enthält. Eine Beschreibung des für diese Zeichenfolge verwendeten Formats finden Sie unter  [Änderungsprotokoll (Übersicht)](http://msdn.microsoft.com/de-de/library/bb417456.aspx).Wenn NULL übergeben wird, werden alle Elemente in der Liste zurückgegeben.  <br/> |
 |**Contains** <br/> |n  [Contains](http://msdn.microsoft.com/de-de/library/ms196501.aspx)-Element, das die benutzerdefinierte Filterung für die Abfrage definiert.  <br/> |
-   
+ 
 
 ## Zusätzliche Ressourcen
 <a name="bk_addresources"> </a>
 
 
 -  [Einführung in den SharePoint 2013 REST-Dienst](get-to-know-the-sharepoint-2013-rest-service.md)
-    
-  
--  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
-    
-  
--  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
-    
-  
--  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md)
-    
-  
--  [Navigieren durch die im REST-Dienst dargestellte SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
-    
-  
--  [Ermitteln von URIs von SharePoint-REST-Dienstendpunkten](determine-sharepoint-rest-service-endpoint-uris.md)
-    
-  
--  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
-    
-  
--  [SharePoint 2013 - REST-API, Endpunkte und Beispiele](02128c70-9d27-4388-9374-a11bce68fdb8.md)
-    
-  
--  [Verwenden von ETag-Werten über den REST-Dienst, um die Version von Dokumentlistenelementen zu bestimmen](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
-    
-  
 
-  
-    
-    
+
+-  [Ausführen grundlegender Vorgänge unter Verwendung von SharePoint 2013-REST-Endpunkten](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md)
+
+
+-  [Arbeiten mit Listen und Listenelementen unter Verwendung von REST](working-with-lists-and-list-items-with-rest.md)
+
+
+-  [Arbeiten mit Ordnern und Dateien mit REST](working-with-folders-and-files-with-rest.md)
+
+
+-  [Navigieren durch die im REST-Dienst dargestellte SharePoint-Datenstruktur](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
+
+
+-  [Ermitteln von URIs von SharePoint-REST-Dienstendpunkten](determine-sharepoint-rest-service-endpoint-uris.md)
+
+
+-  [Verwenden von OData-Abfragevorgängen in SharePoint REST-Anforderungen](use-odata-query-operations-in-sharepoint-rest-requests.md)
+
+
+-  [SharePoint 2013 - REST-API, Endpunkte und Beispiele](02128c70-9d27-4388-9374-a11bce68fdb8.md)
+
+
+-  [Verwenden von ETag-Werten über den REST-Dienst, um die Version von Dokumentlistenelementen zu bestimmen](5f7e0579-46b7-44ab-b3b4-cdbc622dcd98.md)
+
+
+
+
+
+
 

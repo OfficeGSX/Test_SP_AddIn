@@ -10,29 +10,29 @@ Mit der Vorlage für Cloud-Geschäfts-Add-Ins in Visual Studio können Sie schne
 ## Starten
 
  [Erste Schritte zum Entwickeln von Cloud-Geschäfts-Add-Ins](get-started-developing-cloud-business-add-ins.md) stellt Links zu Lernressourcen einschließlich durchgängigen Lernprogrammen und Beispielen bereit.
-  
-    
-    
+
+
+
 
 ## Entwickeln
 
  [Entwickeln von Cloud-Geschäfts-Add-Ins](develop-cloud-business-add-ins.md) stellt eine Hilfe zu mit dem Entwickeln eines Cloud-Geschäfts-Add-In verbundenen Aufgaben bereit.
-  
-    
-    
+
+
+
 
 ## Veröffentlichen
 
  [Veröffentlichen von Cloud-Geschäfts-Add-Ins](publish-cloud-business-add-ins.md) umfasst das Veröffentlichen von Cloud-Geschäfts-Add-Ins in SharePoint für Office 365 und SharePoint 2013.
-  
-    
-    
+
+
+
 
 ## Zusätzliche Ressourcen
 <a name="bk_addresources"> </a>
 
 
 -  [Neuer Name für Apps für SharePoint](new-name-for-apps-for-sharepoint.md)
-    
-  
+
+
 
