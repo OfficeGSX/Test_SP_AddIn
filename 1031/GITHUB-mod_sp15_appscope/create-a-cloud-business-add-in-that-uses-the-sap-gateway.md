@@ -291,7 +291,7 @@ In der folgenden Abbildung werden die Komponenten dargestellt, die SellerDashboa
 
 
 
- **SellerDashboard-Lösung**
+**SellerDashboard-Lösung**
 
 
 
@@ -318,14 +318,14 @@ LightSwitch unterstützt den Datenmashup durch Hinzufügen einer Beziehung zwisc
 
 
 
- **SAP-Datenquelle**
+**SAP-Datenquelle**
 
 
 
 
 -  *Datenschema in der SAP-Datenbank* 
 
-    Der folgende Codeausschnitt stellt ein Beispiel eines Datenschemas vom SAP-Gateway für Microsoft dar.
+Der folgende Codeausschnitt stellt ein Beispiel eines Datenschemas vom SAP-Gateway für Microsoft dar.
 
 
 
@@ -426,12 +426,12 @@ public interface IInventoryItem
 ```
 
 
-    Alle nicht im SAP-Datenbankschema enthaltenen Eigenschaften können ignoriert werden. Die **Images** -Eigenschaft beispielsweise wurde hier für Skalierbarkeitsaspekte hinzugefügt. Dieses Datenmodell stellt eine mittlere Ebene zwischen der SAP-Datenbank und der SellerDashboard.Server-Datenquelle dar. Das LightSwitch-Projekt besteht aus zwei Komponenten: Ansicht und Server. Wenn Sie eine externe Datenquelle auf der Serverseite hinzufügen, können Sie mit LightSwitch eine abstrakte Datenebene erstellen, die zu der Datenquelle auf Serverseite hinzugefügt wird.
+Alle nicht im SAP-Datenbankschema enthaltenen Eigenschaften können ignoriert werden. Die **Images** -Eigenschaft beispielsweise wurde hier für Skalierbarkeitsaspekte hinzugefügt. Dieses Datenmodell stellt eine mittlere Ebene zwischen der SAP-Datenbank und der SellerDashboard.Server-Datenquelle dar. Das LightSwitch-Projekt besteht aus zwei Komponenten: Ansicht und Server. Wenn Sie eine externe Datenquelle auf der Serverseite hinzufügen, können Sie mit LightSwitch eine abstrakte Datenebene erstellen, die zu der Datenquelle auf Serverseite hinzugefügt wird.
 
-    Die meisten Eigenschaften weisen den gleichen Typ auf wie die Eigenschaften in dem SAP-Datenbankschema, mit Ausnahme von StockNo, deren Typ von **int** zu **string** geändert wurde. Das liegt daran, dass StockNo zum Definieren der Beziehung zwischen den SAP-Daten und der SharePoint-Bildbibliothek verwendet wird.
+Die meisten Eigenschaften weisen den gleichen Typ auf wie die Eigenschaften in dem SAP-Datenbankschema, mit Ausnahme von StockNo, deren Typ von **int** zu **string** geändert wurde. Das liegt daran, dass StockNo zum Definieren der Beziehung zwischen den SAP-Daten und der SharePoint-Bildbibliothek verwendet wird.
 
-    > **TIPP**
-    > StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
+> **TIPP**
+> StockNo muss vom Typ **Zeichenfolge** sein, da der in der SharePoint-Bildbibliothek gespeicherte Wert **Text** ist. Diese zwei Typen müssen übereinstimmen, damit der Datenmashup ausgeführt werden kann.
 
     Die Implementierung von zwei Schnittstellen findet in "CarInventoryModel/InventoryItem.cs" und "CarInventoryModel/InventoryCollection.cs" statt.
 
