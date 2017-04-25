@@ -155,7 +155,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
 1.  Le site web hôte SharePoint doit indiquer à l'application web distante la version du complément qu'il a installée. Pour ce faire, nous allons utiliser un paramètre de requête. Ouvrez le fichier AppManifest.xml du projet **ChainStore**. Dans le concepteur, l'espace réservé **{StandardTokens}** est la valeur de la zone **Chaîne de requête**. Ajoutez la chaîne « &amp;SPAddInVersion=1.0.0.0 » à la fin. Le concepteur de manifeste doit désormais se présenter comme suit. *Notez que le numéro de version que vous transmettez dans la chaîne de requête doit correspondre à la valeur de la zone **Version** du concepteur.*  (Si vous êtes amené à mettre à jour le complément, l'une de vos tâches consiste à mettre à jour ces valeurs en les conservant.)
     
-     ![Onglet « Général » du concepteur de manifeste. La valeur de la zone Version est définie sur un zéro zéro zéro. La zone Chaîne de requête affiche « {StandardTokens}&amp;SPAddInVersion=1.0.0.0 »](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
+!\[Onglet « Général » du concepteur de manifeste. La valeur de la zone Version est définie sur un zéro zéro zéro. La zone Chaîne de requête affiche « {StandardTokens}&amp;SPAddInVersion=1.0.0.0 »](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
   
 
   
@@ -387,7 +387,7 @@ private static void CreateLocalEmployeesList()
       >  Si la liste n'est pas cet endroit ou que vous détectez d'autres éléments indiquant que le code de première exécution ne s'exécute pas, il se peut que la table **Clients** ne soit pas vidée lorsque vous appuyez sur F5. La cause la plus commune de ce phénomène est que le projet **ChainCorporateDB** n'est plus défini comme projet de démarrage dans Visual Studio. Consultez la remarque en haut de cet article pour résoudre ce problème. Assurez-vous également que vous avez configuré la base de données afin qu'elle soit régénérée comme décrit dans la rubrique relative à la [ Configuration de Visual Studio pour régénérer la base de données d'entreprise à chaque session de débogage](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5.  Ouvrez la liste et ajoutez un élément. Notez que sur le nouveau formulaire de l'élément, le champ **Ajouté à la base de données d'entreprise** n'apparaît plus, il ne peut par conséquent pas être défini manuellement. Cela s'applique aussi au formulaire de modification d'élément.
     
-     ![Nouveau formulaire d'éléments pour la liste des employés locaux. Le champ « Ajouté à la base de données de l'entreprise » n'est plus sur le formulaire. Il ne reste que le champ pour le nom et les boutons OK et Annuler.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
+!\[Nouveau formulaire d'éléments pour la liste des employés locaux. Le champ « Ajouté à la base de données de l'entreprise » n'est plus sur le formulaire. Il ne reste que le champ pour le nom et les boutons OK et Annuler.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
   
 
   
@@ -401,7 +401,7 @@ private static void CreateLocalEmployeesList()
   
 8.  Sur la page **Comptes**, cliquez sur le bouton **Afficher la version du complément**. La version affichée est **1.0.0.0**, car la logique de première exécution l'a modifiée.
     
-     ![Page des paramètres de compte avec le numéro de version de 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
+!\[Page des paramètres de compte avec le numéro de version de 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
   
 
   

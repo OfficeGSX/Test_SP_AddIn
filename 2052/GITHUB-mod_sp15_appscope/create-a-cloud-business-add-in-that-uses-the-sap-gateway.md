@@ -193,7 +193,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
     
     这是 BoxXDataService 的真实 CRUD 实现。下图显示了 CarInventoryBoxXDataOperation 的主代码体系结构。CRUD 命名空间用于实现 CRUD 操作，Util 命名空间是 CRUD 命名空间的帮助程序代码。
     
-     ![CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
+!\[CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
   
 
   
@@ -241,7 +241,7 @@ SellerDashboardStudio 包括标准 LightSwitch SharePoint 外接程序组件。
     
   
 - 
-     ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+!\[SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
   
 
     SellerDashboard.HTML.Client 包括下列四个屏幕：
@@ -268,7 +268,7 @@ SellerDashboardStudio 包括标准 LightSwitch SharePoint 外接程序组件。
     
     此组件包括 WCF RIA 数据源、SharePoint 数据源和照片上载 Web API。 下图显示了主要组件。
     
-     ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
+!\[SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
   
 
     SharePointContext.cs 和 TokenHelper.cs 是帮助程序类，提供用于向 SharePoint 进行身份验证的客户端上下文。这将启用用于将汽车照片上载到图片库的照片上载 Web API。PhotoListHelper.cs 和 PhotosController.cs 文件将实现照片上载 Web API。有关 LightSwitch 如何使用照片上载 Web API 的详细信息，请参阅文章 [演练：使用 LightSwitch 创建 SharePoint 外接程序](https://msdn.microsoft.com/zh-cn/library/jj969621.aspx)。
@@ -441,7 +441,7 @@ public interface IInventoryItem
   
 -  *LightSwitch 服务器端使用的数据源* 
     
-     ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
+!\[InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
   
 
     在 SellerDashboard 服务器中，当您添加 WCF RIA 服务 (BoxXDataService) 时，将包含在 CarInventoryModel 中定义的数据模型，您可获取相关的数据表。您可以更改某些属性的类型。例如，您可以将 **BuyerEmail** 类型从 **String** 更改为 **Email Address** ，LightSwitch 将支持在客户端进行电子邮件格式检查。
@@ -838,7 +838,7 @@ private ClientContext AppWebContext
   
 3. 在应用程序清单中设置读取权限。
     
-     ![清单](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
+!\[清单](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
   
 
   

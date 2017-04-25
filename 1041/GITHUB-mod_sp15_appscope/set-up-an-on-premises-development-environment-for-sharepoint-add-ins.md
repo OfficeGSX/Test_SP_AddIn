@@ -56,7 +56,7 @@ SharePoint アドイン開発に特化した開発環境を SharePoint のオン
 
   
 
-     ![SharePoint 2013 インストール サーバーの種類](images/SP15_app_ServerType.gif)
+!\[SharePoint 2013 インストール サーバーの種類](images/SP15_app_ServerType.gif)
   
 
   
@@ -80,7 +80,7 @@ dir /od *.log
 
   
 
-     ![サイト テンプレート ページ](images/SP15_appChooseSiteTemplate.gif)
+!\[サイト テンプレート ページ](images/SP15_appChooseSiteTemplate.gif)
   
 
   

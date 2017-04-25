@@ -63,7 +63,7 @@ Vous devrez remplacer le certificat STS (service d'émission de jeton de sécuri
 
   
 
-     ![Option Certificats de serveur dans IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+!\[Option Certificats de serveur dans IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
   
 
   
@@ -75,7 +75,7 @@ Vous devrez remplacer le certificat STS (service d'émission de jeton de sécuri
 
   
 
-     ![Lien Créer un certificat auto-signé](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+!\[Lien Créer un certificat auto-signé](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
   
 
   
@@ -90,7 +90,7 @@ Vous devrez remplacer le certificat STS (service d'émission de jeton de sécuri
 
   
 
-     ![Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

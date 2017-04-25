@@ -75,7 +75,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 
   
 
-     ![在 appregnew.aspx 上注册应用程序](images/SP15_RegisterApp.png)
+!\[在 appregnew.aspx 上注册应用程序](images/SP15_RegisterApp.png)
   
 
   
@@ -193,7 +193,7 @@ ms.assetid: 3c28aed8-c037-407c-9154-39a74073e170
 
   
 
-     ![导出测试证书](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[导出测试证书](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

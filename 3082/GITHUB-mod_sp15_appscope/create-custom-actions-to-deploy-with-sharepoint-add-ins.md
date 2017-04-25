@@ -303,7 +303,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
 
   
 
-     ![Biblioteca de documentos con un globo para un documento abierto, el menú que abre el botón de llamada de la llamada, y el menú de opciones avanzadas abierto.](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+!\[Biblioteca de documentos con un globo para un documento abierto, el menú que abre el botón de llamada de la llamada, y el menú de opciones avanzadas abierto.](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
   
 
   
@@ -324,7 +324,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
 
   
 
-     ![Página web con parámetros de una acción personalizada](images/CustomActions_target.png)
+!\[Página web con parámetros de una acción personalizada](images/CustomActions_target.png)
   
 
   
@@ -336,7 +336,7 @@ Siga estos pasos para crear una acción personalizada en las bibliotecas de docu
 
   
 
-     ![Una biblioteca de documentos con un documento seleccionado, la pestaña Archivo abierta en la cinta de opciones y el botón personalizado en la cinta de opciones.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+!\[Una biblioteca de documentos con un documento seleccionado, la pestaña Archivo abierta en la cinta de opciones y el botón personalizado en la cinta de opciones.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
   
 
   

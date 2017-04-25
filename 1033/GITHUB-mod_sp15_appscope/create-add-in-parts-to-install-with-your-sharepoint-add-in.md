@@ -225,7 +225,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
 
   
 
-     ![The Client Web Part Custom Properties Dialog with 4 properties listed on the left, and each one having 5 attributes set on the right.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+!\[The Client Web Part Custom Properties Dialog with 4 properties listed on the left, and each one having 5 attributes set on the right.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
   
 
   
@@ -267,7 +267,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
 
   
 
-     ![The Client Web Part Enum Item Collection Editor with 3 items listed and each one having a Value attribute and a Web Display Name attribute.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+!\[The Client Web Part Enum Item Collection Editor with 3 items listed and each one having a Value attribute and a Web Display Name attribute.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
   
 
   
@@ -373,7 +373,7 @@ After completing the tasks, your add-in part should look similar to Figure 2 whe
 
   
 
-     ![Basic app part in the web part gallery](images/BasicAppPart_gallery.jpg)
+!\[Basic app part in the web part gallery](images/BasicAppPart_gallery.jpg)
   
 
   

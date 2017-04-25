@@ -52,7 +52,7 @@ Si trabaja con el ejemplo continuo de este artículo, tendrá un ejemplo de cód
 
   
 
-     ![Eventos de aplicación en la ventana de propiedades](images/SP_VS_Properties_Window_AppEvents.PNG)
+!\[Eventos de aplicación en la ventana de propiedades](images/SP_VS_Properties_Window_AppEvents.PNG)
   
 
     Office Developer Tools para Visual Studio realizará las siguientes acciones:

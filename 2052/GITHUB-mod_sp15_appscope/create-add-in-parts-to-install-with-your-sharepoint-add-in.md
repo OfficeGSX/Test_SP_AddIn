@@ -230,7 +230,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
 
   
 
-     ![客户端 Web 部件自定义属性对话框在左侧列出了 4 个属性，每个属性都在右侧设有 5 个属性。](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+!\[客户端 Web 部件自定义属性对话框在左侧列出了 4 个属性，每个属性都在右侧设有 5 个属性。](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
   
 
   
@@ -272,7 +272,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
 
   
 
-     ![客户端 Web 部件枚举项集合编辑器列出了 3 个项目，每个项目都具有值属性和 Web 显示名称属性。](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+!\[客户端 Web 部件枚举项集合编辑器列出了 3 个项目，每个项目都具有值属性和 Web 显示名称属性。](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
   
 
   
@@ -378,7 +378,7 @@ ms.assetid: a2664289-6c56-4cb1-987a-22367fad55eb
 
   
 
-     ![Web 部件库中的基本应用程序部件](images/BasicAppPart_gallery.jpg)
+!\[Web 部件库中的基本应用程序部件](images/BasicAppPart_gallery.jpg)
   
 
   

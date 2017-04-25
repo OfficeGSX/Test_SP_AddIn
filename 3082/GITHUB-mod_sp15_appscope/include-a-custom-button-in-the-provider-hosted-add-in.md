@@ -74,7 +74,7 @@ El botón personalizado va a estar en la cinta de opciones de una lista específ
   
 10. Haga clic en **Nuevo elemento** y, en el formulario de creación de elemento, escriba un nombre, pero *no*  active **Agregado a BD corporativa**. A continuación, haga clic en **Guardar**. La lista debe ser similar a la siguiente:
     
-     ![Lista Local Employees con un único elemento. El nombre es Brayden Sawtell. El valor de la columna "Added to Corporate DB" es No.](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
+!\[Lista Local Employees con un único elemento. El nombre es Brayden Sawtell. El valor de la columna "Added to Corporate DB" es No.](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
   
 
   
@@ -283,7 +283,7 @@ Como vimos, SharePoint le pregunta si desea conceder los permisos de complemento
   
 4. Deje vacío el campo **Propiedades** y guarde el archivo. La ficha **Permiso** ahora debe ser similar a la siguiente:
     
-     ![La pestaña Permisos del diseñador de manifiestos de complementos muestra Scope to List y Permission to be Read.](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
+!\[La pestaña Permisos del diseñador de manifiestos de complementos muestra Scope to List y Permission to be Read.](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
   
 
   
@@ -299,7 +299,7 @@ Como vimos, SharePoint le pregunta si desea conceder los permisos de complemento
 
 1. Use la tecla F5 para implementar y ejecutar el complemento. Visual Studio hospeda la aplicación web remota en IIS Express y hospeda la base de datos SQL en un SQL Express. También hace una instalación temporal del complemento en su sitio de SharePoint de prueba y ejecuta inmediatamente el complemento. Deberá conceder permisos al complemento antes de que se abra la página de inicio. Esta vez la solicitud tiene una lista desplegable donde se selecciona la lista que la aplicación necesita leer como se muestra en la siguiente captura de pantalla. 
     
-     ![Símbolo del sistema de permisos del complemento de SharePoint con la lista denominada Local Employees seleccionada en un cuadro desplegable con la etiqueta "Let it read items in the list"](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
+!\[Símbolo del sistema de permisos del complemento de SharePoint con la lista denominada Local Employees seleccionada en un cuadro desplegable con la etiqueta "Let it read items in the list"](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
   
 
   
@@ -322,7 +322,7 @@ Como vimos, SharePoint le pregunta si desea conceder los permisos de complemento
   
 7. Seleccione un elemento en la lista. La página y la cinta de opciones deben ser similares a lo siguiente:
     
-     ![Lista Local Employees. Un elemento está resaltado. Encima está la cinta y hay un botón denominado "Add To Corporate DB" en la sección de acciones.](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
+!\[Lista Local Employees. Un elemento está resaltado. Encima está la cinta y hay un botón denominado "Add To Corporate DB" en la sección de acciones.](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
   
 
   
@@ -339,7 +339,7 @@ Como vimos, SharePoint le pregunta si desea conceder los permisos de complemento
   
 11. Haga clic en **Mostrar empleados** para que la lista de empleados se rellene con el empleado que agregó. Debería ser similar a lo siguiente:
     
-     ![Lista de empleados de la empresa en la página de inicio del complemento que muestra el mismo empleado que se seleccionó en el paso anterior.](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
+!\[Lista de empleados de la empresa en la página de inicio del complemento que muestra el mismo empleado que se seleccionó en el paso anterior.](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
   
 
   

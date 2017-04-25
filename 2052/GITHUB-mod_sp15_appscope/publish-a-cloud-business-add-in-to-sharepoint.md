@@ -17,7 +17,7 @@ ms.assetid: b528a23f-72c3-42cb-8265-1c5b9238d404
 
   
 
-     ![IncidentManager 节点](images/CBA_IM_18.PNG)
+!\[IncidentManager 节点](images/CBA_IM_18.PNG)
   
 
   
@@ -109,7 +109,7 @@ ms.assetid: b528a23f-72c3-42cb-8265-1c5b9238d404
 
   
 
-     ![IncidentManager 节点](images/CBA_IM_18.PNG)
+!\[IncidentManager 节点](images/CBA_IM_18.PNG)
   
 
     

@@ -264,7 +264,7 @@ La Figure 1 illustre une page web SharePoint utilisant une feuille de style.
 
   
 
-     ![Contrôle de feuille de style utilisé sur une page web](images/StylesheetControl_result2.png)
+!\[Contrôle de feuille de style utilisé sur une page web](images/StylesheetControl_result2.png)
   
 
   

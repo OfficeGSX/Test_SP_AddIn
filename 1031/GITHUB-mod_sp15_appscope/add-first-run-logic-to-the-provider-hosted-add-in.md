@@ -155,7 +155,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
 1. Das SharePoint-Hostweb muss der Remotewebanwendung mitteilen, welche Version des Add-Ins installiert wurde. Dafür wird ein Abfrageparameter verwendet. Öffen Sie die Datei AppManifest.xml im **ChainStore**-Projekt. Im Designer sehen Sie den Platzhalter **{StandardTokens}** als Wert für das Feld **Abfragezeichenfolge**. Fügen Sie die Zeichenfolge &amp;SPAddInVersion=1.0.0.0 an das Ende hinzu. Der Manifest-Designer sollte etwa wie folgt aussehen. *Beachten Sie, dass die Versionsnummer, die Sie in der Abfragezeichenfolge übergeben, mit dem Wert im Feld **Version** des Designers übereinstimmen muss.*  (Wenn Sie das Add-In aktualisieren, besteht eine Ihrer Aufgaben darin, diese zwei Werte zu erhöhen und gleich zu halten.)
     
-     ![The General tab of the manifest designer. The Version box has the value one zero zero zero. The Query string box says "{StandardTokens}&amp;SPAddInVersion=1.0.0.0"](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
+!\[The General tab of the manifest designer. The Version box has the value one zero zero zero. The Query string box says "{StandardTokens}&amp;SPAddInVersion=1.0.0.0"](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
   
 
   
@@ -387,7 +387,7 @@ Da das Add-In jetzt eine Liste zum Hostweb und nicht nur Elemente zu einer vorha
       > Wenn die Liste nicht vorhanden ist oder Sie andere Anzeichen haben, dass der zuerst ausgeführte Code nicht ausgeführt wird, wird möglicherweise die Tabelle **Mandanten** nicht in einen leeren Zustand zurückgesetzt, wenn Sie F5 drücken. Die häufigste Ursache hierfür ist, dass das Projekt **ChainCorporateDB** nicht mehr als Startprojekt in Visual Studio festgelegt ist. Im oberen Bereich dieses Artikels finden Sie Informationen, wie Sie dies beheben. Stellen Sie außerdem sicher, dass Sie die Datenbank so konfiguriert haben, dass sie wie unter [Konfigurieren von Visual Studio zum erneuten Erstellen der Unternehmensdatenbank bei jeder Debugsitzung](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild) beschrieben neu erstellt wird.
 5. Öffnen Sie die Liste, und fügen Sie ein Element hinzu. Beachten Sie, dass im Formular für neue Elemente das Feld **Zu Unternehmens-DB hinzugefügt** nicht mehr vorhanden ist und deshalb nicht manuell festgelegt werden kann. Dies gilt auch für das Formular zum Bearbeiten von Elementen.
     
-     ![The new item form for the Local Employees list. The "Added to Corporate DB" field is no longer on the form. Only the name field and buttons for OK and Cancel.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
+!\[The new item form for the Local Employees list. The "Added to Corporate DB" field is no longer on the form. Only the name field and buttons for OK and Cancel.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
   
 
   
@@ -401,7 +401,7 @@ Da das Add-In jetzt eine Liste zum Hostweb und nicht nur Elemente zu einer vorha
   
 8. Klicken Sie auf der Seite **Konten** und dann auf die Schaltfläche **Add-In-Version anzeigen**. Die Version wird als **1.0.0.0** angezeigt, da die Logik für die erste Ausführung sie geändert hat.
     
-     ![Der Kontoeinstellungsseite mit der Versionsnummer 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
+!\[Der Kontoeinstellungsseite mit der Versionsnummer 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
   
 
   

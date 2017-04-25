@@ -32,7 +32,7 @@ Wenn Sie ein Dokument in eine verbundene Dokumentbibliothek in einem Cloud-Gesch
 
   
 
-     ![Auswahl im Dialogfeld "Manage NuGet Packages"](images/NuGet.PNG)
+!\[Auswahl im Dialogfeld "Manage NuGet Packages"](images/NuGet.PNG)
   
 
   

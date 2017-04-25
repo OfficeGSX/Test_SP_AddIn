@@ -551,7 +551,7 @@ namespace SampleAddInWeb
 
   
 
-     ![Page de lancement d'application autohébergée de base](images/SP15_basicself-hostedapp.gif)
+!\[Page de lancement d'application autohébergée de base](images/SP15_basicself-hostedapp.gif)
   
 
   

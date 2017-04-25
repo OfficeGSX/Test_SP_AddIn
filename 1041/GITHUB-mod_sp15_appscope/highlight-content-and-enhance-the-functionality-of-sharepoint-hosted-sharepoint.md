@@ -98,7 +98,7 @@ var callout = CalloutManager.createNew(calloutOptions);```
 |content  <br/> | `contentElement` メンバーの値がない場合に、コントロールの内部に HTML を表示します。 <br/> |HTML を含む文字列、 **null** 。 `contentElement` の値が存在する場合は null である必要があります。 <br/> |
 |contentElement  <br/> | `content` メンバーの値がない場合に、コントロールの内部に HTML 要素を表示します。 <br/> |すべての HTML 要素、 **null** 。 `content` の値が存在する場合は null である必要があります。 <br/> |
 |contentWidth  <br/> |吹き出し本体のコンテナーの幅をピクセル単位で指定します。このコンテナーの両側には 1 ピクセルの枠線と 15 ピクセルの余白があるため、コントロールの幅は指定した本体の幅よりも 32 ピクセル大きくなります。コントロールの CSS  `overflow` プロパティは `hidden` に設定されているため、コンテンツが指定した幅に収まらない場合はクリップされます。開いている吹き出しにこのメンバーを設定すると、変更は直ちに反映されます。これは、他のメンバーには当てはまりません。 <br/> |240 ～ 610 の任意の数値、 **350** (既定では、コントロールの幅は 382 ピクセルになります)。 <br/> |
-|beakOrientation  <br/> |吹き出しコントロールの突起またはポインターの方向を指定します。  <br/> |下の図 (図 2) のようにする場合は **topBottom** 。 **図 2. 吹き出しコントロールの突起を topBottom 方向に表示した場合**         ![吹き出しコントロールの突起が上下方向に表示される場合](images/SP15_CalloutTopBottom.png)下の図 (図 3) のようにする場合は **leftRight** 。 **図 3. 吹き出しコントロールの突起を leftRight 方向に表示した場合**         ![吹き出しコントロールの突起が左右方向に表示される場合](images/SP15_CalloutLeftRight.png)|
+|beakOrientation  <br/> |吹き出しコントロールの突起またはポインターの方向を指定します。  <br/> |下の図 (図 2) のようにする場合は **topBottom** 。 **図 2. 吹き出しコントロールの突起を topBottom 方向に表示した場合**!\[吹き出しコントロールの突起が上下方向に表示される場合](images/SP15_CalloutTopBottom.png)下の図 (図 3) のようにする場合は **leftRight** 。 **図 3. 吹き出しコントロールの突起を leftRight 方向に表示した場合**!\[吹き出しコントロールの突起が左右方向に表示される場合](images/SP15_CalloutLeftRight.png)|
    
 
 ## 吹き出しコントロールの動作をカスタマイズする方法

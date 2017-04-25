@@ -120,7 +120,7 @@ ms.assetid: 16913e6d-4fc6-4c5e-84a4-6c2688703798
 
   
 
-     ![Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
+!\[Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
   
 
   
@@ -435,7 +435,7 @@ Categories from the Northwind database exposed as an OData service:
 
   
 
-     ![Страница SharePoint с данными из удаленной службы](images/WebProxy_result.png)
+!\[Страница SharePoint с данными из удаленной службы](images/WebProxy_result.png)
   
 
   

@@ -38,7 +38,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
   
 2. En la página **Nuevo sitio de SharePoint**, complete el formulario de un sitio de equipo con los valores de la siguiente captura de pantalla.
     
-     ![Formulario para crear un nuevo subsitio de SharePoint con "Fabrikam Hong Kong Store" en el cuadro de texto de título y "hongkong" en el de dirección URL.](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
+!\[Formulario para crear un nuevo subsitio de SharePoint con "Fabrikam Hong Kong Store" en el cuadro de texto de título y "hongkong" en el de dirección URL.](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
   
 
   
@@ -79,7 +79,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
   
 7. La página de inicio del complemento es similar a la siguiente captura de pantalla. En la parte superior aparece el nombre del sitio web de SharePoint donde está instalado el complemento. Se trata de un efecto secundario de algún código de ejemplo que Office Developer Tools para Visual Studio genera. Esto lo cambiaremos en un paso posterior. La página tiene áreas donde se pueden ver los datos de las tablas de bases de datos SQL corporativas **Inventario**, **Pedidos** y **Empleados**. Estas tablas están vacías inicialmente.
     
-     ![Página de inicio del complemento Chain Store con áreas y botones etiquetados para ver el inventario, los pedidos y los empleados de la tienda.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
+!\[Página de inicio del complemento Chain Store con áreas y botones etiquetados para ver el inventario, los pedidos y los empleados de la tienda.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
   
 
   
@@ -87,7 +87,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
   
 8. Abra el vínculo **Formulario de pedido** situado en la parte inferior de la página para abrir un formulario de pedido. Escriba algunos valores en el formulario y presione **Realizar pedido**. La captura de pantalla siguiente muestra un ejemplo. Parecerá que no hay cambios, pero el código subyacente del botón pasa los valores a un procedimiento almacenado con parámetros en la base de datos SQL. El uso de procedimientos almacenados con parámetros protege la base de datos contra ataques de inyección SQL.
     
-     ![Formulario de pedido con cuadros de texto para el proveedor, el producto y la cantidad, y con un botón con la etiqueta Place Order.](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
+!\[Formulario de pedido con cuadros de texto para el proveedor, el producto y la cantidad, y con un botón con la etiqueta Place Order.](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
   
 
   
@@ -99,7 +99,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
     
     La aplicación web remota obtiene la dirección URL de la web de host a partir de un parámetro de cadena de consulta que SharePoint agrega a la dirección URL de la página de inicio cuando se inicia el complemento. Puesto que se usa SSL, esta cadena de consulta se cifra mientras viaja por Internet a la aplicación web remota. 
     
-     ![Sección de la página de inicio de pedidos con un pedido que aparece en una tabla HTML. Tiene columnas para ID, Tenant, Supplier, Product y Quantity.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
+!\[Sección de la página de inicio de pedidos con un pedido que aparece en una tabla HTML. Tiene columnas para ID, Tenant, Supplier, Product y Quantity.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
   
 
   
@@ -110,7 +110,7 @@ No vamos a enseñarle programación ASP.NET o T-SQL en esta serie, pero necesita
   
 11. De forma predeterminada, el complemento permanece instalado en la web de host de SharePoint entre sesiones de depuración en Visual Studio. Para ver cómo los usuarios finales la ejecutarían después de instalarla, abra el sitio web de SharePoint de Hong Kong de Fabrikam en el explorador y vaya a la página **Contenido del sitio**. Verá el icono del complemento tal como se muestra en la siguiente captura de pantalla:
     
-     ![Icono de inicio del complemento Chain Store en la página de contenido del sitio con el icono y el nombre del complemento.](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
+!\[Icono de inicio del complemento Chain Store en la página de contenido del sitio con el icono y el nombre del complemento.](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
   
 
     
@@ -310,7 +310,7 @@ protected SharePointContext spContext;
   
 2. Ahora, cuando se abre la página de inicio del complemento, se parece a una página de SharePoint. Haga clic en el vínculo **Formulario de pedido**. Ahora se parece también a un formulario de SharePoint.
     
-     ![Formulario de pedido una vez más. La fuente ahora es Segoe y la frase "Place Order" está resaltada en azul.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
+!\[Formulario de pedido una vez más. La fuente ahora es Segoe y la frase "Place Order" está resaltada en azul.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
   
 
   
@@ -321,7 +321,7 @@ protected SharePointContext spContext;
   
 4.  Use el botón Atrás del explorador para volver a la página de inicio del complemento y, a continuación, presione el botón **Mostrar pedidos**. La página ahora debe parecerse a la siguiente. Tenga en cuenta que los encabezados de columna son ahora todas mayúsculas. 
     
-     ![Página de inicio con el control de cromo en la parte superior. Todo el texto y los controles tienen estilos de SharePoint.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
+!\[Página de inicio con el control de cromo en la parte superior. Todo el texto y los controles tienen estilos de SharePoint.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
   
 
   
@@ -344,7 +344,7 @@ protected SharePointContext spContext;
   
 10. Vaya a la página **Contenido del sitio** y ejecute la aplicación Chain Store desde el icono correspondiente. Las páginas personalizadas adoptaron el aspecto elegido. Las capturas de pantalla siguientes muestran cómo aparecen en el aspecto compuesto **Naturaleza**.
     
-     ![Página de inicio del complemento y formulario de pedido con los colores verdosos de la apariencia Naturaleza compuesta.](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
+!\[Página de inicio del complemento y formulario de pedido con los colores verdosos de la apariencia Naturaleza compuesta.](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
   
 
   

@@ -193,7 +193,7 @@ function renderOrientationStage(ctx) {
 
   
 
-     ![Liste des nouveaux employés de Seattle avec les valeurs d'étape d'orientation « Non commencé » en rouge et les valeurs « Terminé » en vert. Les autres valeurs sont en noir.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
+!\[Liste des nouveaux employés de Seattle avec les valeurs d'étape d'orientation « Non commencé » en rouge et les valeurs « Terminé » en vert. Les autres valeurs sont en noir.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
   
 
   

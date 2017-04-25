@@ -75,7 +75,7 @@ ms.assetid: 2ec857d5-dc6f-4cf6-ba45-adc845ef2a25
   
 5. В **Центре администрирования SharePoint**, на вкладке **Семейства веб-сайтов**, выберите элементы **Создать > Частное семейство веб-сайтов**.
     
-     ![Параметр создания семейства веб-сайтов центра администрирования SharePoint](images/SPAdminCenter_newSiteCollection.png)
+!\[Параметр создания семейства веб-сайтов центра администрирования SharePoint](images/SPAdminCenter_newSiteCollection.png)
   
 
   
@@ -101,7 +101,7 @@ ms.assetid: 2ec857d5-dc6f-4cf6-ba45-adc845ef2a25
     
     В списке **Семейства веб-сайтов** отобразится URL-адрес нового Сайта разработчика. Когда создание сайта будет завершено, вы сможете перейти по URL-адресу и открыть ваш Сайт разработчика.
     
-     ![Подготовка нового семейства веб-сайтов](images/SPAdminCenter_newSiteCollection_provisioning.png)
+!\[Подготовка нового семейства веб-сайтов](images/SPAdminCenter_newSiteCollection_provisioning.png)
   
 
   

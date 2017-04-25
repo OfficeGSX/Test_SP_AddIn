@@ -66,7 +66,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
   
 
-     ![Der Inhaltstyp-Designer, in dem "NewEmployee" als Typname "Stellt einen neuen Mitarbeiter dar" als Beschreibung und "Mitarbeiterorientierung" als Gruppe angezeigt wird.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+!\[Der Inhaltstyp-Designer, in dem "NewEmployee" als Typname "Stellt einen neuen Mitarbeiter dar" als Beschreibung und "Mitarbeiterorientierung" als Gruppe angezeigt wird.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
   
 
     
@@ -81,7 +81,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
   
 
-     ![Die Registerkarte "Spalten" des Inhaltstyp-Designers, wobei "Mitarbeiter", "Abteilung" und "Orientierungsphase" im Raster aufgeführt ist.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+!\[Die Registerkarte "Spalten" des Inhaltstyp-Designers, wobei "Mitarbeiter", "Abteilung" und "Orientierungsphase" im Raster aufgeführt ist.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
   
 
     
@@ -129,7 +129,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
   
 
-     ![Das Dialogfeld "Einstellungen" des Inhaltstyps, in dem nur ein einziger Inhaltstyp mit dem Namen "NewEmployee" aufgeführt ist.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+!\[Das Dialogfeld "Einstellungen" des Inhaltstyps, in dem nur ein einziger Inhaltstyp mit dem Namen "NewEmployee" aufgeführt ist.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
   
 
     
@@ -221,7 +221,7 @@ In diesem Artikel fügen Sie einen benutzerdefinierten Inhaltstyp zum SharePoint
 
   
 
-     ![Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Abteilung" und "Orientierungsphase" bereits vorhanden sind.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
+!\[Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Abteilung" und "Orientierungsphase" bereits vorhanden sind.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
   
 
     

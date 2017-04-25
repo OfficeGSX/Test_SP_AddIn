@@ -193,7 +193,7 @@ Contoso Motors  это вымышленная компания по прода
     
     Это внедрение операций CRUD для BoxXDataService. На изображении ниже показана архитектура основного кода CarInventoryBoxXDataOperation. Пространство имен CRUD используется для реализации операций CRUD, а пространство имен Util  это вспомогательный код для пространства имен CRUD.
     
-     ![CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
+!\[CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
   
 
   
@@ -241,7 +241,7 @@ SellerDashboardStudio содержит стандартные компонент
     
   
 - 
-     ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+!\[SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
   
 
     SellerDashboard.HTML.Client содержит четыре экрана.
@@ -268,7 +268,7 @@ SellerDashboardStudio содержит стандартные компонент
     
     Этот компонент содержит источники данных WCF RIA и SharePoint, а также веб-API для отправки фотографий. На изображении ниже показаны его основные компоненты.
     
-     ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
+!\[SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
   
 
     SharePointContext.cs и TokenHelper.cs  вспомогательные классы, которые предоставляют контекст клиента для проверки подлинности в SharePoint. Это позволяет использовать веб-API для отправки фотографий, чтобы добавлять фотографии автомобилей в библиотеку изображений. Файлы PhotoListHelper.cs и PhotosController.cs внедряют веб-API для отправки фотографий. Дополнительные сведения о том, как надстройка LightSwitch использует веб-API для отправки фотографий, см. в статье  [Пошаговое руководство. Создание надстройки для SharePoint с помощью LightSwitch](http://msdn.microsoft.com/ru-ru/library/jj969621.aspx).
@@ -441,7 +441,7 @@ public interface IInventoryItem
   
 -  *Источник данных, используемый компонентом сервера LightSwitch* 
     
-     ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
+!\[InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
   
 
     При добавлении службы WCF RIA (BoxXDataService) на сервер SellerDashboard также добавляется модель данных, определенная в CarInventoryModel, и получается соответствующая таблица данных. Можно изменить тип некоторых свойств. Например, тип **BuyerEmail** можно изменить, указав вместо типа **String** тип **Email Address**, а приложение LightSwitch поддержит проверку формата электронной почты на стороне клиента.
@@ -838,7 +838,7 @@ private ClientContext AppWebContext
   
 3. Задайте разрешение на чтение в манифесте приложения.
     
-     ![Манифест](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
+!\[Манифест](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
   
 
   

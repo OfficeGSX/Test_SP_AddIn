@@ -230,7 +230,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
 
   
 
-     ![Das Dialogfeld "Benutzerdefinierte Eigenschaften" des Clientwebparts mit 4 Eigenschaften auf der linken Seite und jeweils 5 festgelegten Attributen auf der rechten Seite.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+!\[Das Dialogfeld "Benutzerdefinierte Eigenschaften" des Clientwebparts mit 4 Eigenschaften auf der linken Seite und jeweils 5 festgelegten Attributen auf der rechten Seite.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
   
 
   
@@ -272,7 +272,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
 
   
 
-     ![Der Elementauflistungs-Editor der Clientwebpart-Enumeration mit 3 aufgeführten Elementen und jeweils mit einem "Value"-Attribut und einem "Web Display Name"-Attribut.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+!\[Der Elementauflistungs-Editor der Clientwebpart-Enumeration mit 3 aufgeführten Elementen und jeweils mit einem "Value"-Attribut und einem "Web Display Name"-Attribut.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
   
 
   
@@ -378,7 +378,7 @@ Wenn Sie die Aufgaben abgeschlossen haben, sollte Ihr Add-In-Webpart ähnlich au
 
   
 
-     ![App-Webpart "Basic" im Webpart-Katalog](images/BasicAppPart_gallery.jpg)
+!\[App-Webpart "Basic" im Webpart-Katalog](images/BasicAppPart_gallery.jpg)
   
 
   

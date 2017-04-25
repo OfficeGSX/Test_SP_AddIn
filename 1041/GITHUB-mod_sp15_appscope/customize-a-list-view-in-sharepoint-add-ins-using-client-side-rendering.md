@@ -100,7 +100,7 @@ SharePoint 2013 では、クライアント側レンダリングによって、S
 
   
 
-     ![SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
+!\[SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
   
 
   

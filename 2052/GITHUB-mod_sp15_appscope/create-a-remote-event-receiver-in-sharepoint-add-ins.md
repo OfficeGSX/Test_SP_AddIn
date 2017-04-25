@@ -306,7 +306,7 @@ namespace BasicDataOperationsWeb.Services
 
   
 
-     ![Visual Studio 中的 SharePoint 远程事件](images/SP_VS_Properties_Window_RemoteEvents.PNG)
+!\[Visual Studio 中的 SharePoint 远程事件](images/SP_VS_Properties_Window_RemoteEvents.PNG)
   
 
   

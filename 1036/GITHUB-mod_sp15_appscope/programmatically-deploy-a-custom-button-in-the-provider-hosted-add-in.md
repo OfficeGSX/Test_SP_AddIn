@@ -61,7 +61,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 
 1.  Dans l' **Explorateur de solutions**, appuyez sur le bouton **Afficher tous les fichiers** sur la petite barre d'outils en haut de l' **Explorateur de solutions**.
     
-     ![Barre d'outils de l'Explorateur de solutions avec une zone tracée autour du bouton « Afficher tous les fichiers ».](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
+!\[Barre d'outils de l'Explorateur de solutions avec une zone tracée autour du bouton « Afficher tous les fichiers ».](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
   
 
   

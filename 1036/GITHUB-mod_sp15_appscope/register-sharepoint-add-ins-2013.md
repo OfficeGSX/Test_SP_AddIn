@@ -74,7 +74,7 @@ Vous pouvez inscrire votre complément pour obtenir son identité de trois faço
 
   
 
-     ![Formulaire sur la page App Reg New avec des zones de texte pour l'ID client, la clé secrète client, le titre, le domaine d'application et l'URL de redirection. Les boutons « générés » se trouvent à côté des deux premiers. Les boutons Créer et Annuler se trouvent dans le coin.](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
+!\[Formulaire sur la page App Reg New avec des zones de texte pour l'ID client, la clé secrète client, le titre, le domaine d'application et l'URL de redirection. Les boutons « générés » se trouvent à côté des deux premiers. Les boutons Créer et Annuler se trouvent dans le coin.](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
   
 
   

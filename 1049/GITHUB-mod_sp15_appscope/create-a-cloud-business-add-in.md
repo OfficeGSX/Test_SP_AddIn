@@ -28,7 +28,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
   
 
-     ![Шаблон для создания облачного бизнес-приложения](images/CloudBusinessApptemplate.PNG)
+!\[Шаблон для создания облачного бизнес-приложения](images/CloudBusinessApptemplate.PNG)
   
 
   
@@ -45,7 +45,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
   
 
-     ![URL-адрес SharePoint](images/SiteURL.PNG)
+!\[URL-адрес SharePoint](images/SiteURL.PNG)
   
 
     URL-адрес должен быть указан в формате https://  _личный_сайт_.sharepoint.com/sites/Developer/.
@@ -63,7 +63,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
   
 
-     ![Узел проекта верхнего уровня](images/Top-levelprojectnode.PNG)
+!\[Узел проекта верхнего уровня](images/Top-levelprojectnode.PNG)
   
 
     Откроется конструктор приложений.
@@ -75,7 +75,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
   
 
-     ![Вкладка свойств SharePoint](images/SharePointtab.PNG)
+!\[Вкладка свойств SharePoint](images/SharePointtab.PNG)
   
 
   

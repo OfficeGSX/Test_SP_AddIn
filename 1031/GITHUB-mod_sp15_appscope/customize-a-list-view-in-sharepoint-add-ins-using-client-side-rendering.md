@@ -100,7 +100,7 @@ Abbildung 1 zeigt eine clientseitig gerenderte Ansicht einer Liste mit Ankündig
 
   
 
-     ![Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
+!\[Speicherort der Vorlage "App für SharePoint 2013 Visual Studio"](images/AppForSharePointVSTemplate.PNG)
   
 
   

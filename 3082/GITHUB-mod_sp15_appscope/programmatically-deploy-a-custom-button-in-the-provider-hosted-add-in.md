@@ -61,7 +61,7 @@ En el artículo anterior se quitó del proyecto el botón personalizado **AddEmp
 
 1. En el **Explorador de soluciones**, presione el botón **Mostrar todos los archivos** en la barra de herramientas pequeña de la parte superior del **Explorador de soluciones**.
     
-     ![La barra de herramientas del explorador de soluciones con un cuadro alrededor del botón "Mostrar todos los archivos".](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
+!\[La barra de herramientas del explorador de soluciones con un cuadro alrededor del botón "Mostrar todos los archivos".](images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
   
 
   

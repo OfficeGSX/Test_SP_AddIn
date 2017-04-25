@@ -134,7 +134,7 @@ In diesem Artikel fügen Sie ein Webpart zur Standardseite des SharePoint-Add-In
 
   
 
-     ![Standardseite des Add-Ins mit der Liste "Neue Mitarbeiter in Seattle" Liste wird in einem Webpart angezeigt.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
+!\[Standardseite des Add-Ins mit der Liste "Neue Mitarbeiter in Seattle" Liste wird in einem Webpart angezeigt.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
   
 
     

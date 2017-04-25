@@ -52,7 +52,7 @@ SharePoint アドイン の SharePoint アドイン のインストール イベ
 
   
 
-     ![プロパティ ウィンドウでのアプリ イベント](images/SP_VS_Properties_Window_AppEvents.PNG)
+!\[プロパティ ウィンドウでのアプリ イベント](images/SP_VS_Properties_Window_AppEvents.PNG)
   
 
     Office Developer Tools for Visual Studio によって以下の事柄が実行されます。

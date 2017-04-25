@@ -75,7 +75,7 @@ Bevor Sie das Add-In veröffentlichen können, muss es beim Add-In-Verwaltungsdi
 
   
 
-     ![Registrieren der App auf appregnew.aspx](images/SP15_RegisterApp.png)
+!\[Registrieren der App auf appregnew.aspx](images/SP15_RegisterApp.png)
   
 
   
@@ -193,7 +193,7 @@ Die folgenden Verfahren werden auf dem Remotewebserver ausgeführt, der die Remo
 
   
 
-     ![Exportieren eines Testzertifikats](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[Exportieren eines Testzertifikats](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

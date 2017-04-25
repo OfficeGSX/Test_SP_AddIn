@@ -74,7 +74,7 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
   
 10.  Cliquez sur **nouvel élément** et sur le formulaire de création d'élément, saisissez un nom, mais n'activez *pas*  la case **Ajouté à la base de données d'entreprise**. Ensuite, cliquez sur **Enregistrer**. La liste doit se présenter comme suit :
     
-     ![Liste des employés locaux comportant un seul élément : Christian Cartier. La valeur de la colonne « Ajouté à la base de données de l'entreprise » est « Non ».](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
+!\[Liste des employés locaux comportant un seul élément : Christian Cartier. La valeur de la colonne « Ajouté à la base de données de l'entreprise » est « Non ».](images/a3371859-e42f-49ea-8f17-48d8a248b075.PNG)
   
 
   
@@ -283,7 +283,7 @@ protected void Page_Load(object sender, EventArgs e)
   
 4.  Laissez le champ **Propriétés** vide et enregistrez le fichier. L'onglet **Autorisation** doit se présenter comme suit :
     
-     ![Onglet Autorisations du concepteur du manifeste de complément affichant la portée de la liste et l'autorisation de lecture.](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
+!\[Onglet Autorisations du concepteur du manifeste de complément affichant la portée de la liste et l'autorisation de lecture.](images/8dd2a25f-103a-42af-aa88-c8ec796315db.PNG)
   
 
   
@@ -299,7 +299,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 1.  Utilisez la touche F5 pour déployer et exécuter votre complément. Visual Studio héberge l'application web distante dans IIS Express et héberge la base de données SQL dans SQL Express. Il réalise également une installation temporaire du complément sur votre site SharePoint de test et l'exécute immédiatement. Vous êtes invité à accorder des autorisations au complément avant l'ouverture de sa page d'accueil. Cette fois, l'invite comporte un menu déroulant dans lequel vous sélectionnez la liste que l'application a besoin de lire, comme indiqué dans la capture d'écran suivante.
     
-     ![Invite d'autorisation de complément SharePoint avec la liste nommée « Employés locaux » sélectionnée dans une liste déroulante intitulée « L'autoriser à lire les éléments de la liste »](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
+!\[Invite d'autorisation de complément SharePoint avec la liste nommée « Employés locaux » sélectionnée dans une liste déroulante intitulée « L'autoriser à lire les éléments de la liste »](images/84e8b42c-4800-4947-acbd-21c6f096f4ea.PNG)
   
 
   
@@ -322,7 +322,7 @@ protected void Page_Load(object sender, EventArgs e)
   
 7.  Sélectionnez un élément dans la liste. La page et le ruban doivent se présenter comme suit :
     
-     ![Liste des employés locaux. Un élément est mis en surbrillance. Au-dessus figurent le ruban et un bouton nommé « Ajouter à la base de données de l'entreprise » dans la section Actions.](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
+!\[Liste des employés locaux. Un élément est mis en surbrillance. Au-dessus figurent le ruban et un bouton nommé « Ajouter à la base de données de l'entreprise » dans la section Actions.](images/797a5ceb-7291-4b62-8075-2bb6a1b8e8a1.PNG)
   
 
   
@@ -339,7 +339,7 @@ protected void Page_Load(object sender, EventArgs e)
   
 11.  Cliquez sur **Afficher les employés** et la liste des employés comporte tous les employés que vous avez ajoutés. Elle doit se présenter comme suit :
     
-     ![Liste des employés de l'entreprise sur la page de démarrage du complément affichant le même employé sélectionné à l'étape précédente.](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
+!\[Liste des employés de l'entreprise sur la page de démarrage du complément affichant le même employé sélectionné à l'étape précédente.](images/4a300a4e-f479-4f63-b536-6315c5d9ba4d.PNG)
   
 
   

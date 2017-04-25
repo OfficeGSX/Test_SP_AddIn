@@ -52,7 +52,7 @@ Wenn Sie das fortlaufende Beispiel in diesem Artikel durcharbeiten, verfügen Si
 
   
 
-     ![App-Ereignisse im Eigenschaftenfenster](images/SP_VS_Properties_Window_AppEvents.PNG)
+!\[App-Ereignisse im Eigenschaftenfenster](images/SP_VS_Properties_Window_AppEvents.PNG)
   
 
     Von den Office-Entwicklertools für Visual Studio wird Folgendes ausgeführt:

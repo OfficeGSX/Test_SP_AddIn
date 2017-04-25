@@ -70,7 +70,7 @@ Agregará el botón a la cinta de opciones de un calendario en la web de host. R
 
   
 
-     ![Un calendario denominado Programación de orientación de empleados con un elemento el 1 de junio que dice "Orientar a Cecilia Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+!\[Un calendario denominado Programación de orientación de empleados con un elemento el 1 de junio que dice "Orientar a Cecilia Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
   
 
   
@@ -165,7 +165,7 @@ Observe que la acción personalizada que creó, **RunOrientationAdd-in**, aparec
 
   
 
-     ![La cinta de eventos con un botón personalizado denominado "Orientación del empleado"](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
+!\[La cinta de eventos con un botón personalizado denominado "Orientación del empleado"](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
   
 
   

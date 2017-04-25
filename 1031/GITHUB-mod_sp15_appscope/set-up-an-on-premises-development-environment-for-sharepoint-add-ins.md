@@ -56,7 +56,7 @@ Je nach Ihren spezifischen Anforderungen und Ihrem Budget können Sie unter folg
 
   
 
-     ![SharePoint 2013-Installationsservertyp](images/SP15_app_ServerType.gif)
+!\[SharePoint 2013-Installationsservertyp](images/SP15_app_ServerType.gif)
   
 
   
@@ -80,7 +80,7 @@ dir /od *.log
 
   
 
-     ![Websitevorlagenseite](images/SP15_appChooseSiteTemplate.gif)
+!\[Websitevorlagenseite](images/SP15_appChooseSiteTemplate.gif)
   
 
   

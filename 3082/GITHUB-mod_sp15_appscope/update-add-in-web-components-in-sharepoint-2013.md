@@ -83,7 +83,7 @@ Las Microsoft Office Developer Tools para Visual Studio están pensadas para cre
 
   
 
-     ![Pasos para abrir el editor de XML de característica](images/UpdateAppOpenFeatureXML.png)
+!\[Pasos para abrir el editor de XML de característica](images/UpdateAppOpenFeatureXML.png)
   
 
   

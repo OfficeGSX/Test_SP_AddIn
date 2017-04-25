@@ -134,7 +134,7 @@ En este artículo agregará un elemento web a la página predeterminada de la Co
 
   
 
-     ![Página predeterminada del complemento con la lista "Nuevos empleados de Seattle" mostrada en un elemento web.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
+!\[Página predeterminada del complemento con la lista "Nuevos empleados de Seattle" mostrada en un elemento web.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
   
 
     

@@ -28,7 +28,7 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 
   
 
-     ![Plantilla para crear una aplicación empresarial de nube](images/CloudBusinessApptemplate.PNG)
+!\[Plantilla para crear una aplicación empresarial de nube](images/CloudBusinessApptemplate.PNG)
   
 
   
@@ -45,7 +45,7 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 
   
 
-     ![Dirección URL de SharePoint](images/SiteURL.PNG)
+!\[Dirección URL de SharePoint](images/SiteURL.PNG)
   
 
     La dirección URL debe tener la forma https:// _MiSitio_.sharepoint.com/sites/Developer/.
@@ -63,7 +63,7 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 
   
 
-     ![Nodo de proyecto de nivel superior](images/Top-levelprojectnode.PNG)
+!\[Nodo de proyecto de nivel superior](images/Top-levelprojectnode.PNG)
   
 
     Se abre el diseñador de aplicaciones.
@@ -75,7 +75,7 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 
   
 
-     ![Pestaña de propiedades de SharePoint](images/SharePointtab.PNG)
+!\[Pestaña de propiedades de SharePoint](images/SharePointtab.PNG)
   
 
   

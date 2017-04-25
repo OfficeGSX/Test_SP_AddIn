@@ -137,7 +137,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![Panel Propiedades de la actividad de flujo de trabajo del elemento de lista de búsqueda con las propiedades DisplayName, ListID e ItemID establecidas.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
+!\[Panel Propiedades de la actividad de flujo de trabajo del elemento de lista de búsqueda con las propiedades DisplayName, ListID e ItemID establecidas.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
   
 
     Haga clic en cualquier punto fuera del panel para guardar los cambios. La superficie del diseñador debería tener ahora este aspecto.
@@ -147,7 +147,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![El diseñador de flujo de trabajo con un cuadro Secuencia y, dentro de él, una actividad llamada Buscar nuevo empleado actual.](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
+!\[El diseñador de flujo de trabajo con un cuadro Secuencia y, dentro de él, una actividad llamada Buscar nuevo empleado actual.](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
   
 
     
@@ -174,7 +174,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![El cuadro de diálogo Propiedades de la actividad "Obtener valores dinámicos", con el tipo de entidad establecido en elementos de la lista Nuevos empleados y las variables denominadas Title y OrientationStage asignadas a los campos de los mismos nombres.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
+!\[El cuadro de diálogo Propiedades de la actividad "Obtener valores dinámicos", con el tipo de entidad establecido en elementos de la lista Nuevos empleados y las variables denominadas Title y OrientationStage asignadas a los campos de los mismos nombres.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
   
 
   
@@ -186,7 +186,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![El diseñador de flujo de trabajo con dos actividades: Búsqueda de elementos de lista y Obtener valores dinámicos.](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
+!\[El diseñador de flujo de trabajo con dos actividades: Búsqueda de elementos de lista y Obtener valores dinámicos.](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
   
 
     
@@ -223,7 +223,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![El diseñador de flujo de trabajo con actividades para "Búsqueda de elemento de lista", "Obtener valor dinámico" y una estructura "If Then Else". Correo electrónico es la actividad en la parte Then y Finalizar flujo de trabajo es la actividad en la parte Else.](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
+!\[El diseñador de flujo de trabajo con actividades para "Búsqueda de elemento de lista", "Obtener valor dinámico" y una estructura "If Then Else". Correo electrónico es la actividad en la parte Then y Finalizar flujo de trabajo es la actividad en la parte Else.](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
   
 
   
@@ -249,7 +249,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![La ventana del Host del servicio de pruebas de flujo de trabajo con una línea que indica que se ha iniciado el flujo de trabajo, seguida de una línea que indica que ha finalizado. El GUID de la instancia de flujo de trabajo está al principio de cada línea.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
+!\[La ventana del Host del servicio de pruebas de flujo de trabajo con una línea que indica que se ha iniciado el flujo de trabajo, seguida de una línea que indica que ha finalizado. El GUID de la instancia de flujo de trabajo está al principio de cada línea.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
   
 
     
@@ -263,7 +263,7 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
   
 
-     ![Un mensaje de correo electrónico en Outlook desde el flujo de trabajo con el asunto "Cassie Hicks está lista para la documentación de RR. HH." y el cuerpo "Cassie Hicks está esperando en la sala de espera para rellenar los formularios de empleo y prestaciones".](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
+!\[Un mensaje de correo electrónico en Outlook desde el flujo de trabajo con el asunto "Cassie Hicks está lista para la documentación de RR. HH." y el cuerpo "Cassie Hicks está esperando en la sala de espera para rellenar los formularios de empleo y prestaciones".](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
   
 
     

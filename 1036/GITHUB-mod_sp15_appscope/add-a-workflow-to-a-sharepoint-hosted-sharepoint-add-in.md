@@ -137,7 +137,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Volet Propriétés de l'activité de flux de travail Rechercher un élément de liste avec les propriétés ItemID, ListID et DisplayName définies.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
+!\[Volet Propriétés de l'activité de flux de travail Rechercher un élément de liste avec les propriétés ItemID, ListID et DisplayName définies.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
   
 
     Cliquez n'importe où en dehors du volet pour enregistrer les modifications ; le concepteur doit maintenant avoir l'aspect suivant.
@@ -147,7 +147,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Concepteur de flux de travail avec une zone Séquence et, à l'intérieur, une activité nommée Rechercher le nouvel employé actuel.](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
+!\[Concepteur de flux de travail avec une zone Séquence et, à l'intérieur, une activité nommée Rechercher le nouvel employé actuel.](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
   
 
     
@@ -174,7 +174,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Boîte de dialogue Propriétés de l'activité « Obtenir les valeurs dynamiques », avec le type d'entité défini sur les éléments de la liste des nouveaux employés, et les variables nommées Title et OrientationStage affectées aux champs des mêmes noms.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
+!\[Boîte de dialogue Propriétés de l'activité « Obtenir les valeurs dynamiques », avec le type d'entité défini sur les éléments de la liste des nouveaux employés, et les variables nommées Title et OrientationStage affectées aux champs des mêmes noms.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
   
 
   
@@ -186,7 +186,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Concepteur de flux de travail avec deux activités : Recherche d'élément de liste et Obtenir les valeurs dynamiques.](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
+!\[Concepteur de flux de travail avec deux activités : Recherche d'élément de liste et Obtenir les valeurs dynamiques.](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
   
 
     
@@ -223,7 +223,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Concepteur de flux de travail avec les activités pour « Recherche d'élément de liste », « Obtenir la valeur dynamique » et une structure « If Then Else ». Envoyer un courrier électronique est l'activité dans la partie Then et Terminer le flux de travail est l'activité dans la partie Else.](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
+!\[Concepteur de flux de travail avec les activités pour « Recherche d'élément de liste », « Obtenir la valeur dynamique » et une structure « If Then Else ». Envoyer un courrier électronique est l'activité dans la partie Then et Terminer le flux de travail est l'activité dans la partie Else.](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
   
 
   
@@ -249,7 +249,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Fenêtre d'hôte de service de test de flux de travail avec une ligne indiquant que le flux de travail a démarré, suivie d'une ligne indiquant qu'il est terminé. Le GUID de l'instance de flux de travail se trouve au début de chaque ligne.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
+!\[Fenêtre d'hôte de service de test de flux de travail avec une ligne indiquant que le flux de travail a démarré, suivie d'une ligne indiquant qu'il est terminé. Le GUID de l'instance de flux de travail se trouve au début de chaque ligne.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
   
 
     
@@ -263,7 +263,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
   
 
-     ![Message électronique dans Outlook à partir du flux de travail avec l'objet « Cassie Hicks est prête pour les formalités RH » et le corps « Cassie Hicks attend dans le hall pour remplir les formulaires d'avantages et d'emploi ».](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
+!\[Message électronique dans Outlook à partir du flux de travail avec l'objet « Cassie Hicks est prête pour les formalités RH » et le corps « Cassie Hicks attend dans le hall pour remplir les formulaires d'avantages et d'emploi ».](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
   
 
     

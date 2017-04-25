@@ -188,7 +188,7 @@ private void SetLocalEmployeeSyncStatus()
   
 10.  Cliquez sur **nouvel élément**. Le formulaire de création d'élément doit se présenter exactement comme suit, y compris les deux astérisques indiquant les champs obligatoires :
     
-     ![Formulaire de création d'élément de la liste des livraisons prévues. Avec des champs Produit, Fournisseur, Quantité, Arrivé et « Ajouté à l'inventaire ». Des astérisques se trouvent à côté des titres Produit et Quantité, et Quantité comporte la valeur par défaut de un.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+!\[Formulaire de création d'élément de la liste des livraisons prévues. Avec des champs Produit, Fournisseur, Quantité, Arrivé et « Ajouté à l'inventaire ». Des astérisques se trouvent à côté des titres Produit et Quantité, et Quantité comporte la valeur par défaut de un.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
   
 
   
@@ -340,7 +340,7 @@ clientContext.ExecuteQuery(); ```
   
 5.  À partir de la page d'accueil du magasin de Hong Kong, accédez à la page **Contenu du site** et ouvrez la liste **Livraisons attendues**. La liste comporte désormais un élément correspondant à la commande. La capture d'écran suivante présente un exemple :
     
-     ![Liste des livraisons prévues avec un seul élément. Les champs Produit et Fournisseur comportent des noms. Le champ Quantité contient un nombre. Les deux champs Oui/Non sont définis sur « Non ».](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+!\[Liste des livraisons prévues avec un seul élément. Les champs Produit et Fournisseur comportent des noms. Le champ Quantité contient un nombre. Les deux champs Oui/Non sont définis sur « Non ».](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
   
 
   

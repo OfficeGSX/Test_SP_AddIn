@@ -98,7 +98,7 @@ var callout = CalloutManager.createNew(calloutOptions);```
 |Content  <br/> |每当  `contentElement` 成员没有值时，在控件内显示 HTML。 <br/> |包含 HTML 的字符串， **null** ，如果 `contentElement` 具有值则必须为空。 <br/> |
 |contentElement  <br/> |当  `content` 成员没有值时，在控件内显示一个 HTML 元素。 <br/> |任何 HTML 元素， **null** ，如果 `content` 具有值则必须为空。 <br/> |
 |contentWidth  <br/> |以像素为单位指定标注体容器的宽度。该容器还有一个 1 像素的边框并以 15 像素填充每一侧，因此该控件的宽度比您指定的宽度宽 32 像素。该控件的 CSS  `overflow` 属性设置为 `hidden`，因此如果您的内容不适合您所指定的宽度，就会被剪切掉。如果您在一个开放标注中设置该成员，则更改会立刻生效。该规则对其他成员无效。  <br/> |240 和 610 之间的任意数字， **350** （默认情况下，控件宽度设为 382 像素） <br/> |
-|beakOrientation  <br/> |指定标注控件的尖角或指针的方向。  <br/> |**topBottom** ，显示如下（图 2）： **图 2. 显示的标注控件的尖角为 topBottom 方向**         ![其中标注控件的尖角按从上到下方向进行显示](images/SP15_CalloutTopBottom.png) **leftRight** ，显示如下（图 3）： **图 3. 显示的标注控件的尖角为 leftright 方向**         ![其中标注控件的尖角按从左到右方向进行显示](images/SP15_CalloutLeftRight.png)|
+|beakOrientation  <br/> |指定标注控件的尖角或指针的方向。  <br/> |**topBottom** ，显示如下（图 2）： **图 2. 显示的标注控件的尖角为 topBottom 方向**!\[其中标注控件的尖角按从上到下方向进行显示](images/SP15_CalloutTopBottom.png) **leftRight** ，显示如下（图 3）： **图 3. 显示的标注控件的尖角为 leftright 方向**!\[其中标注控件的尖角按从左到右方向进行显示](images/SP15_CalloutLeftRight.png)|
    
 
 ## 如何自定义标注控件的行为

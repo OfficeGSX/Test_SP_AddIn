@@ -37,7 +37,7 @@ Le resultará mucho más fácil desarrollar Complementos de SharePoint hospedado
 
   
 
-     ![Iniciador de aplicaciones de Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
+!\[Iniciador de aplicaciones de Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
   
 
     

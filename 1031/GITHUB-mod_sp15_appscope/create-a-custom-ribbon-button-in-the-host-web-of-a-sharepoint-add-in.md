@@ -70,7 +70,7 @@ Die Schaltfl채che wird dem Men체band eines Kalenders im Hostweb hinzugef체gt. F�
 
   
 
-     ![Ein Kalender namens "Zeitplan f체r Mitarbeiterorientierung" mit einem Element am 1. Juni: "Orientierung Cassie Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+!\[Ein Kalender namens "Zeitplan f체r Mitarbeiterorientierung" mit einem Element am 1. Juni: "Orientierung Cassie Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
   
 
   
@@ -165,7 +165,7 @@ Beachten Sie, dass die benutzerdefinierte Aktion, die Sie erstellt haben, **RunO
 
   
 
-     ![Das Men체band "Ereignisse" mit einer benutzerdefinierten Schaltfl채che namens "Mitarbeiterorientierung"](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
+!\[Das Men체band "Ereignisse" mit einer benutzerdefinierten Schaltfl채che namens "Mitarbeiterorientierung"](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
   
 
   

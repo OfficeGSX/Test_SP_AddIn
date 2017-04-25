@@ -17,7 +17,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
 
   
 
-     ![Nodo IncidentManager](images/CBA_IM_18.PNG)
+!\[Nodo IncidentManager](images/CBA_IM_18.PNG)
   
 
   
@@ -109,7 +109,7 @@ Puede publicar su complemento empresarial de nube como complemento de SharePoint
 
   
 
-     ![Nodo IncidentManager](images/CBA_IM_18.PNG)
+!\[Nodo IncidentManager](images/CBA_IM_18.PNG)
   
 
     

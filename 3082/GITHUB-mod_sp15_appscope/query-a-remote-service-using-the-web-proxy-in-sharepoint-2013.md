@@ -120,7 +120,7 @@ En la figura 1 se ve la ventana del explorador con datos del servicio remoto en 
 
   
 
-     ![Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+!\[Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
   
 
   
@@ -435,7 +435,7 @@ Categories from the Northwind database exposed as an OData service:
 
   
 
-     ![Página de SharePoint con datos del servicio remoto](images/WebProxy_result.png)
+!\[Página de SharePoint con datos del servicio remoto](images/WebProxy_result.png)
   
 
   

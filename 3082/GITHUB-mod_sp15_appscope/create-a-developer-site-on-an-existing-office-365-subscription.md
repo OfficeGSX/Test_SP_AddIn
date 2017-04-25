@@ -76,7 +76,7 @@ Un Sitio para desarrolladores de Office 365 hace que sea más fácil y rápido p
   
 5. En la pestaña **Colecciones de sitios** del **Centro de administración de SharePoint**, haga clic en **Nuevo > Colección de sitios privados**.
     
-     ![Opción Nueva colección de sitios del Centro de administración de SharePoint](images/SPAdminCenter_newSiteCollection.png)
+!\[Opción Nueva colección de sitios del Centro de administración de SharePoint](images/SPAdminCenter_newSiteCollection.png)
   
 
   
@@ -102,7 +102,7 @@ Un Sitio para desarrolladores de Office 365 hace que sea más fácil y rápido p
     
     La nueva dirección URL del sitio para desarrolladores aparecerá en la lista **Colecciones de sitios**. Cuando el sitio haya terminado de crearse, podrá ir a la dirección URL para abrir el sitio para desarrolladores.
     
-     ![Aprovisionamiento de nueva colección de sitios](images/SPAdminCenter_newSiteCollection_provisioning.png)
+!\[Aprovisionamiento de nueva colección de sitios](images/SPAdminCenter_newSiteCollection_provisioning.png)
   
 
   

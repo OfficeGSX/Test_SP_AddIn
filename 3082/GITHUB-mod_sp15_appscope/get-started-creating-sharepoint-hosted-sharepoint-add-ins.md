@@ -261,7 +261,7 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
 
   
 
-     ![Carpeta de lista con la plantilla NewEmployeeOrientation secundaria, que a su vez tiene tres elementos secundarios: una instancia NewEmployeeOrientationInstance, un archivo elements.xml y un archivo schema.xml. La propia instancia tiene un elemento secundario denominado elements.xml.](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
+!\[Carpeta de lista con la plantilla NewEmployeeOrientation secundaria, que a su vez tiene tres elementos secundarios: una instancia NewEmployeeOrientationInstance, un archivo elements.xml y un archivo schema.xml. La propia instancia tiene un elemento secundario denominado elements.xml.](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
   
 
     
@@ -399,7 +399,7 @@ Para su primera Complemento de SharePoint hospedada en SharePoint, se deberá in
 
   
 
-     ![La página predeterminada del complemento se muestra con su título Nuevos empleados por ubicación. Hay un vínculo con la etiqueta Nuevos empleados de Seattle. Una flecha parte desde este vínculo y señala a la página de vista de listas para la lista. El título de la página es Nuevos empleados de Seattle, con la lista debajo del título.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
+!\[La página predeterminada del complemento se muestra con su título Nuevos empleados por ubicación. Hay un vínculo con la etiqueta Nuevos empleados de Seattle. Una flecha parte desde este vínculo y señala a la página de vista de listas para la lista. El título de la página es Nuevos empleados de Seattle, con la lista debajo del título.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
   
 
     

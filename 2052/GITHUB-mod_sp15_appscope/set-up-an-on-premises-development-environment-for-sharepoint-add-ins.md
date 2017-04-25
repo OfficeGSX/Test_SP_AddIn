@@ -56,7 +56,7 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
 
   
 
-     ![SharePoint 2013 安装服务器类型](images/SP15_app_ServerType.gif)
+!\[SharePoint 2013 安装服务器类型](images/SP15_app_ServerType.gif)
   
 
   
@@ -80,7 +80,7 @@ dir /od *.log
 
   
 
-     ![网站模板页面](images/SP15_appChooseSiteTemplate.gif)
+!\[网站模板页面](images/SP15_appChooseSiteTemplate.gif)
   
 
   

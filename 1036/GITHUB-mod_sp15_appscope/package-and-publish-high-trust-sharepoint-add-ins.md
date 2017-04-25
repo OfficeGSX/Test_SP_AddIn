@@ -75,7 +75,7 @@ Avant de publier le complément, vous devez l'inscrire dans le système de gesti
 
   
 
-     ![Inscrire l'application sur appregnew.aspx](images/SP15_RegisterApp.png)
+!\[Inscrire l'application sur appregnew.aspx](images/SP15_RegisterApp.png)
   
 
   
@@ -193,7 +193,7 @@ Ignorez la procédure suivante si vous utilisez le Gestionaire des services Inte
 
   
 
-     ![Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

@@ -75,7 +75,7 @@ Eine Website für Office 365-Entwickler erleichtert Ihnen die Einrichtung und de
   
 5. Klicken Sie im **SharePoint Admin Center** auf der Registerkarte **Websitesammlungen** auf **Neue und dann auf Private Websitesammlung**.
     
-     ![Neue Websitesammlungsoption des SharePoint Admin Center](images/SPAdminCenter_newSiteCollection.png)
+!\[Neue Websitesammlungsoption des SharePoint Admin Center](images/SPAdminCenter_newSiteCollection.png)
   
 
   
@@ -104,7 +104,7 @@ Eine Website für Office 365-Entwickler erleichtert Ihnen die Einrichtung und de
     
     Die URL der neuen Entwicklerwebsite wird in der Liste **Websitesammlungen** angezeigt. Wenn die Erstellung der Website abgeschlossen ist, können Sie zur URL navigieren, um Ihre Entwicklerwebsite zu öffnen.
     
-     ![Neue Websitesammlungsbereitstellung](images/SPAdminCenter_newSiteCollection_provisioning.png)
+!\[Neue Websitesammlungsbereitstellung](images/SPAdminCenter_newSiteCollection_provisioning.png)
   
 
   

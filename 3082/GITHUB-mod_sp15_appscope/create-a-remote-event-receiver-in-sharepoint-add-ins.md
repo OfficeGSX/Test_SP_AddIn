@@ -306,7 +306,7 @@ Pruebe el controlador con el procedimiento siguiente.
 
   
 
-     ![Eventos remotos de SharePoint en Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
+!\[Eventos remotos de SharePoint en Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
   
 
   

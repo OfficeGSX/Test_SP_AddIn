@@ -100,7 +100,7 @@ La Figura 1 muestra una vista de representación de cliente de una lista de anun
 
   
 
-     ![Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+!\[Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
   
 
   

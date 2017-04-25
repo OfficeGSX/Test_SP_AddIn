@@ -52,7 +52,7 @@ ms.assetid: f40c910f-12a2-4caa-8e91-c7a61ae540db
 
   
 
-     ![属性窗口中的应用程序事件](images/SP_VS_Properties_Window_AppEvents.PNG)
+!\[属性窗口中的应用程序事件](images/SP_VS_Properties_Window_AppEvents.PNG)
   
 
     Visual Studio Office 开发人员工具 将执行下列操作：

@@ -101,7 +101,7 @@ En este artículo, se agrega un tipo especial de elemento web, denominado elemen
   
 4. En el control de inserción de elementos web que se abre, seleccione el elemento de complemento **Realizar pedido**. El control tendrá un aspecto similar al siguiente.
     
-     ![Control de inserción de elementos web de SharePoint. El elemento denominado "Realizar pedido" está resaltado. Su nombre y descripción aparece en un cuadro a la derecha.](images/aae61f89-2e9e-4808-8b0c-2439dad7c701.PNG)
+!\[Control de inserción de elementos web de SharePoint. El elemento denominado "Realizar pedido" está resaltado. Su nombre y descripción aparece en un cuadro a la derecha.](images/aae61f89-2e9e-4808-8b0c-2439dad7c701.PNG)
   
 
   
@@ -118,7 +118,7 @@ En este artículo, se agrega un tipo especial de elemento web, denominado elemen
   
 3. El formulario de pedido aparece ahora en la página y tiene la apariencia del resto de la página. Ahora debería ser similar al siguiente: 
     
-     ![El elemento del complemento Realizar un pedido en la página con cuadros de texto para Producto, Proveedor y Calidad. También hay un botón "Realizar un pedido".](images/beae2e3c-c1f4-4334-8ab8-0c42252cb2a2.PNG)
+!\[El elemento del complemento Realizar un pedido en la página con cuadros de texto para Producto, Proveedor y Calidad. También hay un botón "Realizar un pedido".](images/beae2e3c-c1f4-4334-8ab8-0c42252cb2a2.PNG)
   
 
   

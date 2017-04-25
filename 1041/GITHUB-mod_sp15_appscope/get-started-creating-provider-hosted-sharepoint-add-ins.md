@@ -551,7 +551,7 @@ namespace SampleAddInWeb
 
   
 
-     ![基本的な自己ホスト アプリ起動ページ](images/SP15_basicself-hostedapp.gif)
+!\[基本的な自己ホスト アプリ起動ページ](images/SP15_basicself-hostedapp.gif)
   
 
   

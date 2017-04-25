@@ -262,7 +262,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
   
 
-     ![Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Orientierungsphase" für zwei Elemente auf "Abgeschlossen" festgelegt ist. Unter der Liste befindet sich eine Schaltfläche "Abgeschlossene Elemente löschen".](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
+!\[Die Liste "Neue Mitarbeiter in Seattle", in der die Spalten "Orientierungsphase" für zwei Elemente auf "Abgeschlossen" festgelegt ist. Unter der Liste befindet sich eine Schaltfläche "Abgeschlossene Elemente löschen".](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
   
 
   
@@ -277,7 +277,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
   
 
-     ![Die Liste "Neue Mitarbeiter in Seattle" mit zwei Elementen weniger als zuvor. Für keines ist "Orientierungsphase" auf "Abgeschlossen" festgelegt.](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
+!\[Die Liste "Neue Mitarbeiter in Seattle" mit zwei Elementen weniger als zuvor. Für keines ist "Orientierungsphase" auf "Abgeschlossen" festgelegt.](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
   
 
   

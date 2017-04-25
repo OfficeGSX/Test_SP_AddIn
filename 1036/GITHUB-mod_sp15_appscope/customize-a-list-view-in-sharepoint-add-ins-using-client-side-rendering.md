@@ -100,7 +100,7 @@ La figure 1 montre un affichage rendu côté client d'une liste d'annonces.
 
   
 
-     ![Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+!\[Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
   
 
   

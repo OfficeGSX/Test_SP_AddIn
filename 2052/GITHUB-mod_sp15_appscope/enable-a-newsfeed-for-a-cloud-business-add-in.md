@@ -25,7 +25,7 @@ SharePoint for Office 365 中的社交和协作功能允许用户跟踪列表中
   
 2. 在"属性"窗口中，选中"创建时发布"和/或"更新时发布"复选框。
     
-     ![社会属性](images/CBAsocial.PNG)
+!\[社会属性](images/CBAsocial.PNG)
   
 
     "创建时发布"可为每个新的列表项添加新闻源的线程。"更新时发布"可在列表中某个项目的值更改时添加线程。发布触发器确定项目中的哪些字段将触发发布。
@@ -53,7 +53,7 @@ SharePoint for Office 365 中的社交和协作功能允许用户跟踪列表中
   
 3. 在 SharePoint 部件版式栏中，选择"新闻源"链接。
     
-     ![SharePoint 部件版式栏](images/CBAnewsfeed.PNG)
+!\[SharePoint 部件版式栏](images/CBAnewsfeed.PNG)
   
 
     "新闻源"页面将在新的浏览器窗口中打开，并显示所添加和/或更新的项目的条目。您可以选择文章的"赞"链接，也可以选择"回复"链接添加评论。

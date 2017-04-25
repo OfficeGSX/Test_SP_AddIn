@@ -303,7 +303,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
   
 
-     ![Dokumentbibliothek mit geöffneter Legende für ein Dokument, das durch die Popupschaltfläche in der Legende geöffnete Menü und das geöffnete Menü "Erweitert".](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+!\[Dokumentbibliothek mit geöffneter Legende für ein Dokument, das durch die Popupschaltfläche in der Legende geöffnete Menü und das geöffnete Menü "Erweitert".](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
   
 
   
@@ -324,7 +324,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
   
 
-     ![Webseite mit Parametern aus einer benutzerdefinierten Aktion](images/CustomActions_target.png)
+!\[Webseite mit Parametern aus einer benutzerdefinierten Aktion](images/CustomActions_target.png)
   
 
   
@@ -336,7 +336,7 @@ Führen Sie diese Schritte aus, um eine benutzerdefinierte Aktion in den Hostweb
 
   
 
-     ![Eine Dokumentbibliothek mit einem ausgewählten Dokument, der geöffneten Registerkarte "Datei" auf der Multifunktionsleiste und der benutzerdefinierten Schaltfläche im Menüband.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+!\[Eine Dokumentbibliothek mit einem ausgewählten Dokument, der geöffneten Registerkarte "Datei" auf der Multifunktionsleiste und der benutzerdefinierten Schaltfläche im Menüband.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
   
 
   

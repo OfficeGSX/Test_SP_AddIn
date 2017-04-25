@@ -32,7 +32,7 @@ Lorsque vous tentez de télécharger un document dans la bibliothèque de docume
 
   
 
-     ![Sélections dans la boîte de dialogue de gestion des packages NuGet](images/NuGet.PNG)
+!\[Sélections dans la boîte de dialogue de gestion des packages NuGet](images/NuGet.PNG)
   
 
   

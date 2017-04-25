@@ -546,7 +546,7 @@ namespace SampleAddInWeb
 
   
 
-     ![Basic self-hosted app launch page](images/SP15_basicself-hostedapp.gif)
+!\[Basic self-hosted app launch page](images/SP15_basicself-hostedapp.gif)
   
 
   

@@ -194,7 +194,7 @@ Cette catégorie comprend tous les composants nécessaires pour interagir avec l
     
     Il s'agit de l'implémentation CRUD réelle pour BoxXDataService. L'image suivante illustre l'architecture de code principale de CarInventoryBoxXDataOperation. L'espace de noms CRUD est utilisé pour implémenter les opérations CRUD, et l'espace de noms Util est le code d'assistance pour l'espace de noms CRUD.
     
-     ![CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
+!\[CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
   
 
   
@@ -242,7 +242,7 @@ SellerDashboardStudio comprend des composants standard du complément SharePoint
     
   
 - 
-     ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+!\[SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
   
 
     SellerDashboard.HTML.Client comprend les quatre écrans suivants :
@@ -269,7 +269,7 @@ SellerDashboardStudio comprend des composants standard du complément SharePoint
     
     Ce composant comprend la source de données RIA WCF, la source de données SharePoint et l'API web de téléchargement de photos. L'image suivante illustre les principaux composants.
     
-     ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
+!\[SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
   
 
     SharePointContext.cs et TokenHelper.cs sont les classes d'assistance qui fournissent le contexte client pour l'authentification par rapport à SharePoint. Ceci permet d'utiliser l'API web de téléchargement de photos pour télécharger des photos de voitures dans la bibliothèque d'images. Les fichiers PhotoListHelper.cs et PhotosController.cs implémentent l'API web de téléchargement de photos. Pour plus d'informations sur l'API web de téléchargement de photos utilisée par LightSwitch, consultez l'article  [Procédure pas à pas : création d'un complément SharePoint à l'aide de LightSwitch](http://msdn.microsoft.com/fr-fr/library/jj969621.aspx).
@@ -442,7 +442,7 @@ public interface IInventoryItem
   
 -  *Source de données utilisée par LightSwitch côté serveur* 
     
-     ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
+!\[InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
   
 
     Dans le serveur de SellerDashboard, lorsque vous ajoutez le service RIA WCF (BoxXDataService), le modèle de données qui est défini dans CarInventoryModel est inclus, et vous obtenez le tableau de données pertinent. Vous pouvez changer le type de certaines propriétés. Par exemple, vous pouvez changer le type **BuyerEmail** **String** sur **Email Address**, et LightSwitch prendra en charge la vérification du format électronique côté client.
@@ -839,7 +839,7 @@ Nous utilisons un complément SharePoint vide pour accorder au complément Share
   
 3. Définissez les autorisations de lecture dans le manifeste de l'application.
     
-     ![Manifeste](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
+!\[Manifeste](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
   
 
   

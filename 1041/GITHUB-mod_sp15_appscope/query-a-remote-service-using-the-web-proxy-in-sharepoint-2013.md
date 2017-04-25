@@ -120,7 +120,7 @@ SharePoint アドインを作成する場合、通常は、さまざまなソー
 
   
 
-     ![SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
+!\[SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
   
 
   
@@ -435,7 +435,7 @@ Categories from the Northwind database exposed as an OData service:
 
   
 
-     ![リモート サービスからのデータを含む SharePoint ページ](images/WebProxy_result.png)
+!\[リモート サービスからのデータを含む SharePoint ページ](images/WebProxy_result.png)
   
 
   

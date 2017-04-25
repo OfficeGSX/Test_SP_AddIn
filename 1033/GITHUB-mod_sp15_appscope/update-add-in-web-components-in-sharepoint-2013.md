@@ -90,7 +90,7 @@ The Microsoft Office Developer Tools for Visual Studio are oriented to creating 
 
   
 
-     ![Steps to open the Feature XML editor](images/UpdateAppOpenFeatureXML.png)
+!\[Steps to open the Feature XML editor](images/UpdateAppOpenFeatureXML.png)
   
 
   

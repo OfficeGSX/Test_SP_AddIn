@@ -100,7 +100,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
 
   
 
-     ![SharePoint 2013 Visual Studio 相关应用程序模板](images/AppForSharePointVSTemplate.PNG)
+!\[SharePoint 2013 Visual Studio 相关应用程序模板](images/AppForSharePointVSTemplate.PNG)
   
 
   

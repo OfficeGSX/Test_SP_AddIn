@@ -101,7 +101,7 @@ ms.assetid: f77d528d-8b6d-4e2e-983c-3f3957983e9f
   
 4.  Sur le contrôle d'insertion de composant WebPart qui apparaît, sélectionnez le composant de complément **Passer une commande**. Le contrôle doit se présenter comme suit.
     
-     ![Contrôle d'insertion du composant WebPart SharePoint. La partie appelée « Passer une commande » est mise en surbrillance. Son nom et la description apparaissent dans une case à droite.](images/aae61f89-2e9e-4808-8b0c-2439dad7c701.PNG)
+!\[Contrôle d'insertion du composant WebPart SharePoint. La partie appelée « Passer une commande » est mise en surbrillance. Son nom et la description apparaissent dans une case à droite.](images/aae61f89-2e9e-4808-8b0c-2439dad7c701.PNG)
   
 
   
@@ -118,7 +118,7 @@ ms.assetid: f77d528d-8b6d-4e2e-983c-3f3957983e9f
   
 3.  Le bon de commande apparaît maintenant sur la page et il a la même apparence que le reste de la page. Il doit se présenter comme suit :
     
-     ![Partie du complément Passer une commande sur la page comprenant les zones de texte Produit, Fournisseur et Quantité. Il y a également un bouton « Passer une commande ».](images/beae2e3c-c1f4-4334-8ab8-0c42252cb2a2.PNG)
+!\[Partie du complément Passer une commande sur la page comprenant les zones de texte Produit, Fournisseur et Quantité. Il y a également un bouton « Passer une commande ».](images/beae2e3c-c1f4-4334-8ab8-0c42252cb2a2.PNG)
   
 
   

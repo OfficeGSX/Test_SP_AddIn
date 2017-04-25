@@ -38,7 +38,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 2.  Sur la page **Nouveau site SharePoint**, remplissez le formulaire pour créer un site d'équipe à l'aide des valeurs indiquées dans la capture d'écran suivante.
     
-     ![Formulaire permettant de créer un sous-site SharePoint avec dans la zone de texte du titre, « Fabrikam Hong Kong Store », et dans la zone de texte de l'URL, « hongkong ».](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
+!\[Formulaire permettant de créer un sous-site SharePoint avec dans la zone de texte du titre, « Fabrikam Hong Kong Store », et dans la zone de texte de l'URL, « hongkong ».](images/7639578e-3d3f-40cf-8f53-355bb19c539b.png)
   
 
   
@@ -79,7 +79,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 7.  La page d'accueil du complément ressemble à la capture d'écran ci-dessous. Tout en haut, le nom du site SharePoint où le complément est installé apparaît. Il s'agit d'un effet secondaire de quelques exemples de code que les Outils de développement Office pour Visual Studio génèrent. Vous modifierez cet élément à une étape ultérieure. La page comporte des zones où les données des tables de base de données SQL **Inventaire**, **Commandes** et **Employés** sont visibles. Ces tables sont initialement vides.
     
-     ![Page de démarrage du complément d'une chaîne de magasins comportant des zones nommées et des boutons permettant d'afficher les stocks, les commandes et les employés du magasin.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
+!\[Page de démarrage du complément d'une chaîne de magasins comportant des zones nommées et des boutons permettant d'afficher les stocks, les commandes et les employés du magasin.](images/9c836899-8f21-4e0f-9260-69b8171a303c.PNG)
   
 
   
@@ -87,7 +87,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 8.  Ouvrez le lien **Bon de commande** au bas de la page pour ouvrir un bon de commande. Saisissez des valeurs dans le formulaire et cliquez sur **Passer une commande**. La capture d'écran ci-dessous en présente un exemple. Vous aurez l'impression que rien ne s'est produit, mais le code du bouton transmet les valeurs à une procédure stockée paramétrée dans la base de données SQL. L'utilisation de procédures stockées paramétrées protège la base de données contre les attaques par injection de code SQL.
     
-     ![Bon de commande avec zones de texte pour le fournisseur, le produit et la quantité, avec un bouton nommé « Passer une commande ».](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
+!\[Bon de commande avec zones de texte pour le fournisseur, le produit et la quantité, avec un bouton nommé « Passer une commande ».](images/5ce3e68b-1bcf-4a24-9153-b9164af77a6b.PNG)
   
 
   
@@ -99,7 +99,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
     
      L'application web distante obtient l'URL de site web hôte à partir d'un paramètre de chaîne de requête que SharePoint ajoute à l'URL de la page d'accueil lors du lancement du complément. Étant donné que SSL est utilisé, cette chaîne de requête est chiffrée, car elle est envoyée par Internet à l'application web distante.
     
-     ![Section de la page de démarrage pour les commandes comportant une commande affichée dans un tableau HTML. Comporte des colonnes pour l'ID, le client, le fournisseur, le produit et la quantité.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
+!\[Section de la page de démarrage pour les commandes comportant une commande affichée dans un tableau HTML. Comporte des colonnes pour l'ID, le client, le fournisseur, le produit et la quantité.](images/6a82c6eb-4a46-4a97-94f9-c1f4a7605d1f.PNG)
   
 
   
@@ -110,7 +110,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
   
 11.  Par défaut, le complément reste installé sur le site web hôte SharePoint entre les sessions de débogage dans Visual Studio. Pour voir comment les utilisateurs finaux le lancent après sa réinstallation, ouvrez le site SharePoint de Fabrikam Hong Kong dans votre navigateur et accédez à la page **Contenu du site**. La mosaïque du complément apparaît telle que dans la capture d'écran ci-dessous :
     
-     ![Titre de lancement du complément de chaîne de magasins sur la page de contenu du site avec le nom et l'icône du complément.](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
+!\[Titre de lancement du complément de chaîne de magasins sur la page de contenu du site avec le nom et l'icône du complément.](images/f16e6360-c511-431f-b2c5-9e5541e64d4b.PNG)
   
 
     
@@ -310,7 +310,7 @@ protected SharePointContext spContext;
   
 2.  Lorsque la page d'accueil du complément s'ouvre, elle ressemble désormais à une page SharePoint. Cliquez sur le lien **Bon de commande**. Il ressemble également à un formulaire SharePoint.
     
-     ![Bon de commande, qui utilise désormais des polices Segoe. Le texte « Passer une commande » est surligné en bleu.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
+!\[Bon de commande, qui utilise désormais des polices Segoe. Le texte « Passer une commande » est surligné en bleu.](images/a35fd1af-7194-4c99-b298-bac97025b981.PNG)
   
 
   
@@ -321,7 +321,7 @@ protected SharePointContext spContext;
   
 4.  Utilisez le bouton retour du navigateur pour revenir à la page d'accueil du complément, puis sélectionnez **Afficher les commandes**. La page doit maintenant se présenter comme suit. Notez que les en-têtes de colonnes sont désormais en majuscules. 
     
-     ![Page de démarrage comportant le contrôle Chrome dans la partie supérieure. L'ensemble du texte et des contrôles sont de style SharePoint.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
+!\[Page de démarrage comportant le contrôle Chrome dans la partie supérieure. L'ensemble du texte et des contrôles sont de style SharePoint.](images/e56e4b80-1f1c-4a83-9ac0-3005ceea7c3a.PNG)
   
 
   
@@ -344,7 +344,7 @@ protected SharePointContext spContext;
   
 10.  Accédez à la page **Contenu du site** et lancez l'application Chain Store en cliquant sur sa mosaïque. Vos pages personnalisées ont pris l'apparence choisie. Les captures d'écran suivantes présentent l'apparence composée **Nature**.
     
-     ![Ordre et page de démarrage du complément de couleur verte du style composé « Nature ».](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
+!\[Ordre et page de démarrage du complément de couleur verte du style composé « Nature ».](images/25ba5677-f530-432a-9980-64b5eb33119c.png)
   
 
   

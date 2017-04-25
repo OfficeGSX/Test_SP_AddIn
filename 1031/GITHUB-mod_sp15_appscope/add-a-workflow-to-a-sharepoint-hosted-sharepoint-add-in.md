@@ -137,7 +137,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Eigenschaftenbereich der Workflowaktivität "Listenelement suchen", wobei die Eigenschaften "ItemID", "ListID" und "DisplayName" festgelegt sind.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
+!\[Eigenschaftenbereich der Workflowaktivität "Listenelement suchen", wobei die Eigenschaften "ItemID", "ListID" und "DisplayName" festgelegt sind.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
   
 
     Klicken Sie auf eine beliebige Stelle außerhalb des Bereichs, um die Änderungen zu speichern. Die Designeroberfläche sollte jetzt wie folgt aussehen.
@@ -147,7 +147,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Workflow-Designer mit dem Feld "Sequenz" und einer darin enthaltenen Aktivität mit dem Namen "Aktuellen neuen Mitarbeiter suchen".](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
+!\[Workflow-Designer mit dem Feld "Sequenz" und einer darin enthaltenen Aktivität mit dem Namen "Aktuellen neuen Mitarbeiter suchen".](images/c8fbf801-e8e4-444a-9d2e-c14e29f537de.PNG)
   
 
     
@@ -174,7 +174,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Das Dialogfeld "Eigenschaften" für die Aktivität "Dynamische Werte abrufen", wobei der Entitätstyp auf Elemente der Liste "Neue Mitarbeiter" festgelegt ist, und Variablen mit dem Namen "Title" und "OrientationStage", die Feldern mit dem gleichen Namen zugewiesen sind.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
+!\[Das Dialogfeld "Eigenschaften" für die Aktivität "Dynamische Werte abrufen", wobei der Entitätstyp auf Elemente der Liste "Neue Mitarbeiter" festgelegt ist, und Variablen mit dem Namen "Title" und "OrientationStage", die Feldern mit dem gleichen Namen zugewiesen sind.](images/36a841e7-ce1b-444c-9bfe-7cdc56399ec1.PNG)
   
 
   
@@ -186,7 +186,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Der Workflow-Designer mit zwei Aktivitäten: "Listenelement suchen" und "Dynamische Werte abrufen".](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
+!\[Der Workflow-Designer mit zwei Aktivitäten: "Listenelement suchen" und "Dynamische Werte abrufen".](images/cd8eb456-d883-491a-b171-38c1b9f64018.PNG)
   
 
     
@@ -223,7 +223,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Der Workflow-Designer mit Aktivitäten für "Listenelement suchen", "Dynamischen Wert abrufen" und einer "Wenn-Dann-Sonst"-Struktur. E-Mail ist die Aktivität im Teil "Dann" und "Workflow beenden" ist die Aktivität für "Sonst".](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
+!\[Der Workflow-Designer mit Aktivitäten für "Listenelement suchen", "Dynamischen Wert abrufen" und einer "Wenn-Dann-Sonst"-Struktur. E-Mail ist die Aktivität im Teil "Dann" und "Workflow beenden" ist die Aktivität für "Sonst".](images/c1230e3b-d149-413c-aa66-d258250a4512.PNG)
   
 
   
@@ -249,7 +249,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Das Workflowfenster "Test Service Host" mit einer Zeile, die besagt, dass der Workflow gestartet wurde, gefolgt von einer Zeile, die besagt, dass der Workflow beendet wurde. Die GUID der Workflowinstanz befindet sich am Anfang jeder Zeile.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
+!\[Das Workflowfenster "Test Service Host" mit einer Zeile, die besagt, dass der Workflow gestartet wurde, gefolgt von einer Zeile, die besagt, dass der Workflow beendet wurde. Die GUID der Workflowinstanz befindet sich am Anfang jeder Zeile.](images/2422936d-7ef6-4c90-a03f-30053fbb9743.PNG)
   
 
     
@@ -263,7 +263,7 @@ für ein oder mehrere Elemente im Workflow-Designer angezeigt. Diese weisen auf 
 
   
 
-     ![Eine E-Mail-Nachricht in Outlook aus dem Workflow mit dem Betreff "Cassie Hicks ist bereit für die Schreibarbeiten der Personalabteilung" und dem Nachrichtentext "Cassie Hicks wartet in der Lobby, um Formulare für Zusatzleistungen und Dienstverhältnisse auszufüllen."](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
+!\[Eine E-Mail-Nachricht in Outlook aus dem Workflow mit dem Betreff "Cassie Hicks ist bereit für die Schreibarbeiten der Personalabteilung" und dem Nachrichtentext "Cassie Hicks wartet in der Lobby, um Formulare für Zusatzleistungen und Dienstverhältnisse auszufüllen."](images/7b1d8f47-9c34-441e-af6a-3af4a8c65533.PNG)
   
 
     

@@ -100,7 +100,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
   
 
-     ![SharePoint 2013 Visual Studio 相关应用程序模板](images/AppForSharePointVSTemplate.PNG)
+!\[SharePoint 2013 Visual Studio 相关应用程序模板](images/AppForSharePointVSTemplate.PNG)
   
 
   
@@ -118,7 +118,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
   
 
-     ![解决方案资源管理器中适用于 SharePoint 项目的应用程序](images/AppVSTemplateSolutionExplorer.jpg)
+!\[解决方案资源管理器中适用于 SharePoint 项目的应用程序](images/AppVSTemplateSolutionExplorer.jpg)
   
 
   
@@ -137,7 +137,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
   
 
-     ![具有查询字符串参数的清单编辑器](images/ChromeControl_manifest.PNG)
+!\[具有查询字符串参数的清单编辑器](images/ChromeControl_manifest.PNG)
   
 
     部件版式控件将自动采用查询字符串中的下列值：
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
   
 
-     ![页面中使用的 SharePoint 网站样式表](images/ChromControl_stylesheet.png)
+!\[页面中使用的 SharePoint 网站样式表](images/ChromControl_stylesheet.png)
   
 
   

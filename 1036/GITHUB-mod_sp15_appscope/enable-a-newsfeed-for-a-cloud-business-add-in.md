@@ -25,7 +25,7 @@ Pour héberger l'échange de News, vous aurez besoin d'un site SharePoint de dé
   
 2. Dans la fenêtre **Propriétés**, cochez les cases **Publier une fois créé(e)** et/ou **Publier une fois mis(e) à jour**.
     
-     ![Propriétés sociales](images/CBAsocial.PNG)
+!\[Propriétés sociales](images/CBAsocial.PNG)
   
 
     **Publier une fois créé(e)** ajoute un thread à l'échange de News pour chaque nouvel élément de liste. **Publier une fois mis(e) à jour** ajoute un thread lorsque la valeur d'un élément dans la liste est modifié. Des déclencheurs déterminent les champs de l'élément qui déclencheront une publication.
@@ -53,7 +53,7 @@ Pour héberger l'échange de News, vous aurez besoin d'un site SharePoint de dé
   
 3. Dans la barre Chrome SharePoint, cliquez sur le lien **Échange de News**.
     
-     ![Barre chrome SharePoint](images/CBAnewsfeed.PNG)
+!\[Barre chrome SharePoint](images/CBAnewsfeed.PNG)
   
 
     La page **Échange de News** ouvre une nouvelle page de navigateur avec des entrées pour les éléments ajoutés et/ou mis à jour. Vous pouvez choisir un lien **J'aime** pour une publication ou sélectionner un lien **Répondre** pour ajouter un commentaire.

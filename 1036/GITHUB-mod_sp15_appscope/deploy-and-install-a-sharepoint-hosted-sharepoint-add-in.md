@@ -37,7 +37,7 @@ Il sera beaucoup plus facile pour vous de développer des Compléments SharePoin
 
   
 
-     ![Lanceur d'applications Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
+!\[Lanceur d'applications Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
   
 
     

@@ -66,7 +66,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
   
 
-     ![El Diseñador de tipos de contenido que muestra "NewEmployee" como el nombre de tipo, "Representa a un nuevo empleado" como la descripción y "Orientación de empleados" como el grupo.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+!\[El Diseñador de tipos de contenido que muestra "NewEmployee" como el nombre de tipo, "Representa a un nuevo empleado" como la descripción y "Orientación de empleados" como el grupo.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
   
 
     
@@ -81,7 +81,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
   
 
-     ![La ficha Columnas del Diseñador de tipos de contenido con "Empleado", "División" y "Fase de orientación" mostrados en la cuadrícula.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+!\[La ficha Columnas del Diseñador de tipos de contenido con "Empleado", "División" y "Fase de orientación" mostrados en la cuadrícula.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
   
 
     
@@ -129,7 +129,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
   
 
-     ![El cuadro de diálogo Configuración de tipo de contenido con un único tipo de contenido llamado NewEmployee.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+!\[El cuadro de diálogo Configuración de tipo de contenido con un único tipo de contenido llamado NewEmployee.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
   
 
     
@@ -221,7 +221,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
   
 
-     ![La lista "Nuevos empleados de Seattle" con las columnas División y Fase de orientación ya presentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
+!\[La lista "Nuevos empleados de Seattle" con las columnas División y Fase de orientación ya presentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
   
 
     

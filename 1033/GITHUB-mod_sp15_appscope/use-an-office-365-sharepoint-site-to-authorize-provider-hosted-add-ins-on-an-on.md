@@ -70,7 +70,7 @@ You'll need to replace the default security token service (STS) certificate of y
 
   
 
-     ![Server Certificates option in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+!\[Server Certificates option in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
   
 
   
@@ -82,7 +82,7 @@ You'll need to replace the default security token service (STS) certificate of y
 
   
 
-     ![Create Self-Signed Cerificate link](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+!\[Create Self-Signed Cerificate link](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
   
 
   
@@ -97,7 +97,7 @@ You'll need to replace the default security token service (STS) certificate of y
 
   
 
-     ![Exporting a test certificate](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[Exporting a test certificate](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

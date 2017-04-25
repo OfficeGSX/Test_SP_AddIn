@@ -17,7 +17,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
 
   
 
-     ![Nœud IncidentManager](images/CBA_IM_18.PNG)
+!\[Nœud IncidentManager](images/CBA_IM_18.PNG)
   
 
   
@@ -109,7 +109,7 @@ Vous pouvez publier votre complément de gestion des informations professionnell
 
   
 
-     ![Nœud IncidentManager](images/CBA_IM_18.PNG)
+!\[Nœud IncidentManager](images/CBA_IM_18.PNG)
   
 
     

@@ -26,7 +26,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Link "Websiteeinstellungen"](images/CBA_IM_8b.PNG)
+!\[Link "Websiteeinstellungen"](images/CBA_IM_8b.PNG)
   
 
   
@@ -38,7 +38,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Link "Websiteinhaltstypen"](images/CBA_IM_26.PNG)
+!\[Link "Websiteinhaltstypen"](images/CBA_IM_26.PNG)
   
 
   
@@ -50,7 +50,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Link "Erstellen"](images/CBA_IM_27.PNG)
+!\[Link "Erstellen"](images/CBA_IM_27.PNG)
   
 
   
@@ -62,7 +62,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Übergeordnete Inhaltstypauswahlen](images/CBA_IM_28.PNG)
+!\[Übergeordnete Inhaltstypauswahlen](images/CBA_IM_28.PNG)
   
 
   
@@ -74,7 +74,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Gruppeneinstellung](images/CBA_IM_28a.PNG)
+!\[Gruppeneinstellung](images/CBA_IM_28a.PNG)
   
 
   
@@ -89,7 +89,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Dokumentvorlage angeben](images/CBA_IM_29.PNG)
+!\[Dokumentvorlage angeben](images/CBA_IM_29.PNG)
   
 
   
@@ -107,7 +107,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Hinzufügen der Vorlage](images/CBA_IM_29a.PNG)
+!\[Hinzufügen der Vorlage](images/CBA_IM_29a.PNG)
   
 
   
@@ -119,7 +119,7 @@ Falls noch nicht geschehen, verknüpfen Sie eine Dokumentbibliothek mit Ihrem Cl
 
   
 
-     ![Das Dialogfeld "Neue Datei erstellen" mit der neuen Vorlage](images/CBA_IM_30.PNG)
+!\[Das Dialogfeld "Neue Datei erstellen" mit der neuen Vorlage](images/CBA_IM_30.PNG)
   
 
   

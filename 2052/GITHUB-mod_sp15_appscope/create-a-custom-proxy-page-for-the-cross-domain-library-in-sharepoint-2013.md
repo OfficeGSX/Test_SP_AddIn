@@ -346,7 +346,7 @@ Response.End();
 
   
 
-     ![具有来自远程服务的数据的 SharePoint 页面](images/CustomProxy_result.jpg)
+!\[具有来自远程服务的数据的 SharePoint 页面](images/CustomProxy_result.jpg)
   
 
   

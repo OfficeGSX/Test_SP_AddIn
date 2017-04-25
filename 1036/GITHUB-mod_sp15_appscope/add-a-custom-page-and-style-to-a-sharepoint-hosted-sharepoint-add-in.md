@@ -131,7 +131,7 @@ p {color: green;}
 
   
 
-     ![Page SharePoint avec le titre « Aide ». Il existe une ligne d'en-tête en noir, suivie de deux lignes de texte en vert.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
+!\[Page SharePoint avec le titre « Aide ». Il existe une ligne d'en-tête en noir, suivie de deux lignes de texte en vert.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
   
 
     

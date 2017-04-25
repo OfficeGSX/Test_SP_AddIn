@@ -75,7 +75,7 @@ Office 365 开发人员网站 让创建、测试和部署 Office 和 SharePoint 
   
 5. 在"SharePoint 管理中心"中，在"网站集"选项卡上，单击"新建">"专用网站集"。
     
-     ![SharePoint 管理中心新网站集选项](images/SPAdminCenter_newSiteCollection.png)
+!\[SharePoint 管理中心新网站集选项](images/SPAdminCenter_newSiteCollection.png)
   
 
   
@@ -101,7 +101,7 @@ Office 365 开发人员网站 让创建、测试和部署 Office 和 SharePoint 
     
     新开发人员网站 URL 将出现在"网站集"列表中。网站创建完成后，您可以导航到该 URL 以打开您的开发人员网站。
     
-     ![新网站集设置](images/SPAdminCenter_newSiteCollection_provisioning.png)
+!\[新网站集设置](images/SPAdminCenter_newSiteCollection_provisioning.png)
   
 
   

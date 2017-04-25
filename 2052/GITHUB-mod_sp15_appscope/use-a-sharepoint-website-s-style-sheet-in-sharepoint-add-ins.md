@@ -264,7 +264,7 @@ ms.assetid: 25d84ac5-d2b3-40c7-962d-1408aacf14ed
 
   
 
-     ![网页中使用的样式表控件](images/StylesheetControl_result2.png)
+!\[网页中使用的样式表控件](images/StylesheetControl_result2.png)
   
 
   

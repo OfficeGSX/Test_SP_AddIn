@@ -40,7 +40,7 @@ Zum Hosten des Add-Ins benötigen Sie außerdem eine SharePoint 2013-Website ode
 
   
 
-     ![Cloud Business App-Projektvorlage](images/CBAtemplate.PNG)
+!\[Cloud Business App-Projektvorlage](images/CBAtemplate.PNG)
   
 
   
@@ -113,7 +113,7 @@ Das Kandidaten-Nachverfolgungs-Add-In benötigt eine Datenbanktabelle, die Sie i
 
   
 
-     ![Tabelle "Kandidaten"](images/CBAentity.PNG)
+!\[Tabelle "Kandidaten"](images/CBAentity.PNG)
   
 
   
@@ -142,7 +142,7 @@ Das Kandidaten-Nachverfolgungs-Add-In benötigt eine Datenbanktabelle, die Sie i
 
   
 
-     ![Der Bildschirm-Desginer "Kandidaten durchsuchen"](images/CBAscreen.PNG)
+!\[Der Bildschirm-Desginer "Kandidaten durchsuchen"](images/CBAscreen.PNG)
   
 
     Dadurch werden die Informationen zu **Kandidat** im Tabellenformat statt des standardmäßig festgelegten Listenformats angezeigt.
@@ -163,7 +163,7 @@ Das Kandidaten-Nachverfolgungs-Add-In benötigt eine Datenbanktabelle, die Sie i
 
   
 
-     ![Dialogfeld "Schaltfläche hinzufügen"](images/CBAadd.PNG)
+!\[Dialogfeld "Schaltfläche hinzufügen"](images/CBAadd.PNG)
   
 
     Das Dialogfeld **Neuen Bildschirm hinzufügen** wird geöffnet.
@@ -189,7 +189,7 @@ Ein neues Fenster des Bildschirm-Designers wird geöffnet.
 
   
 
-     !["Item Tap"-Eigenschaft](images/CBAproperty.PNG)
+!\["Item Tap"-Eigenschaft](images/CBAproperty.PNG)
   
 
     Das Dialogfeld **Aktion bei Tippen auf Element** wird geöffnet.
@@ -201,7 +201,7 @@ Ein neues Fenster des Bildschirm-Designers wird geöffnet.
 
   
 
-     ![Dialogfeld zum Bearbeiten der Aktion "Auf Element tippen"](images/CBAaction.PNG)
+!\[Dialogfeld zum Bearbeiten der Aktion "Auf Element tippen"](images/CBAaction.PNG)
   
 
   
@@ -275,7 +275,7 @@ Eine Funktion von SharePoint für Office 365 dient dem Hinzufügen von Newsfeeds
 
   
 
-     ![Eigenschaften für soziales Netzwerk](images/CBAsocial.PNG)
+!\[Eigenschaften für soziales Netzwerk](images/CBAsocial.PNG)
   
 
   

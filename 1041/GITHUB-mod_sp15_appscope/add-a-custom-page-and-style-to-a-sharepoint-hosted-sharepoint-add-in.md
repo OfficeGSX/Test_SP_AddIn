@@ -131,7 +131,7 @@ p {color: green;}
 
   
 
-     !["ヘルプ" を含む SharePoint ページです。黒のヘッダー行があり、その後に緑色のテキスト行が 2 つあります。](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
+!\["ヘルプ" を含む SharePoint ページです。黒のヘッダー行があり、その後に緑色のテキスト行が 2 つあります。](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
   
 
     

@@ -301,7 +301,7 @@ private void DeleteTenant(string tenantName)
   
 3. Klicken Sie auf der Seite **Konten** auf die Schaltfläche **Add-In-Version anzeigen**. Die Version wird als 0000.0000.0000.0000 angezeigt.
     
-     ![The Accounts page with the heading "Account settings". A button named "Show Add-in Version" and below this a line of text reading "Registered version: zero zero zero zero dot zero zero zero zero dot zero zero zero zero dot zero zero zero zero".](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
+!\[The Accounts page with the heading "Account settings". A button named "Show Add-in Version" and below this a line of text reading "Registered version: zero zero zero zero dot zero zero zero zero dot zero zero zero zero dot zero zero zero zero".](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
   
 
   

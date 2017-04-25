@@ -74,7 +74,7 @@ Es gibt drei Möglichkeiten zum Registrieren eines Add-Ins. Welche Methode Sie a
 
   
 
-     ![Das Formular auf der Seite "AppRegNew" mit Feldern für die Client-ID, den geheimen Clientschlüssel, den Titel, die App-Domäne und die Umleitungs-URL. Neben den ersten beiden werden Schaltflächen namens "Generieren" angezeigt. In der Ecke befinden sich Schaltflächen "Erstellen" und "Abbrechen".](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
+!\[Das Formular auf der Seite "AppRegNew" mit Feldern für die Client-ID, den geheimen Clientschlüssel, den Titel, die App-Domäne und die Umleitungs-URL. Neben den ersten beiden werden Schaltflächen namens "Generieren" angezeigt. In der Ecke befinden sich Schaltflächen "Erstellen" und "Abbrechen".](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
   
 
   

@@ -353,7 +353,7 @@ Response.End();
 
   
 
-     ![SharePoint page with data from a remote service](images/CustomProxy_result.jpg)
+!\[SharePoint page with data from a remote service](images/CustomProxy_result.jpg)
   
 
   

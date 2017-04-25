@@ -261,7 +261,7 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
 
   
 
-     ![Dossier de liste avec le modèle enfant NewEmployeeOrientation, qui lui-même possède trois enfants : une instance NewEmployeeOrientationInstance, un fichier elements.xml et un fichier schema.xml. L'instance elle-même possède un enfant nommé elements.xml.](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
+!\[Dossier de liste avec le modèle enfant NewEmployeeOrientation, qui lui-même possède trois enfants : une instance NewEmployeeOrientationInstance, un fichier elements.xml et un fichier schema.xml. L'instance elle-même possède un enfant nommé elements.xml.](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
   
 
     
@@ -399,7 +399,7 @@ Pour votre première Complément SharePoint hébergée par SharePoint, nous allo
 
   
 
-     ![La page par défaut du complément s'affiche avec son titre Nouveaux employés par lieu. Il existe un lien portant le libellé Nouveaux employés de Seattle. Une flèche à partir de ce lien pointe vers la page d'affichage de liste pour la liste. Son titre est Nouveaux employés de Seattle, avec la liste en dessous.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
+!\[La page par défaut du complément s'affiche avec son titre Nouveaux employés par lieu. Il existe un lien portant le libellé Nouveaux employés de Seattle. Une flèche à partir de ce lien pointe vers la page d'affichage de liste pour la liste. Son titre est Nouveaux employés de Seattle, avec la liste en dessous.](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
   
 
     

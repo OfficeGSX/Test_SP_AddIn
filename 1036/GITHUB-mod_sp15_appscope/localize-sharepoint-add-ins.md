@@ -136,7 +136,7 @@ Un site web de complément peut contenir des types spécifiques de composants Sh
 
   
 
-     ![Liste personnalisée localisée](images/LocSPApp_AppwebList.png)
+!\[Liste personnalisée localisée](images/LocSPApp_AppwebList.png)
   
 
   
@@ -297,7 +297,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
   
 
-     ![Page SharePoint avec des chaînes localisées](images/LocSPApp_AppwebPage.png)
+!\[Page SharePoint avec des chaînes localisées](images/LocSPApp_AppwebPage.png)
   
 
   

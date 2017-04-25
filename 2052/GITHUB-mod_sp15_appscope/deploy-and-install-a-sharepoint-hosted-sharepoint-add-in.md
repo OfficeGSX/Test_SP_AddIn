@@ -37,7 +37,7 @@ ms.assetid: 3a3875d6-13e3-4411-904f-4f39acf88b95
 
   
 
-     ![Office 365 应用程序启动程序](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
+!\[Office 365 应用程序启动程序](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
   
 
     

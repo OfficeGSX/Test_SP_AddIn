@@ -32,7 +32,7 @@ Al intentar subir un documento a una biblioteca de documentos asociada en un com
 
   
 
-     ![Opciones seleccionadas en el cuadro de diálogo Administrar paquetes de NuGet](images/NuGet.PNG)
+!\[Opciones seleccionadas en el cuadro de diálogo Administrar paquetes de NuGet](images/NuGet.PNG)
   
 
   

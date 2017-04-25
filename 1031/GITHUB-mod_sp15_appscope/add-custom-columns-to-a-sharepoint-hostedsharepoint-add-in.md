@@ -125,7 +125,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
   
 
-     ![Liste "Neue Mitarbeiter in Seattle", wobei die Beschriftungsschaltfläche und das Element "Ansicht erstellen" als erster Schritt markiert sind. Dann über den Pfeil zur Seite "Ansicht erstellen", wobei das Breadcrumb "Einstellungen" markiert ist.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
+!\[Liste "Neue Mitarbeiter in Seattle", wobei die Beschriftungsschaltfläche und das Element "Ansicht erstellen" als erster Schritt markiert sind. Dann über den Pfeil zur Seite "Ansicht erstellen", wobei das Breadcrumb "Einstellungen" markiert ist.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
   
 
     
@@ -137,7 +137,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
   
 
-     ![Die Seite mit Listeninstanzeinstellungen, auf der der Link für "Spalten aus Websitespalten hinzufügen" hervorgehoben ist.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
+!\[Die Seite mit Listeninstanzeinstellungen, auf der der Link für "Spalten aus Websitespalten hinzufügen" hervorgehoben ist.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
   
 
     
@@ -149,7 +149,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
   
 
-     ![Das Steuerelement für die SharePoint-Spaltenauswahl, wobei "Mitarbeiterorientierung" in der Dropdownliste mit der Bezeichnung "Websitespalten auswählen" ausgewählt ist.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
+!\[Das Steuerelement für die SharePoint-Spaltenauswahl, wobei "Mitarbeiterorientierung" in der Dropdownliste mit der Bezeichnung "Websitespalten auswählen" ausgewählt ist.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
   
 
     
@@ -167,7 +167,7 @@ In diesem Artikel kehren wir zum Codieren zurück, indem wir einige Websitespalt
 
   
 
-     ![Die Liste mit den neuen Spalten "Abteilung" und "Orientierungsphase".](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
+!\[Die Liste mit den neuen Spalten "Abteilung" und "Orientierungsphase".](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
   
 
     

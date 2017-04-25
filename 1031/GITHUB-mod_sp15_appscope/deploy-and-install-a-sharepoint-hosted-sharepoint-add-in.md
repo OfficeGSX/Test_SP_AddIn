@@ -37,7 +37,7 @@ Sie werden feststellen, dass die Entwicklung von SharePoint gehosteter SharePoin
 
   
 
-     ![App-Startfeld für Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
+!\[App-Startfeld für Office 365](images/ec60797c-d329-4922-a811-70c64598f4d5.PNG)
   
 
     

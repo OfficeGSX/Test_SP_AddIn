@@ -125,7 +125,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
 
   
 
-     ![Lista Nuevos empleados de Seattle con el botón de llamada y el elemento Crear vista resaltados como paso uno. A continuación, una flecha a la página Crear vista con la ruta de navegación de Configuración resaltada.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
+!\[Lista Nuevos empleados de Seattle con el botón de llamada y el elemento Crear vista resaltados como paso uno. A continuación, una flecha a la página Crear vista con la ruta de navegación de Configuración resaltada.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
   
 
     
@@ -137,7 +137,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
 
   
 
-     ![La página de configuración de instancia de lista con el vínculo para Agregar columnas desde sitio resaltado.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
+!\[La página de configuración de instancia de lista con el vínculo para Agregar columnas desde sitio resaltado.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
   
 
     
@@ -149,7 +149,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
 
   
 
-     ![Control de selección de columnas de SharePoint, con la orientación del empleado seleccionada en la lista desplegable con la etiqueta Seleccionar columnas de sitio.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
+!\[Control de selección de columnas de SharePoint, con la orientación del empleado seleccionada en la lista desplegable con la etiqueta Seleccionar columnas de sitio.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
   
 
     
@@ -167,7 +167,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
 
   
 
-     ![La lista con las nuevas columnas División y Fase de orientación.](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
+!\[La lista con las nuevas columnas División y Fase de orientación.](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
   
 
     

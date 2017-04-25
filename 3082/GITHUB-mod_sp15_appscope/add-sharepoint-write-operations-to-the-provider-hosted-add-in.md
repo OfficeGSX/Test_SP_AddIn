@@ -188,7 +188,7 @@ La siguiente mejora en el complemento Chain Store es crear nuevos elementos en u
   
 10. Haga clic en **nuevo elemento**. El formulario de creación del elemento debe ser exactamente igual al siguiente, incluidos los dos asteriscos que indican los campos necesarios:
     
-     ![El formulario de creación de elementos de la lista Envíos previstos. Con los campos para Producto, Proveedor, Cantidad, Llegada y "Agregado al inventario". Asteriscos por los títulos de Producto y Cantidad y valor predeterminado de uno para Cantidad.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+!\[El formulario de creación de elementos de la lista Envíos previstos. Con los campos para Producto, Proveedor, Cantidad, Llegada y "Agregado al inventario". Asteriscos por los títulos de Producto y Cantidad y valor predeterminado de uno para Cantidad.](images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
   
 
   
@@ -340,7 +340,7 @@ Recuerde que cuando un complemento solicita permiso para Leer o Escribir con el 
   
 5. En la página principal de la tienda de Hong Kong, vaya a la página **Contenido del sitio** y abra la lista **Envíos esperados**. Ahora hay un elemento en la lista correspondiente al pedido. La captura de pantalla siguiente es un ejemplo.
     
-     ![La lista Envíos previstos con un solo elemento. Los campos Producto y Proveedor tienen nombres. El campo Cantidad tiene un número. Los dos campos Sí/No se establecen en "No".](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+!\[La lista Envíos previstos con un solo elemento. Los campos Producto y Proveedor tienen nombres. El campo Cantidad tiene un número. Los dos campos Sí/No se establecen en "No".](images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
   
 
   

@@ -136,7 +136,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
   
 
-     ![本地化的自定义列表](images/LocSPApp_AppwebList.png)
+!\[本地化的自定义列表](images/LocSPApp_AppwebList.png)
   
 
   
@@ -297,7 +297,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
   
 
-     ![使用本地化字符串的 SharePoint 页面](images/LocSPApp_AppwebPage.png)
+!\[使用本地化字符串的 SharePoint 页面](images/LocSPApp_AppwebPage.png)
   
 
   

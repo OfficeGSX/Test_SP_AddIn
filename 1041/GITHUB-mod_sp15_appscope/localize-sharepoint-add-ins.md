@@ -136,7 +136,7 @@ SharePoint アドインを、リソース ファイル、JavaScript リソース
 
   
 
-     ![ローカライズされたユーザー設定リスト](images/LocSPApp_AppwebList.png)
+!\[ローカライズされたユーザー設定リスト](images/LocSPApp_AppwebList.png)
   
 
   
@@ -297,7 +297,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
   
 
-     ![ローカライズされた文字列を使用した SharePoint ページ](images/LocSPApp_AppwebPage.png)
+!\[ローカライズされた文字列を使用した SharePoint ページ](images/LocSPApp_AppwebPage.png)
   
 
   

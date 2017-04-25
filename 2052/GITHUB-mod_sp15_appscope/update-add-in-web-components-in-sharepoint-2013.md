@@ -83,7 +83,7 @@ Visual Studio Microsoft Office 开发人员工具旨在创建新的外接程序�
 
   
 
-     ![用于打开功能 XML 编辑器的步骤](images/UpdateAppOpenFeatureXML.png)
+!\[用于打开功能 XML 编辑器的步骤](images/UpdateAppOpenFeatureXML.png)
   
 
   

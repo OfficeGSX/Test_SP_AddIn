@@ -63,7 +63,7 @@ Deberá reemplazar el certificado predeterminado del servicio de token de seguri
 
   
 
-     ![Opción Certificados de servidor de IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+!\[Opción Certificados de servidor de IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
   
 
   
@@ -75,7 +75,7 @@ Deberá reemplazar el certificado predeterminado del servicio de token de seguri
 
   
 
-     ![Vínculo Crear certificado autofirmado](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+!\[Vínculo Crear certificado autofirmado](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
   
 
   
@@ -90,7 +90,7 @@ Deberá reemplazar el certificado predeterminado del servicio de token de seguri
 
   
 
-     ![Exportar un certificado de prueba](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+!\[Exportar un certificado de prueba](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
   
 
   

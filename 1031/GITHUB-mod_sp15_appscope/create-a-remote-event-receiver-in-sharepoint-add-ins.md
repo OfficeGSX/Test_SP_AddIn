@@ -306,7 +306,7 @@ Testen Sie den Handler mit dem folgenden Verfahren.
 
   
 
-     ![SharePoint-Remoteereignisse in Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
+!\[SharePoint-Remoteereignisse in Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
   
 
   

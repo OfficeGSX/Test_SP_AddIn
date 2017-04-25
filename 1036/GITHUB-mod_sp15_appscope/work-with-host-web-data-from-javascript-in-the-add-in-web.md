@@ -83,7 +83,7 @@ ms.assetid: 08eb049f-eaf8-478d-9af6-9565e8bb24f2
 
   
 
-     ![Calendrier intitulé Plannification de l'orientation de l'employé avec un élément le 1er juin indiquant « Orientation Cassie Hicks »](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+!\[Calendrier intitulé Plannification de l'orientation de l'employé avec un élément le 1er juin indiquant « Orientation Cassie Hicks »](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
   
 
   
@@ -365,7 +365,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Liste des autorisations sur l'onglet Autorisations dans le concepteur de manifeste de complément Visual Studio  avec le bouton Modifier visible dans la cellule de la colonne Propriétés.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
+!\[Liste des autorisations sur l'onglet Autorisations dans le concepteur de manifeste de complément Visual Studio  avec le bouton Modifier visible dans la cellule de la colonne Propriétés.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
   
 
   
@@ -380,7 +380,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Boîte de dialogue Propriétés pour les autorisations de liste dans Visual Studio avec le nom de la propriété défini sur « ID de liste de base » et la valeur sur « 106 »](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
+!\[Boîte de dialogue Propriétés pour les autorisations de liste dans Visual Studio avec le nom de la propriété défini sur « ID de liste de base » et la valeur sur « 106 »](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
   
 
      Sélectionnez **OK**. L'onglet **Autorisations** doit maintenant ressembler à ce qui suit :
@@ -390,7 +390,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Onglet Autorisations du concepteur de manifeste de complément dans Visual Studio montrant que le complément veut l'autorisation Gérer pour les listes dont le type de base est 106.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
+!\[Onglet Autorisations du concepteur de manifeste de complément dans Visual Studio montrant que le complément veut l'autorisation Gérer pour les listes dont le type de base est 106.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
   
 
   
@@ -419,7 +419,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Invite de consentement de complément SharePoint avec une brève description des autorisations dont le complément a besoin et des boutons pour « Approuver » ou « Annuler »](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
+!\[Invite de consentement de complément SharePoint avec une brève description des autorisations dont le complément a besoin et des boutons pour « Approuver » ou « Annuler »](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
   
 
   
@@ -431,7 +431,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Page d'accueil Orientation des employés avec un nouveau bouton dont l'étiquette est « S'assurer que les éléments sont planifiés »](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
+!\[Page d'accueil Orientation des employés avec un nouveau bouton dont l'étiquette est « S'assurer que les éléments sont planifiés »](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
   
 
   
@@ -449,7 +449,7 @@ function onScheduleItemsFail(sender, args) {
 
   
 
-     ![Calendrier d'orientation des employés avec l'ajout d'événements pour l'orientation de 2 employés le 10 et le 11 du mois](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
+!\[Calendrier d'orientation des employés avec l'ajout d'événements pour l'orientation de 2 employés le 10 et le 11 du mois](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
   
 
   

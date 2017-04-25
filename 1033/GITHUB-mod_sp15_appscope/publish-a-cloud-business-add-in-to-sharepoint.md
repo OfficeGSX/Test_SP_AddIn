@@ -24,7 +24,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
 
   
 
-     ![The IncidentManager node](images/CBA_IM_18.PNG)
+!\[The IncidentManager node](images/CBA_IM_18.PNG)
   
 
   
@@ -116,7 +116,7 @@ You can publish your cloud business add-in as a provider-hosted SharePoint add-i
 
   
 
-     ![The IncidentManager node](images/CBA_IM_18.PNG)
+!\[The IncidentManager node](images/CBA_IM_18.PNG)
   
 
     
