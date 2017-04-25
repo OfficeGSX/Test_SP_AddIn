@@ -46,7 +46,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 ![Auswählen der Dokumentbibliothek](images/CBADocLibrary.PNG)
 
 
-    In Abbildung 2 ist die Dokumentbibliothek auf der SharePoint-Website dargestellt.
+In Abbildung 2 ist die Dokumentbibliothek auf der SharePoint-Website dargestellt.
 
 
    **Abbildung 2. Die benutzerdefinierte Spalte "Produktname"**
@@ -57,8 +57,8 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
 
 
-    > **WICHTIG**
-      > Die Dokumentbibliothek muss bereits vorhanden sein und eine benutzerdefinierte Spalte enthalten, die einem eindeutigen Feld in Ihrer Entität zugeordnet ist. 
+> **WICHTIG**
+> Die Dokumentbibliothek muss bereits vorhanden sein und eine benutzerdefinierte Spalte enthalten, die einem eindeutigen Feld in Ihrer Entität zugeordnet ist. 
 5. Geben Sie unter **Geben Sie den Namen der Datenquelle an** einen Namen ein und klicken Sie dann auf die Schaltfläche **Fertig stellen**.
 
 
@@ -97,8 +97,8 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 
 
 
-    > **HINWEIS**
-      > Das Feld muss den gleichen Datentyp aufweisen wie das Feld **Fremdschlüssel**. 
+> **HINWEIS**
+> Das Feld muss den gleichen Datentyp aufweisen wie das Feld **Fremdschlüssel**. 
 
 ### So fügen Sie einer neuen Bildschirmgruppe eine Dokumentbibliothek hinzu
 
@@ -127,7 +127,7 @@ Der Prozess zum Zuordnen einer Dokumentbibliothek umfasst drei Schritte:
 ![Das Dialogfeld "Neuen Bildschirm hinzufügen"](images/CBAScreenSet.PNG)
 
 
-    Der für die Entität erstellte Bildschirm **Ansicht** enthält eine Registerkarte **Dokumente** mit einer **Dokument hinzufügen**-Schaltfläche. Die Schaltfläche zeigt ein Popup zum Hinzufügen oder Hochladen von Dokumenten an.
+Der für die Entität erstellte Bildschirm **Ansicht** enthält eine Registerkarte **Dokumente** mit einer **Dokument hinzufügen**-Schaltfläche. Die Schaltfläche zeigt ein Popup zum Hinzufügen oder Hochladen von Dokumenten an.
 
 
 
