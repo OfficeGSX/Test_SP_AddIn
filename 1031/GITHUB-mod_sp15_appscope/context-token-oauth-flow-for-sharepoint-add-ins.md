@@ -10,7 +10,7 @@ Hier lernen Sie die OAuth-Authentifizierung und den Autorisierungsablauf für vo
 ## Überblick über OAuth und in SharePoint von einem Anbieter gehosteten SharePoint-Add-Ins
 <a name="OAuth_Actors"> </a>
 
-In SharePoint ** umfasst die OAuth-Authentifizierung und der Autorisierungsablauf eines von einem Anbieter gehosteten Add-Ins mit niedriger Vertrauensebene zur Laufzeit eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver und dem Browser**. In diesem Szenario ist Microsoft Azure Access Control Service (ACS) der Autorisierungsserver.
+In SharePoint **umfasst die OAuth-Authentifizierung und der Autorisierungsablauf eines von einem Anbieter gehosteten Add-Ins mit niedriger Vertrauensebene zur Laufzeit eine Reihe von Interaktionen zwischen dem Add-In, SharePoint, dem Autorisierungsserver und dem Browser**. In diesem Szenario ist Microsoft Azure Access Control Service (ACS) der Autorisierungsserver.
 
 
 
