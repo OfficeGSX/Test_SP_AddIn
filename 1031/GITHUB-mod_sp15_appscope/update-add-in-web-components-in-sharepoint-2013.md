@@ -6,7 +6,7 @@ ms.assetid: 6da6ac25-53b7-4dd2-8637-a86e7ca1f3ff
 
 
 # Aktualisieren von Add-In-Webkomponenten in SharePoint 2013
-Aktualisieren Sie Seiten, Listen, Inhaltstypen und andere Add-In-Web-Komponenten in einem SharePoint-Add-In **REMOVE_ME**.
+Aktualisieren Sie Seiten, Listen, Inhaltstypen und andere Add-In-Web-Komponenten in einem SharePoint-Add-In .
 ## Vorraussetzungen für das Aktualisieren der Add-In-Web-Komponenten
 <a name="Prerequisites"> </a>
 
@@ -22,7 +22,7 @@ In diesem Thema wird davon ausgegangen, dass Sie die neueste Version des Add-Ins
 ## Aktualisieren von SharePoint-Komponenten im Add-In-Web
 <a name="UpdatingAppWeb"> </a>
 
-Alle SharePoint-Komponenten, die im Add-In-Web bereitgestellt werden, sind in Features im **Web**-Bereich des Add-In-Pakets enthalten. Aus diesem Grund muss zur Aktualisierung dieser Komponenten mindestens eines der Features aktualisiert werden. Dieser Vorgang hat sich seit SharePoint 2010 nicht verändert und ist in  [Vorgehensweise: Hinzufügen von Elementen zu einem vorhandenen Feature](http://msdn.microsoft.com/library/b007f419-e0d6-4e3a-a3ae-b8e448656d02%28Office.15%29.aspx) im SharePoint 2010 SDK dokumentiert. Andere Artikel unter dem Knoten [Aktualisieren von Features](http://msdn.microsoft.com/library/e917f709-6491-4d50-adbe-2ab8f35da990%28Office.15%29.aspx) können ebenfalls hilfreich sein. Beachten Sie jedoch, dass Add-Ins auf dem SharePoint-Server keinen benutzerdefinierten Code enthalten dürfen; manche Aspekte des Featureupgrades in SharePoint 2010 gelten daher nicht für das Aktualisieren von Add-Ins. Sie können beispielsweise nicht das Element [CustomUpgradeAction](http://msdn.microsoft.com/library/16a2182e-80aa-4184-8071-8f717ee5c572%28Office.15%29.aspx) verwenden, wenn Sie das Feature eines SharePoint-Add-In **REMOVE_ME** s aktualisieren.
+Alle SharePoint-Komponenten, die im Add-In-Web bereitgestellt werden, sind in Features im **Web**-Bereich des Add-In-Pakets enthalten. Aus diesem Grund muss zur Aktualisierung dieser Komponenten mindestens eines der Features aktualisiert werden. Dieser Vorgang hat sich seit SharePoint 2010 nicht verändert und ist in  [Vorgehensweise: Hinzufügen von Elementen zu einem vorhandenen Feature](http://msdn.microsoft.com/library/b007f419-e0d6-4e3a-a3ae-b8e448656d02%28Office.15%29.aspx) im SharePoint 2010 SDK dokumentiert. Andere Artikel unter dem Knoten [Aktualisieren von Features](http://msdn.microsoft.com/library/e917f709-6491-4d50-adbe-2ab8f35da990%28Office.15%29.aspx) können ebenfalls hilfreich sein. Beachten Sie jedoch, dass Add-Ins auf dem SharePoint-Server keinen benutzerdefinierten Code enthalten dürfen; manche Aspekte des Featureupgrades in SharePoint 2010 gelten daher nicht für das Aktualisieren von Add-Ins. Sie können beispielsweise nicht das Element [CustomUpgradeAction](http://msdn.microsoft.com/library/16a2182e-80aa-4184-8071-8f717ee5c572%28Office.15%29.aspx) verwenden, wenn Sie das Feature eines SharePoint-Add-In s aktualisieren.
 
 
 
@@ -47,7 +47,7 @@ Das Hinzufügen von Komponenten zu einem Add-In ist einfach. Alle Komponenten, d
 - Dateien können nicht aus dem Add-In-Web im Upgrademarkup gelöscht werden. Sie können jedoch den Inhalt jeder Datei ändern.
 
 
-- Die Elemente **CustomUpgradeAction** und **MapFile** können beim Aktualisieren eines SharePoint-Add-In **REMOVE_ME** s nicht verwendet werden, auch wenn sie in Visual Studio-IntelliSense verfügbar zu sein scheinen.
+- Die Elemente **CustomUpgradeAction** und **MapFile** können beim Aktualisieren eines SharePoint-Add-In s nicht verwendet werden, auch wenn sie in Visual Studio-IntelliSense verfügbar zu sein scheinen.
 
 
 
@@ -112,7 +112,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 
 3. Wenn sie nicht bereits vorhanden sind, fügen Sie der Datei die folgenden Elemente hinzu: 
 
-  - Ein untergeordnetes  [UpgradeActions](http://msdn.microsoft.com/library/5af24ac1-a290-454d-b32b-bc7f7a4634f0%28Office.15%29.aspx)-Element im Element **Feature**. Fügen Sie dem Element  *kein* **ReceiverAssembly**- oder **ReceiverClass**-Attribut hinzu. Diese haben bei der Aktualisierung eines SharePoint-Add-In **REMOVE_ME** s keine Funktion. (Die Attribute beziehen sich auf eine benutzerdefinierte Assembly, die in SharePoint-Add-Ins **REMOVE_ME** nicht unterstützt wird. Wenn Sie einem Add-In eine benutzerdefinierte Assembly hinzufügen, installiert SharePoint dieses Add-In nicht.)
+  - Ein untergeordnetes  [UpgradeActions](http://msdn.microsoft.com/library/5af24ac1-a290-454d-b32b-bc7f7a4634f0%28Office.15%29.aspx)-Element im Element **Feature**. Fügen Sie dem Element  *kein* **ReceiverAssembly**- oder **ReceiverClass**-Attribut hinzu. Diese haben bei der Aktualisierung eines SharePoint-Add-In s keine Funktion. (Die Attribute beziehen sich auf eine benutzerdefinierte Assembly, die in SharePoint-Add-Ins nicht unterstützt wird. Wenn Sie einem Add-In eine benutzerdefinierte Assembly hinzufügen, installiert SharePoint dieses Add-In nicht.)
 
 
   - Ein untergeordnetes **VersionRange**-Element im Element **UpgradedActions**. Fügen Sie dem Element kein **BeginVersion**- oder **EndVersion**-Attribut hinzu. Diese haben bei der ersten Aktualisierung eines Add-Ins keine Funktion. Ihre Verwendung wird im Abschnitt  [Anschließende Aktualisierungen des Add-In-Webs](#SubsequentUpgrades) dargestellt.
@@ -150,7 +150,7 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 ### Hinzufügen von Komponenten zum Add-In
 
 
-1. Fügen Sie dem Feature neue Komponenten genauso hinzu, wie Sie es beim Erstellen eines neuen SharePoint-Add-In **REMOVE_ME** -Projekts tun würden.
+1. Fügen Sie dem Feature neue Komponenten genauso hinzu, wie Sie es beim Erstellen eines neuen SharePoint-Add-In -Projekts tun würden.
 
 
 2. Wenn Sie eine Komponente eines Typs hinzufügen, der in der vorherigen Version des Add-Ins nicht enthalten war, beispielsweise wenn Sie einem Add-In eine Liste hinzufügen, das zuvor keine Liste hatte, fügen die Office-Entwicklertools für Visual Studio eine elements.xml-Datei zu dem Projekt hinzu, die das Elementmanifest für die Komponente ist. Sie sollten die neue Versionsnummer des Add-Ins zu dieser Datei hinzufügen (z. B. elements.2.0.0.0.xml). Dies kann hilfreich bei der Problembehandlung sein. Achten Sie darauf, diese Änderung im **Projektmappen-Explorer** durchzuführen, um sicherzustellen, dass Verweise auf die Datei, beispielsweise in der csproj-Datei und der Feature-XML-Datei, entsprechend geändert werden.
@@ -312,7 +312,7 @@ Im Folgenden sehen Sie ein Beispiel für eine vollständige  _{FeatureName}_.Tem
 ### Anschließende Aktualisierungen des Add-In-Webs
 <a name="SubsequentUpgrades"> </a>
 
-Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal aktualisieren, müssen Sie berücksichtigen, dass einige Ihrer Kunden die vorherigen Aktualisierungen eventuell nicht vorgenommen haben. Wenn also ein Benutzer auf die Eingabeaufforderung „Aktualisierung ist verfügbar" reagiert, nachdem Ihre letzte Aktualisierung im Add-In-Katalog der Organisation oder dem Office Store bereitgestellt wurde, wird seine Instanz des Add-Ins gegebenenfalls über mehrere Versionen des Add-Ins hinweg aktualisiert. Im Grunde ist dies genau, was auftreten sollte: Jede frühere Version des Add-Ins soll auf die neueste Version aktualisiert werden. Allerdings soll nicht immer jede Aktualisierungsaktion für das Add-In-Web-Feature für jede Instanz des Add-Ins erneut durchgeführt werden. Manche Aktualisierungsaktionen sollten nicht mehrfach für eine Add-In-Instanz erfolgen. Wenn Sie beispielsweise bei einer Aktualisierung ein Feld zu einem Inhaltstyp hinzufügen, soll das Feld bei der nächsten Aktualisierung nicht erneut hinzugefügt werden. Das folgende Verfahren zeigt, wie Sie das Element **VersionRange** verwenden, um ausgehend von der Version des zu aktualisierenden Features zu bestimmen, welche Aktualisierungsaktionen durchgeführt werden.
+Wenn Sie ein SharePoint-Add-In zum zweiten (oder dritten usw.) Mal aktualisieren, müssen Sie berücksichtigen, dass einige Ihrer Kunden die vorherigen Aktualisierungen eventuell nicht vorgenommen haben. Wenn also ein Benutzer auf die Eingabeaufforderung „Aktualisierung ist verfügbar" reagiert, nachdem Ihre letzte Aktualisierung im Add-In-Katalog der Organisation oder dem Office Store bereitgestellt wurde, wird seine Instanz des Add-Ins gegebenenfalls über mehrere Versionen des Add-Ins hinweg aktualisiert. Im Grunde ist dies genau, was auftreten sollte: Jede frühere Version des Add-Ins soll auf die neueste Version aktualisiert werden. Allerdings soll nicht immer jede Aktualisierungsaktion für das Add-In-Web-Feature für jede Instanz des Add-Ins erneut durchgeführt werden. Manche Aktualisierungsaktionen sollten nicht mehrfach für eine Add-In-Instanz erfolgen. Wenn Sie beispielsweise bei einer Aktualisierung ein Feld zu einem Inhaltstyp hinzufügen, soll das Feld bei der nächsten Aktualisierung nicht erneut hinzugefügt werden. Das folgende Verfahren zeigt, wie Sie das Element **VersionRange** verwenden, um ausgehend von der Version des zu aktualisierenden Features zu bestimmen, welche Aktualisierungsaktionen durchgeführt werden.
 
 
 
