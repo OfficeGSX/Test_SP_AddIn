@@ -44,8 +44,8 @@ Weitere Informationen zu den Voraussetzungen finden Sie unter  [Erste Schritte b
   ```
 
 
-    > **VORSICHT**
-    > Sie können ein Webpartelement wie **<WebPartPages:XsltListViewWebPart>** als untergeordnetes Element von **WebPartZone** hinzufügen. Im Allgemeinen ist dies jedoch in einem SharePoint-Add-In keine empfehlenswerte Vorgehensweise. Wenn das Add-In aktualisiert werden muss, verursacht ein in die aspx-Datei eingefügtes Webpartelement in einigen Szenarien den Updatefehler „Ein Webpart mit dieser ID wurde dieser Seite bereits hinzugefügt". Wir empfehlen, die Webparts zum Elementmanifest für die Seite hinzuzufügen, wie im weiteren Verlauf dieses Verfahrens beschrieben.
+> **VORSICHT**
+> Sie können ein Webpartelement wie **<WebPartPages:XsltListViewWebPart>** als untergeordnetes Element von **WebPartZone** hinzufügen. Im Allgemeinen ist dies jedoch in einem SharePoint-Add-In keine empfehlenswerte Vorgehensweise. Wenn das Add-In aktualisiert werden muss, verursacht ein in die aspx-Datei eingefügtes Webpartelement in einigen Szenarien den Updatefehler „Ein Webpart mit dieser ID wurde dieser Seite bereits hinzugefügt". Wir empfehlen, die Webparts zum Elementmanifest für die Seite hinzuzufügen, wie im weiteren Verlauf dieses Verfahrens beschrieben.
 4. Öffnen Sie die Elementmanifestdatei für die Seite. Sie heißt in der Regel „elements.xml" und befindet sich in demselben Projektordner wie die aspx-Datei.
     
   
