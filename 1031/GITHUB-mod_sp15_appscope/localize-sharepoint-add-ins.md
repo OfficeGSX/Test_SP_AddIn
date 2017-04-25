@@ -246,10 +246,11 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   ```
 
 
-Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
+    Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
     
     > **HINWEIS**
     > Da die SharePoint-Ressource "language_value" nie NULL ist, wird von diesem Skript nie eine Datei namens "Resources.js" aufgerufen. Deshalb haben Sie im vorherigen Verfahren keine solche Datei erstellt. Wenn der Wert von "language_value" eine Sprache ist, für die keine .JS-Datei vorhanden ist, dann lädt das Skripts nichts. Im nächsten Schritt wird erklärt, wie Zeichenfolgen in dieser Situation einen invarianten Sprachwert erhalten. 
+
 3. Geben Sie für jedes lokalisierbare Element und jeden lokalisierbaren Attributwert auf der Seite einen Standardwert in der invarianten Sprache an, verwenden Sie dann aber JavaScript, um die entsprechende Variable aus der Datei "Resources. _LL_- _CC_.js zuzuweisen. Wenn die Seite beispielsweise einen öffentlichen Titel in einem Element vom Typ **h2** enthält, versehen Sie das Element mit einem Attribut vom Typ **id**, und fügen Sie dann ein Element vom Typ **script** unter den lokalisierbaren Elementen ein, um lokalisierte Zeichenfolgen zu der **innerText**-Eigenschaft der lokalisierten Elemente hinzuzufügen. Dieser Lokalisierungscode sollte nur ausgeführt werden, wenn eine Resources. _LL_- _CC_.js-Datei geladen und die Variablen deklariert wurden. Fügen Sie sie in einen Bedingungsblock, der zunächst prüft, ob eine der Variablen definiert wurden. Wenn das nicht der Fall ist, wird kein Ressourcenskript geladen und die Standardwerte (invariant) sollten unverändert bleiben. Im Folgenden ein Beispiel dafür.
     
     > **TIPP**
