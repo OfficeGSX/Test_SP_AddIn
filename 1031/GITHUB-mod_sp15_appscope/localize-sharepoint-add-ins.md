@@ -71,7 +71,7 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
     
     > **HINWEIS**
       > Ein SharePoint-Add-In kann nicht auf einer Website installiert werden, deren Sprache nicht im Abschnitt **Unterstützte Gebietsschemas** des Add-In-Manifests aufgeführt ist. Beachten Sie, dass Sie Sprachen, die Sie in einem lokalisierten Add-In *nicht*  anbieten, dennoch zum Add-In-Manifest hinzufügen müssen. Weitere Informationen zu im Add-In-Manifest unterstützten Gebietsschemas finden Sie im Verfahren **So erstellen Sie die Hostweb-Ressourcendateien** dieses Artikels.
-4. Geben Sie in der Spalte **Name** in der obersten Zeile im **Ressourcen-Editor** einen aussagekräftigen Namen für die Zeichenfolge (oder eine andere Ressource) ein  z. B.OrdersListInstance_Title undOrdersListInstance_Description. Diese Namen lokalisierbarer Ressourcen werden selbst nicht lokalisiert. Die Namen müssen in der Datei eindeutig sein.
+4. Geben Sie in der Spalte **Name** in der obersten Zeile im **Ressourcen-Editor** einen aussagekräftigen Namen für die Zeichenfolge (oder eine andere Ressource) ein z. B.OrdersListInstance_Title undOrdersListInstance_Description. Diese Namen lokalisierbarer Ressourcen werden selbst nicht lokalisiert. Die Namen müssen in der Datei eindeutig sein.
     
   
 5. Geben Sie in der Spalte **Wert** eine geeignete Zeichenfolge (oder URL oder andere Ressource) in der invarianten Sprache an - beispielsweiseBestellungen undListe zum Speichern der Bestellungen.
@@ -242,19 +242,18 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 2. Stellen Sie sicher, dass beim Laden der Seite nur eine der lokalisierten JavaScript-Dateien geladen wird und dass es sich dabei um die Datei handelt, die für die Sprache des SharePoint-Add-In-Webs geeignet ist. Fügen Sie dazu dem Element **asp:content** mit einer `ContentPlaceholderId` mit dem Wert `PlaceholderAdditionalPageHead` das folgende Markup hinzu. *Dieses Markup enthält keine Platzhalter. Geben Sie das Markup genau wie hier angegeben ein.* 
     
   ```HTML
-  
-<script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
+  <script type="text/javascript" src="../scripts/Resources.<SharePoint:EncodedLiteral runat='server' text='<%$Resources:wss,language_value%>' EncodeMethod='HtmlEncode' />.js"></script>
   ```
 
 
     Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
     
     > **HINWEIS**
-      > Da die SharePoint-Ressource "language_value" nie NULL ist, wird von diesem Skript nie eine Datei namens "Resources.js" aufgerufen. Deshalb haben Sie im vorherigen Verfahren keine solche Datei erstellt. Wenn der Wert von "language_value" eine Sprache ist, für die keine .JS-Datei vorhanden ist, dann lädt das Skripts nichts. Im nächsten Schritt wird erklärt, wie Zeichenfolgen in dieser Situation einen invarianten Sprachwert erhalten. 
+    > Da die SharePoint-Ressource "language_value" nie NULL ist, wird von diesem Skript nie eine Datei namens "Resources.js" aufgerufen. Deshalb haben Sie im vorherigen Verfahren keine solche Datei erstellt. Wenn der Wert von "language_value" eine Sprache ist, für die keine .JS-Datei vorhanden ist, dann lädt das Skripts nichts. Im nächsten Schritt wird erklärt, wie Zeichenfolgen in dieser Situation einen invarianten Sprachwert erhalten. 
 3. Geben Sie für jedes lokalisierbare Element und jeden lokalisierbaren Attributwert auf der Seite einen Standardwert in der invarianten Sprache an, verwenden Sie dann aber JavaScript, um die entsprechende Variable aus der Datei "Resources. _LL_- _CC_.js zuzuweisen. Wenn die Seite beispielsweise einen öffentlichen Titel in einem Element vom Typ **h2** enthält, versehen Sie das Element mit einem Attribut vom Typ **id**, und fügen Sie dann ein Element vom Typ **script** unter den lokalisierbaren Elementen ein, um lokalisierte Zeichenfolgen zu der **innerText**-Eigenschaft der lokalisierten Elemente hinzuzufügen. Dieser Lokalisierungscode sollte nur ausgeführt werden, wenn eine Resources. _LL_- _CC_.js-Datei geladen und die Variablen deklariert wurden. Fügen Sie sie in einen Bedingungsblock, der zunächst prüft, ob eine der Variablen definiert wurden. Wenn das nicht der Fall ist, wird kein Ressourcenskript geladen und die Standardwerte (invariant) sollten unverändert bleiben. Im Folgenden ein Beispiel dafür.
     
     > **TIPP**
-      > Das Wort "INVARIANT" wurde zur ersten invarianten Zeichenfolge hinzugefügt. In einem Produktions-Add-In wäre das nicht der Fall. Während Sie testen, ist das jedoch eine gute Möglichkeit, um sich einen Überblick darüber zu verschaffen, ob invariante Sprachzeichenfolgen verwendet werden oder die Datei "Resources. _LL_- _CC_.js" für die Sprache geladen wurde, die Ihre invariante Sprache darstellt. 
+    > Das Wort "INVARIANT" wurde zur ersten invarianten Zeichenfolge hinzugefügt. In einem Produktions-Add-In wäre das nicht der Fall. Während Sie testen, ist das jedoch eine gute Möglichkeit, um sich einen Überblick darüber zu verschaffen, ob invariante Sprachzeichenfolgen verwendet werden oder die Datei "Resources. _LL_- _CC_.js" für die Sprache geladen wurde, die Ihre invariante Sprache darstellt. 
 
   ```HTML
   <h2 id="instructionsheading">INVARIANT Instructions</h2>
@@ -290,14 +289,14 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   ```
 
 
-    Die folgende Abbildung bietet eine Vorschau, wie die englische Version der Seite nach Fertigstellung des Add-Ins aussieht. 
+Die folgende Abbildung bietet eine Vorschau, wie die englische Version der Seite nach Fertigstellung des Add-Ins aussieht. 
     
 
    **Website mit lokalisierten Zeichenfolgen aus einer JavaScript-Ressourcendatei**
 
   
 
-     ![Eine SharePoint-Seite mit lokalisierten Zeichenfolgen](images/LocSPApp_AppwebPage.png)
+![Eine SharePoint-Seite mit lokalisierten Zeichenfolgen](images/LocSPApp_AppwebPage.png)
   
 
   
@@ -331,7 +330,7 @@ Die Methode zum Lokalisieren von Hostweb-Komponenten entspricht im Grunde der Me
 4. Wiederholen Sie den vorherigen Schritt für jedes zu unterstützende Gebietsschema. Für jedes Gebietsschema wird eine weitere Datei vom Typ Resources. _LL_- _CC_.resx erstellt.
     
     > **HINWEIS**
-      > Die Eigenschaft **Build Action** dieser Dateien ist nicht auf **Resource** festgelegt, sondern auf **Content**.  *Diese Einstellung darf nicht geändert werden.* 
+    > Die Eigenschaft **Build Action** dieser Dateien ist nicht auf **Resource** festgelegt, sondern auf **Content**.  *Diese Einstellung darf nicht geändert werden.* 
 5. Fügen Sie außerdem Gebietsschema-Einträge für jedes Gebietsschema hinzu, für das Ihr Add-In installierbar sein soll, jedoch die invariante Sprache verwenden soll; d. h. Gebietsschemas, für die Sie  *keine*  lokalisierte Version des Add-Ins bereitstellen möchten. *Löschen Sie die RESX-Dateien, die für diese Gebietsschemas erstellt wurden.* 
     
   
@@ -351,13 +350,12 @@ Die Methode zum Lokalisieren von Hostweb-Komponenten entspricht im Grunde der Me
 1. Öffnen Sie die Datei „AppManifest.xml", und ersetzen Sie den Wert des Elements **Title** durch einen Aufruf der entsprechenden Ressourcenzeichenfolge. Wenn Sie die Zeichenfolge beispielsweiseAddin_Title genannt haben, sollte das Element **Title** wie folgt aussehen:
     
   ```XML
-  
-<Title>$Resources:Addin_Title;</Title>
+  <Title>$Resources:Addin_Title;</Title>
   ```
 
 
     > **VORSICHT**
-      > Der Wert von **Title** darf *nur*  den Aufruf der Ressource enthalten. Er darf keinen anderen Text, keine anderen Symbole und keine anderen Leerzeichen enthalten.
+    > Der Wert von **Title** darf *nur*  den Aufruf der Ressource enthalten. Er darf keinen anderen Text, keine anderen Symbole und keine anderen Leerzeichen enthalten.
 2. Zum Aufrufen lokalisierter Ressourcen in anderen XML-Dateien (beispielsweise "Elements.xml" für Add-In-Webparts und benutzerdefinierte Aktionen) wird das gleiche Format verwendet wie in der Add-In-Manifestdatei.
     
   
