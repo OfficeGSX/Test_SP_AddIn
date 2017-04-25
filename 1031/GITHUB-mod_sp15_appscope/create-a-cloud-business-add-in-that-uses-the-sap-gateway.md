@@ -126,7 +126,7 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
   }
 
   // Provide the access token, which is stored in the current session, if the access token expired, use the refresh token get a new one.
- public string AccessToken
+  public string AccessToken
         {
             get
             {
@@ -156,7 +156,6 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
 
 
   ```cs
-
 [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
         {
@@ -240,8 +239,7 @@ SellerDashboardStudio umfasst die standardmäßigen LightSwitch-Add-In-Komponent
     Diese Komponente umfasst Bildschirme, ein benutzerdefiniertes Steuerelement und ein Fotoupload-Steuerelement. In der folgenden Abbildung werden die Hauptkomponenten dargestellt.
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
     SellerDashboard.HTML.Client umfasst die folgenden vier Bildschirme:
@@ -271,7 +269,7 @@ SellerDashboardStudio umfasst die standardmäßigen LightSwitch-Add-In-Komponent
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    SharePointContext.cs und TokenHelper.cs sind die Hilfsklassen, die den Clientkontext zum Authentifizieren für SharePoint bereitstellen. Damit kann die Fotoupload-Web-API zum Hochladen von Fahrzeugfotos in die Bildbibliothek verwendet werden. Die Dateien "PhotoListHelper.cs" und "PhotosController.cs" implementieren die Fotoupload-Web-API. Weitere Informationen zur Verwendung der Fotoupload-Web-API mit LightSwitch finden Sie im Artikel  [Vorgehensweise: Erstellen eines Add-Ins für SharePoint mithilfe von LightSwitch](http://msdn.microsoft.com/de-de/library/jj969621.aspx).
+SharePointContext.cs und TokenHelper.cs sind die Hilfsklassen, die den Clientkontext zum Authentifizieren für SharePoint bereitstellen. Damit kann die Fotoupload-Web-API zum Hochladen von Fahrzeugfotos in die Bildbibliothek verwendet werden. Die Dateien "PhotoListHelper.cs" und "PhotosController.cs" implementieren die Fotoupload-Web-API. Weitere Informationen zur Verwendung der Fotoupload-Web-API mit LightSwitch finden Sie im Artikel  [Vorgehensweise: Erstellen eines Add-Ins für SharePoint mithilfe von LightSwitch](http://msdn.microsoft.com/de-de/library/jj969621.aspx).
 
 
 - **SellerDashboard.SharePoint**
@@ -373,7 +371,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   ```
 
 
-    Dies ist unsere Testdatenbank, und der Eigenschaftstyp und Nullable-Wert basieren auf dem Szenario. Die ID ist PropertyRef, und der OData-CRUD-Vorgang basiert auf der ID. Die StockNo-Eigenschaft wird zum Verbinden von Daten mit dem in der SharePoint-Bildbibliothek gespeicherten Fahrzeugbild verwendet .
+Dies ist unsere Testdatenbank, und der Eigenschaftstyp und Nullable-Wert basieren auf dem Szenario. Die ID ist PropertyRef, und der OData-CRUD-Vorgang basiert auf der ID. Die StockNo-Eigenschaft wird zum Verbinden von Daten mit dem in der SharePoint-Bildbibliothek gespeicherten Fahrzeugbild verwendet .
 
 
 -  *Für RIA-Dienst definiertes Datenmodell* 
@@ -444,7 +442,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    Wenn Sie den WCF-RIA-Dienst (BoxXDataService) auf dem SellerDashboard-Server hinzufügen, ist das in CarInventoryModel definierte Datenmodell miteinbezogen, und Sie erhalten die Tabelle mit relevanten Daten. Sie können den Typ einiger Eigenschaften ändern. Sie können z. B. den **BuyerEmail** -Typ von **Zeichenfolge** zu **E-Mail-Adresse** ändern, wodurch die Überprüfung des E-Mail-Formats auf Clientseite in LightSwitch unterstützt wird.
+Wenn Sie den WCF-RIA-Dienst (BoxXDataService) auf dem SellerDashboard-Server hinzufügen, ist das in CarInventoryModel definierte Datenmodell miteinbezogen, und Sie erhalten die Tabelle mit relevanten Daten. Sie können den Typ einiger Eigenschaften ändern. Sie können z. B. den **BuyerEmail** -Typ von **Zeichenfolge** zu **E-Mail-Adresse** ändern, wodurch die Überprüfung des E-Mail-Formats auf Clientseite in LightSwitch unterstützt wird.
 
 
  **SharePoint-Bildbibliothek**
