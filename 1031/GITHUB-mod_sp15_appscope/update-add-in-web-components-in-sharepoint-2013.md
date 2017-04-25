@@ -91,7 +91,7 @@ Die Microsoft Office-Entwicklertools für Visual Studio sind darauf ausgelegt, n
 
 
 > **VORSICHT**
-> Fügen Sie keine "<!-- -->"-Kommentare zur Datei  _{FeatureName}_.features hinzu. Kommentare werden von der Aktualisierungsinfrastruktur nicht unterstützt, und bei der Aktualisierung tritt ein Fehler auf, wenn sich Kommentare in der Datei befinden. Sie werden in den Markupbeispielen in diesem Artikel nur verwendet, um Ihnen zu zeigen, wie Sie Ihren Code einfügen sollten. 
+> Fügen Sie keine "\<!-- --\>"-Kommentare zur Datei  _{FeatureName}_.features hinzu. Kommentare werden von der Aktualisierungsinfrastruktur nicht unterstützt, und bei der Aktualisierung tritt ein Fehler auf, wenn sich Kommentare in der Datei befinden. Sie werden in den Markupbeispielen in diesem Artikel nur verwendet, um Ihnen zu zeigen, wie Sie Ihren Code einfügen sollten. 
 
 
 
