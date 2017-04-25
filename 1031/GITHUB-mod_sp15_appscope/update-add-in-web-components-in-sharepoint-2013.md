@@ -224,13 +224,12 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 4. Fügen Sie ein **ElementManifest**-Element zum Abschnitt **ApplyElementManifests** hinzu, in dem wie in diesem Beispiel auf die neue Manifestdatei verwiesen wird.
     
   ```XML
-  
-<ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
+  <ElementManifest Location="Pages\\elements.2.0.0.0.xml" />
   ```
 
 
     > **HINWEIS**
-      >  Löschen Sie nicht das ursprüngliche Manifest. Die Feature-XML-Datei verwendet sowohl das alte als auch das neue Manifest.>  Kopieren Sie keine **ElementFile**-Elemente aus dem Abschnitt **ElementManifests** in den Abschnitt **ApplyElementManifests**, selbst wenn sich die Datei, auf die in **ElementFile** verwiesen wird, geändert hat.
+    >  Löschen Sie nicht das ursprüngliche Manifest. Die Feature-XML-Datei verwendet sowohl das alte als auch das neue Manifest.<BR />Kopieren Sie keine **ElementFile**-Elemente aus dem Abschnitt **ElementManifests** in den Abschnitt **ApplyElementManifests**, selbst wenn sich die Datei, auf die in **ElementFile** verwiesen wird, geändert hat.
 2. Öffnen Sie jede Elementmanifestdatei, auf die im Abschnitt **ApplyElementManifests** verwiesen wird, und stellen Sie sicher, dass alle [File](http://msdn.microsoft.com/library/c270e4ce-8110-4da7-b0e7-c223604bfce7%28Office.15%29.aspx)-Elemente über ein **ReplaceContents**-Attribut verfügen und dies auf **TRUE** festgelegt ist. Nachfolgend ist ein Beispiel gezeigt. Die Office-Entwicklertools für Visual Studio haben dies möglicherweise bereits durchgeführt, aber Sie sollten es überprüfen, auch für die Elementemanifeste aus früheren Versionen des Add-Ins. Dies ist eine der Situationen, in denen es eine gute Vorgehensweise ist, eine vorhandene Elementmanifestdatei zu bearbeiten.
     
   ```XML
@@ -242,13 +241,12 @@ Führen Sie die folgenden Schritte aus, um das Add-In-Web-Feature zu aktualisier
 3. In Seiten können Webparts eingebettet werden, wie in  [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) erklärt. Wenn Sie eine Seite mit einem Webpart ändern (oder die Eigenschaften des Webparts ändern), ist ein zusätzlicher Schritt erforderlich: Sie müssen das folgende Markup zur Seite hinzufügen, um zu verhindern, dass die SharePoint eine zweite Kopie des Webparts auf der Seite hinzufügen. Das Markup sollte zum **asp:Content**-Element mit der ID  `PlaceHolderAdditionalPageHead` hinzugefügt werden. (Die Office-Entwicklertools für Visual Studio haben es möglicherweise beim ersten Erstellen der Seite bereits hinzugefügt, aber Sie sollten überprüfen, ob es vorhanden ist.)
     
   ```XML
-  
-<meta name="WebPartPageExpansion" content="full" />
+  <meta name="WebPartPageExpansion" content="full" />
   ```
 
 
     > **HINWEIS**
-      >  Wenn die Seite so konfiguriert wurde, dass Benutzer sie anpassen können, hat dieses Markup den Nebeneffekt, dass diese Anpassungen entfernt werden. Benutzer müssen die Anpassungen wiederholen.>  Wenn das Webpart mithilfe der Anweisungen unter [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) hinzugefügt wurde, befindet sich das Webpartmarkup im Elementmanifest. Das Ändern der Eigenschaften des Webparts ist also eine Ausnahme zu der allgemeinen Regeln, dass eine Elementmanifestdatei nicht als Teil eines Add-In-Updates bearbeitet werden sollte.
+    >  Wenn die Seite so konfiguriert wurde, dass Benutzer sie anpassen können, hat dieses Markup den Nebeneffekt, dass diese Anpassungen entfernt werden. Benutzer müssen die Anpassungen wiederholen.<BR />Wenn das Webpart mithilfe der Anweisungen unter [Einschließen eines Webparts auf einer Webseite im Add-In-Web](include-a-web-part-in-a-webpage-on-the-add-in-web.md) hinzugefügt wurde, befindet sich das Webpartmarkup im Elementmanifest. Das Ändern der Eigenschaften des Webparts ist also eine Ausnahme zu der allgemeinen Regeln, dass eine Elementmanifestdatei nicht als Teil eines Add-In-Updates bearbeitet werden sollte.
 4. Als Alternative zum Ändern einer Seite können Sie auch mit den folgenden Schritten eine Umleitung auf eine neue Seite verwenden. 
     
 1. Erstellen Sie die neue Seite, und konfigurieren Sie das Update-Markup wie im Verfahren unter **So fügen Sie Komponenten zu dem Add-In hinzu** weiter oben beschrieben.
@@ -355,7 +353,7 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
   ```
 
 
-    Befolgen Sie bei jeder Aktualisierung des Features denselben Ablauf. Fügen Sie ein neues **VersionRange**-Element für die neuesten Aktualisierungsaktionen hinzu. Fügen Sie dann ein **EndVersion**-Element zum  *vorherigen* **VersionRange**-Element hinzu, und legen Sie es auf die vorherige Versionsnummer fest. In dem weitergeführten Beispiel würde die Datei bei einer Aktualisierung von 3.0.0.0 auf 4.0.0.0 aussehen wie folgt.
+Befolgen Sie bei jeder Aktualisierung des Features denselben Ablauf. Fügen Sie ein neues **VersionRange**-Element für die neuesten Aktualisierungsaktionen hinzu. Fügen Sie dann ein **EndVersion**-Element zum  *vorherigen* **VersionRange**-Element hinzu, und legen Sie es auf die vorherige Versionsnummer fest. In dem weitergeführten Beispiel würde die Datei bei einer Aktualisierung von 3.0.0.0 auf 4.0.0.0 aussehen wie folgt.
     
 
 
@@ -381,12 +379,12 @@ Wenn Sie ein SharePoint-Add-In **REMOVE_ME** zum zweiten (oder dritten usw.) Mal
   ```
 
 
-    Beachten Sie, dass das aktuellste **VersionRange**-Element kein **BeginVersion**- oder **EndVersion**-Attribut besitzt. Dies gewährleistet, dass die in diesem **VersionRange**-Element enthaltenen Aktualisierungsaktionen auf alle vorherigen Versionen des Features angewendet werden. Dies sollte der Fall sein, da in diesem **VersionRange**-Element auf alle aktuellen Änderungen verwiesen wird und keine davon bereits in einer Instanz des Features vorgenommen wurde.
-    
-    Beachten Sie auch, dass das Attribut **BeginVersion** in keinem der **VersionRange**-Elemente verwendet wird. Der Grund dafür ist, dass der Standardwert für das Attribut **BeginVersion** „0.0.0.0" lautet, und dies der gewünschte Wert ist, denn alle Aktualisierungsaktionen sollen auf jede Instanz des Add-Ins angewendet werden, dessen Version unter dem im Attribut **EndVersion** festgelegten Wert liegt.
-    
+Beachten Sie, dass das aktuellste **VersionRange**-Element kein **BeginVersion**- oder **EndVersion**-Attribut besitzt. Dies gewährleistet, dass die in diesem **VersionRange**-Element enthaltenen Aktualisierungsaktionen auf alle vorherigen Versionen des Features angewendet werden. Dies sollte der Fall sein, da in diesem **VersionRange**-Element auf alle aktuellen Änderungen verwiesen wird und keine davon bereits in einer Instanz des Features vorgenommen wurde.
+
+Beachten Sie auch, dass das Attribut **BeginVersion** in keinem der **VersionRange**-Elemente verwendet wird. Der Grund dafür ist, dass der Standardwert für das Attribut **BeginVersion** „0.0.0.0" lautet, und dies der gewünschte Wert ist, denn alle Aktualisierungsaktionen sollen auf jede Instanz des Add-Ins angewendet werden, dessen Version unter dem im Attribut **EndVersion** festgelegten Wert liegt.
+
     > **WICHTIG**
-      >  Das Element **VersionRange** bestimmt nur, auf welche Versionen des Features die Upgrades angewendet werden. Es bestimmt nicht, welche Versionen des Add-Ins eine Benachrichtigung erhalten, dass ein Update verfügbar ist - die Benachrichtigung wird allein durch die Versionsnummer des Add-Ins ausgelöst. Innerhalb von 24 Stunden, nachdem eine neue Version des Add-Ins im Add-In-Katalog der Organisation oder dem Office Store verfügbar wird, erhält jede installierte Instanz des Add-Ins unabhängig von der Version die Benachrichtigung auf ihrer Kachel auf der Seite **Websiteinhalt**, dass ein Update verfügbar ist. >  Das Element **VersionRange** wirkt sich nicht auf die Versionsnummer des neu aktualisierten Features oder Add-Ins aus. Diese zwei Nummern werden immer auf die aktuellste Versionnummer gesetzt, unabhängig davon, zu welchem Versionsbereich das Feature vor der Aktualisierung gehört hat. Dies ist ein weiterer Grund, auf die Verwendung eines **BeginVersion**-Attributs zu verzichten. Das Attribut **BeginVersion** kann verwendet werden, um Aktualisierungsaktionen für einige Add-In-Instanzen dauerhaft zu sperren. Es kann jedoch nicht verhindern, dass die Feature- oder Add-In-Version auf die aktuellste Version gesetzt wird. Daher kann die Verwendung des Attributs **BeginVersion** dazu führen, dass zwei Instanzen eines Add-Ins die gleiche Add-In-Versionsnummer und die gleiche Versionsnummer für das Add-In-Web-Feature besitzen, während sich in ihrem Add-In-Web unterschiedliche Komponenten befinden.
+    >  Das Element **VersionRange** bestimmt nur, auf welche Versionen des Features die Upgrades angewendet werden. Es bestimmt nicht, welche Versionen des Add-Ins eine Benachrichtigung erhalten, dass ein Update verfügbar ist - die Benachrichtigung wird allein durch die Versionsnummer des Add-Ins ausgelöst. Innerhalb von 24 Stunden, nachdem eine neue Version des Add-Ins im Add-In-Katalog der Organisation oder dem Office Store verfügbar wird, erhält jede installierte Instanz des Add-Ins unabhängig von der Version die Benachrichtigung auf ihrer Kachel auf der Seite **Websiteinhalt**, dass ein Update verfügbar ist. <BR />  Das Element **VersionRange** wirkt sich nicht auf die Versionsnummer des neu aktualisierten Features oder Add-Ins aus. Diese zwei Nummern werden immer auf die aktuellste Versionnummer gesetzt, unabhängig davon, zu welchem Versionsbereich das Feature vor der Aktualisierung gehört hat. Dies ist ein weiterer Grund, auf die Verwendung eines **BeginVersion**-Attributs zu verzichten. Das Attribut **BeginVersion** kann verwendet werden, um Aktualisierungsaktionen für einige Add-In-Instanzen dauerhaft zu sperren. Es kann jedoch nicht verhindern, dass die Feature- oder Add-In-Version auf die aktuellste Version gesetzt wird. Daher kann die Verwendung des Attributs **BeginVersion** dazu führen, dass zwei Instanzen eines Add-Ins die gleiche Add-In-Versionsnummer und die gleiche Versionsnummer für das Add-In-Web-Feature besitzen, während sich in ihrem Add-In-Web unterschiedliche Komponenten befinden.
 
 ## Überprüfen der Bereitstellung von Add-In-Web-Komponenten
 <a name="VerifyDeployAppWebComp"> </a>
