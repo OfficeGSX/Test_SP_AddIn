@@ -40,7 +40,7 @@ SharePoint bietet drei Typen von Autorisierungsrichtlinien. Die verwendete Autor
 
 
     > **HINWEIS**
-      > Bestimmte APIs benötigen einen Benutzerkontext und können mit einer Nur-Add-In-Richtlinie nicht ausgeführt werden. Hierzu gehören viele APIs für die Interaktion mit Project Server 2013 und für Suchabfragen. 
+    > Bestimmte APIs benötigen einen Benutzerkontext und können mit einer Nur-Add-In-Richtlinie nicht ausgeführt werden. Hierzu gehören viele APIs für die Interaktion mit Project Server 2013 und für Suchabfragen. 
 
 ### Weitere Informationen finden Sie in einem Beispielszenario eines Add-Ins, das die Nur-Add-In-Richtlinie verwendet
 <a name="Scenario"> </a>
