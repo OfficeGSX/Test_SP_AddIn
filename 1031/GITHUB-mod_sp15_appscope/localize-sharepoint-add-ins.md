@@ -129,14 +129,14 @@ Ein Add-In-Web kann bestimmte Arten von SP-Komponenten enthalten. Weitere Inform
   ```
 
 
-    Die folgende Abbildung zeigt die lokalisierte benutzerdefinierte Liste in englischer Sprache:
+Die folgende Abbildung zeigt die lokalisierte benutzerdefinierte Liste in englischer Sprache:
     
 
-   **Lokalisierte benutzerdefinierte Liste**
+**Lokalisierte benutzerdefinierte Liste**
 
   
 
-     ![Eine lokalisierte benutzerdefinierte Liste](images/LocSPApp_AppwebList.png)
+![Eine lokalisierte benutzerdefinierte Liste](images/LocSPApp_AppwebList.png)
   
 
   
@@ -246,7 +246,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
   ```
 
 
-    Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
+Mit diesem Markup wird eine der JavaScript-Dateien geladen. Durch Lesen der SharePoint-Ressource "language_value" wird ermittelt, welche Sprachdatei geladen werden soll. Diese Ressource wird in einen Sprach-/Kulturnamen im Muster  _LL_- _CC_ aufgelöst, das in einer Vorgehensweise weiter oben beschrieben wurde. Genau gesagt wird sie in die Sprache des Add-In-Webs aufgelöst.
     
     > **HINWEIS**
     > Da die SharePoint-Ressource "language_value" nie NULL ist, wird von diesem Skript nie eine Datei namens "Resources.js" aufgerufen. Deshalb haben Sie im vorherigen Verfahren keine solche Datei erstellt. Wenn der Wert von "language_value" eine Sprache ist, für die keine .JS-Datei vorhanden ist, dann lädt das Skripts nichts. Im nächsten Schritt wird erklärt, wie Zeichenfolgen in dieser Situation einen invarianten Sprachwert erhalten. 
@@ -354,8 +354,8 @@ Die Methode zum Lokalisieren von Hostweb-Komponenten entspricht im Grunde der Me
   ```
 
 
-    > **VORSICHT**
-    > Der Wert von **Title** darf *nur*  den Aufruf der Ressource enthalten. Er darf keinen anderen Text, keine anderen Symbole und keine anderen Leerzeichen enthalten.
+> **VORSICHT**
+> Der Wert von **Title** darf *nur*  den Aufruf der Ressource enthalten. Er darf keinen anderen Text, keine anderen Symbole und keine anderen Leerzeichen enthalten.
 2. Zum Aufrufen lokalisierter Ressourcen in anderen XML-Dateien (beispielsweise "Elements.xml" für Add-In-Webparts und benutzerdefinierte Aktionen) wird das gleiche Format verwendet wie in der Add-In-Manifestdatei.
     
   
@@ -509,7 +509,7 @@ var chromeContactUsLinkName = "Contacto";
   ```
 
 
-    Die Auswirkung des **ResourceUICultures**-Attributs besteht darin, das ASP.NET nach einer Datei mit der Bezeichnung ChromeStrings. _LL-CC_.js sucht,  _LL-CC_ bezeichnet dabei die Sprache der Seite, die geladen wird. Wenn die Datei nicht gefunden werden kann, wird die Datei "ChromeStrings.js" geladen.
+Die Auswirkung des **ResourceUICultures**-Attributs besteht darin, das ASP.NET nach einer Datei mit der Bezeichnung ChromeStrings. _LL-CC_.js sucht,  _LL-CC_ bezeichnet dabei die Sprache der Seite, die geladen wird. Wenn die Datei nicht gefunden werden kann, wird die Datei "ChromeStrings.js" geladen.
     
   
 
