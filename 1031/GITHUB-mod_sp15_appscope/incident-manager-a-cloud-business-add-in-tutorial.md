@@ -149,7 +149,7 @@ Sie entwickeln das mobile Add-In, die zur Eingabe der wichtigsten Informationen 
 
   
 
-     ![Die Entität "Vorfall"](images/CBA_IM_2.PNG)
+![Die Entität "Vorfall"](images/CBA_IM_2.PNG)
   
 
     
