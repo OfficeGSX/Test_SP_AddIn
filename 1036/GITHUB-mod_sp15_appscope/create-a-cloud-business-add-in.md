@@ -48,9 +48,9 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 ![URL SharePoint](images/SiteURL.PNG)
 
 
-    L'URL doit prendre la forme https://  _Monsite_.sharepoint.com/sites/Developer/.
+L'URL doit prendre la forme https://  _Monsite_.sharepoint.com/sites/Developer/.
 
-    Une nouvelle solution est ajoutée à l'Explorateur de solutions avec quatre projets : un projet de niveau supérieur, et quatre autres projets, respectivement **HTMLClient**, **Server** et **SharePoint**.
+Une nouvelle solution est ajoutée à l'Explorateur de solutions avec quatre projets : un projet de niveau supérieur, et quatre autres projets, respectivement **HTMLClient**, **Server** et **SharePoint**.
 
 
 
@@ -66,7 +66,7 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 ![Nœud de projet de niveau supérieur](images/Top-levelprojectnode.PNG)
 
 
-    Le concepteur d'applications s'ouvre.
+Le concepteur d'applications s'ouvre.
 
 
 2. Dans le concepteur d'applications, cliquez sur l'onglet **SharePoint**, comme illustré à la figure 4.

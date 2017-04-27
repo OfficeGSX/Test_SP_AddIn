@@ -48,9 +48,9 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 ![SharePoint の URL](images/SiteURL.PNG)
 
 
-    URL の形式は、https://  _MySite_.sharepoint.com/sites/Developer/ にします。
+URL の形式は、https://  _MySite_.sharepoint.com/sites/Developer/ にします。
 
-    ソリューション エクスプローラーに、トップレベル プロジェクト、[ **HTMLClient**] プロジェクト、[ **サーバー**] プロジェクト、[ **SharePoint**] プロジェクトという 4 つのプロジェクトを含んだソリューションが追加されます。
+ソリューション エクスプローラーに、トップレベル プロジェクト、[ **HTMLClient**] プロジェクト、[ **サーバー**] プロジェクト、[ **SharePoint**] プロジェクトという 4 つのプロジェクトを含んだソリューションが追加されます。
 
 
 
@@ -66,7 +66,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 ![最上位のプロジェクト ノード](images/Top-levelprojectnode.PNG)
 
 
-    アプリケーション デザイナーが開きます。
+アプリケーション デザイナーが開きます。
 
 
 2. 図 4 に示すように、アプリケーション デザイナーで [ **SharePoint**] タブを選択します。

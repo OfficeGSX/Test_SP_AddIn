@@ -48,9 +48,9 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 ![Dirección URL de SharePoint](images/SiteURL.PNG)
 
 
-    La dirección URL debe tener la forma https:// _MiSitio_.sharepoint.com/sites/Developer/.
+La dirección URL debe tener la forma https:// _MiSitio_.sharepoint.com/sites/Developer/.
 
-    Se agrega una nueva solución al Explorador de soluciones con cuatro proyectos: un proyecto de nivel superior, un proyecto de **HTMLClient**, un proyecto de **Servidor** y un proyecto de **SharePoint**.
+Se agrega una nueva solución al Explorador de soluciones con cuatro proyectos: un proyecto de nivel superior, un proyecto de **HTMLClient**, un proyecto de **Servidor** y un proyecto de **SharePoint**.
 
 
 
@@ -66,7 +66,7 @@ Con la plantilla Complemento empresarial de nube en Visual Studio, puede crear c
 ![Nodo de proyecto de nivel superior](images/Top-levelprojectnode.PNG)
 
 
-    Se abre el diseñador de aplicaciones.
+Se abre el diseñador de aplicaciones.
 
 
 2. En el diseñador de aplicaciones, elija la pestaña **SharePoint** como se muestra en la Figura 4.

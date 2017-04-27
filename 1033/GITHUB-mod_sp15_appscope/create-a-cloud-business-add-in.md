@@ -7,12 +7,6 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 # Create a cloud business add-in
 By using the Cloud Business Add-in template in Visual Studio, you can create SharePoint Add-ins 2013 or SharePoint on Office 365 that are optimized for adding and managing data.
- 
-
-
-
-
-
 > **NOTE**
 > You can also build a SharePoint Add-in by using the Add-in for SharePoint 2013 template. 
 
@@ -54,9 +48,9 @@ By using the Cloud Business Add-in template in Visual Studio, you can create Sha
 ![SharePoint URL](images/SiteURL.PNG)
 
 
-    The URL should take the form https://  _MySite_.sharepoint.com/sites/Developer/.
+The URL should take the form https://  _MySite_.sharepoint.com/sites/Developer/.
 
-    A new solution is added to Solution Explorer with four projects: a top-level project, a **HTMLClient** project, a **Server** project, and a **SharePoint** project.
+A new solution is added to Solution Explorer with four projects: a top-level project, a **HTMLClient** project, a **Server** project, and a **SharePoint** project.
 
 
 
@@ -72,7 +66,7 @@ By using the Cloud Business Add-in template in Visual Studio, you can create Sha
 ![The top level project node](images/Top-levelprojectnode.PNG)
 
 
-    The application designer opens.
+The application designer opens.
 
 
 2. In the application designer, choose the **SharePoint** tab as shown in Figure 4.

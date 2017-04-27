@@ -48,9 +48,9 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 ![SharePoint URL](images/SiteURL.PNG)
 
 
-    URL 的格式应为 https://  _MySite_.sharepoint.com/sites/Developer/。
+URL 的格式应为 https://  _MySite_.sharepoint.com/sites/Developer/。
 
-    新解决方案将添加到包含以下四个项目的解决方案资源管理器：顶级项目、"HTMLClient"项目、"服务器"项目和"SharePoint"项目。
+新解决方案将添加到包含以下四个项目的解决方案资源管理器：顶级项目、"HTMLClient"项目、"服务器"项目和"SharePoint"项目。
 
 
 
@@ -66,7 +66,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 ![顶级项目节点](images/Top-levelprojectnode.PNG)
 
 
-    应用程序设计器将打开。
+应用程序设计器将打开。
 
 
 2. 在应用程序设计器中，选择"SharePoint"选项卡，如图 4 中所示。
