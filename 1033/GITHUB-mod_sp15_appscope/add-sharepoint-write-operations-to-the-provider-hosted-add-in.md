@@ -7,12 +7,12 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
 
 # Add SharePoint write operations to the provider-hosted add-in
 Learn how to write data to SharePoint in a provider-hosted SharePoint Add-in.
- 
-
-
-
-
 This is the fifthin a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+
+
+
+
+
 -  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
 
 
@@ -41,7 +41,7 @@ Our add-in has a custom ribbon button that adds an employee from the Hong Kong s
 
 
 > **NOTE**
->  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
+>  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:<BR /><BR />  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. <BR />  Make sure all three projects are set to **Start** in the **Action** column.
 
 
 

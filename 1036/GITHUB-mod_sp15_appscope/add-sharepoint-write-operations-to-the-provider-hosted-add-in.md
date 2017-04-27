@@ -41,7 +41,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
 
 
 > **REMARQUE**
->  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :>  Cliquez avec le bouton droit sur le nœud de la solution en haut de l' **Explorateur de solutions** et sélectionnez **Définir les projets de démarrage**. >  Assurez-vous que les trois projets sont définis sur **Début** dans la colonne **Action**. 
+>  Les paramètres des projets de démarrage dans Visual Studio ont tendance à revenir aux valeurs par défaut à chaque fois que la solution est rouverte. Veillez à toujours suivre les étapes ci-dessous immédiatement après la réouverture de la solution d'exemple de cette série d'articles :<BR /><BR />  Cliquez avec le bouton droit sur le nœud de la solution en haut de l' **Explorateur de solutions** et sélectionnez **Définir les projets de démarrage**. <BR />  Assurez-vous que les trois projets sont définis sur **Début** dans la colonne **Action**. 
 
 
 

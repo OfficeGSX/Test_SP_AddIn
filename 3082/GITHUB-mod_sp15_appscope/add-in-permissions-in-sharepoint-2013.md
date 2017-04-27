@@ -432,7 +432,7 @@ La propiedad **BaseTemplateId** es un elemento secundario, no un atributo del el
 ||||
 |:-----|:-----|:-----|
 |**URI de ámbito** <br/> |**Propiedad** <br/> |**Tipo** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entero  <br /><br /> **NOTA**<br /> Para más información sobre **BaseTemplateId** y el correspondiente valor entero para la plantilla de lista base, vea el atributo **Type** de [Elemento List (Lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **NOTA**<br /> Para más información sobre **BaseTemplateId** y el correspondiente valor entero para la plantilla de lista base, vea el atributo **Type** de [Elemento List (Lista)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
  
 
 ## Administrar y solucionar problemas de permisos de complementos
