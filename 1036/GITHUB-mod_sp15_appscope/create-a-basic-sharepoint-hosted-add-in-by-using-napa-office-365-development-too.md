@@ -46,7 +46,7 @@ Si vous ne disposez pas déjà d'un abonnement SharePoint Online que vous pouvez
 
 
 > **REMARQUE**
->  Vous avez peut-être déjà accès à un Site du développeur Office 365 :<BR /><BR /> **Êtes-vous abonné à MSDN ?** Les abonnés Visual Studio Ultimate et Visual Studio Premium reçoivent également un abonnement à Office 365 Développeur. [Obtenez cet avantage aujourd'hui.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **Disposez-vous de l'un des plans d'abonnement Office 365 suivants ?**<BR /><BR /> **Si oui, un administrateur de l'abonnement à Office 365 peut créer un Site du développeur** à l'aide du [centre d'administration Office 365](https://portal.microsoftonline.com/admin/default.aspx). Pour plus d'informations, voir  [Créer un Site du développeur dans un abonnement Office 365 existant](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Vous avez peut-être déjà accès à un Site du développeur Office 365 :<BR /><BR /> **Êtes-vous abonné à MSDN ?** Les abonnés Visual Studio Ultimate et Visual Studio Premium reçoivent également un abonnement à Office 365 Développeur. [Obtenez cet avantage aujourd'hui.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **Disposez-vous de l'un des plans d'abonnement Office 365 suivants ?**<BR /> **Si oui, un administrateur de l'abonnement à Office 365 peut créer un Site du développeur** à l'aide du [centre d'administration Office 365](https://portal.microsoftonline.com/admin/default.aspx). Pour plus d'informations, voir  [Créer un Site du développeur dans un abonnement Office 365 existant](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 

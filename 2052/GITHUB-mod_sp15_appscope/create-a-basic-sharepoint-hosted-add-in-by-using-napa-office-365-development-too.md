@@ -46,7 +46,7 @@ Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工
 
 
 > **注释**
->  您可能已经拥有 Office 365 开发人员网站的访问权限：<BR /><BR /> **已经是 MSDN 订阅者？** Visual Studio Ultimate 和 Visual Studio Premium with MSDN 订阅者可以享受 Office 365 开发人员订阅权益。 [立即索取您的权益](https://msdn.microsoft.com/subscriptions/manage/default.aspx)。 <BR /><BR /> **您是否具有下列 Office 365 订阅计划之一？**<BR /><BR /> **如果有的话，Office 365 订阅的管理员可以创建一个 开发人员网站** ，方法是使用 [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx)。有关详细信息，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 
+>  您可能已经拥有 Office 365 开发人员网站的访问权限：<BR /><BR /> **已经是 MSDN 订阅者？** Visual Studio Ultimate 和 Visual Studio Premium with MSDN 订阅者可以享受 Office 365 开发人员订阅权益。 [立即索取您的权益](https://msdn.microsoft.com/subscriptions/manage/default.aspx)。 <BR /><BR /> **您是否具有下列 Office 365 订阅计划之一？**<BR /> **如果有的话，Office 365 订阅的管理员可以创建一个 开发人员网站** ，方法是使用 [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx)。有关详细信息，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 
 
 
 

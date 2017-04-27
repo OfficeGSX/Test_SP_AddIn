@@ -46,7 +46,7 @@ Napa это средство, с помощью которого можно со
 
 
 > **Примечание**
->  Возможно, у вас уже есть доступ к сайту Сайт разработчиков Office 365.<BR /><BR /> **Вы подписчик MSDN?** Visual Studio Ultimate и Visual Studio Premium с подпиской MSDN предоставляют льготное право на подписку разработчика приложений для Office 365. [Воспользуйтесь этим преимуществом прямо сегодня.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **У вас есть один из указанных ниже планов подписки на Office 365?**<BR /><BR /> **Если есть, администратор подписки на Office 365 может создать Сайт разработчиков** с помощью [Центра администрирования Office 365](https://portal.microsoftonline.com/admin/default.aspx). Дополнительные сведения см. в статье  [Создание сайта разработчика с использованием актуальной подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Возможно, у вас уже есть доступ к сайту Сайт разработчиков Office 365.<BR /><BR /> **Вы подписчик MSDN?** Visual Studio Ultimate и Visual Studio Premium с подпиской MSDN предоставляют льготное право на подписку разработчика приложений для Office 365. [Воспользуйтесь этим преимуществом прямо сегодня.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **У вас есть один из указанных ниже планов подписки на Office 365?**<BR /> **Если есть, администратор подписки на Office 365 может создать Сайт разработчиков** с помощью [Центра администрирования Office 365](https://portal.microsoftonline.com/admin/default.aspx). Дополнительные сведения см. в статье  [Создание сайта разработчика с использованием актуальной подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
