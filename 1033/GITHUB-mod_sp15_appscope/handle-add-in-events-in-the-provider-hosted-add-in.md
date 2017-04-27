@@ -7,12 +7,12 @@ ms.assetid: d5679867-083f-46c8-a2bd-00a43f042c24
 
 # Handle add-in events in the provider-hosted add-in
 Learn how to customize the installation of a provider-hosted SharePoint Add-in.
- 
-
-
-
-
 This is the seventh in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+
+
+
+
+
 -  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
 
 
@@ -88,7 +88,7 @@ Debugging of event receivers requires the use of the Azure Service Bus. Follow t
 
 
 > **NOTE**
->  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:>  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. >  Make sure all three projects are set to **Start** in the **Action** column.
+>  The settings for Startup Projects in Visual Studio tend to revert to defaults whenever the solution is reopened. Always take these steps immediately after reopening the sample solution in this series of articles:<BR />  Right-click the solution node at the top of **Solution Explorer** and select **Set startup projects**. <BR />  Make sure all three projects are set to **Start** in the **Action** column.
 
 
 
