@@ -27,7 +27,7 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
 
 
 
-- **承载：**可根据 SharePoint 外接程序的部署和承载方式将其分为两个主要类型，这很有用。
+- **承载：** 可根据 SharePoint 外接程序的部署和承载方式将其分为两个主要类型，这很有用。
 
   - **提供程序托管的**外接程序让其主要数据存储和业务逻辑由您（开发人员）从 SharePoint 外部部署和托管在服务器或您提供云帐户中。您负责强制实现购买您的外接程序的各个客户的帐户之间的隔离。此类外接程序也可能包含 SharePoint 组件。这些组件在客户的 SharePoint 场中托管。此类型的外接程序为您在其他设计选择的类别上提供了最大的灵活性。它还支持您对外部数据、逻辑和 Web 用户接口 (UI) 使用非 Microsoft 平台。（在提供程序托管的外接程序中，您还需要区分其远程组件位于与 SharePoint 场相同的企业防火墙中的外接程序以及其远程组件位于该防火墙之外的外接程序。这两种情况下的授权系统是不同的，这反过来会使您用来访问 SharePoint 数据的编程语言也不同。）
 
@@ -39,7 +39,7 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
     有关 SharePoint 外接程序的托管选项的更多详细信息，请参阅 [为开发和托管 SharePoint 外接程序选择模式](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)。
 
 
-- **连接性：**SharePoint 2013 支持三种类型的对数据的安全 create/read/update/delete (CRUD) 访问。
+- **连接性：** SharePoint 2013 支持三种类型的对数据的安全 create/read/update/delete (CRUD) 访问。
 
   - 外接程序中的外部 Web 应用程序使用 OAuth 协议访问 SharePoint 数据。有关详细信息，请参阅 [SharePoint 外接程序的授权和身份验证](authorization-and-authentication-of-sharepoint-add-ins.md)。
 
@@ -54,7 +54,7 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
     有关 SharePoint 外接程序中的数据存储和访问的详细信息，请参阅 [SharePoint 外接程序中的数据存储选项](3034f03c-2d5a-46de-9cb8-2c101ff194fa.md)、 [SharePoint 外接程序的安全数据访问和客户端对象模型](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)和 [在 SharePoint 2013 中处理外部数据](work-with-external-data-in-sharepoint-2013.md)。
 
 
-- **UI：**可通过三种方式在 SharePoint 中显示 SharePoint 外接程序：至少，所有外接程序都会显示在一个完整的网页中。或者，也可以通过外接程序部件显示外接程序，以及通过菜单项或功能区按钮显示外接程序。有关详细信息，请参阅 [SharePoint 外接程序的 UX 设计](ux-design-for-sharepoint-add-ins.md)。
+- **UI：** 可通过三种方式在 SharePoint 中显示 SharePoint 外接程序：至少，所有外接程序都会显示在一个完整的网页中。或者，也可以通过外接程序部件显示外接程序，以及通过菜单项或功能区按钮显示外接程序。有关详细信息，请参阅 [SharePoint 外接程序的 UX 设计](ux-design-for-sharepoint-add-ins.md)。
 
     > **注释**
     > SharePoint 外接程序可由客户安装到一个租赁中的多个网站集中，或由客户安装在每个网站上。前者称为租户范围外接程序。如果希望客户具有租户范围选项，您就无法包含自定义功能区按钮或外接程序部件。有关详细信息，请参阅 [SharePoint 外接程序的租赁和部署范围](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。 

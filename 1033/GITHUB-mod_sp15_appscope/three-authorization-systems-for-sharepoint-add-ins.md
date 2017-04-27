@@ -7,12 +7,12 @@ ms.assetid: 623fdab7-856e-4a89-9f5d-748a2ba1ef2e
 
 # Three authorization systems for SharePoint Add-ins
 Learn the three systems that SharePoint Add-ins can use to get authorization to SharePoint resources.
- 
-
-
-
-
 In SharePoint, a SharePoint Add-in is an identity principal just like a user and it must be authenticated and authorized to use SharePoint resources. There are three authorization systems that an add-in can use. They are not mutually exclusive.
+
+
+
+
+
 ## Understand the three authorization systems and when to use them
 <a name="UnderstandThreeSystems"> </a>
 
@@ -26,7 +26,7 @@ In SharePoint, a SharePoint Add-in is an identity principal just like a user and
     For more information about creating a SharePoint Add-in that uses the low-trust system, see the SDK node  [Creating SharePoint Add-ins that use low-trust authorization](creating-sharepoint-add-ins-that-use-low-trust-authorization.md).
 
     > **NOTE**
-      > The customer who installs the add-in must have an Office 365 account. This is needed to give the add-in access to the Azure ACS. However, the customer need not use the account for any other purpose, and the add-in can be installed to an on-premise SharePoint farm after some simple configuration tasks on the farm. 
+    > The customer who installs the add-in must have an Office 365 account. This is needed to give the add-in access to the Azure ACS. However, the customer need not use the account for any other purpose, and the add-in can be installed to an on-premise SharePoint farm after some simple configuration tasks on the farm. 
 - **High-Trust**: A provider-hosted add-in can establish trust with SharePoint by using digital certificates. The high-trust system is primarily intended for add-ins whose remote components are hosted on-premise. The add-in can be installed to a SharePoint farm that is not connected to the Internet. The add-in cannot be installed on SharePoint Online or sold in the Office Store.
 
     For more information about creating a SharePoint Add-in that uses the high-trust system, see the SDK node  [Creating SharePoint Add-ins that use high-trust authorization](creating-sharepoint-add-ins-that-use-high-trust-authorization.md).
