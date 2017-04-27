@@ -438,7 +438,7 @@ SharePoint 在内容数据库和租户中支持四个不同的权限范围，如
 ||||
 |:-----|:-----|:-----|
 |**范围 URI** <br/> |**属性** <br/> |**类型** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **注释**> 有关 **BaseTemplateId** 和列表基本模板对应的整数值的详细信息，请参阅 [List 元素（列表）](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) 的 **Type** 属性。          |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **注释**<br /> 有关 **BaseTemplateId** 和列表基本模板对应的整数值的详细信息，请参阅 [List 元素（列表）](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) 的 **Type** 属性。          |
  
 
 ## 管理外接程序权限并进行故障排除

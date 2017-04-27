@@ -432,7 +432,7 @@ The **BaseTemplateId** property is a child element, not an attribute of the **Ap
 ||||
 |:-----|:-----|:-----|
 |**Scope URI** <br/> |**Property** <br/> |**Type** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **NOTE**> For more information about **BaseTemplateId** and the corresponding integer value for the list base template, see the **Type** attribute of the [List Element (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **NOTE**<br /> For more information about **BaseTemplateId** and the corresponding integer value for the list base template, see the **Type** attribute of the [List Element (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
  
 
 ## Manage and troubleshoot add-in permissions

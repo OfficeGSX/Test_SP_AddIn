@@ -432,7 +432,7 @@ La propriété **BaseTemplateId** est un élément enfant, et non un attribut de
 ||||
 |:-----|:-----|:-----|
 |**URI d'étendue** <br/> |**Propriété** <br/> |**Type** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Entier  <br/> > **REMARQUE**> Pour plus d'informations sur **BaseTemplateId** et la valeur d'entier correspondante pour le modèle de base de liste, voir l'attribut **Type** de l' [List, élément (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **REMARQUE**<br /> Pour plus d'informations sur **BaseTemplateId** et la valeur d'entier correspondante pour le modèle de base de liste, voir l'attribut **Type** de l' [List, élément (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
  
 
 ## Gestion et résolution des problèmes relatifs aux autorisations de complément

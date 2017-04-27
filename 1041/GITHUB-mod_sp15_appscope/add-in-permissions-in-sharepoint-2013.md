@@ -432,7 +432,7 @@ SharePoint の他の機能に対するアクセス許可要求の範囲を以下
 ||||
 |:-----|:-----|:-----|
 |**範囲 URI** <br/> |**プロパティ** <br/> |**型** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br/> > **メモ**> **BaseTemplateId** およびリスト ベース テンプレートに対応する整数値の詳細については、 [List 要素 (リスト)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) の **Type** 属性を参照してください。          |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **メモ**<br /> **BaseTemplateId** およびリスト ベース テンプレートに対応する整数値の詳細については、 [List 要素 (リスト)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx) の **Type** 属性を参照してください。          |
  
 
 ## アドインのアクセス許可の管理とトラブルシューティング

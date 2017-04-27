@@ -432,7 +432,7 @@ SharePoint поддерживает четыре различных област
 ||||
 |:-----|:-----|:-----|
 |**URI области** <br/> |**Свойство** <br/> |**Тип** <br/> |
-|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Целое число  <br/> > **Примечание**> Подробнее о свойстве **BaseTemplateId** и соответствующем целочисленном значении для базового шаблона списка см. в описании атрибута **Type** [Элемент List (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
+|http://sharepoint/content/sitecollection/web/list  <br/> |**BaseTemplateId** <br/> |Integer  <br /><br /> **Примечание**<br /> Подробнее о свойстве **BaseTemplateId** и соответствующем целочисленном значении для базового шаблона списка см. в описании атрибута **Type** [Элемент List (List)](http://msdn.microsoft.com/library/b2b26fee-eb45-48ac-99f1-65f725da293f%28Office.15%29.aspx).           |
  
 
 ## Управление разрешениями надстройки и устранение связанных с ними неполадок
