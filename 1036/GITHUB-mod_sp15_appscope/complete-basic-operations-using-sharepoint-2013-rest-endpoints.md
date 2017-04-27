@@ -294,9 +294,6 @@ Lorsque vous envoyez une demande POST, celle-ci doit inclure la valeur de conden
 
 
 - Dans les compléments hébergés sur SharePoint, il vous suffit de transmettre l'en-tête suivant : 
-
-
-
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -333,7 +330,7 @@ Les demandes sont envoyées au point de terminaison de ressource spécifié dans
 
 
 
- _<URL du site>_/_api/ _<contexte>_/ _<ressource>_ (exemple : https://contoso.com/_api/web/lists)
+ _\<URL du site\>_/_api/ _\<contexte\>_/ _\<ressource\>_ (exemple : https://contoso.com/_api/web/lists)
 
 
 

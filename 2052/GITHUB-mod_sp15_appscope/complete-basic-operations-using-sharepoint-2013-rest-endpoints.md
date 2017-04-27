@@ -310,9 +310,6 @@ jQuery.ajax({
 
 
 - 在 SharePoint 托管的外接程序中，您可以仅传递以下标头：
-
-
-
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -349,7 +346,7 @@ jQuery.ajax({
 
 
 
- _<网站 URL>_/_api/ _<上下文>_/ _<资源>_（示例，https://contoso.com/_api/web/lists）
+ _\<网站 URL\>_/_api/ _\<上下文\>_/ _\<资源\>_（示例，https://contoso.com/_api/web/lists）
 
 
 

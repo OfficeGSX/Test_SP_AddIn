@@ -294,9 +294,6 @@ POST 要求を送信するときは、 **X-RequestDigest** ヘッダーにフォ
 
 
 - SharePoint でホストされるアドインの場合は、次のヘッダーを渡すだけです。
-
-
-
 "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -333,7 +330,7 @@ OAuth アクセス トークンとそれらを取得する方法の詳細は、�
 
 
 
- _<site url>_/_api/ _<context>_/ _<resource>_ (example, https://contoso.com/_api/web/lists)
+ _\<site url\>_/_api/ _\<context\>_/ _\<resource\>_ (example, https://contoso.com/_api/web/lists)
 
 
 

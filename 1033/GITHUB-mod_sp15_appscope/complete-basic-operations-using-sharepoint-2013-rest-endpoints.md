@@ -294,9 +294,6 @@ When you send a POST request, the request must include the form digest value in 
 
 
 - In SharePoint-hosted add-ins, you can just pass the following header: 
-
-
-
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -333,7 +330,7 @@ Requests are sent to the resource endpoint that's specified in the **url** prope
 
 
 
- _<site url>_/_api/ _<context>_/ _<resource>_ (example, https://contoso.com/_api/web/lists)
+ _\<site url\>_/_api/ _\<context\>_/ _\<resource\>_ (example, https://contoso.com/_api/web/lists)
 
 
 

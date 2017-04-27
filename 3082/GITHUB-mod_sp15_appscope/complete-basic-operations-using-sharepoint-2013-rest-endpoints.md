@@ -294,9 +294,6 @@ Al enviar una solicitud POST, hay que incluir el valor de síntesis de formulari
 
 
 - En los complementos hospedados en SharePoint, basta con pasar el siguiente encabezado: 
-
-
-
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -333,7 +330,7 @@ Las solicitudes se envían al extremo del recurso que se especifica en la propie
 
 
 
- _<url del sitio>_/_api/ _<contexto>_/ _<recurso>_ (ejemplo, https://contoso.com/_api/web/lists)
+ _\<url del sitio\>_/_api/ _\<contexto\>_/ _\<recurso\>_ (ejemplo, https://contoso.com/_api/web/lists)
 
 
 

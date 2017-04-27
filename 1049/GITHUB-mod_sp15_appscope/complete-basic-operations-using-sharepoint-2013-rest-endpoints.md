@@ -294,9 +294,6 @@ jQuery.ajax({
 
 
 - В надстройках с размещением в SharePoint достаточно передавать следующий заголовок: 
-
-
-
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
 
 
@@ -333,7 +330,7 @@ jQuery.ajax({
 
 
 
- _<адрес сайта>_/_api/ _<контекст>_/ _<ресурс>_ (например, https://contoso.com/_api/web/lists)
+ _\<адрес сайта\>_/_api/ _\<контекст\>_/ _\<ресурс\>_ (например, https://contoso.com/_api/web/lists)
 
 
 
