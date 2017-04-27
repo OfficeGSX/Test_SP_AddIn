@@ -18,6 +18,7 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 
 
  *表 1. 常用核心 API* 
+
 ||||
 |:-----|:-----|:-----|
 |**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**REST 终结点** <br/> |

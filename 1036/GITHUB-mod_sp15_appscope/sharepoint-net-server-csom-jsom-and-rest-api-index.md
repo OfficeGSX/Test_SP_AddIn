@@ -18,6 +18,7 @@ Le tableau 1 présente les API principales les plus fréquemment utilisées, qui
 
 
  *Tableau 1. API principales fréquemment utilisées* 
+
 ||||
 |:-----|:-----|:-----|
 |**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**Point de terminaison REST** <br/> |

@@ -18,6 +18,7 @@ La tabla 1 enumera las principales API de uso más frecuente, que en la mayoría
 
 
  *Tabla 1. Las principales API de uso frecuente* 
+
 ||||
 |:-----|:-----|:-----|
 |**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**Extremo de REST** <br/> |

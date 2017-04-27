@@ -24,6 +24,7 @@ Table 1 lists the most frequently used, core APIs, which are in most cases based
 
 
  *Table 1. Frequently used Core APIs* 
+
 ||||
 |:-----|:-----|:-----|
 |**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**REST Endpoint** <br/> |

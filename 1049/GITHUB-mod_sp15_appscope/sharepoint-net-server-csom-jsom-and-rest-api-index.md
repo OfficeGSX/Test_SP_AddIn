@@ -18,6 +18,7 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 
 
  *Таблица 1. Часто используемые основные API* 
+
 ||||
 |:-----|:-----|:-----|
 |**API** <br/> |**SP.Object/Enumeration (sp.js)** <br/> |**Конечная точка REST** <br/> |
