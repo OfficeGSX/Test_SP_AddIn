@@ -7,12 +7,6 @@ ms.assetid: 526c8c4a-5cbb-4efc-87d9-23ac73655cf4
 
 # Context Token OAuth flow for SharePoint Add-ins
 Learn about the OAuth authentication and authorization flow for low-trust, provider-hosted add-ins in SharePoint.
- 
-
-
-
-
-
 ## Get an overview of OAuth and SharePoint provider-hosted SharePoint Add-ins
 <a name="OAuth_Actors"> </a>
 

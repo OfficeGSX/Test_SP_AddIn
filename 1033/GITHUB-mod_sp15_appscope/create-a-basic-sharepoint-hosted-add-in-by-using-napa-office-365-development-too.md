@@ -10,24 +10,26 @@ Learn how to create a basic SharePoint-hosted SharePoint Add-in by using Napa Of
 
 
 
-![Run button](images/Apps_NAPA_Run_Button.png)
-
-
-
- [Run this sample now!](http://go.microsoft.com/fwlink/?LinkId=313212)
- 
-
-
-
-
+![Run button](images/Apps_NAPA_Run_Button.png) [Run this sample now!](http://go.microsoft.com/fwlink/?LinkId=313212)
 Napa is a tool that you can use to create SharePoint-hosted SharePoint Add-ins. Napa is itself implemented as a (provider-hosted) SharePoint Add-in that can be installed on SharePoint Online websites that are created with the **Developer Site** template. SharePoint developer sites have a library called **Add-ins in Testing** on the home page. Instructions for creating a developer site and installing Napa are later in this article.
+
+
+
+
+
 > **NOTE**
 > We do not support installing Napa to on-premises SharePoint. 
 
 
 
 
-By using Napa, you can create your SharePoint Add-ins inside your browser instead of in Visual Studio. At any time, you can download your project and open it in Visual Studio for more advanced scenarios.By following this article, you can learn how to create a simple SharePoint-hosted SharePoint Add-in by using Napa. The add-in that you'll create includes controls and code for managing lists and list items. 
+
+By using Napa, you can create your SharePoint Add-ins inside your browser instead of in Visual Studio. At any time, you can download your project and open it in Visual Studio for more advanced scenarios.
+
+
+
+
+By following this article, you can learn how to create a simple SharePoint-hosted SharePoint Add-in by using Napa. The add-in that you'll create includes controls and code for managing lists and list items. 
 > **NOTE**
 > You can create only SharePoint-hosted SharePoint Add-ins with Napa, not provider-hosted. For information on the differences, see  [SharePoint Add-ins](sharepoint-add-ins.md). > You cannot use SharePoint's add-in updating semantics, which is described in  [Update add-in web components in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), in Napa. So if you need to update an add-in created in Napa, you first have to export it to Visual Studio. Instructions for doing so are later in this article. > You can also create a SharePoint Add-in by using Visual Studio. For more information, see  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
 
@@ -231,7 +233,7 @@ In the SharePoint Add-in, add controls to the default home page for creating and
  ```
 
 
-    The HTML creates these controls.
+The HTML creates these controls.
 
   - A button that gets the number of lists in the web of the SharePoint Add-in.
 
@@ -268,7 +270,7 @@ In this procedure, you'll add some JavaScript code so that users can create and 
 | `deletelist()` <br/> |Connected to the **deletelistbutton** control—deletes the list that the user chose from the list of available lists. <br/> |
  
 
-    You'll also call the  `welcome()` and `displayLists()` functions, which this walkthrough will describe later.
+You'll also call the  `welcome()` and `displayLists()` functions, which this walkthrough will describe later.
 
 
 2. In the **App.js** file, add the `web`,  `lists`, and  `listItemcollection` variables to the two default variables, and change the code in the `$(document).ready()` function to the following example.
@@ -312,7 +314,7 @@ $(document).ready(function () {
  ```
 
 
-    In the next step, you'll add JavaScript functions for the definitions. Each function in the code is executed by calling  `executeQueryAsync()`, which executes the current pending request asynchronously on the server by using the client-side object model (CSOM) for SharePoint. When a function executes asynchronously, your script continues to run without waiting for the server to respond. Each  `executeQueryAsync()` call includes two event handlers. One handler responds if the function runs successfully, and the other handler responds if the function fails. This table describes the main functions.
+In the next step, you'll add JavaScript functions for the definitions. Each function in the code is executed by calling  `executeQueryAsync()`, which executes the current pending request asynchronously on the server by using the client-side object model (CSOM) for SharePoint. When a function executes asynchronously, your script continues to run without waiting for the server to respond. Each  `executeQueryAsync()` call includes two event handlers. One handler responds if the function runs successfully, and the other handler responds if the function fails. This table describes the main functions.
 
 
 |**Function name**|**Description**|
@@ -424,15 +426,7 @@ The first part of the UI and code is in place, so go ahead and run the add-in to
 ### To run the add-in
 
 
-1. At the bottom of the page, choose the run (
-
-
-
-![Run button](images/Apps_NAPA_Run_Button.png)
-
-
-
-) button.
+1. At the bottom of the page, choose the run ( ![Run button](images/Apps_NAPA_Run_Button.png) ) button.
 
     The add-in is packaged, deployed, and installed on your Office 365 Developer Site.
 
@@ -498,7 +492,7 @@ Now that users can create and delete lists, you can perform the following steps 
  ```
 
 
-    This code adds an input box where users can specify the name of an item, a button to add the item to the list, and a button to delete the item from the list.
+This code adds an input box where users can specify the name of an item, a button to add the item to the list, and a button to delete the item from the list.
 
 
 3. Choose the **App.js** file to edit it.
