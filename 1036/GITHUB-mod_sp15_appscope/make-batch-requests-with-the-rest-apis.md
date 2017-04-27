@@ -35,7 +35,7 @@ SharePoint Online (et SharePoint sur site 2016 ou ultérieur) et les API Office 
 - Un composant peut être une opération de lecture (ou un appel de fonction), ou un ensemble de modifications d'une ou plusieurs opérations d'écriture (ou appels de fonctions). Un ensemble de modifications est lui-même un type MIME  *multipart/mixed*  avec des sous-parties contenant des opérations d'insertion, de mise à jour ou de suppression.
 
     > **IMPORTANTE**
-      > À l'heure actuelle, SharePoint et les API Office 365 ne prennent pas en charge la fonctionnalité « tout ou rien » pour les ensembles de modification contenant plusieurs opérations. Si l'une des opérations enfants échoue, les autres s'exécutent quand même et ne sont pas annulées. 
+    > À l'heure actuelle, SharePoint et les API Office 365 ne prennent pas en charge la fonctionnalité « tout ou rien » pour les ensembles de modification contenant plusieurs opérations. Si l'une des opérations enfants échoue, les autres s'exécutent quand même et ne sont pas annulées. 
 
 ## Exemples de code
 
