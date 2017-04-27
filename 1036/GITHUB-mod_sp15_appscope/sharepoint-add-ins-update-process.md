@@ -78,7 +78,7 @@ SharePoint 2013 effectue les actions suivantes lorsqu'un utilisateur installe un
 - SharePoint 2013 exécute le service web **UpgradedEventEndpoint**, si un tel service est enregistré dans le manifeste du complément.
 
     > **REMARQUE**
-      > Si le complément est hébergé par un fournisseur, vous fournissez la logique de mise à jour pour tous les composants hors SharePoint du complément. Vous pouvez mettre à jour la plupart de ces composants séparément par rapport à la mise à jour du Complément SharePoint lui-même, de la même façon que vous avez installé ces composants séparément par rapport à l'installation du complément. Certaines modifications ne doivent néanmoins être effectuées que lorsque l'utilisateur met à jour le Complément SharePoint. Cette logique peut être intégrée à un service web **UpgradedEventEndpoint** ou dans une logique de « première exécution après mise à jour » du complément lui-même.
+    > Si le complément est hébergé par un fournisseur, vous fournissez la logique de mise à jour pour tous les composants hors SharePoint du complément. Vous pouvez mettre à jour la plupart de ces composants séparément par rapport à la mise à jour du Complément SharePoint lui-même, de la même façon que vous avez installé ces composants séparément par rapport à l'installation du complément. Certaines modifications ne doivent néanmoins être effectuées que lorsque l'utilisateur met à jour le Complément SharePoint. Cette logique peut être intégrée à un service web **UpgradedEventEndpoint** ou dans une logique de « première exécution après mise à jour » du complément lui-même.
 - SharePoint 2013 rend le complément et ses composants disponibles à nouveau.
 
 

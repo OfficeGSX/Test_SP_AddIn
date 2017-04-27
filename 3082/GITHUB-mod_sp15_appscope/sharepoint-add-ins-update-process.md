@@ -78,7 +78,7 @@ SharePoint 2013 hará lo siguiente cuando un usuario instale una actualización 
 - SharePoint 2013 ejecuta el servicio web **UpgradedEventEndpoint**, si registra algo en el manifiesto del complemento.
 
     > **NOTA**
-      > Si el complemento está hospedado por el proveedor, proporcione la lógica de actualización para todos los componentes que no sean de SharePoint del complemento. En la mayoría de los casos, la actualización de estos componentes se realiza de forma independiente a la actualización de la propia Complemento de SharePoint, igual que cuando instaló esos componentes de forma independiente a la instalación del complemento. Pero puede haber algunos cambios que solo deberían suceder cuando un usuario está actualizando la Complemento de SharePoint. Esta lógica también puede ir en un servicio web **UpgradedEventEndpoint** o en una lógica "ejecutar primero después de actualizar" del propio complemento.
+    > Si el complemento está hospedado por el proveedor, proporcione la lógica de actualización para todos los componentes que no sean de SharePoint del complemento. En la mayoría de los casos, la actualización de estos componentes se realiza de forma independiente a la actualización de la propia Complemento de SharePoint, igual que cuando instaló esos componentes de forma independiente a la instalación del complemento. Pero puede haber algunos cambios que solo deberían suceder cuando un usuario está actualizando la Complemento de SharePoint. Esta lógica también puede ir en un servicio web **UpgradedEventEndpoint** o en una lógica "ejecutar primero después de actualizar" del propio complemento.
 - SharePoint 2013 hace que el complemento y sus componentes vuelvan a estar disponibles.
 
 

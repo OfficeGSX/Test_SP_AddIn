@@ -7,12 +7,12 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
 
 # SharePoint Add-ins update process
 Learn about the process for updating SharePoint Add-ins.
- 
-
-
-
-
 You have to update a SharePoint Add-in if you add functionality, fix a bug, or make a security update. An update to an add-in is deployed in a SharePoint Add-in package in the same way that the first version of the add-in is deployed. The SharePoint Add-in update process ensures that the add-in's data is preserved if the update fails for any reason.
+
+
+
+
+
 > **IMPORTANT**
 > You cannot change the  *add-in type*  using the update system. For example, you cannot change an add-in from SharePoint-hosted to provider-hosted with an update. To make a change of type, you need to [migrate from an old add-in to a new one](#Major). In particular, since  [the preview program for autohosted add-ins has been closed](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/), you should be aware that you cannot update an autohosted add-in to a provider-hosted add-in. You have to convert the add-in as explained in  [Convert an autohosted SharePoint Add-in to a provider-hosted add-in](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md). 
 
@@ -78,7 +78,7 @@ SharePoint 2013 will do the following when a user installs an update to a ShareP
 - SharePoint 2013 executes the **UpgradedEventEndpoint** web service, if any is registered in the add-in manifest.
 
     > **NOTE**
-      > If the add-in is provider-hosted, you provide the update logic for all the non-SharePoint components of the add-in. For the most part, you update these components separately from the update of the SharePoint Add-in itself, just as you installed these components separately from the installation of the add-in. But there may be some changes that should only happen when a user is updating the SharePoint Add-in. This logic can go in an **UpgradedEventEndpoint** web service or in "first run after update" logic of the add-in itself.
+    > If the add-in is provider-hosted, you provide the update logic for all the non-SharePoint components of the add-in. For the most part, you update these components separately from the update of the SharePoint Add-in itself, just as you installed these components separately from the installation of the add-in. But there may be some changes that should only happen when a user is updating the SharePoint Add-in. This logic can go in an **UpgradedEventEndpoint** web service or in "first run after update" logic of the add-in itself.
 - SharePoint 2013 makes the add-in and its components available again.
 
 
