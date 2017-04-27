@@ -8,12 +8,12 @@ ms.assetid: 5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4
 
 # Add-in permissions in SharePoint 2013
 Learn about add-in permissions in SharePoint, including types of add-in permissions, permission request scopes, and managing permissions. This article also discusses the differences in add-in permission rights, user rights, and Office Store app rights.
- 
-
-
-
-
 You should first be familiar with the topic  [Authorization and authentication of SharePoint Add-ins](authorization-and-authentication-of-sharepoint-add-ins.md) before you read this article.
+
+
+
+
+
 **Watch a video about add-in permissions.**
 
 
