@@ -107,7 +107,7 @@ La Complemento de SharePoint suele tener asociada una aplicación web host, que 
     Debe especificar una dirección que comience con el prefijo "https". Consulte  [¿Por qué los complementos deben estar protegidos mediante SSL?](http://msdn.microsoft.com/library/jj591603#bk_q7).
 
     > **NOTA**
-      > Los sitios web de Azure proporcionan automáticamente un extremo https. Si publica el complemento en un sitio de la Tienda Office o la Tienda Office, la dirección debe empezar con un prefijo https. Sin embargo, si publica el complemento en un sitio local, podrá usar un prefijo http. 
+    > Los sitios web de Azure proporcionan automáticamente un extremo https. Si publica el complemento en un sitio de la Tienda Office o la Tienda Office, la dirección debe empezar con un prefijo https. Sin embargo, si publica el complemento en un sitio local, podrá usar un prefijo http. 
 
     En el cuadro de texto **¿Cuál es el identificador de cliente del complemento?**, debería aparecer el identificador de cliente que haya introducido en el perfil de publicación.
 
