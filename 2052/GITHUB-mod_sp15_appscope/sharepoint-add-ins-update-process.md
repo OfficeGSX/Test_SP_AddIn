@@ -48,7 +48,7 @@ ms.assetid: 3dba209d-cb98-4e5d-b4b2-fad31e667ca1
 
 
 > **提示**
->  开发更新时，您一定不希望在每次将新版本上载到测试 SharePoint 外接程序目录后等待 24 个小时。请参阅 [更新外接程序时无需等待 24 小时](update-sharepoint-add-ins.md#ImmediateUpdateNotice)，获取有关如何立即更新外接程序的信息。 >  默认情况下，SharePoint 每 24 小时会检查一次已安装外接程序的更新。场管理员可以使用以下 SharePoint Management Shell命令将检查时间设置为另一个值，在此命令中n 是检查之间的小时数。>  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`>  如果该值设置为 0，那么在每次执行内置计时器任务"内部外接程序状态更新"时进行检查，默认情况下为每小时一次。场管理员可以使用管理中心更改计时器任务的频率或立即运行该任务。
+>  开发更新时，您一定不希望在每次将新版本上载到测试 SharePoint 外接程序目录后等待 24 个小时。请参阅 [更新外接程序时无需等待 24 小时](update-sharepoint-add-ins.md#ImmediateUpdateNotice)，获取有关如何立即更新外接程序的信息。 <BR />  默认情况下，SharePoint 每 24 小时会检查一次已安装外接程序的更新。场管理员可以使用以下 SharePoint Management Shell命令将检查时间设置为另一个值，在此命令中n 是检查之间的小时数。<BR />  `Set-SPInternalAppStateUpdateInterval -AppStateSyncHours n`<BR />  如果该值设置为 0，那么在每次执行内置计时器任务"内部外接程序状态更新"时进行检查，默认情况下为每小时一次。场管理员可以使用管理中心更改计时器任务的频率或立即运行该任务。
 
 
 
