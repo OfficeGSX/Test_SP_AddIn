@@ -139,7 +139,7 @@ case SPRemoteEventType.AppInstalled:
 
 
 > **注释**
-> 将需要 30 秒以上的安装代码移入外接程序本身。您可以将其添加到"第一次运行"逻辑中，该逻辑在外接程序第一次运行时执行。外接程序能够显示"我们正在为您做相关准备"之类的消息。或者，外接程序也可以提示用户运行初始化代码。 > 如果"首次运行"逻辑在您的外接程序中不可行，另一个选项是让您的事件处理程序启动远程异步进程，然后立即返回  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 对象，其中 **Status** 设置为 **Continue**。此策略的一个缺陷是，如果远程进程失败，将无法告知 SharePoint 回滚外接程序安装。 
+> 将需要 30 秒以上的安装代码移入外接程序本身。您可以将其添加到"第一次运行"逻辑中，该逻辑在外接程序第一次运行时执行。外接程序能够显示"我们正在为您做相关准备"之类的消息。或者，外接程序也可以提示用户运行初始化代码。 <BR/> 如果"首次运行"逻辑在您的外接程序中不可行，另一个选项是让您的事件处理程序启动远程异步进程，然后立即返回  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 对象，其中 **Status** 设置为 **Continue**。此策略的一个缺陷是，如果远程进程失败，将无法告知 SharePoint 回滚外接程序安装。 
 9. 如 [加载项事件处理程序的体系结构策略](handle-events-in-sharepoint-add-ins.md#Strategies)中所述，处理程序委派策略是首选，尽管不可能适用于每个方案。在下面的示例中，我们向您演示将列表添加到主机 Web 时，如何实现处理程序委派策略。（有关如何创建类似于不使用处理程序委派策略的 AppInstalled 事件处理程序的信息，请参阅示例  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents)。）
 
     以下是 AppInstalled **case** 块的新版本。请注意，适用于所有事件的初始化逻辑位于 **switch** 块之上。由于安装的同一个列表会在 AppUninstalling 处理程序中被删除，所以在此处对该列表进行标识。
@@ -269,7 +269,7 @@ using (condScope.StartScope())
 
 
 > **提示**
-> **故障排除：**若要测试您的 **StartCatch** 块是否在适宜的时候完成了输入，您需要使用一种方法在 SharePoint 服务器上引发运行时异常。使用 **throw** 或除以零都不奏效，因为它们会在客户端运行时能够绑定代码并将其发送至服务器之前导致发生 *客户端*  异常（使用 **ExecuteQuery** 方法）。另一种做法是，将以下代码行添加到 **StartTry** 块。客户端运行时接受此操作，但会导致发生服务器端异常，而这正是您所希望的。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
+> **故障排除：**若要测试您的 **StartCatch** 块是否在适宜的时候完成了输入，您需要使用一种方法在 SharePoint 服务器上引发运行时异常。使用 **throw** 或除以零都不奏效，因为它们会在客户端运行时能够绑定代码并将其发送至服务器之前导致发生 *客户端*  异常（使用 **ExecuteQuery** 方法）。另一种做法是，将以下代码行添加到 **StartTry** 块。客户端运行时接受此操作，但会导致发生服务器端异常，而这正是您所希望的。<BR/>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
 
 
 
