@@ -23,7 +23,7 @@ SharePoint Online (а также локальная версия SharePoint 2016
 - URL-адрес запроса состоит из URL-адреса корневой службы и параметра  `$batch`, например  `https://fabrikam.sharepoint.com/_api/$batch` или `https://fabrikam.office365.com/api/v1.0/me/$batch`.
 
 
-- Текст HTTP-запроса  это MIME-тип  *multipart/mixed*  .
+- Текст HTTP-запроса это MIME-тип  *multipart/mixed*  .
 
 
 - Текст запроса делится на части, отделенные друг от друга граничной строкой, которая указывается в заголовке запроса.

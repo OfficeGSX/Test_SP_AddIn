@@ -403,7 +403,7 @@ var pplPicker = new Office.Controls.PeoplePicker(
 var principal = pplPicker.selectedItems[i];
 $("#msg").text(principal.text + " is selected in the control.");```
 
-Пример способа загрузки выбранных людей или групп из мини-приложения приведен на странице **demo.html** в разделе [Веб-виджеты Office  экспериментальная демо-версия](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
+Пример способа загрузки выбранных людей или групп из мини-приложения приведен на странице **demo.html** в разделе [Веб-виджеты Office экспериментальная демо-версия](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
 
 
 

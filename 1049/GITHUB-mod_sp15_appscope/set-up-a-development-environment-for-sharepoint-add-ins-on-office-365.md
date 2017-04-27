@@ -31,7 +31,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
 
 
 
-1. Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\\Software\\Microsoft\\VisualStudio\\ _nn.n_\\SharePointTools**, где _nn.n_  это номер версии Visual Studio, например 12.0 или 14.0.
+1. Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\\Software\\Microsoft\\VisualStudio\\ _nn.n_\\SharePointTools**, где _nn.n_ это номер версии Visual Studio, например 12.0 или 14.0.
 
 
 2. Добавьте ключ DWORD с именем **EnableDiagnostics**.

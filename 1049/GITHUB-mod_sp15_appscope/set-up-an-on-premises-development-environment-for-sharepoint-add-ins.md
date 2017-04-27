@@ -159,7 +159,7 @@ dir /od *.log
 
 
 
-1. Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\\Software\\Microsoft\\VisualStudio\\ _nn.n_\\SharePointTools**, где _nn.n_  это версия Visual Studio, например 12.0 или 14.0.
+1. Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\\Software\\Microsoft\\VisualStudio\\ _nn.n_\\SharePointTools**, где _nn.n_ это версия Visual Studio, например 12.0 или 14.0.
 
 
 2. Добавьте ключ DWORD под названием **EnableDiagnostics**.
