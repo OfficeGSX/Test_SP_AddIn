@@ -10,11 +10,7 @@ Napa Office 365 開発ツール を使用して基本的な SharePoint ホスト
 
 
 
-![[実行] ボタン](images/Apps_NAPA_Run_Button.png)
-
-
-
- [このサンプルをすぐに実行](http://go.microsoft.com/fwlink/?LinkId=313212)
+![[実行] ボタン](images/Apps_NAPA_Run_Button.png)  [このサンプルをすぐに実行](http://go.microsoft.com/fwlink/?LinkId=313212)
 Napa は、SharePoint ホスト型 SharePoint アドインの作成に使用できるツールです。Napa 自体は、 **開発者向けサイト** テンプレートを使って作成する SharePoint Online Web サイト上にインストールできる (プロバイダー ホスト型) SharePoint アドインとして実装されます。SharePoint 開発者向けサイトのホーム ページには **テスト中アドイン** と呼ばれるライブラリがあります。開発者向けサイトの作成と Napa のインストールに関する指示については、この記事の中で後述します。
 
 
@@ -35,7 +31,7 @@ Napa を使用すると、Visual Studio ではなくブラウザーの中で Sha
 
 この記事では、Napaを使用して簡単な SharePoint ホスト型 SharePoint アドインを作成する方法を説明します。ここで作成するアドインには、リストとリスト アイテムを管理するためのコントロールとコードが含まれています。
 > **メモ**
-> Napa を使用して作成できるのは SharePoint ホスト型の SharePoint アドインだけで、プロバイダー ホスト型は作成できません。両者の違いについては、「 [SharePoint アドイン](sharepoint-add-ins.md)」を参照してください。 > 「 [SharePoint 2013 でアドイン Web コンポーネントを更新する](update-add-in-web-components-in-sharepoint-2013.md)」で説明されている SharePoint のアドイン更新セマンティクスは Napa では使用できません。したがって、Napa で作成したアドインを更新する必要がある場合には、最初に Visual Studio にエクスポートする必要があります。その方法に関する指示は、この記事で後述します。 > Visual Studio を使用して SharePoint アドインを作成することもできます。詳細については、「 [SharePoint ホスト型の SharePoint アドインの作成を始める](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)」を参照してください。 
+> Napa を使用して作成できるのは SharePoint ホスト型の SharePoint アドインだけで、プロバイダー ホスト型は作成できません。両者の違いについては、「 [SharePoint アドイン](sharepoint-add-ins.md)」を参照してください。 <BR /><BR /> 「 [SharePoint 2013 でアドイン Web コンポーネントを更新する](update-add-in-web-components-in-sharepoint-2013.md)」で説明されている SharePoint のアドイン更新セマンティクスは Napa では使用できません。したがって、Napa で作成したアドインを更新する必要がある場合には、最初に Visual Studio にエクスポートする必要があります。その方法に関する指示は、この記事で後述します。 <BR /><BR /> Visual Studio を使用して SharePoint アドインを作成することもできます。詳細については、「 [SharePoint ホスト型の SharePoint アドインの作成を始める](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)」を参照してください。 
 
 
 
@@ -50,7 +46,7 @@ Napa を使用すると、Visual Studio ではなくブラウザーの中で Sha
 
 
 > **メモ**
->  既に Office 365 開発者向けサイト にアクセスできる可能性があります。> **MSDN サブスクライバーになっておられますか?** MSDN のサブスクライバーが所有する Visual Studio Ultimate および Visual Studio Premium には、特典として Office 365 Developer サブスクリプションが付いています。 [すぐに特典を利用できます。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **以下のいずれかの Office 365 サブスクリプション プランをお持ちですか。**> **お持ちの場合には、Office 365 サブスクリプションの管理者は  [Office 365 管理センター](https://portal.microsoftonline.com/admin/default.aspx)を利用して開発者向けサイト** を作成できます。詳細については、「 [既存の Office 365 サブスクリプション内で開発者向けサイトを作成する](create-a-developer-site-on-an-existing-office-365-subscription.md)」を参照してください。 
+>  既に Office 365 開発者向けサイト にアクセスできる可能性があります。<BR /><BR /> **MSDN サブスクライバーになっておられますか?** MSDN のサブスクライバーが所有する Visual Studio Ultimate および Visual Studio Premium には、特典として Office 365 Developer サブスクリプションが付いています。 [すぐに特典を利用できます。](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **以下のいずれかの Office 365 サブスクリプション プランをお持ちですか。**<BR /><BR /> **お持ちの場合には、Office 365 サブスクリプションの管理者は  [Office 365 管理センター](https://portal.microsoftonline.com/admin/default.aspx)を利用して開発者向けサイト** を作成できます。詳細については、「 [既存の Office 365 サブスクリプション内で開発者向けサイトを作成する](create-a-developer-site-on-an-existing-office-365-subscription.md)」を参照してください。 
 
 
 
@@ -237,7 +233,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
  ```
 
 
-    この HTML によって以下のコントロールが作成されます。
+この HTML によって以下のコントロールが作成されます。
 
   - SharePoint アドインの Web にあるリストの数を取得するボタン。
 
@@ -274,7 +270,7 @@ SharePoint アドインで、標準の SharePoint リストを作成および削
 | `deletelist()` <br/> |**deletelistbutton** コントロールに接続され、利用可能なリストの一覧からユーザーが選択したリストを削除します。 <br/> |
  
 
-    また、後から説明する  `welcome()` 関数と `displayLists()` 関数も呼び出します。
+また、後から説明する  `welcome()` 関数と `displayLists()` 関数も呼び出します。
 
 
 2. [ **App.js**] ファイルで、 `web`、 `lists`、 `listItemcollection` 変数を 2 つの既定の変数に追加し、 `$(document).ready()` 関数のコードを次の例のように変更します。
@@ -318,7 +314,7 @@ $(document).ready(function () {
  ```
 
 
-    次の手順では、定義した JavaScript 関数を追加します。コード内の各関数は  `executeQueryAsync()` を呼び出して実行されます。この呼び出しは SharePoint のクライアント側オブジェクトモデル (CSOM) を使用して、現在保留中の要求をサーバー上で非同期に実行します。関数が非同期に実行されると、スクリプトはサーバーからの応答を待たずに処理を続行します。 `executeQueryAsync()` の個々の呼び出しには 2 つのイベント ハンドラーが含まれています。1 つのハンドラーは関数が正常に実行された場合に応答し、もう 1 つのハンドラーは関数が失敗した場合に応答します。次の表に主要な関数を示します。
+次の手順では、定義した JavaScript 関数を追加します。コード内の各関数は  `executeQueryAsync()` を呼び出して実行されます。この呼び出しは SharePoint のクライアント側オブジェクトモデル (CSOM) を使用して、現在保留中の要求をサーバー上で非同期に実行します。関数が非同期に実行されると、スクリプトはサーバーからの応答を待たずに処理を続行します。 `executeQueryAsync()` の個々の呼び出しには 2 つのイベント ハンドラーが含まれています。1 つのハンドラーは関数が正常に実行された場合に応答し、もう 1 つのハンドラーは関数が失敗した場合に応答します。次の表に主要な関数を示します。
 
 
 |**関数名**|**説明**|
@@ -430,15 +426,7 @@ function createlist() {
 ### アドインを実行するには
 
 
-1. ページの下部にある実行 (
-
-
-
-![[実行] ボタン](images/Apps_NAPA_Run_Button.png)
-
-
-
-) ボタンを選択します。
+1. ページの下部にある実行 ( ![[実行] ボタン](images/Apps_NAPA_Run_Button.png) ) ボタンを選択します。
 
     アドインがパッケージ化され、展開され、Office 365 開発者向けサイトにインストールされます。
 
@@ -504,7 +492,7 @@ function createlist() {
  ```
 
 
-    このコードは、ユーザーがアイテムの名前を指定するための入力ボックス、リストにアイテムを追加するためのボタン、およびリストからアイテムを削除するためのボタンを追加します。
+このコードは、ユーザーがアイテムの名前を指定するための入力ボックス、リストにアイテムを追加するためのボタン、およびリストからアイテムを削除するためのボタンを追加します。
 
 
 3. **App.js** ファイルを選択して編集します。
@@ -533,10 +521,10 @@ $("#createitembutton").click(function (event) {
  ```
 
 
-    > **メモ**
-      > アドインを実行するときにリスト アイテムが表示されない場合は、 `displayLists();` ステートメントが前のコードの後にあることを確認します。
+> **メモ**
+> アドインを実行するときにリスト アイテムが表示されない場合は、 `displayLists();` ステートメントが前のコードの後にあることを確認します。
 
-    次の手順で、新しく定義した JavaScript 関数と、サポート関数 ( `getItems()`) を追加します。次の表は、主要な関数の機能を示しています。
+次の手順で、新しく定義した JavaScript 関数と、サポート関数 ( `getItems()`) を追加します。次の表は、主要な関数の機能を示しています。
 
 
 |**関数名**|**説明**|

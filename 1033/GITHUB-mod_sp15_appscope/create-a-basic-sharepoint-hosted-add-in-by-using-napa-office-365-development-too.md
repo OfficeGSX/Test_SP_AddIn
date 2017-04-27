@@ -31,7 +31,7 @@ By using Napa, you can create your SharePoint Add-ins inside your browser instea
 
 By following this article, you can learn how to create a simple SharePoint-hosted SharePoint Add-in by using Napa. The add-in that you'll create includes controls and code for managing lists and list items. 
 > **NOTE**
-> You can create only SharePoint-hosted SharePoint Add-ins with Napa, not provider-hosted. For information on the differences, see  [SharePoint Add-ins](sharepoint-add-ins.md). > You cannot use SharePoint's add-in updating semantics, which is described in  [Update add-in web components in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), in Napa. So if you need to update an add-in created in Napa, you first have to export it to Visual Studio. Instructions for doing so are later in this article. > You can also create a SharePoint Add-in by using Visual Studio. For more information, see  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
+> You can create only SharePoint-hosted SharePoint Add-ins with Napa, not provider-hosted. For information on the differences, see  [SharePoint Add-ins](sharepoint-add-ins.md). <BR /><BR /> You cannot use SharePoint's add-in updating semantics, which is described in  [Update add-in web components in SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), in Napa. So if you need to update an add-in created in Napa, you first have to export it to Visual Studio. Instructions for doing so are later in this article. <BR /><BR /> You can also create a SharePoint Add-in by using Visual Studio. For more information, see  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
 
 
 
@@ -46,7 +46,7 @@ If you don't already have a SharePoint Online subscription that you can use for 
 
 
 > **NOTE**
->  You might already have access to an Office 365 Developer Site:> **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Do you have one of the following Office 365 subscription plans?**> **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more information, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  You might already have access to an Office 365 Developer Site:<BR /><BR /> **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **Do you have one of the following Office 365 subscription plans?**<BR /><BR /> **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more information, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
@@ -521,10 +521,10 @@ $("#createitembutton").click(function (event) {
  ```
 
 
-    > **NOTE**
-      > If the list items aren't displaying when you run the add-in, be sure that the  `displayLists();` statement comes after the previous code.
+> **NOTE**
+> If the list items aren't displaying when you run the add-in, be sure that the  `displayLists();` statement comes after the previous code.
 
-    In the next step, you'll add JavaScript functions for the new definitions and a support function ( `getItems()`). This table describes what the main functions do.
+In the next step, you'll add JavaScript functions for the new definitions and a support function ( `getItems()`). This table describes what the main functions do.
 
 
 |**Function name**|**Description**|

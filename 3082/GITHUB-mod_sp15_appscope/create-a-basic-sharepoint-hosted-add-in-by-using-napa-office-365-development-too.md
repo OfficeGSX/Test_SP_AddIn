@@ -10,11 +10,7 @@ Aprenda a crear un Complemento de SharePoint básico hospedado en SharePoint con
 
 
 
-![Botón Ejecutar](images/Apps_NAPA_Run_Button.png)
-
-
-
- [Ejecute la muestra ahora](http://go.microsoft.com/fwlink/?LinkId=313212)
+![Botón Ejecutar](images/Apps_NAPA_Run_Button.png) [Ejecute la muestra ahora](http://go.microsoft.com/fwlink/?LinkId=313212)
 Napa es una herramienta que puede usar para crear Complementos de SharePoint hospedados en SharePoint. Napa está implementado como un Complemento de SharePoint (hospedada en proveedor) que puede instalarse en sitios web de SharePoint Online que se crean con la plantilla **Sitio para desarrolladores**. Los sitios para desarrolladores de SharePoint incluyen una biblioteca denominada **Complementos en fase de prueba** en la página principal. Las instrucciones para crear un sitio para desarrolladores e instalar Napa se detallan más adelante en este artículo.
 
 
@@ -35,7 +31,7 @@ Con Napa, puede crear sus Complementos de SharePoint dentro del explorador en lu
 
 Con este artículo, aprenderá a crear un Complemento de SharePoint simple hospedado en SharePoint usando Napa. El complemento que cree incluirá controles y código para administrar listas y elementos de lista.
 > **NOTA**
-> Con Napa solo puede crear Complementos de SharePoint hospedados en SharePoint, no hospedadas en proveedor. Para obtener más información sobre las diferencias, consulte  [Complementos de SharePoint](sharepoint-add-ins.md). > No puede usar la semántica para actualización de complementos de SharePoint, que se describe en  [Actualizar componentes de web de complemento en SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), en Napa. Por lo tanto, si necesita actualizar un complemento creado en Napa, primero tiene que exportarlo a Visual Studio. Las instrucciones para hacerlo se detallan más adelante en este artículo. > También puede crear un Complemento de SharePoint usando Visual Studio. Para obtener más información, consulte  [Empezar a crear complementos hospedados en SharePoint para SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
+> Con Napa solo puede crear Complementos de SharePoint hospedados en SharePoint, no hospedadas en proveedor. Para obtener más información sobre las diferencias, consulte  [Complementos de SharePoint](sharepoint-add-ins.md). <BR /><BR /> No puede usar la semántica para actualización de complementos de SharePoint, que se describe en  [Actualizar componentes de web de complemento en SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md), en Napa. Por lo tanto, si necesita actualizar un complemento creado en Napa, primero tiene que exportarlo a Visual Studio. Las instrucciones para hacerlo se detallan más adelante en este artículo. <BR /><BR /> También puede crear un Complemento de SharePoint usando Visual Studio. Para obtener más información, consulte  [Empezar a crear complementos hospedados en SharePoint para SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
 
 
 
@@ -50,7 +46,7 @@ Si no tiene ya una suscripción a SharePoint Online que puede usar para el desar
 
 
 > **NOTA**
->  Podría ya tener acceso a un Sitio para desarrolladores de Office 365:> **¿Es suscriptor de MSDN?** Los suscriptores de Visual Studio Ultimate y Visual Studio Premium con MSDN reciben una suscripción de desarrollador a Office 365 como ventaja adicional. [Solicítela hoy.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **¿Tiene uno de los siguientes planes de suscripción a Office 365?**> **En caso afirmativo, un administrador de la suscripción a Office 365 puede crear un Sitio para desarrolladores** usando el [centro de administración de Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para obtener más información, consulte  [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Podría ya tener acceso a un Sitio para desarrolladores de Office 365:<BR /><BR /> **¿Es suscriptor de MSDN?** Los suscriptores de Visual Studio Ultimate y Visual Studio Premium con MSDN reciben una suscripción de desarrollador a Office 365 como ventaja adicional. [Solicítela hoy.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **¿Tiene uno de los siguientes planes de suscripción a Office 365?**<BR /><BR /> **En caso afirmativo, un administrador de la suscripción a Office 365 puede crear un Sitio para desarrolladores** usando el [centro de administración de Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para obtener más información, consulte  [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
@@ -113,7 +109,7 @@ Dos maneras de obtener un plan de Office 365.
 
 
 > **NOTA**
-> Si tiene iniciada una sesión con otra cuenta Microsoft cuando intente registrar una cuenta de desarrollador, es posible que vea este mensaje: "El id. de usuario que especificó no funcionó. Parece que no es válido. Asegúrese de especificar el id. de usuario que su organización le asignó. El id. de usuario suele ser como  *alguien@example.com*  o *alguien@example.onmicrosoft.com*  ."> Si ve este mensaje, cierre la sesión de la cuenta Microsoft que estaba usando y vuelva a intentarlo. Si sigue viendo el mensaje, borre la memoria caché del explorador o cambie a **Exploración de InPrivate** y rellene el formulario.
+> Si tiene iniciada una sesión con otra cuenta Microsoft cuando intente registrar una cuenta de desarrollador, es posible que vea este mensaje: "El id. de usuario que especificó no funcionó. Parece que no es válido. Asegúrese de especificar el id. de usuario que su organización le asignó. El id. de usuario suele ser como  *alguien@example.com*  o *alguien@example.onmicrosoft.com*  ."<BR /><BR /> Si ve este mensaje, cierre la sesión de la cuenta Microsoft que estaba usando y vuelva a intentarlo. Si sigue viendo el mensaje, borre la memoria caché del explorador o cambie a **Exploración de InPrivate** y rellene el formulario.
 
 
 
@@ -237,7 +233,7 @@ En el Complemento de SharePoint, agregue controles a la página principal predet
  ```
 
 
-    El código HTML crea estos controles.
+El código HTML crea estos controles.
 
   - Un botón que obtiene el número de listas que hay en la web del Complemento de SharePoint.
 
@@ -274,7 +270,7 @@ Con este proceso, agregará código JavaScript para que los usuarios puedan crea
 | `deletelist()` <br/> |Conectada al control **deletelistbutton**: elimina la lista que el usuario eligió en la lista de listas disponibles.  <br/> |
  
 
-    También llamará a las funciones  `welcome()` y `displayLists()`, que se describirán más adelante en este tutorial.
+También llamará a las funciones  `welcome()` y `displayLists()`, que se describirán más adelante en este tutorial.
 
 
 2. En el archivo **App.js**, agregue las variables  `web`,  `lists` y `listItemcollection` a las dos variables predeterminadas y cambie el código de la función `$(document).ready()` por el siguiente ejemplo.
@@ -318,7 +314,7 @@ $(document).ready(function () {
  ```
 
 
-    En el paso siguiente, debe agregar funciones JavaScript para las definiciones. Todas las funciones del código se ejecutan llamando a  `executeQueryAsync()`, que ejecuta la solicitud actual pendiente de forma asincrónica en el servidor usando el modelo de objetos del lado cliente (CSOM) para SharePoint. Cuando una función se ejecuta de forma asincrónica, el script se sigue ejecutando sin esperar a que el servidor responda. Todas las llamadas de  `executeQueryAsync()` incluyen dos controladores de eventos. Un controlador responde si la función se ejecuta correctamente, mientras que el otro responde si hay errores en la función. En esta tabla se recogen las funciones principales.
+En el paso siguiente, debe agregar funciones JavaScript para las definiciones. Todas las funciones del código se ejecutan llamando a  `executeQueryAsync()`, que ejecuta la solicitud actual pendiente de forma asincrónica en el servidor usando el modelo de objetos del lado cliente (CSOM) para SharePoint. Cuando una función se ejecuta de forma asincrónica, el script se sigue ejecutando sin esperar a que el servidor responda. Todas las llamadas de  `executeQueryAsync()` incluyen dos controladores de eventos. Un controlador responde si la función se ejecuta correctamente, mientras que el otro responde si hay errores en la función. En esta tabla se recogen las funciones principales.
 
 
 |**Nombre de la función**|**Descripción**|
@@ -430,15 +426,7 @@ Ahora que la primera parte de la UI y el código están en su sitio, vamos a eje
 ### Para ejecutar el complemento
 
 
-1. En la parte inferior de la página, elija el botón para ejecutar (
-
-
-
-![Botón Ejecutar](images/Apps_NAPA_Run_Button.png)
-
-
-
-).
+1. En la parte inferior de la página, elija el botón para ejecutar ( ![Botón Ejecutar](images/Apps_NAPA_Run_Button.png) ).
 
     El complemento se empaqueta, se implementa y se instala en el sitio para desarrolladores de Office 365.
 
@@ -533,10 +521,10 @@ $("#createitembutton").click(function (event) {
  ```
 
 
-    > **NOTA**
-      > Si los elementos de la lista no se muestran cuando ejecuta el complemento, asegúrese de que la instrucción  `displayLists();` está situada después del código anterior.
+> **NOTA**
+> Si los elementos de la lista no se muestran cuando ejecuta el complemento, asegúrese de que la instrucción  `displayLists();` está situada después del código anterior.
 
-    En el paso siguiente, agregará funciones JavaScript para las nuevas definiciones y una función de soporte ( `getItems()`). En esta tabla se describe lo que hacen las funciones principales.
+En el paso siguiente, agregará funciones JavaScript para las nuevas definiciones y una función de soporte ( `getItems()`). En esta tabla se describe lo que hacen las funciones principales.
 
 
 |**Nombre de la función**|**Descripción**|

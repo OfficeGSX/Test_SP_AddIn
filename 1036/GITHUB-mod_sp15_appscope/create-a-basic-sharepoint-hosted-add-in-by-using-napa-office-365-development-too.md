@@ -10,11 +10,7 @@ Découvrez comment créer un Complément SharePoint de base hébergé par ShareP
 
 
 
-![Bouton Exécuter](images/Apps_NAPA_Run_Button.png)
-
-
-
- [Exécuter cet exemple de code maintenant](http://go.microsoft.com/fwlink/?LinkId=313212)
+![Bouton Exécuter](images/Apps_NAPA_Run_Button.png) [Exécuter cet exemple de code maintenant](http://go.microsoft.com/fwlink/?LinkId=313212)
 Les outils Outils de développement Office 365 « Napa » peuvent être utilisés pour créer des Compléments SharePoint hébergés par SharePoint. Ils sont eux-mêmes configurés en tant que Complément SharePoint (hébergé par un fournisseur) qui peut être installé sur des sites web SharePoint Online créés avec le modèle **Site du développeur**. Les sites du développeur SharePoint disposent d'une bibliothèque appelée **Compléments en cours de test** sur la page d'accueil. Vous trouverez des instructions pour créer un Site du développeur et installer les outils Napa plus loin dans cet article.
 
 
@@ -35,7 +31,7 @@ Grâce aux Outils de développement Office 365 « Napa », vous pouvez créer vo
 
 En suivant cet article, vous pouvez apprendre à créer un Complément SharePoint simple hébergé par SharePoint en utilisant les outils Outils de développement Office 365 « Napa ». Le complément que vous créerez inclut des commandes et le code de gestion des listes et des éléments de liste.
 > **REMARQUE**
-> Vous ne pouvez créer que des Compléments SharePoint hébergés par SharePoint avec les outils Napa. Pour plus d'informations sur les différences, voir  [Compléments](sharepoint-add-ins.md). > Vous ne pouvez pas utiliser la syntaxe de mise à jour de complément SharePoint qui est décrite à la rubrique  [Mettre à jour des composants de compléments web dans SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) dans Napa. Par conséquent, si vous devez mettre à jour un complément créé dans les outils Napa, vous devez d'abord l'exporter dans Visual Studio. Vous trouverez la procédure à suivre pour cette opération plus loin dans cet article.> Vous pouvez également créer un Complément SharePoint à l'aide de Visual Studio. Pour plus d'informations, voir  [Commencer à créer des compléments SharePoint hébergés par SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
+> Vous ne pouvez créer que des Compléments SharePoint hébergés par SharePoint avec les outils Napa. Pour plus d'informations sur les différences, voir  [Compléments](sharepoint-add-ins.md). <BR /><BR /> Vous ne pouvez pas utiliser la syntaxe de mise à jour de complément SharePoint qui est décrite à la rubrique  [Mettre à jour des composants de compléments web dans SharePoint 2013](update-add-in-web-components-in-sharepoint-2013.md) dans Napa. Par conséquent, si vous devez mettre à jour un complément créé dans les outils Napa, vous devez d'abord l'exporter dans Visual Studio. Vous trouverez la procédure à suivre pour cette opération plus loin dans cet article.<BR /><BR /> Vous pouvez également créer un Complément SharePoint à l'aide de Visual Studio. Pour plus d'informations, voir  [Commencer à créer des compléments SharePoint hébergés par SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md). 
 
 
 
@@ -50,7 +46,7 @@ Si vous ne disposez pas déjà d'un abonnement SharePoint Online que vous pouvez
 
 
 > **REMARQUE**
->  Vous avez peut-être déjà accès à un Site du développeur Office 365 :> **Êtes-vous abonné à MSDN ?** Les abonnés Visual Studio Ultimate et Visual Studio Premium reçoivent également un abonnement à Office 365 Développeur. [Obtenez cet avantage aujourd'hui.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **Disposez-vous de l'un des plans d'abonnement Office 365 suivants ?**> **Si oui, un administrateur de l'abonnement à Office 365 peut créer un Site du développeur** à l'aide du [centre d'administration Office 365](https://portal.microsoftonline.com/admin/default.aspx). Pour plus d'informations, voir  [Créer un Site du développeur dans un abonnement Office 365 existant](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Vous avez peut-être déjà accès à un Site du développeur Office 365 :<BR /><BR /> **Êtes-vous abonné à MSDN ?** Les abonnés Visual Studio Ultimate et Visual Studio Premium reçoivent également un abonnement à Office 365 Développeur. [Obtenez cet avantage aujourd'hui.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)<BR /><BR /> **Disposez-vous de l'un des plans d'abonnement Office 365 suivants ?**<BR /><BR /> **Si oui, un administrateur de l'abonnement à Office 365 peut créer un Site du développeur** à l'aide du [centre d'administration Office 365](https://portal.microsoftonline.com/admin/default.aspx). Pour plus d'informations, voir  [Créer un Site du développeur dans un abonnement Office 365 existant](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
@@ -274,7 +270,7 @@ Dans cette procédure, vous allez ajouter du code JavaScript pour permettre aux 
 | `deletelist()` <br/> |Connectée au contrôle **deletelistbutton**. Elle supprime la liste que l'utilisateur a choisie dans la liste des listes disponibles.  <br/> |
  
 
-    Vous allez également appeler les fonctions  `welcome()` et `displayLists()` décrites plus loin dans cette procédure pas à pas.
+Vous allez également appeler les fonctions  `welcome()` et `displayLists()` décrites plus loin dans cette procédure pas à pas.
 
 
 2. Dans le fichier **App.js**, ajoutez les variables  `web`,  `lists` et `listItemcollection` aux deux variables par défaut, puis modifiez le code dans la fonction `$(document).ready()` conformément à l'exemple suivant.
@@ -318,7 +314,7 @@ $(document).ready(function () {
  ```
 
 
-    Dans l'étape suivante, vous allez ajouter des fonctions JavaScript pour les définitions. Chaque fonction dans le code est exécutée en appelant  `executeQueryAsync()` qui exécute la demande en attente de manière asynchrone sur le serveur au moyen du modèle objet côté client (CSOM) pour SharePoint. Lorsqu'une fonction est exécutée de manière asynchrone, l'exécution de votre script se poursuit sans attendre une réponse du serveur. Chaque appel de `executeQueryAsync()` comprend deux gestionnaires d'événements. Un gestionnaire répond si la fonction est exécutée avec succès ; l'autre répond en cas d'échec de la fonction. Le tableau qui suit décrit les principales fonctions.
+Dans l'étape suivante, vous allez ajouter des fonctions JavaScript pour les définitions. Chaque fonction dans le code est exécutée en appelant  `executeQueryAsync()` qui exécute la demande en attente de manière asynchrone sur le serveur au moyen du modèle objet côté client (CSOM) pour SharePoint. Lorsqu'une fonction est exécutée de manière asynchrone, l'exécution de votre script se poursuit sans attendre une réponse du serveur. Chaque appel de `executeQueryAsync()` comprend deux gestionnaires d'événements. Un gestionnaire répond si la fonction est exécutée avec succès ; l'autre répond en cas d'échec de la fonction. Le tableau qui suit décrit les principales fonctions.
 
 
 |**Nom de la fonction**|**Description**|
@@ -430,15 +426,7 @@ La première partie de l'interface utilisateur et du code est en place. Vous pou
 ### Pour exécuter le complément
 
 
-1. Dans la partie inférieure de la page, choisissez le bouton d'exécution (
-
-
-
-![Bouton Exécuter](images/Apps_NAPA_Run_Button.png)
-
-
-
-).
+1. Dans la partie inférieure de la page, choisissez le bouton d'exécution ( ![Bouton Exécuter](images/Apps_NAPA_Run_Button.png) ).
 
     Le complément est empaqueté, déployé et installé sur votre Site du développeur Office 365.
 
@@ -504,7 +492,7 @@ Avec la possibilité pour les utilisateurs de créer et de supprimer des listes,
  ```
 
 
-    Ce code ajoute une zone d'entrée dans laquelle les utilisateurs peuvent spécifier le nom d'un élément, un bouton pour ajouter l'élément à la liste, ainsi qu'un bouton permettant de supprimer l'élément de la liste.
+Ce code ajoute une zone d'entrée dans laquelle les utilisateurs peuvent spécifier le nom d'un élément, un bouton pour ajouter l'élément à la liste, ainsi qu'un bouton permettant de supprimer l'élément de la liste.
 
 
 3. Choisissez le fichier **App.js** pour le modifier.
@@ -533,10 +521,10 @@ $("#createitembutton").click(function (event) {
  ```
 
 
-    > **REMARQUE**
-      > Si les éléments de la liste ne s'affichent pas lorsque vous exécutez le complément, assurez-vous que l'instruction  `displayLists();` suit le code précédent.
+> **REMARQUE**
+> Si les éléments de la liste ne s'affichent pas lorsque vous exécutez le complément, assurez-vous que l'instruction  `displayLists();` suit le code précédent.
 
-    Dans l'étape suivante, vous ajouterez des fonctions JavaScript pour les nouvelles définitions, ainsi qu'une fonction de prise en charge ( `getItems()`). Le tableau ci-dessous décrit la finalité des principales fonctions.
+Dans l'étape suivante, vous ajouterez des fonctions JavaScript pour les nouvelles définitions, ainsi qu'une fonction de prise en charge ( `getItems()`). Le tableau ci-dessous décrit la finalité des principales fonctions.
 
 
 |**Nom de la fonction**|**Description**|

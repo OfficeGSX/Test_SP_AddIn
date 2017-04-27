@@ -10,11 +10,7 @@ ms.assetid: 3b47c97b-9e09-47b2-a65f-29b0f44e34bf
 
 
 
-!['运行'按钮](images/Apps_NAPA_Run_Button.png)
-
-
-
- [立即运行此示例！](http://go.microsoft.com/fwlink/?LinkId=313212)
+!['运行'按钮](images/Apps_NAPA_Run_Button.png) [立即运行此示例！](http://go.microsoft.com/fwlink/?LinkId=313212)
 Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工具。Napa 本身可用作（提供程序托管的）SharePoint 外接程序，可安装在使用 **开发人员网站** 模板创建的 SharePoint Online 网站上。SharePoint 开发人员网站在主页上有一个名为"测试中的外接程序"的库。本文后续将介绍创建开发人员网站和安装 Napa 的说明。
 
 
@@ -35,7 +31,7 @@ Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工
 
 依照本文，您可以了解如何使用 Napa 创建一个 SharePoint 托管的简单的 SharePoint 外接程序。您将创建的外接程序包括用于管理列表和列表项的控件和代码。
 > **注释**
-> 使用 Napa，您只能创建 SharePoint 托管（而不是提供程序托管）的 SharePoint 外接程序。有关两者区别的详细信息，请参阅  [SharePoint 外接程序](sharepoint-add-ins.md)。 > 您不能在 Napa 中使用 SharePoint 的外接程序更新语义，该内容在 [更新 SharePoint 2013 中的外接程序 Web 组件](update-add-in-web-components-in-sharepoint-2013.md)中有介绍。因此，如果您需要更新在 Napa 中创建的外接程序，您必须首先将其导出到 Visual Studio。有关执行此操作的说明，稍后将在本文中介绍。 > 您还可以使用 Visual Studio 创建 SharePoint 外接程序。有关详细信息，请参阅 [开始创建 SharePoint 承载的 SharePoint 外接程序](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)。 
+> 使用 Napa，您只能创建 SharePoint 托管（而不是提供程序托管）的 SharePoint 外接程序。有关两者区别的详细信息，请参阅  [SharePoint 外接程序](sharepoint-add-ins.md)。 <BR /><BR /> 您不能在 Napa 中使用 SharePoint 的外接程序更新语义，该内容在 [更新 SharePoint 2013 中的外接程序 Web 组件](update-add-in-web-components-in-sharepoint-2013.md)中有介绍。因此，如果您需要更新在 Napa 中创建的外接程序，您必须首先将其导出到 Visual Studio。有关执行此操作的说明，稍后将在本文中介绍。 <BR /><BR /> 您还可以使用 Visual Studio 创建 SharePoint 外接程序。有关详细信息，请参阅 [开始创建 SharePoint 承载的 SharePoint 外接程序](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)。 
 
 
 
@@ -50,7 +46,7 @@ Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工
 
 
 > **注释**
->  您可能已经拥有 Office 365 开发人员网站的访问权限：> **已经是 MSDN 订阅者？** Visual Studio Ultimate 和 Visual Studio Premium with MSDN 订阅者可以享受 Office 365 开发人员订阅权益。 [立即索取您的权益](https://msdn.microsoft.com/subscriptions/manage/default.aspx)。 > **您是否具有下列 Office 365 订阅计划之一？**> **如果有的话，Office 365 订阅的管理员可以创建一个 开发人员网站** ，方法是使用 [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx)。有关详细信息，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 
+>  您可能已经拥有 Office 365 开发人员网站的访问权限：<BR /><BR /> **已经是 MSDN 订阅者？** Visual Studio Ultimate 和 Visual Studio Premium with MSDN 订阅者可以享受 Office 365 开发人员订阅权益。 [立即索取您的权益](https://msdn.microsoft.com/subscriptions/manage/default.aspx)。 <BR /><BR /> **您是否具有下列 Office 365 订阅计划之一？**<BR /><BR /> **如果有的话，Office 365 订阅的管理员可以创建一个 开发人员网站** ，方法是使用 [Office 365 管理中心](https://portal.microsoftonline.com/admin/default.aspx)。有关详细信息，请参阅 [在现有 Office 365 订阅中创建开发人员网站](create-a-developer-site-on-an-existing-office-365-subscription.md)。 
 
 
 
@@ -237,7 +233,7 @@ Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工
   ```
 
 
-    HTML 将创建以下控件。
+HTML 将创建以下控件。
 
   - 获取 SharePoint 外接程序的 Web 中的列表数目的按钮。
 
@@ -274,7 +270,7 @@ Napa 是一个可用来创建 SharePoint 托管的 SharePoint 外接程序的工
 | `deletelist()` <br/> |已连接到"deletelistbutton"控件  删除用户从可用列表集合中选择的列表。  <br/> |
  
 
-    您还将调用  `welcome()` 和 `displayLists()` 函数，本演练稍后将介绍它们。
+您还将调用  `welcome()` 和 `displayLists()` 函数，本演练稍后将介绍它们。
 
 
 2. 在"App.js"文件中，向两个默认变量添加  `web`、 `lists` 和 `listItemcollection` 变量，并将 `$(document).ready()` 函数中的代码更改为以下示例。
@@ -318,7 +314,7 @@ $(document).ready(function () {
   ```
 
 
-    在下一步中，您将为定义添加 JavaScript 函数。代码中的每个函数都是通过调用  `executeQueryAsync()` 执行的，该命令使用 SharePoint 的客户端对象模型 (CSOM) 在服务器上异步执行当前挂起的请求。当函数异步执行时，您的脚本将继续运行，而不会等待服务器做出响应。每个 `executeQueryAsync()` 调用均包括两个事件处理程序。如果函数成功运行，则一个处理程序响应；如果函数失败，则另一个处理程序响应。下表介绍主函数。
+在下一步中，您将为定义添加 JavaScript 函数。代码中的每个函数都是通过调用  `executeQueryAsync()` 执行的，该命令使用 SharePoint 的客户端对象模型 (CSOM) 在服务器上异步执行当前挂起的请求。当函数异步执行时，您的脚本将继续运行，而不会等待服务器做出响应。每个 `executeQueryAsync()` 调用均包括两个事件处理程序。如果函数成功运行，则一个处理程序响应；如果函数失败，则另一个处理程序响应。下表介绍主函数。
 
 
 |**函数名称**|**说明**|
@@ -430,15 +426,7 @@ UI 和代码的第一部分已就绪，因此继续运行外接程序以验证�
 ### 运行外接程序
 
 
-1. 在页面的底部，选择"运行"(
-
-
-
-!['运行'按钮](images/Apps_NAPA_Run_Button.png)
-
-
-
-) 按钮。
+1. 在页面的底部，选择"运行"( !['运行'按钮](images/Apps_NAPA_Run_Button.png) ) 按钮。
 
     将在您的 Office 365 开发人员网站上打包、部署并安装外接程序。
 
@@ -504,7 +492,7 @@ UI 和代码的第一部分已就绪，因此继续运行外接程序以验证�
   ```
 
 
-    此代码添加用户可以在其中指定项名称的输入框、用于将项添加到列表中的按钮以及用于从列表中删除项的按钮。
+此代码添加用户可以在其中指定项名称的输入框、用于将项添加到列表中的按钮以及用于从列表中删除项的按钮。
 
 
 3. 选择"App.js"文件以编辑它。
@@ -533,10 +521,10 @@ $("#createitembutton").click(function (event) {
   ```
 
 
-    > **注释**
-      > 如果运行外接程序时，列表项目未显示，请确保  `displayLists();` 语句出现在之前代码的后面。
+> **注释**
+> 如果运行外接程序时，列表项目未显示，请确保  `displayLists();` 语句出现在之前代码的后面。
 
-    在下一步中，您将为新定义添加 JavaScript 函数和支持函数 ( `getItems()`)。下表介绍主函数执行的操作。
+在下一步中，您将为新定义添加 JavaScript 函数和支持函数 ( `getItems()`)。下表介绍主函数执行的操作。
 
 
 |**函数名称**|**说明**|
