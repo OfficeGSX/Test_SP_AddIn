@@ -40,7 +40,7 @@ SharePoint provides three types of authorization policies:
 
 
     > **NOTE**
-      > Certain APIs require a user context and can't be executed with an add-in-only policy. These include many APIs for interacting with Project Server 2013 and for performing search queries. 
+    > Certain APIs require a user context and can't be executed with an add-in-only policy. These include many APIs for interacting with Project Server 2013 and for performing search queries. 
 
 ### See an example scenario of an add-in that uses the add-in-only policy
 <a name="Scenario"> </a>

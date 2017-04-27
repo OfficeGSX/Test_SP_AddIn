@@ -40,7 +40,7 @@ SharePoint proporciona tres tipos de directivas de autorización:
 
 
     > **NOTA**
-      > Ciertas API necesitan un contexto de usuario y no pueden ejecutarse con una directiva de solo complemento. Entre ellas, se incluyen muchas API para interactuar con Project Server 2013 y ejecutar consultas de búsqueda. 
+    > Ciertas API necesitan un contexto de usuario y no pueden ejecutarse con una directiva de solo complemento. Entre ellas, se incluyen muchas API para interactuar con Project Server 2013 y ejecutar consultas de búsqueda. 
 
 ### Consultar un escenario de ejemplo de un complemento que usa la directiva de solo complemento
 <a name="Scenario"> </a>

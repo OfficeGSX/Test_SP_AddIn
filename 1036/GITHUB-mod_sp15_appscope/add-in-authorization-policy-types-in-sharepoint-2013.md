@@ -40,7 +40,7 @@ SharePoint propose trois types de stratégies d'autorisation :
 
 
     > **REMARQUE**
-      > Certaines API requièrent un contexte utilisateur et ne peuvent pas être exécutées avec une stratégie de complément uniquement. Elles comprennent notamment des API pour l'interaction avec Project Server 2013 et pour l'exécution de requêtes de recherche. 
+    > Certaines API requièrent un contexte utilisateur et ne peuvent pas être exécutées avec une stratégie de complément uniquement. Elles comprennent notamment des API pour l'interaction avec Project Server 2013 et pour l'exécution de requêtes de recherche. 
 
 ### Voir un exemple de scénario de complément qui utilise la stratégie de complément uniquement
 <a name="Scenario"> </a>
