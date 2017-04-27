@@ -8,18 +8,18 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 
 # Create a cloud business add-in that uses the SAP Gateway
  Learn how to build the LightSwitch SharePoint provider-hosted add-in to access SAP data by means of SAP Gateway for Microsoft.
- 
-
-
-
-
 This article highlights the key steps that the development team at Microsoft used to create a LightSwitch SharePoint provider-hosted add-in that can access SAP data by means of SAP Gateway for Microsoft. This add-in supports CRUD operations on SAP Data, and can be used to view pictures from and upload pictures to a SharePoint picture library.
+
+
+
+
 The purpose of this article is to show the key points of the add-in that might help you to build similar add-ins. The code sample is provided and linked to the article so that you can see how the working solution was created, in order to reinforce your learning.
-
-
-
-
  **Sample download:** [ Sample: Developing a Cloud Business Add-in to access SAP Gateway for Microsoft](https://code.msdn.microsoft.com/Sample-Developing-a-Cloud-25d6d1ea)
+
+
+
+
+
 ## Before you begin
 
 The following are prerequisites to the procedures in this article:
@@ -42,7 +42,7 @@ The following are prerequisites to the procedures in this article:
 - **An organizational account in Microsoft Azure.** See [Create an organizational user account in Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
 
     > **NOTE**
-      > Log in to your Office 365 account (login.microsoftonline.com) to change the temporary password after the account is created. 
+    > Log in to your Office 365 account (login.microsoftonline.com) to change the temporary password after the account is created. 
 - **An SAP OData endpoint** with sample data in it. See the documentation for [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
 
 
@@ -150,9 +150,9 @@ This studio includes all of the components needed to interact with SAP Gateway f
 
 - **BoxXDataService**
 
-    This is a WCF RIA service, which is the interface used by the SellerDashboard server-side component hosted in Azure, and which consumes the SAP data source from SAP Gateway for Microsoft..
+This is a WCF RIA service, which is the interface used by the SellerDashboard server-side component hosted in Azure, and which consumes the SAP data source from SAP Gateway for Microsoft..
 
-    The following code snippet is the CRUD Web method, which the WCF RIA service supports. For more detail see BoxXDataService/BoxXDataService.cs.
+The following code snippet is the CRUD Web method, which the WCF RIA service supports. For more detail see BoxXDataService/BoxXDataService.cs.
 
 
 
@@ -241,11 +241,10 @@ SellerDashboardStudio includes standard LightSwitch SharePoint add-in components
     This component includes the screens, a custom control, and a photo upload control. The following image shows its main components.
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client includes these four screens:
+SellerDashboard.HTML.Client includes these four screens:
 
   - BrowseInventoryItems is the home screen, used to browse basic information for all inventory items.
 
@@ -328,7 +327,7 @@ LightSwitch supports the data mashup by adding a relationship between the two da
 
 -  *Data schema in SAP database* 
 
-    The following snippet shows an example of a data schema from SAP Gateway for Microsoft.
+The following snippet shows an example of a data schema from SAP Gateway for Microsoft.
 
 
 
@@ -374,7 +373,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
  ```
 
 
-    This is our test data base, and the Property Type and Nullable value is based on the scenario. The ID is the PropertyRef and the OData CRUD operation is based on ID. The StockNo property is used to mash data with the car picture that is stored in SharePoint picture library.
+This is our test data base, and the Property Type and Nullable value is based on the scenario. The ID is the PropertyRef and the OData CRUD operation is based on ID. The StockNo property is used to mash data with the car picture that is stored in SharePoint picture library.
 
 
 -  *Data model defined for RIA service* 
@@ -430,14 +429,14 @@ public interface IInventoryItem
  ```
 
 
-    Any property that isn't included in the SAP database schema can be ignored. For example, the **Images** property was added here for scalability considerations. This data model is a middle layer between the real SAP database and the SellerDashboard.Server data source. The LightSwitch project has two components: View and Server. When you add an external data source on the Server side, LightSwitch helps you build an abstract data layer that is added to the data source on the Server side.
+Any property that isn't included in the SAP database schema can be ignored. For example, the **Images** property was added here for scalability considerations. This data model is a middle layer between the real SAP database and the SellerDashboard.Server data source. The LightSwitch project has two components: View and Server. When you add an external data source on the Server side, LightSwitch helps you build an abstract data layer that is added to the data source on the Server side.
 
-    Most of the properties have the same type as the properties in the SAP database schema, except for StockNo, whose type has been changed from **int** to **string**. This is because StockNo is used as a way to define the relationship between the SAP data and SharePoint picture library.
+Most of the properties have the same type as the properties in the SAP database schema, except for StockNo, whose type has been changed from **int** to **string**. This is because StockNo is used as a way to define the relationship between the SAP data and SharePoint picture library.
 
-    > **TIP**
-      > StockNo must have the type **string** because the value stored in the SharePoint picture library is **Text**. These two types must match in order to accomplish the data mashup.
+> **TIP**
+> StockNo must have the type **string** because the value stored in the SharePoint picture library is **Text**. These two types must match in order to accomplish the data mashup.
 
-    The implementation of the two interfaces is in CarInventoryModel/InventoryItem.cs and CarInventoryModel/InventoryCollection.cs.
+The implementation of the two interfaces is in CarInventoryModel/InventoryItem.cs and CarInventoryModel/InventoryCollection.cs.
 
 
 -  *Data source consumed by the LightSwitch server side* 
@@ -445,7 +444,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    In the SellerDashboard server, when you add the WCF RIA Service (BoxXDataService), the data model that's defined in CarInventoryModel is included, and you get the relevant data table. You can change the type of some of the properties. For example, you can change the **BuyerEmail** type from **String** to **Email Address**, and LightSwitch will support the email format check on the client side.
+In the SellerDashboard server, when you add the WCF RIA Service (BoxXDataService), the data model that's defined in CarInventoryModel is included, and you get the relevant data table. You can change the type of some of the properties. For example, you can change the **BuyerEmail** type from **String** to **Email Address**, and LightSwitch will support the email format check on the client side.
 
 
  **SharePoint picture library**

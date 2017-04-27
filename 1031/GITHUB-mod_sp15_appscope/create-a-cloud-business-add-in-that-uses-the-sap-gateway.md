@@ -106,6 +106,7 @@ Dies umfasst alle für die Interaktion mit dem SAP-Gateway für Microsoft benöt
 
 
   ```cs
+
   // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
         {
@@ -156,6 +157,7 @@ Der folgende Codeausschnitt veranschaulicht die CRUD-Webmethode, die vom WCF-RIA
 
 
   ```cs
+
   [Query(IsDefault = true)]
         public IQueryable<InventoryItem> GetAllCarInventory()
         {
@@ -242,7 +244,7 @@ SellerDashboardStudio umfasst die standardmäßigen LightSwitch-Add-In-Komponent
 -![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client umfasst die folgenden vier Bildschirme:
+SellerDashboard.HTML.Client umfasst die folgenden vier Bildschirme:
 
   - BrowseInventoryItems ist der Startbildschirm und wird zum Durchsuchen von grundlegenden Informationen für alle Bestandselemente verwendet.
 
@@ -377,6 +379,7 @@ Dies ist unsere Testdatenbank, und der Eigenschaftstyp und Nullable-Wert basiere
 -  *Für RIA-Dienst definiertes Datenmodell* 
 
 ```cs
+
 public interface IInventoryItem
     	{
         IEnumerable<InventoryPropertyName> ValidPropertyNames { get; }
