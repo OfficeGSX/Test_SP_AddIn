@@ -50,7 +50,7 @@ Hay dos tipos básicos de Complementos de SharePoint: hospedados por SharePoint 
 - **Todas los Complementos de SharePoint que los usuarios instalan tienen un icono en la página **Contenidos del sitio** del sitio web de SharePoint.** Al hacer clic en el icono, se ejecuta el complemento.
 
 
-- **Un Complemento de SharePoint se configura por medio de un  *manifiesto del complemento* **, que es un archivo XML que declara las propiedades básicas del complemento, dónde se ejecuta el complemento y qué debe hacer SharePoint cuando se inicia el complemento. Entre otras cosas, el manifiesto puede especificar qué idiomas admite el complemento, los servicios de SharePoint y la funcionalidad de la cual depende, y los permisos para elweb host que necesita el complemento. (Los Complementos de SharePoint tienen control total de su propiaweb de complemento).
+- **Un Complemento de SharePoint se configura por medio de un  *manifiesto del complemento***, que es un archivo XML que declara las propiedades básicas del complemento, dónde se ejecuta el complemento y qué debe hacer SharePoint cuando se inicia el complemento. Entre otras cosas, el manifiesto puede especificar qué idiomas admite el complemento, los servicios de SharePoint y la funcionalidad de la cual depende, y los permisos para elweb host que necesita el complemento. (Los Complementos de SharePoint tienen control total de su propiaweb de complemento).
 
 
 - **Usted distribuye Complementos de SharePoint en paquetes de complemento** que siempre incluyen al menos el manifiesto del complemento. (Si no hay componentes de SharePoint, el manifiesto del componente puede ser la única cosa en el paquete de complemento). Si el complemento tiene componentes de SharePoint en una web de complemento, se incluyen en el paquete como un conjunto de archivos XML. Los componentes remotos que están hospedados fuera de SharePoint, como una aplicación web remota o una base de datos, no se incluyen en el paquete y se implementan separados del paquete del complemento. (Sin embargo, el manifiesto del complemento especifica las direcciones URL de los componentes remotos).
@@ -61,7 +61,7 @@ Hay dos tipos básicos de Complementos de SharePoint: hospedados por SharePoint 
 
 
 > **SUGERENCIA**
-> **Vea algunos Complementos de SharePoint en la** [Tienda Office](https://store.office.com/appshome.aspx?ui=es-ES&amp;rs=es-ES&amp;ad=ES&amp;productgroup=SharePoint) para hacerse una idea de lo que puede desarrollar. O abra un sitio web de SharePoint 2013 e instale algunos de los Complementos de SharePoint gratuitos. Simplemente navegue hasta ** Contenido del sitio | Agregar un complemento | Tienda SharePoint**.
+> **Vea algunos Complementos de SharePoint en la** [Tienda Office](https://store.office.com/appshome.aspx?ui=es-ES&amp;rs=es-ES&amp;ad=ES&amp;productgroup=SharePoint) para hacerse una idea de lo que puede desarrollar. O abra un sitio web de SharePoint 2013 e instale algunos de los Complementos de SharePoint gratuitos. Simplemente navegue hasta **Contenido del sitio | Agregar un complemento | Tienda SharePoint**.
 
 
 

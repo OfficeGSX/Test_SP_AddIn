@@ -12,7 +12,7 @@ ms.assetid: cd1eda9e-8e54-4223-93a9-a6ea0d18df70
 SharePoint 外接程序是您创建的 SharePoint 网站的自包含扩展，无需自定义代码即可在 SharePoint 服务器上运行。
 ## SharePoint 外接程序概述
 
-SharePoint 外接程序有两种基本类型  SharePoint 托管和提供程序托管。为了做出关于针对您的方案应开发哪种类型的最佳决定，请首先了解这两种类型的 SharePoint 外接程序有何共同之处。
+SharePoint 外接程序有两种基本类型 SharePoint 托管和提供程序托管。为了做出关于针对您的方案应开发哪种类型的最佳决定，请首先了解这两种类型的 SharePoint 外接程序有何共同之处。
 
 
 
@@ -50,7 +50,7 @@ SharePoint 外接程序有两种基本类型  SharePoint 托管和提供程序
 - **用户安装的所有 SharePoint 外接程序在 SharePoint 网站的"网站内容"页上都有一个图块。** 单击此图块可运行外接程序。
 
 
-- **SharePoint 外接程序可通过使用 *外接程序清单* ** 一种声明外接程序的基本属性、运行位置以及 SharePoint 在外接程序启动时应执行哪些操作的 XML 文件来进行配置。除此之外，该清单可以指定外接程序支持哪些语言，它依赖于哪些 SharePoint 服务和功能，以及外接程序针对主机 Web 需要具有哪些权限。（SharePoint 外接程序可完全控制自身的外接程序 Web。）
+- **SharePoint 外接程序可通过使用 *外接程序清单*** 一种声明外接程序的基本属性、运行位置以及 SharePoint 在外接程序启动时应执行哪些操作的 XML 文件来进行配置。除此之外，该清单可以指定外接程序支持哪些语言，它依赖于哪些 SharePoint 服务和功能，以及外接程序针对主机 Web 需要具有哪些权限。（SharePoint 外接程序可完全控制自身的外接程序 Web。）
 
 
 - **SharePoint 外接程序作为外接程序包进行分发** ，其中始终至少包括外接程序清单。（如果没有 SharePoint 组件，外接程序清单可能会是在外接程序包中的唯一项目。）如果外接程序的 SharePoint 组件位于外接程序 Web 中，这些组件会作为一组 XML 文件包含在程序包中。托管在 SharePoint 外部的远程组件（如远程 Web 应用程序或数据库）不包含在外接程序包中，并在外接程序包中单独部署。（但是，外接程序清单要指定远程组件的 URL。）
@@ -88,7 +88,7 @@ SharePoint 外接程序不使用服务器端的 SharePoint 对象模型。ShareP
 - **分发至组织的加载项目录** ，它是 SharePoint Online 订阅或本地场中的专用 SharePoint 网站集。在加载项是针对特定组织所自定义构建的情况下，使用此方法。
 
 
-- **分发至  [Office 商店](https://store.office.com/appshome.aspx?productgroup=SharePoint)** 。商店可为您处理从发现到购买到更新等一系列市场营销过程。Microsoft 提供了 **卖方仪表板** 帮助您通过 Office 商店销售加载项。
+- **分发至 [Office 商店](https://store.office.com/appshome.aspx?productgroup=SharePoint)** 。商店可为您处理从发现到购买到更新等一系列市场营销过程。Microsoft 提供了 **卖方仪表板** 帮助您通过 Office 商店销售加载项。
 
 
 在通过任一方法部署完外接程序后，就可在 SharePoint 网站的"添加外接程序"页面上提供以供安装。如果外接程序需要访问主机 Web 或其父订阅的权限，SharePoint 将提示要安装该外接程序的用户授予这些权限。
@@ -225,7 +225,7 @@ SharePoint 外接程序 **使用 SharePoint API 连接 SharePoint** 功能（搜
   - 我们的解释性文档位于文章 [了解 SharePoint 2013 REST 服务](get-to-know-the-sharepoint-2013-rest-service.md)中和该文章链接到的其他文章中。
 
 
-  - 参考文档位于  [SharePoint 2013 的 REST API 引用](http://msdn.microsoft.com/library/3514e753-19f9-4b41-a1ae-f35c5ffc17d2%28Office.15%29.aspx)。
+  - 参考文档位于 [SharePoint 2013 的 REST API 引用](http://msdn.microsoft.com/library/3514e753-19f9-4b41-a1ae-f35c5ffc17d2%28Office.15%29.aspx)。
 
 
   - 如果您不使用 Visual Studio，就必须创建加载项清单文件和加载项包。有关信息，请参阅 [了解 SharePoint 外接程序的应用程序清单结构和包](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)。使用 Visual Studio 和 Visual Studio Microsoft Office 开发人员工具 来构建清单和程序包有很多优势，可帮助您节省时间。我们建议您考虑它们，即使您使用其他工具创建远程 Web 应用程序本身。 [社区版本的 Visual Studio](https://www.visualstudio.com/news/vs2013-community-vs.aspx) 免费提供。
