@@ -7,8 +7,7 @@ ms.assetid: d6aab58f-77d2-4f0d-a007-6d55ba865d07
 
 # Make batch requests with the REST APIs
 Learn how to use the  `$batch` query option with the REST/OData APIs.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

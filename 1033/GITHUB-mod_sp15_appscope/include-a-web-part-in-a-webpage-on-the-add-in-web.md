@@ -7,8 +7,7 @@ ms.assetid: dd525e64-2472-4bc7-91be-86950f638ce4
 
 # Include a Web Part in a webpage on the add-in web
 Learn how to include a Web Part on a page in a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

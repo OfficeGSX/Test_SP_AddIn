@@ -7,8 +7,7 @@ ms.assetid: 4d75d113-8dc8-4026-a297-c47b6d4d7008
 
 # Programmatically deploy a custom button in the provider-hosted add-in
 Learn how to programmatically register a custom ribbon button with a custom list in the same provider-hosted SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

@@ -7,8 +7,7 @@ ms.assetid: d97ab62e-129f-43f4-a825-fb5c3229d7c7
 
 # Create a provider-hosted add-in that includes a custom SharePoint list and content type
 Create a SharePoint Add-in that combines a cloud-hosted web application with custom SharePoint-hosted list templates, list instances, and custom content types by using the Office Developer Tools for Visual Studio 2012. Learn how to interact with SharePoint 2013 add-in webs by using the REST/OData web service, and how to implement OAuth in a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

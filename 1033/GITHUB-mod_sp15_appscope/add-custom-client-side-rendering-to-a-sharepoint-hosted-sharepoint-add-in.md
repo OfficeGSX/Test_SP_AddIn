@@ -7,8 +7,7 @@ ms.assetid: 6e0e530a-7d8b-48ab-8d0c-a878ddbf5be1
 
 # Add custom client-side rendering to a SharePoint-hosted SharePoint Add-in
 Customize the rendering and validation of controls in SharePoint Add-ins pages.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

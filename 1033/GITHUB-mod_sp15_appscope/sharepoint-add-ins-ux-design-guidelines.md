@@ -7,8 +7,7 @@ ms.assetid: a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45
 
 # SharePoint Add-ins UX design guidelines
 Learn about general user experience (UX) design guidelines for add-ins in SharePoint 2013, including choosing the chrome, using CSS, managing user licenses, and other design tasks.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

@@ -7,8 +7,7 @@ ms.assetid: 628c6103-52f9-4d85-9464-4a6862b36640
 
 # Create a remote event receiver in SharePoint Add-ins
 Create a remote event receiver (RER) that handles list and list item events in a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

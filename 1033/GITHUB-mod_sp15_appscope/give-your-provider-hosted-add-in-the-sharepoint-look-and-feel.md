@@ -7,8 +7,7 @@ ms.assetid: 53bf456d-a832-4b43-8ccd-42e4dab81dfc
 
 # Give your provider-hosted add-in the SharePoint look-and-feel
 Learn how to give your provider-hosted SharePoint Add-ins the look and feel of SharePoint.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

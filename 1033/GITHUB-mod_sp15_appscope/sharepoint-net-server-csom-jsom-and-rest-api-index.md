@@ -7,8 +7,7 @@ ms.assetid: fddbb75f-9f6c-46d3-8d95-1d4a5e791dfa
 
 # SharePoint .NET Server, CSOM, JSOM, and REST API index
 
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

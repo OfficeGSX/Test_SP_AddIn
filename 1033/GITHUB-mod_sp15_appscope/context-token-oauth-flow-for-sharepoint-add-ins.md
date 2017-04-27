@@ -7,8 +7,7 @@ ms.assetid: 526c8c4a-5cbb-4efc-87d9-23ac73655cf4
 
 # Context Token OAuth flow for SharePoint Add-ins
 Learn about the OAuth authentication and authorization flow for low-trust, provider-hosted add-ins in SharePoint.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

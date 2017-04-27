@@ -7,8 +7,7 @@ ms.assetid: 8dec09e6-e197-4f68-bcc2-ca41105c5d61
 
 # Incident manager: A cloud business add-in tutorial
 By using the **Cloud Business Add-in** template in Visual Studio, you can create a SharePoint hosted in which mobile users can view, add, and update data from remote locations by using modern, touch-oriented devices such as phones and tablets. In this tutorial, you'll create an add-in for a fictional Contoso Fire Department to handle on-scene incident management. The walkthrough covers the core concepts of building a Cloud Business Add-in as well as more advanced concepts such as integrating SharePoint lists and document libraries.You can download the Incident Management sample application and associated files from the MSDN Samples Gallery:  [Incident Manager: A Cloud Business Add-in Tutorial](http://code.msdn.microsoft.com/Incident-Manager-A-Cloud-c32d9b04).
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

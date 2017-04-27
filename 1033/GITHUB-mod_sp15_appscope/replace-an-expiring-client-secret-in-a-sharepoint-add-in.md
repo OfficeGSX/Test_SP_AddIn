@@ -7,8 +7,7 @@ ms.assetid: 369d14f0-75c1-4383-8a2d-05b4030c44ea
 
 # Replace an expiring client secret in a SharePoint Add-in
 Learn how to add a new client secret for a SharePoint Add-in that is registered with AppRegNew.aspx.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

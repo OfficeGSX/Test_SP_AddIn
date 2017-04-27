@@ -8,8 +8,7 @@ ms.assetid: d4b5c277-ed50-420c-8a9b-860342284b72
 
 # Use OData query operations in SharePoint REST requests
 Learn how to use a wide range of OData query string operators to select, filter, and order the data you request from the SharePoint REST service. 
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

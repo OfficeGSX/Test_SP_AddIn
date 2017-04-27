@@ -7,8 +7,7 @@ ms.assetid: 2f346d82-fd09-47d4-a2b3-e2b3cc59ee1d
 
 # Office Web Widgets - Experimental License Terms
 Learn about the license terms to use the Office Web Widgets - Experimental.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

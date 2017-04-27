@@ -8,8 +8,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 
 # Create a cloud business add-in that uses the SAP Gateway
  Learn how to build the LightSwitch SharePoint provider-hosted add-in to access SAP data by means of SAP Gateway for Microsoft.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

@@ -7,8 +7,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
 
 # Customize a list view in SharePoint Add-ins using client-side rendering
 Learn how to customize a list view in a SharePoint-hosted add-in by using the client-side rendering technology in SharePoint 2013.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

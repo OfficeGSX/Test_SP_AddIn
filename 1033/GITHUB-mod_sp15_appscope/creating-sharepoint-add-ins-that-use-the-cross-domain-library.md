@@ -7,8 +7,7 @@ ms.assetid: e63411ef-7137-4f1c-aac5-a3414ec88154
 
 # Creating SharePoint Add-ins that use the cross-domain library
 Learn about the SharePoint cross-domain JavaScript library.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

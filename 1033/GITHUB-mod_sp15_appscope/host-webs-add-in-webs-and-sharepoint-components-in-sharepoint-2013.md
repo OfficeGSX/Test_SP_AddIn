@@ -7,8 +7,7 @@ ms.assetid: b791cdf5-8aa2-47fa-bc4c-aee437354759
 
 # Host webs, add-in webs, and SharePoint components in SharePoint 2013
 Learn about the distinction between host webs and add-in webs. Also find out which SharePoint 2013 components can be included in a SharePoint Add-in, which are deployed to the host web, which are deployed to the add-in web, and how the add-in web is deployed in an isolated domain.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

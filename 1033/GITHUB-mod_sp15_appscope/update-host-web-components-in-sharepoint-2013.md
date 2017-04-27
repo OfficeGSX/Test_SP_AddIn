@@ -7,8 +7,7 @@ ms.assetid: 9c383a69-c2f6-4702-bd64-e77c9bd026b7
 
 # Update host web components in SharePoint 2013
 Update add-in parts and custom actions in the host web of a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

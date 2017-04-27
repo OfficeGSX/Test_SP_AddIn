@@ -7,8 +7,7 @@ ms.assetid: 1ceb3142-a7a5-453e-920f-5f953a79401a
 
 # Tenancies and deployment scopes for SharePoint Add-ins
  Learn about the concept of tenancies and the differences between deploying SharePoint Add-ins at tenant scope and web scope.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

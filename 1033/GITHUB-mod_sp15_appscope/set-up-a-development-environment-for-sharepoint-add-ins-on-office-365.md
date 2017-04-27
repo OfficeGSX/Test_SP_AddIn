@@ -7,8 +7,7 @@ ms.assetid: b22ce52a-ae9e-4831-9b68-c9210af6dc54
 
 # Set up a development environment for SharePoint Add-ins on Office 365
 Set up a development environment for SharePoint Add-ins on an Office 365 Developer Site.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

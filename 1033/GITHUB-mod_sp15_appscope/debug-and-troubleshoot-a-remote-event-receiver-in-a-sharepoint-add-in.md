@@ -7,8 +7,7 @@ ms.assetid: 21de092e-27f2-4000-bbb7-cb5cbfeaf195
 
 # Debug and troubleshoot a remote event receiver in a SharePoint Add-in
 Set up the your development environment to debug remote events in by using Visual Studio.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

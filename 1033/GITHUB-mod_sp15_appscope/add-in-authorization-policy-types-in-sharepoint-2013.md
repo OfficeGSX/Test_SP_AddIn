@@ -7,8 +7,7 @@ ms.assetid: 124879c7-a746-4c10-96a7-da76ad5327f0
 
 # Add-in authorization policy types in SharePoint 2013
 Learn about the different authorization policies for add-ins in SharePoint: add-in-only policy, user+add-in policy, and user-only policy. It also provides guidelines for using add-in-only policy.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

@@ -7,8 +7,7 @@ ms.assetid: 2148980b-c2b6-4294-b8f7-cfc07f925091
 
 # Secure data access and client object models for SharePoint Add-ins
 Learn about the data access options you have when you build SharePoint Add-ins, including connectivity options for accessing data on SharePoint and on external systems, as well as the APIs that are available when you want to access data from your add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

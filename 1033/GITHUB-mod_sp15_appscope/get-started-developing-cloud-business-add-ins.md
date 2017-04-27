@@ -7,8 +7,7 @@ ms.assetid: 64d59df8-ba89-4653-bdeb-47bbd70beda2
 
 # Get started developing cloud business add-ins
 The best way to learn to develop a Cloud Business Add-in for SharePoint is to jump in and try it. The following tutorials and associate samples walk you through the process step-by-step. Go ahead - it's much easier than you might imagine.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

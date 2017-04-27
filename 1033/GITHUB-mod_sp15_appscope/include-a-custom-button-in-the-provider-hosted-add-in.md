@@ -7,8 +7,7 @@ ms.assetid: 58932389-0100-47ee-9d33-1b4321d3f462
 
 # Include a custom button in the provider-hosted add-in
 Learn how to include a custom ribbon button in a provider-hosted SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

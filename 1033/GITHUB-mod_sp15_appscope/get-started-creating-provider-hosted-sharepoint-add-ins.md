@@ -7,8 +7,7 @@ ms.assetid: 3038dd73-41ee-436f-8c78-ef8e6869bf7b
 
 # Get started creating provider-hosted SharePoint Add-ins
 Set up a development environment and create your first provider-hosted SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

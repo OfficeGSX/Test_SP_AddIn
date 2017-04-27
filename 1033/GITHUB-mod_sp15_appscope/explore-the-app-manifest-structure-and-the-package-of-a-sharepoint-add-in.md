@@ -7,8 +7,7 @@ ms.assetid: 7cd5850f-cbf3-48d2-bcb7-59b8f4ed0e63
 
 # Explore the app manifest structure and the package of a SharePoint Add-in
 Learn about the add-in package structure and the manifest file for a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

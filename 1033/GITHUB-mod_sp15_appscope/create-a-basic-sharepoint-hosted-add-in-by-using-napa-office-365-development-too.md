@@ -15,8 +15,7 @@ Learn how to create a basic SharePoint-hosted SharePoint Add-in by using Napa Of
 
 
  [Run this sample now!](http://go.microsoft.com/fwlink/?LinkId=313212)
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

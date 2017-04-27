@@ -7,8 +7,7 @@ ms.assetid: c3f7e8f0-1a85-41b5-aad2-e8eb36e60e75
 
 # Create a custom ribbon button in the host web of a SharePoint Add-in
 Add custom ribbon button commands to the host web of a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

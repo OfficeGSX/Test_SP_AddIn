@@ -7,8 +7,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 # Create a cloud business add-in with a social newsfeed
 By using the **Cloud Business Add-in** template in Visual Studio, you can create SharePoint Add-ins in which users can view, add, and update SharePoint data. The **Cloud Business Add-in** project type uses Visual Studio LightSwitch technologies, which greatly simplify the process of creating business add-in hosted on SharePoint. In this walkthrough, you'll create an add-in to track job candidates, taking advantage of the SharePoint for Office 365 social integration feature to provide a newsfeed for the add-in.You can download the complete sample application from the MSDN Code Gallery:  [Creating a Cloud Business Add-in with a Social Newsfeed](http://code.msdn.microsoft.com/Creating-a-Cloud-Business-8540c0c9)
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

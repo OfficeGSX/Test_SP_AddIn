@@ -7,8 +7,7 @@ ms.assetid: c3d11afd-098e-4cf9-941e-cca6db28d732
 
 # Add SharePoint write operations to the provider-hosted add-in
 Learn how to write data to SharePoint in a provider-hosted SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

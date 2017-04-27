@@ -7,8 +7,7 @@ ms.assetid: e3000415-50a0-426e-b304-b7de18f2f7d9
 
 # Complete basic operations using SharePoint 2013 REST endpoints
 Learn how to perform basic create, read, update, and delete (CRUD) operations with the SharePoint 2013 REST interface.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

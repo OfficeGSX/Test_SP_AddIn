@@ -7,8 +7,7 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
 
 # High-trust configuration scripts for SharePoint 2013
 Get customizable Windows PowerShell scripts that configure a Microsoft SharePoint 2013 farm to use a high-trust SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

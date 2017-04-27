@@ -7,8 +7,7 @@ ms.assetid: 4534e0f5-61ef-4145-a63b-a9fa70f51391
 
 # Handle list item events in the provider-hosted add-in
 Learn how to handle list item events in a provider-hosted SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 

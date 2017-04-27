@@ -7,8 +7,7 @@ ms.assetid: 3edcb33c-fa9e-4e9e-82d6-5519fd981324
 
 # Update SharePoint Add-ins
 Learn how to create and deploy an update for a SharePoint Add-in.
-> **NOTE**
-> The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname). 
+ 
 
 
 
