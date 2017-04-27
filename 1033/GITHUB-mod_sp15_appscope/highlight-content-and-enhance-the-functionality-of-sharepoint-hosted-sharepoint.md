@@ -30,12 +30,6 @@ The SharePoint callout control provides a flexible way to engage your user and s
 
 
 
- 
-
-
-
-
-
 ## Make the control available to your HTML page by including the callout.js file
 <a name="GettingStarted"> </a>
 

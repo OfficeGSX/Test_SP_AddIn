@@ -10,7 +10,7 @@
 
 |||
 |:-----|:-----|
-|**本文内容**          [先决条件](#SP15createselfhostapp_bk_prereq)           [如何在 Azure 云服务上托管 SharePoint 外接程序](#SP15HostAzure_bk_HowTo)           [为何使用 Azure？](#SP15HostAzure_bk_Why)           [其他资源](#SP15Devapps_AddtionalResources)||
+|**本文内容**<BR/>          [先决条件](#SP15createselfhostapp_bk_prereq)<BR/>           [如何在 Azure 云服务上托管 SharePoint 外接程序](#SP15HostAzure_bk_HowTo)<BR/>           [为何使用 Azure？](#SP15HostAzure_bk_Why)<BR/>           [其他资源](#SP15Devapps_AddtionalResources)||
  
 
 ## 先决条件
