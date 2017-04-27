@@ -7,12 +7,6 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 # Associate a document library with an entity
 By using the document library feature in SharePoint, you can create or upload documents associated with individual items in a list or entity. For example, you might use a document library to store sales literature and product manuals for each product in a list. In a Cloud Business Add-in, you can associate a document library with an entity by creating a relationship.
- 
-
-
-
-
-
 ## Associating a Document Library
 
 The process of associating a document library with an entity involves three steps:
@@ -52,7 +46,7 @@ The process of associating a document library with an entity involves three step
 ![Select the Documents Library](images/CBADocLibrary.PNG)
 
 
-    Figure 2 shows the document library on the SharePoint site.
+Figure 2 shows the document library on the SharePoint site.
 
 
    **Figure 2. Note the custom ProductName column**
@@ -63,8 +57,8 @@ The process of associating a document library with an entity involves three step
 
 
 
-    > **IMPORTANT**
-      > The document library must already exist and must contain a custom column that maps to a unique field in your entity. 
+> **IMPORTANT**
+> The document library must already exist and must contain a custom column that maps to a unique field in your entity. 
 5. In the **Specify the name of the data source**, enter a name, and then choose the **Finish** button.
 
 
@@ -103,8 +97,8 @@ The process of associating a document library with an entity involves three step
 
 
 
-    > **NOTE**
-      > The field must be of the same data type as the **Foreign** key field.
+> **NOTE**
+> The field must be of the same data type as the **Foreign** key field.
 
 ### To add a document library to a new screen set
 
@@ -133,7 +127,7 @@ The process of associating a document library with an entity involves three step
 ![The Add New Screen dialog box](images/CBAScreenSet.PNG)
 
 
-    The **View** screen that is created for the entity contains a **Documents** tab with an **Add Document** button. The button displays a Popup for adding or uploading documents.
+The **View** screen that is created for the entity contains a **Documents** tab with an **Add Document** button. The button displays a Popup for adding or uploading documents.
 
 
 

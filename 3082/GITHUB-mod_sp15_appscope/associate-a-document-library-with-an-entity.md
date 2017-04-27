@@ -46,7 +46,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 ![Seleccionar la biblioteca Documentos](images/CBADocLibrary.PNG)
 
 
-    La Figura 2 muestra la biblioteca de documentos en el sitio de SharePoint.
+La Figura 2 muestra la biblioteca de documentos en el sitio de SharePoint.
 
 
    **Figura 2. Observe la columna personalizada ProductName**
@@ -57,8 +57,8 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-    > **IMPORTANTE**
-      > La biblioteca de documentos ya debe existir y debe contener una columna personalizada que se asigna a un campo único en la entidad. 
+> **IMPORTANTE**
+> La biblioteca de documentos ya debe existir y debe contener una columna personalizada que se asigna a un campo único en la entidad. 
 5. En **Especifique el nombre del origen de datos**, escriba un nombre y, a continuación, elija el botón **Finalizar**.
 
 
@@ -97,8 +97,8 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-    > **NOTA**
-      > El campo debe ser del mismo tipo de datos que el campo de claves **Externas**. 
+> **NOTA**
+> El campo debe ser del mismo tipo de datos que el campo de claves **Externas**. 
 
 ### Para agregar una biblioteca de documentos a un nuevo conjunto de pantallas
 
@@ -127,7 +127,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 ![Cuadro de diálogo Agregar nueva pantalla](images/CBAScreenSet.PNG)
 
 
-    La pantalla **Vista** que se crea para la entidad contiene una pestaña **Documentos** con un botón **Agregar documento**. El botón muestra un elemento emergente para agregar o cargar documentos.
+La pantalla **Vista** que se crea para la entidad contiene una pestaña **Documentos** con un botón **Agregar documento**. El botón muestra un elemento emergente para agregar o cargar documentos.
 
 
 

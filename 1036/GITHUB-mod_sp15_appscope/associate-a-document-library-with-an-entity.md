@@ -46,7 +46,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 ![Sélectionner la bibliothèque de documents](images/CBADocLibrary.PNG)
 
 
-    La figure 2 illustre la bibliothèque de documents sur le site SharePoint.
+La figure 2 illustre la bibliothèque de documents sur le site SharePoint.
 
 
    **Figure 2. Noter la colonne ProductName personnalisée**
@@ -57,8 +57,8 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-    > **IMPORTANTE**
-      > La bibliothèque de documents doit déjà exister et contenir une colonne personnalisée mappée sur un champ unique de votre entité. 
+> **IMPORTANTE**
+> La bibliothèque de documents doit déjà exister et contenir une colonne personnalisée mappée sur un champ unique de votre entité. 
 5. Dans **Spécifiez le nom de la source de données**, entrez un nom, puis cliquez sur le bouton **Terminer**.
 
 
@@ -97,8 +97,8 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-    > **REMARQUE**
-      > Le champ doit être du même type de données que le champ de clé **étrangère**. 
+> **REMARQUE**
+> Le champ doit être du même type de données que le champ de clé **étrangère**. 
 
 ### Pour ajouter une bibliothèque de documents à un nouvel ensemble d'écrans
 
@@ -127,7 +127,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 ![Boîte de dialogue Ajouter un nouvel écran](images/CBAScreenSet.PNG)
 
 
-    L'écran **Affichage** créé pour l'entité contient un onglet **Documents** avec un bouton **Ajouter un document**. Le bouton permet d'afficher un menu contextuel permettant d'ajouter ou de télécharger des documents.
+L'écran **Affichage** créé pour l'entité contient un onglet **Documents** avec un bouton **Ajouter un document**. Le bouton permet d'afficher un menu contextuel permettant d'ajouter ou de télécharger des documents.
 
 
 
