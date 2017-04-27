@@ -271,7 +271,7 @@ SellerDashboard.HTML.Client includes these four screens:
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    The SharePointContext.cs and TokenHelper.cs are the helper classes that provide the client context to authenticate to SharePoint. This enables the photo upload Web API to be used to upload photos of cars to the picture library. The PhotoListHelper.cs and PhotosController.cs files implement the photo-upload Web API. For more information about how the photo-upload Web API is used by LightSwitch, see the article  [Walkthrough: Creating an Add-in for SharePoint by Using LightSwitch](http://msdn.microsoft.com/en-us/library/jj969621.aspx).
+The SharePointContext.cs and TokenHelper.cs are the helper classes that provide the client context to authenticate to SharePoint. This enables the photo upload Web API to be used to upload photos of cars to the picture library. The PhotoListHelper.cs and PhotosController.cs files implement the photo-upload Web API. For more information about how the photo-upload Web API is used by LightSwitch, see the article  [Walkthrough: Creating an Add-in for SharePoint by Using LightSwitch](http://msdn.microsoft.com/en-us/library/jj969621.aspx).
 
 
 - **SellerDashboard.SharePoint**
@@ -907,7 +907,7 @@ The steps in this section describe how to register the sample add-in from the Az
 
 
 > **NOTE**
-> You must register the add-in with Azure AD twice: Once for debugging purposes, and then again to deploy it for production, as described in step 10. > To register the add-in for debugging purposes, use the **SIGN-ON URL** and **APP ID URI** with the debugging URL of the SellerDashboard.Server project so that you can run the Visual Studio debugger (F5). This URL will be of the form https://localhost. *nnnn*  , where *nnnn*  is a port number. You can find this URL in the Properties pane in Visual Studio.> Then, when you are ready to deploy for production, edit the registration to use the correct production URL. 
+> You must register the add-in with Azure AD twice: Once for debugging purposes, and then again to deploy it for production, as described in step 10. <BR /><BR /> To register the add-in for debugging purposes, use the **SIGN-ON URL** and **APP ID URI** with the debugging URL of the SellerDashboard.Server project so that you can run the Visual Studio debugger (F5). This URL will be of the form https://localhost. *nnnn*  , where *nnnn*  is a port number. You can find this URL in the Properties pane in Visual Studio.<BR /><BR /> Then, when you are ready to deploy for production, edit the registration to use the correct production URL. 
 
 
 

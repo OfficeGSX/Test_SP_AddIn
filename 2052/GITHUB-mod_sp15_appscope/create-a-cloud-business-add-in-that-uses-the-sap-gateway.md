@@ -5,6 +5,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 ---
 
 
+
 # 创建一个使用 SAP Gateway 的云企业外接程序
 了解如何构建 LightSwitch SharePoint 提供程序托管的外接程序，以通过 SAP Gateway for Microsoft 访问 SAP 数据。
 本文重点介绍 Microsoft 开发团队创建 LightSwitch SharePoint 提供程序托管的外接程序时的关键步骤，以通过 SAP Gateway for Microsoft 访问 SAP 数据。该外接程序支持对 SAP 数据执行 CRUD 操作，可用于从 SharePoint 图片库查看图片或向其上载图片。
@@ -41,7 +42,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 - **Microsoft Azure 中的组织帐户。** 请参阅 [在 Azure AD 中创建组织用户帐户](http://go.microsoft.com/fwlink/?LinkID=512580)。
 
     > **注释**
-      > 创建帐户后，登录到您的 Office 365 帐户 (login.microsoftonline.com) 以更改临时密码。 
+    > 创建帐户后，登录到您的 Office 365 帐户 (login.microsoftonline.com) 以更改临时密码。 
 - **SAP OData 终结点** 及其中的示例数据。请参阅 [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) 文档。
 
 
@@ -106,7 +107,7 @@ SellerDashboard 解决方案包括 8 个项目，如下面的图所示，该解�
 
   ```cs
 
-// Use the auth code, acquire the refresh token and access token, and store them in the current session
+  // Use the auth code, acquire the refresh token and access token, and store them in the current session
         public bool AcquireTokenFromAuthCode(string authCode, string redirectUrl = "redirectUrl")
         {
             if (!IsAuthorized &amp;&amp; !string.IsNullOrEmpty(authCode))
@@ -240,11 +241,10 @@ SellerDashboardStudio 包括标准 LightSwitch SharePoint 外接程序组件。
     此组件包括屏幕、自定义控件和照片上载控件。 下图显示了主要组件。
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client 包括下列四个屏幕：
+SellerDashboard.HTML.Client 包括下列四个屏幕：
 
   - BrowseInventoryItems 是主屏幕，用于浏览所有库存项目的基本信息。
 
@@ -271,7 +271,7 @@ SellerDashboardStudio 包括标准 LightSwitch SharePoint 外接程序组件。
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    SharePointContext.cs 和 TokenHelper.cs 是帮助程序类，提供用于向 SharePoint 进行身份验证的客户端上下文。这将启用用于将汽车照片上载到图片库的照片上载 Web API。PhotoListHelper.cs 和 PhotosController.cs 文件将实现照片上载 Web API。有关 LightSwitch 如何使用照片上载 Web API 的详细信息，请参阅文章 [演练：使用 LightSwitch 创建 SharePoint 外接程序](https://msdn.microsoft.com/zh-cn/library/jj969621.aspx)。
+SharePointContext.cs 和 TokenHelper.cs 是帮助程序类，提供用于向 SharePoint 进行身份验证的客户端上下文。这将启用用于将汽车照片上载到图片库的照片上载 Web API。PhotoListHelper.cs 和 PhotosController.cs 文件将实现照片上载 Web API。有关 LightSwitch 如何使用照片上载 Web API 的详细信息，请参阅文章 [演练：使用 LightSwitch 创建 SharePoint 外接程序](https://msdn.microsoft.com/zh-cn/library/jj969621.aspx)。
 
 
 - **SellerDashboard.SharePoint**
@@ -373,7 +373,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   ```
 
 
-    这是我们的测试数据库，"属性类型"和"可为空值"基于具体方案。ID 为 PropertyRef，OData CRUD 操作基于 ID。StockNo 属性用于将数据与 SharePoint 图片库中存储的汽车图片进行混搭。
+这是我们的测试数据库，"属性类型"和"可为空值"基于具体方案。ID 为 PropertyRef，OData CRUD 操作基于 ID。StockNo 属性用于将数据与 SharePoint 图片库中存储的汽车图片进行混搭。
 
 
 -  *为 RIA 服务定义的数据模型* 
@@ -429,14 +429,14 @@ public interface IInventoryItem
   ```
 
 
-    未包括在 SAP 数据库架构中的任何属性均可忽略。例如，出于可伸缩性考虑，此处添加了 **Images** 属性。此数据模型是真实 SAP 数据库和 SellerDashboard.Server 数据源之间的中间层。LightSwitch 项目具有两个组件：View 和 Server。当您在服务器端添加外部数据源时，LightSwitch 将帮助您构建一个抽象数据层，此数据层已添加到服务器端的数据源中。
+未包括在 SAP 数据库架构中的任何属性均可忽略。例如，出于可伸缩性考虑，此处添加了 **Images** 属性。此数据模型是真实 SAP 数据库和 SellerDashboard.Server 数据源之间的中间层。LightSwitch 项目具有两个组件：View 和 Server。当您在服务器端添加外部数据源时，LightSwitch 将帮助您构建一个抽象数据层，此数据层已添加到服务器端的数据源中。
 
-    大多数属性的类型与 SAP 数据库架构中的属性相同，StockNo 除外，其类型已从 **int** 更改为 **string**。这是因为 StockNo 用作定义 SAP 数据与 SharePoint 图片库之间关系的一种方式。
+大多数属性的类型与 SAP 数据库架构中的属性相同，StockNo 除外，其类型已从 **int** 更改为 **string**。这是因为 StockNo 用作定义 SAP 数据与 SharePoint 图片库之间关系的一种方式。
 
-    > **提示**
-      > StockNo 的类型必须为 **string** ，因为 SharePoint 图片库中存储的值为 **Text** 。这两种类型必须匹配才能实现数据混搭。
+> **提示**
+> StockNo 的类型必须为 **string** ，因为 SharePoint 图片库中存储的值为 **Text** 。这两种类型必须匹配才能实现数据混搭。
 
-    两个界面的实现为 CarInventoryModel/InventoryItem.cs 和 CarInventoryModel/InventoryCollection.cs。
+两个界面的实现为 CarInventoryModel/InventoryItem.cs 和 CarInventoryModel/InventoryCollection.cs。
 
 
 -  *LightSwitch 服务器端使用的数据源* 
@@ -444,7 +444,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    在 SellerDashboard 服务器中，当您添加 WCF RIA 服务 (BoxXDataService) 时，将包含在 CarInventoryModel 中定义的数据模型，您可获取相关的数据表。您可以更改某些属性的类型。例如，您可以将 **BuyerEmail** 类型从 **String** 更改为 **Email Address** ，LightSwitch 将支持在客户端进行电子邮件格式检查。
+在 SellerDashboard 服务器中，当您添加 WCF RIA 服务 (BoxXDataService) 时，将包含在 CarInventoryModel 中定义的数据模型，您可获取相关的数据表。您可以更改某些属性的类型。例如，您可以将 **BuyerEmail** 类型从 **String** 更改为 **Email Address** ，LightSwitch 将支持在客户端进行电子邮件格式检查。
 
 
  **SharePoint 图片库**
@@ -921,7 +921,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 
 
 > **注释**
-> 您必须在 Azure AD 中注册外接程序两次，一次是为了进行调试，另一次是为了将其部署用于生产，如步骤 10 中所述。 > 要注册外接程序以进行调试，请将"登录 URL"和"APP ID URI"与 SellerDashboard.Server 项目的调试 URL 一起使用，以便您可以运行 Visual Studio 调试器 (F5)。 此 URL 的格式为 https://localhost. *nnnn*  ，其中 *nnnn*  是端口号。在 Visual Studio 中的"属性"窗格中，您可以找到此 URL。> 然后，当您准备好部署用于生产时，编辑注册以使用正确的生产 URL。 
+> 您必须在 Azure AD 中注册外接程序两次，一次是为了进行调试，另一次是为了将其部署用于生产，如步骤 10 中所述。 <BR /><BR /> 要注册外接程序以进行调试，请将"登录 URL"和"APP ID URI"与 SellerDashboard.Server 项目的调试 URL 一起使用，以便您可以运行 Visual Studio 调试器 (F5)。 此 URL 的格式为 https://localhost. *nnnn*  ，其中 *nnnn*  是端口号。在 Visual Studio 中的"属性"窗格中，您可以找到此 URL。<BR /><BR /> 然后，当您准备好部署用于生产时，编辑注册以使用正确的生产 URL。 
 
 
 
@@ -947,7 +947,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 |App ID URI  <br/> |复制在"Add-in ID URI"字段中显示的值。  <br/> |
  
 
-    请记得保持此信息便于使用，因为您在稍后的过程中将需要它。
+请记得保持此信息便于使用，因为您在稍后的过程中将需要它。
 
 
 3. 在"针对其他应用程序的权限"部分中，执行下列操作：

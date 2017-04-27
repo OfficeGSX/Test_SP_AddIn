@@ -7,7 +7,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 
 
 # Crear un complemento empresarial de nube que use SAP Gateway
- Aprenda a crear el complemento hospedado por el proveedor de LightSwitch SharePoint para acceder a datos de SAP mediante la puerta de enlace de SAP para Microsoft.
+Aprenda a crear el complemento hospedado por el proveedor de LightSwitch SharePoint para acceder a datos de SAP mediante la puerta de enlace de SAP para Microsoft.
 En este artículo se resaltan los pasos clave que el equipo de desarrollo de Microsoft ha seguido para crear un complemento LightSwitch SharePoint hospedado por el proveedor que puede acceder a los datos de SAP mediante la puerta de enlace de SAP para Microsoft. Este complemento es compatible con operaciones CRUD en datos de SAP y puede usarse para ver las imágenes y cargar las imágenes en una biblioteca de imágenes de SharePoint.
 
 
@@ -42,7 +42,7 @@ Los siguientes son los requisitos previos para los procedimientos descritos en e
 - **Una cuenta organizativa de Microsoft Azure.** Consulte [Crear una cuenta organizativa de usuario en Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580).
 
     > **NOTA**
-      > Inicie sesión en su cuenta de Office 365 (login.microsoftonline.com) para cambiar la contraseña temporal una vez que la cuenta se haya creado. 
+    > Inicie sesión en su cuenta de Office 365 (login.microsoftonline.com) para cambiar la contraseña temporal una vez que la cuenta se haya creado. 
 - **Un extremo OData de SAP** que incluya datos de ejemplo. Consulte la documentación de [Puerta de enlace de SAP para Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
 
 
@@ -241,11 +241,10 @@ SellerDashboardStudio incluye componentes de complemento LightSwitch SharePoint 
     Este componente incluye las pantallas, un control personalizado y un control de carga de fotos. La imagen siguiente muestra sus componentes principales.
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client incluye estas cuatro pantallas:
+SellerDashboard.HTML.Client incluye estas cuatro pantallas:
 
   - BrowseInventoryItems es la pantalla principal, que se usa para examinar la información básica de todos los elementos de inventario.
 
@@ -272,7 +271,7 @@ SellerDashboardStudio incluye componentes de complemento LightSwitch SharePoint 
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    SharePointContext.cs y TokenHelper.cs son las clases auxiliares que proporcionan el contexto de cliente para autenticar a SharePoint. Esto permite que la API web de carga de fotos se pueda usar para cargar fotos de autos en la biblioteca de imágenes. Los archivos PhotoListHelper.cs y PhotosController.cs implementan la API web de carga de fotos. Para obtener más información sobre cómo LightSwitch usa la API web de carga de fotos, consulte el artículo  [Tutorial: Crear un complemento para SharePoint utilizando LightSwitch](http://msdn.microsoft.com/es-es/library/jj969621.aspx).
+SharePointContext.cs y TokenHelper.cs son las clases auxiliares que proporcionan el contexto de cliente para autenticar a SharePoint. Esto permite que la API web de carga de fotos se pueda usar para cargar fotos de autos en la biblioteca de imágenes. Los archivos PhotoListHelper.cs y PhotosController.cs implementan la API web de carga de fotos. Para obtener más información sobre cómo LightSwitch usa la API web de carga de fotos, consulte el artículo  [Tutorial: Crear un complemento para SharePoint utilizando LightSwitch](http://msdn.microsoft.com/es-es/library/jj969621.aspx).
 
 
 - **SellerDashboard.SharePoint**
@@ -374,7 +373,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
  ```
 
 
-    Es nuestra base de datos de prueba, y el valor de propiedad que admite valores NULL y tipo de propiedad se basa en el escenario. El identificador es PropertyRef y la operación CRUD OData se basa en el identificador. Se usa la propiedad StockNo para mezclar datos con la imagen del automóvil que se almacena en la biblioteca de imágenes de SharePoint.
+Es nuestra base de datos de prueba, y el valor de propiedad que admite valores NULL y tipo de propiedad se basa en el escenario. El identificador es PropertyRef y la operación CRUD OData se basa en el identificador. Se usa la propiedad StockNo para mezclar datos con la imagen del automóvil que se almacena en la biblioteca de imágenes de SharePoint.
 
 
 -  *Modelo de datos definido para el servicio de RIA* 
@@ -430,14 +429,14 @@ public interface IInventoryItem
  ```
 
 
-    Toda propiedad que no se incluye en el esquema de base de datos de SAP se puede ignorar. Por ejemplo, la propiedad **Imágenes** se agregó aquí por motivos de escalabilidad. Este modelo de datos es una capa intermedia entre la base de datos de SAP real y el origen de datos SellerDashboard.Server. El proyecto LightSwitch tiene dos componentes: la vista y el servidor. Al agregar un origen de datos externo en el servidor, LightSwitch le ayuda a crear una capa de datos abstractos que se agrega al origen de datos en el servidor.
+Toda propiedad que no se incluye en el esquema de base de datos de SAP se puede ignorar. Por ejemplo, la propiedad **Imágenes** se agregó aquí por motivos de escalabilidad. Este modelo de datos es una capa intermedia entre la base de datos de SAP real y el origen de datos SellerDashboard.Server. El proyecto LightSwitch tiene dos componentes: la vista y el servidor. Al agregar un origen de datos externo en el servidor, LightSwitch le ayuda a crear una capa de datos abstractos que se agrega al origen de datos en el servidor.
 
-    La mayoría de las propiedades tiene el mismo tipo que las propiedades en el esquema base de datos de SAP, excepto StockNo, cuyo tipo se ha cambiado de **int** a **string**. Esto es porque StockNo se usa como una manera de definir la relación entre los datos de SAP y la biblioteca de imágenes de SharePoint.
+La mayoría de las propiedades tiene el mismo tipo que las propiedades en el esquema base de datos de SAP, excepto StockNo, cuyo tipo se ha cambiado de **int** a **string**. Esto es porque StockNo se usa como una manera de definir la relación entre los datos de SAP y la biblioteca de imágenes de SharePoint.
 
-    > **SUGERENCIA**
-      > StockNo debe tener el tipo **string** porque el valor almacenado en la biblioteca de imágenes de SharePoint es **Text**. Estos dos tipos deben coincidir para lograr el mashup de datos.
+> **SUGERENCIA**
+> StockNo debe tener el tipo **string** porque el valor almacenado en la biblioteca de imágenes de SharePoint es **Text**. Estos dos tipos deben coincidir para lograr el mashup de datos.
 
-    La implementación de las dos interfaces se encuentra en CarInventoryModel/InventoryItem.cs y CarInventoryModel/InventoryCollection.cs.
+La implementación de las dos interfaces se encuentra en CarInventoryModel/InventoryItem.cs y CarInventoryModel/InventoryCollection.cs.
 
 
 -  *Origen de datos consumido por el servidor de LightSwitch* 
@@ -445,7 +444,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    En el servidor SellerDashboard, al agregar el servicio de WCF RIA (BoxXDataService), se incluye el modelo de datos definido en CarInventoryModel y se obtiene la tabla de datos relevante. Puede cambiar el tipo de algunas de las propiedades. Por ejemplo, puede cambiar el tipo **BuyerEmail** de **String** a **Email Address**, y LightSwitch será compatible con la comprobación de formato de correo electrónico en el cliente.
+En el servidor SellerDashboard, al agregar el servicio de WCF RIA (BoxXDataService), se incluye el modelo de datos definido en CarInventoryModel y se obtiene la tabla de datos relevante. Puede cambiar el tipo de algunas de las propiedades. Por ejemplo, puede cambiar el tipo **BuyerEmail** de **String** a **Email Address**, y LightSwitch será compatible con la comprobación de formato de correo electrónico en el cliente.
 
 
  **Biblioteca de imágenes de SharePoint**
@@ -514,7 +513,7 @@ Esta sección proporciona una introducción a cómo el complemento implementa OA
 
 
 
- ** Introducción**
+ **Introducción**
 
 
 
@@ -908,7 +907,7 @@ Los pasos de esta sección describen cómo registrar el complemento de ejemplo d
 
 
 > **NOTA**
-> Debe registrar el complemento con Azure AD dos veces: una vez con fines de depuración, y luego para implementarlo para la producción, como se describe en el paso 10. > Para registrar el complemento con fines de depuración, use la **DIRECCIÓN URL DE INICIO DE SESIÓN** y el **URI DE ID. DE APLICACIÓN** con la dirección URL de depuración del proyecto SellerDashboard.Server para poder ejecutar el depurador de Visual Studio (F5). Esta dirección URL debe tener el formato https://localhost. *nnnn*  , donde *nnnn*  es un número de puerto. Puede encontrar esta dirección URL en el panel Propiedades en Visual Studio.> A continuación, cuando esté listo para la implementación de producción, edite el registro para usar la dirección URL correcta de producción. 
+> Debe registrar el complemento con Azure AD dos veces: una vez con fines de depuración, y luego para implementarlo para la producción, como se describe en el paso 10. <BR /><BR /> Para registrar el complemento con fines de depuración, use la **DIRECCIÓN URL DE INICIO DE SESIÓN** y el **URI DE ID. DE APLICACIÓN** con la dirección URL de depuración del proyecto SellerDashboard.Server para poder ejecutar el depurador de Visual Studio (F5). Esta dirección URL debe tener el formato https://localhost. *nnnn*  , donde *nnnn*  es un número de puerto. Puede encontrar esta dirección URL en el panel Propiedades en Visual Studio.<BR /><BR /> A continuación, cuando esté listo para la implementación de producción, edite el registro para usar la dirección URL correcta de producción. 
 
 
 

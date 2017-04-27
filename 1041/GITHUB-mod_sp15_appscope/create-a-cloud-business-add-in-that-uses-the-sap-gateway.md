@@ -41,7 +41,7 @@ ms.assetid: b96f887d-d892-4b1d-b832-a3f61228c5cf
 - **Microsoft Azure の組織アカウント。** 「 [アプリが Office 365 API にアクセスできるように Azure AD を使用してアプリを手動で登録する](http://go.microsoft.com/fwlink/?LinkID=512580)」を参照してください。
 
     > **メモ**
-      > アカウントを作成したら、Office 365 アカウントにログインして (login.microsoftonline.com) 一時パスワードを変更してください。 
+    > アカウントを作成したら、Office 365 アカウントにログインして (login.microsoftonline.com) 一時パスワードを変更してください。 
 - サンプル データがある **SAP OData エンドポイント** 。 [SAP Gateway for Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635) のドキュメントを参照してください。
 
 
@@ -240,11 +240,10 @@ SellerDashboardStudio には、標準の LightSwitch SharePoint アドインの�
     このコンポーネントには、画面、カスタム コントロール、および写真のアップロード コントロールが含まれます。次の画像は、その主要なコンポーネントを示します。
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client には、次の 4 つの画面が含まれます。
+SellerDashboard.HTML.Client には、次の 4 つの画面が含まれます。
 
   - BrowseInventoryItems は、すべての在庫品目の基本的な情報を参照するのに使用されるホーム画面です。
 
@@ -271,7 +270,7 @@ SellerDashboardStudio には、標準の LightSwitch SharePoint アドインの�
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    SharePointContext.cs および TokenHelper.cs は、SharePoint に対する認証用のクライアント コンテキストを提供するヘルパー クラスです。これにより、車の写真を画像ライブラリにアップロードするために写真のアップロード Web API を使用できるようになります。PhotoListHelper.cs ファイルおよび PhotosController.cs ファイルは、写真のアップロード Web API を実装します。LightSwitch による写真のアップロード Web API の使用方法については、「 [チュートリアル: LightSwitch を使用した SharePoint アドインの作成](https://msdn.microsoft.com/ja-jp/library/jj969621.aspx)」を参照してください。
+SharePointContext.cs および TokenHelper.cs は、SharePoint に対する認証用のクライアント コンテキストを提供するヘルパー クラスです。これにより、車の写真を画像ライブラリにアップロードするために写真のアップロード Web API を使用できるようになります。PhotoListHelper.cs ファイルおよび PhotosController.cs ファイルは、写真のアップロード Web API を実装します。LightSwitch による写真のアップロード Web API の使用方法については、「 [チュートリアル: LightSwitch を使用した SharePoint アドインの作成](https://msdn.microsoft.com/ja-jp/library/jj969621.aspx)」を参照してください。
 
 
 - **SellerDashboard.SharePoint**
@@ -373,7 +372,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
  ```
 
 
-    これは、テスト データベースであり、プロパティの種類と Null 許容値はシナリオに基づいています。ID は PropertyRef であり、OData CRUD 操作は ID に基づいています。StockNo プロパティは、データを SharePoint の画像ライブラリに格納されている車の写真と組み合わせるのに使用されます。
+これは、テスト データベースであり、プロパティの種類と Null 許容値はシナリオに基づいています。ID は PropertyRef であり、OData CRUD 操作は ID に基づいています。StockNo プロパティは、データを SharePoint の画像ライブラリに格納されている車の写真と組み合わせるのに使用されます。
 
 
 -  *RIA サービスに対して定義されるデータ モデル* 
@@ -429,14 +428,14 @@ public interface IInventoryItem
  ```
 
 
-    SAP データベース スキーマに含まれていないプロパティはすべて無視できます。たとえば、 **Images** プロパティはスケーラビリティを考慮するために追加されました。このデータ モデルは、実際の SAP データベースと SellerDashboard.Server データ ソースの間の中間層です。LightSwitch プロジェクトには、View および Server の 2 つのコンポーネントがあります。Server 側に外部データ ソースを追加するとき、LightSwitch は Server 側のデータ ソースに追加される抽象データ層を作成するうえで役立ちます。
+SAP データベース スキーマに含まれていないプロパティはすべて無視できます。たとえば、 **Images** プロパティはスケーラビリティを考慮するために追加されました。このデータ モデルは、実際の SAP データベースと SellerDashboard.Server データ ソースの間の中間層です。LightSwitch プロジェクトには、View および Server の 2 つのコンポーネントがあります。Server 側に外部データ ソースを追加するとき、LightSwitch は Server 側のデータ ソースに追加される抽象データ層を作成するうえで役立ちます。
 
-    多くのプロパティは、SAP データベース スキーマのプロパティと同じ型です。例外は StockNo で、その型が **int** から **string** に変更されています。これは、StockNo が SAP データと SharePoint 画像ライブラリのリレーションシップを定義する手段として使用されるためです。
+多くのプロパティは、SAP データベース スキーマのプロパティと同じ型です。例外は StockNo で、その型が **int** から **string** に変更されています。これは、StockNo が SAP データと SharePoint 画像ライブラリのリレーションシップを定義する手段として使用されるためです。
 
-    > **ヒント**
-      > SharePoint 画像ライブラリに格納されている値が **Text** 型であるため、StockNo は、 **string** 型でなければなりません。データ マッシュアップを実行するには、これら 2 つの型が一致していなければなりません。
+> **ヒント**
+> SharePoint 画像ライブラリに格納されている値が **Text** 型であるため、StockNo は、 **string** 型でなければなりません。データ マッシュアップを実行するには、これら 2 つの型が一致していなければなりません。
 
-    2 つのインターフェイスは、CarInventoryModel/InventoryItem.cs と CarInventoryModel/InventoryCollection.cs で実装されます。
+2 つのインターフェイスは、CarInventoryModel/InventoryItem.cs と CarInventoryModel/InventoryCollection.cs で実装されます。
 
 
 -  *LightSwitch サーバー側で使用されるデータ ソース* 
@@ -444,7 +443,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    SellerDashboard サーバーでは、WCF RIA サービス (BoxXDataService) を追加すると、CarInventoryModel で定義されるデータ モデルが含められ、関連するデータ テーブルが作成されます。一部のプロパティの型は変更できます。たとえば、 **BuyerEmail** 型を **String** から **Email Address** に変更でき、LightSwitch はクライアント側の電子メール形式のチェックをサポートします。
+SellerDashboard サーバーでは、WCF RIA サービス (BoxXDataService) を追加すると、CarInventoryModel で定義されるデータ モデルが含められ、関連するデータ テーブルが作成されます。一部のプロパティの型は変更できます。たとえば、 **BuyerEmail** 型を **String** から **Email Address** に変更でき、LightSwitch はクライアント側の電子メール形式のチェックをサポートします。
 
 
  **SharePoint 画像ライブラリ**
@@ -513,7 +512,7 @@ InventoryItem と ContosoMotorsPicture の間に一対ゼロ リレーション�
 
 
 
- ** 概要**
+ **概要**
 
 
 
@@ -907,7 +906,7 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 
 
 > **メモ**
-> アドインを Azure AD に 2 回登録する必要があります。1 回はデバッグのため、もう 1 回は運用を目的とした展開のためです (手順 10 を参照)。 > アドインをデバッグ用に登録するには、Visual Studio debugger (F5) を実行できるように、SellerDashboard.Server プロジェクトのデバッグ URL と共に **サインオン URL** と **アプリ ID URI** を使用します。この URL は、https://localhost. *nnnn*  の形式です。ここで、 *nnnn*  はポート番号です。この URL は、Visual Studio の [プロパティ] ウィンドウで確認できます。> 次に、運用のために展開する準備ができたら、登録内容を編集して正しい運用 URL を使用します。 
+> アドインを Azure AD に 2 回登録する必要があります。1 回はデバッグのため、もう 1 回は運用を目的とした展開のためです (手順 10 を参照)。 <BR /><BR /> アドインをデバッグ用に登録するには、Visual Studio debugger (F5) を実行できるように、SellerDashboard.Server プロジェクトのデバッグ URL と共に **サインオン URL** と **アプリ ID URI** を使用します。この URL は、https://localhost. *nnnn*  の形式です。ここで、 *nnnn*  はポート番号です。この URL は、Visual Studio の [プロパティ] ウィンドウで確認できます。<BR /><BR /> 次に、運用のために展開する準備ができたら、登録内容を編集して正しい運用 URL を使用します。 
 
 
 
@@ -931,9 +930,9 @@ private static readonly string ClientSecret = "LypZu2yVajlHfPLRn5J2hBrwCk5aBOHxE
 |クライアント ID  <br/> |"クライアント ID" フィールドに表示される値をコピーします。  <br/> |
 |クライアント シークレット  <br/> | 新しいアプリケーション キーを生成します。 <br/>  [キー] セクションで、1 年または 2 年の期間を選択します。 <br/>  ページの下部にあるコマンド バーで、 **[保存]** をクリックします。 <br/>  キーの値が表示されます。 <br/>  将来の使用のためにキーの値をコピーし、保存します。ページから移動すると、キーの値を取得することはできません。 <br/> |
 |アプリ ID URI  <br/> |**[アドイン ID URI]** フィールドに表示される値をコピーします。 <br/> |
- 
 
-    以降の手順で必要になるため、この情報を手元に置くことを覚えておいてください。
+
+以降の手順で必要になるため、この情報を手元に置くことを覚えておいてください。
 
 
 3. **[他のアプリケーションへのアクセス許可]** セクションで、以下を実行します。

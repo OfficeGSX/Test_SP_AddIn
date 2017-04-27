@@ -42,7 +42,7 @@ Les éléments suivants sont des conditions préalables à la réalisation des p
 - **Un compte d'entreprise dans Microsoft Azure.** Voir [Créer un compte d'utilisateur professionnel dans Azure AD](http://go.microsoft.com/fwlink/?LinkID=512580)
 
     > **REMARQUE**
-      > Connectez-vous à votre compte Office 365 (login.microsoftonline.com) pour modifier le mot de passe temporaire une fois le compte créé. 
+    > Connectez-vous à votre compte Office 365 (login.microsoftonline.com) pour modifier le mot de passe temporaire une fois le compte créé. 
 - **Un point de terminaison OData SAP** contenant des exemples de données. Pour en savoir plus, consultez [Passerelle SAP pour Microsoft](http://go.microsoft.com/fwlink/?LinkId=507635).
 
 
@@ -150,9 +150,9 @@ Cette catégorie comprend tous les composants nécessaires pour interagir avec l
 
 - **BoxXDataService**
 
-    Il s'agit d'un service RIA WCF, qui est l'interface utilisée par le composant SellerDashboard côté serveur hébergé dans Azure, et qui utilise la source de données SAP de la Passerelle SAP pour Microsoft.
+Il s'agit d'un service RIA WCF, qui est l'interface utilisée par le composant SellerDashboard côté serveur hébergé dans Azure, et qui utilise la source de données SAP de la Passerelle SAP pour Microsoft.
 
-    L'extrait de code suivant est la méthode web CRUD, prise en charge par le service RIA WCF. Pour plus de détails, voir BoxXDataService/BoxXDataService.cs.
+L'extrait de code suivant est la méthode web CRUD, prise en charge par le service RIA WCF. Pour plus de détails, voir BoxXDataService/BoxXDataService.cs.
 
 
 
@@ -241,11 +241,10 @@ SellerDashboardStudio comprend des composants standard du complément SharePoint
     Ce composant inclut les écrans, un contrôle personnalisé et un contrôle de téléchargement de photos. L'image suivante illustre les principaux composants.
 
 
-- 
-![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+- ![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
-    SellerDashboard.HTML.Client comprend les quatre écrans suivants :
+SellerDashboard.HTML.Client comprend les quatre écrans suivants :
 
   - BrowseInventoryItems est l'écran d'accueil, utilisé pour parcourir les informations de base pour tous les objets de l'inventaire.
 
@@ -272,7 +271,7 @@ SellerDashboardStudio comprend des composants standard du complément SharePoint
 ![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
-    SharePointContext.cs et TokenHelper.cs sont les classes d'assistance qui fournissent le contexte client pour l'authentification par rapport à SharePoint. Ceci permet d'utiliser l'API web de téléchargement de photos pour télécharger des photos de voitures dans la bibliothèque d'images. Les fichiers PhotoListHelper.cs et PhotosController.cs implémentent l'API web de téléchargement de photos. Pour plus d'informations sur l'API web de téléchargement de photos utilisée par LightSwitch, consultez l'article  [Procédure pas à pas : création d'un complément SharePoint à l'aide de LightSwitch](http://msdn.microsoft.com/fr-fr/library/jj969621.aspx).
+SharePointContext.cs et TokenHelper.cs sont les classes d'assistance qui fournissent le contexte client pour l'authentification par rapport à SharePoint. Ceci permet d'utiliser l'API web de téléchargement de photos pour télécharger des photos de voitures dans la bibliothèque d'images. Les fichiers PhotoListHelper.cs et PhotosController.cs implémentent l'API web de téléchargement de photos. Pour plus d'informations sur l'API web de téléchargement de photos utilisée par LightSwitch, consultez l'article  [Procédure pas à pas : création d'un complément SharePoint à l'aide de LightSwitch](http://msdn.microsoft.com/fr-fr/library/jj969621.aspx).
 
 
 - **SellerDashboard.SharePoint**
@@ -374,7 +373,7 @@ xmlns:edmx:"http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
  ```
 
 
-    Il s'agit de notre base de données de test, et le type de propriété et la valeur Nullable sont basés sur le scénario. L'ID est PropertyRef et l'opération CRUD OData est basée sur l'ID. La propriété StockNo est utilisée pour effectuer le mashup des données avec la photo de la voiture qui est enregistrée dans la bibliothèque d'images SharePoint.
+Il s'agit de notre base de données de test, et le type de propriété et la valeur Nullable sont basés sur le scénario. L'ID est PropertyRef et l'opération CRUD OData est basée sur l'ID. La propriété StockNo est utilisée pour effectuer le mashup des données avec la photo de la voiture qui est enregistrée dans la bibliothèque d'images SharePoint.
 
 
 -  *Modèle de données défini pour le service RIA* 
@@ -430,14 +429,14 @@ public interface IInventoryItem
  ```
 
 
-    Toute propriété qui n'est pas incluse dans le schéma de la base de données SAP peut être ignorée. Par exemple, la propriété **Images** a été ajoutée ici à des fins d'évolutivité. Ce modèle de données est une couche intermédiaire entre la base de données SAP réelle et la source de données SellerDashboard.Server. Le projet LightSwitch a deux composants : View et Server. Lorsque vous ajoutez une source de données externe côté serveur, LightSwitch vous aide à créer une couche de données abstraite qui est ajoutée à la source de données côté serveur.
+Toute propriété qui n'est pas incluse dans le schéma de la base de données SAP peut être ignorée. Par exemple, la propriété **Images** a été ajoutée ici à des fins d'évolutivité. Ce modèle de données est une couche intermédiaire entre la base de données SAP réelle et la source de données SellerDashboard.Server. Le projet LightSwitch a deux composants : View et Server. Lorsque vous ajoutez une source de données externe côté serveur, LightSwitch vous aide à créer une couche de données abstraite qui est ajoutée à la source de données côté serveur.
 
-    La plupart des propriétés ont le même type que les propriétés dans le schéma de base de données SAP, sauf pour StockNo, dont le type **int** a été modifié et défini sur **string**. Ceci est dû au fait que StockNo est utilisé comme un moyen de définir la relation entre les données de SAP et la bibliothèque d'images SharePoint.
+La plupart des propriétés ont le même type que les propriétés dans le schéma de base de données SAP, sauf pour StockNo, dont le type **int** a été modifié et défini sur **string**. Ceci est dû au fait que StockNo est utilisé comme un moyen de définir la relation entre les données de SAP et la bibliothèque d'images SharePoint.
 
-    > **CONSEIL**
-      > StockNo doit avoir le type **string**, car la valeur stockée dans la bibliothèque d'images SharePoint est **Text**. Ces deux types doivent correspondre afin d'accomplir le mashup de données.
+> **CONSEIL**
+> StockNo doit avoir le type **string**, car la valeur stockée dans la bibliothèque d'images SharePoint est **Text**. Ces deux types doivent correspondre afin d'accomplir le mashup de données.
 
-    La mise en œuvre des deux interfaces est dans CarInventoryModel/InventoryItem.cs et CarInventoryModel/InventoryCollection.cs.
+La mise en œuvre des deux interfaces est dans CarInventoryModel/InventoryItem.cs et CarInventoryModel/InventoryCollection.cs.
 
 
 -  *Source de données utilisée par LightSwitch côté serveur* 
@@ -445,7 +444,7 @@ public interface IInventoryItem
 ![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
-    Dans le serveur de SellerDashboard, lorsque vous ajoutez le service RIA WCF (BoxXDataService), le modèle de données qui est défini dans CarInventoryModel est inclus, et vous obtenez le tableau de données pertinent. Vous pouvez changer le type de certaines propriétés. Par exemple, vous pouvez changer le type **BuyerEmail** **String** sur **Email Address**, et LightSwitch prendra en charge la vérification du format électronique côté client.
+Dans le serveur de SellerDashboard, lorsque vous ajoutez le service RIA WCF (BoxXDataService), le modèle de données qui est défini dans CarInventoryModel est inclus, et vous obtenez le tableau de données pertinent. Vous pouvez changer le type de certaines propriétés. Par exemple, vous pouvez changer le type **BuyerEmail** **String** sur **Email Address**, et LightSwitch prendra en charge la vérification du format électronique côté client.
 
 
  **Bibliothèque d'images SharePoint**
@@ -548,7 +547,8 @@ SellerDashboard est un complément SharePoint hébergé par un fournisseur qui p
 
 
 
-```cs
+
+```cs
 
 protected override void Page_Load(object sender, EventArgs e)
 {
@@ -572,7 +572,8 @@ protected override void Page_Load(object sender, EventArgs e)
      }
 
      base.Page_Load(sender, e);
- }```
+ }
+```
 
 Pour plus de détails, voir SellerDashBoard.Server/SharePointLaunch.aspx.cs et AADAuthLib/AuthUtil.cs dans l'exemple de code.
 
@@ -595,7 +596,8 @@ Les extraits de code suivants indiquent la logique de code principale des opéra
 
 
 
-```cs
+
+```cs
 
         public void CreateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -626,7 +628,8 @@ BoxXDataReader
 
                 dataCollection.CopyFrom(filteredCollection);
             }
-        }```
+        }
+```
 
  **BoxXDataUpdater**
 
@@ -634,7 +637,8 @@ BoxXDataReader
 
 
 
-```cs
+
+```cs
 
 public void UpdateInventoryItem(IInventoryItem inventoryItem)
         {
@@ -662,7 +666,8 @@ BoxXDataDeleter
 
             // Delete existing entry request execute
             IODataResponseMessage responseMessage = requestMessage.GetResponse();
-        }```
+        }
+```
 
 
 ### Téléchargement de photos vers la bibliothèque d'images SharePoint
@@ -681,14 +686,16 @@ Un nouveau champ est ajouté pour l'uploadForm, qui est utilisé pour transmettr
 
 
 
-```
+
+```
 
 uploadForm = $(
              '<form id="uploadForm" method="POST" enctype="multipart/form-data" action="' + API_URL + '"  data-ajax="false" target="uploadTargetIFrame">' +
              '   <input name="fileInput" id="fileInput" type="file" size="30" data-theme="c" accept="image/*" multiple="true"/>' +
              '   <input type="hidden" name=' + screen.InventoryItem.StockNo + '>' +
              '</form>');
-```
+
+```
 
 Ajoutez la logique de mise en cache de l'URL de l'image, et la logique de restauration de l'image.
 
@@ -696,7 +703,8 @@ Ajoutez la logique de mise en cache de l'URL de l'image, et la logique de restau
 
 
 
-```
+
+```
 
 function completeUpload(uploadedFiles) {
             var fullImageUrl = uploadedFiles[0];
@@ -708,7 +716,8 @@ function completeUpload(uploadedFiles) {
             setCacheUrl(screen.InventoryItem.StockNo, fullImageUrl + "*#00#" + thumbnailUrl);
             setDetailsCarPicture(fullImageUrl);
             screen.closePopup();
-        }```
+        }
+```
 
  **Pour les changements de PhotosController.cs :**
 
@@ -724,7 +733,8 @@ Effectuez cette opération car ContosoMotorsPictureLibrary n'appartient pas au c
 
 
 
-```cs
+
+```cs
 
 private ClientContext AppWebContext
     {
@@ -737,7 +747,8 @@ private ClientContext AppWebContext
             return appWebContext;
         }
     }
-```
+
+```
 
  **Pour les changements de PhotoListHelper.cs :**
 
@@ -749,7 +760,8 @@ Ajoutez la logique de mise à jour de l'image, qui supprimera l'ancienne image l
 
 
 
-```cs
+
+```cs
 
             // Delete the old picture item
             foreach (ListItem item in items)
@@ -784,7 +796,8 @@ Ajoutez la logique de mise à jour de l'image, qui supprimera l'ancienne image l
             }
 
 
-```
+
+```
 
 
 ### Expérience utilisateur
@@ -908,7 +921,7 @@ Les étapes de cette section décrivent l'enregistrement de l'exemple de complé
 
 
 > **REMARQUE**
-> Vous devez enregistrer le complément avec Azure AD deux fois : une fois à des fins de débogage et une autre fois pour le déployer pour la production, comme décrit à l'étape 10. > Pour enregistrer le complément à des fins de débogage, utilisez l' **URL DE CONNEXION** et l' **URI ID D'APPLICATION** avec l'URL de débogage du projet SellerDashboard.Server afin de pouvoir exécuter le débogueur Visual Studio (F5). Cette URL aura la forme https://localhost. *nnnn*  , où *nnnn*  est un numéro de port. Vous trouverez cette URL dans le volet Propriétés de Visual Studio.> Ensuite, lorsque vous êtes prêt pour le déploiement pour la production, modifiez l'enregistrement pour utiliser l'URL de production correcte. 
+> Vous devez enregistrer le complément avec Azure AD deux fois : une fois à des fins de débogage et une autre fois pour le déployer pour la production, comme décrit à l'étape 10. <BR /><BR /> Pour enregistrer le complément à des fins de débogage, utilisez l' **URL DE CONNEXION** et l' **URI ID D'APPLICATION** avec l'URL de débogage du projet SellerDashboard.Server afin de pouvoir exécuter le débogueur Visual Studio (F5). Cette URL aura la forme https://localhost. *nnnn*  , où *nnnn*  est un numéro de port. Vous trouverez cette URL dans le volet Propriétés de Visual Studio.<BR /><BR /> Ensuite, lorsque vous êtes prêt pour le déploiement pour la production, modifiez l'enregistrement pour utiliser l'URL de production correcte. 
 
 
 
