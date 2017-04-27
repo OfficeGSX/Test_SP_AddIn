@@ -101,15 +101,7 @@ Le flux de travail envoie un courrier électronique pour avertir un membre des r
 
 
 > **REMARQUE**
-> À divers moments de la conception du flux de travail, un symbole losange bleu contenant un point d'exclamation 
-
-
-
-![Petit losange bleu avec un point d'exclamation blanc à l'intérieur.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG)
-
-
-
-apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, afin de signaler les erreurs temporaires. (Pointez le curseur sur le symbole pour afficher un message court, ou consultez la **liste d'erreurs** de Visual Studio pour plus de détails.) Il s'agit d'effets secondaires liés au fait que le flux de travail n'est pas terminé. Ils doivent tous disparaître lorsque cette procédure a pris fin.
+> À divers moments de la conception du flux de travail, un symbole losange bleu contenant un point d'exclamation ![Petit losange bleu avec un point d'exclamation blanc à l'intérieur.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, afin de signaler les erreurs temporaires. (Pointez le curseur sur le symbole pour afficher un message court, ou consultez la **liste d'erreurs** de Visual Studio pour plus de détails.) Il s'agit d'effets secondaires liés au fait que le flux de travail n'est pas terminé. Ils doivent tous disparaître lorsque cette procédure a pris fin.
 
 
 
@@ -140,7 +132,7 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 ![Volet Propriétés de l'activité de flux de travail Rechercher un élément de liste avec les propriétés ItemID, ListID et DisplayName définies.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
 
 
-    Cliquez n'importe où en dehors du volet pour enregistrer les modifications ; le concepteur doit maintenant avoir l'aspect suivant.
+Cliquez n'importe où en dehors du volet pour enregistrer les modifications ; le concepteur doit maintenant avoir l'aspect suivant.
 
 
    **Séquence dans le concepteur de flux de travail**
@@ -255,8 +247,8 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
 
 
-    > **REMARQUE**
-      > Si la console de l' **hôte de service de test** ne s'ouvre pas, il vous faudra peut-être activer le débogage du flux de travail. Cliquez avec le bouton droit de la souris sur le nom du projet dans l' **Explorateur de solutions** et choisissez **Propriétés**. Ouvrez l'onglet **SharePoint** dans le volet **Propriétés** et cochez la case **Activer le débogage de flux de travail**. 
+> **REMARQUE**
+> Si la console de l' **hôte de service de test** ne s'ouvre pas, il vous faudra peut-être activer le débogage du flux de travail. Cliquez avec le bouton droit de la souris sur le nom du projet dans l' **Explorateur de solutions** et choisissez **Propriétés**. Ouvrez l'onglet **SharePoint** dans le volet **Propriétés** et cochez la case **Activer le débogage de flux de travail**. 
 3. Accédez à la boîte de réception du courrier électronique (Outlook) de votre compte développeur Office 365. Il contient un message dont l'objet est «  *Employé*  est prêt pour les formalités HR », où *Employé*  est le nom de l'employé dont vous avez modifié les éléments. Le corps du message indique « *Employé*  attend dans le hall pour remplir les formulaires d'avantages et d'emploi ». Voici un exemple :
 
    **Message électronique envoyé par le flux de travail**
@@ -269,12 +261,8 @@ apparaît sur un ou plusieurs des éléments du concepteur de flux de travail, a
 
 
 
-    > **CONSEIL**
-      > Si le flux de travail commence mais ne se termine jamais et que le message électronique n'est pas envoyé, essayez de mettre fin à la session de débogage et essayez plusieurs fois d'appuyer sur F5 avant de conclure qu'une partie de votre code est incorrecte. Il arrive que le problème provienne de SharePoint Online. > Si les problèmes persistent, essayez d'ajouter un type de contenu nommé **ListFieldsContentType**, s'il n'en existe pas déjà un, à la section **ContentTypes** du fichier schema.xml. Voici un exemple de sortie :>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
-
-
-
- `</ContentType>`> Copiez ensuite l'intégralité de la section **FieldRefs** du type de contenu **NewEmployee** dans ce nouveau type de contenu.> Enregistrez le projet, retirez-le et réessayez F5. 
+> **CONSEIL**
+> Si le flux de travail commence mais ne se termine jamais et que le message électronique n'est pas envoyé, essayez de mettre fin à la session de débogage et essayez plusieurs fois d'appuyer sur F5 avant de conclure qu'une partie de votre code est incorrecte. Il arrive que le problème provienne de SharePoint Online. > Si les problèmes persistent, essayez d'ajouter un type de contenu nommé **ListFieldsContentType**, s'il n'en existe pas déjà un, à la section **ContentTypes** du fichier schema.xml. Voici un exemple de sortie :>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`> Copiez ensuite l'intégralité de la section **FieldRefs** du type de contenu **NewEmployee** dans ce nouveau type de contenu.<BR /> Enregistrez le projet, retirez-le et réessayez F5. 
 4. Pour mettre fin à la session de débogage, fermez la fenêtre du navigateur ou arrêtez le débogage dans Visual Studio. Chaque fois que vous appuyez sur F5, Visual Studio retire la version précédente du complément et installe la plus récente.
 
 

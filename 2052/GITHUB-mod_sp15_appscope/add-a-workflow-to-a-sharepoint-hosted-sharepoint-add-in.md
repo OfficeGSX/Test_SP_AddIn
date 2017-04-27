@@ -101,15 +101,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
 
 
 > **注释**
-> 在设计工作流的不同时间，工作流设计器中的一个或多个项目上将会出现一个内含感叹号的蓝色菱形符号。 
-
-
-
-![内部有白色感叹号的蓝色小菱形。](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG)
-
-
-
-这些符号报告临时错误。（将光标悬停在符号上可查看简要消息，也可在 Visual Studio 的"错误列表"中查看详细信息。）这是由于工作流未完成所致。当您完成此过程后，这些符号应该都会消失。 
+> 在设计工作流的不同时间，工作流设计器中的一个或多个项目上将会出现一个内含感叹号的蓝色菱形符号。 ![内部有白色感叹号的蓝色小菱形。](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) 这些符号报告临时错误。（将光标悬停在符号上可查看简要消息，也可在 Visual Studio 的"错误列表"中查看详细信息。）这是由于工作流未完成所致。当您完成此过程后，这些符号应该都会消失。 
 
 
 
@@ -255,8 +247,8 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
 
 
 
-    > **注释**
-      > 如果"测试服务主机"控制台未打开，您可能需要启用工作流调试。右键单击"解决方案资源管理器"中的项目名称并选择"属性"。打开"属性"窗格上的"SharePoint"选项卡，并选中"启用工作流调试"复选框。 
+> **注释**
+> 如果"测试服务主机"控制台未打开，您可能需要启用工作流调试。右键单击"解决方案资源管理器"中的项目名称并选择"属性"。打开"属性"窗格上的"SharePoint"选项卡，并选中"启用工作流调试"复选框。 
 3. 导航到 Office 365 开发人员帐户的电子邮件收件箱 (Outlook)，其中有一封电子邮件，主题为" *Employee*  is ready for HR paperwork"，此处 *Employee*  是您编辑其项目的员工的姓名。电子邮件的正文是" *Employee*  is waiting in the lobby to fill out benefits and employment forms"。下面是一个示例：
 
    **工作流发送的电子邮件**
@@ -269,12 +261,8 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
 
 
 
-    > **提示**
-      > 如果工作流开始但未完成，则不会发送电子邮件，请尝试结束调试会话并再次尝试 F5 几次，然后才能确定是代码中存在错误。有时问题在于 SharePoint Online。 > 如果仍有问题，请尝试添加名为 **ListFieldsContentType** 的内容类型；如果还没有此内容类型，请将其添加到 schema.xml 文件的 **ContentTypes** 部分。下面是标记的一个示例。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
-
-
-
- `</ContentType>`> 然后将 **NewEmployee** 内容类型的整个 **FieldRefs** 部分复制到此新的内容类型。> 保存项目，将其撤回，然后重试 F5。 
+> **提示**
+> 如果工作流开始但未完成，则不会发送电子邮件，请尝试结束调试会话并再次尝试 F5 几次，然后才能确定是代码中存在错误。有时问题在于 SharePoint Online。 <BR /> 如果仍有问题，请尝试添加名为 **ListFieldsContentType** 的内容类型；如果还没有此内容类型，请将其添加到 schema.xml 文件的 **ContentTypes** 部分。下面是标记的一个示例。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`> 然后将 **NewEmployee** 内容类型的整个 **FieldRefs** 部分复制到此新的内容类型。<BR /> 保存项目，将其撤回，然后重试 F5。 
 4. 要结束调试会话，请关闭浏览器窗口或在 Visual Studio 中停止调试。每次按 F5 时，Visual Studio 将撤回外接程序的之前版本并安装最新版本。
 
 

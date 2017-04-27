@@ -101,15 +101,7 @@ El flujo de trabajo envía un correo electrónico para notificar a alguien de RR
 
 
 > **NOTA**
-> En varios momentos durante el diseño del flujo de trabajo, aparecerá el símbolo de un diamante azul con un signo de admiración 
-
-
-
-![Una forma de diamante azul pequeña con un signo de exclamación blanco dentro de ella.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG)
-
-
-
-en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa de errores puntuales (pase el cursor sobre el símbolo para ver un breve mensaje, o consulte más detalles en la **Lista de errores** de Visual Studio). Se trata de efectos secundarios y el motivo es que el flujo de trabajo no está completado. No debería quedar ninguno cuando acabe este procedimiento.
+> En varios momentos durante el diseño del flujo de trabajo, aparecerá el símbolo de un diamante azul con un signo de admiración ![Una forma de diamante azul pequeña con un signo de exclamación blanco dentro de ella.](images/f7b82a70-80fe-4e7e-a0f5-5a78cd12b367.PNG) en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa de errores puntuales (pase el cursor sobre el símbolo para ver un breve mensaje, o consulte más detalles en la **Lista de errores** de Visual Studio). Se trata de efectos secundarios y el motivo es que el flujo de trabajo no está completado. No debería quedar ninguno cuando acabe este procedimiento.
 
 
 
@@ -255,8 +247,8 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
 
 
-    > **NOTA**
-      > Si la consola **Host de servicio de prueba** no se abre, es posible que deba habilitar el depurador de flujos de trabajo. Haga clic con el botón secundario en el nombre del proyecto en el **Explorador de soluciones** y elija **Propiedades**. Abra la pestaña **SharePoint** en el panel **Propiedades** y marque la casilla **Habilitar depuración de flujos de trabajo**. 
+> **NOTA**
+> Si la consola **Host de servicio de prueba** no se abre, es posible que deba habilitar el depurador de flujos de trabajo. Haga clic con el botón secundario en el nombre del proyecto en el **Explorador de soluciones** y elija **Propiedades**. Abra la pestaña **SharePoint** en el panel **Propiedades** y marque la casilla **Habilitar depuración de flujos de trabajo**. 
 3. Vaya a la carpeta de entrada (Outlook) de su cuenta de desarrollador de Office 365. Habrá un mensaje con el asunto " *Empleado*  está listo para el papeleo de RRHH",, en el que *Empleado*  es el nombre del empleado cuyo elemento ha editado. El cuerpo del mensaje dice: " *Empleado*  está esperando en el vestíbulo a completar los formularios de condiciones y el contrato de trabajo." Lo siguiente es un ejemplo:
 
    **Correo electrónico enviado por flujo de trabajo**
@@ -269,12 +261,8 @@ en uno o más elementos del diseñador de flujos e trabajo. Este símbolo avisa 
 
 
 
-    > **SUGERENCIA**
-      > Si el flujo de trabajo comienza pero no llega a completarse y no se envía el correo electrónico, pruebe a terminar la sesión de depuración y use F5 unas cuantas veces más antes de concluir que existe algún error en el código. A veces, el problema está en SharePoint Online. > Si todavía tiene problemas, pruebe a agregar un tipo de contenido llamado **ListFieldsContentType**, si es que no lo hay ya, a la sección **ContentTypes** del archivo schema.xml. Lo siguiente es un ejemplo de código de marcado.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">`
-
-
-
- `</ContentType>`> Después, copie toda la sección **FieldRefs** del tipo de contenido **NewEmployee** a este nuevo tipo de contenido.> Guarde el proyecto, retírelo y pruebe F5 otra vez. 
+> **SUGERENCIA**
+> Si el flujo de trabajo comienza pero no llega a completarse y no se envía el correo electrónico, pruebe a terminar la sesión de depuración y use F5 unas cuantas veces más antes de concluir que existe algún error en el código. A veces, el problema está en SharePoint Online. > Si todavía tiene problemas, pruebe a agregar un tipo de contenido llamado **ListFieldsContentType**, si es que no lo hay ya, a la sección **ContentTypes** del archivo schema.xml. Lo siguiente es un ejemplo de código de marcado.>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`> Después, copie toda la sección **FieldRefs** del tipo de contenido **NewEmployee** a este nuevo tipo de contenido.<BR /> Guarde el proyecto, retírelo y pruebe F5 otra vez. 
 4. Para terminar la sesión de depuración, cierre la ventana del explorador o detenga la depuración en Visual Studio. Cada vez que presione F5, Visual Studio retirará la versión anterior del complemento e instalará la más reciente.
 
 
