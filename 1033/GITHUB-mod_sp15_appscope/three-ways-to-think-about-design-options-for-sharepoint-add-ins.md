@@ -7,12 +7,6 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
 
 # Three ways to think about design options for SharePoint Add-ins
 Get an overview of the design and architecture options that are available with SharePoint Add-ins. You should first be familiar with the article  [SharePoint Add-ins](sharepoint-add-ins.md).
- 
-
-
-
-
-
 ## Overview and the first decision
 <a name="Overview"> </a>
 
@@ -63,7 +57,7 @@ There are three major categories of choices that need to be made when a SharePoi
 - **UI:** There are three ways to surface a SharePoint Add-in in SharePoint: at a minimum, all add-ins are surfaced in a full web page. Optionally, an add-in can also be surfaced through an add-in part, and through a menu item or ribbon button. For more information, see [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md).
 
     > **NOTE**
-      > SharePoint Add-ins can be installed by your customers to multiple site collections in a tenancy, or on a website-by-website basis. The former are called tenant-scoped add-ins. If you want your customers to have the tenant-scoped option, you may not include a custom ribbon button or an add-in part. For more information, see  [Tenancies and deployment scopes for SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
+    > SharePoint Add-ins can be installed by your customers to multiple site collections in a tenancy, or on a website-by-website basis. The former are called tenant-scoped add-ins. If you want your customers to have the tenant-scoped option, you may not include a custom ribbon button or an add-in part. For more information, see  [Tenancies and deployment scopes for SharePoint Add-ins](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 
 ## Architectural tiers
 <a name="Tiers"> </a>

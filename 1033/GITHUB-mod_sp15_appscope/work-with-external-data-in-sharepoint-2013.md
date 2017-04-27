@@ -7,12 +7,6 @@ ms.assetid: 1534a5f4-1d83-45b4-9714-3a1995677d85
 
 # Work with external data in SharePoint 2013
 Find resources and guidance for accessing and manipulating external data with JavaScript on pages in SharePoint Add-ins.
- 
-
-
-
-
-
 ## Use JavaScript in SharePoint Add-ins
 <a name="SP15Workdata_Working"> </a>
 

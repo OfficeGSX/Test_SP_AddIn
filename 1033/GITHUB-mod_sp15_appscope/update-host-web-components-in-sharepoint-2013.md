@@ -7,12 +7,6 @@ ms.assetid: 9c383a69-c2f6-4702-bd64-e77c9bd026b7
 
 # Update host web components in SharePoint 2013
 Update add-in parts and custom actions in the host web of a SharePoint Add-in.
- 
-
-
-
-
-
 ## Prerequisites for updating host web components
 <a name="Prerequisites"> </a>
 

@@ -57,7 +57,7 @@ Beim Entwerfen einer SharePoint-Add-In sind im Wesentlichen drei Kategorien von 
 - **Benutzeroberfläche:** Eine SharePoint-Add-In kann auf drei Arten in SharePoint dargestellt werden: Alle Add-Ins werden zumindest auf einer vollständigen Webseite dargestellt. Optional kann ein Add-In auch durch ein Add-In-Webpart und durch ein Menüelement oder eine Menübandschaltfläche dargestellt werden. Weitere Informationen finden Sie unter [UX-Design für SharePoint-Add-Ins](ux-design-for-sharepoint-add-ins.md).
 
     > **HINWEIS**
-      > SharePoint-Add-Ins können von den Kunden in mehreren Websitesammlungen eines Mandanten oder auf einzelnen Websites installiert werden. Die ersteren werden als Add-Ins mit Mandantenbereich bezeichnet. Wenn Sie den Kunden die Option des Mandantenbereichs bieten möchten, können Sie keine benutzerdefinierte Menübandschaltfläche und kein Add-In-Webpart einschließen. Weitere Informationen finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
+    > SharePoint-Add-Ins können von den Kunden in mehreren Websitesammlungen eines Mandanten oder auf einzelnen Websites installiert werden. Die ersteren werden als Add-Ins mit Mandantenbereich bezeichnet. Wenn Sie den Kunden die Option des Mandantenbereichs bieten möchten, können Sie keine benutzerdefinierte Menübandschaltfläche und kein Add-In-Webpart einschließen. Weitere Informationen finden Sie unter  [Mandantschaften und Bereitstellungsbereiche von Add-Ins für SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 
 ## Architekturebenen
 <a name="Tiers"> </a>

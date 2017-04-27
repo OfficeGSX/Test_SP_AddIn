@@ -57,7 +57,7 @@ Existen tres categorías principales de opciones que es necesario crear al dise�
 - **Interfaz de usuario:** hay tres formas de exponer una Complemento de SharePoint en SharePoint; como mínimo, todos los complementos se exponen en una página web completa. Opcionalmente, también se puede exponer un complemento a través de una parte del complemento y un botón de cinta o un elemento de menú. Para más información, vea [Diseño de la experiencia de usuario para aplicaciones en SharePoint 2013](ux-design-for-sharepoint-add-ins.md).
 
     > **NOTA**
-      > Sus clientes pueden instalar las Complementos de SharePoint en varias colecciones de sitios de un arrendamiento o sobre la base de sitios web individuales. Antes se denominaban complementos de ámbito de inquilino. Si desea que sus clientes tengan la opción de ámbito de inquilino, no puede incluir un botón de cinta personalizado o una parte del complemento. Para más información, vea  [Arrendamientos y ámbitos de implementación de los complementos para SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
+    > Sus clientes pueden instalar las Complementos de SharePoint en varias colecciones de sitios de un arrendamiento o sobre la base de sitios web individuales. Antes se denominaban complementos de ámbito de inquilino. Si desea que sus clientes tengan la opción de ámbito de inquilino, no puede incluir un botón de cinta personalizado o una parte del complemento. Para más información, vea  [Arrendamientos y ámbitos de implementación de los complementos para SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md). 
 
 ## Capas arquitectónicas
 <a name="Tiers"> </a>

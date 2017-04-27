@@ -7,12 +7,6 @@ ms.assetid: e00dc63f-b4a4-4c08-b058-729fcb09af41
 
 # What's new in Office Developer Tools for Visual Studio 2013
 You can develop SharePoint Add-ins by using the following new features available in the Office Developer Tools for Visual Studio. 
- 
-
-
-
-
-
 > **TIP**
 > Download the latest version of the  [Office Developer Tools for Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013). 
 

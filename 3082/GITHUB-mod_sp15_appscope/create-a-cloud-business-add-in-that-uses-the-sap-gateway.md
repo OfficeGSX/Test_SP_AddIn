@@ -933,7 +933,7 @@ Configúrelas opciones para la nueva aplicación que creó en el procedimiento a
 |URI de id. de aplicación  <br/> |Copie el valor que aparece en el campo **URI de id. de complemento**.  <br/> |
  
 
-    Recuerde conservar esta información a su alcance porque la necesitará más adelante.
+Recuerde conservar esta información a su alcance porque la necesitará más adelante.
 
 
 3. En la sección **Permisos para otras aplicaciones**, haga lo siguiente:

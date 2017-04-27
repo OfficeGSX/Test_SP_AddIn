@@ -7,19 +7,25 @@ ms.assetid: 6906eb86-8270-4098-8106-1e8d0d3c212e
 
 # Tools and environments for developing SharePoint Add-ins
 Learn your options for creating a development environment for SharePoint Add-ins.
- 
-
-
-
-
 There are two basic patterns for development environments for SharePoint Add-ins:
+
+
+
+
+
 - **The test and debugging SharePoint website is in a SharePoint Online website in an Office 365 subscription.** Typically, Visual Studio is installed to a local computer, but a cloud-based Visual Studio is also an option.
 
 
 - **The test and debugging SharePoint website is on an on-premise, one-server SharePoint farm.** Visual Studio is installed on the same computer.
 
 
+
 Consider the following:
+
+
+
+
+
 - Almost any add-in you create can be deployed to either SharePoint Online or to on-premise SharePoint farms, regardless of which type of environment you use. As a general rule, add-ins that cannot be deployed to SharePoint Online also cannot be developed with it. Examples: add-ins that require  [Full Control permissions](add-in-permissions-in-sharepoint-2013.md) and add-ins that use the [high-trust authorization system](creating-sharepoint-add-ins-that-use-high-trust-authorization.md).
 
 

@@ -947,7 +947,7 @@ Configurer les paramètres de l'application que vous avez créée dans la procé
 |URI ID d'application  <br/> |Copiez la valeur qui apparaît dans le champ **URI ID de complément**.  <br/> |
  
 
-    Gardez ces informations à portée de main, car vous en aurez besoin dans une procédure ultérieure.
+Gardez ces informations à portée de main, car vous en aurez besoin dans une procédure ultérieure.
 
 
 3. Dans la section **Autorisations pour d'autres applications**, procédez comme suit :

@@ -57,7 +57,7 @@ ms.assetid: 0942fdce-3227-496a-8873-399fc1dbb72c
 - **UI：**可通过三种方式在 SharePoint 中显示 SharePoint 外接程序：至少，所有外接程序都会显示在一个完整的网页中。或者，也可以通过外接程序部件显示外接程序，以及通过菜单项或功能区按钮显示外接程序。有关详细信息，请参阅 [SharePoint 外接程序的 UX 设计](ux-design-for-sharepoint-add-ins.md)。
 
     > **注释**
-      > SharePoint 外接程序可由客户安装到一个租赁中的多个网站集中，或由客户安装在每个网站上。前者称为租户范围外接程序。如果希望客户具有租户范围选项，您就无法包含自定义功能区按钮或外接程序部件。有关详细信息，请参阅 [SharePoint 外接程序的租赁和部署范围](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。 
+    > SharePoint 外接程序可由客户安装到一个租赁中的多个网站集中，或由客户安装在每个网站上。前者称为租户范围外接程序。如果希望客户具有租户范围选项，您就无法包含自定义功能区按钮或外接程序部件。有关详细信息，请参阅 [SharePoint 外接程序的租赁和部署范围](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)。 
 
 ## 体系结构层
 <a name="Tiers"> </a>
