@@ -101,7 +101,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
  ```
 
 
-    Notez que nous avons attribué à ces champs un nom d'affichage personnalisé : **Employee** (Employé).
+Notez que nous avons attribué à ces champs un nom d'affichage personnalisé : **Employee** (Employé).
 
 
 12. Enregistrez et fermez le fichier.

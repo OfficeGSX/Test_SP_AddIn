@@ -101,7 +101,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
  ```
 
 
-    Fíjese en que hemos dado a estos campos un nombre para mostrar personalizado: **Employee**.
+Fíjese en que hemos dado a estos campos un nombre para mostrar personalizado: **Employee**.
 
 
 12. Guarde y cierre el archivo.
