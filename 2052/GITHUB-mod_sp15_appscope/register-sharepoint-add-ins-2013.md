@@ -60,7 +60,7 @@ ms.assetid: be41a5dc-2af9-4fd9-bf4e-ad6dfa849524
 
 |**注册方法**|**详细信息**|
 |:-----|:-----|
-|使用 Visual Studio 和 Visual Studio Microsoft Office 开发人员工具来创建一个临时外接程序标识。  <br/> |Visual Studio Office 开发人员工具 向导将通过您的 SharePoint 测试网站的 ACS 和应用程序管理服务为您的外接程序创建临时注册。当您从 Visual Studio (F5) 运行此外接程序时，将使用此标识。这些工具还会将客户端 ID 和密码插入 web.config 和 AppManifest.xml 文件中。  <br/> 准备好发布外接程序之后，您可以使用 Visual Studio 发布向导进入卖家面板对其进行注册。如果您没有在 Office 商店中推广您的 SharePoint 外接程序，则可以使用 AppRegNew.aspx 注册该外接程序。（具体步骤如下。）  <br/> > **注释**> 如果您的外接程序请求在运行时（而非外接程序安装时）获得动态访问 SharePoint 资源的权限，您将无法使用 Visual Studio 创建外接程序标识。           |
+|使用 Visual Studio 和 Visual Studio Microsoft Office 开发人员工具来创建一个临时外接程序标识。  <br/> |Visual Studio Office 开发人员工具 向导将通过您的 SharePoint 测试网站的 ACS 和应用程序管理服务为您的外接程序创建临时注册。当您从 Visual Studio (F5) 运行此外接程序时，将使用此标识。这些工具还会将客户端 ID 和密码插入 web.config 和 AppManifest.xml 文件中。  <br/> 准备好发布外接程序之后，您可以使用 Visual Studio 发布向导进入卖家面板对其进行注册。如果您没有在 Office 商店中推广您的 SharePoint 外接程序，则可以使用 AppRegNew.aspx 注册该外接程序。（具体步骤如下。）  <br/>**注释**<BR /> 如果您的外接程序请求在运行时（而非外接程序安装时）获得动态访问 SharePoint 资源的权限，您将无法使用 Visual Studio 创建外接程序标识。           |
 |通过卖家面板注册外接程序。  <br/> |如果您要在一个或多个 SharePoint 租户或场中使用您的外接程序，可以使用卖家面板注册外接程序，而无需考虑您是在 Office 商店中推广外接程序，还是通过外接程序目录进行发布。在卖家面板中注册时，可为外接程序设计多租户体系结构，而无需租户或场的管理员单独进行注册。此外，如果您希望在 Office 商店中发布您的外接程序，必须使用卖家面板注册外接程序，但您无需使用商店发布在卖家面板中注册的外接程序。  <br/> 有关详细信息，请参阅 [在卖方仪表板中创建或更新客户端 ID 和密码](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx)。  <br/> |
 |使用 AppRegNew.aspx 页。  <br/> |如果您将仅在一个租户或场中使用此外接程序，则应该使用 AppRegNew 表单注册您的 SharePoint 外接程序。例如，如果您为单个组织创建外接程序并且将要使用组织外接程序目录分发外接程序，您可以在租户或场中使用任何网站的 AppRegNew.aspx 页来注册此外接程序。  <br/> 您无法将在 AppRegNew.aspx 中注册的外接程序以发布到 Office 商店。对于发布到 Office 商店的外接程序，您必须从卖家面板中获取标识。  <br/> |
  
