@@ -262,7 +262,7 @@ ms.assetid: b33a61d7-5bc9-4720-97a5-8475d9a0d7c5
 
 
 > **提示**
-> 如果工作流开始但未完成，则不会发送电子邮件，请尝试结束调试会话并再次尝试 F5 几次，然后才能确定是代码中存在错误。有时问题在于 SharePoint Online。 <BR /> 如果仍有问题，请尝试添加名为 **ListFieldsContentType** 的内容类型；如果还没有此内容类型，请将其添加到 schema.xml 文件的 **ContentTypes** 部分。下面是标记的一个示例。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`> 然后将 **NewEmployee** 内容类型的整个 **FieldRefs** 部分复制到此新的内容类型。<BR /> 保存项目，将其撤回，然后重试 F5。 
+> 如果工作流开始但未完成，则不会发送电子邮件，请尝试结束调试会话并再次尝试 F5 几次，然后才能确定是代码中存在错误。有时问题在于 SharePoint Online。 <BR /> 如果仍有问题，请尝试添加名为 **ListFieldsContentType** 的内容类型；如果还没有此内容类型，请将其添加到 schema.xml 文件的 **ContentTypes** 部分。下面是标记的一个示例。<BR />  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`<BR /> 然后将 **NewEmployee** 内容类型的整个 **FieldRefs** 部分复制到此新的内容类型。<BR /> 保存项目，将其撤回，然后重试 F5。 
 4. 要结束调试会话，请关闭浏览器窗口或在 Visual Studio 中停止调试。每次按 F5 时，Visual Studio 将撤回外接程序的之前版本并安装最新版本。
 
 

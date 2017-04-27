@@ -262,7 +262,7 @@ SharePoint アドインにワークフローを含める方法について説明
 
 
 > **ヒント**
-> ワークフローが開始しても完了せず、電子メールが送信されない場合は、デバッグ セッションを終了して、コードに問題があると判断する前に、さらに F5 キーを数回押してみてください。問題が SharePoint Online にある場合があります。 > それでも問題が解決しないときは、 **ListFieldsContentType** というコンテンツ タイプがない場合は schema.xml ファイルの **ContentTypes** セクションに追加します。マークアップの例を次に示します。>  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`> **NewEmployee** コンテンツ タイプの **FieldRefs** セクション全体をこの新しいコンテンツ タイプにコピーします。<BR /> プロジェクトを保存し、取り消してから、F5 キーをもう一度試してください。 
+> ワークフローが開始しても完了せず、電子メールが送信されない場合は、デバッグ セッションを終了して、コードに問題があると判断する前に、さらに F5 キーを数回押してみてください。問題が SharePoint Online にある場合があります。 > それでも問題が解決しないときは、 **ListFieldsContentType** というコンテンツ タイプがない場合は schema.xml ファイルの **ContentTypes** セクションに追加します。マークアップの例を次に示します。<BR />  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`<BR /> **NewEmployee** コンテンツ タイプの **FieldRefs** セクション全体をこの新しいコンテンツ タイプにコピーします。<BR /> プロジェクトを保存し、取り消してから、F5 キーをもう一度試してください。 
 4. デバッグ セッションを終了するには、ブラウザー ウィンドウを閉じるか、Visual Studio でデバッグを停止します。F5 を押すたびに、Visual Studio は以前のバージョンのアドインを取り消し、最新のアドインをインストールします。
 
 
