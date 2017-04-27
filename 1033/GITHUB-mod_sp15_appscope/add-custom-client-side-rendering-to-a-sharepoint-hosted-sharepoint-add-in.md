@@ -7,12 +7,12 @@ ms.assetid: 6e0e530a-7d8b-48ab-8d0c-a878ddbf5be1
 
 # Add custom client-side rendering to a SharePoint-hosted SharePoint Add-in
 Customize the rendering and validation of controls in SharePoint Add-ins pages.
- 
-
-
-
-
 This is the eighth in a series of articles about the basics of developing SharePoint-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+
+
+
+
+
 -  [Get started creating SharePoint-hosted SharePoint Add-ins](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
 
 
