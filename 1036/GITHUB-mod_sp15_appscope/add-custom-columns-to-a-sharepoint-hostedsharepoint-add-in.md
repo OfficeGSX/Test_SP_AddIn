@@ -163,7 +163,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
 
 4. Les nouvelles colonnes figurent maintenant dans la liste. Ajoutez un nouvel élément à la liste. Dans le formulaire d'édition, le champ **Orientation Stage** (Étape d'orientation) contiendra déjà la valeur par défautNon commencé. (Les éléments existants sont vides dans ce champ car ils ont été créés avant que le champ n'apparaisse dans la liste.)
 
-   **Liste avec les nouvelles colonnes**
+**Liste avec les nouvelles colonnes**
 
 
 

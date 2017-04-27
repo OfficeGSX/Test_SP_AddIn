@@ -163,7 +163,7 @@ En este artículo volvemos a la codificación agregando algunas columnas de siti
 
 4. Las nuevas columnas se encuentran ahora en la lista. Agregue un nuevo elemento a la lista. En el formulario de edición, el campo **OrientationStage** ya tendrá el valor predeterminadoNo iniciado. (Los elementos existentes estarán en blanco en este campo porque fueron creados antes de que el campo estuviera en la lista.)
 
-   **La lista con nuevas columnas**
+**La lista con nuevas columnas**
 
 
 
