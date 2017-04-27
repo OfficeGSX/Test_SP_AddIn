@@ -28,7 +28,7 @@ Pour héberger l'échange de News, vous aurez besoin d'un site SharePoint de dé
 ![Propriétés sociales](images/CBAsocial.PNG)
 
 
-    **Publier une fois créé(e)** ajoute un thread à l'échange de News pour chaque nouvel élément de liste. **Publier une fois mis(e) à jour** ajoute un thread lorsque la valeur d'un élément dans la liste est modifié. Des déclencheurs déterminent les champs de l'élément qui déclencheront une publication.
+**Publier une fois créé(e)** ajoute un thread à l'échange de News pour chaque nouvel élément de liste. **Publier une fois mis(e) à jour** ajoute un thread lorsque la valeur d'un élément dans la liste est modifié. Des déclencheurs déterminent les champs de l'élément qui déclencheront une publication.
 
 
 3. Cliquez sur le lien **Sélectionner les déclencheurs de publication**.
@@ -56,7 +56,7 @@ Pour héberger l'échange de News, vous aurez besoin d'un site SharePoint de dé
 ![Barre chrome SharePoint](images/CBAnewsfeed.PNG)
 
 
-    La page **Échange de News** ouvre une nouvelle page de navigateur avec des entrées pour les éléments ajoutés et/ou mis à jour. Vous pouvez choisir un lien **J'aime** pour une publication ou sélectionner un lien **Répondre** pour ajouter un commentaire.
+La page **Échange de News** ouvre une nouvelle page de navigateur avec des entrées pour les éléments ajoutés et/ou mis à jour. Vous pouvez choisir un lien **J'aime** pour une publication ou sélectionner un lien **Répondre** pour ajouter un commentaire.
 
 
 

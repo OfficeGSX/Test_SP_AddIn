@@ -28,7 +28,7 @@ Para hospedar un suministro de noticias, necesitará un sitio para desarrollador
 ![Propiedades sociales](images/CBAsocial.PNG)
 
 
-    **Publicar al crear** agrega un subproceso al suministro de noticias para cada elemento de lista nuevo. **Publicar al actualizar** agrega un subproceso cuando cambia el valor para un elemento de la lista. Los desencadenadores de publicación determinan qué campos del elemento desencadenarán una publicación.
+**Publicar al crear** agrega un subproceso al suministro de noticias para cada elemento de lista nuevo. **Publicar al actualizar** agrega un subproceso cuando cambia el valor para un elemento de la lista. Los desencadenadores de publicación determinan qué campos del elemento desencadenarán una publicación.
 
 
 3. Elija el vínculo **Elegir desencadenadores de publicación**.
@@ -56,7 +56,7 @@ Para hospedar un suministro de noticias, necesitará un sitio para desarrollador
 ![Barra de cromo de SharePoint](images/CBAnewsfeed.PNG)
 
 
-    La página **Suministro de noticias** se abre en una nueva ventana del explorador con entradas para los elementos agregados o actualizados. Puede elegir el vínculo **Me gusta** para una publicación, o el vínculo **Responder** para agregar un comentario.
+La página **Suministro de noticias** se abre en una nueva ventana del explorador con entradas para los elementos agregados o actualizados. Puede elegir el vínculo **Me gusta** para una publicación, o el vínculo **Responder** para agregar un comentario.
 
 
 
