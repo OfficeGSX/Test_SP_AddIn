@@ -8,12 +8,6 @@ ms.assetid: e89e91c7-ea39-49b9-af5a-7f047a7e2ab7
 
 # Authorization Code OAuth flow for SharePoint Add-ins
 Learn the OAuth flow for add-ins that request permission to access SharePoint resources on the fly, and how to use the OAuthAuthorize.aspx page and the SharePoint redirect URI.
- 
-
-
-
-
-
 ## Get an overview of add-ins that request access permission from SharePoint on the fly
 <a name="Overview"> </a>
 

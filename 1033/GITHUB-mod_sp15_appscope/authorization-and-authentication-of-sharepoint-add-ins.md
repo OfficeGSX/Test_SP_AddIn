@@ -7,12 +7,6 @@ ms.assetid: bde5647a-fff1-4b51-b67b-2139de79ce4a
 
 # Authorization and authentication of SharePoint Add-ins
 Get an overview of authentication and authorization in SharePoint, which is used to authorize requests by a SharePoint Add-in to access SharePoint resources.
- 
-
-
-
-
-
 **Watch a video about add-in identity.**
 
 
