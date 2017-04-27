@@ -7,12 +7,12 @@ ms.assetid: 124879c7-a746-4c10-96a7-da76ad5327f0
 
 # Add-in authorization policy types in SharePoint 2013
 Learn about the different authorization policies for add-ins in SharePoint: add-in-only policy, user+add-in policy, and user-only policy. It also provides guidelines for using add-in-only policy.
- 
-
-
-
-
 Before reading this article, you should first be familiar with the articles  [Add-in permissions in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md) and [Context Token OAuth flow for SharePoint Add-ins](context-token-oauth-flow-for-sharepoint-add-ins.md).
+
+
+
+
+
 ## Get an overview of add-in authorization policies types
 <a name="Overview"> </a>
 
