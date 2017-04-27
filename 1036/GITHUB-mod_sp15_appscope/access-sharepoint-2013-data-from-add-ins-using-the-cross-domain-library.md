@@ -14,12 +14,14 @@ Quand vous créez des Compléments SharePoint, vous devez généralement incorpo
 
 
 La figure 1 illustre une requête bloquée sur plusieurs domaines.
+
 **Figure 1. Requête bloquée sur plusieurs domaines**
 
 
 
 
 Lorsqu'un utilisateur demande une page du domaine de votre complément (1), la communication côté client est uniquement liée à ce domaine. Votre complément peut émettre des appels côté client à partir de la page uniquement vers d'autres ressources dans le même domaine. Toutefois, les compléments nécessitent généralement des ressources d'autres domaines, tels que le domaine SharePoint, pour accomplir leurs scénarios. Dans le code de votre page, vous pouvez essayer d'émettre une requête vers le domaine SharePoint (2) qui est bloqué par le navigateur. Généralement, une erreur **Accès refusé** s'affiche. Cela ne signifie pas que vous ne disposez pas des autorisations aux ressources demandées mais, plus probablement, que vous ne pouvez même pas émettre une requête vers les ressources mentionnées.Lorsque vous utilisez la bibliothèque inter-domaines, les pages web de votre complément peuvent accéder aux données du domaine de votre complément et du domaine SharePoint. La bibliothèque inter-domaines est une alternative côté client ayant la forme d'un fichier JavaScript (SP.RequestExecutor.js) hébergé sur le site web SharePoint que vous pouvez référencer dans votre complément distant. La bibliothèque inter-domaines vous permet d'interagir avec plusieurs domaines dans la page de votre complément distant via un proxy. C'est une bonne option si vous préférez que le code de votre complément s'exécute dans le client plutôt que sur le serveur, et s'il existe des barrières de connectivité telles que des pare-feu, entre SharePoint et votre infrastructure distante. Vous pouvez accéder aux données dans le site web hôte (par exemple, vous pouvez accéder à des listes avec lesquelles les utilisateurs finaux interagissent indépendamment de votre complément). Vous pouvez également accéder aux données sur le site web du complément, telles que des listes spécifiquement fournies pour votre complément. Les compléments peuvent aussi accéder à d'autres collections de sites et sites web tant que le complément dispose d'autorisations d'étendue client et est déployé en tant qu'installation par lots à l'aide du catalogue de compléments.
+
 > **REMARQUE**
 > Dans cette rubrique, **domaine de votre complément** fait référence au domaine qui héberge les pages du complément. Il peut s'agir du domaine d'une application web distante dans une application hébergée par un fournisseur, mais les pages du complément peuvent également se trouver sur SharePoint dans le site web du complément et effectuer des appels vers le domaine du site web hôte. Dans ce dernier scénario, le domaine du complément est le domaine du site web du complément.
 

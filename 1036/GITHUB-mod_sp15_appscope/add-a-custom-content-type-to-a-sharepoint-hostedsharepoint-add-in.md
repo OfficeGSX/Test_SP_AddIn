@@ -66,7 +66,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
 
 
 
-!\[Concepteur de type de contenu affichant « NewEmployee » comme nom de type, « Représente un nouvel employé » comme description et « Orientation de l'employé » comme groupe.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+![Concepteur de type de contenu affichant « NewEmployee » comme nom de type, « Représente un nouvel employé » comme description et « Orientation de l'employé » comme groupe.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
 
 
 
@@ -81,7 +81,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
 
 
 
-!\[Onglet Colonnes du concepteur de type de contenu avec les éléments « Employés », « Division » et « Étape d'orientation » répertoriés dans la grille.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+![Onglet Colonnes du concepteur de type de contenu avec les éléments « Employés », « Division » et « Étape d'orientation » répertoriés dans la grille.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
 
 
 
@@ -96,9 +96,8 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
 11. Des éléments **FieldRef** existent déjà dans le fichier pour les deux colonnes que vous avez ajoutées. Ajoutez des éléments **FieldRef** pour deux colonnes SharePoint intégrées comme paires des deux qui figurent déjà dans le fichier. Le code suivant correspond au balisage pour les éléments. *Vous devez utiliser ces mêmes GUID pour l'attribut d'ID, car ce sont des types de champs intégrés avec des ID fixes.*  Ajoutez-les *au-dessus*  des deux éléments **FieldRef** pour les colonnes de site personnalisées.
 
  ```
-
-<FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
-<FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
+ <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
+ <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  ```
 
 
@@ -129,7 +128,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
 
 
 
-!\[Boîte de dialogue Paramètres de type de contenu avec un seul type de contenu nommé NewEmployee répertorié.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+![Boîte de dialogue Paramètres de type de contenu avec un seul type de contenu nommé NewEmployee répertorié.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
 
 
 
@@ -221,7 +220,7 @@ Dans cet article, vous ajoutez un type de contenu personnalisé au Complément S
 
 
 
-!\[Liste « Nouveaux employés de Seattle » avec les colonnes Division et Étape d'orientation déjà présentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
+![Liste « Nouveaux employés de Seattle » avec les colonnes Division et Étape d'orientation déjà présentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
 
 
 

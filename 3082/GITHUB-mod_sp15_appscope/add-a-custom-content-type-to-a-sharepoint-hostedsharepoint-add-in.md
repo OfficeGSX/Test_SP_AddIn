@@ -66,7 +66,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
 
 
-!\[El Diseñador de tipos de contenido que muestra "NewEmployee" como el nombre de tipo, "Representa a un nuevo empleado" como la descripción y "Orientación de empleados" como el grupo.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
+![El Diseñador de tipos de contenido que muestra "NewEmployee" como el nombre de tipo, "Representa a un nuevo empleado" como la descripción y "Orientación de empleados" como el grupo.](images/8a9768f4-315d-45c0-88d7-687dbf84495c.PNG)
 
 
 
@@ -81,7 +81,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
 
 
-!\[La ficha Columnas del Diseñador de tipos de contenido con "Empleado", "División" y "Fase de orientación" mostrados en la cuadrícula.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
+![La ficha Columnas del Diseñador de tipos de contenido con "Empleado", "División" y "Fase de orientación" mostrados en la cuadrícula.](images/835e78b3-a073-45b2-b4ee-3f9be9d88495.PNG)
 
 
 
@@ -96,9 +96,8 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 11. Ya hay elementos **FieldRef** en el archivo para las dos columnas que agregó. Agregue elementos **FieldRef** para dos columnas SharePoint integradas, como pares de las dos ya presentes. Lo siguiente es el código de marcado para los elementos. *Debe usar las mismas GUID para el Id. atributo, porque son tipos de campo integrados con Id. fijo.*  Agregue esto *por encima*  de los dos elementos **FieldRef** para las columnas de sitio personalizadas.
 
  ```
-
-<FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
-<FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
+ <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
+ <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  ```
 
 
@@ -129,7 +128,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
 
 
-!\[El cuadro de diálogo Configuración de tipo de contenido con un único tipo de contenido llamado NewEmployee.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
+![El cuadro de diálogo Configuración de tipo de contenido con un único tipo de contenido llamado NewEmployee.](images/b90699f4-40de-4f50-ad47-3e8773d0eb92.PNG)
 
 
 
@@ -221,7 +220,7 @@ En este artículo agregará un tipo de contenido personalizado a la Complemento 
 
 
 
-!\[La lista "Nuevos empleados de Seattle" con las columnas División y Fase de orientación ya presentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
+![La lista "Nuevos empleados de Seattle" con las columnas División y Fase de orientación ya presentes.](images/b654af45-663e-425c-b7c7-b8b5524cb316.PNG)
 
 
 

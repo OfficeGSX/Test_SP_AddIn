@@ -96,9 +96,8 @@ ms.assetid: b52e5622-bf87-4bb1-a99a-ac1389de6651
 11. 文件中已有针对您添加的两个栏的 **FieldRef** 元素。为两个内置的 SharePoint 栏添加 **FieldRef** 元素作为已存在的两个项的对应项。以下是这些元素的标记。 *您必须为 ID 属性使用相同的 GUID，因为这些是具有固定 ID 的内置字段类型。*  为自定义网站栏在这两个 **FieldRef** 元素 *上*  添加它们。
 
   ```
-
-<FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
-<FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
+  <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
+  <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
   ```
 
 

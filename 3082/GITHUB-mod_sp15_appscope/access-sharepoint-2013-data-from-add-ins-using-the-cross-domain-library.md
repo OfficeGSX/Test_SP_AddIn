@@ -14,12 +14,14 @@ Normalmente, al crear Complementos de SharePoint, tiene que incorporar datos de 
 
 
 La figura 1 muestra una solicitud bloqueada entre dominios.
+
 **Figura 1. Solicitud bloqueada entre dominios**
 
 
 
 
 Cuando un usuario solicita una página desde el dominio del complemento (1), la comunicación del cliente está enlazada únicamente a ese dominio. El complemento puede emitir llamadas del cliente desde la página solo a otros recursos en el mismo dominio. Sin embargo, los complementos por lo general requieren recursos de otros dominios, como el dominio SharePoint, para atender sus escenarios. En el código de la página, puede intentar emitir una solicitud al dominio de SharePoint (2), que está bloqueado por el explorador. Por lo general, aparece un error **Acceso denegado**. El error no implica que no tenga permisos en los recursos solicitados, pero, lo más probable es que ni siquiera pueda emitir una solicitud en los recursos mencionados.Al usar la biblioteca entre dominios, las páginas web en el complemento pueden acceder a datos en el dominio del complemento y el dominio de SharePoint. La biblioteca entre dominios es una alternativa del lado cliente con forma de un archivo JavaScript (SP.RequestExecutor.js) que se hospeda en el sitio web de SharePoint al que puede hacer referencia en su complemento remoto. Esta biblioteca entre dominios le permite interactuar con más de un dominio en la página del complemento remoto a través de un proxy. Es una buena opción si quiere que el código del complemento se ejecute en el cliente en lugar de en el servidor o si existen barreras de conectividad, como firewalls, entre SharePoint y su infraestructura remota. Puede tener acceso a los datos en el sitio web de host: por ejemplo, puede ver las listas con las que los usuarios finales interactúan independientemente de su complemento. O bien, puede tener acceso a datos en la web del complemento, como listas aprovisionadas específicamente para el complemento. Los complementos también pueden tener acceso a otras colecciones de sitios y sitios web siempre y cuando el complemento tenga permisos del ámbito de inquilino y se haya implementado como una instalación por lotes mediante el catálogo de complementos.
+
 > **NOTA**
 > En este tema, **dominio de complemento** se refiere al domino que hospeda las páginas de complementos. Este puede ser el dominio de una aplicación web remota en una aplicación hospedada por el proveedor, pero las páginas de complementos también pueden estar en SharePoint en la web de complemento y hacer llamadas al dominio web de host. En el último escenario, el dominio del complemento es el dominio de la web de complemento.
 

@@ -14,12 +14,14 @@ Beim Erstellen von SharePoint-Add-Ins müssen Sie in der Regel Daten aus verschi
 
 
 Abbildung 1 zeigt eine blockierte domänenübergreifende Anforderung.
+
 **Abbildung 1. Blockierte domänenübergreifende Anforderung**
 
 
 
 
 Wenn ein Benutzer eine Webseite aus Ihrer Add-In-Domäne (1) anfordert, ist die clientseitige Kommunikation nur an diese Domäne gebunden. Ihr Add-In kann clientseitige Aufrufe von der Webseite nur zu anderen Ressourcen in derselben Domäne machen. Add-Ins fordern normalerweise aber Ressourcen von anderen Domänen an, wie der SharePoint-Domäne, um ihre Szenarien zu erfüllen. Im Code auf Ihrer Webseite können Sie versuchsweise eine Anforderung an die SharePoint-Domäne (2) senden, die vom Browser blockiert wird. Normalerweise sehen Sie die Fehlermeldung **Zugriff verweigert**. Der Fehler impliziert aber nicht, dass Sie keine Berechtigungen für die angeforderten Ressourcen haben, sondern Sie können in der Regel nur keine Anforderung an die genannten Ressourcen senden.Wenn Sie die domänenübergreifende Bibliothek verwenden, können die Webseiten in Ihrem Add-In auf Daten in der Add-In-Domäne und in der SharePoint-Domäne zugreifen. Die domänenübergreifende Bibliothek ist eine clientseitige Alternative in Form einer auf der SharePoint-Website gehosteten JavaScript-Datei (SP.RequestExecutor.js), auf die Sie in Ihrem Remote-Add-In verweisen können. Die domänenübergreifende Bibliothek ermöglicht Ihnen, über einen Proxy auf der Remote-Add-In-Seite mit mehreren Domänen zu interagieren. Diese Option ist geeignet, wenn Sie den Add-In-Code auf dem Client statt auf dem Server ausführen möchten oder wenn Konnektivitätsbarrieren, z. B. Firewalls, zwischen SharePoint und der Remoteinfrastruktur bestehen. Sie können auf Daten im Hostweb zugreifen - beispielsweise können Sie auf Listen zugreifen, mit denen Endbenutzer unabhängig von Ihrem Add-In interagieren. Oder Sie können auf Daten im Add-In zugreifen, wie Listen, die speziell für Ihr Add-In bereitgestellt wurden. Add-Ins mit Mandantenbereich können zudem auf andere Websitesammlungen und Websites zugreifen, sofern das Add-In über die erforderlichen Berechtigungen verfügt und als Batchinstallation mittels des Add-In-Katalogs bereitgestellt wurde.
+
 > **HINWEIS**
 > In diesem Thema bezieht sich **Add-In-Domäne** auf die Domäne, die die Add-In-Seiten hostet. Dies kann die Domäne einer Remote-Webanwendung in einem Add-In, die vom Anbieter gehostet wird, sein, oder Add-In-Seiten können sich auch in SharePoint im Add-In-Web befinden und Aufrufe an die Hostwebdomäne machen. In diesem Fall ist die Add-In-Domäne die Domäne des Add-In-Webs.
 
