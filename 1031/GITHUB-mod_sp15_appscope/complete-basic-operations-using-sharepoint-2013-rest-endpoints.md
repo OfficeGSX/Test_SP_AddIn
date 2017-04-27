@@ -139,7 +139,7 @@ Das folgende Beispiel zeigt, wie Sie eine Eigenschaft abrufen, indem Sie den Nam
 
 
 
-http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<Ordnername \>_/ _\<Dateiname\>_')/author
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<folder name\>_/ _\<file name\>_')/author
 
 
 

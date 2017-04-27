@@ -10,12 +10,12 @@ ms.assetid: 05ce5435-0a03-4ddc-976b-c33b08d03457
 
 # Choose patterns for developing and hosting your SharePoint Add-in
 Learn about the different ways that you can host the components of SharePoint Add-ins.
- 
-
-
-
-
 The SharePoint 2013 add-in model introduces a wide range of hosting and development patterns. Some of these patterns can be used in combination with each other. For example, your add-ins can mix SharePoint-hosted and remotely hosted components. The most useful way to determine which patterns you'll want to use is to start with your own requirements, technologies, and goals and match them with the options and possibilities that are enabled by SharePoint Add-ins.
+
+
+
+
+
 ## What to think about when choosing your development pattern
 <a name="ChoosePattern"> </a>
 

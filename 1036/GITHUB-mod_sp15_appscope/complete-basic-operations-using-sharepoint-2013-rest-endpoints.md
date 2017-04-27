@@ -133,7 +133,7 @@ L'exemple suivant montre comment obtenir une propriété en ajoutant le nom de l
 
 
 
-http:// _<URL du site>_/_api/web/getfilebyserverrelativeurl('/ _<nom du dossier>_/ _<nom du fichier>_')/auteur
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<folder name\>_/ _\<file name\>_')/author
 
 
 

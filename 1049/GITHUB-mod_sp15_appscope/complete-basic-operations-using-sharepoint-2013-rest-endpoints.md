@@ -133,7 +133,7 @@ HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse(
 
 
 
-http:// _<URL-адрес сайта>_/_api/web/getfilebyserverrelativeurl('/ _<имя папки>_/ _<имя файла>_')/author
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<folder name\>_/ _\<file name\>_')/author
 
 
 

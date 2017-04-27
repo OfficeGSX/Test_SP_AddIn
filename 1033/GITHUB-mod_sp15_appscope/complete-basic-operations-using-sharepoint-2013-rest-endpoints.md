@@ -7,12 +7,6 @@ ms.assetid: e3000415-50a0-426e-b304-b7de18f2f7d9
 
 # Complete basic operations using SharePoint 2013 REST endpoints
 Learn how to perform basic create, read, update, and delete (CRUD) operations with the SharePoint 2013 REST interface.
- 
-
-
-
-
-
 ## Developing with the SharePoint client APIs and REST
 <a name="ClientAPIs"> </a>
 
@@ -139,7 +133,7 @@ The following example shows how to get a property by appending the property name
 
 
 
- http:// _<site url>_/_api/web/getfilebyserverrelativeurl('/ _<folder name>_/ _<file name>_')/author
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<folder name\>_/ _\<file name\>_')/author
 
 
 

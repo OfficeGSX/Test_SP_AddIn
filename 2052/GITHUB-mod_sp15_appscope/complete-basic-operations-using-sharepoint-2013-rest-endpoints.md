@@ -139,7 +139,7 @@ HttpWebResponse endpointResponse = (HttpWebResponse)endpointRequest.GetResponse(
 
 
 
-http:// _<网站 url>_/_api/web/getfilebyserverrelativeurl('/ _<文件夹名称>_/ _<文件名称>_')/作者
+http:// _\<site url\>_/_api/web/getfilebyserverrelativeurl('/ _\<folder name\>_/ _\<file name\>_')/author
 
 
 

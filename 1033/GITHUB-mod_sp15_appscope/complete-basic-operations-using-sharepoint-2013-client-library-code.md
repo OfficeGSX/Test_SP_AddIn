@@ -7,12 +7,6 @@ ms.assetid: 5a69c9e3-73bf-4ed5-bc19-182056bdb394
 
 # Complete basic operations using SharePoint 2013 client library code
 Learn how to write code to perform basic operations with the SharePoint 2013 .NET Framework client object model (CSOM).
- 
-
-
-
-
-
 ## SharePoint client APIs
 <a name="ClientAPIs"> </a>
 
