@@ -103,7 +103,7 @@ customRenderingOverride.Templates.Fields = {
  ```
 
 
-    La méthode doit maintenant se présenter comme suit.
+La méthode doit maintenant se présenter comme suit.
 
 
 
