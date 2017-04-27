@@ -230,7 +230,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
 
 
 
-!\[Boîte de dialogue des propriétés personnalisées de composant WebPart client avec 4 propriétés indiquées sur la gauche ; chacune disposant de 5 attributs définis sur la droite.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+![Boîte de dialogue des propriétés personnalisées de composant WebPart client avec 4 propriétés indiquées sur la gauche ; chacune disposant de 5 attributs définis sur la droite.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
 
 
 
@@ -272,7 +272,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
 
 
 
-!\[Éditeur de collection d'éléments d'énumération de composant WebPart client comportant 3 éléments ; chacun d'entre eux disposant d'un attribut Value et d'un attribut Web Display Name.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+![Éditeur de collection d'éléments d'énumération de composant WebPart client comportant 3 éléments ; chacun d'entre eux disposant d'un attribut Value et d'un attribut Web Display Name.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
 
 
 
@@ -378,7 +378,7 @@ Une fois ces tâches terminées, votre composant de complément doit ressembler 
 
 
 
-!\[Composant d'application de base dans la galerie de composants WebPart](images/BasicAppPart_gallery.jpg)
+![Composant d'application de base dans la galerie de composants WebPart](images/BasicAppPart_gallery.jpg)
 
 
 

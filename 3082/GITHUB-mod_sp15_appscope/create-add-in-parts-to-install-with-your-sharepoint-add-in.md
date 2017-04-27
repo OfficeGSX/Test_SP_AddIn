@@ -230,7 +230,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
 
 
 
-!\[El cuadro de diálogo de propiedades personalizadas del elemento web cliente con 4 propiedades listadas a la izquierda y cada una de ellas con 5 atributos establecidos en la parte derecha.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
+![El cuadro de diálogo de propiedades personalizadas del elemento web cliente con 4 propiedades listadas a la izquierda y cada una de ellas con 5 atributos establecidos en la parte derecha.](images/6a0f0a56-3184-490a-af19-b51b7545671d.PNG)
 
 
 
@@ -272,7 +272,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
 
 
 
-!\[Editor de colección de elemento de enumeración de elemento web cliente con 3 elementos listados y cada uno con un atributo de valor y un atributo de nombre de presentación web.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
+![Editor de colección de elemento de enumeración de elemento web cliente con 3 elementos listados y cada uno con un atributo de valor y un atributo de nombre de presentación web.](images/1b21d968-bd58-4f30-a019-84df6181b81a.PNG)
 
 
 
@@ -378,7 +378,7 @@ Tras completar las tareas, el elemento de complemento debería tener un aspecto 
 
 
 
-!\[Elemento de aplicación básico en la galería de elementos web](images/BasicAppPart_gallery.jpg)
+![Elemento de aplicación básico en la galería de elementos web](images/BasicAppPart_gallery.jpg)
 
 
 

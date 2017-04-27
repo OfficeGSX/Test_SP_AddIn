@@ -56,7 +56,7 @@ En función de sus requisitos y presupuesto específicos, podrá elegir alguna d
 
 
 
-!\[Tipo de servidor de instalación de SharePoint 2013](images/SP15_app_ServerType.gif)
+![Tipo de servidor de instalación de SharePoint 2013](images/SP15_app_ServerType.gif)
 
 
 
@@ -80,7 +80,7 @@ dir /od *.log
 
 
 
-!\[Página de plantilla de sitio](images/SP15_appChooseSiteTemplate.gif)
+![Página de plantilla de sitio](images/SP15_appChooseSiteTemplate.gif)
 
 
 

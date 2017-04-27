@@ -136,7 +136,7 @@ ms.assetid: 907a9189-7ce3-469a-8c87-4cef26f03c73
 
 
 
-!\[Локализованный настраиваемый список](images/LocSPApp_AppwebList.png)
+![Локализованный настраиваемый список](images/LocSPApp_AppwebList.png)
 
 
 
@@ -297,7 +297,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
 
 
-!\[Страница SharePoint, использующая локализованные строки](images/LocSPApp_AppwebPage.png)
+![Страница SharePoint, использующая локализованные строки](images/LocSPApp_AppwebPage.png)
 
 
 

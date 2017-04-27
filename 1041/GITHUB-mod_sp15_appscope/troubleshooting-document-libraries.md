@@ -32,7 +32,7 @@ ms.assetid: d5380139-996e-4693-8a1a-5882165fa529
 
 
 
-!\[[NuGet パッケージの管理] ダイアログボックスでの選択](images/NuGet.PNG)
+![[NuGet パッケージの管理] ダイアログボックスでの選択](images/NuGet.PNG)
 
 
 

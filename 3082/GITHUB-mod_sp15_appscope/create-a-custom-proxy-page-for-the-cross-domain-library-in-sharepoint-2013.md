@@ -346,7 +346,7 @@ Response.End();
 
 
 
-!\[Página de SharePoint con datos de un servicio remoto](images/CustomProxy_result.jpg)
+![Página de SharePoint con datos de un servicio remoto](images/CustomProxy_result.jpg)
 
 
 

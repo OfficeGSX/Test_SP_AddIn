@@ -131,7 +131,7 @@ p {color: green;}
 
 
 
-!\[Una página de SharePoint con el título "Ayuda". Hay una línea de encabezado de color negro, seguida de dos líneas de texto de color verde.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
+![Una página de SharePoint con el título "Ayuda". Hay una línea de encabezado de color negro, seguida de dos líneas de texto de color verde.](images/2df51ab0-5b24-4a37-8b6a-6e95dbb1aeaa.PNG)
 
 
 

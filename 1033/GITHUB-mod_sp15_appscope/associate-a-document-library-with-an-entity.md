@@ -49,7 +49,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Select the Documents Library](images/CBADocLibrary.PNG)
+![Select the Documents Library](images/CBADocLibrary.PNG)
 
 
     Figure 2 shows the document library on the SharePoint site.
@@ -59,7 +59,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Document library with custom ProductName column](images/CBADocLibrary2.PNG)
+![Document library with custom ProductName column](images/CBADocLibrary2.PNG)
 
 
 
@@ -84,7 +84,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Create a relationship](images/CBARelationship.PNG)
+![Create a relationship](images/CBARelationship.PNG)
 
 
 
@@ -99,7 +99,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Set the related properties](images/CBARelationship2.PNG)
+![Set the related properties](images/CBARelationship2.PNG)
 
 
 
@@ -130,7 +130,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[The Add New Screen dialog box](images/CBAScreenSet.PNG)
+![The Add New Screen dialog box](images/CBAScreenSet.PNG)
 
 
     The **View** screen that is created for the entity contains a **Documents** tab with an **Add Document** button. The button displays a Popup for adding or uploading documents.
@@ -149,7 +149,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Add a new tab](images/CBAAddTab.PNG)
+![Add a new tab](images/CBAAddTab.PNG)
 
 
 
@@ -164,7 +164,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Add the Documents entity](images/CBAAddDoc.PNG)
+![Add the Documents entity](images/CBAAddDoc.PNG)
 
 
 
@@ -179,7 +179,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[Add a button](images/CBAAddButton.PNG)
+![Add a button](images/CBAAddButton.PNG)
 
 
 
@@ -194,7 +194,7 @@ The process of associating a document library with an entity involves three step
 
 
 
-!\[The Add Button dialog box](images/CBAAddDialog.PNG)
+![The Add Button dialog box](images/CBAAddDialog.PNG)
 
 
 

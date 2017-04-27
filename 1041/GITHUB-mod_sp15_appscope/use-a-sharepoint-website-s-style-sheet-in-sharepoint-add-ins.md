@@ -264,7 +264,7 @@ SharePoint アドインでスタイル シートを使用するには、次の�
 
 
 
-!\[Web ページで使用されているスタイルシート コントロール](images/StylesheetControl_result2.png)
+![Web ページで使用されているスタイルシート コントロール](images/StylesheetControl_result2.png)
 
 
 

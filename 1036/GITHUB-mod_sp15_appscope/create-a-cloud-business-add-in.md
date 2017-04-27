@@ -28,7 +28,7 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 
 
 
-!\[Modèle de création d'application de gestion des informations professionnelles dans le Cloud](images/CloudBusinessApptemplate.PNG)
+![Modèle de création d'application de gestion des informations professionnelles dans le Cloud](images/CloudBusinessApptemplate.PNG)
 
 
 
@@ -45,7 +45,7 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 
 
 
-!\[URL SharePoint](images/SiteURL.PNG)
+![URL SharePoint](images/SiteURL.PNG)
 
 
     L'URL doit prendre la forme https://  _Monsite_.sharepoint.com/sites/Developer/.
@@ -63,7 +63,7 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 
 
 
-!\[Nœud de projet de niveau supérieur](images/Top-levelprojectnode.PNG)
+![Nœud de projet de niveau supérieur](images/Top-levelprojectnode.PNG)
 
 
     Le concepteur d'applications s'ouvre.
@@ -75,7 +75,7 @@ En utilisant le modèle de complément de gestion d'informations professionnelle
 
 
 
-!\[Onglet Propriétés SharePoint](images/SharePointtab.PNG)
+![Onglet Propriétés SharePoint](images/SharePointtab.PNG)
 
 
 

@@ -113,7 +113,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
 
 
 
-!\[Элемент "Сертификаты сервера" в IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+![Элемент "Сертификаты сервера" в IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
 
 
 
@@ -125,7 +125,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
 
 
 
-!\[Ссылка "Создать самозаверяющий сертификат"](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+![Ссылка "Создать самозаверяющий сертификат"](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
 
 
 
@@ -140,7 +140,7 @@ ms.assetid: 33294041-48ae-4ee3-846c-acb57b5409cb
 
 
 
-!\[Экспорт тестового сертификата](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+![Экспорт тестового сертификата](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
 
 
 
@@ -353,7 +353,7 @@ $serviceConfig.Update()
 
 
 
-!\[Пример приложения, получающего название веб-сайта](images/SP15HighTrustLaunchNew.gif)
+![Пример приложения, получающего название веб-сайта](images/SP15HighTrustLaunchNew.gif)
 
 
 

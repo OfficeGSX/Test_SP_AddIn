@@ -51,7 +51,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Modèle d'Application de gestion des informations professionnelles dans le Cloud](images/CBA_IM1.PNG)
+![Modèle d'Application de gestion des informations professionnelles dans le Cloud](images/CBA_IM1.PNG)
 
 
 
@@ -149,7 +149,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Entité Incident](images/CBA_IM_2.PNG)
+![Entité Incident](images/CBA_IM_2.PNG)
 
 
 
@@ -217,7 +217,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Entité Patient](images/CBA_IM_2a.PNG)
+![Entité Patient](images/CBA_IM_2a.PNG)
 
 
 
@@ -256,7 +256,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Relation entre Incident et Patient](images/CBA_IM_3.PNG)
+![Relation entre Incident et Patient](images/CBA_IM_3.PNG)
 
 
     Cette opération crée zéro ou une ou plusieurs relations entre les incidents et les patients. Un dossier d'incident ne comporte pas nécessairement de patient, mais un numéro d'incident doit impérativement être attribué à chaque patient.
@@ -300,7 +300,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Écran Incidents défini](images/CBA_IM_4.PNG)
+![Écran Incidents défini](images/CBA_IM_4.PNG)
 
 
     Des écrans Parcourir, Afficher les détails et Ajouter/Modifier sont ajoutés au projet HTMLClient. L'écran de navigation est automatiquement défini comme écran d'accueil de l'application et les commandes nécessaires au lancement des écrans Afficher et Ajouter/Modifier sont automatiquement fournis.
@@ -350,7 +350,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Disposition de l'écran Parcourir](images/CBA_IM4a.PNG)
+![Disposition de l'écran Parcourir](images/CBA_IM4a.PNG)
 
 
     Au moment de l'exécution, l'écran affiche une mosaïque pour chaque incident et chacune d'elle affiche un numéro d'incident, une date et une adresse.
@@ -385,7 +385,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Lien Ajouter des patients](images/CBA_IM_5.PNG)
+![Lien Ajouter des patients](images/CBA_IM_5.PNG)
 
 
 
@@ -400,7 +400,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Disposition de l'écran Ajouter/Modifier](images/CBA_IM_5a.PNG)
+![Disposition de l'écran Ajouter/Modifier](images/CBA_IM_5a.PNG)
 
 
 
@@ -446,7 +446,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Disposition de l'écran Ajouter/Modifier](images/CBA_IM_6.PNG)
+![Disposition de l'écran Ajouter/Modifier](images/CBA_IM_6.PNG)
 
 
 
@@ -474,7 +474,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Menu contextuel Ajouter un incident](images/CBA_IM_7.PNG)
+![Menu contextuel Ajouter un incident](images/CBA_IM_7.PNG)
 
 
 
@@ -508,7 +508,7 @@ Vous allez élaborer le complément nomade qui va être utilisé pour saisir des
 
 
 
-!\[Menu contextuel Ajouter un patient](images/CBA_IM_8.PNG)
+![Menu contextuel Ajouter un patient](images/CBA_IM_8.PNG)
 
 
 
@@ -615,7 +615,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Accéder au site de développeur SharePoint](images/CBA_IM_8a.PNG)
+![Accéder au site de développeur SharePoint](images/CBA_IM_8a.PNG)
 
 
 
@@ -630,7 +630,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Lien Paramètres du site](images/CBA_IM_8b.PNG)
+![Lien Paramètres du site](images/CBA_IM_8b.PNG)
 
 
 
@@ -642,7 +642,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Liste Modèles de liste](images/CBA_IM_8c.PNG)
+![Liste Modèles de liste](images/CBA_IM_8c.PNG)
 
 
 
@@ -666,7 +666,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Modèles Contoso](images/CBA_IM_8d.PNG)
+![Modèles Contoso](images/CBA_IM_8d.PNG)
 
 
 
@@ -711,7 +711,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Source de données SharePoint](images/CBA_IM_9.PNG)
+![Source de données SharePoint](images/CBA_IM_9.PNG)
 
 
 
@@ -726,7 +726,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Listes SharePoint](images/CBA_IM_9a.PNG)
+![Listes SharePoint](images/CBA_IM_9a.PNG)
 
 
     Les entités sont ajoutées au nouveau nœud **Données de développeur**, sous le nœud **Sources de données** dans l' **Explorateur de solutions** et l'entité **AppareilContoso** s'ouvre dans le concepteur d'entités.
@@ -769,7 +769,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Requête AvailableApparatus](images/CBA_IM_10.PNG)
+![Requête AvailableApparatus](images/CBA_IM_10.PNG)
 
 
 
@@ -805,7 +805,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Boîte de dialogue Relation](images/CBA_IM_10a.PNG)
+![Boîte de dialogue Relation](images/CBA_IM_10a.PNG)
 
 
 
@@ -844,7 +844,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Ajouter une requête](images/CBA_IM_11.PNG)
+![Ajouter une requête](images/CBA_IM_11.PNG)
 
 
     La collection **AvailableApparatus** est ajoutée dans le volet gauche du concepteur d'écran.
@@ -877,7 +877,7 @@ La première étape consiste à ajouter des listes de modèles pré-renseignées
 
 
 
-!\[Disposition de l'onglet Ressources](images/CBA_IM_11a.PNG)
+![Disposition de l'onglet Ressources](images/CBA_IM_11a.PNG)
 
 
 
@@ -915,7 +915,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Accéder au site de développeur SharePoint](images/CBA_IM_8a.PNG)
+![Accéder au site de développeur SharePoint](images/CBA_IM_8a.PNG)
 
 
 
@@ -948,7 +948,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Bibliothèque de documents avec colonne IncidentNumber](images/CBA_IM_12.PNG)
+![Bibliothèque de documents avec colonne IncidentNumber](images/CBA_IM_12.PNG)
 
 
     Pour associer la bibliothèque de documents à votre complément, la bibliothèque de documents doit contenir une colonne personnalisée mappée sur un champ unique dans votre entité. Dans ce cas, la colonne **IncidentNumber** correspond au champ **IncidentNumber** de l'entité **Incidents**.
@@ -975,7 +975,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Sélectionner la bibliothèque de documents](images/CBA_IM_13.PNG)
+![Sélectionner la bibliothèque de documents](images/CBA_IM_13.PNG)
 
 
     Un nœud **IncidentDocuments.lsml** est ajouté à l'Explorateur de solutions.
@@ -1005,7 +1005,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Relation entre les entités](images/CBA_IM_11b.PNG)
+![Relation entre les entités](images/CBA_IM_11b.PNG)
 
 
 
@@ -1023,7 +1023,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Champs associés](images/CBA_IM_11c.PNG)
+![Champs associés](images/CBA_IM_11c.PNG)
 
 
 
@@ -1063,7 +1063,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Bouton pour créer ou télécharger des documents](images/CBA_IM_14.PNG)
+![Bouton pour créer ou télécharger des documents](images/CBA_IM_14.PNG)
 
 
 
@@ -1087,7 +1087,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Boîte de dialogue SharePoint Créer un fichier](images/CBA_IM_15.PNG)
+![Boîte de dialogue SharePoint Créer un fichier](images/CBA_IM_15.PNG)
 
 
 
@@ -1110,7 +1110,7 @@ Sur la scène de l'incident, le responsable des incidents doit documenter de nom
 
 
 
-!\[Nom du fichier](images/CBA_IM_16.PNG)
+![Nom du fichier](images/CBA_IM_16.PNG)
 
 
     Ce nom sera utilisé comme nom de fichier pour le document.
@@ -1153,7 +1153,7 @@ Le service incendie Contoso est satisfait de l'ajout du complément Gestionnaire
 
 
 
-!\[Fichiers de logo et d'écran de démarrage](images/CBA_IM_17.PNG)
+![Fichiers de logo et d'écran de démarrage](images/CBA_IM_17.PNG)
 
 
 
@@ -1310,7 +1310,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Nœud IncidentManager](images/CBA_IM_18.PNG)
+![Nœud IncidentManager](images/CBA_IM_18.PNG)
 
 
     L' **Assistant Application de publication LightSwitch** s'affiche.
@@ -1322,7 +1322,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Assistant Publication](images/CBA_IM_19.PNG)
+![Assistant Publication](images/CBA_IM_19.PNG)
 
 
     Lorsque votre complément est publié, l' **Explorateur de fichiers** apparaît et affiche le dossier **Publier** de votre projet.
@@ -1337,7 +1337,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Liste Applications en cours de test](images/CBA_IM_20.PNG)
+![Liste Applications en cours de test](images/CBA_IM_20.PNG)
 
 
 
@@ -1352,7 +1352,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Boîte de dialogue Déployer l'application](images/CBA_IM_20a.PNG)
+![Boîte de dialogue Déployer l'application](images/CBA_IM_20a.PNG)
 
 
     La boîte de dialogue **Télécharger le complément** s'ouvre.
@@ -1377,7 +1377,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Application en cours d'installation](images/CBA_IM_21.PNG)
+![Application en cours d'installation](images/CBA_IM_21.PNG)
 
 
 
@@ -1392,7 +1392,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Application en cours d'installation](images/CBA_IM_22.PNG)
+![Application en cours d'installation](images/CBA_IM_22.PNG)
 
 
 
@@ -1407,7 +1407,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[L'application est prête à fonctionner](images/CBA_IM_23.PNG)
+![L'application est prête à fonctionner](images/CBA_IM_23.PNG)
 
 
     Le complément ouvre le navigateur et sa présentation est exactement la même que celle obtenue lorsque vous avez exécuté le complément en mode Débogage. Notez que les données saisies au cours du développement ont disparu. Lors du déploiement du complément, la base de données est déployée, mais les données ne le sont pas.
@@ -1422,7 +1422,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Disposition dans le navigateur de bureau](images/CBA_IM_24.PNG)
+![Disposition dans le navigateur de bureau](images/CBA_IM_24.PNG)
 
 
     Vous pouvez également vérifier votre complément sur un périphérique mobile. Connectez-vous à votre site SharePoint à partir du navigateur web de votre appareil, puis lancez le complément.
@@ -1434,7 +1434,7 @@ Jusqu'ici, vous avez simplement exécuté le complément en mode Débogage, qui 
 
 
 
-!\[Disposition sur un appareil mobile](images/CBA_IM_25.PNG)
+![Disposition sur un appareil mobile](images/CBA_IM_25.PNG)
 
 
 

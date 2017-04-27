@@ -26,7 +26,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Lien Paramètres du site](images/CBA_IM_8b.PNG)
+![Lien Paramètres du site](images/CBA_IM_8b.PNG)
 
 
 
@@ -38,7 +38,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Lien de types de contenu de site](images/CBA_IM_26.PNG)
+![Lien de types de contenu de site](images/CBA_IM_26.PNG)
 
 
 
@@ -50,7 +50,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Créer un lien](images/CBA_IM_27.PNG)
+![Créer un lien](images/CBA_IM_27.PNG)
 
 
 
@@ -62,7 +62,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Sélections de type de contenu parent](images/CBA_IM_28.PNG)
+![Sélections de type de contenu parent](images/CBA_IM_28.PNG)
 
 
 
@@ -74,7 +74,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Paramètre de groupe](images/CBA_IM_28a.PNG)
+![Paramètre de groupe](images/CBA_IM_28a.PNG)
 
 
 
@@ -89,7 +89,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Indiquer le modèle de document](images/CBA_IM_29.PNG)
+![Indiquer le modèle de document](images/CBA_IM_29.PNG)
 
 
 
@@ -107,7 +107,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Ajout du modèle](images/CBA_IM_29a.PNG)
+![Ajout du modèle](images/CBA_IM_29a.PNG)
 
 
 
@@ -119,7 +119,7 @@ Si ce n'est pas encore fait, associez une bibliothèque de documents à votre co
 
 
 
-!\[Boîte de dialogue Créer un fichier avec le nouveau modèle](images/CBA_IM_30.PNG)
+![Boîte de dialogue Créer un fichier avec le nouveau modèle](images/CBA_IM_30.PNG)
 
 
 

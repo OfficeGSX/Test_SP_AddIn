@@ -52,7 +52,7 @@ ms.assetid: f40c910f-12a2-4caa-8e91-c7a61ae540db
 
 
 
-!\[События приложения в окне свойств](images/SP_VS_Properties_Window_AppEvents.PNG)
+![События приложения в окне свойств](images/SP_VS_Properties_Window_AppEvents.PNG)
 
 
     Инструменты разработчика Office для Visual Studio сделает следующее:

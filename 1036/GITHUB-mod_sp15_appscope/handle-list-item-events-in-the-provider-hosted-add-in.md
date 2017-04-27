@@ -599,7 +599,7 @@ using System.Web.Configuration;
 
 3.  Assurez-vous que la case **Définir la constante DEBUG** est activée. (Généralement, elle est activée par défaut.) La capture d'écran ci-dessous présente le paramétrage correct.
 
-!\[Sous-onglet Générer dans l'onglet Propriétés dans Visual Studio. La liste déroulante Configuration est définie sur Déboguer. La case « Définir la constante DEBUG » est sélectionnée.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
+![Sous-onglet Générer dans l'onglet Propriétés dans Visual Studio. La liste déroulante Configuration est définie sur Déboguer. La case « Définir la constante DEBUG » est sélectionnée.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
 
 
 
@@ -607,7 +607,7 @@ using System.Web.Configuration;
 
 4.  Modifiez la liste déroulante **Configuration** en **Mise en production**, puis assurez-vous que la case **Définir la constante DEBUG** est ** *désactivée* **. (Généralement, elle est activée par défaut.) La capture d'écran ci-dessous présente le paramétrage correct.
 
-!\[Sous-onglet Générer dans l'onglet Propriétés. La liste déroulante Configuration est définie sur Version finale. La case « Définir la constante DEBUG » n'est pas sélectionnée.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
+![Sous-onglet Générer dans l'onglet Propriétés. La liste déroulante Configuration est définie sur Version finale. La case « Définir la constante DEBUG » n'est pas sélectionnée.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
 
 
 
@@ -647,7 +647,7 @@ using System.Web.Configuration;
 
 5.  Lorsque le point d'arrêt est atteint, placez le curseur sur la variable `debugEndpoint`. Lorsque la fenêtre Bulle d'informations Visual Studio apparaît, cliquez sur la flèche vers le bas et sélectionnez **Visualiseur de texte**.
 
-!\[Visualiseur de texte Visual Studio contenant une URL Azure Service Bus.](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
+![Visualiseur de texte Visual Studio contenant une URL Azure Service Bus.](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
 
 
 

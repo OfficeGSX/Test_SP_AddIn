@@ -43,7 +43,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[ドキュメント ライブラリの選択](images/CBADocLibrary.PNG)
+![ドキュメント ライブラリの選択](images/CBADocLibrary.PNG)
 
 
     図 2 は、SharePoint サイトのドキュメント ライブラリを示します。
@@ -53,7 +53,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[カスタム ProductName 列を持つドキュメント ライブラリ](images/CBADocLibrary2.PNG)
+![カスタム ProductName 列を持つドキュメント ライブラリ](images/CBADocLibrary2.PNG)
 
 
 
@@ -78,7 +78,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[関係の作成](images/CBARelationship.PNG)
+![関係の作成](images/CBARelationship.PNG)
 
 
 
@@ -93,7 +93,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[関連プロパティの設定](images/CBARelationship2.PNG)
+![関連プロパティの設定](images/CBARelationship2.PNG)
 
 
 
@@ -124,7 +124,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[[Add New Screen] ダイアログボックス](images/CBAScreenSet.PNG)
+![[Add New Screen] ダイアログボックス](images/CBAScreenSet.PNG)
 
 
     選択したエンティティ用に作成した [ **表示**] 画面には、[ **ドキュメント**] タブがあり、そのタブには [ **ドキュメントの追加**] ボタンがあります。このボタンを押すと、ドキュメントの追加またはアップロードを行うポップアップが表示されます。
@@ -143,7 +143,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[新規タブの追加](images/CBAAddTab.PNG)
+![新規タブの追加](images/CBAAddTab.PNG)
 
 
 
@@ -158,7 +158,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[ドキュメント エンティティの追加](images/CBAAddDoc.PNG)
+![ドキュメント エンティティの追加](images/CBAAddDoc.PNG)
 
 
 
@@ -173,7 +173,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[ボタンの追加](images/CBAAddButton.PNG)
+![ボタンの追加](images/CBAAddButton.PNG)
 
 
 
@@ -188,7 +188,7 @@ SharePoint のドキュメント ライブラリ機能を使用して、リス�
 
 
 
-!\[[Add Button] ダイアログ ボックス](images/CBAAddDialog.PNG)
+![[Add Button] ダイアログ ボックス](images/CBAAddDialog.PNG)
 
 
 

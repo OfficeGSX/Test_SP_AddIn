@@ -26,7 +26,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Ссылка "Параметры сайта"](images/CBA_IM_8b.PNG)
+![Ссылка "Параметры сайта"](images/CBA_IM_8b.PNG)
 
 
 
@@ -38,7 +38,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Ссылка на типы контента сайта](images/CBA_IM_26.PNG)
+![Ссылка на типы контента сайта](images/CBA_IM_26.PNG)
 
 
 
@@ -50,7 +50,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Создать ссылку](images/CBA_IM_27.PNG)
+![Создать ссылку](images/CBA_IM_27.PNG)
 
 
 
@@ -62,7 +62,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Выбор родительского типа контента](images/CBA_IM_28.PNG)
+![Выбор родительского типа контента](images/CBA_IM_28.PNG)
 
 
 
@@ -74,7 +74,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Параметр группы](images/CBA_IM_28a.PNG)
+![Параметр группы](images/CBA_IM_28a.PNG)
 
 
 
@@ -89,7 +89,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Укажите шаблон документа](images/CBA_IM_29.PNG)
+![Укажите шаблон документа](images/CBA_IM_29.PNG)
 
 
 
@@ -107,7 +107,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Добавление шаблона](images/CBA_IM_29a.PNG)
+![Добавление шаблона](images/CBA_IM_29a.PNG)
 
 
 
@@ -119,7 +119,7 @@ ms.assetid: 78df5ac7-a832-4fd0-89dc-9e440eefd7c8
 
 
 
-!\[Диалоговое окно создания файла с новым шаблоном](images/CBA_IM_30.PNG)
+![Диалоговое окно создания файла с новым шаблоном](images/CBA_IM_30.PNG)
 
 
 

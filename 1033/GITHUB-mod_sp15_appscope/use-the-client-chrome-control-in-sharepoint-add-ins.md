@@ -100,7 +100,7 @@ Figure 1 shows a remote webpage with the chrome control.
 
 
 
-!\[App for SharePoint 2013 Visual Studio template](images/AppForSharePointVSTemplate.PNG)
+![App for SharePoint 2013 Visual Studio template](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ Figure 1 shows a remote webpage with the chrome control.
 
 
 
-!\[App for SharePoint projects in Solution Explorer](images/AppVSTemplateSolutionExplorer.jpg)
+![App for SharePoint projects in Solution Explorer](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ Figure 1 shows a remote webpage with the chrome control.
 
 
 
-!\[Manifest editor with query string parameters](images/ChromeControl_manifest.PNG)
+![Manifest editor with query string parameters](images/ChromeControl_manifest.PNG)
 
 
     The chrome control automatically takes the following values from the query string:
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[SharePoint website stylesheet used in a page](images/ChromControl_stylesheet.png)
+![SharePoint website stylesheet used in a page](images/ChromControl_stylesheet.png)
 
 
 

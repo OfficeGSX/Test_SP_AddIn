@@ -46,7 +46,7 @@ To host the add-in, you'll also need a SharePoint 2013 site or a SharePoint Deve
 
 
 
-!\[Cloud Business App project template](images/CBAtemplate.PNG)
+![Cloud Business App project template](images/CBAtemplate.PNG)
 
 
 
@@ -119,7 +119,7 @@ The candidate tracker add-in needs a database table, which you'll create in the 
 
 
 
-!\[Candidates table](images/CBAentity.PNG)
+![Candidates table](images/CBAentity.PNG)
 
 
 
@@ -148,7 +148,7 @@ The candidate tracker add-in needs a database table, which you'll create in the 
 
 
 
-!\[The BrowseCandidates screen designer](images/CBAscreen.PNG)
+![The BrowseCandidates screen designer](images/CBAscreen.PNG)
 
 
     This will display the **Candidate** information in a tabular format instead of the default list format.
@@ -169,7 +169,7 @@ The candidate tracker add-in needs a database table, which you'll create in the 
 
 
 
-!\[Add Button dialog box](images/CBAadd.PNG)
+![Add Button dialog box](images/CBAadd.PNG)
 
 
     The **Add New Screen** dialog box opens.
@@ -195,7 +195,7 @@ A new screen designer window opens.
 
 
 
-!\[Item Tap property](images/CBAproperty.PNG)
+![Item Tap property](images/CBAproperty.PNG)
 
 
     The **Edit Item Tap Action** dialog box opens.
@@ -207,7 +207,7 @@ A new screen designer window opens.
 
 
 
-!\[Edit ItemTap Action dialog box](images/CBAaction.PNG)
+![Edit ItemTap Action dialog box](images/CBAaction.PNG)
 
 
 
@@ -281,7 +281,7 @@ One of the features of SharePoint for Office 365 is the ability to add newsfeeds
 
 
 
-!\[Social properties](images/CBAsocial.PNG)
+![Social properties](images/CBAsocial.PNG)
 
 
 

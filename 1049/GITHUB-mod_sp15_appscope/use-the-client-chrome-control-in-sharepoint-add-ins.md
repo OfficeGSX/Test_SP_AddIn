@@ -100,7 +100,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
 
 
-!\[Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
+![Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
 
 
-!\[Приложение для проектов SharePoint в обозревателе решений](images/AppVSTemplateSolutionExplorer.jpg)
+![Приложение для проектов SharePoint в обозревателе решений](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 
 
 
-!\[Редактор манифеста с параметрами строки запроса](images/ChromeControl_manifest.PNG)
+![Редактор манифеста с параметрами строки запроса](images/ChromeControl_manifest.PNG)
 
 
     Элемент управления хрома автоматически принимает из строки запроса следующие значения:
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[На странице используется таблица стилей веб-сайта SharePoint](images/ChromControl_stylesheet.png)
+![На странице используется таблица стилей веб-сайта SharePoint](images/ChromControl_stylesheet.png)
 
 
 

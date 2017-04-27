@@ -43,7 +43,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Seleccionar la biblioteca Documentos](images/CBADocLibrary.PNG)
+![Seleccionar la biblioteca Documentos](images/CBADocLibrary.PNG)
 
 
     La Figura 2 muestra la biblioteca de documentos en el sitio de SharePoint.
@@ -53,7 +53,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Biblioteca Documentos con la columna ProductName personalizada](images/CBADocLibrary2.PNG)
+![Biblioteca Documentos con la columna ProductName personalizada](images/CBADocLibrary2.PNG)
 
 
 
@@ -78,7 +78,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Crear una relación](images/CBARelationship.PNG)
+![Crear una relación](images/CBARelationship.PNG)
 
 
 
@@ -93,7 +93,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Establecer las propiedades relacionadas](images/CBARelationship2.PNG)
+![Establecer las propiedades relacionadas](images/CBARelationship2.PNG)
 
 
 
@@ -124,7 +124,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Cuadro de diálogo Agregar nueva pantalla](images/CBAScreenSet.PNG)
+![Cuadro de diálogo Agregar nueva pantalla](images/CBAScreenSet.PNG)
 
 
     La pantalla **Vista** que se crea para la entidad contiene una pestaña **Documentos** con un botón **Agregar documento**. El botón muestra un elemento emergente para agregar o cargar documentos.
@@ -143,7 +143,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Agregar una nueva pestaña](images/CBAAddTab.PNG)
+![Agregar una nueva pestaña](images/CBAAddTab.PNG)
 
 
 
@@ -158,7 +158,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Agregar la entidad Documentos](images/CBAAddDoc.PNG)
+![Agregar la entidad Documentos](images/CBAAddDoc.PNG)
 
 
 
@@ -173,7 +173,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Agregar un botón](images/CBAAddButton.PNG)
+![Agregar un botón](images/CBAAddButton.PNG)
 
 
 
@@ -188,7 +188,7 @@ El proceso de asociar una biblioteca de documentos con una entidad implica tres 
 
 
 
-!\[Cuadro de diálogo Agregar un botón](images/CBAAddDialog.PNG)
+![Cuadro de diálogo Agregar un botón](images/CBAAddDialog.PNG)
 
 
 

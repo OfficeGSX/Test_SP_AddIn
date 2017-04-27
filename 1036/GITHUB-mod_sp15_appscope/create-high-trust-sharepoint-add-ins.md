@@ -113,7 +113,7 @@ Vous allez créer un fichier de certificat .pfx de test, puis un fichier .cer de
 
 
 
-!\[Option Certificats de serveur dans IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+![Option Certificats de serveur dans IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
 
 
 
@@ -125,7 +125,7 @@ Vous allez créer un fichier de certificat .pfx de test, puis un fichier .cer de
 
 
 
-!\[Lien Créer un certificat auto-signé](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+![Lien Créer un certificat auto-signé](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
 
 
 
@@ -140,7 +140,7 @@ Vous allez créer un fichier de certificat .pfx de test, puis un fichier .cer de
 
 
 
-!\[Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+![Exportation d'un certificat de test](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
 
 
 
@@ -353,7 +353,7 @@ Dans cette section, vous apprenez à créer un Complément SharePoint à haut ni
 
 
 
-!\[Exemple d'application récupérant le titre web](images/SP15HighTrustLaunchNew.gif)
+![Exemple d'application récupérant le titre web](images/SP15HighTrustLaunchNew.gif)
 
 
 

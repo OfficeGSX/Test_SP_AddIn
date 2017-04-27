@@ -70,7 +70,7 @@ ms.assetid: c3f7e8f0-1a85-41b5-aad2-e8eb36e60e75
 
 
 
-!\[Calendrier intitulé Plannification de l'orientation de l'employé avec un élément le 1er juin indiquant « Orientation Cassie Hicks »](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+![Calendrier intitulé Plannification de l'orientation de l'employé avec un élément le 1er juin indiquant « Orientation Cassie Hicks »](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
 
 
 
@@ -165,7 +165,7 @@ ms.assetid: c3f7e8f0-1a85-41b5-aad2-e8eb36e60e75
 
 
 
-!\[Ruban d'événements avec un bouton personnalisé nommé « Orientation de l'employé »](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
+![Ruban d'événements avec un bouton personnalisé nommé « Orientation de l'employé »](images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
 
 
 

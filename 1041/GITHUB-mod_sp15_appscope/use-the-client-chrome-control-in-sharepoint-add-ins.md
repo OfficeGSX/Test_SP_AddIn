@@ -100,7 +100,7 @@ SharePoint 2013 でクロム コントロールを使用すると、サーバー
 
 
 
-!\[SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
+![SharePoint 2013 用アプリの Visual Studio テンプレート](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ SharePoint 2013 でクロム コントロールを使用すると、サーバー
 
 
 
-!\[ソリューション エクスプローラー内の SharePoint 用アプリ プロジェクト](images/AppVSTemplateSolutionExplorer.jpg)
+![ソリューション エクスプローラー内の SharePoint 用アプリ プロジェクト](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ SharePoint 2013 でクロム コントロールを使用すると、サーバー
 
 
 
-!\[クエリ文字列パラメーターを含むマニフェスト エディター](images/ChromeControl_manifest.PNG)
+![クエリ文字列パラメーターを含むマニフェスト エディター](images/ChromeControl_manifest.PNG)
 
 
     クロム コントロールは、次の値をクエリ文字列から自動的に取得します。
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[ページで使用される SharePoint Web サイト スタイルシート](images/ChromControl_stylesheet.png)
+![ページで使用される SharePoint Web サイト スタイルシート](images/ChromControl_stylesheet.png)
 
 
 

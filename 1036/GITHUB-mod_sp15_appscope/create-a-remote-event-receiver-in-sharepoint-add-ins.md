@@ -306,7 +306,7 @@ Testez votre gestionnaire avec la procédure suivante.
 
 
 
-!\[Événements distants SharePoint dans Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
+![Événements distants SharePoint dans Visual Studio](images/SP_VS_Properties_Window_RemoteEvents.PNG)
 
 
 

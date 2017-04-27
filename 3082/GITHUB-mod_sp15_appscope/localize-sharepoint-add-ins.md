@@ -136,7 +136,7 @@ Una web de complemento puede contener tipos determinados de componentes de SP. P
 
 
 
-!\[Una lista personalizada localizada](images/LocSPApp_AppwebList.png)
+![Una lista personalizada localizada](images/LocSPApp_AppwebList.png)
 
 
 
@@ -297,7 +297,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
 
 
-!\[Página de SharePoint en la que se usan cadenas localizadas](images/LocSPApp_AppwebPage.png)
+![Página de SharePoint en la que se usan cadenas localizadas](images/LocSPApp_AppwebPage.png)
 
 
 

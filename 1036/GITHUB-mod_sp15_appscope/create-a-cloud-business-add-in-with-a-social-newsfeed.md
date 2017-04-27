@@ -40,7 +40,7 @@ Pour héberger le complément, vous aurez besoin d'un site SharePoint 2013 ou d'
 
 
 
-!\[Modèle de projet d'application de gestion des informations professionnelles dans le Cloud](images/CBAtemplate.PNG)
+![Modèle de projet d'application de gestion des informations professionnelles dans le Cloud](images/CBAtemplate.PNG)
 
 
 
@@ -113,7 +113,7 @@ Le complément Suivi de candidat a besoin d'un tableau de base de données que v
 
 
 
-!\[Table Candidats](images/CBAentity.PNG)
+![Table Candidats](images/CBAentity.PNG)
 
 
 
@@ -142,7 +142,7 @@ Le complément Suivi de candidat a besoin d'un tableau de base de données que v
 
 
 
-!\[Concepteur d'écran BrowseCandidates](images/CBAscreen.PNG)
+![Concepteur d'écran BrowseCandidates](images/CBAscreen.PNG)
 
 
     Cette opération affichera les informations du **Candidat** sous forme de tableau et non sous forme de liste par défaut.
@@ -163,7 +163,7 @@ Le complément Suivi de candidat a besoin d'un tableau de base de données que v
 
 
 
-!\[Boîte de dialogue Ajouter un bouton](images/CBAadd.PNG)
+![Boîte de dialogue Ajouter un bouton](images/CBAadd.PNG)
 
 
     La boîte de dialogue **Ajouter un nouveau projet** s'ouvre.
@@ -189,7 +189,7 @@ Une nouvelle fenêtre de concepteur d'écran s'ouvre.
 
 
 
-!\[Propriété ItemTap](images/CBAproperty.PNG)
+![Propriété ItemTap](images/CBAproperty.PNG)
 
 
     La boîte de dialogue **Modifier l'action de toucher sur l'élément** s'ouvre.
@@ -201,7 +201,7 @@ Une nouvelle fenêtre de concepteur d'écran s'ouvre.
 
 
 
-!\[Boîte de dialogue Modifier l'action ItemTap](images/CBAaction.PNG)
+![Boîte de dialogue Modifier l'action ItemTap](images/CBAaction.PNG)
 
 
 
@@ -275,7 +275,7 @@ SharePoint pour Office 365 offre, parmi ses fonctionnalités, la possibilité d'
 
 
 
-!\[Propriétés sociales](images/CBAsocial.PNG)
+![Propriétés sociales](images/CBAsocial.PNG)
 
 
 

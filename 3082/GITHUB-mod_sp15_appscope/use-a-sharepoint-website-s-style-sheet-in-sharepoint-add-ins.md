@@ -264,7 +264,7 @@ En la figura 1 se muestra una página web de SharePoint que usa la hoja de estil
 
 
 
-!\[Control de hoja de estilo utilizada en una página web](images/StylesheetControl_result2.png)
+![Control de hoja de estilo utilizada en una página web](images/StylesheetControl_result2.png)
 
 
 

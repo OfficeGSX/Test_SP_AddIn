@@ -155,7 +155,7 @@ internal static void DeployChainStoreComponentsToHostWeb(HttpRequest request)
 
 1. La web de host de SharePoint necesita indicar a la aplicación web remota qué versión del complemento está instalada. Para ello, vamos a usar un parámetro de consulta. Abra el archivo AppManifest.xml en el proyecto **ChainStore**. En el diseñador, verá el marcador de posición **{StandardTokens}** como valor del cuadro **Cadena de consulta**. Agregue la cadena "&amp;SPAddInVersion=1.0.0.0" al final. El diseñador de manifiestos debe ser similar al siguiente.  *Observe que el número de versión que se pasa en la cadena de consulta debe coincidir con el valor del cuadro **Versión** del diseñador.*  (Si alguna vez actualiza el complemento, una de las tareas es elevar estos dos valores e igualarlos).
 
-!\[La pestaña General del diseñador del manifiesto. El cuadro Versión tiene el valor uno cero cero cero. El cuadro de la cadena de consulta indica "{StandardTokens}&amp;SPAddInVersion=1.0.0.0"](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
+![La pestaña General del diseñador del manifiesto. El cuadro Versión tiene el valor uno cero cero cero. El cuadro de la cadena de consulta indica "{StandardTokens}&amp;SPAddInVersion=1.0.0.0"](images/db71c411-10c5-43d8-bb5e-3388d2f6f7bc.PNG)
 
 
 
@@ -387,7 +387,7 @@ Dado que el complemento ahora está agregando una lista a la web de host, no sol
       > Si la lista no existe o usted tiene otras indicaciones de que no se ejecuta el código de la primera vista, es posible que la tabla **Inquilinos** no se esté revirtiendo a un estado vacío al presionar F5. La causa más común de esto es que el proyecto **ChainCorporateDB** ya no está establecido como proyecto de inicio en Visual Studio. Consulte la nota que hay en la parte superior de este artículo sobre cómo solucionar este problema. Además, asegúrese de que configuró la base de datos para que se recompile como se describe en [Configurar Visual Studio para recompilar la base de datos corporativa con cada sesión de depuración](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild). 
 5. Abra la lista y agregue un elemento. Tenga en cuenta que, en el formulario de nuevo elemento, el campo **Agregado a BD corporativa** ya no está presente, por lo que no se puede establecer manualmente. Esto también ocurre con el formulario de edición de elemento.
 
-!\[Nuevo formulario de elemento de la lista de empleados locales. El campo "Agregado a base de datos corporativa" ya no está en el formulario. Solo el campo de nombre y los botones para aceptar y cancelar.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
+![Nuevo formulario de elemento de la lista de empleados locales. El campo "Agregado a base de datos corporativa" ya no está en el formulario. Solo el campo de nombre y los botones para aceptar y cancelar.](images/3fdc6752-4184-4928-9423-0bc7c0206c62.PNG)
 
 
 
@@ -401,7 +401,7 @@ Dado que el complemento ahora está agregando una lista a la web de host, no sol
 
 8. En la página **Cuentas**, presione el botón **Mostrar versión del complemento**. La versión se muestra como **1.0.0.0** porque la lógica de la primera vista la cambió.
 
-!\[La página de configuración de cuenta con el número de versión 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
+![La página de configuración de cuenta con el número de versión 1.0.0.0.](images/4c6d82a7-7c40-4190-b7e3-1337275e1e60.PNG)
 
 
 

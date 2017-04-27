@@ -75,7 +75,7 @@ Office 365 開発者向けサイト を使うと、セットアップが容易�
 
 5. [ **SharePoint 管理センター** ] の [ **サイト コレクション** ] タブで、 **[新規] > [プライベート サイト コレクション]** をクリックします。
 
-!\[SharePoint 管理センターの新規サイト コレクション オプション](images/SPAdminCenter_newSiteCollection.png)
+![SharePoint 管理センターの新規サイト コレクション オプション](images/SPAdminCenter_newSiteCollection.png)
 
 
 
@@ -101,7 +101,7 @@ Office 365 開発者向けサイト を使うと、セットアップが容易�
 
     [ **サイト コレクション**] ボックスの一覧に、新しい開発者向けサイトの URL が表示されます。サイトの作成が終了したら、URL に移動して、開発者向けサイトを開くことができます。
 
-!\[新しいサイト コレクションのプロビジョニング](images/SPAdminCenter_newSiteCollection_provisioning.png)
+![新しいサイト コレクションのプロビジョニング](images/SPAdminCenter_newSiteCollection_provisioning.png)
 
 
 

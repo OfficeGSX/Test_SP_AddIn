@@ -43,7 +43,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Sélectionner la bibliothèque de documents](images/CBADocLibrary.PNG)
+![Sélectionner la bibliothèque de documents](images/CBADocLibrary.PNG)
 
 
     La figure 2 illustre la bibliothèque de documents sur le site SharePoint.
@@ -53,7 +53,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Bibliothèque de documents avec la colonne personnalisée ProductName](images/CBADocLibrary2.PNG)
+![Bibliothèque de documents avec la colonne personnalisée ProductName](images/CBADocLibrary2.PNG)
 
 
 
@@ -78,7 +78,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Créer une relation](images/CBARelationship.PNG)
+![Créer une relation](images/CBARelationship.PNG)
 
 
 
@@ -93,7 +93,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Définir les propriétés associées](images/CBARelationship2.PNG)
+![Définir les propriétés associées](images/CBARelationship2.PNG)
 
 
 
@@ -124,7 +124,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Boîte de dialogue Ajouter un nouvel écran](images/CBAScreenSet.PNG)
+![Boîte de dialogue Ajouter un nouvel écran](images/CBAScreenSet.PNG)
 
 
     L'écran **Affichage** créé pour l'entité contient un onglet **Documents** avec un bouton **Ajouter un document**. Le bouton permet d'afficher un menu contextuel permettant d'ajouter ou de télécharger des documents.
@@ -143,7 +143,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Ajouter un nouvel onglet](images/CBAAddTab.PNG)
+![Ajouter un nouvel onglet](images/CBAAddTab.PNG)
 
 
 
@@ -158,7 +158,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Ajouter l'entité Documents](images/CBAAddDoc.PNG)
+![Ajouter l'entité Documents](images/CBAAddDoc.PNG)
 
 
 
@@ -173,7 +173,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Ajouter un bouton](images/CBAAddButton.PNG)
+![Ajouter un bouton](images/CBAAddButton.PNG)
 
 
 
@@ -188,7 +188,7 @@ Le processus d'association d'une bibliothèque de documents à une entité impli
 
 
 
-!\[Boîte de dialogue Ajouter un bouton](images/CBAAddDialog.PNG)
+![Boîte de dialogue Ajouter un bouton](images/CBAAddDialog.PNG)
 
 
 

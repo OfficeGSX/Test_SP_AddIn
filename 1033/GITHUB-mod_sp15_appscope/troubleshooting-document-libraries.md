@@ -32,7 +32,7 @@ When attempting to upload a document to an associated document library in a clou
 
 
 
-!\[Selections in the Manage NuGet Packages dialog box](images/NuGet.PNG)
+![Selections in the Manage NuGet Packages dialog box](images/NuGet.PNG)
 
 
 

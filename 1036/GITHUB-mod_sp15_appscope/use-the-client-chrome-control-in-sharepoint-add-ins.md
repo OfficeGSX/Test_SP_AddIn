@@ -100,7 +100,7 @@ La Figure 1 présente une page web avec le contrôle Chrome.
 
 
 
-!\[Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+![Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ La Figure 1 présente une page web avec le contrôle Chrome.
 
 
 
-!\[Projets d'application pour SharePoint dans l'Explorateur de solutions](images/AppVSTemplateSolutionExplorer.jpg)
+![Projets d'application pour SharePoint dans l'Explorateur de solutions](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ La Figure 1 présente une page web avec le contrôle Chrome.
 
 
 
-!\[Éditeur de manifeste avec paramètres de chaîne de requête](images/ChromeControl_manifest.PNG)
+![Éditeur de manifeste avec paramètres de chaîne de requête](images/ChromeControl_manifest.PNG)
 
 
     Le contrôle Chrome prend automatiquement les valeurs suivantes dans la chaîne de requête :
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[Feuille de style de site web SharePoint utilisée dans une page](images/ChromControl_stylesheet.png)
+![Feuille de style de site web SharePoint utilisée dans une page](images/ChromControl_stylesheet.png)
 
 
 

@@ -193,7 +193,7 @@ function renderOrientationStage(ctx) {
 
 
 
-!\[Lista de nuevos empleados de Seattle con valores de Fase de orientación de "No iniciada" en rojo y valores de "Completada" en verde. Otros valores en blanco.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
+![Lista de nuevos empleados de Seattle con valores de Fase de orientación de "No iniciada" en rojo y valores de "Completada" en verde. Otros valores en blanco.](images/dc8e2b7d-1747-4b65-aab4-6fc93c6867d4.PNG)
 
 
 

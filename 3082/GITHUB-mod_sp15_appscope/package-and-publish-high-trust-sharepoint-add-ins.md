@@ -75,7 +75,7 @@ Antes de poder publicar el complemento, debe estar registrado con el servicio de
 
 
 
-!\[Registrar aplicación en appregnew.aspx](images/SP15_RegisterApp.png)
+![Registrar aplicación en appregnew.aspx](images/SP15_RegisterApp.png)
 
 
 
@@ -193,7 +193,7 @@ Omita el siguiente procedimiento si está usando el Administrador de ISS 8.
 
 
 
-!\[Exportar un certificado de prueba](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+![Exportar un certificado de prueba](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
 
 
 

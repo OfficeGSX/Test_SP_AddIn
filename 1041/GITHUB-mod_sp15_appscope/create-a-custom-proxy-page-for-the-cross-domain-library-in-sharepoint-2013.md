@@ -346,7 +346,7 @@ Response.End();
 
 
 
-!\[リモート サービスからのデータが表示されている SharePoint Web ページ](images/CustomProxy_result.jpg)
+![リモート サービスからのデータが表示されている SharePoint Web ページ](images/CustomProxy_result.jpg)
 
 
 

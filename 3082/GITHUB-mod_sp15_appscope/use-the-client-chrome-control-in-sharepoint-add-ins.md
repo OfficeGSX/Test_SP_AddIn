@@ -100,7 +100,7 @@ La Figura 1 ilustra una página web remota con el control cromo.
 
 
 
-!\[Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+![Plantilla Aplicación para SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -118,7 +118,7 @@ La Figura 1 ilustra una página web remota con el control cromo.
 
 
 
-!\[Proyectos de aplicación para SharePoint en Explorador de soluciones](images/AppVSTemplateSolutionExplorer.jpg)
+![Proyectos de aplicación para SharePoint en Explorador de soluciones](images/AppVSTemplateSolutionExplorer.jpg)
 
 
 
@@ -137,7 +137,7 @@ La Figura 1 ilustra una página web remota con el control cromo.
 
 
 
-!\[Editor de manifiestos con parámetros de cadena de consulta](images/ChromeControl_manifest.PNG)
+![Editor de manifiestos con parámetros de cadena de consulta](images/ChromeControl_manifest.PNG)
 
 
     El control cromo adopta automáticamente los valores de la cadena de consultas:
@@ -445,7 +445,7 @@ function getQueryStringParameter(paramToRetrieve) {
 
 
 
-!\[Hoja de estilos de sitio web de SharePoint usada en una página](images/ChromControl_stylesheet.png)
+![Hoja de estilos de sitio web de SharePoint usada en una página](images/ChromControl_stylesheet.png)
 
 
 

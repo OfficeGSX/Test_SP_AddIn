@@ -56,7 +56,7 @@ ms.assetid: b0878c12-27c9-4eea-ae3b-7e79e5a8838d
 
 
 
-!\[Тип сервера установки SharePoint 2013](images/SP15_app_ServerType.gif)
+![Тип сервера установки SharePoint 2013](images/SP15_app_ServerType.gif)
 
 
 
@@ -80,7 +80,7 @@ dir /od *.log
 
 
 
-!\[Страница шаблонов сайта](images/SP15_appChooseSiteTemplate.gif)
+![Страница шаблонов сайта](images/SP15_appChooseSiteTemplate.gif)
 
 
 

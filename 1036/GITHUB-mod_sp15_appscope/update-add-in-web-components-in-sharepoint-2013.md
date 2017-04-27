@@ -83,7 +83,7 @@ Les Outils de développement Microsoft Office pour Visual Studio sont orientés 
 
 
 
-!\[Étapes à suivre pour ouvrir l'éditeur de fonctionnalités XML](images/UpdateAppOpenFeatureXML.png)
+![Étapes à suivre pour ouvrir l'éditeur de fonctionnalités XML](images/UpdateAppOpenFeatureXML.png)
 
 
 

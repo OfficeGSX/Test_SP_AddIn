@@ -26,7 +26,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Vínculo Configuración del sitio](images/CBA_IM_8b.PNG)
+![Vínculo Configuración del sitio](images/CBA_IM_8b.PNG)
 
 
 
@@ -38,7 +38,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Vínculo de los tipos de contenido de los sitios](images/CBA_IM_26.PNG)
+![Vínculo de los tipos de contenido de los sitios](images/CBA_IM_26.PNG)
 
 
 
@@ -50,7 +50,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Crear vínculo](images/CBA_IM_27.PNG)
+![Crear vínculo](images/CBA_IM_27.PNG)
 
 
 
@@ -62,7 +62,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Selecciones de los tipos de contenido principales](images/CBA_IM_28.PNG)
+![Selecciones de los tipos de contenido principales](images/CBA_IM_28.PNG)
 
 
 
@@ -74,7 +74,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Configuración de grupo](images/CBA_IM_28a.PNG)
+![Configuración de grupo](images/CBA_IM_28a.PNG)
 
 
 
@@ -89,7 +89,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Especificar la plantilla de documento](images/CBA_IM_29.PNG)
+![Especificar la plantilla de documento](images/CBA_IM_29.PNG)
 
 
 
@@ -107,7 +107,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Agregar la plantilla](images/CBA_IM_29a.PNG)
+![Agregar la plantilla](images/CBA_IM_29a.PNG)
 
 
 
@@ -119,7 +119,7 @@ Si aún no lo ha hecho, asocie una biblioteca de documentos con su complemento e
 
 
 
-!\[Cuadro de diálogo Crear un archivo nuevo con la plantilla nueva](images/CBA_IM_30.PNG)
+![Cuadro de diálogo Crear un archivo nuevo con la plantilla nueva](images/CBA_IM_30.PNG)
 
 
 

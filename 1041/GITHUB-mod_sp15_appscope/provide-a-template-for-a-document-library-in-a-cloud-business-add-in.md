@@ -26,7 +26,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[サイト設定のリンク](images/CBA_IM_8b.PNG)
+![サイト設定のリンク](images/CBA_IM_8b.PNG)
 
 
 
@@ -38,7 +38,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[サイト コンテンツ タイプのリンク](images/CBA_IM_26.PNG)
+![サイト コンテンツ タイプのリンク](images/CBA_IM_26.PNG)
 
 
 
@@ -50,7 +50,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[作成リンク](images/CBA_IM_27.PNG)
+![作成リンク](images/CBA_IM_27.PNG)
 
 
 
@@ -62,7 +62,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[親コンテンツ タイプ選択](images/CBA_IM_28.PNG)
+![親コンテンツ タイプ選択](images/CBA_IM_28.PNG)
 
 
 
@@ -74,7 +74,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[グループ設定](images/CBA_IM_28a.PNG)
+![グループ設定](images/CBA_IM_28a.PNG)
 
 
 
@@ -89,7 +89,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[ドキュメント テンプレートの指定](images/CBA_IM_29.PNG)
+![ドキュメント テンプレートの指定](images/CBA_IM_29.PNG)
 
 
 
@@ -107,7 +107,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[テンプレートの追加](images/CBA_IM_29a.PNG)
+![テンプレートの追加](images/CBA_IM_29a.PNG)
 
 
 
@@ -119,7 +119,7 @@ SharePoint ドキュメント ライブラリにドキュメントを追加す�
 
 
 
-!\[[新しいファイルの作成] ダイアログと新しいテンプレート](images/CBA_IM_30.PNG)
+![[新しいファイルの作成] ダイアログと新しいテンプレート](images/CBA_IM_30.PNG)
 
 
 

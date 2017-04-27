@@ -551,7 +551,7 @@ namespace SampleAddInWeb
 
 
 
-!\[Страница запуска базового приложения с размещением у заказчика](images/SP15_basicself-hostedapp.gif)
+![Страница запуска базового приложения с размещением у заказчика](images/SP15_basicself-hostedapp.gif)
 
 
 

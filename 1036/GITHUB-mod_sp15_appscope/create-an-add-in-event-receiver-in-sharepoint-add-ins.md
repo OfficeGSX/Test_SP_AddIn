@@ -52,7 +52,7 @@ Si vous continuez à travailler sur l'exemple de cet article, vous disposerez d'
 
 
 
-!\[Événements d'application dans la fenêtre Propriétés](images/SP_VS_Properties_Window_AppEvents.PNG)
+![Événements d'application dans la fenêtre Propriétés](images/SP_VS_Properties_Window_AppEvents.PNG)
 
 
     Outils de développement Office pour Visual Studio effectuera l'action suivante :

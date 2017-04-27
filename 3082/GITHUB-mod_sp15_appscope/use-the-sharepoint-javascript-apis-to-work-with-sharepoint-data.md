@@ -262,7 +262,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
 
 
-!\[La lista "Nuevos empleados de Seattle" con la columna "Fase de orientación" para los dos elementos establecida en Completada. Hay un botón etiquetado "Purgar elementos completados" debajo de la lista.](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
+![La lista "Nuevos empleados de Seattle" con la columna "Fase de orientación" para los dos elementos establecida en Completada. Hay un botón etiquetado "Purgar elementos completados" debajo de la lista.](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
 
 
 
@@ -277,7 +277,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
 
 
-!\[La lista "Nuevos empleados de Seattle" con dos elementos menos que antes y ninguno de ellos tiene completada "Fase de orientación".](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
+![La lista "Nuevos empleados de Seattle" con dos elementos menos que antes y ninguno de ellos tiene completada "Fase de orientación".](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
 
 
 

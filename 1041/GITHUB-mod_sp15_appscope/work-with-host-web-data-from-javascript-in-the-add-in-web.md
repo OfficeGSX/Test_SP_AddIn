@@ -83,7 +83,7 @@ SharePoint JavaScript オブジェクト モデル (JSOM) を使用して、ア�
 
 
 
-!\[6 月 1 日付の「Orient Cassie Hicks」というアイテムがある「新入社員オリエンテーションのスケジュール」という名前の予定表](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+![6 月 1 日付の「Orient Cassie Hicks」というアイテムがある「新入社員オリエンテーションのスケジュール」という名前の予定表](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
 
 
 
@@ -365,7 +365,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[Visual Studio アドイン マニフェスト デザイナーの [アクセス許可] タブに記されているアクセス許可の一覧。[プロパティ] 列のセルに [編集] ボタンが示されています。](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
+![Visual Studio アドイン マニフェスト デザイナーの [アクセス許可] タブに記されているアクセス許可の一覧。[プロパティ] 列のセルに [編集] ボタンが示されています。](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
 
 
 
@@ -380,7 +380,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[Visual Studio におけるアクセス許可一覧のための [プロパティ] ダイアログ。プロパティ名は「Base List ID」に、値は「106」に設定されています。](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
+![Visual Studio におけるアクセス許可一覧のための [プロパティ] ダイアログ。プロパティ名は「Base List ID」に、値は「106」に設定されています。](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
     **[OK]** を選びます。 **[アクセス許可]** タブは、次のようになります。
@@ -390,7 +390,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[Visual Studio のアドイン マニフェスト デザイナーの　[アクセス許可] タブ。[管理] アクセス許可があり、ベース タイプが 106 のリストを表示するアドインが示されています。](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
+![Visual Studio のアドイン マニフェスト デザイナーの　[アクセス許可] タブ。[管理] アクセス許可があり、ベース タイプが 106 のリストを表示するアドインが示されています。](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
 
 
 
@@ -419,7 +419,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[アドインが必要とするアクセス許可の概要が示された SharePoint アドイン同意確認プロンプトと、[信頼する] または [キャンセル] のボタン。](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
+![アドインが必要とするアクセス許可の概要が示された SharePoint アドイン同意確認プロンプトと、[信頼する] または [キャンセル] のボタン。](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
 
 
 
@@ -431,7 +431,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[[アイテムがスケジュール設定されていることを確認する] というラベルの新しいボタンが追加された [新入社員オリエンテーション] ホームページ。](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
+![[アイテムがスケジュール設定されていることを確認する] というラベルの新しいボタンが追加された [新入社員オリエンテーション] ホームページ。](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
 
 
 
@@ -449,7 +449,7 @@ function onScheduleItemsFail(sender, args) {
 
 
 
-!\[対象月の 10 日と 11 日に 2 人の社員のオリエンテーションを行うための新しいイベントが追加された [新入社員オリエンテーション] 予定表](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
+![対象月の 10 日と 11 日に 2 人の社員のオリエンテーションを行うための新しいイベントが追加された [新入社員オリエンテーション] 予定表](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
 
 
 

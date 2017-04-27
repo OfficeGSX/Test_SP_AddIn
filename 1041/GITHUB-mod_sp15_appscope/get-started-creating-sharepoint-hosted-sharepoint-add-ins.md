@@ -261,7 +261,7 @@ Office 365 プランを取得する方法は 3 つあります。
 
 
 
-!\[子 NewEmployeeOrientation テンプレート使用してフォルダーを一覧表示します。このテンプレート自体、NewEmployeeOrientationInstance、elements.xml ファイル、および schema.xml ファイルの 3 つの子が含まれます。インスタンスには elements.xml という名前の子があります。](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
+![子 NewEmployeeOrientation テンプレート使用してフォルダーを一覧表示します。このテンプレート自体、NewEmployeeOrientationInstance、elements.xml ファイル、および schema.xml ファイルの 3 つの子が含まれます。インスタンスには elements.xml という名前の子があります。](images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
 
 
 
@@ -399,7 +399,7 @@ Office 365 プランを取得する方法は 3 つあります。
 
 
 
-!\[「地域ごとの新入社員」というタイトルのアドインの既定のページが表示されています。「シアトルの新入社員」というラベルのリンクがあります。このリンクからの矢印は、一覧のリスト ビュー ページを指します。「シアトルの新入社員」というタイトルで、下に一覧が表示されます。](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
+![「地域ごとの新入社員」というタイトルのアドインの既定のページが表示されています。「シアトルの新入社員」というラベルのリンクがあります。このリンクからの矢印は、一覧のリスト ビュー ページを指します。「シアトルの新入社員」というタイトルで、下に一覧が表示されます。](images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
 
 
 

@@ -51,7 +51,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[クラウド ビジネス アプリのテンプレート](images/CBA_IM1.PNG)
+![クラウド ビジネス アプリのテンプレート](images/CBA_IM1.PNG)
 
 
 
@@ -149,7 +149,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[インシデント エンティティ](images/CBA_IM_2.PNG)
+![インシデント エンティティ](images/CBA_IM_2.PNG)
 
 
 
@@ -217,7 +217,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[患者エンティティ](images/CBA_IM_2a.PNG)
+![患者エンティティ](images/CBA_IM_2a.PNG)
 
 
 
@@ -256,7 +256,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[インシデントと患者の関係](images/CBA_IM_3.PNG)
+![インシデントと患者の関係](images/CBA_IM_3.PNG)
 
 
     これにより、インシデントと患者の間に 0 または 1 対多のリレーションシップが作成されます。インシデント レコードには患者が含まれていなくてもかまいませんが、患者には必ずインシデント レコードを関連付ける必要があります。
@@ -300,7 +300,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[インシデントの画面セット](images/CBA_IM_4.PNG)
+![インシデントの画面セット](images/CBA_IM_4.PNG)
 
 
     データの参照画面、詳細の表示画面、および詳細の追加/編集画面が、HTMLClient プロジェクトに追加されます。データの参照画面が自動的にアプリケーションのホーム画面に設定され、詳細の表示画面および詳細の追加/編集画面を起動するために必要なコマンドが自動的に提供されます。
@@ -350,7 +350,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[画面レイアウトの参照](images/CBA_IM4a.PNG)
+![画面レイアウトの参照](images/CBA_IM4a.PNG)
 
 
     実行時には、各インシデントについて 1 つのタイルが表示され、各タイルにはインシデント番号、日付、および住所が表示されます。
@@ -385,7 +385,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[[Add Patients] リンク](images/CBA_IM_5.PNG)
+![[Add Patients] リンク](images/CBA_IM_5.PNG)
 
 
 
@@ -400,7 +400,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[[Add/Edit] 画面レイアウト](images/CBA_IM_5a.PNG)
+![[Add/Edit] 画面レイアウト](images/CBA_IM_5a.PNG)
 
 
 
@@ -446,7 +446,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[[Add/Edit] 画面レイアウト](images/CBA_IM_6.PNG)
+![[Add/Edit] 画面レイアウト](images/CBA_IM_6.PNG)
 
 
 
@@ -474,7 +474,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[[Add Incident] ポップアップ](images/CBA_IM_7.PNG)
+![[Add Incident] ポップアップ](images/CBA_IM_7.PNG)
 
 
 
@@ -508,7 +508,7 @@ Contoso 消防署は、火災、医療救急、自動車事故、その他の緊
 
 
 
-!\[[Add Patient] ポップアップ](images/CBA_IM_8.PNG)
+![[Add Patient] ポップアップ](images/CBA_IM_8.PNG)
 
 
 
@@ -615,7 +615,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[SharePoint 開発者向けサイトへ移動](images/CBA_IM_8a.PNG)
+![SharePoint 開発者向けサイトへ移動](images/CBA_IM_8a.PNG)
 
 
 
@@ -630,7 +630,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[サイト設定のリンク](images/CBA_IM_8b.PNG)
+![サイト設定のリンク](images/CBA_IM_8b.PNG)
 
 
 
@@ -642,7 +642,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[テンプレート リストの一覧表示](images/CBA_IM_8c.PNG)
+![テンプレート リストの一覧表示](images/CBA_IM_8c.PNG)
 
 
 
@@ -666,7 +666,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[Contoso テンプレート](images/CBA_IM_8d.PNG)
+![Contoso テンプレート](images/CBA_IM_8d.PNG)
 
 
 
@@ -711,7 +711,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[SharePoint データ ソース](images/CBA_IM_9.PNG)
+![SharePoint データ ソース](images/CBA_IM_9.PNG)
 
 
 
@@ -726,7 +726,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[SharePoint リスト](images/CBA_IM_9a.PNG)
+![SharePoint リスト](images/CBA_IM_9a.PNG)
 
 
     [ **Solution Explorer**] で、[ **Data Sources**] ノードの下の新しい [ **開発者向けサイトData**] ノードにエンティティが追加され、[ **ContosoApparatus**] エンティティがエンティティ デザイナーで開きます。
@@ -769,7 +769,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[AvailableApparatus のクエリ](images/CBA_IM_10.PNG)
+![AvailableApparatus のクエリ](images/CBA_IM_10.PNG)
 
 
 
@@ -805,7 +805,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[リレーションシップ ダイアログ](images/CBA_IM_10a.PNG)
+![リレーションシップ ダイアログ](images/CBA_IM_10a.PNG)
 
 
 
@@ -844,7 +844,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[クエリの追加](images/CBA_IM_11.PNG)
+![クエリの追加](images/CBA_IM_11.PNG)
 
 
     [ **AvailableApparatus**] コレクションが画面デザイナーの左ウィンドウに追加されます。
@@ -877,7 +877,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[[リソース] タブのレイアウト](images/CBA_IM_11a.PNG)
+![[リソース] タブのレイアウト](images/CBA_IM_11a.PNG)
 
 
 
@@ -915,7 +915,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[SharePoint 開発者向けサイトへ移動](images/CBA_IM_8a.PNG)
+![SharePoint 開発者向けサイトへ移動](images/CBA_IM_8a.PNG)
 
 
 
@@ -948,7 +948,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[IncidentNumber 列のあるドキュメント ライブラリ](images/CBA_IM_12.PNG)
+![IncidentNumber 列のあるドキュメント ライブラリ](images/CBA_IM_12.PNG)
 
 
     ドキュメント ライブラリを自分のアドインに関連付けるには、自分のエンティティ内の一意のフィールドにマップされるカスタム列を、ドキュメント ライブラリに含める必要があります。このチュートリアルでは、[ **IncidentNumber**] 列を [ **Incidents**] エンティティの [ **IncidentNumber**] フィールドにマップします。
@@ -975,7 +975,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[ドキュメント ライブラリの選択](images/CBA_IM_13.PNG)
+![ドキュメント ライブラリの選択](images/CBA_IM_13.PNG)
 
 
     [ **IncidentDocuments.lsml**] ノードがソリューション エクスプローラーに追加されます。
@@ -1005,7 +1005,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[エンティティ間の関係](images/CBA_IM_11b.PNG)
+![エンティティ間の関係](images/CBA_IM_11b.PNG)
 
 
 
@@ -1023,7 +1023,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[関連フィールド](images/CBA_IM_11c.PNG)
+![関連フィールド](images/CBA_IM_11c.PNG)
 
 
 
@@ -1063,7 +1063,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[ドキュメントの作成またはアップロードのボタン](images/CBA_IM_14.PNG)
+![ドキュメントの作成またはアップロードのボタン](images/CBA_IM_14.PNG)
 
 
 
@@ -1087,7 +1087,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[SharePoint の [ファイルの新規作成] ダイアログ](images/CBA_IM_15.PNG)
+![SharePoint の [ファイルの新規作成] ダイアログ](images/CBA_IM_15.PNG)
 
 
 
@@ -1110,7 +1110,7 @@ Contoso 消防署でインシデント管理アドインの使用が開始され
 
 
 
-!\[ファイル名](images/CBA_IM_16.PNG)
+![ファイル名](images/CBA_IM_16.PNG)
 
 
     これは、ドキュメントのファイル名として使用されます。
@@ -1153,7 +1153,7 @@ Contoso 消防署では、インシデント管理アドインの追加機能に
 
 
 
-!\[ロゴ ファイルおよびスプラッシュ スクリーン ファイル](images/CBA_IM_17.PNG)
+![ロゴ ファイルおよびスプラッシュ スクリーン ファイル](images/CBA_IM_17.PNG)
 
 
 
@@ -1310,7 +1310,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[IncidentManager ノード](images/CBA_IM_18.PNG)
+![IncidentManager ノード](images/CBA_IM_18.PNG)
 
 
     [ **LightSwitch アプリケーション発行ウィザード**] が表示されます。
@@ -1322,7 +1322,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[[発行] ウィザード](images/CBA_IM_19.PNG)
+![[発行] ウィザード](images/CBA_IM_19.PNG)
 
 
     アドインの発行が完了すると、[ **エクスプローラー**] が表示され、自分のプロジェクトの [ **publish**] フォルダーが表示されます。
@@ -1337,7 +1337,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[テスト リスト内のアプリ](images/CBA_IM_20.PNG)
+![テスト リスト内のアプリ](images/CBA_IM_20.PNG)
 
 
 
@@ -1352,7 +1352,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[[アプリの展開] ダイアログ](images/CBA_IM_20a.PNG)
+![[アプリの展開] ダイアログ](images/CBA_IM_20a.PNG)
 
 
     [ **アドインのアップロード**] ダイアログ ボックスが開きます。
@@ -1377,7 +1377,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[アプリをインストールしています](images/CBA_IM_21.PNG)
+![アプリをインストールしています](images/CBA_IM_21.PNG)
 
 
 
@@ -1392,7 +1392,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[アプリをインストールしています](images/CBA_IM_22.PNG)
+![アプリをインストールしています](images/CBA_IM_22.PNG)
 
 
 
@@ -1407,7 +1407,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[アプリの実行準備完了](images/CBA_IM_23.PNG)
+![アプリの実行準備完了](images/CBA_IM_23.PNG)
 
 
     アドインがブラウザーで開き、アドインをデバッグ モードで実行していた時とまったく同じ外観で表示されます。開発中に入力したデータが無くなっていることに注目してください。アドインの展開時には、データベースは展開されますが、データは展開されません。
@@ -1422,7 +1422,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[デスクトップ ブラウザーのレイアウト](images/CBA_IM_24.PNG)
+![デスクトップ ブラウザーのレイアウト](images/CBA_IM_24.PNG)
 
 
     アドインをモバイル デバイスで検証することもできます。使用しているデバイスの Web ブラウザーで SharePoint サイトにサインインし、アドインを開始してください。
@@ -1434,7 +1434,7 @@ screen.getPatients().then(function (results) {
 
 
 
-!\[モバイル デバイスのレイアウト](images/CBA_IM_25.PNG)
+![モバイル デバイスのレイアウト](images/CBA_IM_25.PNG)
 
 
 

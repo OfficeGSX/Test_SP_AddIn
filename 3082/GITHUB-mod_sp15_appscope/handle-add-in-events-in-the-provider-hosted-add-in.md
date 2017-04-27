@@ -301,7 +301,7 @@ private void DeleteTenant(string tenantName)
 
 3. En la página **Cuentas**, presione el botón **Mostrar versión del complemento**. La versión aparece como 0000.0000.0000.0000.
 
-!\[Página de cuentas con el encabezado "Configuración de cuenta". Un botón denominado "Mostrar versión del complemento" y debajo una línea de texto que indica "Versión registrada: cero cero cero cero punto cero cero cero cero punto cero cero cero cero punto cero cero cero cero".](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
+![Página de cuentas con el encabezado "Configuración de cuenta". Un botón denominado "Mostrar versión del complemento" y debajo una línea de texto que indica "Versión registrada: cero cero cero cero punto cero cero cero cero punto cero cero cero cero punto cero cero cero cero".](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
 
 
 

@@ -142,7 +142,7 @@ An add-in web can contain specific kinds of SP components. For more information 
 
 
 
-!\[A localized custom list](images/LocSPApp_AppwebList.png)
+![A localized custom list](images/LocSPApp_AppwebList.png)
 
 
 
@@ -303,7 +303,7 @@ var step07 = "Review the localized <a href=\\"../Lists/Orders\\">Orders</a>" +
 
 
 
-!\[A SharePoint page using localized strings](images/LocSPApp_AppwebPage.png)
+![A SharePoint page using localized strings](images/LocSPApp_AppwebPage.png)
 
 
 

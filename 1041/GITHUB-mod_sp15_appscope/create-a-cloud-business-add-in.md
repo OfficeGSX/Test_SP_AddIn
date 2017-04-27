@@ -28,7 +28,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 
 
-!\[クラウド ビジネス アプリの作成用テンプレート](images/CloudBusinessApptemplate.PNG)
+![クラウド ビジネス アプリの作成用テンプレート](images/CloudBusinessApptemplate.PNG)
 
 
 
@@ -45,7 +45,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 
 
-!\[SharePoint の URL](images/SiteURL.PNG)
+![SharePoint の URL](images/SiteURL.PNG)
 
 
     URL の形式は、https://  _MySite_.sharepoint.com/sites/Developer/ にします。
@@ -63,7 +63,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 
 
-!\[最上位のプロジェクト ノード](images/Top-levelprojectnode.PNG)
+![最上位のプロジェクト ノード](images/Top-levelprojectnode.PNG)
 
 
     アプリケーション デザイナーが開きます。
@@ -75,7 +75,7 @@ ms.assetid: a42a0e53-5d19-4f0e-b271-23a01acc4946
 
 
 
-!\[SharePoint プロパティのタブ](images/SharePointtab.PNG)
+![SharePoint プロパティのタブ](images/SharePointtab.PNG)
 
 
 

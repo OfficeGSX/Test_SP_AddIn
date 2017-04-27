@@ -119,7 +119,7 @@ You'll create a test .pfx certificate file first, and then a corresponding test 
 
 
 
-!\[Server Certificates option in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+![Server Certificates option in IIS](images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
 
 
 
@@ -131,7 +131,7 @@ You'll create a test .pfx certificate file first, and then a corresponding test 
 
 
 
-!\[Create Self-Signed Cerificate link](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+![Create Self-Signed Cerificate link](images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
 
 
 
@@ -146,7 +146,7 @@ You'll create a test .pfx certificate file first, and then a corresponding test 
 
 
 
-!\[Exporting a test certificate](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+![Exporting a test certificate](images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
 
 
 
@@ -359,7 +359,7 @@ In this section, you learn how to create a high-trust SharePoint Add-in using Vi
 
 
 
-!\[Sample app retrieving web title](images/SP15HighTrustLaunchNew.gif)
+![Sample app retrieving web title](images/SP15HighTrustLaunchNew.gif)
 
 
 

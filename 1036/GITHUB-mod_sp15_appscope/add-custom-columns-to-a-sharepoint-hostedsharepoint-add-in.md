@@ -125,7 +125,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
 
 
 
-!\[Liste Nouveaux employés de Seattle avec le bouton de légende et l'élément Créer un affichage en surbrillance comme étape 1. Ensuite, flèche vers la page Créer un affichage avec le chemin de navigation Paramètres en surbrillance.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
+![Liste Nouveaux employés de Seattle avec le bouton de légende et l'élément Créer un affichage en surbrillance comme étape 1. Ensuite, flèche vers la page Créer un affichage avec le chemin de navigation Paramètres en surbrillance.](images/6c119cae-adf8-42ff-9890-f3aa1e11719d.png)
 
 
 
@@ -137,7 +137,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
 
 
 
-!\[Page de paramètres d'instance de liste avec le lien pour l'ajout de colonnes à partir des colonnes de site en surbrillance.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
+![Page de paramètres d'instance de liste avec le lien pour l'ajout de colonnes à partir des colonnes de site en surbrillance.](images/a8698b77-b9d2-40f6-89f6-ccc3c6e06073.png)
 
 
 
@@ -149,7 +149,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
 
 
 
-!\[Contrôle de sélection de colonne SharePoint, avec l'option Manuel de l'employé sélectionnée dans la liste déroulante portant le libellé Sélectionner des colonnes de site.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
+![Contrôle de sélection de colonne SharePoint, avec l'option Manuel de l'employé sélectionnée dans la liste déroulante portant le libellé Sélectionner des colonnes de site.](images/3b33c622-c52a-45fd-8ea1-d7f307539753.png)
 
 
 
@@ -167,7 +167,7 @@ Cet article revient sur le codage et traite de l'ajout de colonnes de site au Co
 
 
 
-!\[Liste avec les nouvelles colonnes Division et Étape d'orientation.](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
+![Liste avec les nouvelles colonnes Division et Étape d'orientation.](images/d4e17424-c06b-4635-aab8-4912cee5fe35.png)
 
 
 

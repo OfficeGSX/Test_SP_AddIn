@@ -43,7 +43,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Выбор библиотеки документов](images/CBADocLibrary.PNG)
+![Выбор библиотеки документов](images/CBADocLibrary.PNG)
 
 
     На рис.2 показана библиотека документов на сайте SharePoint.
@@ -53,7 +53,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Библиотека документов с настраиваемым столбцом ProductName](images/CBADocLibrary2.PNG)
+![Библиотека документов с настраиваемым столбцом ProductName](images/CBADocLibrary2.PNG)
 
 
 
@@ -78,7 +78,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Создание отношения](images/CBARelationship.PNG)
+![Создание отношения](images/CBARelationship.PNG)
 
 
 
@@ -93,7 +93,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Задание связанных свойств](images/CBARelationship2.PNG)
+![Задание связанных свойств](images/CBARelationship2.PNG)
 
 
 
@@ -124,7 +124,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Диалоговое окно "Добавление экрана"](images/CBAScreenSet.PNG)
+![Диалоговое окно "Добавление экрана"](images/CBAScreenSet.PNG)
 
 
     Экран **Представление**, создаваемый для объекта, содержит вкладку **Документы** и кнопку **Добавить документ**. При ее нажатии отображается контекстное меню для добавления или отправки документов.
@@ -143,7 +143,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Добавление новой вкладки](images/CBAAddTab.PNG)
+![Добавление новой вкладки](images/CBAAddTab.PNG)
 
 
 
@@ -158,7 +158,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Сущность "Добавление документов"](images/CBAAddDoc.PNG)
+![Сущность "Добавление документов"](images/CBAAddDoc.PNG)
 
 
 
@@ -173,7 +173,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Добавление кнопки](images/CBAAddButton.PNG)
+![Добавление кнопки](images/CBAAddButton.PNG)
 
 
 
@@ -188,7 +188,7 @@ ms.assetid: b00bc2ee-27dc-4ea9-bfc2-c8d46d07ea58
 
 
 
-!\[Диалоговое окно "Добавление кнопки"](images/CBAAddDialog.PNG)
+![Диалоговое окно "Добавление кнопки"](images/CBAAddDialog.PNG)
 
 
 

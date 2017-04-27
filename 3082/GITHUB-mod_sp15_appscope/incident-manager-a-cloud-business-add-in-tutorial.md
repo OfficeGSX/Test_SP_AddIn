@@ -51,7 +51,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Plantilla de aplicación empresarial de nube](images/CBA_IM1.PNG)
+![Plantilla de aplicación empresarial de nube](images/CBA_IM1.PNG)
 
 
 
@@ -149,7 +149,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Entidad Incidente](images/CBA_IM_2.PNG)
+![Entidad Incidente](images/CBA_IM_2.PNG)
 
 
 
@@ -217,7 +217,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Entidad Paciente](images/CBA_IM_2a.PNG)
+![Entidad Paciente](images/CBA_IM_2a.PNG)
 
 
 
@@ -256,7 +256,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Relación entre Incidente y Paciente](images/CBA_IM_3.PNG)
+![Relación entre Incidente y Paciente](images/CBA_IM_3.PNG)
 
 
     Esto crea un relación de cero o uno a muchos entre incidentes y pacientes. No es necesario que un registro de incidentes sea un paciente, pero cada paciente debe tener un registro de incidentes relacionado.
@@ -300,7 +300,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Pantalla Incidentes](images/CBA_IM_4.PNG)
+![Pantalla Incidentes](images/CBA_IM_4.PNG)
 
 
     Las pantallas Examinar, Ver detalles y Agregar/Editar se agregan al proyecto de HTMLClient. La pantalla Examinar se establece automáticamente como la pantalla de inicio de la aplicación, y se proporcionan automáticamente los comandos necesarios para abrir las pantallas Vista y Agregar/Editar.
@@ -350,7 +350,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Diseño de la pantalla Examinar](images/CBA_IM4a.PNG)
+![Diseño de la pantalla Examinar](images/CBA_IM4a.PNG)
 
 
     En tiempo de ejecución, la pantalla mostrará un mosaico para cada incidente, y cada mosaico mostrará el número de incidente, la fecha y la dirección.
@@ -385,7 +385,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Vínculo Agrega pacientes](images/CBA_IM_5.PNG)
+![Vínculo Agrega pacientes](images/CBA_IM_5.PNG)
 
 
 
@@ -400,7 +400,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Diseño de la pantalla Agregar/Editar](images/CBA_IM_5a.PNG)
+![Diseño de la pantalla Agregar/Editar](images/CBA_IM_5a.PNG)
 
 
 
@@ -446,7 +446,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Diseño de la pantalla Agregar/Editar](images/CBA_IM_6.PNG)
+![Diseño de la pantalla Agregar/Editar](images/CBA_IM_6.PNG)
 
 
 
@@ -474,7 +474,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Elemento emergente Agregar incidente](images/CBA_IM_7.PNG)
+![Elemento emergente Agregar incidente](images/CBA_IM_7.PNG)
 
 
 
@@ -508,7 +508,7 @@ Va a crear el complemento móvil que se utilizará para escribir la información
 
 
 
-!\[Elemento emergente Agregar paciente](images/CBA_IM_8.PNG)
+![Elemento emergente Agregar paciente](images/CBA_IM_8.PNG)
 
 
 
@@ -615,7 +615,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Navegar al sitio para desarrolladores de SharePoint](images/CBA_IM_8a.PNG)
+![Navegar al sitio para desarrolladores de SharePoint](images/CBA_IM_8a.PNG)
 
 
 
@@ -630,7 +630,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Vínculo Configuración del sitio](images/CBA_IM_8b.PNG)
+![Vínculo Configuración del sitio](images/CBA_IM_8b.PNG)
 
 
 
@@ -642,7 +642,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Lista Plantillas de lista](images/CBA_IM_8c.PNG)
+![Lista Plantillas de lista](images/CBA_IM_8c.PNG)
 
 
 
@@ -666,7 +666,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Plantillas de Contoso](images/CBA_IM_8d.PNG)
+![Plantillas de Contoso](images/CBA_IM_8d.PNG)
 
 
 
@@ -711,7 +711,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Origen de datos de SharePoint](images/CBA_IM_9.PNG)
+![Origen de datos de SharePoint](images/CBA_IM_9.PNG)
 
 
 
@@ -726,7 +726,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Listas de SharePoint](images/CBA_IM_9a.PNG)
+![Listas de SharePoint](images/CBA_IM_9a.PNG)
 
 
     Las entidades se agregan a un nuevo nodo **Datos de desarrollador** dentro del nodo **Orígenes de datos** en **Explorador de soluciones**, y la entidad **ContosoApparatus** se abre en el diseñador de entidades.
@@ -769,7 +769,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Consulta AvailableApparatus](images/CBA_IM_10.PNG)
+![Consulta AvailableApparatus](images/CBA_IM_10.PNG)
 
 
 
@@ -805,7 +805,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Cuadro de diálogo Relaciones](images/CBA_IM_10a.PNG)
+![Cuadro de diálogo Relaciones](images/CBA_IM_10a.PNG)
 
 
 
@@ -844,7 +844,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Agregar una consulta](images/CBA_IM_11.PNG)
+![Agregar una consulta](images/CBA_IM_11.PNG)
 
 
     El grupo **AvailableApparatus** se agrega a la parte izquierda del diseñador de pantallas.
@@ -877,7 +877,7 @@ El primer paso es agregar un par de plantillas de lista previamente completas a 
 
 
 
-!\[Diseño de la pestaña Recursos](images/CBA_IM_11a.PNG)
+![Diseño de la pestaña Recursos](images/CBA_IM_11a.PNG)
 
 
 
@@ -915,7 +915,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Navegar al sitio para desarrolladores de SharePoint](images/CBA_IM_8a.PNG)
+![Navegar al sitio para desarrolladores de SharePoint](images/CBA_IM_8a.PNG)
 
 
 
@@ -948,7 +948,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Biblioteca de documentos con la columna IncidentNumber](images/CBA_IM_12.PNG)
+![Biblioteca de documentos con la columna IncidentNumber](images/CBA_IM_12.PNG)
 
 
     Para asociar la biblioteca de documentos con el complemento, la biblioteca de documentos debe contener una columna personalizada que se asigna a un campo único en la entidad. En este caso, la columna **IncidentNumber** se asigna al campo **IncidentNumber** de la entidad **Incidentes**.
@@ -975,7 +975,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Seleccionar la biblioteca de documentos](images/CBA_IM_13.PNG)
+![Seleccionar la biblioteca de documentos](images/CBA_IM_13.PNG)
 
 
     Se agrega un nodo **IncidentDocuments.lsml** al Explorador de soluciones.
@@ -1005,7 +1005,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Relación entre entidades](images/CBA_IM_11b.PNG)
+![Relación entre entidades](images/CBA_IM_11b.PNG)
 
 
 
@@ -1023,7 +1023,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Campos asociados](images/CBA_IM_11c.PNG)
+![Campos asociados](images/CBA_IM_11c.PNG)
 
 
 
@@ -1063,7 +1063,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Botón para crear o subir documentos](images/CBA_IM_14.PNG)
+![Botón para crear o subir documentos](images/CBA_IM_14.PNG)
 
 
 
@@ -1087,7 +1087,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Cuadro de diálogo Crear un archivo nuevo de SharePoint](images/CBA_IM_15.PNG)
+![Cuadro de diálogo Crear un archivo nuevo de SharePoint](images/CBA_IM_15.PNG)
 
 
 
@@ -1110,7 +1110,7 @@ En el lugar de un incidente, el Comandante de incidentes debe documentar muchas 
 
 
 
-!\[Nombre de archivo](images/CBA_IM_16.PNG)
+![Nombre de archivo](images/CBA_IM_16.PNG)
 
 
     Se utilizará como nombre de archivo para el documento.
@@ -1153,7 +1153,7 @@ El Departamento de bomberos de Contoso está muy satisfecho con las adiciones al
 
 
 
-!\[Archivos de logotipo y pantalla de presentación](images/CBA_IM_17.PNG)
+![Archivos de logotipo y pantalla de presentación](images/CBA_IM_17.PNG)
 
 
 
@@ -1310,7 +1310,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Nodo IncidentManager](images/CBA_IM_18.PNG)
+![Nodo IncidentManager](images/CBA_IM_18.PNG)
 
 
     Aparece el **Asistente para publicación de aplicaciones de LightSwitch**.
@@ -1322,7 +1322,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Asistente para publicación](images/CBA_IM_19.PNG)
+![Asistente para publicación](images/CBA_IM_19.PNG)
 
 
     Al publicar el complemento, aparece el **Explorador de archivos** y se muestra el directorio **Publicar** para el proyecto.
@@ -1337,7 +1337,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Aplicaciones en la lista Prueba](images/CBA_IM_20.PNG)
+![Aplicaciones en la lista Prueba](images/CBA_IM_20.PNG)
 
 
 
@@ -1352,7 +1352,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Cuadro de diálogo Implementar aplicación](images/CBA_IM_20a.PNG)
+![Cuadro de diálogo Implementar aplicación](images/CBA_IM_20a.PNG)
 
 
     Se abre el cuadro de diálogo **Cargar complemento**.
@@ -1377,7 +1377,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[La aplicación se está instalando](images/CBA_IM_21.PNG)
+![La aplicación se está instalando](images/CBA_IM_21.PNG)
 
 
 
@@ -1392,7 +1392,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[La aplicación se está instalando](images/CBA_IM_22.PNG)
+![La aplicación se está instalando](images/CBA_IM_22.PNG)
 
 
 
@@ -1407,7 +1407,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[La aplicación está lista para ejecutarse](images/CBA_IM_23.PNG)
+![La aplicación está lista para ejecutarse](images/CBA_IM_23.PNG)
 
 
     El complemento se abre en el explorador y tiene exactamente el mismo aspecto que cuando lo ejecutó en modo de depuración. Observe que los datos escritos durante el desarrollo han desaparecido. Al implementar el complemento, se implementa la base de datos pero no los datos.
@@ -1422,7 +1422,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Diseño en explorador de escritorio](images/CBA_IM_24.PNG)
+![Diseño en explorador de escritorio](images/CBA_IM_24.PNG)
 
 
     También puede comprobar el complemento en un dispositivo móvil. Inicie sesión en el sitio de SharePoint desde el explorador web en el dispositivo y ejecute el complemento.
@@ -1434,7 +1434,7 @@ Hasta ahora solo ha ejecutado el complemento en modo de depuración, que utiliza
 
 
 
-!\[Diseño en dispositivo móvil](images/CBA_IM_25.PNG)
+![Diseño en dispositivo móvil](images/CBA_IM_25.PNG)
 
 
 

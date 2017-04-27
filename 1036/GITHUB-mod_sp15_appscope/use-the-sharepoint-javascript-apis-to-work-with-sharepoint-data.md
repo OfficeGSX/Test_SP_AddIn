@@ -262,7 +262,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
 
 
-!\[Liste des nouveaux employés de Seattle avec la colonne « Étape Orientation » pour les deux éléments définis sur Terminé. Il existe un bouton étiqueté « Purger les éléments terminés » sous la liste.](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
+![Liste des nouveaux employés de Seattle avec la colonne « Étape Orientation » pour les deux éléments définis sur Terminé. Il existe un bouton étiqueté « Purger les éléments terminés » sous la liste.](images/e5e4eef8-a218-4797-aabc-c52adbd2d96d.PNG)
 
 
 
@@ -277,7 +277,7 @@ function onDeleteCompletedItemsFail(sender, args) {
 
 
 
-!\[Liste des nouveaux employés de Seattle avec deux fois moins d'éléments qu'avant, et aucun d'entre eux n'a l'élément « Étape d'orientation » défini sur Terminé.](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
+![Liste des nouveaux employés de Seattle avec deux fois moins d'éléments qu'avant, et aucun d'entre eux n'a l'élément « Étape d'orientation » défini sur Terminé.](images/a0330fad-1473-4fde-9df2-8be0b37df1a1.PNG)
 
 
 

@@ -40,7 +40,7 @@ Para hospedar el complemento, necesitará un sitio de SharePoint 2013 o un sitio
 
 
 
-!\[Plantilla de proyecto de aplicación empresarial de nube](images/CBAtemplate.PNG)
+![Plantilla de proyecto de aplicación empresarial de nube](images/CBAtemplate.PNG)
 
 
 
@@ -113,7 +113,7 @@ El complemento de seguimiento de candidatos necesita una tabla de base de datos,
 
 
 
-!\[Tabla Candidatos](images/CBAentity.PNG)
+![Tabla Candidatos](images/CBAentity.PNG)
 
 
 
@@ -142,7 +142,7 @@ El complemento de seguimiento de candidatos necesita una tabla de base de datos,
 
 
 
-!\[Diseñador de la pantalla BrowseCandidates](images/CBAscreen.PNG)
+![Diseñador de la pantalla BrowseCandidates](images/CBAscreen.PNG)
 
 
     Se mostrará la información **Candidato** en un formato tabular en lugar del formato predeterminado de lista.
@@ -163,7 +163,7 @@ El complemento de seguimiento de candidatos necesita una tabla de base de datos,
 
 
 
-!\[Cuadro de diálogo Agregar un botón](images/CBAadd.PNG)
+![Cuadro de diálogo Agregar un botón](images/CBAadd.PNG)
 
 
     Se abre el cuadro de diálogo **Agregar nueva pantalla**.
@@ -189,7 +189,7 @@ Se abrirá una nueva ventana de diseñador de pantalla.
 
 
 
-!\[Propiedad ItemTap](images/CBAproperty.PNG)
+![Propiedad ItemTap](images/CBAproperty.PNG)
 
 
     Se abre el cuadro de diálogo **Editar acción de Puntear elemento**.
@@ -201,7 +201,7 @@ Se abrirá una nueva ventana de diseñador de pantalla.
 
 
 
-!\[Cuadro de diálogo Editar acción ItemTap](images/CBAaction.PNG)
+![Cuadro de diálogo Editar acción ItemTap](images/CBAaction.PNG)
 
 
 
@@ -275,7 +275,7 @@ Una de las características de SharePoint para Office 365 es la capacidad de agr
 
 
 
-!\[Propiedades sociales](images/CBAsocial.PNG)
+![Propiedades sociales](images/CBAsocial.PNG)
 
 
 

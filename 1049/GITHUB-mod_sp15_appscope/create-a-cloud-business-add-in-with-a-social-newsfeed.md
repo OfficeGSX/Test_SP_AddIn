@@ -40,7 +40,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Шаблон проекта "Облачное бизнес-приложение"](images/CBAtemplate.PNG)
+![Шаблон проекта "Облачное бизнес-приложение"](images/CBAtemplate.PNG)
 
 
 
@@ -113,7 +113,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Таблица кандидатов](images/CBAentity.PNG)
+![Таблица кандидатов](images/CBAentity.PNG)
 
 
 
@@ -142,7 +142,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Конструктор экрана BrowseCandidates](images/CBAscreen.PNG)
+![Конструктор экрана BrowseCandidates](images/CBAscreen.PNG)
 
 
     Это приведет к тому, что информация о сущности **Кандидат** будет отображаться в табличном формате, а не формате списка, который используется по умолчанию.
@@ -163,7 +163,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Диалоговое окно "Добавление кнопки"](images/CBAadd.PNG)
+![Диалоговое окно "Добавление кнопки"](images/CBAadd.PNG)
 
 
     Откроется диалоговое окно **Добавление нового экрана**.
@@ -189,7 +189,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Свойство нажатия элемента](images/CBAproperty.PNG)
+![Свойство нажатия элемента](images/CBAproperty.PNG)
 
 
     Откроется диалоговое окно **Редактирование действия касания элемента**.
@@ -201,7 +201,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Диалоговое окно "Изменение действия ItemTap"](images/CBAaction.PNG)
+![Диалоговое окно "Изменение действия ItemTap"](images/CBAaction.PNG)
 
 
 
@@ -275,7 +275,7 @@ ms.assetid: fe15c732-eea0-43cf-92e8-99ff776cb9e2
 
 
 
-!\[Социальные свойства](images/CBAsocial.PNG)
+![Социальные свойства](images/CBAsocial.PNG)
 
 
 

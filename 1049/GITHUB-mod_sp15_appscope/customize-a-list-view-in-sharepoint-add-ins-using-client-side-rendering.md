@@ -100,7 +100,7 @@ ms.assetid: 8d5cabb2-70d0-46a0-bfe0-9e21f8d67d86
 
 
 
-!\[Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
+![Приложение для шаблона SharePoint 2013 Visual Studio](images/AppForSharePointVSTemplate.PNG)
 
 
 

@@ -599,7 +599,7 @@ using System.Web.Configuration;
 
 3. Asegúrese de que la casilla **Definir constante DEBUG** esté activada. (Normalmente lo está de forma predeterminada). La captura de pantalla siguiente muestra la configuración correcta.
 
-!\[La subpestaña Compilar de la pestaña Propiedades en Visual Studio. La lista desplegable Configuración se establece en Depurar. La casilla "Definir constante de depuración" está activada.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
+![La subpestaña Compilar de la pestaña Propiedades en Visual Studio. La lista desplegable Configuración se establece en Depurar. La casilla "Definir constante de depuración" está activada.](images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
 
 
 
@@ -607,7 +607,7 @@ using System.Web.Configuration;
 
 4. Cambie la lista desplegable **Configuración** a **Liberar** y, a continuación, asegúrese de que la casilla **Definir constante DEBUG** ** *no* ** esté activada. (Normalmente no lo está de forma predeterminada). La captura de pantalla siguiente muestra la configuración correcta.
 
-!\[La pestaña Compilar de la pestaña Propiedades. La lista desplegable Configuración indica la versión. La casilla "Definir constante de depuración" no está activada.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
+![La pestaña Compilar de la pestaña Propiedades. La lista desplegable Configuración indica la versión. La casilla "Definir constante de depuración" no está activada.](images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
 
 
 
@@ -647,7 +647,7 @@ Los receptores de evento de complemento y evento de elemento de lista son servic
 
 5. Cuando se alcance el punto de interrupción, desplace el cursor sobre la variable  `debugEndpoint`. Cuando aparezca la información sobre datos de Visual Studio, haga clic en la flecha hacia abajo y seleccione **Visualizador de texto**.
 
-!\[Un visualizador de texto de Visual Studio con una dirección URL del Bus de servicio de Azure en él.](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
+![Un visualizador de texto de Visual Studio con una dirección URL del Bus de servicio de Azure en él.](images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
 
 
 

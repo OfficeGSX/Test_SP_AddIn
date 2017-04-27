@@ -74,7 +74,7 @@ Puede registrar el complemento eligiendo una de tres opciones, según en qué et
 
 
 
-!\[El formulario en la página  de nuevo registro de aplicación con casillas de identificador de cliente, secreto de cliente, título, dominio de aplicación y dirección URL de redireccionamiento. Los botones para generar están junto a las dos primeras. En la esquina están los botones para crear y cancelar.](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
+![El formulario en la página  de nuevo registro de aplicación con casillas de identificador de cliente, secreto de cliente, título, dominio de aplicación y dirección URL de redireccionamiento. Los botones para generar están junto a las dos primeras. En la esquina están los botones para crear y cancelar.](images/9a38d876-2189-418c-9314-ae493a4cab61.PNG)
 
 
 

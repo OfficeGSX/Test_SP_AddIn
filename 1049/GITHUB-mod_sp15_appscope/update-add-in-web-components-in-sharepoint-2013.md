@@ -83,7 +83,7 @@ ms.assetid: 6da6ac25-53b7-4dd2-8637-a86e7ca1f3ff
 
 
 
-!\[Этапы открытия редактора компонента XML](images/UpdateAppOpenFeatureXML.png)
+![Этапы открытия редактора компонента XML](images/UpdateAppOpenFeatureXML.png)
 
 
 

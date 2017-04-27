@@ -75,7 +75,7 @@ Avec un Site du développeur Office 365, il est plus facile de se préparer et d
 
 5. Dans le **Centre d'administration SharePoint**, sous l'onglet **Collections de sites**, cliquez sur **Nouvelle > Collection de sites privée**.
 
-!\[Centre d'administration SharePoint - Option de nouvelle collection de sites](images/SPAdminCenter_newSiteCollection.png)
+![Centre d'administration SharePoint - Option de nouvelle collection de sites](images/SPAdminCenter_newSiteCollection.png)
 
 
 
@@ -101,7 +101,7 @@ Avec un Site du développeur Office 365, il est plus facile de se préparer et d
 
     La liste **Collections de sites** affiche l'URL du nouveau site du développeur. Une fois la création de ce site terminée, vous pouvez utiliser cette URL pour ouvrir votre site du développeur.
 
-!\[Mise en service de la nouvelle collection de sites](images/SPAdminCenter_newSiteCollection_provisioning.png)
+![Mise en service de la nouvelle collection de sites](images/SPAdminCenter_newSiteCollection_provisioning.png)
 
 
 

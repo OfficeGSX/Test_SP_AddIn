@@ -32,7 +32,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Site Settings link](images/CBA_IM_8b.PNG)
+![Site Settings link](images/CBA_IM_8b.PNG)
 
 
 
@@ -44,7 +44,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Site content types link](images/CBA_IM_26.PNG)
+![Site content types link](images/CBA_IM_26.PNG)
 
 
 
@@ -56,7 +56,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Create link](images/CBA_IM_27.PNG)
+![Create link](images/CBA_IM_27.PNG)
 
 
 
@@ -68,7 +68,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Parent content type selections](images/CBA_IM_28.PNG)
+![Parent content type selections](images/CBA_IM_28.PNG)
 
 
 
@@ -80,7 +80,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Group setting](images/CBA_IM_28a.PNG)
+![Group setting](images/CBA_IM_28a.PNG)
 
 
 
@@ -95,7 +95,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Specify the document template](images/CBA_IM_29.PNG)
+![Specify the document template](images/CBA_IM_29.PNG)
 
 
 
@@ -113,7 +113,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[Adding the template](images/CBA_IM_29a.PNG)
+![Adding the template](images/CBA_IM_29a.PNG)
 
 
 
@@ -125,7 +125,7 @@ If you haven't already done so, associate a document library with your cloud bus
 
 
 
-!\[The Create a new file dialog with the new template](images/CBA_IM_30.PNG)
+![The Create a new file dialog with the new template](images/CBA_IM_30.PNG)
 
 
 

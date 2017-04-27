@@ -134,7 +134,7 @@ Dans cet article, vous ajoutez un composant WebPart à la page par défaut du Co
 
 
 
-!\[Page par défaut du complément avec la liste « Nouveaux employés de Seattle » affichée dans un composant WebPart.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
+![Page par défaut du complément avec la liste « Nouveaux employés de Seattle » affichée dans un composant WebPart.](images/31e8e4b1-e2e6-416b-b360-9979a1f16fc7.PNG)
 
 
 

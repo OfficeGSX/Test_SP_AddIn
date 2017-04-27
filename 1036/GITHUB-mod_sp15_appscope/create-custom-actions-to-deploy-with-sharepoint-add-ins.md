@@ -303,7 +303,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
 
 
 
-!\[La bibliothèque de documents avec une légende pour un document, le menu ouvert par le bouton de légende et le menu avancé s'ouvrent.](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+![La bibliothèque de documents avec une légende pour un document, le menu ouvert par le bouton de légende et le menu avancé s'ouvrent.](images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
 
 
 
@@ -324,7 +324,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
 
 
 
-!\[Page web avec des paramètres à partir d'une action personnalisée](images/CustomActions_target.png)
+![Page web avec des paramètres à partir d'une action personnalisée](images/CustomActions_target.png)
 
 
 
@@ -336,7 +336,7 @@ Pour créer une action personnalisée dans les bibliothèques de documents du we
 
 
 
-!\[Bibliothèque de documents avec un document sélectionné, l'onglet Fichier ouvert sur le ruban et le bouton personnalisé sur le ruban.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+![Bibliothèque de documents avec un document sélectionné, l'onglet Fichier ouvert sur le ruban et le bouton personnalisé sur le ruban.](images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
 
 
 

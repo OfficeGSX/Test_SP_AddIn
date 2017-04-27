@@ -120,7 +120,7 @@ La figure 1 montre la fenêtre du navigateur avec les données du service à dis
 
 
 
-!\[Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
+![Modèle d'application pour SharePoint 2013 de Visual Studio](images/AppForSharePointVSTemplate.PNG)
 
 
 
@@ -435,7 +435,7 @@ Categories from the Northwind database exposed as an OData service:
 
 
 
-!\[Page SharePoint avec des données du service distant](images/WebProxy_result.png)
+![Page SharePoint avec des données du service distant](images/WebProxy_result.png)
 
 
 

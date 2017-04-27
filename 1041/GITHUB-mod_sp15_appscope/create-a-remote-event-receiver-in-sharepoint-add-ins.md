@@ -306,7 +306,7 @@ namespace BasicDataOperationsWeb.Services
 
 
 
-!\[Visual Studio での SharePoint リモート イベント](images/SP_VS_Properties_Window_RemoteEvents.PNG)
+![Visual Studio での SharePoint リモート イベント](images/SP_VS_Properties_Window_RemoteEvents.PNG)
 
 
 

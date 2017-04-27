@@ -193,7 +193,7 @@ SellerDashboard ソリューションには、8 つのプロジェクトが含�
 
     これは、BoxXDataService の実際の CRUD 実装です。次の画像は、CarInventoryBoxXDataOperation の主なコード アーキテクチャを示します。CRUD 名前空間は CRUD 操作の実装に使用され、Util 名前空間は CRUD 名前空間のヘルパー コードです。
 
-!\[CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
+![CarInventoryBoxDataOperation](images/a9baa59c-4459-4f0d-935d-456f0ca7791e.jpg)
 
 
 
@@ -241,7 +241,7 @@ SellerDashboardStudio には、標準の LightSwitch SharePoint アドインの�
 
 
 - 
-!\[SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
+![SellerDashboard.HTMLClient](images/89aa8c23-f8f2-410e-b021-7b0959e11586.jpg)
 
 
     SellerDashboard.HTML.Client には、次の 4 つの画面が含まれます。
@@ -268,7 +268,7 @@ SellerDashboardStudio には、標準の LightSwitch SharePoint アドインの�
 
     このコンポーネントには、WCF RIA データ ソース、SharePoint データ ソース、および写真のアップロード Web API が含まれます。次の画像は、その主要なコンポーネントを示します。
 
-!\[SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
+![SellerDashboard.Server](images/43e92a09-180d-4adf-9ae2-8f6212d297c9.jpg)
 
 
     SharePointContext.cs および TokenHelper.cs は、SharePoint に対する認証用のクライアント コンテキストを提供するヘルパー クラスです。これにより、車の写真を画像ライブラリにアップロードするために写真のアップロード Web API を使用できるようになります。PhotoListHelper.cs ファイルおよび PhotosController.cs ファイルは、写真のアップロード Web API を実装します。LightSwitch による写真のアップロード Web API の使用方法については、「 [チュートリアル: LightSwitch を使用した SharePoint アドインの作成](https://msdn.microsoft.com/ja-jp/library/jj969621.aspx)」を参照してください。
@@ -441,7 +441,7 @@ public interface IInventoryItem
 
 -  *LightSwitch サーバー側で使用されるデータ ソース* 
 
-!\[InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
+![InventoryItem](images/b08243f7-3fa3-48b3-bf6c-e3ff49f2e2a2.jpg)
 
 
     SellerDashboard サーバーでは、WCF RIA サービス (BoxXDataService) を追加すると、CarInventoryModel で定義されるデータ モデルが含められ、関連するデータ テーブルが作成されます。一部のプロパティの型は変更できます。たとえば、 **BuyerEmail** 型を **String** から **Email Address** に変更でき、LightSwitch はクライアント側の電子メール形式のチェックをサポートします。
@@ -838,7 +838,7 @@ private ClientContext AppWebContext
 
 3. アプリケーションのマニフェストで読み取りのアクセス許可を設定します。
 
-!\[マニフェスト](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
+![マニフェスト](images/746bcfe7-7f51-4f5d-a072-12c577e5fa2f.jpg)
 
 
 

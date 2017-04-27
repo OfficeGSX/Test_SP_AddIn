@@ -83,7 +83,7 @@ Abra la web de host (su sitio web de prueba para desarrolladores) y compruebe qu
 
 
 
-!\[Un calendario denominado Programación de orientación de empleados con un elemento el 1 de junio que dice "Orientar a Cecilia Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+![Un calendario denominado Programación de orientación de empleados con un elemento el 1 de junio que dice "Orientar a Cecilia Hicks"](images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
 
 
 
@@ -365,7 +365,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[La lista de permisos en la pestaña Permisos del complemento de Visual Studio del diseñador de manifiestos con el botón Editar visible en la celda de la columna Propiedades.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
+![La lista de permisos en la pestaña Permisos del complemento de Visual Studio del diseñador de manifiestos con el botón Editar visible en la celda de la columna Propiedades.](images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
 
 
 
@@ -380,7 +380,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[El diálogo Propiedades para enumerar los permisos en Visual Studio con el nombre de propiedad establecido como "Id. de lista base" y el valor establecido como "106".](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
+![El diálogo Propiedades para enumerar los permisos en Visual Studio con el nombre de propiedad establecido como "Id. de lista base" y el valor establecido como "106".](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
     Elija **Aceptar**. La ficha **Permisos** ahora debe ser similar a la siguiente:
@@ -390,7 +390,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[La pestaña Permisos del complemento de diseñador de manifiestos en Visual Studio que muestra que el complemento quiere el permiso de Administración para las listas que tengan el tipo base 106.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
+![La pestaña Permisos del complemento de diseñador de manifiestos en Visual Studio que muestra que el complemento quiere el permiso de Administración para las listas que tengan el tipo base 106.](images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
 
 
 
@@ -419,7 +419,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[El aviso de consentimiento del complemento de SharePoint con una breve descripción de los permisos que necesita el complemento y los botones "Confiar" o "Cancelar".](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
+![El aviso de consentimiento del complemento de SharePoint con una breve descripción de los permisos que necesita el complemento y los botones "Confiar" o "Cancelar".](images/99209248-8927-4fc2-abfc-53d530376516.PNG)
 
 
 
@@ -431,7 +431,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[La página de inicio de Orientación laboral con un nuevo botón que tiene la etiqueta "Asegurarse que los elementos están programados".](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
+![La página de inicio de Orientación laboral con un nuevo botón que tiene la etiqueta "Asegurarse que los elementos están programados".](images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
 
 
 
@@ -449,7 +449,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 
 
 
-!\[Calendario de Orientación laboral con nuevos eventos agregados para la orientación de dos empleados los días 10 y 11 del mes](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
+![Calendario de Orientación laboral con nuevos eventos agregados para la orientación de dos empleados los días 10 y 11 del mes](images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
 
 
 

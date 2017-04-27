@@ -83,7 +83,7 @@ Microsoft Office Developer Tools for Visual Studio は新しいアドインの�
 
 
 
-!\[Feature XML エディターを開くステップ](images/UpdateAppOpenFeatureXML.png)
+![Feature XML エディターを開くステップ](images/UpdateAppOpenFeatureXML.png)
 
 
 

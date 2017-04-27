@@ -40,7 +40,7 @@ Visual Studio で [ **クラウド ビジネス アドイン**] テンプレー�
 
 
 
-!\[クラウド ビジネス アプリのプロジェクト テンプレート](images/CBAtemplate.PNG)
+![クラウド ビジネス アプリのプロジェクト テンプレート](images/CBAtemplate.PNG)
 
 
 
@@ -113,7 +113,7 @@ Candidate Tracker アドインにはデータベース テーブルと、デー�
 
 
 
-!\[候補者テーブル](images/CBAentity.PNG)
+![候補者テーブル](images/CBAentity.PNG)
 
 
 
@@ -142,7 +142,7 @@ Candidate Tracker アドインにはデータベース テーブルと、デー�
 
 
 
-!\[BrowseCandidates 画面デザイナー](images/CBAscreen.PNG)
+![BrowseCandidates 画面デザイナー](images/CBAscreen.PNG)
 
 
     これにより **求職者**情報が、既定の一覧形式ではなく表形式で表示されます。
@@ -163,7 +163,7 @@ Candidate Tracker アドインにはデータベース テーブルと、デー�
 
 
 
-!\[[Add Button] ダイアログ ボックス](images/CBAadd.PNG)
+![[Add Button] ダイアログ ボックス](images/CBAadd.PNG)
 
 
     [ **新しい画面の追加**] ダイアログ ボックスが表示されます。
@@ -189,7 +189,7 @@ Candidate Tracker アドインにはデータベース テーブルと、デー�
 
 
 
-!\[アイテム タップ プロパティ](images/CBAproperty.PNG)
+![アイテム タップ プロパティ](images/CBAproperty.PNG)
 
 
     [ **項目のタップ アクションの編集**] ダイアログ ボックスが表示されます。
@@ -201,7 +201,7 @@ Candidate Tracker アドインにはデータベース テーブルと、デー�
 
 
 
-!\[[Edit ItemTap Action] ダイアログ ボックス](images/CBAaction.PNG)
+![[Edit ItemTap Action] ダイアログ ボックス](images/CBAaction.PNG)
 
 
 
@@ -275,7 +275,7 @@ SharePoint for Office 365 の機能の 1 つにニュースフィードの追加
 
 
 
-!\[ソーシャル プロパティ](images/CBAsocial.PNG)
+![ソーシャル プロパティ](images/CBAsocial.PNG)
 
 
 

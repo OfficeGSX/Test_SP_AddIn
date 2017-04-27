@@ -301,7 +301,7 @@ private void DeleteTenant(string tenantName)
 
 3.  Sur la page **Comptes**, cliquez sur le bouton **Afficher la version du complément**. La version est 0000.0000.0000.0000.
 
-!\[Page Comptes avec l'en-tête « Paramètres du compte ». Un bouton nommé « Afficher la version du complément » sous lequel se trouve une ligne de texte indiquant « Version enregistrée : zéro zéro zéro zéro point zéro zéro zéro zéro point zéro zéro zéro zéro point zéro zéro zéro zéro ».](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
+![Page Comptes avec l'en-tête « Paramètres du compte ». Un bouton nommé « Afficher la version du complément » sous lequel se trouve une ligne de texte indiquant « Version enregistrée : zéro zéro zéro zéro point zéro zéro zéro zéro point zéro zéro zéro zéro point zéro zéro zéro zéro ».](images/2a905b7d-89c7-456a-8456-21a9b7e9efc5.PNG)
 
 
 
