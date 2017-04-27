@@ -61,12 +61,12 @@ En este artículo va a agregar a la Complemento de SharePoint Orientación de em
 
   - **La lista de historial...**
 
-    <crear nuevo>
+    \<crear nuevo\>
 
 
   - **La lista de tareas...**
 
-    <crear nueva>
+    \<crear nueva\>
 
 
 
@@ -132,7 +132,7 @@ El flujo de trabajo envía un correo electrónico para notificar a alguien de RR
 ![Panel Propiedades de la actividad de flujo de trabajo del elemento de lista de búsqueda con las propiedades DisplayName, ListID e ItemID establecidas.](images/60f3302e-ca9c-45be-b785-0c9f636181da.PNG)
 
 
-    Haga clic en cualquier punto fuera del panel para guardar los cambios. La superficie del diseñador debería tener ahora este aspecto.
+Haga clic en cualquier punto fuera del panel para guardar los cambios. La superficie del diseñador debería tener ahora este aspecto.
 
 
    **Secuencia en el diseñador de flujos de trabajo**
@@ -262,7 +262,7 @@ El flujo de trabajo envía un correo electrónico para notificar a alguien de RR
 
 
 > **SUGERENCIA**
-> Si el flujo de trabajo comienza pero no llega a completarse y no se envía el correo electrónico, pruebe a terminar la sesión de depuración y use F5 unas cuantas veces más antes de concluir que existe algún error en el código. A veces, el problema está en SharePoint Online. > Si todavía tiene problemas, pruebe a agregar un tipo de contenido llamado **ListFieldsContentType**, si es que no lo hay ya, a la sección **ContentTypes** del archivo schema.xml. Lo siguiente es un ejemplo de código de marcado.<BR />  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`<BR /> Después, copie toda la sección **FieldRefs** del tipo de contenido **NewEmployee** a este nuevo tipo de contenido.<BR /> Guarde el proyecto, retírelo y pruebe F5 otra vez. 
+> Si el flujo de trabajo comienza pero no llega a completarse y no se envía el correo electrónico, pruebe a terminar la sesión de depuración y use F5 unas cuantas veces más antes de concluir que existe algún error en el código. A veces, el problema está en SharePoint Online. <BR /> Si todavía tiene problemas, pruebe a agregar un tipo de contenido llamado **ListFieldsContentType**, si es que no lo hay ya, a la sección **ContentTypes** del archivo schema.xml. Lo siguiente es un ejemplo de código de marcado.<BR />  `<ContentType ID="0x0100781dd48170b94fdc9706313c82b3d04c" Name="ListFieldsContentType" Hidden="TRUE">` <BR /> `</ContentType>`<BR /> Después, copie toda la sección **FieldRefs** del tipo de contenido **NewEmployee** a este nuevo tipo de contenido.<BR /> Guarde el proyecto, retírelo y pruebe F5 otra vez. 
 4. Para terminar la sesión de depuración, cierre la ventana del explorador o detenga la depuración en Visual Studio. Cada vez que presione F5, Visual Studio retirará la versión anterior del complemento e instalará la más reciente.
 
 
