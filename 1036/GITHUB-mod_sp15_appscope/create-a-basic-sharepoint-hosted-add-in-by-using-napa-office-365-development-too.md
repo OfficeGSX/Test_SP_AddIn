@@ -233,7 +233,7 @@ Dans le Complément SharePoint, ajoutez des contrôles à la page d'accueil par 
  ```
 
 
-    HTML crée les contrôles suivants :
+HTML crée les contrôles suivants :
 
   - Un bouton chargé de recueillir le nombre de listes sur le site web du Complément SharePoint.
 

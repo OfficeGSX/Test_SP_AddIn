@@ -492,7 +492,7 @@ Ahora que los usuarios pueden crear y eliminar listas, puede realizar estos paso
  ```
 
 
-    Este código agrega un cuadro para escribir donde los usuarios pueden especificar el nombre de un elemento, un botón para agregar el elemento a la lista y otro botón para eliminarlo de la lista.
+Este código agrega un cuadro para escribir donde los usuarios pueden especificar el nombre de un elemento, un botón para agregar el elemento a la lista y otro botón para eliminarlo de la lista.
 
 
 3. Elija el archivo **Default.aspx** para editarlo.
