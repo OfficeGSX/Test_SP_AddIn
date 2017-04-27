@@ -6,13 +6,7 @@ ms.assetid: 1ceb3142-a7a5-453e-920f-5f953a79401a
 
 
 # Tenancies and deployment scopes for SharePoint Add-ins
- Learn about the concept of tenancies and the differences between deploying SharePoint Add-ins at tenant scope and web scope.
- 
-
-
-
-
-
+Learn about the concept of tenancies and the differences between deploying SharePoint Add-ins at tenant scope and web scope.
 ## Tenancies and add-in scope
 <a name="AppScope"> </a>
 
@@ -34,7 +28,7 @@ When new site collections are created in the tenancy, add-ins that were previous
 
 
 > **NOTE**
-> Add-in scope should not be confused with Feature scope. Feature scope determines where the elements in a Feature are deployed. The possibilities include **Farm**, **WebApplication**, **Site** (that is, site collection), and **Web**. Only **Web** is permitted for Features in SharePoint Add-ins (both host web Features and Features inside a .wsp in an add-in package).> Add-in scope should also not be confused with add-in permission levels. SharePoint Add-ins can request permissions to all or selected parts of SharePoint content at the levels of list, web, site collection, and tenancy. Installing an add-in with tenant scope does not give it permissions that it would not otherwise have, nor does it cancel key provisions of the SharePoint security model. For more information about add-in permissions, see  [Add-in permissions in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
+> Add-in scope should not be confused with Feature scope. Feature scope determines where the elements in a Feature are deployed. The possibilities include **Farm**, **WebApplication**, **Site** (that is, site collection), and **Web**. Only **Web** is permitted for Features in SharePoint Add-ins (both host web Features and Features inside a .wsp in an add-in package).<BR /> Add-in scope should also not be confused with add-in permission levels. SharePoint Add-ins can request permissions to all or selected parts of SharePoint content at the levels of list, web, site collection, and tenancy. Installing an add-in with tenant scope does not give it permissions that it would not otherwise have, nor does it cancel key provisions of the SharePoint security model. For more information about add-in permissions, see  [Add-in permissions in SharePoint 2013](add-in-permissions-in-sharepoint-2013.md). 
 
 
 

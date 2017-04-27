@@ -28,7 +28,7 @@ SharePoint 外接程序具有外接程序范围。两个可能的外接程序范
 
 
 > **注释**
-> 不要将外接程序范围与功能范围混淆。功能范围确定功能中元素的部署位置。可能的位置包括 **Farm**、 **WebApplication**、 **Site**（即网站集）和 **Web**。仅允许对 SharePoint 外接程序中的功能（主机 Web 功能和外接程序包中的 .wsp 中的功能）使用 **Web**。 > 此外，不应将外接程序范围与外接程序权限级别混淆。SharePoint 外接程序可在列表、Web、网站集和租赁级别上请求 SharePoint 内容的所有或选定部分的权限。在租户范围内安装外接程序不会向其授予原本没有的权限，也不会取消 SharePoint 安全模型的关键设置。有关外接程序权限的详细信息，请参阅  [SharePoint 2013 中的外接程序权限](add-in-permissions-in-sharepoint-2013.md)。 
+> 不要将外接程序范围与功能范围混淆。功能范围确定功能中元素的部署位置。可能的位置包括 **Farm**、 **WebApplication**、 **Site**（即网站集）和 **Web**。仅允许对 SharePoint 外接程序中的功能（主机 Web 功能和外接程序包中的 .wsp 中的功能）使用 **Web**。 <BR /> 此外，不应将外接程序范围与外接程序权限级别混淆。SharePoint 外接程序可在列表、Web、网站集和租赁级别上请求 SharePoint 内容的所有或选定部分的权限。在租户范围内安装外接程序不会向其授予原本没有的权限，也不会取消 SharePoint 安全模型的关键设置。有关外接程序权限的详细信息，请参阅  [SharePoint 2013 中的外接程序权限](add-in-permissions-in-sharepoint-2013.md)。 
 
 
 
