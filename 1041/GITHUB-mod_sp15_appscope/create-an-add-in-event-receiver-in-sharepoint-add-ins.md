@@ -55,7 +55,7 @@ SharePoint アドイン の SharePoint アドイン のインストール イベ
 ![プロパティ ウィンドウでのアプリ イベント](images/SP_VS_Properties_Window_AppEvents.PNG)
 
 
-    Office Developer Tools for Visual Studio によって以下の事柄が実行されます。
+Office Developer Tools for Visual Studio によって以下の事柄が実行されます。
 
   - スケルトン C# (または VB.NET) コードが含まれる AppEventReceiver.svc. という名前のファイルが追加されます。これは、アドイン イベントを処理するサービスです。
 
@@ -116,8 +116,8 @@ switch (properties.EventType)
  ```
 
 
-    > **メモ**
-      > **AppInstalled**、 **AppUpdated**、 **AppInstalling** の各イベント用のハンドラーがある場合、それらのイベントによりアドイン マニフェストに登録されている専用の URL が取得されます。そのため、それぞれでエンドポイントが異なる *可能性*  がありますが、この記事 (および Office Developer Tools for Visual Studio) ではエンドポイントはまったく同じであると想定しています。したがって、呼び出したイベントをコードによって判別する必要があります。
+> **メモ**
+> **AppInstalled**、 **AppUpdated**、 **AppInstalling** の各イベント用のハンドラーがある場合、それらのイベントによりアドイン マニフェストに登録されている専用の URL が取得されます。そのため、それぞれでエンドポイントが異なる *可能性*  がありますが、この記事 (および Office Developer Tools for Visual Studio) ではエンドポイントはまったく同じであると想定しています。したがって、呼び出したイベントをコードによって判別する必要があります。
 8. 「 [アドイン イベント ハンドラーにロールバック ロジックと「既に実行」ロジックを含める](handle-events-in-sharepoint-add-ins.md#Rollback)」で説明されているように、インストール ロジックにエラーがあるときには、ほとんどの場合、アドイン インストールをキャンセルし、SharePoint がインストールで行った操作内容を SharePoint にロールバックさせ、ハンドラーが実行したことをロールバックする必要があります。それを行う 1 つの方法として、AppInstalled イベント用の **case** 内に以下のコードを追加します。
 
  ```cs
@@ -138,8 +138,8 @@ case SPRemoteEventType.AppInstalled:
  ```
 
 
-    > **メモ**
-      > 実行にかかる時間が 30 秒を超えるインストール コードは、アドイン自体の中に入れます。アドインの初回実行時に実行される「初回実行」ロジックにそれを追加することができます。「準備が整いました」というようなメッセージをアドインで表示できます。あるいは、初期化コードを実行するかどうかユーザーに尋ねるプロンプトをアドインで表示することもできます。 > 「初回実行」ロジックが適さないアドインの場合、別のオプションとして、イベント ハンドラーでリモートの非同期プロセスを開始し、その直後に **Status** が **Continue** に設定された [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) オブジェクトを返すようにする方法があります。この方法の欠点は、そのリモート プロセスが失敗した場合に、SharePoint に対してアドインのインストールをロールバックするように通知する手段がないということです。
+> **メモ**
+> 実行にかかる時間が 30 秒を超えるインストール コードは、アドイン自体の中に入れます。アドインの初回実行時に実行される「初回実行」ロジックにそれを追加することができます。「準備が整いました」というようなメッセージをアドインで表示できます。あるいは、初期化コードを実行するかどうかユーザーに尋ねるプロンプトをアドインで表示することもできます。 > 「初回実行」ロジックが適さないアドインの場合、別のオプションとして、イベント ハンドラーでリモートの非同期プロセスを開始し、その直後に **Status** が **Continue** に設定された [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) オブジェクトを返すようにする方法があります。この方法の欠点は、そのリモート プロセスが失敗した場合に、SharePoint に対してアドインのインストールをロールバックするように通知する手段がないということです。
 9.  [アドイン イベント ハンドラーのアーキテクチャ ストラテジ](handle-events-in-sharepoint-add-ins.md#Strategies)で説明したように、すべてのシナリオで必ずしも使用できるわけではありませんが、ハンドラー委任ストラテジはとても役立ちます。継続して用いている例では、ホスト Web にリストを追加するときにハンドラー委任ストラテジを実装する方法が示されています (ハンドラー委任ストラテジを使用しない、同様の AppInstalled イベント ハンドラーを作成する方法については、「 [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents)」のサンプルをご覧ください)。
 
     以下に、新しいバージョンの AppInstalled **case** ブロックを示します。すべてのイベントに適用される初期化ロジックは、 **switch** ブロックの上に配置されています。インストールされる同じリストは AppUninstalling ハンドラーで削除されることになるため、このリストはその場所で識別されます。
@@ -268,14 +268,14 @@ using (condScope.StartScope())
  ```
 
 
-    > **ヒント**
-      > **トラブルシューティング:** 必要なときに **StartCatch** ブロックに入るかどうかをテストするには、SharePoint サーバー上でランタイム例外をスローする仕組みが必要です。 **throw** を使用したりゼロで除算したりするという方法は機能しません。そうした方法は、クライアント ランタイムが ( **ExecuteQuery** メソッドを使用して) コードをバンドルしサーバーに送ることができるようになる前に、 *クライアント側*  例外を生じさせるからです。代わりに、以下の行を **StartTry** ブロックに追加します。これはクライアント側ランタイムでは受け入れられますが、サーバー側例外を生じさせる原因となり、上記の目的を果たせます。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
+> **ヒント**
+> **トラブルシューティング:** 必要なときに **StartCatch** ブロックに入るかどうかをテストするには、SharePoint サーバー上でランタイム例外をスローする仕組みが必要です。 **throw** を使用したりゼロで除算したりするという方法は機能しません。そうした方法は、クライアント ランタイムが ( **ExecuteQuery** メソッドを使用して) コードをバンドルしサーバーに送ることができるようになる前に、 *クライアント側*  例外を生じさせるからです。代わりに、以下の行を **StartTry** ブロックに追加します。これはクライアント側ランタイムでは受け入れられますが、サーバー側例外を生じさせる原因となり、上記の目的を果たせます。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
 
 
 
  `clientContext.Load(fakeList);`
 
-    TryCreateList メソッド全体は、次のようになります ( [StartFinally](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartFinally.aspx) ブロックは、使用されていない場合であっても必要です)。
+TryCreateList メソッド全体は、次のようになります ( [StartFinally](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartFinally.aspx) ブロックは、使用されていない場合であっても必要です)。
 
 
 
@@ -344,11 +344,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
  ```
 
 
-    > **ヒント**
-      > **デバッグ:** ハンドラー委任ストラテジを使用しているかどうかに関係なく、デバッガーでコードをステップ実行するときには、ハンドラーがキャンセル ステータスを返すすべてのシナリオにおいて、SharePoint は 3 回までを限度としてハンドラーを再度呼び出すことに注意してください。そのため、デバッガーは最大で 4 回、コード全体を繰り返します。
+> **ヒント**
+> **デバッグ:** ハンドラー委任ストラテジを使用しているかどうかに関係なく、デバッガーでコードをステップ実行するときには、ハンドラーがキャンセル ステータスを返すすべてのシナリオにおいて、SharePoint は 3 回までを限度としてハンドラーを再度呼び出すことに注意してください。そのため、デバッガーは最大で 4 回、コード全体を繰り返します。
 
-    > **ヒント**
-      > **コード アーキテクチャ:** ハンドラー外で宣言型マークアップを使用して、アドイン Web にコンポーネントをインストールできるので、通常はハンドラーがアドイン Web と対話するために 30 秒以上必要とするということはありません。ただし、それが必要な場合には、アドイン Web 用に別の [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) オブジェクトがコードで必要となります。つまり、SQL Server データベースがアドイン Web とホスト Web とは異なるのと同じように、アドイン Web とホスト Web も別のコンポーネントです。そのため、アドイン Web を呼び出すメソッドは AppInstalled **case** ブロックの **try** ブロックに置きます。これは、継続的に用いている例の TryCreateList メソッドと同様です。ただし、ハンドラーがアドイン Web 上で行ったアクションをロールバックする必要は *ありません*  。エラーが発生する場合に必要となるのは、イベントのキャンセルだけです。イベントがキャンセルされると、SharePoint によってアドイン Web 全体が削除されるためです。
+> **ヒント**
+> **コード アーキテクチャ:** ハンドラー外で宣言型マークアップを使用して、アドイン Web にコンポーネントをインストールできるので、通常はハンドラーがアドイン Web と対話するために 30 秒以上必要とするということはありません。ただし、それが必要な場合には、アドイン Web 用に別の [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) オブジェクトがコードで必要となります。つまり、SQL Server データベースがアドイン Web とホスト Web とは異なるのと同じように、アドイン Web とホスト Web も別のコンポーネントです。そのため、アドイン Web を呼び出すメソッドは AppInstalled **case** ブロックの **try** ブロックに置きます。これは、継続的に用いている例の TryCreateList メソッドと同様です。ただし、ハンドラーがアドイン Web 上で行ったアクションをロールバックする必要は *ありません*  。エラーが発生する場合に必要となるのは、イベントのキャンセルだけです。イベントがキャンセルされると、SharePoint によってアドイン Web 全体が削除されるためです。
 
 ## アドイン アンインストール イベント レシーバーを作成する
 <a name="SP15appevent_prereq"> </a>

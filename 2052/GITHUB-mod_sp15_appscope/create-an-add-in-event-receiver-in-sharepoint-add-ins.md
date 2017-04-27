@@ -55,7 +55,7 @@ ms.assetid: f40c910f-12a2-4caa-8e91-c7a61ae540db
 ![属性窗口中的应用程序事件](images/SP_VS_Properties_Window_AppEvents.PNG)
 
 
-    Visual Studio Office 开发人员工具 将执行下列操作：
+Visual Studio Office 开发人员工具 将执行下列操作：
 
   - 添加名为 AppEventReceiver.svc 且包含一些 C#（或 VB.NET）框架代码的文件。这是将处理外接程序事件的服务。
 
@@ -116,8 +116,8 @@ switch (properties.EventType)
   ```
 
 
-    > **注释**
-      > **AppInstalled**、 **AppUpdated** 和 **AppInstalling** 事件，如果您有适用于它们的处理程序，就会将它们的 URL 分别在外接程序清单中注册。所以，您 *可以*  为它们分配不同的终结点；但本文（和 Visual Studio Office 开发人员工具）假设它们具有完全相同的终结点；这就是为什么代码需要确定哪个事件调用它的原因。
+> **注释**
+> **AppInstalled**、 **AppUpdated** 和 **AppInstalling** 事件，如果您有适用于它们的处理程序，就会将它们的 URL 分别在外接程序清单中注册。所以，您 *可以*  为它们分配不同的终结点；但本文（和 Visual Studio Office 开发人员工具）假设它们具有完全相同的终结点；这就是为什么代码需要确定哪个事件调用它的原因。
 8. 如 [将回滚逻辑和"已完成"逻辑包括在您的加载项事件处理程序中](handle-events-in-sharepoint-add-ins.md#Rollback)中所述，如果您的安装逻辑出错了，您几乎始终想要取消外接程序安装，想让 SharePoint 回滚安装过程中所执行的操作，并想回滚您的处理程序执行的操作。实现这些目的的一种办法是，将以下代码添加在 AppInstalled 事件的 **case** 中。
 
   ```cs
@@ -138,8 +138,8 @@ case SPRemoteEventType.AppInstalled:
   ```
 
 
-    > **注释**
-      > 将需要 30 秒以上的安装代码移入外接程序本身。您可以将其添加到"第一次运行"逻辑中，该逻辑在外接程序第一次运行时执行。外接程序能够显示"我们正在为您做相关准备"之类的消息。或者，外接程序也可以提示用户运行初始化代码。 > 如果"首次运行"逻辑在您的外接程序中不可行，另一个选项是让您的事件处理程序启动远程异步进程，然后立即返回  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 对象，其中 **Status** 设置为 **Continue**。此策略的一个缺陷是，如果远程进程失败，将无法告知 SharePoint 回滚外接程序安装。 
+> **注释**
+> 将需要 30 秒以上的安装代码移入外接程序本身。您可以将其添加到"第一次运行"逻辑中，该逻辑在外接程序第一次运行时执行。外接程序能够显示"我们正在为您做相关准备"之类的消息。或者，外接程序也可以提示用户运行初始化代码。 > 如果"首次运行"逻辑在您的外接程序中不可行，另一个选项是让您的事件处理程序启动远程异步进程，然后立即返回  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) 对象，其中 **Status** 设置为 **Continue**。此策略的一个缺陷是，如果远程进程失败，将无法告知 SharePoint 回滚外接程序安装。 
 9. 如 [加载项事件处理程序的体系结构策略](handle-events-in-sharepoint-add-ins.md#Strategies)中所述，处理程序委派策略是首选，尽管不可能适用于每个方案。在下面的示例中，我们向您演示将列表添加到主机 Web 时，如何实现处理程序委派策略。（有关如何创建类似于不使用处理程序委派策略的 AppInstalled 事件处理程序的信息，请参阅示例  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents)。）
 
     以下是 AppInstalled **case** 块的新版本。请注意，适用于所有事件的初始化逻辑位于 **switch** 块之上。由于安装的同一个列表会在 AppUninstalling 处理程序中被删除，所以在此处对该列表进行标识。
@@ -268,8 +268,8 @@ using (condScope.StartScope())
   ```
 
 
-    > **提示**
-      > **故障排除：**若要测试您的 **StartCatch** 块是否在适宜的时候完成了输入，您需要使用一种方法在 SharePoint 服务器上引发运行时异常。使用 **throw** 或除以零都不奏效，因为它们会在客户端运行时能够绑定代码并将其发送至服务器之前导致发生 *客户端*  异常（使用 **ExecuteQuery** 方法）。另一种做法是，将以下代码行添加到 **StartTry** 块。客户端运行时接受此操作，但会导致发生服务器端异常，而这正是您所希望的。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
+> **提示**
+> **故障排除：**若要测试您的 **StartCatch** 块是否在适宜的时候完成了输入，您需要使用一种方法在 SharePoint 服务器上引发运行时异常。使用 **throw** 或除以零都不奏效，因为它们会在客户端运行时能够绑定代码并将其发送至服务器之前导致发生 *客户端*  异常（使用 **ExecuteQuery** 方法）。另一种做法是，将以下代码行添加到 **StartTry** 块。客户端运行时接受此操作，但会导致发生服务器端异常，而这正是您所希望的。>  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
 
 
 
@@ -344,11 +344,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
   ```
 
 
-    > **提示**
-      > **调试：**无论您是否使用处理程序委派策略，当您使用调试程序逐步执行代码时，要记住，无论哪种情况您的处理程序返回取消状态，SharePoint 都会再次调用您的处理程序，至多三次。因此调试程序会循环执行代码，至多四次。 
+> **提示**
+> **调试：**无论您是否使用处理程序委派策略，当您使用调试程序逐步执行代码时，要记住，无论哪种情况您的处理程序返回取消状态，SharePoint 都会再次调用您的处理程序，至多三次。因此调试程序会循环执行代码，至多四次。 
 
-    > **提示**
-      > **代码体系结构：**由于您可以使用声明性标记在您的处理程序之外将组件安装在外接程序 Web 上，所以通常您不想占用 30 秒中您的处理程序用来和外接程序 Web 进行交互的任何时间。但如果您占用了，请记住，您的代码需要一个单独针对外接程序 Web 的  [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) 对象。这意味着，外接程序 Web 和主机 Web 是不同的组件，就像 SQL Server 数据库是与众不同的一样。所以，调用外接程序 Web 的方法就位于 AppInstalled **case** 块的 **try** 块中，这类似于以下示例中的 TryCreateList 方法。但是，您的处理程序 *不*  需要回滚在外接程序 Web 上执行的操作。如果它遇到错误，只需取消事件，因为如果取消了该事件，SharePoint 将删除整个外接程序 Web。
+> **提示**
+> **代码体系结构：**由于您可以使用声明性标记在您的处理程序之外将组件安装在外接程序 Web 上，所以通常您不想占用 30 秒中您的处理程序用来和外接程序 Web 进行交互的任何时间。但如果您占用了，请记住，您的代码需要一个单独针对外接程序 Web 的  [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) 对象。这意味着，外接程序 Web 和主机 Web 是不同的组件，就像 SQL Server 数据库是与众不同的一样。所以，调用外接程序 Web 的方法就位于 AppInstalled **case** 块的 **try** 块中，这类似于以下示例中的 TryCreateList 方法。但是，您的处理程序 *不*  需要回滚在外接程序 Web 上执行的操作。如果它遇到错误，只需取消事件，因为如果取消了该事件，SharePoint 将删除整个外接程序 Web。
 
 ## 创建外接程序卸载事件接收器
 <a name="SP15appevent_prereq"> </a>

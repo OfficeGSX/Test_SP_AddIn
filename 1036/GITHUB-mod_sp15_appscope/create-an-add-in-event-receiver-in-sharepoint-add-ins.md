@@ -55,7 +55,7 @@ Si vous continuez à travailler sur l'exemple de cet article, vous disposerez d'
 ![Événements d'application dans la fenêtre Propriétés](images/SP_VS_Properties_Window_AppEvents.PNG)
 
 
-    Outils de développement Office pour Visual Studio effectuera l'action suivante :
+Outils de développement Office pour Visual Studio effectuera l'action suivante :
 
   - Ajouter un fichier appelé AppEventReceiver.svc. contenant du code squelette C# (ou VB.NET). Il s'agit du service qui gérera l'événement de complément.
 
@@ -116,8 +116,8 @@ switch (properties.EventType)
  ```
 
 
-    > **REMARQUE**
-      > Si vous disposez de gestionnaires pour les événements **AppInstalled**, **AppUpdated** et **AppInstalling**, ceux-ci auront chacun leur propre URL enregistrée dans le manifeste du complément. Vous  *pouvez*  donc avoir différents points de terminaison pour eux. Toutefois, cet article (tout comme les Outils de développement Office pour Visual Studio) part du principe qu'ils possèdent exactement le même point de terminaison. C'est pourquoi le code doit déterminer quel événement l'a appelé.
+> **REMARQUE**
+> Si vous disposez de gestionnaires pour les événements **AppInstalled**, **AppUpdated** et **AppInstalling**, ceux-ci auront chacun leur propre URL enregistrée dans le manifeste du complément. Vous  *pouvez*  donc avoir différents points de terminaison pour eux. Toutefois, cet article (tout comme les Outils de développement Office pour Visual Studio) part du principe qu'ils possèdent exactement le même point de terminaison. C'est pourquoi le code doit déterminer quel événement l'a appelé.
 8. Comme expliqué  [Inclure une logique de restauration et une logique « Déjà terminé » dans vos gestionnaires d'événements de complément](handle-events-in-sharepoint-add-ins.md#Rollback), si votre logique d'installation rencontre un problème, vous souhaitez dans la plupart des cas annuler l'installation du complément et faire en sorte que SharePoint revienne sur les étapes effectuées pendant cette installation. Vous voulez également annuler les actions de votre gestionnaire. Une méthode permettant d'atteindre ces objectifs consiste à ajouter le code suivant dans le **case** pour l'événement AppInstalled.
 
  ```cs
@@ -138,8 +138,8 @@ case SPRemoteEventType.AppInstalled:
  ```
 
 
-    > **REMARQUE**
-      > Déplacez un code d'installation qui prend plus de 30 secondes dans le complément lui-même. Vous pouvez l'ajouter à la logique « de première exécution » qui s'exécute lors du premier lancement du complément. Le complément peut afficher un message indiquant que l'opération est en cours d'exécution et également inviter l'utilisateur à exécuter le code d'initialisation. > Si la logique « de première exécution » n'est pas réalisable pour votre complément, vous pouvez également laisser votre gestionnaire d'événement lancer un processus asynchrone distant, puis renvoyer immédiatement un objet  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) dont le **Status** possède la valeur **Continue**. Cette stratégie présente le défaut de n'avoir aucun moyen d'indiquer à SharePoint de restaurer l'installation du complément en cas d'échec du processus distant. 
+> **REMARQUE**
+> Déplacez un code d'installation qui prend plus de 30 secondes dans le complément lui-même. Vous pouvez l'ajouter à la logique « de première exécution » qui s'exécute lors du premier lancement du complément. Le complément peut afficher un message indiquant que l'opération est en cours d'exécution et également inviter l'utilisateur à exécuter le code d'initialisation. > Si la logique « de première exécution » n'est pas réalisable pour votre complément, vous pouvez également laisser votre gestionnaire d'événement lancer un processus asynchrone distant, puis renvoyer immédiatement un objet  [SPRemoteEventResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventResult.aspx) dont le **Status** possède la valeur **Continue**. Cette stratégie présente le défaut de n'avoir aucun moyen d'indiquer à SharePoint de restaurer l'installation du complément en cas d'échec du processus distant. 
 9. Comme expliqué dans  [Stratégies d'architecture de gestionnaire d'événements de complément](handle-events-in-sharepoint-add-ins.md#Strategies), la stratégie de délégation de gestionnaire est privilégiée, mais elle n'est pas possible dans tous les scénarios. Dans l'exemple en cours, nous vous montrons comment implémenter la stratégie de délégation de gestionnaire lors de l'ajout d'une liste sur le site web hôte. (Pour plus d'informations sur la création d'un gestionnaire d'événements AppInstalled similaire qui n'utilise pas la stratégie de délégation de gestionnaire, voir l'exemple  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
 
     Voici la nouvelle version du bloc **case** AppInstalled. Notez que la logique d'initialisation qui s'applique à tous les événements dépasse le bloc **switch**. Étant donné que la liste installée sera supprimée dans le gestionnaire AppUninstalling, la liste est identifiée ici.
@@ -268,14 +268,14 @@ using (condScope.StartScope())
  ```
 
 
-    > **CONSEIL**
-      > **CONSEIL DE RÉSOLUTION DES PROBLÈMES :** pour vérifier l'entrée adéquate de votre bloc **StartCatch**, vous avez besoin d'une méthode pour déclencher une exception d'exécution sur le serveur SharePoint. L'utilisation d'un **throw** ou la division par zéro ne fonctionneront pas, car elles déclenchent des exceptions *côté client*  avant même que l'exécution du client ne puisse envelopper le code et l'envoyer au serveur (à l'aide de la méthode **ExecuteQuery**). Ajoutez plutôt les lignes suivantes au bloc **StartTry**. L'exécution côté client accepte l'opération, mais cela cause une exception côté serveur, justement ce que vous recherchez. >  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
+> **CONSEIL**
+> **CONSEIL DE RÉSOLUTION DES PROBLÈMES :** pour vérifier l'entrée adéquate de votre bloc **StartCatch**, vous avez besoin d'une méthode pour déclencher une exception d'exécution sur le serveur SharePoint. L'utilisation d'un **throw** ou la division par zéro ne fonctionneront pas, car elles déclenchent des exceptions *côté client*  avant même que l'exécution du client ne puisse envelopper le code et l'envoyer au serveur (à l'aide de la méthode **ExecuteQuery**). Ajoutez plutôt les lignes suivantes au bloc **StartTry**. L'exécution côté client accepte l'opération, mais cela cause une exception côté serveur, justement ce que vous recherchez. >  `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
 
 
 
  `clientContext.Load(fakeList);`
 
-    La méthode TryCreateList complète devrait ressembler à ce qui suit. (Le bloc  [StartFinally](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartFinally.aspx) est requis même s'il n'est pas utilisé.)
+La méthode TryCreateList complète devrait ressembler à ce qui suit. (Le bloc  [StartFinally](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ExceptionHandlingScope.StartFinally.aspx) est requis même s'il n'est pas utilisé.)
 
 
 
@@ -344,11 +344,11 @@ private string TryCreateList(String listTitle, SPRemoteEventProperties propertie
  ```
 
 
-    > **CONSEIL**
-      > **DÉBOGAGE :** que vous utilisiez ou non la stratégie de délégation de gestionnaire, lorsque vous exécutez le code pas à pas avec le débogueur, gardez à l'esprit que, quel que soit le scénario dans lequel votre gestionnaire renvoie un état d'annulation, SharePoint appellera votre gestionnaire de nouveau, jusqu'à trois fois supplémentaires. Par conséquent, le débogueur parcourt le code jusqu'à quatre fois.
+> **CONSEIL**
+> **DÉBOGAGE :** que vous utilisiez ou non la stratégie de délégation de gestionnaire, lorsque vous exécutez le code pas à pas avec le débogueur, gardez à l'esprit que, quel que soit le scénario dans lequel votre gestionnaire renvoie un état d'annulation, SharePoint appellera votre gestionnaire de nouveau, jusqu'à trois fois supplémentaires. Par conséquent, le débogueur parcourt le code jusqu'à quatre fois.
 
-    > **CONSEIL**
-      > **ARCHITECTURE DE CODE :** étant donné que vous pouvez installer des composants sur le site web du complément avec du code déclaratif à l'extérieur de votre gestionnaire, vous ne souhaitez généralement pas utiliser les 30 secondes dont votre gestionnaire dispose pour interagir avec le site web du complément. Toutefois, si vous le faites, gardez à l'esprit que votre code requiert un objet [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) distinct pour le site web du complément. Cela signifie que le site web du complément et le site web de l'hôte sont des composants différents, autant qu'une base de données SQL Server est différente de chacun d'entre eux. Une méthode appelant le site web du complément se trouve donc dans le bloc **try** du bloc **case** AppInstalled, tout comme la méthode TryCreateList dans l'exemple en cours. Cependant, votre gestionnaire n'a *pas*  besoin de restaurer les actions effectuées sur le site web du complément. S'il rencontre une erreur, il doit simplement annuler l'événement, car SharePoint supprimera la totalité du site web du complément si l'événement est annulé.
+> **CONSEIL**
+> **ARCHITECTURE DE CODE :** étant donné que vous pouvez installer des composants sur le site web du complément avec du code déclaratif à l'extérieur de votre gestionnaire, vous ne souhaitez généralement pas utiliser les 30 secondes dont votre gestionnaire dispose pour interagir avec le site web du complément. Toutefois, si vous le faites, gardez à l'esprit que votre code requiert un objet [ClientContext](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientContext.aspx) distinct pour le site web du complément. Cela signifie que le site web du complément et le site web de l'hôte sont des composants différents, autant qu'une base de données SQL Server est différente de chacun d'entre eux. Une méthode appelant le site web du complément se trouve donc dans le bloc **try** du bloc **case** AppInstalled, tout comme la méthode TryCreateList dans l'exemple en cours. Cependant, votre gestionnaire n'a *pas*  besoin de restaurer les actions effectuées sur le site web du complément. S'il rencontre une erreur, il doit simplement annuler l'événement, car SharePoint supprimera la totalité du site web du complément si l'événement est annulé.
 
 ## Créer un récepteur d'événements de désinstallation de complément
 <a name="SP15appevent_prereq"> </a>
