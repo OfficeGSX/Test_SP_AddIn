@@ -7,12 +7,6 @@ ms.assetid: ebc9eb42-cca8-436f-a035-0c4c9e7d8305
 
 # High-trust configuration scripts for SharePoint 2013
 Get customizable Windows PowerShell scripts that configure a Microsoft SharePoint 2013 farm to use a high-trust SharePoint Add-in.
- 
-
-
-
-
-
 ## How to use the scripts
 <a name="Usage"> </a>
 
@@ -205,7 +199,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"```
 
 
 > **TIP**
-> If the script throws an error after the  `New-SPTrustedRootAuthority` line has run successfully, the script cannot be rerun until that object has been removed. Use the following cmdlet, where the value of the `-Identity` parameter is the same as was used for the `-CertName` parameter in the script.>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> If the token issuer needs to be removed for any reason, use the following cmdlet: >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> If the  `-TokenIssuerFriendlyName` parameter was used, then use the same value for `-Identity`. If the  `-TokenIssuerFriendlyName` parameter was not used, then a random GUID is part of the issuer name. To obtain value needed for `-Identity`, run the following cmdlet. Then open the TokenIssuers.txt file that is produced and find the issuer whose name is "High-Trust Add-ins  _<base64 version of issuer GUID>_". Use that entire name for  `-Identity`. >  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
+> If the script throws an error after the  `New-SPTrustedRootAuthority` line has run successfully, the script cannot be rerun until that object has been removed. Use the following cmdlet, where the value of the `-Identity` parameter is the same as was used for the `-CertName` parameter in the script.<br/>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`<br/> If the token issuer needs to be removed for any reason, use the following cmdlet: <br/>  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`<br/> If the  `-TokenIssuerFriendlyName` parameter was used, then use the same value for `-Identity`. If the  `-TokenIssuerFriendlyName` parameter was not used, then a random GUID is part of the issuer name. To obtain value needed for `-Identity`, run the following cmdlet. Then open the TokenIssuers.txt file that is produced and find the issuer whose name is "High-Trust Add-ins  _<base64 version of issuer GUID>_". Use that entire name for  `-Identity`. <br/>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
 
 
 

@@ -199,7 +199,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"```
 
 
 > **ヒント**
->  `New-SPTrustedRootAuthority` 行が正常に実行された後でスクリプトがエラーをスローする場合は、オブジェクトを削除するまでスクリプトを再実行することはできません。次のコマンドレットを使用します。ここで、 `-Identity` パラメーターの値は、スクリプトの `-CertName` で使用した値と同じです。>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> トークン発行元を何らかの理由で削除する必要がある場合は、次のコマンドレットを使用します。 >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`>  `-TokenIssuerFriendlyName` パラメーターが使用されている場合は、 `-Identity` にそれと同じ値を使用します。 `-TokenIssuerFriendlyName` パラメーターが使用されていない場合、ランダム GUID が発行元の名前の一部になります。 `-Identity` に必要な値を取得するには、次のコマンドレットを実行します。次に、生成される TokenIssuers.txt ファイルを開き、名前が「High-Trust Add-ins _<発行元 GUID の base64 バージョン>_」である発行元を探します。 `-Identity` でこの名前全体を使用します。>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
+>  `New-SPTrustedRootAuthority` 行が正常に実行された後でスクリプトがエラーをスローする場合は、オブジェクトを削除するまでスクリプトを再実行することはできません。次のコマンドレットを使用します。ここで、 `-Identity` パラメーターの値は、スクリプトの `-CertName` で使用した値と同じです。<br/>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`<br/> トークン発行元を何らかの理由で削除する必要がある場合は、次のコマンドレットを使用します。 <br/>  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`<br/>  `-TokenIssuerFriendlyName` パラメーターが使用されている場合は、 `-Identity` にそれと同じ値を使用します。 `-TokenIssuerFriendlyName` パラメーターが使用されていない場合、ランダム GUID が発行元の名前の一部になります。 `-Identity` に必要な値を取得するには、次のコマンドレットを実行します。次に、生成される TokenIssuers.txt ファイルを開き、名前が「High-Trust Add-ins _<発行元 GUID の base64 バージョン>_」である発行元を探します。 `-Identity` でこの名前全体を使用します。<br/>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
 
 
 

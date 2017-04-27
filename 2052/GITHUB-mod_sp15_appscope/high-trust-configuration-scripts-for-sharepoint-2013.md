@@ -205,7 +205,7 @@ $specificIssuerId | select * | Out-File -FilePath "SecureTokenIssuerID.txt"
 
 
 > **提示**
-> 如果脚本在  `New-SPTrustedRootAuthority` 行运行成功后抛出错误，则脚本无法重新运行，除非对象已删除。使用以下 cmdlet，其中 `-Identity` 参数的值与用于脚本中的 `-CertName` 参数的值相同。>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`> 如果因为某种原因需要移除令牌颁发者，请使用以下 cmdlet： >  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`> 如果使用了  `-TokenIssuerFriendlyName` 参数，请为 `-Identity` 使用相同的值。如果未使用 `-TokenIssuerFriendlyName` 参数，则随机 GUID 是颁发者名称的一部分。要获取 `-Identity` 所需的值，请运行以下 cmdlet。然后打开生成的 TokenIssuers.txt 文件并查找名称为"High-Trust Add-ins _<颁发者 GUID 的 base64 版本>_"的颁发者。为  `-Identity` 使用该完整名称。>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
+> 如果脚本在  `New-SPTrustedRootAuthority` 行运行成功后抛出错误，则脚本无法重新运行，除非对象已删除。使用以下 cmdlet，其中 `-Identity` 参数的值与用于脚本中的 `-CertName` 参数的值相同。<br/>  `Remove-SPTrustedRootAuthority -Identity <certificate name>`<br/> 如果因为某种原因需要移除令牌颁发者，请使用以下 cmdlet： <br/>  `Remove-SPTrustedSecurityTokenIssuer -Identity <issuer name>`<br/> 如果使用了  `-TokenIssuerFriendlyName` 参数，请为 `-Identity` 使用相同的值。如果未使用 `-TokenIssuerFriendlyName` 参数，则随机 GUID 是颁发者名称的一部分。要获取 `-Identity` 所需的值，请运行以下 cmdlet。然后打开生成的 TokenIssuers.txt 文件并查找名称为"High-Trust Add-ins _<颁发者 GUID 的 base64 版本>_"的颁发者。为  `-Identity` 使用该完整名称。<br/>  `Get-SPTrustedSecurityTokenIssuer | Out-File -FilePath "TokenIssuers.txt"`
 
 
 
