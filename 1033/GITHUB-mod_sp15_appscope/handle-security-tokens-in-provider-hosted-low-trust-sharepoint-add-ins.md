@@ -7,25 +7,13 @@ ms.assetid: b437181d-bc70-4838-b43d-9f1bb744f0cb
 
 # Handle security tokens in provider-hosted low-trust SharePoint Add-ins
 Learn about the context, access, and refresh tokens that are used for authorization by low-trust, provider-hosted SharePoint Add-ins, and how to work with them in your code.
- 
-
-
-
-
-
 > **IMPORTANT**
 > **This article is entirely about the use of security tokens in the low-trust authorization system, not the high-trust system.** For information about the use of tokens in the high-trust system, see [Create and use access tokens in provider-hosted high-trust SharePoint Add-ins](create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins.md). 
 
 
 
 
-
  **SharePoint Add-ins that use the  [low-trust authorization system](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) to gain access to SharePoint data participate in an OAuthflow that involves the passing of security tokens (in [JSON Web Token](http://datatracker.ietf.org/doc/draft-ietf-oauth-json-web-token/) format) among SharePoint, Microsoft Azure Access Control Service (ACS), the remote components of the SharePoint Add-in, and, in some cases, the user's browser.** There are different flows depending on the design of the add-in, but all of them involve at least the following two types of tokens:
-
-
-
-
-
 - **Access token:** Included in each create, read, update, or delete (CRUD) request from the remote components of the add-in to SharePoint. SharePoint validates the token and serves the request.
 
 
