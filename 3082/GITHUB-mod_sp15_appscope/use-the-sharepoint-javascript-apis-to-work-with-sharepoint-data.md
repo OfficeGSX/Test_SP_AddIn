@@ -65,7 +65,7 @@ Aunque los Complementos de SharePoint hospedados en SharePoint no pueden tener c
  ```
 
 
-    A continuación, busque en el archivo cualquier otra marca que también permita cargar uno de estos archivos y quite la marca redundante. Guarde y cierre el archivo.
+A continuación, busque en el archivo cualquier otra marca que también permita cargar uno de estos archivos y quite la marca redundante. Guarde y cierre el archivo.
 
 
 2. En el nodo **Scripts** del **Explorador de soluciones**, puede que ya haya un archivo Add-in.js. Si no lo hay, pero hay un App.js, haga clic con el botón derecho en App.js y cambie el nombre a Add-in.js. Si no hay un archivo Add-in.js ni App.js, cree uno con estos pasos:
