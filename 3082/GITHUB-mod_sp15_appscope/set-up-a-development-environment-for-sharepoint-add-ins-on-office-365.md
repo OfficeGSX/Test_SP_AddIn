@@ -50,7 +50,10 @@ La ruta de acceso del Registro cambiará en futuras versiones de Visual Studio.
 
 
 > **NOTA**
->  Podría ya tener acceso a un Sitio para desarrolladores de Office 365:> **¿Es suscriptor de MSDN?** Los suscriptores de Visual Studio Enterprise con MSDN reciben una suscripción de desarrollador a Office 365 como ventaja adicional. [Solicítela hoy.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)> **¿Tiene uno de los siguientes planes de suscripción a Office 365?**> **En caso afirmativo, un administrador de la suscripción a Office 365 puede crear un Sitio para desarrolladores** usando el [centro de administración de Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para obtener más información, consulte  [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+>  Podría ya tener acceso a un Sitio para desarrolladores de Office 365:
+> **¿Es suscriptor de MSDN?** Los suscriptores de Visual Studio Enterprise con MSDN reciben una suscripción de desarrollador a Office 365 como ventaja adicional. [Solicítela hoy.](https://msdn.microsoft.com/subscriptions/manage/default.aspx)
+> **¿Tiene uno de los siguientes planes de suscripción a Office 365?**
+> **En caso afirmativo, un administrador de la suscripción a Office 365 puede crear un Sitio para desarrolladores** usando el [centro de administración de Office 365](https://portal.microsoftonline.com/admin/default.aspx). Para obtener más información, consulte  [Crear un sitio para desarrolladores en una suscripción existente de Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
 
 
 
@@ -116,7 +119,8 @@ Tres maneras de obtener un plan de Office 365.
 
 
 > **NOTA**
-> Si tiene iniciada una sesión con otra cuenta Microsoft cuando intente registrar una cuenta de desarrollador, es posible que vea este mensaje: "El id. de usuario que especificó no funcionó. Parece que no es válido. Asegúrese de especificar el id. de usuario que su organización le asignó. El id. de usuario suele ser como  *alguien@example.com*  o *alguien@example.onmicrosoft.com*  ."> Si ve este mensaje, cierre la sesión de la cuenta Microsoft que estaba usando y vuelva a intentarlo. Si sigue viendo el mensaje, borre la memoria caché del explorador o cambie a **Exploración de InPrivate** y rellene el formulario.
+> Si tiene iniciada una sesión con otra cuenta Microsoft cuando intente registrar una cuenta de desarrollador, es posible que vea este mensaje: "El id. de usuario que especificó no funcionó. Parece que no es válido. Asegúrese de especificar el id. de usuario que su organización le asignó. El id. de usuario suele ser como  *alguien@example.com*  o *alguien@example.onmicrosoft.com*  ."
+> Si ve este mensaje, cierre la sesión de la cuenta Microsoft que estaba usando y vuelva a intentarlo. Si sigue viendo el mensaje, borre la memoria caché del explorador o cambie a **Exploración de InPrivate** y rellene el formulario.
 
 
 
