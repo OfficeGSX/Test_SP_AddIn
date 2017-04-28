@@ -140,7 +140,7 @@ In Abbildung 1 ist eine Remotewebseite mit dem Chromsteuerelement dargestellt.
 ![Manifest-Editor mit Abfragezeichenfolge-Parametern](images/ChromeControl_manifest.PNG)
 
 
-    Das Chromsteuerelement übernimmt automatisch die folgenden Werte aus der Abfragezeichenfolge:
+   Das Chromsteuerelement übernimmt automatisch die folgenden Werte aus der Abfragezeichenfolge:
 
   - **SPHostUrl**
 
