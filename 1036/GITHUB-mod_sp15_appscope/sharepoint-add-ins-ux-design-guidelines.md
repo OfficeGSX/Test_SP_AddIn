@@ -24,7 +24,7 @@ Le premier point à déterminer lors du développement d'un complément est le d
 - **Pages ASPX hébergées par SharePoint :** utilisez le modèle de complément.
 
 
-- **Pages HTML hébergées dans SharePoint ou pages de tout type hébergées en dehors de SharePoint :**utilisez le contrôle de chrome.
+- **Pages HTML hébergées dans SharePoint ou pages de tout type hébergées en dehors de SharePoint :** utilisez le contrôle de chrome.
 
 
 - **Pages personnalisées :** utilisez votre propre chrome.
@@ -204,7 +204,7 @@ Pour obtenir les styles CSS du Web hôte, vous devez référencer le fichier CSS
  ```
 
 
-    Si vous utilisez cette approche, vous devez ࠵exécuter JavaScript dans la page afin d'obtenir l'URL du Web hôte à partir de la chaîne de requête. Vous pouvez ensuite insérer l'URL du Web hôte dans l'élément de **link** avant d'écrire cet élément dans le DOM de la page.
+Si vous utilisez cette approche, vous devez ࠵exécuter JavaScript dans la page afin d'obtenir l'URL du Web hôte à partir de la chaîne de requête. Vous pouvez ensuite insérer l'URL du Web hôte dans l'élément de **link** avant d'écrire cet élément dans le DOM de la page.
 
 
 Lorsque vous appliquez un style à votre complément, vous devez d'abord utiliser le HTML sémantique le plus possible. Cela implique d'utiliser **H1**, **H2**, **H3**, etc. pour les différents en-têtes, et d'utiliser les étiquettes d'entrée pour les boutons. Vous devez également essayer d'utiliser les styles SharePoint principaux autant que possible afin que votre complément détecte automatiquement et en toute transparence les changements de thème du site hôte lorsque ceux-ci se produisent. Les tableaux suivants illustrent la manière dont les styles sont utilisés dans le thème par défaut.
@@ -359,7 +359,7 @@ Les listes sont un moyen courant de représentation des données à l'attention 
 - **Filtres :** Lorsque vous fournissez un filtre sur une liste existante ou sur une disposition maître/détail, vous devez utiliser une barre latérale sur le côté gauche de la zone de contenu et d'une largeur d'au moins 300 pixels. Vous devez également copier l'application du style de sélection de SharePoint afin d'indiquer à l'utilisateur les filtres ou les éléments sélectionnés.
 
 
-- **Formulaires :**Lorsqu'un utilisateur consulte ou modifie un seul élément, vous devez utiliser les formulaires SharePoint intégrés ou simuler leur style pour offrir une expérience cohérente.
+- **Formulaires :** Lorsqu'un utilisateur consulte ou modifie un seul élément, vous devez utiliser les formulaires SharePoint intégrés ou simuler leur style pour offrir une expérience cohérente.
 
 
 
@@ -511,9 +511,11 @@ Comme la page doit fonctionner dans un **iframe**sur plusieurs domaines, vous de
 
 
 
-```
 
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
+```
+
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
+```
 
 Comme vous ne pouvez pas vérifier les domaines pour lesquels vos pages sont insérées dans un iframe, les pages que vous hébergez dans des composants de complément sont vulnérables à une attaque de sécurité de type « clickjacking » (détournement de clic). Dans ce type d'attaques, les pages peuvent se trouver dans un iframe sur une page malveillante, et les utilisateurs peuvent être invités par ruse à choisir des boutons afin d'effectuer des actions dont ils n'ont pas conscience. Gardez cela à l'esprit, lorsque vous concevez votre page. De même, assurez-vous de n'exposer aucune fonctionnalité dans la page du composant qui présenterait un risque s'il était exposé dans une page malveillante.
 
@@ -529,8 +531,10 @@ Si votre composant affiche un contenu dynamique, il est conseillé de demander u
 
 
 
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
+
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
+```
 
 Dans l'exemple ci-dessus, la valeur de **senderId** est définie automatiquement sur la chaîne de requête de la page par le code du composant de complément lorsque cette page est affichée. Votre page doit simplement lire la valeur **SenderId** à partir de la chaîne de requête et l'utiliser lors d'une demande de redimensionnement. Vous pouvez récupérer l'URL du site web hôte à partir de la chaîne de requête en ajoutant le jeton **StandardTokens** ou **HostUrl** à l'attribut **Src** dans la définition du composant de complément.
 
@@ -542,7 +546,8 @@ Si vous souhaitez spécifier un composant pour le site web hôte, vous devez ind
 
 
 
-```XML
+
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -594,7 +599,8 @@ Si vous souhaitez spécifier un composant pour le site web hôte, vous devez ind
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>```
+</ClientWebPart>
+```
 
 Dans votre élément **ClientWebPart**, vous pourrez spécifier ce qui suit :
 
@@ -684,11 +690,13 @@ Normalement, lorsqu'un utilisateur choisit une action personnalisée, celle-ci l
 
 
 
-```
+
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"```
+HostWebDialogWidth="500"
+```
 
 Les attributs **HostWebDialogHeight** et **HostWebDialogWidth** sont facultatifs. Si ces attributs ne sont pas spécifiés, la taille par défaut des boîtes de dialogue de SharePoint sera utilisée. Cependant, vous devez généralement spécifier la taille de votre boîte de dialogue afin qu'elle s'affiche correctement et n'utilise pas les barres de défilement lorsqu'elle apparaît à l'utilisateur.
 
@@ -700,10 +708,12 @@ La boîte de dialogue comporte toujours un bouton **Fermer** dans son chrome. Vo
 
 
 
-```
+
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
+```
 
 La boîte de dialogue se ferme, et elle actualise ou non la page sous-jacente suivant que vous utilisez **CloseCustomActionDialogRefresh** ou **CloseCustomActionDialogNoRefresh**.
 
