@@ -140,7 +140,7 @@ ms.assetid: 7c2d0812-76e8-44c1-88bf-4a75eb6f82b1
 ![具有查询字符串参数的清单编辑器](images/ChromeControl_manifest.PNG)
 
 
-    部件版式控件将自动采用查询字符串中的下列值：
+   部件版式控件将自动采用查询字符串中的下列值：
 
   - **SPHostUrl**
 
