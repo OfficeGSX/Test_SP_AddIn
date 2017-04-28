@@ -204,7 +204,7 @@ nav.setBottomHeaderVisible(false);
  ```
 
 
-    この方法を使用する場合、ページ内で JavaScript を実行してホスト Web の URL をクエリ文字列から取り出す必要があります。その後で、ページの DOM に要素を追加する前に、ホスト Web の URL を **link** 要素に挿入します。
+この方法を使用する場合、ページ内で JavaScript を実行してホスト Web の URL をクエリ文字列から取り出す必要があります。その後で、ページの DOM に要素を追加する前に、ホスト Web の URL を **link** 要素に挿入します。
 
 
 アドインにスタイルを指定する際に大切なことは、可能な限りセマンティック HTML を使用することです。つまり、各種の見出しには **H1**、 **H2**、 **H3** などを使用し、ボタンには input タグを使用します。また、可能な限り SharePoint のコア スタイルを使用して、ホスト サイトのテーマが変わったときにアドインがシームレスに、また自動的に変更に対応できるようにします。既定のテーマでスタイルがどのように使用されているかを次の表に示します。
@@ -511,9 +511,11 @@ SharePoint では、アドインによって既存の UI のいくつかを拡�
 
 
 
-```
 
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
+```
+
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
+```
 
 ページがどのドメインの iframe に表示されるかは制限できないため、アドイン パーツにホストされるページはクリックジャッキング セキュリティ攻撃を受ける危険性があります。クリックジャッキング攻撃では、作成したページが悪意のあるページの iframe に表示され、ユーザーは気付かないうちにボタンをクリックしてアクションを行う可能性があります。ページをデザインするときはこのことに注意して、悪意のあるページに表示されると危険な機能をパーツ内のページで公開しないようにします。
 
@@ -529,8 +531,10 @@ SharePoint では、アドインによって既存の UI のいくつかを拡�
 
 
 
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
+
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
+```
 
 上の例で、 **senderId** の値は、ページがレンダリングされるときにアドイン パーツのコードによって自動的にページのクエリ文字列に設定されます。ページでは、クエリ文字列から **SenderId** の値を読み取って、それをサイズ変更要求のときに使用することだけが必要です。アドインのパーツ定義の **Src** 属性に **StandardTokens** トークンまたは **HostUrl** トークンを付加することによって、クエリ文字列からホスト Web URL を取得することができます。
 
@@ -542,7 +546,8 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
 
 
 
-```XML
+
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -594,7 +599,8 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>```
+</ClientWebPart>
+```
 
  **ClientWebPart** 要素では次を指定できます。
 
@@ -684,11 +690,13 @@ window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message
 
 
 
-```
+
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"```
+HostWebDialogWidth="500"
+```
 
  **HostWebDialogHeight** 属性と **HostWebDialogWidth** 属性はオプションです。これらの属性が指定されなかった場合は、SharePoint のダイアログ ボックスの既定のサイズが使われます。しかし、一般的にはユーザーに表示されるときにスクロール バーを使わずに適切に表示されるように、ダイアログ ボックスのサイズを指定する必要があります。
 
@@ -700,10 +708,12 @@ HostWebDialogWidth="500"```
 
 
 
-```
+
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
+```
 
  **CloseCustomActionDialogRefresh** と **CloseCustomActionDialogNoRefresh** のどちらを使用するかに応じて、ダイアログ ボックスが閉じた後でその背後のページが更新されるかどうかが決まります。
 
