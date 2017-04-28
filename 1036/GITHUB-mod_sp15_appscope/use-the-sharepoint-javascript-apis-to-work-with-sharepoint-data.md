@@ -65,7 +65,7 @@ Même si les Compléments SharePoint hébergés par SharePoint ne peuvent pas av
  ```
 
 
-    Recherchez tout autre balisage dans le fichier, qui charge également l'un ou l'autre de ces fichiers, puis supprimez le balisage redondant. Enregistrez et fermez le fichier.
+Recherchez tout autre balisage dans le fichier, qui charge également l'un ou l'autre de ces fichiers, puis supprimez le balisage redondant. Enregistrez et fermez le fichier.
 
 
 2. Dans le nœud **Scripts** de l' **Explorateur de solutions**, il est possible qu'il existe déjà un fichier Add-in.js. Si ce n'est pas le cas, mais que vous disposez d'un fichier App.js, cliquez avec le bouton droit sur App.js et renommez-le Add-in.js. S'il n'existe aucun de ces deux fichiers, créez-en un en suivant les étapes ci-dessous :
