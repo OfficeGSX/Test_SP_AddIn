@@ -383,7 +383,7 @@ function onScheduleItemsFail(sender, args) {
 ![Boîte de dialogue Propriétés pour les autorisations de liste dans Visual Studio avec le nom de la propriété défini sur « ID de liste de base » et la valeur sur « 106 »](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
-     Sélectionnez **OK**. L'onglet **Autorisations** doit maintenant ressembler à ce qui suit :
+   Sélectionnez **OK**. L'onglet **Autorisations** doit maintenant ressembler à ce qui suit :
 
 
    **Onglet Autorisations du concepteur de manifeste de complément dans Visual Studio**
