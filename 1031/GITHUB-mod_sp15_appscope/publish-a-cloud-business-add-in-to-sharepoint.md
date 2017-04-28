@@ -55,10 +55,11 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
 
 
   -  `http://` _ServerName_ `/msdeployagentservice`
+  
 
 
 
-    > **HINWEIS**
+      > **HINWEIS**
       > Wenn Sie Ihre App durch eine Firewall hindurch veröffentlichen, müssen Sie möglicherweise Port 8172 öffnen. 
 6. Geben Sie in dem Textfeld **Website/Anwendung** den Namen der IIS-Website und den Ihres Add-In ein.
 
@@ -67,7 +68,7 @@ Sie können Ihr Cloud-Geschäfts-Add-In als vom Anbieter gehostetes SharePoint-A
     Wenn Sie Ihr Add-In zu Testzwecken in IIS auf Ihrem Computer oder auf einem Server in Ihrem internen Netzwerk veröffentlichen, geben Sie den Namen der Website und des Add-Ins so ein, wie sie im IIS-Manager angezeigt werden. Wenn Sie das Add-In "MyApp" auf der Standardwebsite in IIS veröffentlichen, geben Sie Standwardwebsite/MyApp ein.
 
     > **HINWEIS**
-      > Wenn Sie Ihre App in einem vorhandenen Webordner veröffentlichen und vorhandene Inhalte entfernen möchten, müssen Sie das Kontrollkästchen **Zusätzliche Dateien auf dem Ziel entfernen** aktivieren.
+    > Wenn Sie Ihre App in einem vorhandenen Webordner veröffentlichen und vorhandene Inhalte entfernen möchten, müssen Sie das Kontrollkästchen **Zusätzliche Dateien auf dem Ziel entfernen** aktivieren.
 7. Geben Sie in den Textfeldern **Benutzername** und **Kennwort** die Anmeldeinformationen eines Kontos ein, das über ausreichend Autorität verfügt, um Bereitstellungsaufgaben auf dem Zielwebserver auszuführen und klicken Sie dann auf **Weiter**.
 
     Wenn Sie Ihre App bei einem Hosting-Unternehmen veröffentlichen, stellt das Unternehmen diese Werte bereit.
