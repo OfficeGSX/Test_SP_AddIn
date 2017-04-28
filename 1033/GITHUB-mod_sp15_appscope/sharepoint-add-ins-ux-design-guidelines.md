@@ -204,7 +204,7 @@ To get the CSS styles from the host web, you have to reference its CSS file. You
  ```
 
 
-    If you use this approach, you have to run JavaScript in the page to get the host web's URL off the query string. Then you can insert the host web's URL into the **link** element before you write the element to the page's DOM.
+If you use this approach, you have to run JavaScript in the page to get the host web's URL off the query string. Then you can insert the host web's URL into the **link** element before you write the element to the page's DOM.
 
 
 The first thing to do when you are styling your add-in is to use semantic HTML as much as possible. That means using **H1**, **H2**, **H3**, and so on, for the various headings, and input tags for buttons. You should also try to use SharePoint core styles as much as possible so that when the theme of the host site changes, your add-in picks up those changes seamlessly and automatically. The following tables show how styles are used in the default theme.
@@ -511,9 +511,11 @@ The page has to work nicely in an **iframe** across different domains, so you'll
 
 
 
-```
 
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
+```
+
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
+```
 
 Because you cannot enforce which domains your pages are iframed into, the pages you host in add-in parts are vulnerable to a clickjacking security attack. In clickjacking attacks, pages can be in an iframe on a malicious page, and users could be tricked into choosing buttons to take actions they're not aware of. When designing your page, you should be aware of this and make sure you're not exposing any functionality in the page for the part that would be dangerous if surfaced in a malicious page.
 
@@ -529,8 +531,10 @@ If your part displays dynamic content, it's a good idea to request a resize to r
 
 
 
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
+
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
+```
 
 In the example above, the **senderId** value will be set on the query string of the page automatically by the add-in part code when the page is rendered. Your page would just need to read the **SenderId** value off of the query string and use it when requesting a resize. You can retrieve the host web URL from the query string by appending the **StandardTokens** or **HostUrl** tokens to the **Src** attribute in your add-in part definition.
 
@@ -542,7 +546,8 @@ To specify a part for the host web, you must specify a client Web Part in the fe
 
 
 
-```XML
+
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -594,7 +599,8 @@ To specify a part for the host web, you must specify a client Web Part in the fe
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>```
+</ClientWebPart>
+```
 
 In your **ClientWebPart** element, you'll want to specify the following things:
 
@@ -684,11 +690,13 @@ Normally when a user chooses a custom action, it will navigate them to the URL y
 
 
 
-```
+
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"```
+HostWebDialogWidth="500"
+```
 
 The **HostWebDialogHeight** attribute and the **HostWebDialogWidth** attribute are optional. If the attributes are not specified, the default size for a dialog box in SharePoint will be used. In general, though, you should specify the size of your dialog box so that it looks right and doesn't use scrollbars when it is displayed to the user.
 
@@ -700,10 +708,12 @@ The dialog box always includes a **Close** button in the dialog box chrome. You 
 
 
 
-```
+
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
+```
 
 Depending on whether you use **CloseCustomActionDialogRefresh** or **CloseCustomActionDialogNoRefresh**, the dialog box closes, and it either refreshes the page behind it or it does not.
 
