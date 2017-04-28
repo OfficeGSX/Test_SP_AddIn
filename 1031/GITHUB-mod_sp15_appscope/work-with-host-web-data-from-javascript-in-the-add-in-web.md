@@ -383,7 +383,7 @@ Da das Add-In automatisch über Vollzugriff auf das eigene Add-In-Web verfügt, 
 ![Dialogfeld „Eigenschaften' für Listenberechtigungen in Visual Studio; der Eigenschaftsname ist auf „Base List ID' und der Wert auf „106' festgelegt.](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
-    Wählen Sie **OK** aus. Die Registerkarte **Berechtigungen** sollte jetzt etwa wie folgt aussehen:
+   Wählen Sie **OK** aus. Die Registerkarte **Berechtigungen** sollte jetzt etwa wie folgt aussehen:
 
 
    **Registerkarte „Berechtigungen" im Add-In-Manifest-Designer in Visual Studio**
