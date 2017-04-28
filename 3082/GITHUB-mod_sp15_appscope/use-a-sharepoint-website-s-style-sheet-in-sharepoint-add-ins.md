@@ -228,7 +228,7 @@ En la figura 1 se muestra una página web de SharePoint que usa la hoja de estil
  ```
 
 
-    En algunos casos, el usuario se tiene que autenticar en SharePoint para que la página pueda descargar el CSS y las imágenes para aplicar los estilos. Las etiquetas de vínculos no autentican automáticamente a un usuario que no haya iniciado sesión. Considere cargar un recurso de página desde la web de complemento de su página web para forzar la autenticación de usuario antes de vincularse con el archivo CSS. En este ejemplo, la página blank.html se ha cargado a un IFrame invisible.
+En algunos casos, el usuario se tiene que autenticar en SharePoint para que la página pueda descargar el CSS y las imágenes para aplicar los estilos. Las etiquetas de vínculos no autentican automáticamente a un usuario que no haya iniciado sesión. Considere cargar un recurso de página desde la web de complemento de su página web para forzar la autenticación de usuario antes de vincularse con el archivo CSS. En este ejemplo, la página blank.html se ha cargado a un IFrame invisible.
 
 
 
