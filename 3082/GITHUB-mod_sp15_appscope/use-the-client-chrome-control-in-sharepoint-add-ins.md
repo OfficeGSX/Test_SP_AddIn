@@ -140,7 +140,7 @@ La Figura 1 ilustra una página web remota con el control cromo.
 ![Editor de manifiestos con parámetros de cadena de consulta](images/ChromeControl_manifest.PNG)
 
 
-    El control cromo adopta automáticamente los valores de la cadena de consultas:
+   El control cromo adopta automáticamente los valores de la cadena de consultas:
 
   - **SPHostUrl**
 
