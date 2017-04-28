@@ -86,7 +86,8 @@ Beim SharePoint REST-Dienst werden die Benutzer durch ihren Anzeigennamen reprä
 
 
 > **HINWEIS**
-> Mitgliedschaftsbasierte Benutzerabfragen werden nicht unterstützt > Die Verwendung des **Current**-Operators, um Abfragen mit der ID des aktuellen Benutzers durchzuführen, wird nicht unterstützt. 
+> Mitgliedschaftsbasierte Benutzerabfragen werden nicht unterstützt
+> Die Verwendung des **Current**-Operators, um Abfragen mit der ID des aktuellen Benutzers durchzuführen, wird nicht unterstützt. 
 
 
 
