@@ -39,7 +39,8 @@ Use the  [$select](http://www.odata.org/documentation/odata-version-2-0/uri-conv
 
 
 > **NOTE**
-> In general, if you do not specify the  `$select` query option, the REST service returns all available fields by default. However, in a few cases, some SharePoint objects include properties that are very resource intensive to retrieve; to optimize REST service performance, these properties are not included in the default query, and must be explicitly requested.> For example, the **SPWeb.EffectiveBasePermissions** property is not returned by default, and must be explicitly requested using the `$select` query option.
+> In general, if you do not specify the  `$select` query option, the REST service returns all available fields by default. However, in a few cases, some SharePoint objects include properties that are very resource intensive to retrieve; to optimize REST service performance, these properties are not included in the default query, and must be explicitly requested.
+> For example, the **SPWeb.EffectiveBasePermissions** property is not returned by default, and must be explicitly requested using the `$select` query option.
 
 
 
@@ -79,7 +80,8 @@ In the SharePoint REST service, users are represented by the user's friendly (di
 
 
 > **NOTE**
-> Membership-based user queries are not supported. > Usage of the **Current** operator to do queries using the ID of the current user is not supported.
+> Membership-based user queries are not supported.
+> Usage of the **Current** operator to do queries using the ID of the current user is not supported.
 
 
 
