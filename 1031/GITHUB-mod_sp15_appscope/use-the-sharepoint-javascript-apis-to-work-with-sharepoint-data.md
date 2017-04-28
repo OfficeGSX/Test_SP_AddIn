@@ -65,7 +65,7 @@ Obwohl von SharePoint gehostete SharePoint-Add-Ins keinen serverseitigen Code en
   ```
 
 
-    Durchsuchen Sie anschließend die Datei nach einem anderen Markup, das auch eine oder die andere dieser Dateien lädt, und entfernen Sie das redundante Markup. Speichern und schließen Sie die Datei.
+   Durchsuchen Sie anschließend die Datei nach einem anderen Markup, das auch eine oder die andere dieser Dateien lädt, und entfernen Sie das redundante Markup. Speichern und schließen Sie die Datei.
 
 
 2. In Knoten **Skripts** im **Projektmappen-Explorer** ist möglicherweise bereits eine Add-in.js-Datei vorhanden. Ist dies nicht der Fall, aber eine App.js-Datei vorhanden, klicken Sie mit der rechten Maustaste auf App.js, und benennen Sie sie in Add-in.js um. Wenn weder Add-in.js noch App.js vorhanden ist, erstellen Sie die Datei mit den folgenden Schritten:
