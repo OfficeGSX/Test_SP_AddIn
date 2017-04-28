@@ -45,7 +45,8 @@ Use la opción de consulta  [$select](http://www.odata.org/documentation/odata-v
 
 
 > **NOTA**
-> En general, si no especifica la opción de consulta  `$select`, el servicio REST devuelve todos los campos disponibles de forma predeterminada. Pero, en unos pocos casos, algunos objetos de SharePoint incluyen propiedades que consumen muchos recursos en su recuperación; para optimizar el rendimiento del servicio REST, estas propiedades no se incluyen en la consulta predeterminada, y es necesario solicitarlas explícitamente. > Por ejemplo, la propiedad **SPWeb.EffectiveBasePermissions** no se devuelve de forma predeterminada, y es necesario solicitarla explícitamente con la opción de consulta `$select`. 
+> En general, si no especifica la opción de consulta  `$select`, el servicio REST devuelve todos los campos disponibles de forma predeterminada. Pero, en unos pocos casos, algunos objetos de SharePoint incluyen propiedades que consumen muchos recursos en su recuperación; para optimizar el rendimiento del servicio REST, estas propiedades no se incluyen en la consulta predeterminada, y es necesario solicitarlas explícitamente.
+> Por ejemplo, la propiedad **SPWeb.EffectiveBasePermissions** no se devuelve de forma predeterminada, y es necesario solicitarla explícitamente con la opción de consulta `$select`. 
 
 
 
@@ -85,7 +86,8 @@ En el servicio REST de SharePoint, los usuarios están representados con el nomb
 
 
 > **NOTA**
-> No se admiten las consultas de usuario basadas en pertenencia. > No se admite el uso del operador **Current** para hacer consultas con el Id. del usuario actual.
+> No se admiten las consultas de usuario basadas en pertenencia.
+> No se admite el uso del operador **Current** para hacer consultas con el Id. del usuario actual.
 
 
 
