@@ -2,7 +2,6 @@
 
 # Tipps und FAQ: OAuth und Remote-Apps für SharePoint
 Dieses Thema ist jetzt veraltet. Unter den Links unten finden Sie Informationen dazu, wo sich die Inhalte jetzt befinden. 
- * **Gilt für:*** 
 
 
 
@@ -10,7 +9,7 @@ Dieses Thema ist jetzt veraltet. Unter den Links unten finden Sie Informationen 
 
 ||
 |:-----|
-|**In diesem Artikel**          [Abrufen von App-Informationen](#AppInfo)           [Die Datei "AppManifest.xml"](#Manifest)           [Die Datei "Web.config"](#Webconfig)           [URLs und SSL (Secure Sockets Layer)](#URL)           [Die App-Umleitungsseite ](#Redirect)           [Umleitungs-URIs](#RedirectURI)           [OAuth-Token](#Tokens)           [Berechtigungen und Berechtigungsanforderungsbereiche](#Perm)           [OAuth-Autorisierungsrichtlinientypen](#Policy)           [Debuggen](#Debugging)           [Besonders vertrauenswürdige lokale Apps (Server-zu-Server-Apps)](#S2S)           [Weitere Fragen in Zusammenhang mit OAuth](#Misc)           [Social Features](#Social)           [Zusätzliche Ressourcen](#AR)|
+|**In diesem Artikel**</br>          [Abrufen von App-Informationen](#AppInfo)</br>           [Die Datei "AppManifest.xml"](#Manifest)</br>           [Die Datei "Web.config"](#Webconfig)</br>           [URLs und SSL (Secure Sockets Layer)](#URL)</br>           [Die App-Umleitungsseite ](#Redirect)</br>           [Umleitungs-URIs](#RedirectURI)</br>           [OAuth-Token](#Tokens)</br>           [Berechtigungen und Berechtigungsanforderungsbereiche](#Perm)</br>           [OAuth-Autorisierungsrichtlinientypen](#Policy)</br>           [Debuggen](#Debugging)</br>           [Besonders vertrauenswürdige lokale Apps (Server-zu-Server-Apps)](#S2S)</br>           [Weitere Fragen in Zusammenhang mit OAuth](#Misc)</br>           [Social Features](#Social)</br>           [Zusätzliche Ressourcen](#AR)|
  
 
 ## Abrufen von App-Informationen
@@ -47,14 +46,14 @@ Dieser Inhalt wurde verschoben zu:
 
 
 
->  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
+-  [Hinweise zur App-Manifeststruktur und zum Paket eines SharePoint-Add-Ins](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
 
 
 
 
 
 
->  [StartPage-Element](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx)
+-  [StartPage-Element](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx)
 
 
 
