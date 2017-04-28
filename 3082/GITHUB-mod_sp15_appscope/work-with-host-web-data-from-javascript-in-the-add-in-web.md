@@ -383,7 +383,7 @@ El complemento automáticamente tiene permiso de control total en su propia web 
 ![El diálogo Propiedades para enumerar los permisos en Visual Studio con el nombre de propiedad establecido como "Id. de lista base" y el valor establecido como "106".](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
-    Elija **Aceptar**. La ficha **Permisos** ahora debe ser similar a la siguiente:
+   Elija **Aceptar**. La ficha **Permisos** ahora debe ser similar a la siguiente:
 
 
    **Ficha Permisos de diseñador de manifiestos de complemento en Visual Studio**
