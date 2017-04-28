@@ -140,7 +140,7 @@ Figure 1 shows a remote webpage with the chrome control.
 ![Manifest editor with query string parameters](images/ChromeControl_manifest.PNG)
 
 
-    The chrome control automatically takes the following values from the query string:
+   The chrome control automatically takes the following values from the query string:
 
   - **SPHostUrl**
 
