@@ -238,18 +238,18 @@ $realm = Get-SPAuthenticationRealm
 
   ```
 
-4. Ihre Remotewebanwendung verwendet ein Zugriffstoken, um Zugriff auf SharePoint-Daten zu erhalten. Das Zugriffstoken muss durch einen Tokenherausgeber ausgegeben werden, dem SharePoint vertraut. In einer besonders vertrauenswürdigen SharePoint-Add-In ist der Tokenherausgeber das Zertifikat. Fügen Sie die folgenden Zeilen hinzu, um eine Aussteller-ID in dem von SharePoint geforderten Format zu erstellen: ** _specific_issuer_GUID_@ _realm_GUID_**.
+4. Ihre Remotewebanwendung verwendet ein Zugriffstoken, um Zugriff auf SharePoint-Daten zu erhalten. Das Zugriffstoken muss durch einen Tokenherausgeber ausgegeben werden, dem SharePoint vertraut. In einer besonders vertrauenswürdigen SharePoint-Add-In ist der Tokenherausgeber das Zertifikat. Fügen Sie die folgenden Zeilen hinzu, um eine Aussteller-ID in dem von SharePoint geforderten Format zu erstellen: **_specific_issuer_GUID_@ _realm_GUID_**.
 
   ```
 
-$specificIssuerId = "11111111-1111-1111-1111-111111111111"
-$fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
+  $specificIssuerId = "11111111-1111-1111-1111-111111111111"
+  $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
 
   ```
 
 
     > **HINWEIS**
-      > Der  `$specificIssuerId`-Wert muss eine GUID sein, da in einer Produktionsumgebung jedes Zertifikat einen eindeutigen Aussteller aufweisen muss. Allerdings können Sie in diesem Zusammenhang, in dem Sie dasselbe Zertifikat verwenden, um alle Ihre besonders vertrauenswürden Apps zu debuggen, den Wert hart codieren. Wenn Sie aus irgendeinem Grund eine andere GUID als die hier verwendete nutzen,  * **müssen Sie sicherstellen, dass alle Buchstaben in der GUID in Kleinschreibung angegeben sind*** . Die SharePoint-Infrastruktur erfordert derzeit Kleinschreibung für Zertifikataussteller-GUIDs.
+    > Der  `$specificIssuerId`-Wert muss eine GUID sein, da in einer Produktionsumgebung jedes Zertifikat einen eindeutigen Aussteller aufweisen muss. Allerdings können Sie in diesem Zusammenhang, in dem Sie dasselbe Zertifikat verwenden, um alle Ihre besonders vertrauenswürden Apps zu debuggen, den Wert hart codieren. Wenn Sie aus irgendeinem Grund eine andere GUID als die hier verwendete nutzen,  * **müssen Sie sicherstellen, dass alle Buchstaben in der GUID in Kleinschreibung angegeben sind*** . Die SharePoint-Infrastruktur erfordert derzeit Kleinschreibung für Zertifikataussteller-GUIDs.
 5. Fügen Sie die folgenden Zeilen hinzu, um das Zertifikat als vertrauenswürdigen Tokenherausgeber zu registrieren. Der  `-Name`-Parameter muss eindeutig sein. Daher ist es in einer Produktionskonfiguration üblich, eine GUID teilweise (oder vollständig) als Namen zu verwenden. Sie können in diesem Zusammenhang jedoch auch einen Anzeigenamen verwenden. Mit dem  `-IsTrustBroker`-Switch wird sichergestellt, dass Sie dasselbe Zertifikat für alle besonders vertrauenswürdigen Apps, die Sie entwickeln, verwenden können. Der Befehl  `iisreset` ist erforderlich, damit Ihr Tokenherausgeber sofort registriert ist. Andernfalls müssen Sie möglicherweise bis zu 24 Stunden warten, bis der neue Aussteller registriert ist.
 
   ```
