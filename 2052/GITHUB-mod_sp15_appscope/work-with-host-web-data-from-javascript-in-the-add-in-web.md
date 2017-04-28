@@ -383,7 +383,7 @@ function onScheduleItemsFail(sender, args) {
 ![Visual Studio 中列表权限的'属性'对话框，其属性名称设置为'Base List ID'，值设置为'106'。](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
-    选择"确定"。现在"权限"选项卡看起来应该如下所示：
+   选择"确定"。现在"权限"选项卡看起来应该如下所示：
 
 
    **Visual Studio 中外接程序清单设计器的"权限"选项卡**
