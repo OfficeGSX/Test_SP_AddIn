@@ -127,7 +127,7 @@ Si no está compilando páginas ASPX hospedadas en SharePoint, pero aún así, q
   - Copie la biblioteca en su propio sitio web y haga referencia a la misma desde allí.
 
     > **PRECAUCIóN**
-      > Si opta por esta alternativa, el complemento no se beneficiará de las actualizaciones para el control. 
+    > Si opta por esta alternativa, el complemento no se beneficiará de las actualizaciones para el control. 
 2. Agregue el elemento DOM del marcador donde se vaya a representar el control, tal como se muestra en este ejemplo.
 
  ```
@@ -204,7 +204,7 @@ Para obtener los estilos CSS desde el sitio web host, debe hacer referencia a su
  ```
 
 
-    Si se sirve de este enfoque, quizá deba ejecutar JavaScript en la página para obtener la dirección URL del sitio web host a partir de la cadena de consultas. Posteriormente, puede insertar la dirección URL del sitio web host en el elemento **link** antes de escribir el elemento en el DOM de la página.
+Si se sirve de este enfoque, quizá deba ejecutar JavaScript en la página para obtener la dirección URL del sitio web host a partir de la cadena de consultas. Posteriormente, puede insertar la dirección URL del sitio web host en el elemento **link** antes de escribir el elemento en el DOM de la página.
 
 
 Lo primero que hay que hacer cuando se establece el estilo del complemento es usar semántica HTML en la medida de lo posible. Esto implica usar **H1**, **H2**, **H3** y, así, sucesivamente para los diversos encabezados y etiquetas de entrada para los botones. Asimismo, debería intentar usar los estilos básicos de SharePoint todo lo que pueda, de forma que cuando cambie el tema del host, el complemento adopte esos cambios sin problemas y de forma automática. Las tablas siguientes muestran cómo se usan los estilos en el tema predeterminado.
@@ -511,9 +511,11 @@ La página ha funcionado sin problemas en un **iframe** en distintos dominios, c
 
 
 
-```
 
-<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />```
+```
+
+<WebPartPages:AllowFraming ID="AllowFraming1" runat="server" />
+```
 
 Dado que no puede imponer los dominios en los que las páginas se incorporen con IFrame, las páginas que hospede en elementos de complemento estarán expuestas a ataques a la seguridad por secuestro de clics. En este tipo de ataques, las páginas pueden estar con IFrame en una página malintencionada y se podría engañar a los usuarios para que eligieran botones con el fin de tomar acciones cuyos resultados le pasen desapercibidos. Cuando diseñe su página, debería tener esto en cuenta y asegurarse de que no expone ningún tipo de funcionalidad del elemento en la página que pudiera resultar peligroso si se topara con una página malintencionada.
 
@@ -529,8 +531,10 @@ Si el elemento muestra contenido dinámico, sería buena idea solicitar un cambi
 
 
 
-```
-window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});```
+
+```
+window.parent.postMessage('<message senderId={your ID}>resize(120, 300)</message>', {hostweburl});
+```
 
 En el ejemplo anterior, el valor de **senderId** se va a establecer en la cadena de consultas de la página automáticamente por parte del código del elemento de complemento cuando se represente la página. Bastará con que la página lea el valor de **SenderId** en la cadena de consultas y lo use cuando se solicite cambiar el tamaño. La dirección URL de la web de host se puede recuperar desde la cadena de consultas adjuntando los tokens **StandardTokens** o **HostUrl** al atributo **Src** de la definición del elemento de complemento.
 
@@ -542,7 +546,8 @@ Para especificar un elemento para el sitio web host, debe especificar un element
 
 
 
-```XML
+
+```XML
 <ClientWebPart
     Name="Sample Add-in Part" 
     DefaultWidth="600" 
@@ -594,7 +599,8 @@ Para especificar un elemento para el sitio web host, debe especificar un element
             </EnumItems>
         </Property>
     </Properties>
-</ClientWebPart>```
+</ClientWebPart>
+```
 
 En el elemento **ClientWebPart**, será necesario especificar lo siguiente:
 
@@ -684,11 +690,13 @@ Por lo general, cuando un usuario elige una acción personalizada, las llevará 
 
 
 
-```
+
+```
 
 HostWebDialog="TRUE"
 HostWebDialogHeight="500" 
-HostWebDialogWidth="500"```
+HostWebDialogWidth="500"
+```
 
 Los atributos **HostWebDialogHeight** y **HostWebDialogWidth** son opcionales. Si no se especifican los atributos, se usará el tamaño predeterminado para cuadros de diálogo en SharePoint. Pese a esto, por lo general, se debe especificar el tamaño del cuadro de diálogo de forma que tenga el aspecto adecuado y no use barras de desplazamiento cuando se muestre al usuario.
 
@@ -700,10 +708,12 @@ El cuadro de diálogo incluye siempre un botón **Cerrar** en el control cromo d
 
 
 
-```
+
+```
 
 window.parent.postMessage('CloseCustomActionDialogRefresh', '*');
-window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');```
+window.parent.postMessage('CloseCustomActionDialogNoRefresh', '*');
+```
 
 En función de si usa **CloseCustomActionDialogRefresh** o **CloseCustomActionDialogNoRefresh**, el cuadro de diálogo se cierra y bien, actualiza la página subyacente o no lo hace.
 
