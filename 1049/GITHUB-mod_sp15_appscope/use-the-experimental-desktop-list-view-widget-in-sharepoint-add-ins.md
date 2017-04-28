@@ -120,7 +120,7 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 - создайте список на сайте надстройки. Этот шаг также гарантирует, что сайт надстройки будет создан, когда пользователи развернут надстройку;
 
     > **Примечание**
-      > Для междоменной библиотеки требуется наличие сайта надстройки. Мини-приложение "Представление списка" связывается с SharePoint, используя междоменную библиотеку. 
+    > Для междоменной библиотеки требуется наличие сайта надстройки. Мини-приложение "Представление списка" связывается с SharePoint, используя междоменную библиотеку. 
 - создайте страницу надстройки, объявляющую экземпляр мини-приложения "Представление списка" с использованием разметки HTML.
 
 
@@ -327,12 +327,14 @@ ms.assetid: b1e26543-9d03-4759-80bf-e6ce729a1b19
 
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### Создание и запуск решения
@@ -366,9 +368,11 @@ Office.Controls.Runtime.initialize({});```
 
 
 
-```HTML
 
-<div id="ListViewDiv"></div>```
+```HTML
+
+<div id="ListViewDiv"></div>
+```
 
 Используйте следующий код JavaScript, чтобы создавать экземпляры представления списка.
 
@@ -376,11 +380,13 @@ Office.Controls.Runtime.initialize({});```
 
 
 
-```
+
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });```
+    });
+```
 
 Пример выполнения задач см. на странице **JSSimple.html** в примере кода [Использование экспериментального мини-приложения "Представление списка на рабочем столе" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
 
@@ -399,7 +405,8 @@ new Office.Controls.ListView(
 
 
 
-```
+
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -407,7 +414,8 @@ new Office.Controls.ListView(
                             viewID: 'GUID'
                             }">
 </div> 
-```
+
+```
 
 Если вы объявляете виджет с использованием JavaScript, вы можете использовать следующий синтаксис для указания представления.
 
@@ -415,13 +423,15 @@ new Office.Controls.ListView(
 
 
 
-```
+
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });```
+    });
+```
 
 
 ## Заключение
