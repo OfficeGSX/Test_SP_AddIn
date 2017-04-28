@@ -89,7 +89,7 @@ Para usar el widget Selector de personas, debe hacer lo siguiente:
 - Crear un módulo en la web de complemento. Este paso garantiza que se cree una web de complemento cuando los usuarios implementen el complemento.
 
     > **NOTA**
-      > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Selector de personas se comunica con SharePoint usando la biblioteca entre dominios. 
+    > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Selector de personas se comunica con SharePoint usando la biblioteca entre dominios. 
 - Crear una página de complemento que declare una instancia del widget Selector de personas usando marcado.
 
 
@@ -256,12 +256,14 @@ En el siguiente ejemplo se muestra cómo pasar un objeto vacío al método de in
 
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### Para crear y ejecutar la solución
@@ -296,9 +298,11 @@ Quizás prefiera usar JavaScript en lugar de HTML para declarar el widget. Si es
 
 
 
-```HTML
 
-<div id="PeoplePickerDiv"></div>```
+```HTML
+
+<div id="PeoplePickerDiv"></div>
+```
 
 Use el siguiente código de JavaScript para crear instancias del selector de personas.
 
@@ -306,9 +310,11 @@ Use el siguiente código de JavaScript para crear instancias del selector de per
 
 
 
-```
+
+```
 new Office.Controls.PeoplePicker(
-    document.getElementById("PeoplePickerDiv"), {});```
+    document.getElementById("PeoplePickerDiv"), {});
+```
 
 Si quiere ver un ejemplo de código de cómo hacer las tareas, vaya a la página **JSSimple.html** en el ejemplo de código [Usar el widget experimental Selector de personas en un complemento](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
 
@@ -321,7 +327,8 @@ Puede especificar opciones para el widget usando el atributo **datos-office-opci
 
 
 
-```HTML
+
+```HTML
 
 <div id="PeoplePickerDiv"
         data-office-control="Office.Controls.PeoplePicker"
@@ -330,7 +337,8 @@ Puede especificar opciones para el widget usando el atributo **datos-office-opci
         "onChange" : handleChange,
         "placeholder" : "Check the count message, it changes when you add names..."
     }'>
-</div>```
+</div>
+```
 
 El código siguiente muestra cómo especificar opciones al declarar el widget Selector de personas usando JavaScript.
 
@@ -338,7 +346,8 @@ El código siguiente muestra cómo especificar opciones al declarar el widget Se
 
 
 
-```
+
+```
 
 new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {
@@ -348,7 +357,8 @@ new Office.Controls.PeoplePicker(
             document.getElementById("count").textContent = 
 ctrl.selectedItems.length.toString();
         }
-    });```
+    });
+```
 
 También puede especificar controladores de eventos para los eventos **onChange**, **onAdded** y **onRemoved**. En el código anterior, vemos que el controlador de eventos del evento onChange recibe un único parámetro **ctrl**, que es una referencia al widget.
 
@@ -378,9 +388,11 @@ Puede obtener una referencia al widget usando la sintaxis siguiente.
 
 
 
-```
 
-var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;```
+```
+
+var pplPicker = document.getElementById("PeoplePickerDiv")._officeControl;
+```
 
 También puede guardar una referencia al crear instancias del widget.
 
@@ -388,9 +400,11 @@ También puede guardar una referencia al crear instancias del widget.
 
 
 
-```
+
+```
 var pplPicker = new Office.Controls.PeoplePicker(
-                        document.getElementById("PeoplePickerDiv"), {});```
+                        document.getElementById("PeoplePickerDiv"), {});
+```
 
 La propiedad **selectedItems** es una matriz de objetos que representan personas o grupos. Las personas o grupos de la matriz selectedItems pueden estar resueltos o no, y esto se puede comprobar en la propiedad **isResolved**. En el ejemplo siguiente se muestra cómo obtener acceso al elemento *i*  de la matriz y usar el nombre de la persona o grupo.
 
@@ -398,10 +412,12 @@ La propiedad **selectedItems** es una matriz de objetos que representan personas
 
 
 
-```
+
+```
 
 var principal = pplPicker.selectedItems[i];
-$("#msg").text(principal.text + " is selected in the control.");```
+$("#msg").text(principal.text + " is selected in the control.");
+```
 
 Si quiere un ejemplo de cómo recuperar del widget las personas o los grupos seleccionados, vea la página **demo.html** del ejemplo de código [Demostración de Office Web Widgets: Experimental](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
 
