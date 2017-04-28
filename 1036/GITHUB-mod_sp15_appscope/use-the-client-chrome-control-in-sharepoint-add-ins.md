@@ -140,7 +140,7 @@ La Figure 1 présente une page web avec le contrôle Chrome.
 ![Éditeur de manifeste avec paramètres de chaîne de requête](images/ChromeControl_manifest.PNG)
 
 
-    Le contrôle Chrome prend automatiquement les valeurs suivantes dans la chaîne de requête :
+   Le contrôle Chrome prend automatiquement les valeurs suivantes dans la chaîne de requête :
 
   - **SPHostUrl**
 
