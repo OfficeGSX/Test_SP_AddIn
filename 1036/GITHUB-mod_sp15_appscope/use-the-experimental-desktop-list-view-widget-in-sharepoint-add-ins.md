@@ -120,7 +120,7 @@ Pour utiliser le widget d'affichage de liste, vous devez effectuer les opératio
 - Créer une liste dans le site web de complément. Cette étape garantit également qu'un site web de complément est créé lorsque les utilisateurs déploient le complément.
 
     > **REMARQUE**
-      > La bibliothèque inter-domaines nécessite l'existence d'un site web de complément. Le widget d'affichage de liste communique avec SharePoint à l'aide de la bibliothèque inter-domaines. 
+    > La bibliothèque inter-domaines nécessite l'existence d'un site web de complément. Le widget d'affichage de liste communique avec SharePoint à l'aide de la bibliothèque inter-domaines. 
 - Créer une page de complément déclarant une instance de widget d'affichage de liste à l'aide du code HTML.
 
 
@@ -327,12 +327,14 @@ L'exemple suivant montre comment transmettre un objet vide à la méthode d'init
 
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### Pour générer et exécuter la solution
@@ -366,9 +368,11 @@ Selon vos préférences, vous pouvez utiliser du code JavaScript au lieu de code
 
 
 
-```HTML
 
-<div id="ListViewDiv"></div>```
+```HTML
+
+<div id="ListViewDiv"></div>
+```
 
 Utilisez le code JavaScript suivant pour instancier l'affichage de liste.
 
@@ -376,11 +380,13 @@ Utilisez le code JavaScript suivant pour instancier l'affichage de liste.
 
 
 
-```
+
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });```
+    });
+```
 
 Pour obtenir un exemple qui montre comment effectuer les tâches, voir la page **JSSimple.html** de l'exemple de code relatif à l' [utilisation du widget expérimental d'affichage de liste de bureau dans un complément](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
 
@@ -399,7 +405,8 @@ Si vous utilisez du code HTML pour déclarer le widget, vous pouvez utiliser la 
 
 
 
-```
+
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -407,7 +414,8 @@ Si vous utilisez du code HTML pour déclarer le widget, vous pouvez utiliser la 
                             viewID: 'GUID'
                             }">
 </div> 
-```
+
+```
 
 Si vous déclarez le widget avec du code JavaScript, utilisez la syntaxe suivante pour spécifier un affichage.
 
@@ -415,13 +423,15 @@ Si vous déclarez le widget avec du code JavaScript, utilisez la syntaxe suivant
 
 
 
-```
+
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });```
+    });
+```
 
 
 ## Conclusion
