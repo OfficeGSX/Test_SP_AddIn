@@ -45,7 +45,8 @@ Verwenden Sie die Abfrageoption  [$select](http://www.odata.org/documentation/od
 
 
 > **HINWEIS**
-> Generell gilt, wenn Sie die  `$select`-Abfrageoption nicht angeben, gibt der REST-Dienst standardmäßig alle verfügbaren Felder zurück. Es kann jedoch manchmal vorkommen, dass einige SharePoint-Objekte Eigenschaften enthalten, deren Abruf äußerst ressourcenintensiv is. Um die Leistung des REST-Dienstes zu optimieren, sind diese Eigenschaften in der Standardabfrage nicht enthalten und müssen explizit angefordert werden. > Die Eigenschaft **SPWeb.EffectiveBasePermissions** wird beispielsweise standardmäßig nicht zurückgegeben und muss explizit mittels der `$select`-Abfrageoption angefordert werden. 
+> Generell gilt, wenn Sie die  `$select`-Abfrageoption nicht angeben, gibt der REST-Dienst standardmäßig alle verfügbaren Felder zurück. Es kann jedoch manchmal vorkommen, dass einige SharePoint-Objekte Eigenschaften enthalten, deren Abruf äußerst ressourcenintensiv is. Um die Leistung des REST-Dienstes zu optimieren, sind diese Eigenschaften in der Standardabfrage nicht enthalten und müssen explizit angefordert werden.
+> Die Eigenschaft **SPWeb.EffectiveBasePermissions** wird beispielsweise standardmäßig nicht zurückgegeben und muss explizit mittels der `$select`-Abfrageoption angefordert werden. 
 
 
 
