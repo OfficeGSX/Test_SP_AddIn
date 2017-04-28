@@ -89,7 +89,7 @@ Um das Personenauswahl-Widget zu verwenden, müssen Sie folgende Schritte ausfü
 - Erstellen Sie im Add-In-Web ein Modul. Dieser Schritt stellt sicher, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.
 
     > **HINWEIS**
-      > Für die domänenübergreifende Bibliothek muss ein Add-In-Web vorhanden sein. Das Personenauswahl-Widget kommuniziert mithilfe der domänenübergreifenden Bibliothek mit SharePoint. 
+    > Für die domänenübergreifende Bibliothek muss ein Add-In-Web vorhanden sein. Das Personenauswahl-Widget kommuniziert mithilfe der domänenübergreifenden Bibliothek mit SharePoint. 
 - Erstellen Sie eine Add-In-Seite, die eine Personenauswahl-Widget-Instanz mithilfe von Markup deklariert.
 
 
