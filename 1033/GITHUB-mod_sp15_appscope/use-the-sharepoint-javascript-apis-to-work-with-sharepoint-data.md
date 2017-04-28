@@ -65,7 +65,7 @@ Even though SharePoint-hosted SharePoint Add-ins cannot have server-side code, y
  ```
 
 
-    Then search the file for any other markup that also loads one or the other of these files and remove the redundant markup. Save and close the file.
+Then search the file for any other markup that also loads one or the other of these files and remove the redundant markup. Save and close the file.
 
 
 2. In the **Scripts** node in **Solution Explorer**, there may already be an Add-in.js file. If there isn't, but there is an App.js, right-click App.js and rename it Add-in.js. If there isn't either an Add-in.js or App.js, create one with these steps:
