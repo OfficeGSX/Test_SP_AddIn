@@ -120,7 +120,7 @@ Sie müssen Folgendes tun, um das Listenansichts-Widget zu verwenden:
 - Erstellen Sie im Add-In-Web eine Liste. Mit diesem Schritt wird außerdem sichergestellt, dass ein Add-In-Web erstellt wird, wenn Benutzer das Add-In bereitstellen.
 
     > **HINWEIS**
-      > Für die domänenübergreifende Bibliothek muss ein Add-Ins-Web vorhanden sein. Das Listenansichts-Widget kommuniziert mit SharePoint mithilfe der domänenübergreifenden Bibliothek. 
+    > Für die domänenübergreifende Bibliothek muss ein Add-Ins-Web vorhanden sein. Das Listenansichts-Widget kommuniziert mit SharePoint mithilfe der domänenübergreifenden Bibliothek. 
 - Erstellen Sie eine Add-In-Seite, die mithilfe von HTML-Markup eine Listenansichts-Widget-Instanz deklariert.
 
 
