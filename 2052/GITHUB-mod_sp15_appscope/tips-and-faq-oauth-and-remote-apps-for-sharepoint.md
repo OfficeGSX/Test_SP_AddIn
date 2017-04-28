@@ -2,7 +2,6 @@
 
 # 提示和常见问题：OAuth 和远程 SharePoint 相关应用程序
 本主题已过时。请参阅下面的链接查找内容目前所在的位置。
- * **适用范围：*** 
 
 
 
@@ -10,7 +9,7 @@
 
 ||
 |:-----|
-|**本文内容**          [检索应用程序信息](#AppInfo)           [AppManifest.xml 文件](#Manifest)           [Web.config 文件](#Webconfig)           [URL 和安全套接字层 (SSL)](#URL)           [应用程序重定向页面](#Redirect)           [重定向 URI](#RedirectURI)           [OAuth 令牌](#Tokens)           [权限和权限请求作用域](#Perm)           [OAuth 授权策略类型](#Policy)           [调试](#Debugging)           [高度信任的本地应用程序（服务器对服务器应用程序）](#S2S)           [其他 OAuth 相关问题](#Misc)           [社会功能](#Social)           [其他资源](#AR)|
+|**本文内容**</br>          [检索应用程序信息](#AppInfo)</br>           [AppManifest.xml 文件](#Manifest)</br>           [Web.config 文件](#Webconfig)</br>           [URL 和安全套接字层 (SSL)](#URL)</br>           [应用程序重定向页面](#Redirect)</br>           [重定向 URI](#RedirectURI)</br>           [OAuth 令牌](#Tokens)</br>           [权限和权限请求作用域](#Perm)</br>           [OAuth 授权策略类型](#Policy)</br>           [调试](#Debugging)</br>           [高度信任的本地应用程序（服务器对服务器应用程序）](#S2S)</br>           [其他 OAuth 相关问题](#Misc)</br>           [社会功能](#Social)</br>           [其他资源](#AR)|
  
 
 ## 检索应用程序信息
@@ -47,14 +46,14 @@
 
 
 
->  [了解 SharePoint 外接程序的应用程序清单结构和包](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
+-  [了解 SharePoint 外接程序的应用程序清单结构和包](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
 
 
 
 
 
 
->  [StartPage 元素](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx)
+-  [StartPage 元素](http://msdn.microsoft.com/library/3092674c-a6c3-9021-3d7e-e716562a4a4f%28Office.15%29.aspx)
 
 
 
