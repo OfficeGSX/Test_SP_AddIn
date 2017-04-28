@@ -120,7 +120,7 @@ Para usar el widget Vista de lista, debe hacer lo siguiente:
 - Crear una lista en la web de complemento. Este paso también garantiza que se cree una web de complemento cuando los usuarios implementen el complemento.
 
     > **NOTA**
-      > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Vista de lista se comunica con SharePoint usando la biblioteca entre dominios. 
+    > La biblioteca entre dominios requiere la existencia de un web de complemento. El widget Vista de lista se comunica con SharePoint usando la biblioteca entre dominios. 
 - Crear una página de complemento que declare una instancia del widget Vista de lista con formato HTML.
 
 
@@ -327,12 +327,14 @@ En el siguiente ejemplo se muestra cómo pasar un objeto vacío al método de in
 
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### Para crear y ejecutar la solución
@@ -366,9 +368,11 @@ Quizás prefiera usar JavaScript en lugar de HTML para declarar el widget. Si es
 
 
 
-```HTML
 
-<div id="ListViewDiv"></div>```
+```HTML
+
+<div id="ListViewDiv"></div>
+```
 
 Use el siguiente código de JavaScript para crear una instancia de la vista de lista.
 
@@ -376,11 +380,13 @@ Use el siguiente código de JavaScript para crear una instancia de la vista de l
 
 
 
-```
+
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });```
+    });
+```
 
 Si quiere ver un ejemplo de cómo hacer las tareas, vaya a la página **JSSimple.html** en el ejemplo de código [Usar el widget experimental Vista de lista de escritorio en un complemento](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076).
 
@@ -399,7 +405,8 @@ Si usa código HTML para declarar el widget, puede usar la siguiente sintaxis pa
 
 
 
-```
+
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -407,7 +414,8 @@ Si usa código HTML para declarar el widget, puede usar la siguiente sintaxis pa
                             viewID: 'GUID'
                             }">
 </div> 
-```
+
+```
 
 Si quiere declarar el widget con JavaScript, use la siguiente sintaxis para especificar una vista.
 
@@ -415,13 +423,15 @@ Si quiere declarar el widget con JavaScript, use la siguiente sintaxis para espe
 
 
 
-```
+
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });```
+    });
+```
 
 
 ## Conclusión
