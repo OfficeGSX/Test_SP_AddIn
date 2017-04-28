@@ -204,7 +204,7 @@ Um die CSS-Formatvorlagen von der Hostwebsite abzurufen, müssen Sie auf ihre CS
   ```
 
 
-    Wenn Sie diese Vorgehensweise verwenden, müssen Sie JavaScript auf der Seite ausführen, um die URL der Hostwebsite aus der Abfragezeichenfolge abzurufen. Dann können Sie die URL der Hostwebsite in das **link**-Element einfügen, bevor Sie das Element in das DOM der Seite schreiben.
+Wenn Sie diese Vorgehensweise verwenden, müssen Sie JavaScript auf der Seite ausführen, um die URL der Hostwebsite aus der Abfragezeichenfolge abzurufen. Dann können Sie die URL der Hostwebsite in das **link**-Element einfügen, bevor Sie das Element in das DOM der Seite schreiben.
 
 
 Als erstes sollten Sie beim Formatieren Ihres Add-Ins möglichst viel semantischen HTML-Code verwenden, d. h. **H1**, **H2**, **H3** usw. für die verschiedenen Überschriften und Eingabetags für Schaltflächen. Sie sollten außerdem versuchen, in möglichst großem Umfang SharePoint-Kernformatvorlagen zu verwenden, damit bei einer Änderung des Designs der Hostwebsite Ihr Add-In diese Änderungen nahtlos und automatisch übernimmt. Die folgenden Tabellen zeigen die Verwendung von Formatvorlagen beim Standarddesign.
