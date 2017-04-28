@@ -383,7 +383,7 @@ function onScheduleItemsFail(sender, args) {
 ![Visual Studio におけるアクセス許可一覧のための [プロパティ] ダイアログ。プロパティ名は「Base List ID」に、値は「106」に設定されています。](images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
 
 
-    **[OK]** を選びます。 **[アクセス許可]** タブは、次のようになります。
+   **[OK]** を選びます。 **[アクセス許可]** タブは、次のようになります。
 
 
    **Visual Studio のアドイン マニフェスト デザイナーの [アクセス許可] タブ**
