@@ -120,7 +120,7 @@ SharePoint リストのビューを指定して、データの表示に使用で
 - アドイン Web 上にリストを作成します。この手順により、アドインの展開時にアドイン Web が作成されるようになります。
 
     > **メモ**
-      > クロスドメイン ライブラリを使用するには、アドイン Web が存在する必要があります。リスト ビュー ウィジェットは、クロスドメイン ライブラリを使用して SharePoint と通信します。 
+    > クロスドメイン ライブラリを使用するには、アドイン Web が存在する必要があります。リスト ビュー ウィジェットは、クロスドメイン ライブラリを使用して SharePoint と通信します。 
 - HTML マークアップを使用してリスト ビュー ウィジェットを宣言するアドイン ページを作成します。
 
 
@@ -327,12 +327,14 @@ SharePoint リストのビューを指定して、データの表示に使用で
 
 
 
-```
+
+```
 
 // Initialize with an empty object and the code
 // will attempt to get the tokens from the
 // query string directly.
-Office.Controls.Runtime.initialize({});```
+Office.Controls.Runtime.initialize({});
+```
 
 
 ### ソリューションを構築して実行するには
@@ -366,9 +368,11 @@ Office.Controls.Runtime.initialize({});```
 
 
 
-```HTML
 
-<div id="ListViewDiv"></div>```
+```HTML
+
+<div id="ListViewDiv"></div>
+```
 
 以下の JavaScript コードを使用してリスト ビューをインスタンス化します。
 
@@ -376,11 +380,13 @@ Office.Controls.Runtime.initialize({});```
 
 
 
-```
+
+```
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: Office.Samples.ListViewBasic.appWebUrl + "/_api/web/lists/getbytitle('Announcements')"
-    });```
+    });
+```
 
 タスクの実行方法を示すコード サンプルについては、「 [アドインで実験的なデスクトップ リスト ビュー ウィジェットを使用する](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-c3edb076)」コード サンプルの **JSSimple.html** ページを参照してください。
 
@@ -399,7 +405,8 @@ HTML マークアップを使用してウィジェットを宣言する場合は
 
 
 
-```
+
+```
 
 <div id="ListViewDiv"
         data-office-control="Office.Controls.ListView"
@@ -407,7 +414,8 @@ HTML マークアップを使用してウィジェットを宣言する場合は
                             viewID: 'GUID'
                             }">
 </div> 
-```
+
+```
 
 JavaScript を使用してウィジェットを宣言する場合は、以下の構文を使用してビューを指定します。
 
@@ -415,13 +423,15 @@ JavaScript を使用してウィジェットを宣言する場合は、以下の
 
 
 
-```
+
+```
 
 new Office.Controls.ListView(
     document.getElementById("ListViewDiv"), {
         listUrl: "list URL",
         viewID: "GUID"
-    });```
+    });
+```
 
 
 ## まとめ
